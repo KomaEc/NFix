@@ -1,0 +1,3 @@
+commit 81a119d7064758d1497ba009cc4e27f06402deac
+
+https://github.com/kiegroup/drools/commit/81a119d7064758d1497ba009cc4e27f06402deac

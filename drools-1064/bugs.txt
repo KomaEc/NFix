@@ -1,0 +1,3 @@
+commit cb94ef640006fded55289f871703ccba7336892e
+
+https://github.com/kiegroup/drools/commit/cb94ef640
