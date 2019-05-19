@@ -1,0 +1,3 @@
+commit 7061fa75d318f93dd66506ee51ea1643a444bdba
+
+https://github.com/cloudera/crunch/pull/31/commits/7061fa75d318f93dd66506ee51ea1643a444bdba
