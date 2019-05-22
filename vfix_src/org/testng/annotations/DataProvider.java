@@ -1,0 +1,16 @@
+package org.testng.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD})
+public @interface DataProvider {
+   String name() default "";
+
+   boolean parallel() default false;
+
+   int[] indices() default {};
+}

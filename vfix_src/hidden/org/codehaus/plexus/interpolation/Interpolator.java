@@ -1,0 +1,25 @@
+package hidden.org.codehaus.plexus.interpolation;
+
+import java.util.List;
+
+public interface Interpolator {
+   void addValueSource(ValueSource var1);
+
+   void removeValuesSource(ValueSource var1);
+
+   void addPostProcessor(InterpolationPostProcessor var1);
+
+   void removePostProcessor(InterpolationPostProcessor var1);
+
+   String interpolate(String var1, String var2) throws InterpolationException;
+
+   String interpolate(String var1, String var2, RecursionInterceptor var3) throws InterpolationException;
+
+   String interpolate(String var1) throws InterpolationException;
+
+   String interpolate(String var1, RecursionInterceptor var2) throws InterpolationException;
+
+   List getFeedback();
+
+   void clearFeedback();
+}

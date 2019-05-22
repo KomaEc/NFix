@@ -1,0 +1,24 @@
+package org.codehaus.groovy.runtime;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import org.codehaus.groovy.reflection.CachedClass;
+import org.codehaus.groovy.reflection.GeneratedMetaMethod;
+
+public class dgm$424 extends GeneratedMetaMethod {
+   public dgm$424(String var1, CachedClass var2, Class var3, Class[] var4) {
+      super(var1, var2, var3, var4);
+   }
+
+   public Object invoke(Object var1, Object[] var2) {
+      return DefaultGroovyMethods.multiply((BigDecimal)var1, (BigInteger)var2[0]);
+   }
+
+   public final Object doMethodInvoke(Object var1, Object[] var2) {
+      return DefaultGroovyMethods.multiply((BigDecimal)var1, (BigInteger)this.getParameterTypes()[0].coerceArgument(var2[0]));
+   }
+
+   public boolean isValidMethod(Class[] var1) {
+      return var1 == null || this.getParameterTypes()[0].isAssignableFrom(var1[0]);
+   }
+}
