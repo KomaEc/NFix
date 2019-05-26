@@ -1,0 +1,3 @@
+commit 15ff7ca9447619240ec96fdb32f7974e1ecf5730
+
+https://github.com/pmd/pmd/commit/15ff7ca9447619240ec96fdb32f7974e1ecf5730#diff-d6a36f1ba7bc1e8679e791509d0979ba
