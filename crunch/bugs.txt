@@ -1,0 +1,4 @@
+
+commit c69a354f760f7318dc020c9825d79814ca5aa5b4
+
+https://github.com/cloudera/crunch/pull/25/commits/c69a354f760f7318dc020c9825d79814ca5aa5b4#diff-09c7d01416d4c46118af33707a6909e8R31
