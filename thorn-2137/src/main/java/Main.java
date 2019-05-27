@@ -1,5 +1,7 @@
 
-import org.wildfly.swarm.microprofile.metrics.MicroprofileMetricsFraction;
+
+
+import java.io.IOException;
 public class Main {
 
     public static void main(String... args) {

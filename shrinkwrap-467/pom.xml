@@ -9,7 +9,7 @@
     <groupId>org.jboss.shrinkwrap</groupId>
     <artifactId>shrinkwrap-parent</artifactId>
     <version>1.2.1</version>
-    <relativePath>../pom.xml</relativePath>
+   <!--  <relativePath>../pom.xml</relativePath>-->
   </parent>
 
   <!-- Model Version -->
@@ -77,10 +77,7 @@
         </configuration>
       </plugin>
       
-      <!-- Checkstyle -->
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-      </plugin>
+
 
     </plugins>
   </build>
