@@ -207,8 +207,7 @@ public class ClassScope extends AbstractJavaScope {
                 }
             }
             if (isEnum && "valueOf".equals(occurrence.getImage())) {
-                /**@Repair result.add(createBuiltInMethodDeclaration("valueOf", "String"));*/
-                result.add(createBuiltInMethodDeclaration("valueOf", 1));
+                result.add(createBuiltInMethodDeclaration("valueOf", "String"));
             }
             return result;
         }
@@ -255,7 +254,7 @@ public class ClassScope extends AbstractJavaScope {
      * @param parameterCount the parameter count of the method
      * @return a method name declaration
      */
-    private MethodNameDeclaration createBuiltInMethodDeclaration(final String methodName, final int parameterCount/**@Repair  String... parameterTypes*/) {
+    private MethodNameDeclaration createBuiltInMethodDeclaration(final String methodName, String... parameterTypes) {
         ASTMethodDeclaration methodDeclaration = new ASTMethodDeclaration(JavaParserTreeConstants.JJTMETHODDECLARATION);
         methodDeclaration.setPublic(true);
         methodDeclaration.setScope(this);
@@ -272,7 +271,7 @@ public class ClassScope extends AbstractJavaScope {
         methodDeclarator.jjtAddChild(formalParameters, 0);
         formalParameters.jjtSetParent(methodDeclarator);
 
-        /**@Repair int parameterCount = parameterTypes.length; */
+        int parameterCount = parameterTypes.length;
         for (int i = 0; i < parameterCount; i++) {
             ASTFormalParameter formalParameter = new ASTFormalParameter(JavaParserTreeConstants.JJTFORMALPARAMETER);
             formalParameters.jjtAddChild(formalParameter, i);
@@ -281,7 +280,6 @@ public class ClassScope extends AbstractJavaScope {
             ASTType type = new ASTType(JavaParserTreeConstants.JJTTYPE);
             formalParameter.jjtAddChild(type, 0);
             type.jjtSetParent(formalParameter);
-            /**@Repair 
             ASTReferenceType referenceType = new ASTReferenceType(JavaParserTreeConstants.JJTREFERENCETYPE);
             type.jjtAddChild(referenceType, 0);
             referenceType.jjtSetParent(type);
@@ -289,7 +287,7 @@ public class ClassScope extends AbstractJavaScope {
             classOrInterfaceType.setImage(parameterTypes[i]);
             referenceType.jjtAddChild(classOrInterfaceType, 0);
             classOrInterfaceType.jjtSetParent(referenceType);
-*/
+
             ASTVariableDeclaratorId variableDeclaratorId = new ASTVariableDeclaratorId(JavaParserTreeConstants.JJTVARIABLEDECLARATORID);
             variableDeclaratorId.setImage("arg" + i);
             formalParameter.jjtAddChild(variableDeclaratorId, 1);

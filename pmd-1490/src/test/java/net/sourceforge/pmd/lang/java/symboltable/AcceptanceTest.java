@@ -28,6 +28,113 @@ import net.sourceforge.pmd.lang.symboltable.Scope;
 import org.junit.Test;
 public class AcceptanceTest extends STBBaseTst {
 
+    @Test
+    public void testClashingSymbols() {
+        parseCode(TEST1);
+    }
+
+    @Test
+    public void testInitializer() {
+        parseCode(TEST_INITIALIZERS);
+        ASTInitializer a = acu.findDescendantsOfType(ASTInitializer.class).get(0);
+        assertFalse(a.isStatic());
+        a = acu.findDescendantsOfType(ASTInitializer.class).get(1);
+        assertTrue(a.isStatic());
+    }
+
+    @Test
+    public void testCatchBlocks() {
+        parseCode(TEST_CATCH_BLOCKS);
+        ASTCatchStatement c = acu.findDescendantsOfType(ASTCatchStatement.class).get(0);
+        ASTBlock a = c.findDescendantsOfType(ASTBlock.class).get(0);
+        Scope s = a.getScope();
+        Map<NameDeclaration, List<NameOccurrence>> vars = s.getParent().getDeclarations();
+        assertEquals(1, vars.size());
+        NameDeclaration v = vars.keySet().iterator().next();
+        assertEquals("e", v.getImage());
+        assertEquals(1, (vars.get(v)).size());
+    }
+
+    @Test
+    public void testEq() {
+        parseCode(TEST_EQ);
+        ASTEqualityExpression e = acu.findDescendantsOfType(ASTEqualityExpression.class).get(0);
+        ASTMethodDeclaration method = e.getFirstParentOfType(ASTMethodDeclaration.class);
+        Scope s = method.getScope();
+        Map<NameDeclaration, List<NameOccurrence>> m = s.getDeclarations();
+        assertEquals(2, m.size());
+        for (Map.Entry<NameDeclaration, List<NameOccurrence>> entry : m.entrySet()) {
+            NameDeclaration vnd = entry.getKey();
+            List<NameOccurrence> usages = entry.getValue();
+
+            if (vnd.getImage().equals("a") || vnd.getImage().equals("b")) {
+                assertEquals(1, usages.size());
+                assertEquals(3, usages.get(0).getLocation().getBeginLine());
+            } else {
+                fail("Unkown variable " + vnd);
+            }
+        }
+    }
+
+    @Test
+    public void testFieldFinder() {
+        parseCode(TEST_FIELD);
+//        System.out.println(TEST_FIELD);
+
+        ASTVariableDeclaratorId declaration = acu.findDescendantsOfType(ASTVariableDeclaratorId.class).get(1);
+        assertEquals(3, declaration.getBeginLine());
+        assertEquals("bbbbbbbbbb", declaration.getImage());
+        assertEquals(1, declaration.getUsages().size());
+        NameOccurrence no = declaration.getUsages().get(0);
+        Node location = no.getLocation();
+        assertEquals(6, location.getBeginLine());
+//        System.out.println("variable " + declaration.getImage() + " is used here: " + location.getImage());
+    }
+
+    @Test
+    public void testDemo() {
+        parseCode(TEST_DEMO);
+//        System.out.println(TEST_DEMO);
+        ASTMethodDeclaration node = acu.findDescendantsOfType(ASTMethodDeclaration.class).get(0);
+        Scope s = node.getScope();
+        Map<NameDeclaration, List<NameOccurrence>> m = s.getDeclarations();
+        for (Iterator<NameDeclaration> i = m.keySet().iterator(); i.hasNext();) {
+            NameDeclaration d = i.next();
+            assertEquals("buz", d.getImage());
+            assertEquals("ArrayList", ((TypedNameDeclaration)d).getTypeImage());
+            List<NameOccurrence> u = m.get(d);
+            assertEquals(1, u.size());
+            NameOccurrence o = u.get(0);
+            int beginLine = o.getLocation().getBeginLine();
+            assertEquals(3, beginLine);
+
+//            System.out.println("Variable: " + d.getImage());
+//            System.out.println("Type: " + d.getTypeImage());
+//            System.out.println("Usages: " + u.size());
+//            System.out.println("Used in line " + beginLine);
+        }
+    }
+
+    @Test
+    public void testEnum() {
+	parseCode(NameOccurrencesTest.TEST_ENUM);
+
+	ASTVariableDeclaratorId vdi = acu.findDescendantsOfType(ASTVariableDeclaratorId.class).get(0);
+	List<NameOccurrence> usages = vdi.getUsages();
+	assertEquals(2, usages.size());
+	assertEquals(5, usages.get(0).getLocation().getBeginLine());
+	assertEquals(9, usages.get(1).getLocation().getBeginLine());
+    }
+
+    @Test
+    public void testInnerOuterClass() {
+        parseCode(TEST_INNER_CLASS);
+        ASTVariableDeclaratorId vdi = acu.findDescendantsOfType(ASTVariableDeclaratorId.class).get(0);
+        List<NameOccurrence> usages = vdi.getUsages();
+        assertEquals(2, usages.size());
+        assertEquals(5, usages.get(0).getLocation().getBeginLine());
+        assertEquals(10, usages.get(1).getLocation().getBeginLine());
+    }
 
     /**
      * Unit test for bug #1490
