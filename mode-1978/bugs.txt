@@ -1,0 +1,3 @@
+commit 42017fc784590bbcd7aa77f2995136c0a8b1491b
+
+https://github.com/ModeShape/modeshape/pull/867/commits/42017fc784590bbcd7aa77f2995136c0a8b1491b
