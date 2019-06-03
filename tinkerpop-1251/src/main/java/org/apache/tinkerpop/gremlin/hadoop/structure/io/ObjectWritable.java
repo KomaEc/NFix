@@ -1,0 +1,141 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package org.apache.tinkerpop.gremlin.hadoop.structure.io;
+
+import org.apache.hadoop.io.WritableComparable;
+import org.apache.hadoop.io.WritableUtils;
+import org.apache.tinkerpop.gremlin.process.computer.MapReduce;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+/**
+ * @author Marko A. Rodriguez (http://markorodriguez.com)
+ */
+public final class ObjectWritable<T> implements WritableComparable<ObjectWritable>, Serializable {
+
+    private static final String NULL = "null";
+    private static final ObjectWritable<MapReduce.NullObject> NULL_OBJECT_WRITABLE = new ObjectWritable<>(MapReduce.NullObject.instance());
+
+    T t;
+
+    public ObjectWritable() {
+    }
+
+    public ObjectWritable(final T t) {
+        this.t = t;
+    }
+
+    public T get() {
+        return this.t;
+    }
+
+    public void set(final T t) {
+        this.t = t;
+    }
+
+    @Override
+    public String toString() {
+        /*@Repair return null == this.t ? NULL : this.t.toString();*/
+        return this.t.toString();
+    }
+
+    @Override
+    public void readFields(final DataInput input) throws IOException {
+        this.t = HadoopPools.getGryoPool().doWithReader(gryoReader -> {
+            try {
+                // class argument is Object because gryo doesn't really care that we don't know the specific type.
+                // the type is embedded in the stream so it can just read it from there and return it as needed.
+                // presumably that will cast nicely to T
+                return (T) gryoReader.readObject(new ByteArrayInputStream(WritableUtils.readCompressedByteArray(input)), Object.class);
+            } catch (final IOException e) {
+                throw new IllegalStateException(e.getMessage(), e);
+            }
+        });
+    }
+
+    @Override
+    public void write(final DataOutput output) throws IOException {
+        HadoopPools.getGryoPool().doWithWriter(gryoWriter -> {
+            try {
+                final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                gryoWriter.writeObject(outputStream, this.t);
+                WritableUtils.writeCompressedByteArray(output, outputStream.toByteArray());
+            } catch (final IOException e) {
+                throw new IllegalStateException(e.getMessage(), e);
+            }
+        });
+    }
+
+    private void writeObject(final ObjectOutputStream outputStream) throws IOException {
+        this.write(outputStream);
+    }
+
+    private void readObject(final ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
+        this.readFields(inputStream);
+    }
+
+    @Override
+    public int compareTo(final ObjectWritable objectWritable) {
+        /* @Repair
+        if (null == this.t)
+            return objectWritable.isEmpty() ? 0 : -1;
+        else if (this.t instanceof Comparable && !objectWritable.isEmpty()) */
+        if (this.t instanceof Comparable)
+            return ((Comparable) this.t).compareTo(objectWritable.get());
+        else if (this.t.equals(objectWritable.get()))
+            return 0;
+        else
+            return -1;
+    }
+
+    public boolean isEmpty() {
+        return null == this.t;
+    }
+
+    public static <A> ObjectWritable<A> empty() {
+        return new ObjectWritable<>(null);
+    }
+
+    @Override
+    public boolean equals(final Object other) {
+        if (!(other instanceof ObjectWritable))
+            return false;
+        else if (this.isEmpty())
+            return ((ObjectWritable) other).isEmpty();
+        else
+            return this.t.equals(((ObjectWritable) other).get());
+    }
+
+    @Override
+    public int hashCode() {
+        /*@Repair return null == this.t ? 0 : this.t.hashCode(); */
+        return this.isEmpty() ? 0 : this.t.hashCode();
+    }
+
+    public static ObjectWritable<MapReduce.NullObject> getNullObjectWritable() {
+        return NULL_OBJECT_WRITABLE;
+    }
+}
