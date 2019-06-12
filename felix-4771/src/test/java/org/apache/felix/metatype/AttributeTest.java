@@ -24,7 +24,7 @@ import org.junit.Test;
 /**
  * @author <a href="mailto:dev@felix.apache.org">Felix Project Team</a>
  */
-public class AttributeTest extends TestCase
+public class AttributeTest
 {
 
     /**
@@ -35,12 +35,12 @@ public class AttributeTest extends TestCase
     {
         Attribute attr = new Attribute();
 
-        assertNull(attr.getContent());
+        assert(attr.getContent() == null);
 
         // Null-values are ignored, so attribute remains empty...
         attr.addContent(null, false);
 
-        assertNull(attr.getContent());
+        assert(attr.getContent() == null);
     }
 
     /**
@@ -53,7 +53,7 @@ public class AttributeTest extends TestCase
         // Null-values are ignored, so attribute remains empty...
         attr.addContent(null, false);
 
-        assertNull(attr.getContent());
+        assert(attr.getContent() == null);
     }
 
     @Test
@@ -62,6 +62,6 @@ public class AttributeTest extends TestCase
         Attribute attr = new Attribute();
         attr.addContent("foo", false /* split */);
 
-        assertNotNull(attr.getContent());
+        assert(attr.getContent() != null);
     }
 }

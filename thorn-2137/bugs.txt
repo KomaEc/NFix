@@ -1,3 +1,0 @@
-commit aaad2e33977af9569a1b5209133b9fac52947a41
-
-https://github.com/thorntail/thorntail/pull/1099/commits/aaad2e33977af9569a1b5209133b9fac52947a41

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 sec <<< FAILURE! - in org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest
+testTooThinBox(org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest)  Time elapsed: 0.02 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.apache.commons.math3.geometry.partitioning.BSPTree.fitToCell(BSPTree.java:301)
+	at org.apache.commons.math3.geometry.partitioning.BSPTree.insertCut(BSPTree.java:159)
+	at org.apache.commons.math3.geometry.partitioning.AbstractRegion.<init>(AbstractRegion.java:171)
+	at org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.<init>(PolygonsSet.java:122)
+	at org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest.testTooThinBox(PolygonsSetTest.java:41)
+

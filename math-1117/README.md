@@ -1,5 +1,14 @@
 # Math 1117
 
+## Commit
+commit f4c926ea82771de22a32150a8b0b1a502faf34b2
+
+## VFix
+N/A
+
+## Infer
+Can statically deduce the position of NullPointer dereference, but can't relate to the position of actual repair
+
 Exception:
 ```java
 testTooThinBox(org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest)  Time elapsed: 0.038 sec  <<< ERROR!

@@ -43,7 +43,8 @@ public class Attribute extends OptionalAttributes
     {
         // FELIX-4771 - removed the clone as we're already working on a local 
         // copy and this pattern isn't used in other parts of the API...
-        return this.content;
+        //return this.content;
+        return (String[]) content.clone();
     }
 
     public void addContent(String[] added)

@@ -1,0 +1,278 @@
+[5388][environment] CWD = /home/coma/GSoC/npebugs/tinkerpop-1251
+[5388][environment] No .inferconfig file found
+[5388][environment] Project root = /home/coma/GSoC/npebugs/tinkerpop-1251
+[5388][environment] INFER_ARGS =   @/tmp/args.tmp.439961  ++Contents of '/tmp/args.tmp.439961':
+[5388][environment]                                         run
+[5388][environment]                                       
+[5388][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5388][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[5388][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[5388][environment] 
+[5388][   progress] Capturing in maven mode...
+[5388][      debug] Running maven capture:
+[5388][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[5451][environment] CWD = /home/coma/GSoC/npebugs/tinkerpop-1251
+[5451][environment] No .inferconfig file found
+[5451][environment] Project root = /home/coma/GSoC/npebugs/tinkerpop-1251
+[5451][environment] INFER_ARGS =   @/tmp/args.tmp.113ec0  ++Contents of '/tmp/args.tmp.113ec0':
+[5451][environment]                                         @/tmp/args.tmp.439961
+[5451][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler8251734202388170252arguments
+[5451][environment]                                         ++Contents of '/tmp/args.tmp.439961':
+[5451][environment]                                           run
+[5451][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler8251734202388170252arguments':
+[5451][environment]                                           "-d"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/target/classes"
+[5451][environment]                                           "-classpath"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/target/classes:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-core/3.2.0-incubating/gremlin-core-3.2.0-incubating.jar:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-shaded/3.2.0-incubating/gremlin-shaded-3.2.0-incubating.jar:/home/coma/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar:/home/coma/.m2/repository/org/javatuples/javatuples/1.2/javatuples-1.2.jar:/home/coma/.m2/repository/com/carrotsearch/hppc/0.7.1/hppc-0.7.1.jar:/home/coma/.m2/repository/com/jcabi/jcabi-manifests/1.1/jcabi-manifests-1.1.jar:/home/coma/.m2/repository/com/jcabi/jcabi-log/0.14/jcabi-log-0.14.jar:/home/coma/.m2/repository/org/slf4j/slf4j-log4j12/1.7.19/slf4j-log4j12-1.7.19.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.7.19/slf4j-api-1.7.19.jar:/home/coma/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/coma/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.19/jcl-over-slf4j-1.7.19.jar:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-groovy/3.2.0-incubating/gremlin-groovy-3.2.0-incubating.jar:/home/coma/.m2/repository/org/apache/ivy/ivy/2.3.0/ivy-2.3.0.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy/2.4.6/groovy-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-groovysh/2.4.6/groovy-groovysh-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-console/2.4.6/groovy-console-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-swing/2.4.6/groovy-swing-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-templates/2.4.6/groovy-templates-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-xml/2.4.6/groovy-xml-2.4.6.jar:/home/coma/.m2/repository/jline/jline/2.12/jline-2.12.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy/2.4.6/groovy-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-json/2.4.6/groovy-json-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-jsr223/2.4.6/groovy-jsr223-2.4.6-indy.jar:/home/coma/.m2/repository/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar:/home/coma/.m2/repository/com/github/jeremyh/jBCrypt/jbcrypt-0.4/jBCrypt-jbcrypt-0.4.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-client/2.7.2/hadoop-client-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-common/2.7.2/hadoop-common-2.7.2.jar:/home/coma/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/coma/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/coma/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/home/coma/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar:/home/coma/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/coma/.m2/repository/org/apache/avro/avro/1.7.4/avro-1.7.4.jar:/home/coma/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/coma/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/coma/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-auth/2.7.2/hadoop-auth-2.7.2.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar:/home/coma/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/home/coma/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/home/coma/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/home/coma/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/home/coma/.m2/repository/org/apache/curator/curator-framework/2.7.1/curator-framework-2.7.1.jar:/home/coma/.m2/repository/org/apache/curator/curator-client/2.7.1/curator-client-2.7.1.jar:/home/coma/.m2/repository/org/apache/curator/curator-recipes/2.7.1/curator-recipes-2.7.1.jar:/home/coma/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/home/coma/.m2/repository/org/apache/htrace/htrace-core/3.1.0-incubating/htrace-core-3.1.0-incubating.jar:/home/coma/.m2/repository/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/home/coma/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.7.2/hadoop-hdfs-2.7.2.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/coma/.m2/repository/io/netty/netty/3.7.1.Final/netty-3.7.1.Final.jar:/home/coma/.m2/repository/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar:/home/coma/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/home/coma/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/home/coma/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-app/2.7.2/hadoop-mapreduce-client-app-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-common/2.7.2/hadoop-mapreduce-client-common-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-client/2.7.2/hadoop-yarn-client-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-server-common/2.7.2/hadoop-yarn-server-common-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.7.2/hadoop-mapreduce-client-shuffle-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-api/2.7.2/hadoop-yarn-api-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.2/hadoop-mapreduce-client-core-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-common/2.7.2/hadoop-yarn-common-2.7.2.jar:/home/coma/.m2/repository/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/home/coma/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/coma/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/coma/.m2/repository/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/home/coma/.m2/repository/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.7.2/hadoop-mapreduce-client-jobclient-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-annotations/2.7.2/hadoop-annotations-2.7.2.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/coma/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/home/coma/.m2/repository/org/xerial/snappy/snappy-java/1.1.1.7/snappy-java-1.1.1.7.jar:/home/coma/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar:/home/coma/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:"
+[5451][environment]                                           "-sourcepath"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java:/home/coma/GSoC/npebugs/tinkerpop-1251/target/generated-sources/annotations:"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopConfiguration.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/TextIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoInputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/PersistResultGraphAware.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopVertexIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/mapreduce/MapReduceGraphComputer.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertex.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/ComputerSubmissionHelper.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/MapReduceHelper.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterRecordReader.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterInputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordWriter.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritable.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/InputOutputHelper.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/GraphFilterAware.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileOutputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptOutputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopElementIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopEdge.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopElement.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopRemoteAcceptor.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/Constants.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/util/ConfUtil.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONInputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordReader.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopGraph.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopReduce.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordWriter.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopGremlinPlugin.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritableIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptInputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopProperty.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPoolsConfigurable.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/AbstractHadoopGraphComputer.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopMap.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorage.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoOutputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopEdgeIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopCombine.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritable.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileInputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordReader.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HiddenFileFilter.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableIterator.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONOutputFormat.java"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertexProperty.java"
+[5451][environment]                                           "-s"
+[5451][environment]                                           "/home/coma/GSoC/npebugs/tinkerpop-1251/target/generated-sources/annotations"
+[5451][environment]                                           "-g" "-nowarn" "-target" "1.8"
+[5451][environment]                                           "-source" "1.8" "-encoding" "UTF-8"
+[5451][environment]                                           "-parameters"
+[5451][environment]                                         
+[5451][environment]                                       
+[5451][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[5451][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler8251734202388170252arguments
+[5451][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler8251734202388170252arguments':
+[5451][environment]     "-d" "/home/coma/GSoC/npebugs/tinkerpop-1251/target/classes" "-classpath"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/target/classes:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-core/3.2.0-incubating/gremlin-core-3.2.0-incubating.jar:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-shaded/3.2.0-incubating/gremlin-shaded-3.2.0-incubating.jar:/home/coma/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar:/home/coma/.m2/repository/org/javatuples/javatuples/1.2/javatuples-1.2.jar:/home/coma/.m2/repository/com/carrotsearch/hppc/0.7.1/hppc-0.7.1.jar:/home/coma/.m2/repository/com/jcabi/jcabi-manifests/1.1/jcabi-manifests-1.1.jar:/home/coma/.m2/repository/com/jcabi/jcabi-log/0.14/jcabi-log-0.14.jar:/home/coma/.m2/repository/org/slf4j/slf4j-log4j12/1.7.19/slf4j-log4j12-1.7.19.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.7.19/slf4j-api-1.7.19.jar:/home/coma/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/coma/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.19/jcl-over-slf4j-1.7.19.jar:/home/coma/.m2/repository/org/apache/tinkerpop/gremlin-groovy/3.2.0-incubating/gremlin-groovy-3.2.0-incubating.jar:/home/coma/.m2/repository/org/apache/ivy/ivy/2.3.0/ivy-2.3.0.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy/2.4.6/groovy-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-groovysh/2.4.6/groovy-groovysh-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-console/2.4.6/groovy-console-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-swing/2.4.6/groovy-swing-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-templates/2.4.6/groovy-templates-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-xml/2.4.6/groovy-xml-2.4.6.jar:/home/coma/.m2/repository/jline/jline/2.12/jline-2.12.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy/2.4.6/groovy-2.4.6.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-json/2.4.6/groovy-json-2.4.6-indy.jar:/home/coma/.m2/repository/org/codehaus/groovy/groovy-jsr223/2.4.6/groovy-jsr223-2.4.6-indy.jar:/home/coma/.m2/repository/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar:/home/coma/.m2/repository/com/github/jeremyh/jBCrypt/jbcrypt-0.4/jBCrypt-jbcrypt-0.4.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-client/2.7.2/hadoop-client-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-common/2.7.2/hadoop-common-2.7.2.jar:/home/coma/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/coma/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/coma/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/home/coma/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar:/home/coma/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/coma/.m2/repository/org/apache/avro/avro/1.7.4/avro-1.7.4.jar:/home/coma/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/coma/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/coma/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-auth/2.7.2/hadoop-auth-2.7.2.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar:/home/coma/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/home/coma/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/home/coma/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/home/coma/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/home/coma/.m2/repository/org/apache/curator/curator-framework/2.7.1/curator-framework-2.7.1.jar:/home/coma/.m2/repository/org/apache/curator/curator-client/2.7.1/curator-client-2.7.1.jar:/home/coma/.m2/repository/org/apache/curator/curator-recipes/2.7.1/curator-recipes-2.7.1.jar:/home/coma/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/home/coma/.m2/repository/org/apache/htrace/htrace-core/3.1.0-incubating/htrace-core-3.1.0-incubating.jar:/home/coma/.m2/repository/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/home/coma/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.7.2/hadoop-hdfs-2.7.2.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/coma/.m2/repository/io/netty/netty/3.7.1.Final/netty-3.7.1.Final.jar:/home/coma/.m2/repository/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar:/home/coma/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/home/coma/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/home/coma/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-app/2.7.2/hadoop-mapreduce-client-app-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-common/2.7.2/hadoop-mapreduce-client-common-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-client/2.7.2/hadoop-yarn-client-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-server-common/2.7.2/hadoop-yarn-server-common-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.7.2/hadoop-mapreduce-client-shuffle-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-api/2.7.2/hadoop-yarn-api-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.2/hadoop-mapreduce-client-core-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-yarn-common/2.7.2/hadoop-yarn-common-2.7.2.jar:/home/coma/.m2/repository/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/home/coma/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/coma/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/coma/.m2/repository/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/home/coma/.m2/repository/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.7.2/hadoop-mapreduce-client-jobclient-2.7.2.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-annotations/2.7.2/hadoop-annotations-2.7.2.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/coma/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/home/coma/.m2/repository/org/xerial/snappy/snappy-java/1.1.1.7/snappy-java-1.1.1.7.jar:/home/coma/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar:/home/coma/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:"
+[5451][environment]     "-sourcepath"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java:/home/coma/GSoC/npebugs/tinkerpop-1251/target/generated-sources/annotations:"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopConfiguration.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/TextIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoInputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/PersistResultGraphAware.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopVertexIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/mapreduce/MapReduceGraphComputer.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertex.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/ComputerSubmissionHelper.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/MapReduceHelper.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterRecordReader.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterInputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordWriter.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritable.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/InputOutputHelper.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/GraphFilterAware.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileOutputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptOutputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopElementIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopEdge.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopElement.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopRemoteAcceptor.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/Constants.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/util/ConfUtil.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONInputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordReader.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopGraph.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopReduce.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordWriter.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopGremlinPlugin.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritableIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptInputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopProperty.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPoolsConfigurable.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/AbstractHadoopGraphComputer.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopMap.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorage.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoOutputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopEdgeIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopCombine.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritable.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileInputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordReader.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HiddenFileFilter.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableIterator.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONOutputFormat.java"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertexProperty.java"
+[5451][environment]     "-s"
+[5451][environment]     "/home/coma/GSoC/npebugs/tinkerpop-1251/target/generated-sources/annotations"
+[5451][environment]     "-g" "-nowarn" "-target" "1.8" "-source" "1.8" "-encoding" "UTF-8"
+[5451][environment]     "-parameters"
+[5451][environment]   
+[5451][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5451][      debug] Current working directory: '/home/coma/GSoC/npebugs/tinkerpop-1251'
+[5451][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler8251734202388170252arguments' '@/tmp/args_.tmp.234f69' 2>'/tmp/javac.tmp.10d308.out'
+[5451][      debug] *** Success. Logs:
+[5451][      debug] Translating 50 source files (66 classes)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on boolean FileSystemStorage.rm(String)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on List FileSystemStorage.ls(String)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on void HadoopCombine.setup(Reducer$Context)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on Iterator HadoopGraph.vertices(java.lang.Object[])
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on Iterator HadoopGraph.edges(java.lang.Object[])
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on void HadoopMap.setup(Mapper$Context)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on void HadoopReduce.setup(Reducer$Context)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on Object HadoopRemoteAcceptor.submit(List)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on VertexProperty HadoopVertex.property(String)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on void ObjectWritableComparator$ObjectWritableReduceComparator.setConf(Configuration)
+[5451][ intern err] create_icfg raised JBasics.Class_structure_error Illegal method index (does not refer to a constant method) on void ObjectWritableComparator$ObjectWritableMapComparator.setConf(Configuration)
+[5451][      debug] done capturing all files
+[5451][environment] Infer log identifier is 
+[5388][   progress] Found 50 source files to analyze in /home/coma/GSoC/npebugs/tinkerpop-1251/infer-out
+[5388][environment] Parallel jobs: 8
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertexProperty.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterRecordReader.java starting
+[5489][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritable.java starting
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritable.java starting
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopMap.java starting
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileOutputFormat.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertexProperty.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopElement.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopMap.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptInputFormat.java starting
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileOutputFormat.java DONE
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopVertexIterator.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordReader.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopElement.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/ComputerSubmissionHelper.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterRecordReader.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritableIterator.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/ComputerSubmissionHelper.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptOutputFormat.java starting
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritable.java DONE
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/Constants.java starting
+[5489][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritable.java DONE
+[5489][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoInputFormat.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptOutputFormat.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoOutputFormat.java starting
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java DONE
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/PersistResultGraphAware.java starting
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/PersistResultGraphAware.java DONE
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorage.java starting
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/Constants.java DONE
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordWriter.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoOutputFormat.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/TextIterator.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordReader.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/InputOutputHelper.java starting
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordWriter.java DONE
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONInputFormat.java starting
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONInputFormat.java DONE
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/AbstractHadoopGraphComputer.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptInputFormat.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPoolsConfigurable.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPoolsConfigurable.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordReader.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/InputOutputHelper.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopEdge.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritableIterator.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONOutputFormat.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONOutputFormat.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopProperty.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordReader.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/mapreduce/MapReduceGraphComputer.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/mapreduce/MapReduceGraphComputer.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableIterator.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopProperty.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopGremlinPlugin.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/TextIterator.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopEdge.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordWriter.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/GraphFilterAware.java starting
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/GraphFilterAware.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopElementIterator.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordWriter.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopCombine.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopCombine.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterInputFormat.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/GraphFilterInputFormat.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopReduce.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopReduce.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HiddenFileFilter.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HiddenFileFilter.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileInputFormat.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/CommonFileInputFormat.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertex.java starting
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopVertex.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/MapReduceHelper.java starting
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopVertexIterator.java DONE
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java starting
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableIterator.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopGraph.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopGremlinPlugin.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopEdgeIterator.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopEdgeIterator.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/util/ConfUtil.java starting
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/util/ConfUtil.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopConfiguration.java starting
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorage.java DONE
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopRemoteAcceptor.java starting
+[5483][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java DONE
+[5485][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopConfiguration.java DONE
+[5488][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopElementIterator.java DONE
+[5484][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/HadoopGraph.java DONE
+[5489][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoInputFormat.java DONE
+[5487][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/MapReduceHelper.java DONE
+[5490][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopRemoteAcceptor.java DONE
+[5486][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/AbstractHadoopGraphComputer.java DONE
+
+[6075][      phase] ============================================================
+[6075][      phase] = New infer execution begins
+[6075][      phase] ============================================================
+[6075][environment] CWD = /home/coma/GSoC/npebugs/tinkerpop-1251
+[6075][environment] No .inferconfig file found
+[6075][environment] Project root = /home/coma/GSoC/npebugs/tinkerpop-1251
+[6075][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[6075][environment] Infer log identifier is 

@@ -1,0 +1,93 @@
+Found 10 issues
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/TextIterator.java:46: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 46 is not released after line 46.
+  44.           final FileSystem fs = FileSystem.get(configuration);
+  45.           for (final FileStatus status : fs.listStatus(path, HiddenFileFilter.instance())) {
+  46. >             this.readers.add(new BufferedReader(new InputStreamReader(fs.open(status.getPath()))));
+  47.           }
+  48.       }
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java:53: error: RESOURCE_LEAK
+  resource of type `java.io.DataInputStream` acquired by call to `new()` at line 53 is not released after line 53.
+  51.       public int compare(byte[] bytes, int i, int i1, byte[] bytes1, int i2, int i3) {
+  52.           try {
+  53. >             this.objectWritable1.readFields(new DataInputStream(new ByteArrayInputStream(bytes, i, i1)));
+  54.               this.objectWritable2.readFields(new DataInputStream(new ByteArrayInputStream(bytes1, i2, i3)));
+  55.               //System.out.println(objectWritable1 + "<=>" + objectWritable2 + ":::" + this.comparator.compare(objectWritable1.get(), objectWritable2.get()));
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableComparator.java:54: error: RESOURCE_LEAK
+  resource of type `java.io.DataInputStream` acquired by call to `new()` at line 54 is not released after line 54.
+  52.           try {
+  53.               this.objectWritable1.readFields(new DataInputStream(new ByteArrayInputStream(bytes, i, i1)));
+  54. >             this.objectWritable2.readFields(new DataInputStream(new ByteArrayInputStream(bytes1, i2, i3)));
+  55.               //System.out.println(objectWritable1 + "<=>" + objectWritable2 + ":::" + this.comparator.compare(objectWritable1.get(), objectWritable2.get()));
+  56.               return this.comparator.compare(this.objectWritable1.get(), this.objectWritable2.get());
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java:47: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `GryoRecordWriter.<init>(DataOutputStream,Configuration)` indirectly reads without synchronization from `io.HadoopPools.GRYO_POOL`. Potentially races with write in method `GryoRecordWriter.close(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  45.           this.hasEdges = configuration.getBoolean(Constants.GREMLIN_HADOOP_GRAPH_WRITER_HAS_EDGES, true);
+  46.           HadoopPools.initialize(configuration);
+  47. >         this.gryoWriter = HadoopPools.getGryoPool().takeWriter();
+  48.       }
+  49.   
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java:55: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `GryoPool HadoopPools.getGryoPool()` reads without synchronization from `io.HadoopPools.INITIALIZED`. Potentially races with write in method `HadoopPools.initialize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  53.   
+  54.       public static GryoPool getGryoPool() {
+  55. >         if (!INITIALIZED) {
+  56.               HadoopGraph.LOGGER.warn("The " + HadoopPools.class.getSimpleName() + " has not been initialized, using the default pool");     // TODO: this is necessary because we can't get the pool intialized in the Merger code of the Hadoop process.
+  57.               initialize(new BaseConfiguration());
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/HadoopPools.java:59: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `GryoPool HadoopPools.getGryoPool()` reads without synchronization from `io.HadoopPools.GRYO_POOL`. Potentially races with write in method `HadoopPools.initialize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  57.               initialize(new BaseConfiguration());
+  58.           }
+  59. >         return GRYO_POOL;
+  60.       }
+  61.   }
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java:75: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void GryoRecordReader.initialize(InputSplit,TaskAttemptContext)` writes to field `this.gryoReader` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  73.               this.graphFilter = VertexProgramHelper.deserialize(ConfUtil.makeApacheConfiguration(configuration), Constants.GREMLIN_HADOOP_GRAPH_FILTER);
+  74.           HadoopPools.initialize(configuration);
+  75. >         this.gryoReader = HadoopPools.getGryoPool().takeReader();
+  76.           long start = split.getStart();
+  77.           final Path file = split.getPath();
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReader.java:136: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean GryoRecordReader.nextKeyValue()` reads without synchronization from `this.gryoReader`. Potentially races with write in method `GryoRecordReader.close()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  134.               if (terminatorLocation >= TERMINATOR.length) {
+  135.                   try (InputStream in = new ByteArrayInputStream(output.toByteArray())) {
+  136. >                     final Optional<Vertex> vertex = this.gryoReader.readVertex(in, this.graphFilter);
+  137.                       if (vertex.isPresent()) {
+  138.                           this.vertexWritable.set(vertex.get());
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java:37: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void GryoRecordWriter.write(Object,Object)` indirectly reads without synchronization from `this.gryoWriter`. Potentially races with write in method `GryoRecordWriter.close(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  35.    * @author Marko A. Rodriguez (http://markorodriguez.com)
+  36.    */
+  37. > public final class GryoRecordWriter extends RecordWriter<NullWritable, VertexWritable> {
+  38.   
+  39.       private final DataOutputStream outputStream;
+
+src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordWriter.java:54: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void GryoRecordWriter.write(NullWritable,VertexWritable)` reads without synchronization from `this.gryoWriter`. Potentially races with write in method `GryoRecordWriter.close(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  52.           if (null != vertex) {
+  53.               if (this.hasEdges)
+  54. >                 gryoWriter.writeVertex(this.outputStream, vertex.get(), Direction.BOTH);
+  55.               else
+  56.                   gryoWriter.writeVertex(this.outputStream, vertex.get());
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 7
+            RESOURCE_LEAK: 3

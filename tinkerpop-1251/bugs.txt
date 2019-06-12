@@ -1,3 +1,0 @@
-commit fa2d626951f799a0a50191f9653a17b5c18cdc20
-
-https://github.com/apache/tinkerpop/commit/fa2d626951f799a0a50191f9653a17b5c18cdc20
