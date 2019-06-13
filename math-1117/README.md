@@ -9,6 +9,9 @@ N/A
 ## Infer
 Can statically deduce the position of NullPointer dereference, but can't relate to the position of actual repair
 
+## Coverity Scan
+Can't find relevant positions
+
 Exception:
 ```java
 testTooThinBox(org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest)  Time elapsed: 0.038 sec  <<< ERROR!
