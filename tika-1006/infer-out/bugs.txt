@@ -1,0 +1,128 @@
+Found 15 issues
+
+src/main/java/org/apache/tika/parser/rtf/RTFParser.java:62: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.io.TaggedInputStream` acquired to `tagged` by call to `new()` at line 53 is not released after line 62.
+  60.               throw new TikaException("Error parsing an RTF document", e);
+  61.           }
+  62. >     }
+  63.   }
+
+src/main/java/org/apache/tika/parser/txt/TXTParser.java:94: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 70 is not released after line 94.
+**Note**: potential exception at line 85
+  92.               xhtml.endDocument();
+  93.           } finally {
+  94. >             reader.close();
+  95.           }
+  96.       }
+
+src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:78: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 70 is not released after line 78.
+  76.           //TODO Inspect "begin" attribute!
+  77.           if (!skipAfter(in, PACKET_HEADER_END)) {
+  78. >             throw new IOException("Invalid XMP packet header!");
+  79.           }
+  80.           //TODO Do with TeeInputStream when Commons IO 1.4 is available
+
+src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:74: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired to `return` by call to `new()` at line 70 is not released after line 74.
+  72.           boolean foundXMP = skipAfter(in, PACKET_HEADER);
+  73.           if (!foundXMP) {
+  74. >             return false;
+  75.           }
+  76.           //TODO Inspect "begin" attribute!
+
+src/main/java/org/apache/tika/parser/html/HtmlParser.java:106: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 74 is not released after line 106.
+  104.               parser.parse(reader.asInputSource());
+  105.           } finally {
+  106. >             reader.close();
+  107.           }
+  108.       }
+
+src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:96: error: NULL_DEREFERENCE
+  object `reader` last assigned on line 92 could be null and is dereferenced at line 96.
+  94.               int bytesRead = 0;
+  95.               
+  96. >             while ((bytesRead = reader.read(buffer, 0, Math.min(max, 1024))) >= 0) {
+  97.                   sb.append(buffer, 0, bytesRead);
+  98.                   max -= bytesRead;
+
+src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:107: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `getReader()` at line 92 is not released after line 107.
+**Note**: potential exception at line 96
+  105.               result = new String(fRawInput, getName());            
+  106.           }
+  107. >         return result;
+  108.   
+  109.       }
+
+src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java:162: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.DocumentInputStream` acquired by call to `new()` at line 160 is not released after line 162.
+  160.                      DocumentInputStream inp = new DocumentInputStream(contentsEntry);
+  161.                      byte[] contents = new byte[contentsEntry.getSize()];
+  162. >                    inp.readFully(contents);
+  163.                      embedded = TikaInputStream.get(contents);
+  164.                      
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:148: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 148 is not released after line 148.
+  146.           TikaInputStream tstream = TikaInputStream.cast(stream);
+  147.           if (tstream == null) {
+  148. >             root = new NPOIFSFileSystem(new CloseShieldInputStream(stream)).getRoot();
+  149.           } else {
+  150.               final Object container = tstream.getOpenContainer();
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:156: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 156 is not released after line 156.
+  154.                   root = (DirectoryNode) container;
+  155.               } else if (tstream.hasFile()) {
+  156. >                 root = new NPOIFSFileSystem(tstream.getFileChannel()).getRoot();
+  157.               } else {
+  158.                   root = new NPOIFSFileSystem(new CloseShieldInputStream(tstream)).getRoot();
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:158: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 158 is not released after line 158.
+  156.                   root = new NPOIFSFileSystem(tstream.getFileChannel()).getRoot();
+  157.               } else {
+  158. >                 root = new NPOIFSFileSystem(new CloseShieldInputStream(tstream)).getRoot();
+  159.               }
+  160.           }
+
+src/main/java/org/apache/tika/parser/video/FLVParser.java:254: error: RESOURCE_LEAK
+  resource of type `java.io.DataInputStream` acquired to `datainput` by call to `new()` at line 168 is not released after line 254.
+  252.   
+  253.               sizePrev = readUInt32(datainput); // previous block size
+  254. >             if (sizePrev != datalen + 11) {
+  255.                   // file was corrupt or we could not parse it...
+  256.                   break;
+
+src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java:227: error: RESOURCE_LEAK
+  resource of type `java.io.FileOutputStream` acquired to `output` by call to `FileOutputStream(...)` at line 213 is not released after line 227.
+**Note**: potential exception at line 225
+  225.                           output.flush();
+  226.                           output.close();
+  227. >                     } catch (IOException e) {
+  228.                           e.printStackTrace();
+  229.                       }
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291: error: NULL_DEREFERENCE
+  object `flash` last assigned on line 290 could be null and is dereferenced at line 291.
+  289.               if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+  290.                  String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+  291. >                if(flash.indexOf("Flash fired") > -1) {
+  292.                     metadata.set(Metadata.FLASH_FIRED, Boolean.TRUE.toString());
+  293.                  }
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:411: error: NULL_DEREFERENCE
+  object `keywords` could be null and is dereferenced at line 411.
+  409.               if (directory.containsTag(IptcDirectory.TAG_KEYWORDS)) {
+  410.                   String[] keywords = directory.getStringArray(IptcDirectory.TAG_KEYWORDS);
+  411. >                 for (String k : keywords) {
+  412.                       metadata.add(TikaCoreProperties.KEYWORDS, k);
+  413.                   }
+
+Summary of the reports
+
+     RESOURCE_LEAK: 12
+  NULL_DEREFERENCE: 3

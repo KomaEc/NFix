@@ -1,7 +1,0 @@
--- search "npe" in jboss issue tracker https://issues.jboss.org/browse/TEIID-2134?jql=text%20~%20%22npe%22, page 30
-
--- keycloak in jboss issue tracker, after solving dependency problems https://github.com/keycloak/keycloak/pull/4698/commits/01c0f7b429a27ba9debb3170a7e69030d27cef50 https://github.com/keycloak/keycloak/pull/4674/commits/a5b73a365d55221e123fa1ec0ff319a1b824cddb
-
--- artemis (same as above)  https://github.com/apache/activemq-artemis/pull/2336/commits/11ce7f864e861c98eaa1b582195273cdde67d86b https://github.com/apache/activemq-artemis/pull/482/commits/f75a25e0ada0ee210ce8d1cf0cedea1b470f7fd4#diff-6f3d39f9d9260328f819b1f9ce49cf1c
-
--- resteasy (same) https://github.com/resteasy/Resteasy/pull/643/commits/23bbef8ff683fa26273f9d3fd9c0c7d578369cd7
