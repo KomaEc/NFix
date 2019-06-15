@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <ant antfile="src/main/ant/alljavacc.xml">
-    <property name="target" value="/home/coma/GSoC/npebugs/pmd-core/target/generated-sources/javacc"/>
-    <property name="javacc.jar" value="${settings.localRepository}/net/java/dev/javacc/javacc/5.0/javacc-5.0.jar"/>
-  </ant>
+  <echo>PMD specific tasks: cleaning generated xdocs</echo>
+  <delete quiet="true">
+    <fileset includes="**/*.xml" dir="${src.xdocs.dir}/rules"/>
+    <fileset includes="mergedruleset.xml" dir="${src.xdocs.dir}/"/>
+  </delete>
 </target>
 </project>

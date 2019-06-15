@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <ant antfile="src/main/ant/alljavacc.xml">
-    <property name="target" value="/home/coma/GSoC/npebugs/pmd-java/target/generated-sources/javacc"/>
-    <property name="javacc.jar" value="${settings.localRepository}/net/java/dev/javacc/javacc/5.0/javacc-5.0.jar"/>
-  </ant>
+  <echo>PMD specific tasks: cleaning generated markdown</echo>
+  <delete quiet="true">
+    <fileset includes="**/*.md" dir="/home/coma/GSoC/npebugs/pmd-1490/src/site/markdown/rules/"/>
+    <fileset includes="mergedruleset.xml" dir="/home/coma/GSoC/npebugs/pmd-1490/src/site/markdown/"/>
+    <fileset includes="site.xml" dir="/home/coma/GSoC/npebugs/pmd-1490/src/site/"/>
+  </delete>
 </target>
 </project>
