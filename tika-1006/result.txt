@@ -1,0 +1,218 @@
+ 0. src/main/java/org/apache/tika/parser/rtf/RTFParser.java:62: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.io.TaggedInputStream` acquired to `tagged` by call to `new()` at line 53 is not released after line 62.
+
+ 1. src/main/java/org/apache/tika/parser/txt/TXTParser.java:94: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 70 is not released after line 94.
+    **Note**: potential exception at line 85
+
+ 2. src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:78: error: RESOURCE_LEAK
+      resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 70 is not released after line 78.
+
+ 3. src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:74: error: RESOURCE_LEAK
+      resource of type `java.io.BufferedInputStream` acquired to `return` by call to `new()` at line 70 is not released after line 74.
+
+ 4. src/main/java/org/apache/tika/parser/html/HtmlParser.java:106: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 74 is not released after line 106.
+
+ 5. src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:96: error: NULL_DEREFERENCE
+      object `reader` last assigned on line 92 could be null and is dereferenced at line 96.
+
+ 6. src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:107: error: RESOURCE_LEAK
+      resource of type `java.io.InputStreamReader` acquired by call to `getReader()` at line 92 is not released after line 107.
+    **Note**: potential exception at line 96
+
+ 7. src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java:162: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.DocumentInputStream` acquired by call to `new()` at line 160 is not released after line 162.
+
+ 8. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:148: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 148 is not released after line 148.
+
+ 9. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:156: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 156 is not released after line 156.
+
+10. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:158: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 158 is not released after line 158.
+
+11. src/main/java/org/apache/tika/parser/video/FLVParser.java:254: error: RESOURCE_LEAK
+      resource of type `java.io.DataInputStream` acquired to `datainput` by call to `new()` at line 168 is not released after line 254.
+
+12. src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java:227: error: RESOURCE_LEAK
+      resource of type `java.io.FileOutputStream` acquired to `output` by call to `FileOutputStream(...)` at line 213 is not released after line 227.
+    **Note**: potential exception at line 225
+
+13. src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291: error: NULL_DEREFERENCE
+      object `flash` last assigned on line 290 could be null and is dereferenced at line 291.
+
+14. src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:411: error: NULL_DEREFERENCE
+      object `keywords` could be null and is dereferenced at line 411.
+
+Choose report to display (default=0): src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291: error: NULL_DEREFERENCE
+  object `flash` last assigned on line 290 could be null and is dereferenced at line 291.
+Showing all 8 steps of the trace
+
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:279:-1: start of procedure handlePhotoTags(...)
+277.            *  TIFF image metadata namespace.
+278.            */       
+279. >         public void handlePhotoTags(Directory directory, Metadata metadata) {
+280.               if(directory.containsTag(ExifSubIFD 0. src/main/java/org/apache/tika/parser/rtf/RTFParser.java:62: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.io.TaggedInputStream` acquired to `tagged` by call to `new()` at line 53 is not released after line 62.
+
+ 1. src/main/java/org/apache/tika/parser/txt/TXTParser.java:94: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 70 is not released after line 94.
+    **Note**: potential exception at line 85
+
+ 2. src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:78: error: RESOURCE_LEAK
+      resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 70 is not released after line 78.
+
+ 3. src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:74: error: RESOURCE_LEAK
+      resource of type `java.io.BufferedInputStream` acquired to `return` by call to `new()` at line 70 is not released after line 74.
+
+ 4. src/main/java/org/apache/tika/parser/html/HtmlParser.java:106: error: RESOURCE_LEAK
+      resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 74 is not released after line 106.
+
+ 5. src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:96: error: NULL_DEREFERENCE
+      object `reader` last assigned on line 92 could be null and is dereferenced at line 96.
+
+ 6. src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:107: error: RESOURCE_LEAK
+      resource of type `java.io.InputStreamReader` acquired by call to `getReader()` at line 92 is not released after line 107.
+    **Note**: potential exception at line 96
+
+ 7. src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java:162: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.DocumentInputStream` acquired by call to `new()` at line 160 is not released after line 162.
+
+ 8. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:148: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 148 is not released after line 148.
+
+ 9. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:156: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 156 is not released after line 156.
+
+10. src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:158: error: RESOURCE_LEAK
+      resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 158 is not released after line 158.
+
+11. src/main/java/org/apache/tika/parser/video/FLVParser.java:254: error: RESOURCE_LEAK
+      resource of type `java.io.DataInputStream` acquired to `datainput` by call to `new()` at line 168 is not released after line 254.
+
+12. src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java:227: error: RESOURCE_LEAK
+      resource of type `java.io.FileOutputStream` acquired to `output` by call to `FileOutputStream(...)` at line 213 is not released after line 227.
+    **Note**: potential exception at line 225
+
+13. src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291: error: NULL_DEREFERENCE
+      object `flash` last assigned on line 290 could be null and is dereferenced at line 291.
+
+14. src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:411: error: NULL_DEREFERENCE
+      object `keywords` could be null and is dereferenced at line 411.
+
+Choose report to display (default=0): src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291: error: NULL_DEREFERENCE
+  object `flash` last assigned on line 290 could be null and is dereferenced at line 291.
+Showing all 8 steps of the trace
+
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:279:-1: start of procedure handlePhotoTags(...)
+277.            *  TIFF image metadata namespace.
+278.            */       
+279. >         public void handlePhotoTags(Directory directory, Metadata metadata) {
+280.               if(directory.containsTag(ExifSubIFDDireDirectory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:280:-1: Taking true branch
+278.            */       
+279.           public void handlePhotoTags(Directory directory, Metadata metadata) {
+280. >             if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282.                  if(exposure instanceof Rational) {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:281:-1: Skipping getObject(...): unknown method
+279.           public void handlePhotoTags(Directory directory, Metadata metadata) {
+280.               if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281. >                Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282.                  if(exposure instanceof Rational) {
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:282:-1: Taking false branch
+280.               if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282. >                if(exposure instanceof Rational) {
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+284.                  } else {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:285:-1: Skipping set(...): unknown method
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+284.                  } else {
+285. >                   metadata.set(Metadata.EXPOSURE_TIME, directory.getString(ExifSubIFDDirectory.TAG_EXPOSURE_TIME));
+286.                  }
+287.               }
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:289:-1: Taking true branch
+287.               }
+288.               
+289. >             if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290.                  String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291.                  if(flash.indexOf("Flash fired") > -1) {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:290:-1: Skipping getDescription(...): unknown method
+288.               
+289.               if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290. >                String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291.                  if(flash.indexOf("Flash fired") > -1) {
+292.                     metadata.set(Metadata.FLASH_FIRED, Boolean.TRUE.toString());
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291:-1: 
+289.               if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290.                  String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291. >                if(flash.indexOf("Flash fired") > -1) {
+292.                     metadata.set(Metadata.FLASH_FIRED, Boolean.TRUE.toString());
+293.                  }
+
+ctory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:280:-1: Taking true branch
+278.            */       
+279.           public void handlePhotoTags(Directory directory, Metadata metadata) {
+280. >             if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282.                  if(exposure instanceof Rational) {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:281:-1: Skipping getObject(...): unknown method
+279.           public void handlePhotoTags(Directory directory, Metadata metadata) {
+280.               if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281. >                Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282.                  if(exposure instanceof Rational) {
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:282:-1: Taking false branch
+280.               if(directory.containsTag(ExifSubIFDDirectory.TAG_EXPOSURE_TIME)) {
+281.                  Object exposure = directory.getObject(ExifSubIFDDirectory.TAG_EXPOSURE_TIME);
+282. >                if(exposure instanceof Rational) {
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+284.                  } else {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:285:-1: Skipping set(...): unknown method
+283.                     metadata.set(Metadata.EXPOSURE_TIME, ((Rational)exposure).doubleValue());
+284.                  } else {
+285. >                   metadata.set(Metadata.EXPOSURE_TIME, directory.getString(ExifSubIFDDirectory.TAG_EXPOSURE_TIME));
+286.                  }
+287.               }
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:289:-1: Taking true branch
+287.               }
+288.               
+289. >             if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290.                  String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291.                  if(flash.indexOf("Flash fired") > -1) {
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:290:-1: Skipping getDescription(...): unknown method
+288.               
+289.               if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290. >                String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291.                  if(flash.indexOf("Flash fired") > -1) {
+292.                     metadata.set(Metadata.FLASH_FIRED, Boolean.TRUE.toString());
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:291:-1: 
+289.               if(directory.containsTag(ExifSubIFDDirectory.TAG_FLASH)) {
+290.                  String flash = directory.getDescription(ExifSubIFDDirectory.TAG_FLASH);
+291. >                if(flash.indexOf("Flash fired") > -1) {
+292.                     metadata.set(Metadata.FLASH_FIRED, Boolean.TRUE.toString());
+293.                  }
+
