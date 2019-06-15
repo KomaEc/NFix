@@ -1,6 +1,5 @@
 all:
-		mvn compile
-
-
+	mvn compile;
+	mvn test-compile
 clean:
-		mvn clean
+	mvn clean

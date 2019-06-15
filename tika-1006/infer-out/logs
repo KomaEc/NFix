@@ -847,3 +847,30 @@ Infer version v0.16.0-7904ca31c
 [17835][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
 [17835][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
 [17835][environment] Infer log identifier is 
+
+[3157][      phase] ============================================================
+[3157][      phase] = New infer execution begins
+[3157][      phase] ============================================================
+[3157][environment] CWD = /home/coma/GSoC/npebugs/tika-1006
+[3157][environment] No .inferconfig file found
+[3157][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
+[3157][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[3157][environment] Infer log identifier is 
+
+[3720][      phase] ============================================================
+[3720][      phase] = New infer execution begins
+[3720][      phase] ============================================================
+[3720][environment] CWD = /home/coma/GSoC/npebugs/tika-1006
+[3720][environment] No .inferconfig file found
+[3720][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
+[3720][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[3720][environment] Infer log identifier is 
+
+[4282][      phase] ============================================================
+[4282][      phase] = New infer execution begins
+[4282][      phase] ============================================================
+[4282][environment] CWD = /home/coma/GSoC/npebugs/tika-1006
+[4282][environment] No .inferconfig file found
+[4282][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
+[4282][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[4282][environment] Infer log identifier is 
