@@ -46,7 +46,6 @@ import org.apache.felix.resolver.test.util.ResourceImpl;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.osgi.framework.Constants;
-import org.osgi.framework.Version;
 import org.osgi.framework.namespace.BundleNamespace;
 import org.osgi.framework.namespace.HostNamespace;
 import org.osgi.framework.namespace.IdentityNamespace;
@@ -58,7 +57,6 @@ import org.osgi.resource.Resource;
 import org.osgi.resource.Wire;
 import org.osgi.resource.Wiring;
 import org.osgi.service.resolver.ResolutionException;
-import org.osgi.service.resolver.ResolveContext;
 import org.osgi.service.resolver.Resolver;
 
 public class ResolverTest
@@ -95,5 +93,5 @@ public class ResolverTest
 
     }
 
-}
 
+}

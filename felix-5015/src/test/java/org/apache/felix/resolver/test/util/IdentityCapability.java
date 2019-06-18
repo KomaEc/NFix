@@ -32,14 +32,14 @@ public class IdentityCapability implements Capability
     private final Map<String, String> m_dirs;
     private final Map<String, Object> m_attrs;
 
-    public IdentityCapability(Resource resource, String name, String type, Version v)
+    public IdentityCapability(Resource resource, String name, String type)
     {
         m_resource = resource;
         m_dirs = new HashMap<String, String>();
         m_attrs = new HashMap<String, Object>();
         m_attrs.put(IdentityNamespace.IDENTITY_NAMESPACE, name);
         m_attrs.put(IdentityNamespace.CAPABILITY_TYPE_ATTRIBUTE, type);
-        m_attrs.put(IdentityNamespace.CAPABILITY_VERSION_ATTRIBUTE, v);
+        m_attrs.put(IdentityNamespace.CAPABILITY_VERSION_ATTRIBUTE, Version.emptyVersion);
     }
 
     public String getNamespace()

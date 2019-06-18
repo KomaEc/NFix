@@ -18,10 +18,7 @@
  */
 package org.apache.felix.resolver.util;
 
-import org.osgi.resource.Requirement;
-
-public class OpenHashMapList extends OpenHashMap<Requirement, CandidateSelector> {
-    private static final long serialVersionUID = 0L;
+public class OpenHashMapList<K, V> extends OpenHashMap<K, CopyOnWriteList<V>> {
 
     public OpenHashMapList() {
         super();
@@ -31,15 +28,21 @@ public class OpenHashMapList extends OpenHashMap<Requirement, CandidateSelector>
         super(initialCapacity);
     }
 
-    public OpenHashMapList deepClone() {
-        OpenHashMapList copy = (OpenHashMapList) super.clone();
+    @SuppressWarnings("unchecked")
+    public OpenHashMapList<K, V> deepClone() {
+        OpenHashMapList<K, V> copy = (OpenHashMapList<K, V>) super.clone();
         Object[] values = copy.value;
         for (int i = values.length; i-- > 0;) {
             if (values[i] != null) {
-                values[i] = ((CandidateSelector) values[i]).copy();
+                values[i] = new CopyOnWriteList<V>((CopyOnWriteList<V>) values[i]);
             }
         }
         return copy;
+    }
+
+    @Override
+    protected CopyOnWriteList<V> compute(K key) {
+        return new CopyOnWriteList<V>();
     }
 
 }

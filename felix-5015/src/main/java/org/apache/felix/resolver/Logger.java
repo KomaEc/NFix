@@ -20,6 +20,8 @@ package org.apache.felix.resolver;
 
 import org.osgi.resource.Resource;
 
+import org.osgi.service.resolver.ResolutionException;
+
 /**
  * <p>
  * This class mimics the standard OSGi <tt>LogService</tt> interface. An
