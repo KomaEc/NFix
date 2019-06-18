@@ -19,9 +19,9 @@
 package org.apache.felix.gogo.runtime;
 
 import java.io.EOFException;
-import org.junit.Test;
 
 import junit.framework.TestCase;
+
 
 /*
  * Test features of the new parser/tokenizer, many of which are not supported
@@ -29,8 +29,33 @@ import junit.framework.TestCase;
  */
 public class TestParser2 extends TestCase
 {
+    public void testComment() throws Exception
+    {
+        Context c = new Context();
+        c.addCommand("echo", this);
 
-    @Test
+        assertEquals("file://wibble#tag", c.execute("echo file://wibble#tag"));
+        assertEquals("file:", c.execute("echo file: //wibble#tag"));
+        
+        assertEquals("PWD/*.java", c.execute("echo PWD/*.java"));
+        try
+        {
+            c.execute("echo PWD /*.java");
+            fail("expected EOFException");
+        }
+        catch (EOFException e)
+        {
+            // expected
+        }
+        
+        assertEquals("ok", c.execute("// can't quote\necho ok\n"));
+        
+        // quote in comment in closure
+        assertEquals("ok", c.execute("x = { // can't quote\necho ok\n}; x"));
+        assertEquals("ok", c.execute("x = {\n// can't quote\necho ok\n}; x"));
+        assertEquals("ok", c.execute("x = {// can't quote\necho ok\n}; x"));
+    }
+
     public void testCoercion() throws Exception
     {
         Context c = new Context();
@@ -38,6 +63,26 @@ public class TestParser2 extends TestCase
 
         // FELIX-2432
         assertEquals("null x", c.execute("echo $expandsToNull x"));
+    }
+
+    public CharSequence echo(Object args[])
+    {
+        if (args == null)
+        {
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Object arg : args)
+        {
+            if (arg != null)
+            {
+                if (sb.length() > 0)
+                    sb.append(' ');
+                sb.append(arg);
+            }
+        }
+        return sb.toString();
     }
 
 }

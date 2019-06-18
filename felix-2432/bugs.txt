@@ -1,3 +1,0 @@
-commit 57b9cbcbb208c51e7dcfeceddb30aca1365e678e
-
-https://github.com/apache/felix/commit/57b9cbcbb208c51e7dcfeceddb30aca1365e678e#diff-6a2b6e48db761e367b6b3d1b40e4f256R173
