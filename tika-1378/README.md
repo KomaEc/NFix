@@ -1,7 +1,9 @@
 # tika-1378
 
 ## Commit
-https://svn.apache.org/viewvc?view=revision&revision=1614488
+65aea2b06b33c6b53999b6c52e017c38bf2af0b4
+
+Parent : ed355dd561963ab4eb6cc9423e4b86e4e817f26e
 
 ## Infer
 Fail to locate
