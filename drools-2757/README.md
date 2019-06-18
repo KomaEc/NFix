@@ -1,5 +1,9 @@
 # drools-2757
 
+## Commit
+3d61812d1ef5b5a7a052c7a5af8e852c871b9458
+parent : c78d397
+
 ## Infer
 Can't find relevant places
 
