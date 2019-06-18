@@ -23,7 +23,7 @@
         <groupId>org.apache.felix</groupId>
         <artifactId>felix-parent</artifactId>
         <version>2.1</version>
-        <!--<relativePath>../pom/pom.xml</relativePath>-->
+        <relativePath>./parent_pom.xml</relativePath>
     </parent>
 
     <artifactId>org.apache.felix.metatype</artifactId>
@@ -34,8 +34,6 @@
         Implementation of the OSGi Metatype Service Specification 1.2
     </description>
     <version>1.0.11-SNAPSHOT</version>
-
-
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -63,7 +61,8 @@
     </scm>
 
     <build>
-        <plugins>
+    <plugins>
+
             <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>          

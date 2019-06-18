@@ -19,49 +19,46 @@
 package org.apache.felix.metatype;
 
 import junit.framework.TestCase;
-import org.junit.Test;
+
 
 /**
  * @author <a href="mailto:dev@felix.apache.org">Felix Project Team</a>
  */
-public class AttributeTest
+public class AttributeTest extends TestCase
 {
 
     /**
      * FELIX-4771 - attributes can be content-less.
      */
-    @Test
     public void testAttributeWithoutContentOk() throws Exception
     {
         Attribute attr = new Attribute();
 
-        assert(attr.getContent() == null);
+        assertNull(attr.getContent());
 
         // Null-values are ignored, so attribute remains empty...
         attr.addContent(null, false);
 
-        assert(attr.getContent() == null);
+        assertNull(attr.getContent());
     }
 
     /**
      * FELIX-4771 - attributes can be content-less.
      */
-    @Test
     public void testAttributeWithNullContentOk() throws Exception
     {
         Attribute attr = new Attribute();
         // Null-values are ignored, so attribute remains empty...
         attr.addContent(null, false);
 
-        assert(attr.getContent() == null);
+        assertNull(attr.getContent());
     }
 
-    @Test
     public void testAttributeWithContentOk() throws Exception
     {
         Attribute attr = new Attribute();
         attr.addContent("foo", false /* split */);
 
-        assert(attr.getContent() != null);
+        assertNotNull(attr.getContent());
     }
 }
