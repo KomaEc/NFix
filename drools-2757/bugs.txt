@@ -1,7 +1,0 @@
-commit 3d61812d1ef5b5a7a052c7a5af8e852c871b9458
-
-https://github.com/kiegroup/drools/commit/3d61812d1ef5b5a7a052c7a5af8e852c871b9458
-
-org.drools.compiler.integrationtests.KieHelloWorldTest.java
-
-org.drools.compiler.kie.builder.impl.AbstractKieProject.java
