@@ -4,7 +4,27 @@
 commit f4c926ea82771de22a32150a8b0b1a502faf34b2
 
 ## VFix
-N/A
+Bugs in side VFix
+```java
+Exception in thread "main" java.lang.ClassCastException: soot.jimple.toolkits.pointer.FullObjectSet cannot be cast to soot.jimple.spark.sets.PointsToSetInternal
+	at corg.vfix.sa.analysis.AliasQuery.getPointsToSet(AliasQuery.java:52)
+	at corg.vfix.sa.analysis.AliasQuery.isAlias(AliasQuery.java:21)
+	at corg.vfix.sa.ddg.DDG.equal(DDG.java:89)
+	at corg.vfix.sa.ddg.DDG.<init>(DDG.java:54)
+	at corg.vfix.sa.vfg.build.reach.IntraReach.immediateReach(IntraReach.java:19)
+	at corg.vfix.sa.vfg.build.IntraVFGConstructor.addSinksEdge(IntraVFGConstructor.java:111)
+	at corg.vfix.sa.vfg.build.IntraVFGConstructor.buildFromCaller(IntraVFGConstructor.java:62)
+	at corg.vfix.sa.vfg.build.InterVFGConstructor.updateSrcAndConnectVFG(InterVFGConstructor.java:141)
+	at corg.vfix.sa.vfg.build.InterVFGConstructor.updateSrcAndSink(InterVFGConstructor.java:170)
+	at corg.vfix.sa.vfg.build.InterVFGConstructor.build(InterVFGConstructor.java:40)
+	at corg.vfix.sa.vfg.build.VFGConstructor.build(VFGConstructor.java:11)
+	at corg.vfix.sa.SAMain.main(SAMain.java:28)
+	at corg.vfix.Main.runOne(Main.java:60)
+	at corg.vfix.Main.runOne(Main.java:38)
+	at corg.vfix.Main.runOne(Main.java:34)
+	at corg.vfix.Main.main(Main.java:28)
+
+```
 
 ## Infer
 Can statically deduce the position of NullPointer dereference, but can't relate to the position of actual repair
