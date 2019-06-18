@@ -1,4 +1,0 @@
-commit 8e2559160447a2bea3f8b50c02a51c2bd9cddd5a
-
-https://github.com/aeshell/aesh/pull/76/commits/8e2559160447a2bea3f8b50c02a51c2bd9cddd5a
-
