@@ -5,6 +5,9 @@
 
 Parent : cf7d7a6
 
+## Infer
+Can't find relevant position
+
 ## Type
 Add Null Check. Return string "null"
 
