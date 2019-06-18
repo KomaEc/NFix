@@ -15,23 +15,21 @@ null check to skip a few lines
 
 ## Patch
 ```diff
-*** src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java	2019-06-18 13:49:27.740938227 +0800
---- origin.txt	2019-06-18 13:49:07.095084869 +0800
-***************
-*** 124,134 ****
---- 124,136 ----
-                  paragraph.getStyleID()
-            );
-  
-+           if (style != null) {
-               TagAndStyle tas = WordExtractor.buildParagraphTagAndStyle(
-                     style.getName(), paragraph.getPartType() == BodyType.TABLECELL
-               );
-               tag = tas.getTag();
-               styleClass = tas.getStyleClass();
-+           }
-         }
-         
-         if(styleClass == null) {
+--- src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java	2019-06-18 13:49:27.740938227 +0800
++++ patch.txt	2019-06-18 13:49:07.095084869 +0800
+@@ -124,11 +124,13 @@
+                 paragraph.getStyleID()
+           );
+ 
++          if (style != null) {
+              TagAndStyle tas = WordExtractor.buildParagraphTagAndStyle(
+                    style.getName(), paragraph.getPartType() == BodyType.TABLECELL
+              );
+              tag = tas.getTag();
+              styleClass = tas.getStyleClass();
++          }
+        }
+        
+        if(styleClass == null) {
 
 ```
