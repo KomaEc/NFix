@@ -14,7 +14,7 @@ Need external source file. (Can't get active body)
 null check to skip a few lines
 
 ## Patch
-```bash
+```diff
 *** src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java	2019-06-18 13:49:27.740938227 +0800
 --- origin.txt	2019-06-18 13:49:07.095084869 +0800
 ***************
