@@ -40,10 +40,6 @@ class ShrinkWrapDirectoryStream implements DirectoryStream<Path> {
 
     private final Path startingPath;
 
-    private boolean closed = false;
-
-    private boolean iteratorReturned = false;
-
     /**
      * Creates a new instance starting from startingPath with is required backing the specified
      * {@link ShrinkWrapFileSystem}, which is required. An optional {@link DirectoryStream.Filter} may be
@@ -76,7 +72,7 @@ class ShrinkWrapDirectoryStream implements DirectoryStream<Path> {
      */
     @Override
     public void close() throws IOException {
-        this.closed = true;
+        // NO-OP
     }
 
     /**
@@ -86,49 +82,34 @@ class ShrinkWrapDirectoryStream implements DirectoryStream<Path> {
      */
     @Override
     public Iterator<Path> iterator() {
-        if (closed) {
-            throw new IllegalStateException("Directory Stream is closed");
-        } else if (iteratorReturned) {
-            throw new IllegalStateException("Iterator was already returned");
-        }
 
-        boolean finishedSuccessfully = true;
-        try {
-            // Translate ShrinkWrap API to NIO.2 API Path
-            final Map<ArchivePath, Node> content = this.fs.getArchive().getContent();
-            final Collection<Path> newPaths = new ArrayList<>(content.size());
-            final Collection<ArchivePath> archivePaths = content.keySet();
-            for (final ArchivePath path : archivePaths) {
-                final Path newPath = new ShrinkWrapPath(path, fs);
+        // Translate ShrinkWrap API to NIO.2 API Path
+        final Map<ArchivePath, Node> content = this.fs.getArchive().getContent();
+        final Collection<Path> newPaths = new ArrayList<>(content.size());
+        final Collection<ArchivePath> archivePaths = content.keySet();
+        for (final ArchivePath path : archivePaths) {
+            final Path newPath = new ShrinkWrapPath(path, fs);
 
-                if (!newPath.getParent().equals(startingPath)) {
+            if (!newPath.getParent().equals(startingPath)) {
+                continue;
+            }
+
+            // If we have a filter, and it rejects this path
+            try {
+                if (filter != null && !(filter.accept(newPath))) {
+                    // Move along
                     continue;
                 }
-
-                // If we have a filter, and it rejects this path
-                try {
-                    if (filter != null && !(filter.accept(newPath))) {
-                        // Move along
-                        continue;
-                    }
-                } catch (IOException ioe) {
-                    throw new RuntimeException("Error encountered during filtering", ioe);
-                }
-
-                // Add the new Path; the filter either wasn't specified or didn't reject this Path
-                newPaths.add(newPath);
+            } catch (IOException ioe) {
+                throw new RuntimeException("Error encountered during filtering", ioe);
             }
 
-            // Return
-            return newPaths.iterator();
-        } catch (Throwable t) {
-            finishedSuccessfully = false;
-            throw t;
-        } finally {
-            if (finishedSuccessfully) {
-                iteratorReturned = true;
-            }
+            // Add the new Path; the filter either wasn't specified or didn't reject this Path
+            newPaths.add(newPath);
         }
+
+        // Return
+        return newPaths.iterator();
     }
 
 }

@@ -35,8 +35,44 @@ import org.junit.Test;
  */
 public class ShrinkWrapFileSystemsTestCase {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void newFileSystemArchiveRequired() throws IOException {
+        ShrinkWrapFileSystems.newFileSystem(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getRootUriArchiveRequired() {
+        ShrinkWrapFileSystems.getRootUri(null);
+    }
 
     @Test
+    public void protocol() {
+        Assert.assertEquals("Protocol is not as expected", "shrinkwrap", ShrinkWrapFileSystems.PROTOCOL);
+    }
+
+    @Test
+    public void fsEnvKeyArchive() {
+        Assert.assertEquals("FS environment key for archives is not as expected", "archive",
+            ShrinkWrapFileSystems.FS_ENV_KEY_ARCHIVE);
+    }
+
+    @Test
+    public void getRootUri() {
+        final GenericArchive archive = ShrinkWrap.create(GenericArchive.class);
+        final URI uri = ShrinkWrapFileSystems.getRootUri(archive);
+        final String expected = "shrinkwrap://" + archive.getId() + "/";
+        Assert.assertEquals("Root URI is not as expected", expected, uri.toString());
+    }
+
+    @Test
+    public void newFileSystem() throws IOException {
+        final GenericArchive archive = ShrinkWrap.create(GenericArchive.class);
+        final ShrinkWrapFileSystem fs = (ShrinkWrapFileSystem) ShrinkWrapFileSystems.newFileSystem(archive);
+        Assert.assertNotNull("Did not obtain a new File System as expected", fs);
+        Assert.assertTrue("Backing archive was not as expected", archive == fs.getArchive());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void noArchiveInEnvShouldResultInIAE() throws Exception {
         FileSystems.newFileSystem(
             ShrinkWrapFileSystems.getRootUri(
