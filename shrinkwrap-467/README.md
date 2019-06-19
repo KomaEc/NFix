@@ -5,6 +5,9 @@
 
 Parent : a59386d71f4465c3a9f186b5399ba23df46263f5
 
+## Infer
+Succeed in localization.
+
 ## Patch
 ```diff
 --- ./src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java	2019-06-19 13:41:14.782685589 +0800
