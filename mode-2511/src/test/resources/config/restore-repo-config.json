@@ -1,0 +1,13 @@
+{
+    "name" : "Restore Repository",
+    "storage" : {
+        "cacheName" : "restoreRepository",
+        "cacheConfiguration" : "config/restore-repo-config-infinispan.xml",
+        "binaryStorage" : {
+            "type" : "file",
+            "directory": "target/backupArea/restoreRepo/binaries",
+            "minimumBinarySizeInBytes" : 40
+        }
+    },
+    "node-types" : ["cnd/cars.cnd"]
+}

@@ -1,0 +1,12 @@
+{
+    "name" : "Clustered Repository",
+    "workspaces" : {
+        "predefined" : ["otherWorkspace"],
+        "default" : "default",
+        "allowCreation" : true
+    },
+    "storage" : {
+        "cacheName" : "repo_cache",
+        "cacheConfiguration" : "config/clustered-repo-config-ispn.xml"
+    }
+}

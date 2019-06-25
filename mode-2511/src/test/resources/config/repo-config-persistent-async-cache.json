@@ -1,0 +1,26 @@
+{
+    "name" : "Persistent Repository",
+    "jndiName" : "java:jcr/local/PersistentRepository",
+    "monitoring" : {
+        "enabled" : true
+    },
+    "storage" : {
+        "cacheName" : "persistentRepository",
+        "cacheConfiguration" : "config/infinispan-persistent-async.xml",
+        "binaryStorage" : {
+            "type" : "file",
+            "directory": "target/persistent_repository/binaries",
+            "minimumBinarySizeInBytes" : 40
+        }
+    },
+    "workspaces" : {
+        "default" : "default",
+        "allowCreation" : true
+    },
+    "security" : {
+        "anonymous" : {
+            "roles" : ["readonly","readwrite","admin"],
+            "useOnFailedLogin" : false
+        }
+    },
+}
