@@ -1,0 +1,24 @@
+--- src/main/java/org/modeshape/jcr/RepositoryNodeTypeManager.java	2019-06-25 16:51:04.953600595 +0800
++++ patch.txt	2019-06-25 16:52:21.530395932 +0800
+@@ -1750,9 +1750,13 @@
+ 
+                 List<JcrNodeType> supertypes = supertypesFor(nodeTypeDefn, typesPendingRegistration);
+                 JcrNodeType nodeType = nodeTypeFrom(nodeTypeDefn, supertypes);
+-                validate(nodeType, supertypes, typesPendingRegistration);
+ 
++                /*
++                 * Add this new node type to the pending registration list first in case it has a child node
++                 * definition that references itself (q.v., MODE-1050).
++                 */
+                 typesPendingRegistration.add(nodeType);
++                validate(nodeType, supertypes, typesPendingRegistration);
+             }
+ 
+             // Make sure the nodes have primary types that are either already registered, or pending registration ...
+@@ -2635,4 +2639,4 @@
+             this.nodeTypeManagerLock.writeLock().unlock();
+         }
+     }
+-}
++}
+\ No newline at end of file
