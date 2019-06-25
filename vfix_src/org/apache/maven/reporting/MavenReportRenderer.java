@@ -1,7 +1,0 @@
-package org.apache.maven.reporting;
-
-public interface MavenReportRenderer {
-   String getTitle();
-
-   void render();
-}

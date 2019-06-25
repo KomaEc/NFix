@@ -1,0 +1,156 @@
+[12953][environment] CWD = /home/coma/GSoC/npebugs/felix-4771
+[12953][environment] No .inferconfig file found
+[12953][environment] Project root = /home/coma/GSoC/npebugs/felix-4771
+[12953][environment] INFER_ARGS =   @/tmp/args.tmp.e254da  ++Contents of '/tmp/args.tmp.e254da':
+[12953][environment]                                         run
+[12953][environment]                                       
+[12953][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[12953][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[12953][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[12953][environment] 
+[12953][   progress] Capturing in maven mode...
+[12953][      debug] Running maven capture:
+[12953][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[13008][environment] CWD = /home/coma/GSoC/npebugs/felix-4771
+[13008][environment] No .inferconfig file found
+[13008][environment] Project root = /home/coma/GSoC/npebugs/felix-4771
+[13008][environment] INFER_ARGS =   @/tmp/args.tmp.f81b75  ++Contents of '/tmp/args.tmp.f81b75':
+[13008][environment]                                         @/tmp/args.tmp.e254da
+[13008][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler6266221601241098480arguments
+[13008][environment]                                         ++Contents of '/tmp/args.tmp.e254da':
+[13008][environment]                                           run
+[13008][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler6266221601241098480arguments':
+[13008][environment]                                           "-d"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/target/classes"
+[13008][environment]                                           "-classpath"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/4.0.0/org.osgi.core-4.0.0.jar:/home/coma/.m2/repository/org/osgi/org.osgi.compendium/4.3.0/org.osgi.compendium-4.3.0.jar:/home/coma/.m2/repository/net/sf/kxml/kxml2/2.2.2/kxml2-2.2.2.jar:/home/coma/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar:"
+[13008][environment]                                           "-sourcepath"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java:/home/coma/GSoC/npebugs/felix-4771/target/generated-sources/annotations:"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ManagedServiceTracker.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/l10n/BundleResources.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ServiceMetaTypeInformation.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/AD.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedObjectClassDefinition.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/MetaDataReader.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedAttributeDefinition.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/Designate.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ManagedServiceHolder.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/OptionalAttributes.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedBase.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/DefaultMetaTypeProvider.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderTracker.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/Attribute.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/MetaData.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/BaseProviderHolder.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/l10n/Resources.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/DesignateObject.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/Activator.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/Main.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeServiceImpl.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/ADValidator.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/OCD.java"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderHolder.java"
+[13008][environment]                                           "-s"
+[13008][environment]                                           "/home/coma/GSoC/npebugs/felix-4771/target/generated-sources/annotations"
+[13008][environment]                                           "-g" "-nowarn" "-target" "1.8"
+[13008][environment]                                           "-source" "1.8" "-encoding" "UTF-8"
+[13008][environment]                                         
+[13008][environment]                                       
+[13008][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[13008][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler6266221601241098480arguments
+[13008][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler6266221601241098480arguments':
+[13008][environment]     "-d" "/home/coma/GSoC/npebugs/felix-4771/target/classes" "-classpath"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/4.0.0/org.osgi.core-4.0.0.jar:/home/coma/.m2/repository/org/osgi/org.osgi.compendium/4.3.0/org.osgi.compendium-4.3.0.jar:/home/coma/.m2/repository/net/sf/kxml/kxml2/2.2.2/kxml2-2.2.2.jar:/home/coma/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar:"
+[13008][environment]     "-sourcepath"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java:/home/coma/GSoC/npebugs/felix-4771/target/generated-sources/annotations:"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ManagedServiceTracker.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/l10n/BundleResources.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ServiceMetaTypeInformation.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/AD.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedObjectClassDefinition.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/MetaDataReader.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedAttributeDefinition.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/Designate.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/ManagedServiceHolder.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/OptionalAttributes.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/LocalizedBase.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/DefaultMetaTypeProvider.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderTracker.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/Attribute.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/MetaData.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/BaseProviderHolder.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/l10n/Resources.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/DesignateObject.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/Activator.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/Main.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeServiceImpl.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/ADValidator.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/OCD.java"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderHolder.java"
+[13008][environment]     "-s"
+[13008][environment]     "/home/coma/GSoC/npebugs/felix-4771/target/generated-sources/annotations"
+[13008][environment]     "-g" "-nowarn" "-target" "1.8" "-source" "1.8" "-encoding" "UTF-8"
+[13008][environment]   
+[13008][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[13008][      debug] Current working directory: '/home/coma/GSoC/npebugs/felix-4771'
+[13008][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler6266221601241098480arguments' '@/tmp/args_.tmp.04c3db' 2>'/tmp/javac.tmp.6aca30.out'
+[13008][      debug] *** Success. Logs:
+[13008][      debug] Translating 25 source files (28 classes)
+[13008][      debug] done capturing all files
+[13008][environment] Infer log identifier is 
+[12953][   progress] Found 25 source files to analyze in /home/coma/GSoC/npebugs/felix-4771/infer-out
+[12953][environment] Parallel jobs: 8
+[13040][   progress] src/main/java/org/apache/felix/metatype/internal/ServiceMetaTypeInformation.java starting
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/l10n/Resources.java starting
+[13039][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderTracker.java starting
+[13042][   progress] src/main/java/Main.java starting
+[13045][   progress] src/main/java/org/apache/felix/metatype/OptionalAttributes.java starting
+[13041][   progress] src/main/java/org/apache/felix/metatype/internal/l10n/BundleResources.java starting
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderHolder.java starting
+[13044][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeServiceImpl.java starting
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/l10n/Resources.java DONE
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/BaseProviderHolder.java starting
+[13045][   progress] src/main/java/org/apache/felix/metatype/OptionalAttributes.java DONE
+[13045][   progress] src/main/java/org/apache/felix/metatype/internal/ManagedServiceTracker.java starting
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/BaseProviderHolder.java DONE
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedObjectClassDefinition.java starting
+[13042][   progress] src/main/java/Main.java DONE
+[13042][   progress] src/main/java/org/apache/felix/metatype/MetaData.java starting
+[13042][   progress] src/main/java/org/apache/felix/metatype/MetaData.java DONE
+[13042][   progress] src/main/java/org/apache/felix/metatype/Designate.java starting
+[13042][   progress] src/main/java/org/apache/felix/metatype/Designate.java DONE
+[13042][   progress] src/main/java/org/apache/felix/metatype/OCD.java starting
+[13042][   progress] src/main/java/org/apache/felix/metatype/OCD.java DONE
+[13042][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedAttributeDefinition.java starting
+[13045][   progress] src/main/java/org/apache/felix/metatype/internal/ManagedServiceTracker.java DONE
+[13045][   progress] src/main/java/org/apache/felix/metatype/AD.java starting
+[13040][   progress] src/main/java/org/apache/felix/metatype/internal/ServiceMetaTypeInformation.java DONE
+[13040][   progress] src/main/java/org/apache/felix/metatype/internal/Activator.java starting
+[13043][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedObjectClassDefinition.java DONE
+[13043][   progress] src/main/java/org/apache/felix/metatype/MetaDataReader.java starting
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderHolder.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedBase.java starting
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedBase.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/Attribute.java starting
+[13046][   progress] src/main/java/org/apache/felix/metatype/Attribute.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/ManagedServiceHolder.java starting
+[13041][   progress] src/main/java/org/apache/felix/metatype/internal/l10n/BundleResources.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/ManagedServiceHolder.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java starting
+[13041][   progress] src/main/java/org/apache/felix/metatype/DefaultMetaTypeProvider.java starting
+[13040][   progress] src/main/java/org/apache/felix/metatype/internal/Activator.java DONE
+[13040][   progress] src/main/java/org/apache/felix/metatype/DesignateObject.java starting
+[13040][   progress] src/main/java/org/apache/felix/metatype/DesignateObject.java DONE
+[13040][   progress] src/main/java/org/apache/felix/metatype/ADValidator.java starting
+[13039][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeProviderTracker.java DONE
+[13040][   progress] src/main/java/org/apache/felix/metatype/ADValidator.java DONE
+[13046][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java DONE
+[13041][   progress] src/main/java/org/apache/felix/metatype/DefaultMetaTypeProvider.java DONE
+[13042][   progress] src/main/java/org/apache/felix/metatype/internal/LocalizedAttributeDefinition.java DONE
+[13045][   progress] src/main/java/org/apache/felix/metatype/AD.java DONE
+[13043][   progress] src/main/java/org/apache/felix/metatype/MetaDataReader.java DONE
+[13044][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeServiceImpl.java DONE

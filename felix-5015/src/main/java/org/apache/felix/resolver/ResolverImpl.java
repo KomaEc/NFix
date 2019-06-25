@@ -1714,7 +1714,7 @@ public class ResolverImpl implements Resolver
         }
     }
 
-    private static Set<Capability> getPackageSources(
+    public static Set<Capability> getPackageSources(
             Capability cap, Map<Resource, Packages> resourcePkgMap)
     {
         return resourcePkgMap.get(cap.getResource()).m_sources.get(cap);

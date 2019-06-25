@@ -12,6 +12,9 @@ Find the position of repair (report as potential null dereference)
 ## Type
 Add null check
 
+## Bad
+NPE position is in another module
+
 ## Patch
 ```diff
 --- src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java	2019-06-18 14:10:01.366977938 +0800

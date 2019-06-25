@@ -20,6 +20,8 @@ package org.apache.felix.metatype;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+
 
 /**
  * @author <a href="mailto:dev@felix.apache.org">Felix Project Team</a>
@@ -30,6 +32,7 @@ public class AttributeTest extends TestCase
     /**
      * FELIX-4771 - attributes can be content-less.
      */
+    @Test
     public void testAttributeWithoutContentOk() throws Exception
     {
         Attribute attr = new Attribute();
@@ -45,6 +48,7 @@ public class AttributeTest extends TestCase
     /**
      * FELIX-4771 - attributes can be content-less.
      */
+    @Test
     public void testAttributeWithNullContentOk() throws Exception
     {
         Attribute attr = new Attribute();

@@ -1,7 +1,296 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a0f477-e63e-4f7a-8ca5-00274bf89df4" name="Default Changelist" comment="" />
+    <list default="true" id="b2a0f477-e63e-4f7a-8ca5-00274bf89df4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/NOTICE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/bugs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/examples/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/examples/src/main/assembly/hadoop-job.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/examples/src/main/java/com/cloudera/crunch/examples/AverageBytesByIP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/examples/src/main/java/com/cloudera/crunch/examples/TotalBytesByIP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/examples/src/main/java/com/cloudera/crunch/examples/WordCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/build.sbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/examples/ClassyPageRank.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/examples/PageRank.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/examples/WordCount.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/scripts/scrunch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/java/com/cloudera/scrunch/ScalaReflectDataFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/java/com/cloudera/scrunch/ScalaSafeReflectData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/java/com/cloudera/scrunch/ScalaSafeReflectDatumReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/java/com/cloudera/scrunch/ScalaSafeReflectDatumWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/Conversions.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/EmbeddedPipeline.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/EmbeddedPipelineLike.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/IO.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/Mem.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PCollection.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PCollectionLike.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PGroupedTable.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PTable.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PTypeFamily.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/Pipeline.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PipelineApp.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/main/scala/com/cloudera/scrunch/PipelineHelper.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/resources/maugham.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/resources/shakes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/resources/urls.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/CogroupTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/JoinTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/PageRankClassTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/PageRankTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/PipelineAppTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/TopTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/UnionTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/scrunch/src/test/scala/com/cloudera/scrunch/WordCountTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/CombineFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/DoFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Emitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/FilterFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/GroupingOptions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/MapFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/PCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/PGroupedTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/PTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Pipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/PipelineResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Source.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/SourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/TableSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Target.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Tuple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Tuple3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/Tuple4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/TupleN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/CompositeMapFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/ExtractKeyFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/IdentityFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/MapKeysFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/MapValuesFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/fn/PairMapFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mem/MemPipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mem/collect/MemCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mem/collect/MemGroupedTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mem/collect/MemTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/MRPipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/DoCollectionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/DoTableImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/InputCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/InputTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/PCollectionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/PGroupedTableImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/PTableBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/UnionCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/collect/UnionTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/emit/IntermediateEmitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/emit/MultipleOutputEmitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/emit/OutputEmitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/exec/CrunchJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/exec/MRExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/DoNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/JobNameBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/JobPrototype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/MSCROutputHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/MSCRPlanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/NodePath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/plan/PlanningParameters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchCombiner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchInputFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchInputSplit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchInputs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchRecordReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchReducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchRuntimeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/CrunchTaskContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/NodeContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/RTNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/RuntimeParameters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/impl/mr/run/TaskAttemptContextFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/At.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/CompositePathIterable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/FileReaderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/From.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/MapReduceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/OutputHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/PathTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/PathTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/ReadableSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/ReadableSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/SourceTargetHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/To.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/avro/AvroFileReaderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/avro/AvroFileSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/avro/AvroFileSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/avro/AvroFileTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/hbase/HBaseSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/hbase/HBaseTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/FileSourceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/FileTableSourceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/FileTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/InputBundle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/ReadableSourcePathTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/ReadableSourceTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/SourcePathTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/SourceTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/TableSourcePathTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/impl/TableSourceTargetImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileReaderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileTableReaderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileTableSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileTableSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/seq/SeqFileTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/BZip2TextInputFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/CBZip2InputStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/TextFileReaderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/TextFileSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/TextFileSourceTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/io/text/TextFileTarget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Aggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Cartesian.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Cogroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Join.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/PTables.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Sample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Set.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/FullOuterJoinFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/InnerJoinFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/JoinFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/JoinUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/LeftOuterJoinFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/lib/join/RightOuterJoinFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/materialize/MaterializableIterable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/test/FileHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/test/InMemoryEmitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/test/TestCounters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/tool/CrunchTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/Converter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/PGroupedTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/PTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/PType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/PTypeFamily.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/PTypeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/TupleFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroGroupedTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroInputFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroKeyConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroOutputFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroPairConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroRecordReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroTypeFamily.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/AvroUtf8InputFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/Avros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/ReflectDataFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/avro/SafeAvroSerialization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/GenericArrayWritable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/TextMapWritable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/TupleWritable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritableGroupedTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritablePairConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritableTableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritableType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritableTypeFamily.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/WritableValueConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/types/writable/Writables.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/util/Collects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/util/DistCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/util/PTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/util/Protos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/com/cloudera/crunch/util/Tuples.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/org/apache/hadoop/mapreduce/lib/jobcontrol/CrunchControlledJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/org/apache/hadoop/mapreduce/lib/jobcontrol/CrunchJobControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/java/org/apache/hadoop/mapreduce/lib/output/CrunchMultipleOutputs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/CollectionsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/CombineFnTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/FilterFnTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/MapsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/MaterializeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/MultipleOutputTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/PCollectionGetSizeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/PTableKeyValueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/PageRankTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/PairTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/TFIDFTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/TermFrequencyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/TextPairTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/TupleNClassCastBugTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/TupleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/WordCountHBaseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/WordCountTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/fn/ExtractKeyFnTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/fn/MapKeysTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/fn/MapValuesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/fn/PairMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/fn/StoreLastEmitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/impl/mr/collect/DoCollectionImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/impl/mr/collect/DoTableImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/impl/mr/collect/UnionCollectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/impl/mr/plan/JobNameBuilderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/io/CompositePathIterableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/io/SourceTargetHelperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/io/avro/AvroFileReaderFactoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/io/avro/AvroFileSourceTargetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/io/avro/AvroFileSourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/AggregateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/AvroIndexedRecordPartitionerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/AvroTypeSortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/CartesianTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/CogroupTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/SampleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/SetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/SortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/SpecificAvroGroupByTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/TupleWritablePartitionerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/FullOuterJoinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/InnerJoinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/JoinTester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/LeftOuterJoinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/MultiAvroSchemaJoinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/lib/join/RightOuterJoinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/test/CountersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/test/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/test/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/types/PTypeUtilsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/types/avro/AvroTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/types/avro/AvrosTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/types/writable/WritablesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/java/com/cloudera/crunch/util/DistCacheTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/docs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/employee.avro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/emptyTextFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/letters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/maugham.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/person.avro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/set1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/set2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/shakes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crunch/src/test/resources/urls.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drools-1064/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-1064/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drools-1064/src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-1064/src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../felix-5015/src/test/java/org/apache/felix/resolver/test/ResolverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../felix-5015/src/test/java/org/apache/felix/resolver/test/ResolverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../math-1117/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../math-1117/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1006/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1006/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1006/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1006/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1006/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1006/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1006/src/test/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1006/src/test/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1378/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1378/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tika-1927/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../tika-1927/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +303,11 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/apache/felix/gogo/runtime/TestParser2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="690">
               <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
             </state>
           </provider>
@@ -27,8 +316,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/felix/gogo/runtime/Reflective.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2407">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="270">
+              <caret line="173" selection-start-line="173" selection-end-line="173" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -37,7 +344,7 @@
         <entry file="file://$PROJECT_DIR$/diff.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -47,7 +354,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="255">
-                <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+                <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               </first_editor>
               <second_editor />
             </state>
@@ -55,6 +362,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -70,17 +380,27 @@
       <select />
     </treeState>
   </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="350" />
-    <option name="y" value="29" />
+    <option name="x" value="274" />
+    <option name="y" value="30" />
     <option name="width" value="1401" />
     <option name="height" value="996" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,35 +423,23 @@
               <item name="org.apache.felix.gogo.runtime" type="b2602c69:ProjectViewProjectNode" />
               <item name="felix-2432" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="org.apache.felix.gogo.runtime" type="b2602c69:ProjectViewProjectNode" />
               <item name="felix-2432" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="felix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="org.apache.felix.gogo.runtime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="felix-2432" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="felix" type="462c0819:PsiDirectoryNode" />
-              <item name="runtime" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -150,7 +458,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestParser2.testCoercion">
+  <component name="RunManager" selected="JUnit.testMain.test">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="org.apache.felix.gogo.runtime" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestParser2.testCoercion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="org.apache.felix.gogo.runtime" />
       <extension name="coverage">
@@ -183,8 +498,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testMain.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="org.apache.felix.gogo.runtime" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testMain" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testMain.test" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestParser2.testCoercion" />
         <item itemvalue="JUnit.TestParser2.testComment" />
       </list>
@@ -201,6 +528,8 @@
       <option name="presentableId" value="Default" />
       <updated>1560847772241</updated>
       <workItem from="1560847780832" duration="535000" />
+      <workItem from="1560859392290" duration="807000" />
+      <workItem from="1560874311595" duration="8000" />
     </task>
     <servers />
   </component>
@@ -211,79 +540,98 @@
     <history-entry file="TestParser2_testCoercion - 2019.06.18 at 16h 53m 19s.xml">
       <configuration name="TestParser2.testCoercion" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestParser2_testCoercion - 2019.06.18 at 20h 04m 28s.xml">
+      <configuration name="TestParser2.testCoercion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testMain_test - 2019.06.18 at 20h 12m 35s.xml">
+      <configuration name="testMain.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="535000" />
+    <option name="totallyTimeSpent" value="1350000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="350" y="29" width="1401" height="996" extended-state="0" />
-    <editor active="true" />
+    <frame x="274" y="30" width="1401" height="996" extended-state="0" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494465" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25682658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Tool Output" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32911393" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="ANTLR Preview" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32871974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" weight="0.3298893" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32871974" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3298893" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/apache/felix/gogo/runtime/TestParser2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/apache/felix/gogo/runtime/TestParser2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/diff.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="255">
+            <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/felix/gogo/runtime/Reflective.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2407">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="270">
+          <caret line="173" selection-start-line="173" selection-end-line="173" />
         </state>
       </provider>
     </entry>

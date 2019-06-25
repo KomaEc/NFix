@@ -1,0 +1,216 @@
+[18757][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[18757][environment] No .inferconfig file found
+[18757][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[18757][environment] INFER_ARGS =   @/tmp/args.tmp.d7930b  ++Contents of '/tmp/args.tmp.d7930b':
+[18757][environment]                                         run
+[18757][environment]                                       
+[18757][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[18757][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[18757][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[18757][environment] 
+[18757][   progress] Capturing in maven mode...
+[18757][      debug] Running maven capture:
+[18757][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[18806][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[18806][environment] No .inferconfig file found
+[18806][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[18806][environment] INFER_ARGS =   @/tmp/args.tmp.1024c4  ++Contents of '/tmp/args.tmp.1024c4':
+[18806][environment]                                         @/tmp/args.tmp.d7930b
+[18806][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler546194116829336760arguments
+[18806][environment]                                         ++Contents of '/tmp/args.tmp.d7930b':
+[18806][environment]                                           run
+[18806][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler546194116829336760arguments':
+[18806][environment]                                           "-d"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/target/classes"
+[18806][environment]                                           "-classpath"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar:"
+[18806][environment]                                           "-sourcepath"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java:/home/coma/GSoC/npebugs/felix-5015/target/generated-sources/annotations:"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Candidates.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/ResolutionException.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/CopyOnWriteSet.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WireImpl.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedRequirement.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Util.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/CopyOnWriteList.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/Resolver.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMapSet.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/SimpleHostedCapability.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Logger.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/ArrayMap.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedResource.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Activator.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/ResolverImpl.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMapList.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/ResolutionError.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/HostedCapability.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/FelixResolveContext.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMap.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedCapability.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/ShadowList.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/ResolveContext.java"
+[18806][environment]                                           "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/package-info.java"
+[18806][environment]                                           "-g" "-nowarn" "-target" "1.5"
+[18806][environment]                                           "-source" "1.5" "-encoding" "UTF-8"
+[18806][environment]                                         
+[18806][environment]                                       
+[18806][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[18806][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler546194116829336760arguments
+[18806][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler546194116829336760arguments':
+[18806][environment]     "-d" "/home/coma/GSoC/npebugs/felix-5015/target/classes" "-classpath"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar:"
+[18806][environment]     "-sourcepath"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java:/home/coma/GSoC/npebugs/felix-5015/target/generated-sources/annotations:"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Candidates.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/ResolutionException.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/CopyOnWriteSet.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WireImpl.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedRequirement.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Util.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/CopyOnWriteList.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/Resolver.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMapSet.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/SimpleHostedCapability.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Logger.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/ArrayMap.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedResource.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/Activator.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/ResolverImpl.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMapList.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/ResolutionError.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/HostedCapability.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/FelixResolveContext.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/OpenHashMap.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/WrappedCapability.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/apache/felix/resolver/util/ShadowList.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/ResolveContext.java"
+[18806][environment]     "/home/coma/GSoC/npebugs/felix-5015/src/main/java/org/osgi/service/resolver/package-info.java"
+[18806][environment]     "-g" "-nowarn" "-target" "1.5" "-source" "1.5" "-encoding" "UTF-8"
+[18806][environment]   
+[18806][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[18806][      debug] Current working directory: '/home/coma/GSoC/npebugs/felix-5015'
+[18806][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler546194116829336760arguments' '@/tmp/args_.tmp.00dd4b' 2>'/tmp/javac.tmp.8f5750.out'
+[18806][      debug] *** Success. Logs:
+[18806][      debug] Translating 24 source files (68 classes)
+[18806][      debug] done capturing all files
+[18806][environment] Infer log identifier is 
+[18757][   progress] Found 24 source files to analyze in /home/coma/GSoC/npebugs/felix-5015/infer-out
+[18757][environment] Parallel jobs: 8
+[18840][   progress] src/main/java/org/osgi/service/resolver/Resolver.java starting
+[18837][   progress] src/main/java/org/apache/felix/resolver/util/ShadowList.java starting
+[18841][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMap.java starting
+[18843][   progress] src/main/java/org/apache/felix/resolver/util/CopyOnWriteSet.java starting
+[18842][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMapSet.java starting
+[18840][   progress] src/main/java/org/osgi/service/resolver/Resolver.java DONE
+[18844][   progress] src/main/java/org/apache/felix/resolver/util/CopyOnWriteList.java starting
+[18838][   progress] src/main/java/org/apache/felix/resolver/WrappedResource.java starting
+[18840][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMapList.java starting
+[18839][   progress] src/main/java/org/apache/felix/resolver/Util.java starting
+[18837][   progress] src/main/java/org/apache/felix/resolver/util/ShadowList.java DONE
+[18837][   progress] src/main/java/org/apache/felix/resolver/WrappedCapability.java starting
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18843][      debug] 
+[18843][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18837][   progress] src/main/java/org/apache/felix/resolver/WrappedCapability.java DONE
+[18837][   progress] src/main/java/org/apache/felix/resolver/Logger.java starting
+[18838][   progress] src/main/java/org/apache/felix/resolver/WrappedResource.java DONE
+[18838][   progress] src/main/java/org/osgi/service/resolver/ResolutionException.java starting
+[18838][   progress] src/main/java/org/osgi/service/resolver/ResolutionException.java DONE
+[18838][   progress] src/main/java/org/apache/felix/resolver/ResolutionError.java starting
+[18838][   progress] src/main/java/org/apache/felix/resolver/ResolutionError.java DONE
+[18838][   progress] src/main/java/org/apache/felix/resolver/Activator.java starting
+[18838][   progress] src/main/java/org/apache/felix/resolver/Activator.java DONE
+[18838][   progress] src/main/java/org/apache/felix/resolver/util/ArrayMap.java starting
+[18842][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMapSet.java DONE
+[18842][   progress] src/main/java/org/osgi/service/resolver/ResolveContext.java starting
+[18842][   progress] src/main/java/org/osgi/service/resolver/ResolveContext.java DONE
+[18842][   progress] src/main/java/org/apache/felix/resolver/ResolverImpl.java starting
+[18839][   progress] src/main/java/org/apache/felix/resolver/Util.java DONE
+[18839][   progress] src/main/java/org/apache/felix/resolver/SimpleHostedCapability.java starting
+[18839][   progress] src/main/java/org/apache/felix/resolver/SimpleHostedCapability.java DONE
+[18839][   progress] src/main/java/org/osgi/service/resolver/package-info.java starting
+[18839][   progress] src/main/java/org/osgi/service/resolver/package-info.java DONE
+[18839][   progress] src/main/java/org/apache/felix/resolver/FelixResolveContext.java starting
+[18839][   progress] src/main/java/org/apache/felix/resolver/FelixResolveContext.java DONE
+[18839][   progress] src/main/java/org/osgi/service/resolver/HostedCapability.java starting
+[18839][   progress] src/main/java/org/osgi/service/resolver/HostedCapability.java DONE
+[18839][   progress] src/main/java/org/apache/felix/resolver/WrappedRequirement.java starting
+[18840][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMapList.java DONE
+[18840][   progress] src/main/java/org/apache/felix/resolver/Candidates.java starting
+[18839][   progress] src/main/java/org/apache/felix/resolver/WrappedRequirement.java DONE
+[18839][   progress] src/main/java/org/apache/felix/resolver/WireImpl.java starting
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18844][      debug] 
+[18844][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.NegativeArraySizeException
+[18837][   progress] src/main/java/org/apache/felix/resolver/Logger.java DONE
+[18838][   progress] src/main/java/org/apache/felix/resolver/util/ArrayMap.java DONE
+[18839][   progress] src/main/java/org/apache/felix/resolver/WireImpl.java DONE
+[18843][   progress] src/main/java/org/apache/felix/resolver/util/CopyOnWriteSet.java DONE
+[18844][   progress] src/main/java/org/apache/felix/resolver/util/CopyOnWriteList.java DONE
+[18841][   progress] src/main/java/org/apache/felix/resolver/util/OpenHashMap.java DONE
+[18840][   progress] src/main/java/org/apache/felix/resolver/Candidates.java DONE
+[18842][   progress] src/main/java/org/apache/felix/resolver/ResolverImpl.java DONE
+
+[18905][      phase] ============================================================
+[18905][      phase] = New infer execution begins
+[18905][      phase] ============================================================
+[18905][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[18905][environment] No .inferconfig file found
+[18905][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[18905][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[18905][environment] Infer log identifier is 
+
+[19007][      phase] ============================================================
+[19007][      phase] = New infer execution begins
+[19007][      phase] ============================================================
+[19007][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[19007][environment] No .inferconfig file found
+[19007][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[19007][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[19007][environment] Infer log identifier is 
+
+[19056][      phase] ============================================================
+[19056][      phase] = New infer execution begins
+[19056][      phase] ============================================================
+[19056][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[19056][environment] No .inferconfig file found
+[19056][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[19056][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[19056][environment] Infer log identifier is 
+
+[22841][      phase] ============================================================
+[22841][      phase] = New infer execution begins
+[22841][      phase] ============================================================
+[22841][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[22841][environment] No .inferconfig file found
+[22841][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[22841][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[22841][environment] Infer log identifier is 

@@ -1,0 +1,100 @@
+[24437][environment] CWD = /home/coma/GSoC/npebugs/shrinkwrap-467
+[24437][environment] No .inferconfig file found
+[24437][environment] Project root = /home/coma/GSoC/npebugs/shrinkwrap-467
+[24437][environment] INFER_ARGS =   @/tmp/args.tmp.d14a98  ++Contents of '/tmp/args.tmp.d14a98':
+[24437][environment]                                         run
+[24437][environment]                                       
+[24437][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[24437][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[24437][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[24437][environment] 
+[24437][   progress] Capturing in maven mode...
+[24437][      debug] Running maven capture:
+[24437][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[24485][environment] CWD = /home/coma/GSoC/npebugs/shrinkwrap-467
+[24485][environment] No .inferconfig file found
+[24485][environment] Project root = /home/coma/GSoC/npebugs/shrinkwrap-467
+[24485][environment] INFER_ARGS =   @/tmp/args.tmp.a02bbc  ++Contents of '/tmp/args.tmp.a02bbc':
+[24485][environment]                                         @/tmp/args.tmp.d14a98
+[24485][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4992753870812263299arguments
+[24485][environment]                                         ++Contents of '/tmp/args.tmp.d14a98':
+[24485][environment]                                           run
+[24485][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4992753870812263299arguments':
+[24485][environment]                                           "-d"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/target/classes"
+[24485][environment]                                           "-classpath"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/target/classes:/home/coma/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api-nio2/1.2.1/shrinkwrap-api-nio2-1.2.1.jar:/home/coma/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api/1.2.1/shrinkwrap-api-1.2.1.jar:"
+[24485][environment]                                           "-sourcepath"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java:/home/coma/GSoC/npebugs/shrinkwrap-467/target/generated-sources/annotations:"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributeView.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileChannel.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapDirectoryStream.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributes.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapPath.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystem.java"
+[24485][environment]                                           "-s"
+[24485][environment]                                           "/home/coma/GSoC/npebugs/shrinkwrap-467/target/generated-sources/annotations"
+[24485][environment]                                           "-O" "-g" "-deprecation" "-target"
+[24485][environment]                                           "1.8" "-source" "1.8" "-encoding"
+[24485][environment]                                           "UTF-8" "-source" "1.8" "-target"
+[24485][environment]                                           "1.8"
+[24485][environment]                                         
+[24485][environment]                                       
+[24485][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[24485][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4992753870812263299arguments
+[24485][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4992753870812263299arguments':
+[24485][environment]     "-d" "/home/coma/GSoC/npebugs/shrinkwrap-467/target/classes" "-classpath"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/target/classes:/home/coma/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api-nio2/1.2.1/shrinkwrap-api-nio2-1.2.1.jar:/home/coma/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api/1.2.1/shrinkwrap-api-1.2.1.jar:"
+[24485][environment]     "-sourcepath"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java:/home/coma/GSoC/npebugs/shrinkwrap-467/target/generated-sources/annotations:"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributeView.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileChannel.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapDirectoryStream.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributes.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapPath.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystem.java"
+[24485][environment]     "-s"
+[24485][environment]     "/home/coma/GSoC/npebugs/shrinkwrap-467/target/generated-sources/annotations"
+[24485][environment]     "-O" "-g" "-deprecation" "-target" "1.8" "-source" "1.8" "-encoding"
+[24485][environment]     "UTF-8" "-source" "1.8" "-target" "1.8"
+[24485][environment]   
+[24485][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[24485][      debug] Current working directory: '/home/coma/GSoC/npebugs/shrinkwrap-467'
+[24485][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4992753870812263299arguments' '@/tmp/args_.tmp.cd70d4' 2>'/tmp/javac.tmp.67926b.out'
+[24485][      debug] *** Success. Logs:
+[24485][      debug] Translating 8 source files (9 classes)
+[24485][      debug] done capturing all files
+[24485][environment] Infer log identifier is 
+[24437][   progress] Found 8 source files to analyze in /home/coma/GSoC/npebugs/shrinkwrap-467/infer-out
+[24437][environment] Parallel jobs: 8
+[24516][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapPath.java starting
+[24519][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributeView.java starting
+[24515][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileChannel.java starting
+[24521][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributes.java starting
+[24517][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java starting
+[24520][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapDirectoryStream.java starting
+[24518][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystem.java starting
+[24522][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java starting
+[24519][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributeView.java DONE
+[24515][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileChannel.java DONE
+[24518][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystem.java DONE
+[24521][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileAttributes.java DONE
+[24520][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapDirectoryStream.java DONE
+[24517][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java DONE
+[24522][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java DONE
+[24516][   progress] src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapPath.java DONE
+
+[25072][      phase] ============================================================
+[25072][      phase] = New infer execution begins
+[25072][      phase] ============================================================
+[25072][environment] CWD = /home/coma/GSoC/npebugs/shrinkwrap-467
+[25072][environment] No .inferconfig file found
+[25072][environment] Project root = /home/coma/GSoC/npebugs/shrinkwrap-467
+[25072][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[25072][environment] Infer log identifier is 

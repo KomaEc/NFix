@@ -1,0 +1,444 @@
+Found 53 issues
+
+src/main/java/org/apache/tika/parser/envi/EnviHeaderParser.java:82: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 61 is not released after line 82.
+**Note**: potential exception at line 75
+  80.   
+  81.               xhtml.endDocument();
+  82. >         }
+  83.       }
+  84.   }
+
+src/main/java/org/apache/tika/parser/microsoft/HSLFExtractor.java:193: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hslf.usermodel.HSLFSlideShow` acquired by call to `new()` at line 61 is not released after line 193.
+  191.           }
+  192.   
+  193. >         handleSlideEmbeddedPictures(ss, xhtml);
+  194.   
+  195.           xhtml.endElement("div");
+
+src/main/java/org/apache/tika/parser/txt/TXTParser.java:95: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 74 is not released after line 95.
+**Note**: potential exception at line 87
+  93.   
+  94.               xhtml.endDocument();
+  95. >         }
+  96.       }
+  97.   
+
+src/main/java/org/apache/tika/parser/rtf/RTFObjDataParser.java:104: error: NULL_DEREFERENCE
+  object `className` last assigned on line 85 could be null and is dereferenced at line 104.
+  102.           byte[] embObjBytes = readBytes(is, dataSz);
+  103.   
+  104. >         if (className.toLowerCase(Locale.ROOT).equals("package")) {
+  105.               return handlePackage(embObjBytes, metadata);
+  106.           } else if (className.toLowerCase(Locale.ROOT).equals("pbrush")) {
+
+src/main/java/org/apache/tika/parser/rtf/RTFParser.java:92: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.io.input.TaggedInputStream` acquired to `tagged` by call to `new()` at line 82 is not released after line 92.
+  90.               throw new TikaException("Error parsing an RTF document", e);
+  91.           }
+  92. >     }
+  93.   }
+
+src/main/java/org/apache/tika/parser/utils/CommonsDigester.java:106: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.parser.utils.CommonsDigester$SimpleBoundedInputStream` acquired by call to `new()` at line 96 is not released after line 106.
+  104.               }
+  105.           }
+  106. >         if (!finishedStream) {
+  107.               digestFile(((TikaInputStream)tis).getFile(), m);
+  108.           }
+
+src/main/java/org/apache/tika/parser/utils/CommonsDigester.java:107: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.parser.utils.CommonsDigester$SimpleBoundedInputStream` acquired by call to `new()` at line 96 is not released after line 107.
+  105.           }
+  106.           if (!finishedStream) {
+  107. >             digestFile(((TikaInputStream)tis).getFile(), m);
+  108.           }
+  109.       }
+
+src/main/java/org/apache/tika/parser/microsoft/OldExcelParser.java:95: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hssf.extractor.OldExcelExtractor` acquired by call to `new()` at line 85 is not released after line 95.
+**Note**: potential exception at line 95
+  93.           // Have the text extracted and given to our Content Handler
+  94.           XHTMLContentHandler xhtml = new XHTMLContentHandler(handler, metadata);
+  95. >         parse(extractor, xhtml);
+  96.       }
+  97.   }
+
+src/main/java/org/apache/tika/parser/pdf/PDFEncodedStringDecoder.java:86: error: RESOURCE_LEAK
+  resource of type `org.apache.pdfbox.io.RandomAccessBuffer` acquired by call to `new()` at line 86 is not released after line 86.
+  84.               byte[] bytes = new String("(" + value + ")").getBytes(ISO_8859_1);
+  85.               InputStream is = new ByteArrayInputStream(bytes);
+  86. >             COSStringParser p = new COSStringParser(new RandomAccessBuffer(is));
+  87.               String parsed = p.myParseCOSString();
+  88.               if (parsed != null) {
+
+src/main/java/org/apache/tika/parser/code/SourceCodeParser.java:120: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.detect.AutoDetectReader` acquired by call to `new()` at line 88 is not released after line 120.
+  118.           parser.parse(new InputSource(new StringReader(codeAsHtml)));
+  119.         }
+  120. >     }
+  121.   
+  122.     }
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:99: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 99 is not released after line 99.
+  97.           TikaInputStream tstream = TikaInputStream.cast(stream);
+  98.           if (tstream == null) {
+  99. >             root = new NPOIFSFileSystem(new CloseShieldInputStream(stream)).getRoot();
+  100.           } else {
+  101.               final Object container = tstream.getOpenContainer();
+
+src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:103: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 95 is not released after line 103.
+  101.           //TODO Inspect "begin" attribute!
+  102.           if (!skipAfter(in, PACKET_HEADER_END)) {
+  103. >             throw new IOException("Invalid XMP packet header!");
+  104.           }
+  105.           //TODO Do with TeeInputStream when Commons IO 1.4 is available
+
+src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java:99: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired to `return` by call to `new()` at line 95 is not released after line 99.
+  97.           boolean foundXMP = skipAfter(in, PACKET_HEADER);
+  98.           if (!foundXMP) {
+  99. >             return false;
+  100.           }
+  101.           //TODO Inspect "begin" attribute!
+
+src/main/java/org/apache/tika/parser/pdf/PDFParser.java:116: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.io.TemporaryResources` acquired by call to `new()` at line 116 is not released after line 116.
+  114.   
+  115.           PDDocument pdfDocument = null;
+  116. >         TemporaryResources tmp = new TemporaryResources();
+  117.           //config from context, or default if not set via context
+  118.           PDFParserConfig localConfig = context.get(PDFParserConfig.class, defaultConfig);
+
+src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java:144: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired by call to `FileInputStream(...)` at line 138 is not released after line 144.
+**Note**: potential exception at line 144
+  142.         extractHeaderOutput(ogStream, metadata, "og");
+  143.         xhtml.startDocument();
+  144. >       doExtract(ofStream, xhtml, "Histogram of Optical Flows (HOF)",
+  145.             metadata.get("of_frames"), metadata.get("of_vecSize"));
+  146.         doExtract(ogStream, xhtml, "Histogram of Oriented Gradients (HOG)",
+
+src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java:151: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired to `ofStream` by call to `FileInputStream(...)` at line 138 is not released after line 151.
+**Note**: potential exception at line 140
+  149.   
+  150.       } finally {
+  151. >       tmp.dispose();
+  152.         if (output != null) {
+  153.           output.delete();
+
+src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java:151: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired to `ogStream` by call to `FileInputStream(...)` at line 140 is not released after line 151.
+**Note**: potential exception at line 141
+  149.   
+  150.       } finally {
+  151. >       tmp.dispose();
+  152.         if (output != null) {
+  153.           output.delete();
+
+src/main/java/org/apache/tika/parser/strings/StringsParser.java:135: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.name")` could be null and is dereferenced at line 135.
+  133.   
+  134.   			// Check if the -e option (encoding) is supported
+  135. > 			if (!System.getProperty("os.name").startsWith("Windows")) {
+  136.   				String[] checkOpt = {stringsProg, "-e", "" + config.getEncoding().get(), "/dev/null"};
+  137.   				int[] errorValues = {1, 2}; // Exit status code: 1 = general error; 2 = incorrect usage.
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:162: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hdgf.extractor.VisioTextExtractor` acquired by call to `new()` at line 160 is not released after line 162.
+  160.                   VisioTextExtractor visioTextExtractor =
+  161.                           new VisioTextExtractor(root);
+  162. >                 for (String text : visioTextExtractor.getAllText()) {
+  163.                       xhtml.element("p", text);
+  164.                   }
+
+src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java:143: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hpbf.extractor.PublisherTextExtractor` acquired by call to `new()` at line 141 is not released after line 143.
+  141.                   PublisherTextExtractor publisherTextExtractor =
+  142.                           new PublisherTextExtractor(root);
+  143. >                 xhtml.element("p", publisherTextExtractor.getText());
+  144.                   break;
+  145.               case WORDDOCUMENT:
+
+src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java:147: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.io.TemporaryResources` acquired by call to `new()` at line 133 is not released after line 147.
+**Note**: potential exception at line 141
+  145.   
+  146.           } finally {
+  147. >             tmp.dispose();
+  148.               if (tis != null)
+  149.                   tis.close();
+
+src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java:185: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hwpf.extractor.WordExtractor` acquired by call to `new()` at line 149 is not released after line 185.
+  183.           }
+  184.   
+  185. >         for (String paragraph : wordExtractor.getEndnoteText()) {
+  186.               xhtml.element("p", paragraph);
+  187.           }
+
+src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:153: error: NULL_DEREFERENCE
+  object `reader` last assigned on line 149 could be null and is dereferenced at line 153.
+  151.               int bytesRead = 0;
+  152.   
+  153. >             while ((bytesRead = reader.read(buffer, 0, Math.min(max, 1024))) >= 0) {
+  154.                   sb.append(buffer, 0, bytesRead);
+  155.                   max -= bytesRead;
+
+src/main/java/org/apache/tika/parser/txt/CharsetMatch.java:164: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `getReader()` at line 149 is not released after line 164.
+**Note**: potential exception at line 153
+  162.               result = new String(fRawInput, getName());
+  163.           }
+  164. >         return result;
+  165.   
+  166.       }
+
+src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java:206: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.DocumentInputStream` acquired by call to `new()` at line 204 is not released after line 206.
+  204.                       DocumentInputStream inp = new DocumentInputStream(contentsEntry);
+  205.                       byte[] contents = new byte[contentsEntry.getSize()];
+  206. >                     inp.readFully(contents);
+  207.                       embedded = TikaInputStream.get(contents);
+  208.   
+
+src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java:185: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired by call to `FileInputStream(...)` at line 185 is not released after line 185.
+  183.   
+  184.                   if (output.exists())
+  185. >                     extractOutput(new FileInputStream(output), xhtml);
+  186.   
+  187.               }
+
+src/main/java/org/apache/tika/parser/iwork/IWorkPackageParser.java:217: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.compress.archivers.zip.ZipArchiveInputStream` acquired by call to `new()` at line 167 is not released after line 217.
+  215.           }
+  216.           // Don't close the zip InputStream (TIKA-1117).
+  217. >     }
+  218.   
+  219.   }
+
+src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java:211: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.io.TailStream` acquired by call to `new()` at line 174 is not released after line 211.
+  209.          // Lyrics live just before ID3v1, at the end of the file
+  210.          // Search for both (handlers seek to the end for us)
+  211. >        lyrics = new LyricsHandler(tailStream.getTail());
+  212.          v1 = lyrics.id3v1;
+  213.   
+
+src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java:211: error: RESOURCE_LEAK
+  resource of type `org.apache.tika.parser.mp3.MpegStream` acquired by call to `MpegStream(...)` at line 175 is not released after line 211.
+  209.          // Lyrics live just before ID3v1, at the end of the file
+  210.          // Search for both (handlers seek to the end for us)
+  211. >        lyrics = new LyricsHandler(tailStream.getTail());
+  212.          v1 = lyrics.id3v1;
+  213.   
+
+src/main/java/org/apache/tika/parser/video/FLVParser.java:259: error: RESOURCE_LEAK
+  resource of type `java.io.DataInputStream` acquired to `datainput` by call to `new()` at line 170 is not released after line 259.
+  257.   
+  258.               sizePrev = readUInt32(datainput); // previous block size
+  259. >             if (sizePrev != datalen + 11) {
+  260.                   // file was corrupt or we could not parse it...
+  261.                   break;
+
+src/main/java/org/apache/tika/parser/pdf/PDFParser.java:222: error: NULL_DEREFERENCE
+  object `dcSchema` last assigned on line 209 could be null and is dereferenced by call to `extractDublinCoreListItems(...)` at line 222.
+  220.           metadata.set(PagedText.N_PAGES, document.getNumberOfPages());
+  221.           extractMultilingualItems(metadata, TikaCoreProperties.TITLE, info.getTitle(), dcSchema);
+  222. >         extractDublinCoreListItems(metadata, TikaCoreProperties.CREATOR, info.getAuthor(), dcSchema);
+  223.           extractDublinCoreListItems(metadata, TikaCoreProperties.CONTRIBUTOR, null, dcSchema);
+  224.           addMetadata(metadata, TikaCoreProperties.CREATOR_TOOL, info.getCreator());
+
+src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java:221: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 200 is not released after line 221.
+**Note**: potential exception at line 211
+  219.       }
+  220.       xhtml.endElement("table");
+  221. >   }
+  222.   
+  223.     private void extractHeaderOutput(InputStream stream, Metadata metadata,
+
+src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java:225: error: RESOURCE_LEAK
+  resource of type `java.io.FileOutputStream` acquired to `output` by call to `FileOutputStream(...)` at line 212 is not released after line 225.
+**Note**: potential exception at line 223
+  223.                           output.flush();
+  224.                           output.close();
+  225. >                     } catch (IOException e) {
+  226.                           e.printStackTrace();
+  227.                       }
+
+src/main/java/org/apache/tika/parser/geoinfo/GeographicInformationParser.java:228: error: NULL_DEREFERENCE
+  object returned by `i.getCitation()` could be null and is dereferenced at line 228.
+  226.                   metadata.add("IdentificationInfoCitationTitle ",i.getCitation().getTitle().toString());
+  227.   
+  228. >             ArrayList<CitationDate> dateArrayList= (ArrayList<CitationDate>) i.getCitation().getDates();
+  229.               for (CitationDate d:dateArrayList){
+  230.                   if(d.getDateType()!=null)
+
+src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java:227: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 225 is not released after line 227.
+  225.       BufferedReader reader = new BufferedReader(new InputStreamReader(stream,
+  226.           UTF_8));
+  227. >     String line = reader.readLine();
+  228.       String[] firstLine = line.split(" ");
+  229.       String frames = firstLine[0];
+
+src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java:240: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.xslf.usermodel.XSLFSlideShow` acquired to `document` by call to `new()` at line 234 is not released after line 240.
+  238.   
+  239.           CTSlideIdList ctSlideIdList = document.getSlideReferences();
+  240. >         if (ctSlideIdList != null) {
+  241.               for (int i = 0; i < ctSlideIdList.sizeOfSldIdArray(); i++) {
+  242.                   CTSlideIdListEntry ctSlide = ctSlideIdList.getSldIdArray(i);
+
+src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java:241: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.xslf.usermodel.XSLFSlideShow` acquired to `document` by call to `new()` at line 234 is not released after line 241.
+  239.           CTSlideIdList ctSlideIdList = document.getSlideReferences();
+  240.           if (ctSlideIdList != null) {
+  241. >             for (int i = 0; i < ctSlideIdList.sizeOfSldIdArray(); i++) {
+  242.                   CTSlideIdListEntry ctSlide = ctSlideIdList.getSldIdArray(i);
+  243.                   // Add the slide
+
+src/main/java/org/apache/tika/parser/gdal/GDALParser.java:321: error: RESOURCE_LEAK
+  resource of type `java.util.Scanner` acquired by call to `new()` at line 296 is not released after line 321.
+  319.   
+  320.           }
+  321. >     }
+  322.   
+  323.       private boolean hasHeadings(String line, String[] headings) {
+
+src/main/java/org/apache/tika/parser/mp3/MpegStream.java:329: error: NULL_DEREFERENCE
+  object `arr` last assigned on line 301 could be null and is dereferenced at line 329.
+  327.               }
+  328.           }
+  329. >         return arr[code];
+  330.       }
+  331.   
+
+src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java:313: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 307 is not released after line 313.
+**Note**: potential exception at line 311
+  311.                       for (int n = reader.read(buffer); n != -1; n = reader.read(buffer))
+  312.                           out.append(buffer, 0, n);
+  313. >                 } catch (IOException e) {
+  314.   
+  315.                   } finally {
+
+src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java:316: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 307 is not released after line 316.
+  314.   
+  315.                   } finally {
+  316. >                     IOUtils.closeQuietly(stream);
+  317.                   }
+  318.   
+
+src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java:326: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.name")` could be null and is dereferenced at line 326.
+  324.   
+  325.       static String getTesseractProg() {
+  326. >         return System.getProperty("os.name").startsWith("Windows") ? "tesseract.exe" : "tesseract";
+  327.       }
+  328.   
+
+src/main/java/org/apache/tika/parser/microsoft/JackcessExtractor.java:328: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.poifs.filesystem.NPOIFSFileSystem` acquired by call to `new()` at line 327 is not released after line 328.
+  326.       private void handleCompoundContent(OleBlob.CompoundContent cc, XHTMLContentHandler xhtml) throws IOException, SAXException, TikaException {
+  327.           NPOIFSFileSystem nfs = new NPOIFSFileSystem(cc.getStream());
+  328. >         handleEmbeddedOfficeDoc(nfs.getRoot(), xhtml);
+  329.       }
+  330.   
+
+src/main/java/org/apache/tika/parser/strings/StringsParser.java:329: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.name")` could be null and is dereferenced at line 329.
+  327.   	
+  328.   	public static String getStringsProg() {
+  329. > 		return System.getProperty("os.name").startsWith("Windows") ? "strings.exe" : "strings";
+  330.   	}
+  331.   	
+
+src/main/java/org/apache/tika/parser/strings/StringsParser.java:333: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.name")` could be null and is dereferenced at line 333.
+  331.   	
+  332.   	public static String getFileProg() {
+  333. > 		return System.getProperty("os.name").startsWith("Windows") ? "file.exe" : "file";
+  334.   	}
+  335.   }
+
+src/main/java/org/apache/tika/parser/gdal/GDALParser.java:352: error: RESOURCE_LEAK
+  resource of type `java.util.Scanner` acquired by call to `new()` at line 336 is not released after line 352.
+  350.           }
+  351.   
+  352. >     }
+  353.   
+  354.       private String execCommand(String[] cmd) throws IOException {
+
+src/main/java/org/apache/tika/parser/gdal/GDALParser.java:376: error: RESOURCE_LEAK
+  resource of type `java.lang.Process` acquired by call to `exec(...)` at line 359 is not released after line 376.
+  374.           } finally {
+  375.               try {
+  376. >                 process.waitFor();
+  377.               } catch (InterruptedException ignore) {
+  378.               }
+
+src/main/java/org/apache/tika/parser/gdal/GDALParser.java:376: error: RESOURCE_LEAK
+  resource of type `java.lang.Process` acquired by call to `exec(...)` at line 361 is not released after line 376.
+  374.           } finally {
+  375.               try {
+  376. >                 process.waitFor();
+  377.               } catch (InterruptedException ignore) {
+  378.               }
+
+src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java:511: error: NULL_DEREFERENCE
+  object `keywords` could be null and is dereferenced at line 511.
+  509.               if (directory.containsTag(IptcDirectory.TAG_KEYWORDS)) {
+  510.                   String[] keywords = directory.getStringArray(IptcDirectory.TAG_KEYWORDS);
+  511. >                 for (String k : keywords) {
+  512.                       metadata.add(TikaCoreProperties.KEYWORDS, k);
+  513.                   }
+
+src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java:600: error: RESOURCE_LEAK
+  resource of type `org.apache.poi.hwpf.extractor.Word6Extractor` acquired by call to `new()` at line 598 is not released after line 600.
+  598.           Word6Extractor extractor = new Word6Extractor(doc);
+  599.   
+  600. >         for (String p : extractor.getParagraphText()) {
+  601.               xhtml.element("p", p);
+  602.           }
+
+src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java:75: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void NameEntityExtractor.getAllNameEntitiesfromInput(InputStream)` mutates container `this.locationNameEntities` via call to `add` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  73.           for (String name : tmp) {
+  74.               name = name.trim();
+  75. >             this.locationNameEntities.add(name);
+  76.           }
+  77.   
+
+src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java:90: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void NameEntityExtractor.getBestNameEntity()` reads without synchronization from container `this.locationNameEntities` via call to `size`. Potentially races with write in method `NameEntityExtractor.getAllNameEntitiesfromInput(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  88.        */
+  89.       public void getBestNameEntity() {
+  90. >         if (this.locationNameEntities.size() == 0)
+  91.               return;
+  92.   
+
+src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java:112: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void NameEntityExtractor.getBestNameEntity()` mutates container `this.locationNameEntities` via call to `clear` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  110.           });
+  111.   
+  112. >         this.locationNameEntities.clear();// update so that they are in
+  113.                                             // descending order
+  114.           for (Map.Entry<String, Integer> entry : list) {
+
+Summary of the reports
+
+            RESOURCE_LEAK: 40
+         NULL_DEREFERENCE: 10
+  THREAD_SAFETY_VIOLATION: 3

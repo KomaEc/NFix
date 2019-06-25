@@ -1,0 +1,994 @@
+[5277][environment] CWD = /home/coma/GSoC/npebugs/tika-1927
+[5277][environment] No .inferconfig file found
+[5277][environment] Project root = /home/coma/GSoC/npebugs/tika-1927
+[5277][environment] INFER_ARGS =   @/tmp/args.tmp.36c244  ++Contents of '/tmp/args.tmp.36c244':
+[5277][environment]                                         run
+[5277][environment]                                       
+[5277][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5277][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[5277][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[5277][environment] 
+[5277][   progress] Capturing in maven mode...
+[5277][      debug] Running maven capture:
+[5277][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[5334][environment] CWD = /home/coma/GSoC/npebugs/tika-1927
+[5334][environment] No .inferconfig file found
+[5334][environment] Project root = /home/coma/GSoC/npebugs/tika-1927
+[5334][environment] INFER_ARGS =   @/tmp/args.tmp.b19d99  ++Contents of '/tmp/args.tmp.b19d99':
+[5334][environment]                                         @/tmp/args.tmp.36c244
+[5334][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler1272689396758133182arguments
+[5334][environment]                                         ++Contents of '/tmp/args.tmp.36c244':
+[5334][environment]                                           run
+[5334][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler1272689396758133182arguments':
+[5334][environment]                                           "-d"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/target/classes"
+[5334][environment]                                           "-classpath"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/4.0.0/org.osgi.core-4.0.0.jar:/home/coma/.m2/repository/org/apache/tika/tika-core/1.13/tika-core-1.13.jar:/home/coma/.m2/repository/org/gagravarr/vorbis-java-tika/0.8/vorbis-java-tika-0.8.jar:/home/coma/.m2/repository/com/healthmarketscience/jackcess/jackcess/2.1.3/jackcess-2.1.3.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/coma/.m2/repository/com/healthmarketscience/jackcess/jackcess-encrypt/2.1.1/jackcess-encrypt-2.1.1.jar:/home/coma/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.6.0/org.apache.felix.scr.annotations-1.6.0.jar:/home/coma/.m2/repository/net/sourceforge/jmatio/jmatio/1.0/jmatio-1.0.jar:/home/coma/.m2/repository/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar:/home/coma/.m2/repository/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.10/commons-compress-1.10.jar:/home/coma/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox/2.0.0/pdfbox-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/fontbox/2.0.0/fontbox-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox-tools/2.0.0/pdfbox-tools-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox-debugger/2.0.0/pdfbox-debugger-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/jempbox/1.8.11/jempbox-1.8.11.jar:/home/coma/.m2/repository/org/bouncycastle/bcmail-jdk15on/1.54/bcmail-jdk15on-1.54.jar:/home/coma/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.54/bcpkix-jdk15on-1.54.jar:/home/coma/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.54/bcprov-jdk15on-1.54.jar:/home/coma/.m2/repository/org/apache/poi/poi/3.15-beta1/poi-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-scratchpad/3.15-beta1/poi-scratchpad-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-ooxml/3.15-beta1/poi-ooxml-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.15-beta1/poi-ooxml-schemas-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/home/coma/.m2/repository/com/github/virtuald/curvesapi/1.03/curvesapi-1.03.jar:/home/coma/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/coma/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/home/coma/.m2/repository/com/googlecode/mp4parser/isoparser/1.1.7/isoparser-1.1.7.jar:/home/coma/.m2/repository/org/aspectj/aspectjrt/1.8.2/aspectjrt-1.8.2.jar:/home/coma/.m2/repository/com/drewnoakes/metadata-extractor/2.8.1/metadata-extractor-2.8.1.jar:/home/coma/.m2/repository/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar:/home/coma/.m2/repository/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar:/home/coma/.m2/repository/com/rometools/rome/1.5.1/rome-1.5.1.jar:/home/coma/.m2/repository/com/rometools/rome-utils/1.5.1/rome-utils-1.5.1.jar:/home/coma/.m2/repository/org/jdom/jdom/2.0.2/jdom-2.0.2.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar:/home/coma/.m2/repository/org/gagravarr/vorbis-java-core/0.8/vorbis-java-core-0.8.jar:/home/coma/.m2/repository/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar:/home/coma/.m2/repository/org/codelibs/jhighlight/1.0.2/jhighlight-1.0.2.jar:/home/coma/.m2/repository/com/pff/java-libpst/0.8.1/java-libpst-0.8.1.jar:/home/coma/.m2/repository/com/github/junrar/junrar/0.7/junrar-0.7.jar:/home/coma/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar:/home/coma/.m2/repository/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-api/1.4/maven-scm-api-1.4.jar:/home/coma/.m2/repository/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.4/maven-scm-provider-svnexe-1.4.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.4/maven-scm-provider-svn-commons-1.4.jar:/home/coma/.m2/repository/regexp/regexp/1.3/regexp-1.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-rs-client/3.0.3/cxf-rt-rs-client-3.0.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/3.0.3/cxf-rt-transports-http-3.0.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-core/3.0.3/cxf-core-3.0.3.jar:/home/coma/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/home/coma/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.1.0/xmlschema-core-2.1.0.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.3/cxf-rt-frontend-jaxrs-3.0.3.jar:/home/coma/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/home/coma/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/coma/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.2/sqlite-jdbc-3.8.11.2.jar:/home/coma/.m2/repository/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.jar:/home/coma/.m2/repository/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.jar:/home/coma/.m2/repository/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.jar:/home/coma/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/home/coma/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/coma/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/home/coma/.m2/repository/org/json/json/20140107/json-20140107.jar:/home/coma/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/coma/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/coma/.m2/repository/edu/ucar/netcdf4/4.5.5/netcdf4-4.5.5.jar:/home/coma/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/home/coma/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/home/coma/.m2/repository/edu/ucar/grib/4.5.5/grib-4.5.5.jar:/home/coma/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/coma/.m2/repository/org/jdom/jdom2/2.0.4/jdom2-2.0.4.jar:/home/coma/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar:/home/coma/.m2/repository/edu/ucar/jj2000/5.2/jj2000-5.2.jar:/home/coma/.m2/repository/org/itadaki/bzip2/0.9.1/bzip2-0.9.1.jar:/home/coma/.m2/repository/edu/ucar/cdm/4.5.5/cdm-4.5.5.jar:/home/coma/.m2/repository/edu/ucar/udunits/4.5.5/udunits-4.5.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar:/home/coma/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar:/home/coma/.m2/repository/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar:/home/coma/.m2/repository/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar:/home/coma/.m2/repository/net/sf/ehcache/ehcache-core/2.6.2/ehcache-core-2.6.2.jar:/home/coma/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar:/home/coma/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar:/home/coma/.m2/repository/edu/ucar/httpservices/4.5.5/httpservices-4.5.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpclient/4.2.6/httpclient-4.2.6.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpmime/4.2.6/httpmime-4.2.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-csv/1.0/commons-csv-1.0.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-utility/0.6/sis-utility-0.6.jar:/home/coma/.m2/repository/org/apache/sis/storage/sis-netcdf/0.6/sis-netcdf-0.6.jar:/home/coma/.m2/repository/org/apache/sis/storage/sis-storage/0.6/sis-storage-0.6.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-referencing/0.6/sis-referencing-0.6.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-metadata/0.6/sis-metadata-0.6.jar:/home/coma/.m2/repository/org/opengis/geoapi/3.0.0/geoapi-3.0.0.jar:/home/coma/.m2/repository/javax/measure/jsr-275/0.9.3/jsr-275-0.9.3.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-core/3.2.2/ctakes-core-3.2.2.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-core-res/3.2.2/ctakes-core-res-3.2.2.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-type-system/3.2.2/ctakes-type-system-3.2.2.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-core/2.4.0/uimaj-core-2.4.0.jar:/home/coma/.m2/repository/tw/edu/ntu/csie/libsvm/3.1/libsvm-3.1.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-utils/3.2.2/ctakes-utils-3.2.2.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-queries/4.0.0/lucene-queries-4.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-queryparser/4.0.0/lucene-queryparser-4.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-sandbox/4.0.0/lucene-sandbox-4.0.0.jar:/home/coma/.m2/repository/jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.0.0/lucene-analyzers-common-4.0.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-tools/2.6.0/uimaj-tools-2.6.0.jar:/home/coma/.m2/repository/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar:/home/coma/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/coma/.m2/repository/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar:/home/coma/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar:/home/coma/.m2/repository/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-core/4.0.0/lucene-core-4.0.0.jar:/home/coma/.m2/repository/edu/mit/findstruct/findstructapi/0.0.1/findstructapi-0.0.1.jar:/home/coma/.m2/repository/com/googlecode/armbrust-file-utils/sqlwrapper/0.0.1/sqlwrapper-0.0.1.jar:/home/coma/.m2/repository/net/sourceforge/openai/openaifsm/0.0.1/openaifsm-0.0.1.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-examples/2.4.0/uimaj-examples-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-cpe/2.4.0/uimaj-cpe-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-adapter-vinci/2.4.0/uimaj-adapter-vinci-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/jVinci/2.4.0/jVinci-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-document-annotation/2.4.0/uimaj-document-annotation-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimafit-core/2.1.0/uimafit-core-2.1.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.1/jackson-core-2.7.1.jar:"
+[5334][environment]                                           "-sourcepath"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java:/home/coma/GSoC/npebugs/tika-1927/target/generated-sources/annotations:"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ListManager.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v1Handler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/exception/ChmParsingException.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/PackageParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/FictionBookParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/executable/ExecutableParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/BPGParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/feed/FeedParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/isatab/ISArchiveParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/AbstractListManager.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/ImageParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AttributeMetadataHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/asm/ClassParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmConstants.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/POIFSContainerDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/epub/EpubParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/AutoPageNumberUtils.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dif/DIFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AttributeDependantMetadataHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFEmbObjHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/PagesContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetMatch.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jpeg/JpegParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/UniversalEncodingDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/ListDescriptor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNameFinder.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/NamedEntityParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp4/MP4Parser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/ZipContainerDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mbox/MboxParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/IdentityHtmlMapper.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoParserConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/gdal/GDALParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_Unicode.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/RarParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentMetaParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmPmglHeader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v2Frame.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/hdf/HDFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v24Handler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmAccessor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/MetadataHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESSerializer.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmItspHeader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dwg/DWGParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mail/RFC822Parser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/video/FLVParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/AudioFrame.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/MP3Frame.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/DefaultHtmlMapper.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/WebPParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mail/MailContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v23Handler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcResetTable.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp4/DirectFileReadDataSource.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlMapper.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_2022.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dif/DIFContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/assertion/ChmAssert.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_UTF8.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/AbstractDBParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OldExcelParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/KeynoteContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/XHTMLDowngradeHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESAnnotationProperty.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmBlockInfo.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESUtils.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNERecogniser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iptc/IptcAnpaParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/crypto/Pkcs7Parser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/JackcessParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/BoilerpipeContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/xmp/JempboxExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/grib/GribParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/TEIParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/regex/RegexNERecogniser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFObjDataParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AbstractMetadataHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/AbstractOOXMLExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XSSFExcelExtractorDecorator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/TNEFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/LinkedCell.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/NERecogniser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/DirectoryListingEntry.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mat/MatParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmSection.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/Icu4jEncodingDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/nltk/NLTKNERecogniser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3Parser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/NSNormalizerContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/CompressorParserOptions.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmItsfHeader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mbox/OutlookPSTParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/font/TrueTypeParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3Tags.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/HSLFExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/audio/MidiParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/NumberCell.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/POIXMLTextExtractorDecorator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ExcelExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/utils/CommonsDigester.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFEncodedStringDecoder.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/NumbersContentHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/TextCell.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/DcXMLParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OutlookExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcControlData.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFListManager.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/FileConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/gazetteer/GeoGazetteerClient.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/Latin1StringsParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/JournalParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFParserConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/CellDecorator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3TableReader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractorFactory.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/audio/AudioParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/TiffParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/font/AdobeFontMetricParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/internal/Activator.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/GrobidRESTParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/XMLParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/CompositeTagHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/UniversalEncodingListener.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/prt/PRTParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/isatab/ISATabUtils.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/AccessChecker.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/ElementMetadataHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/netcdf/NetCDFParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/CompressorParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/epub/EpubContentParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_sbcs.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/GroupState.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/executable/MachineMetadata.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/ChmParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlEncodingDetector.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v22Handler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geoinfo/GeographicInformationParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/TXTParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecognizer.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxBlock.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/gazetteer/Location.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/opendocument/OpenOfficeParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/PSDParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/LyricsHandler.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/corenlp/CoreNLPNERecogniser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3DBParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/IWorkPackageParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/SummaryExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmPmgiHeader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/JDBCTableReader.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/MetadataFields.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/MetadataExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/TextExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmDirectoryListingSet.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsEncoding.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/Cell.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/JackcessExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoTag.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/asm/XHTMLClassVisitor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ocr/TesseractOCRConfig.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_mbcs.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmWrapper.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/XFAExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDF2XHTML.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/code/SourceCodeParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/MpegStream.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxState.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentContentParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/envi/EnviHeaderParser.java"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java"
+[5334][environment]                                           "-s"
+[5334][environment]                                           "/home/coma/GSoC/npebugs/tika-1927/target/generated-sources/annotations"
+[5334][environment]                                           "-g" "-nowarn" "-target" "1.7"
+[5334][environment]                                           "-source" "1.7" "-encoding" "UTF-8"
+[5334][environment]                                         
+[5334][environment]                                       
+[5334][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[5334][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler1272689396758133182arguments
+[5334][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler1272689396758133182arguments':
+[5334][environment]     "-d" "/home/coma/GSoC/npebugs/tika-1927/target/classes" "-classpath"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/target/classes:/home/coma/.m2/repository/org/osgi/org.osgi.core/4.0.0/org.osgi.core-4.0.0.jar:/home/coma/.m2/repository/org/apache/tika/tika-core/1.13/tika-core-1.13.jar:/home/coma/.m2/repository/org/gagravarr/vorbis-java-tika/0.8/vorbis-java-tika-0.8.jar:/home/coma/.m2/repository/com/healthmarketscience/jackcess/jackcess/2.1.3/jackcess-2.1.3.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/coma/.m2/repository/com/healthmarketscience/jackcess/jackcess-encrypt/2.1.1/jackcess-encrypt-2.1.1.jar:/home/coma/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.6.0/org.apache.felix.scr.annotations-1.6.0.jar:/home/coma/.m2/repository/net/sourceforge/jmatio/jmatio/1.0/jmatio-1.0.jar:/home/coma/.m2/repository/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar:/home/coma/.m2/repository/org/apache/james/apache-mime4j-dom/0.7.2/apache-mime4j-dom-0.7.2.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.10/commons-compress-1.10.jar:/home/coma/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox/2.0.0/pdfbox-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/fontbox/2.0.0/fontbox-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox-tools/2.0.0/pdfbox-tools-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/pdfbox-debugger/2.0.0/pdfbox-debugger-2.0.0.jar:/home/coma/.m2/repository/org/apache/pdfbox/jempbox/1.8.11/jempbox-1.8.11.jar:/home/coma/.m2/repository/org/bouncycastle/bcmail-jdk15on/1.54/bcmail-jdk15on-1.54.jar:/home/coma/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.54/bcpkix-jdk15on-1.54.jar:/home/coma/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.54/bcprov-jdk15on-1.54.jar:/home/coma/.m2/repository/org/apache/poi/poi/3.15-beta1/poi-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-scratchpad/3.15-beta1/poi-scratchpad-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-ooxml/3.15-beta1/poi-ooxml-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.15-beta1/poi-ooxml-schemas-3.15-beta1.jar:/home/coma/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/home/coma/.m2/repository/com/github/virtuald/curvesapi/1.03/curvesapi-1.03.jar:/home/coma/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/coma/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/home/coma/.m2/repository/com/googlecode/mp4parser/isoparser/1.1.7/isoparser-1.1.7.jar:/home/coma/.m2/repository/org/aspectj/aspectjrt/1.8.2/aspectjrt-1.8.2.jar:/home/coma/.m2/repository/com/drewnoakes/metadata-extractor/2.8.1/metadata-extractor-2.8.1.jar:/home/coma/.m2/repository/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar:/home/coma/.m2/repository/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar:/home/coma/.m2/repository/com/rometools/rome/1.5.1/rome-1.5.1.jar:/home/coma/.m2/repository/com/rometools/rome-utils/1.5.1/rome-utils-1.5.1.jar:/home/coma/.m2/repository/org/jdom/jdom/2.0.2/jdom-2.0.2.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar:/home/coma/.m2/repository/org/gagravarr/vorbis-java-core/0.8/vorbis-java-core-0.8.jar:/home/coma/.m2/repository/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar:/home/coma/.m2/repository/org/codelibs/jhighlight/1.0.2/jhighlight-1.0.2.jar:/home/coma/.m2/repository/com/pff/java-libpst/0.8.1/java-libpst-0.8.1.jar:/home/coma/.m2/repository/com/github/junrar/junrar/0.7/junrar-0.7.jar:/home/coma/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar:/home/coma/.m2/repository/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-api/1.4/maven-scm-api-1.4.jar:/home/coma/.m2/repository/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.4/maven-scm-provider-svnexe-1.4.jar:/home/coma/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.4/maven-scm-provider-svn-commons-1.4.jar:/home/coma/.m2/repository/regexp/regexp/1.3/regexp-1.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-rs-client/3.0.3/cxf-rt-rs-client-3.0.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/3.0.3/cxf-rt-transports-http-3.0.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-core/3.0.3/cxf-core-3.0.3.jar:/home/coma/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/home/coma/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.1.0/xmlschema-core-2.1.0.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.3/cxf-rt-frontend-jaxrs-3.0.3.jar:/home/coma/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/home/coma/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/coma/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.2/sqlite-jdbc-3.8.11.2.jar:/home/coma/.m2/repository/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.jar:/home/coma/.m2/repository/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.jar:/home/coma/.m2/repository/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.jar:/home/coma/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/home/coma/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/coma/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/home/coma/.m2/repository/org/json/json/20140107/json-20140107.jar:/home/coma/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/coma/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/coma/.m2/repository/edu/ucar/netcdf4/4.5.5/netcdf4-4.5.5.jar:/home/coma/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/home/coma/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/home/coma/.m2/repository/edu/ucar/grib/4.5.5/grib-4.5.5.jar:/home/coma/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/coma/.m2/repository/org/jdom/jdom2/2.0.4/jdom2-2.0.4.jar:/home/coma/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar:/home/coma/.m2/repository/edu/ucar/jj2000/5.2/jj2000-5.2.jar:/home/coma/.m2/repository/org/itadaki/bzip2/0.9.1/bzip2-0.9.1.jar:/home/coma/.m2/repository/edu/ucar/cdm/4.5.5/cdm-4.5.5.jar:/home/coma/.m2/repository/edu/ucar/udunits/4.5.5/udunits-4.5.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar:/home/coma/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar:/home/coma/.m2/repository/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar:/home/coma/.m2/repository/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar:/home/coma/.m2/repository/net/sf/ehcache/ehcache-core/2.6.2/ehcache-core-2.6.2.jar:/home/coma/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar:/home/coma/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar:/home/coma/.m2/repository/edu/ucar/httpservices/4.5.5/httpservices-4.5.5.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpclient/4.2.6/httpclient-4.2.6.jar:/home/coma/.m2/repository/org/apache/httpcomponents/httpmime/4.2.6/httpmime-4.2.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-csv/1.0/commons-csv-1.0.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-utility/0.6/sis-utility-0.6.jar:/home/coma/.m2/repository/org/apache/sis/storage/sis-netcdf/0.6/sis-netcdf-0.6.jar:/home/coma/.m2/repository/org/apache/sis/storage/sis-storage/0.6/sis-storage-0.6.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-referencing/0.6/sis-referencing-0.6.jar:/home/coma/.m2/repository/org/apache/sis/core/sis-metadata/0.6/sis-metadata-0.6.jar:/home/coma/.m2/repository/org/opengis/geoapi/3.0.0/geoapi-3.0.0.jar:/home/coma/.m2/repository/javax/measure/jsr-275/0.9.3/jsr-275-0.9.3.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-core/3.2.2/ctakes-core-3.2.2.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-core-res/3.2.2/ctakes-core-res-3.2.2.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-type-system/3.2.2/ctakes-type-system-3.2.2.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-core/2.4.0/uimaj-core-2.4.0.jar:/home/coma/.m2/repository/tw/edu/ntu/csie/libsvm/3.1/libsvm-3.1.jar:/home/coma/.m2/repository/org/apache/ctakes/ctakes-utils/3.2.2/ctakes-utils-3.2.2.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-queries/4.0.0/lucene-queries-4.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-queryparser/4.0.0/lucene-queryparser-4.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-sandbox/4.0.0/lucene-sandbox-4.0.0.jar:/home/coma/.m2/repository/jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.0.0/lucene-analyzers-common-4.0.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-tools/2.6.0/uimaj-tools-2.6.0.jar:/home/coma/.m2/repository/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar:/home/coma/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/coma/.m2/repository/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar:/home/coma/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar:/home/coma/.m2/repository/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.jar:/home/coma/.m2/repository/org/apache/lucene/lucene-core/4.0.0/lucene-core-4.0.0.jar:/home/coma/.m2/repository/edu/mit/findstruct/findstructapi/0.0.1/findstructapi-0.0.1.jar:/home/coma/.m2/repository/com/googlecode/armbrust-file-utils/sqlwrapper/0.0.1/sqlwrapper-0.0.1.jar:/home/coma/.m2/repository/net/sourceforge/openai/openaifsm/0.0.1/openaifsm-0.0.1.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-examples/2.4.0/uimaj-examples-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-cpe/2.4.0/uimaj-cpe-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-adapter-vinci/2.4.0/uimaj-adapter-vinci-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/jVinci/2.4.0/jVinci-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimaj-document-annotation/2.4.0/uimaj-document-annotation-2.4.0.jar:/home/coma/.m2/repository/org/apache/uima/uimafit-core/2.1.0/uimafit-core-2.1.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.1/jackson-core-2.7.1.jar:"
+[5334][environment]     "-sourcepath"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java:/home/coma/GSoC/npebugs/tika-1927/target/generated-sources/annotations:"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ListManager.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v1Handler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/exception/ChmParsingException.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/PackageParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/FictionBookParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/executable/ExecutableParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/BPGParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/feed/FeedParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/isatab/ISArchiveParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/AbstractListManager.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/ImageParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AttributeMetadataHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/asm/ClassParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmConstants.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/POIFSContainerDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/epub/EpubParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/AutoPageNumberUtils.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dif/DIFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AttributeDependantMetadataHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFEmbObjHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/PagesContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetMatch.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jpeg/JpegParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/UniversalEncodingDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/ListDescriptor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNameFinder.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/NamedEntityParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp4/MP4Parser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/ZipContainerDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mbox/MboxParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/IdentityHtmlMapper.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoParserConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/gdal/GDALParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_Unicode.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/RarParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentMetaParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmPmglHeader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v2Frame.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/hdf/HDFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v24Handler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmAccessor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/MetadataHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESSerializer.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmItspHeader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dwg/DWGParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mail/RFC822Parser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/video/FLVParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/AudioFrame.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/MP3Frame.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/DefaultHtmlMapper.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/WebPParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mail/MailContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v23Handler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcResetTable.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp4/DirectFileReadDataSource.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlMapper.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_2022.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/dif/DIFContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/assertion/ChmAssert.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_UTF8.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/AbstractDBParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OldExcelParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/KeynoteContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/XHTMLDowngradeHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESAnnotationProperty.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmBlockInfo.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESUtils.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNERecogniser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iptc/IptcAnpaParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/crypto/Pkcs7Parser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/JackcessParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/BoilerpipeContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/xmp/JempboxExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/grib/GribParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/TEIParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/regex/RegexNERecogniser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFObjDataParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/AbstractMetadataHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/AbstractOOXMLExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XSSFExcelExtractorDecorator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/TNEFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/LinkedCell.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/NERecogniser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/DirectoryListingEntry.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mat/MatParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmSection.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/Icu4jEncodingDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/nltk/NLTKNERecogniser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3Parser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/NSNormalizerContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/CompressorParserOptions.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmItsfHeader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mbox/OutlookPSTParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/font/TrueTypeParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3Tags.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/HSLFExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/audio/MidiParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/NumberCell.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/POIXMLTextExtractorDecorator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ExcelExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/utils/CommonsDigester.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFEncodedStringDecoder.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/NumbersContentHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/TextCell.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/DcXMLParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OutlookExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcControlData.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/RTFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFListManager.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/FileConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/gazetteer/GeoGazetteerClient.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/Latin1StringsParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/JournalParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDFParserConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/CellDecorator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3TableReader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractorFactory.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/audio/AudioParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/TiffParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/font/AdobeFontMetricParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ctakes/CTAKESParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/internal/Activator.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/journal/GrobidRESTParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/XMLParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/CompositeTagHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/UniversalEncodingListener.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/prt/PRTParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/isatab/ISATabUtils.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/AccessChecker.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/xml/ElementMetadataHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/netcdf/NetCDFParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pkg/CompressorParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/epub/EpubContentParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_sbcs.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/GroupState.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/executable/MachineMetadata.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/ChmParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/html/HtmlEncodingDetector.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/ID3v22Handler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geoinfo/GeographicInformationParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/TXTParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecognizer.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxBlock.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/gazetteer/Location.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/opendocument/OpenOfficeParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/PSDParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/LyricsHandler.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ner/corenlp/CoreNLPNERecogniser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/SQLite3DBParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/iwork/IWorkPackageParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/SummaryExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmPmgiHeader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/jdbc/JDBCTableReader.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/image/MetadataFields.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/ooxml/MetadataExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/rtf/TextExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/accessor/ChmDirectoryListingSet.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/strings/StringsEncoding.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/Cell.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/JackcessExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/geo/topic/GeoTag.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/asm/XHTMLClassVisitor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/ocr/TesseractOCRConfig.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/txt/CharsetRecog_mbcs.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/core/ChmWrapper.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/XFAExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/pdf/PDF2XHTML.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/code/SourceCodeParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/mp3/MpegStream.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxState.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/odf/OpenDocumentContentParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/envi/EnviHeaderParser.java"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java"
+[5334][environment]     "-s"
+[5334][environment]     "/home/coma/GSoC/npebugs/tika-1927/target/generated-sources/annotations"
+[5334][environment]     "-g" "-nowarn" "-target" "1.7" "-source" "1.7" "-encoding" "UTF-8"
+[5334][environment]   
+[5334][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5334][      debug] Current working directory: '/home/coma/GSoC/npebugs/tika-1927'
+[5334][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler1272689396758133182arguments' '@/tmp/args_.tmp.1a1643' 2>'/tmp/javac.tmp.94be43.out'
+[5334][      debug] *** Success. Logs:
+[5334][      debug] Translating 197 source files (357 classes)
+[5334][      debug] done capturing all files
+[5334][environment] Infer log identifier is 
+[5277][   progress] Found 197 source files to analyze in /home/coma/GSoC/npebugs/tika-1927/infer-out
+[5277][environment] Parallel jobs: 8
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmItspHeader.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/rtf/GroupState.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/html/HtmlMapper.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/epub/EpubContentParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/xml/XMLParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/SummaryExtractor.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/jdbc/AbstractDBParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/html/HtmlMapper.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/TNEFParser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_UTF8.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/epub/EpubContentParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESContentHandler.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/rtf/GroupState.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/ner/regex/RegexNERecogniser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_UTF8.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/isatab/ISATabUtils.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/xml/XMLParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_mbcs.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/ner/regex/RegexNERecogniser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESSerializer.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/TNEFParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/rtf/ListDescriptor.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESSerializer.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_Unicode.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/rtf/ListDescriptor.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/mbox/OutlookPSTParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_Unicode.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/asm/ClassParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/asm/ClassParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcControlData.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_mbcs.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmBlockInfo.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmItspHeader.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/mp4/MP4Parser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/SummaryExtractor.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/hdf/HDFParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcControlData.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v24Handler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/hdf/HDFParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/strings/StringsParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmBlockInfo.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/HSLFExtractor.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/mbox/OutlookPSTParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v22Handler.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/isatab/ISATabUtils.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/xml/ElementMetadataHandler.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v22Handler.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v24Handler.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/ocr/TesseractOCRConfig.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESContentHandler.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/mp4/DirectFileReadDataSource.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/strings/StringsParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/jdbc/AbstractDBParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3DBParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/mp4/MP4Parser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmWrapper.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3DBParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/gdal/GDALParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmWrapper.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/assertion/ChmAssert.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/chm/assertion/ChmAssert.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/rtf/TextExtractor.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/HSLFExtractor.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmSection.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/mp4/DirectFileReadDataSource.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/ocr/TesseractOCRConfig.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/geo/topic/gazetteer/Location.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/geo/topic/gazetteer/Location.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/xml/ElementMetadataHandler.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_sbcs.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/image/xmp/XMPPacketScanner.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmConstants.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmConstants.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESAnnotationProperty.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/geo/topic/NameEntityExtractor.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/txt/UniversalEncodingListener.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESAnnotationProperty.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/txt/UniversalEncodingListener.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/mbox/MboxParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/mbox/MboxParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/geo/topic/gazetteer/GeoGazetteerClient.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/geo/topic/gazetteer/GeoGazetteerClient.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v2Frame.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmSection.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/audio/MidiParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/audio/MidiParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/iwork/NumbersContentHandler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v2Frame.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/pdf/PDF2XHTML.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/AbstractPOIFSExtractor.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/prt/PRTParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/iwork/NumbersContentHandler.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/image/PSDParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmCommons.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/accessor/DirectoryListingEntry.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/gdal/GDALParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/OldExcelParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/accessor/DirectoryListingEntry.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/OldExcelParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/journal/TEIParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/image/PSDParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentMetaParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/prt/PRTParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/grib/GribParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/grib/GribParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/mp3/ID3Tags.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/mp3/ID3Tags.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/journal/JournalParser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentMetaParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ExcelExtractor.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/journal/TEIParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/exception/ChmParsingException.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/exception/ChmParsingException.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/xml/DcXMLParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/xml/DcXMLParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmPmgiHeader.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmPmgiHeader.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/mp3/MP3Frame.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/mp3/MP3Frame.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_2022.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_2022.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XSSFExcelExtractorDecorator.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ExcelExtractor.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/MetadataExtractor.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/Mp3Parser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/dwg/DWGParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/WordExtractor.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/epub/EpubParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/epub/EpubParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/code/SourceCodeParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/code/SourceCodeParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/pkg/RarParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/dwg/DWGParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/utils/CommonsDigester.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XSSFExcelExtractorDecorator.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/executable/MachineMetadata.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/executable/MachineMetadata.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/TextCell.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/TextCell.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/strings/StringsConfig.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/strings/StringsConfig.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/rtf/RTFEmbObjHandler.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/rtf/RTFEmbObjHandler.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/pdf/XFAExtractor.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/pdf/XFAExtractor.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/crypto/Pkcs7Parser.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/MetadataExtractor.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/pkg/CompressorParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/crypto/Pkcs7Parser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/strings/Latin1StringsParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/pkg/RarParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/pdf/AccessChecker.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/pdf/AccessChecker.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoTag.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoTag.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecognizer.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecognizer.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/strings/StringsEncoding.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/pkg/CompressorParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/html/HtmlParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/strings/StringsEncoding.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/xml/AttributeMetadataHandler.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/html/HtmlParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/xml/AttributeMetadataHandler.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcResetTable.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/txt/CharsetRecog_sbcs.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmItsfHeader.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/strings/Latin1StringsParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/ner/corenlp/CoreNLPNERecogniser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/ner/corenlp/CoreNLPNERecogniser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/POIFSContainerDetector.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ListManager.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ListManager.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/CellDecorator.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/CellDecorator.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/AbstractOOXMLExtractor.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/AbstractOOXMLExtractor.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v23Handler.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v23Handler.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmExtractor.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/utils/CommonsDigester.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/POIXMLTextExtractorDecorator.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/POIXMLTextExtractorDecorator.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/asm/XHTMLClassVisitor.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/pdf/PDF2XHTML.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/mp3/CompositeTagHandler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/mp3/CompositeTagHandler.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/dif/DIFParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/POIFSContainerDetector.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/audio/AudioParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/dif/DIFParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESConfig.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESConfig.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/opendocument/OpenOfficeParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/opendocument/OpenOfficeParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNameFinder.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNameFinder.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/font/TrueTypeParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/rtf/TextExtractor.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/image/BPGParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/audio/AudioParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/pkg/ZipContainerDetector.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/pkg/ZipContainerDetector.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/UniversalEncodingDetector.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/UniversalEncodingDetector.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/feed/FeedParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/font/TrueTypeParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/html/HtmlEncodingDetector.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmLzxcResetTable.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/jdbc/JDBCTableReader.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/jdbc/JDBCTableReader.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/image/BPGParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/rtf/RTFParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/rtf/RTFParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/txt/TXTParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/journal/JournalParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/IWorkPackageParser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmItsfHeader.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxBlock.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/asm/XHTMLClassVisitor.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3TableReader.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3TableReader.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/pdf/PDFParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/pdf/PDFParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxState.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/html/HtmlEncodingDetector.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/envi/EnviHeaderParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/feed/FeedParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/mp3/LyricsHandler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/envi/EnviHeaderParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/mail/MailContentHandler.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/txt/TXTParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNERecogniser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/IWorkPackageParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/strings/FileConfig.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/strings/FileConfig.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/xml/AbstractMetadataHandler.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/xml/AbstractMetadataHandler.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/AutoPageNumberUtils.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/mp3/LyricsHandler.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/ner/opennlp/OpenNLPNERecogniser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/isatab/ISArchiveParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxState.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmDirectoryListingSet.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/AutoPageNumberUtils.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/pdf/PDFEncodedStringDecoder.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/pdf/PDFEncodedStringDecoder.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/internal/Activator.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/internal/Activator.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/odf/NSNormalizerContentHandler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/mail/MailContentHandler.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/xml/AttributeDependantMetadataHandler.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/xml/AttributeDependantMetadataHandler.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/html/HtmlHandler.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/odf/NSNormalizerContentHandler.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/image/MetadataFields.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/image/MetadataFields.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/JackcessExtractor.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFWordExtractorDecorator.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/video/FLVParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmDirectoryListingSet.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/image/TiffParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/isatab/ISArchiveParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/txt/CharsetDetector.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/html/HtmlHandler.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/Cell.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/Cell.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/image/ImageParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XSLFPowerPointExtractorDecorator.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/KeynoteContentHandler.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/video/FLVParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/pkg/CompressorParserOptions.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/pkg/CompressorParserOptions.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/html/IdentityHtmlMapper.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/html/IdentityHtmlMapper.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFListManager.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/XWPFListManager.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v1Handler.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/mp3/ID3v1Handler.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/image/TiffParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/KeynoteContentHandler.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/JackcessParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/image/ImageParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/mat/MatParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/JackcessExtractor.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/ner/NERecogniser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/ner/NERecogniser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/html/DefaultHtmlMapper.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/txt/CharsetDetector.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/image/WebPParser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/image/WebPParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/microsoft/NumberCell.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/microsoft/NumberCell.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/ner/NamedEntityParser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/chm/lzx/ChmLzxBlock.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoParserConfig.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/JackcessParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESUtils.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/ctakes/CTAKESUtils.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/PagesContentHandler.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/geo/topic/GeoParserConfig.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/geoinfo/GeographicInformationParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/mat/MatParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/image/xmp/JempboxExtractor.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/image/xmp/JempboxExtractor.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/journal/GrobidRESTParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/html/DefaultHtmlMapper.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/pkg/PackageParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/journal/GrobidRESTParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/OutlookExtractor.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/pot/PooledTimeSeriesParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/AudioFrame.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/ner/NamedEntityParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/mail/RFC822Parser.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/mail/RFC822Parser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/font/AdobeFontMetricParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/AudioFrame.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/html/XHTMLDowngradeHandler.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/chm/core/ChmExtractor.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/dif/DIFContentHandler.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/html/XHTMLDowngradeHandler.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/executable/ExecutableParser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/geoinfo/GeographicInformationParser.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/html/BoilerpipeContentHandler.java starting
+[5375][   progress] src/main/java/org/apache/tika/parser/font/AdobeFontMetricParser.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentContentParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/pkg/PackageParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmPmglHeader.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/dif/DIFContentHandler.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/LinkedCell.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/microsoft/LinkedCell.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/txt/CharsetMatch.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmPmglHeader.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmAccessor.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/chm/accessor/ChmAccessor.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractorFactory.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractorFactory.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/jpeg/JpegParser.java starting
+[5372][   progress] src/main/java/org/apache/tika/parser/html/BoilerpipeContentHandler.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/jpeg/JpegParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/Icu4jEncodingDetector.java starting
+[5373][   progress] src/main/java/org/apache/tika/parser/txt/CharsetMatch.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/iptc/IptcAnpaParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/ocr/TesseractOCRParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/netcdf/NetCDFParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/executable/ExecutableParser.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/MpegStream.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/txt/Icu4jEncodingDetector.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/pdf/PDFParserConfig.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/mp3/MpegStream.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/microsoft/AbstractListManager.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/microsoft/AbstractListManager.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/xml/MetadataHandler.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/iwork/PagesContentHandler.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3Parser.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/jdbc/SQLite3Parser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractor.java starting
+[5369][   progress] src/main/java/org/apache/tika/parser/microsoft/ooxml/OOXMLExtractor.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/ner/nltk/NLTKNERecogniser.java starting
+[5368][   progress] src/main/java/org/apache/tika/parser/pdf/PDFParserConfig.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentParser.java starting
+[5370][   progress] src/main/java/org/apache/tika/parser/netcdf/NetCDFParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/ChmParser.java starting
+[5371][   progress] src/main/java/org/apache/tika/parser/microsoft/OutlookExtractor.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/xml/FictionBookParser.java starting
+[5374][   progress] src/main/java/org/apache/tika/parser/xml/MetadataHandler.java DONE
+[5374][   progress] src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java starting
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5371][   progress] src/main/java/org/apache/tika/parser/xml/FictionBookParser.java DONE
+[5371][   progress] src/main/java/org/apache/tika/parser/rtf/RTFObjDataParser.java starting
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5371][   progress] src/main/java/org/apache/tika/parser/rtf/RTFObjDataParser.java DONE
+[5370][   progress] src/main/java/org/apache/tika/parser/chm/ChmParser.java DONE
+[5369][   progress] src/main/java/org/apache/tika/parser/ner/nltk/NLTKNERecogniser.java DONE
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5368][      debug] 
+[5368][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[5374][   progress] src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java DONE
+[5375][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentContentParser.java DONE
+[5368][   progress] src/main/java/org/apache/tika/parser/odf/OpenDocumentParser.java DONE
+[5372][   progress] src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java DONE
+[5373][   progress] src/main/java/org/apache/tika/parser/iptc/IptcAnpaParser.java DONE
+
+[6027][      phase] ============================================================
+[6027][      phase] = New infer execution begins
+[6027][      phase] ============================================================
+[6027][environment] CWD = /home/coma/GSoC/npebugs/tika-1927
+[6027][environment] No .inferconfig file found
+[6027][environment] Project root = /home/coma/GSoC/npebugs/tika-1927
+[6027][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[6027][environment] Infer log identifier is 
+
+[8255][      phase] ============================================================
+[8255][      phase] = New infer execution begins
+[8255][      phase] ============================================================
+[8255][environment] CWD = /home/coma/GSoC/npebugs/tika-1927
+[8255][environment] No .inferconfig file found
+[8255][environment] Project root = /home/coma/GSoC/npebugs/tika-1927
+[8255][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[8255][environment] Infer log identifier is 

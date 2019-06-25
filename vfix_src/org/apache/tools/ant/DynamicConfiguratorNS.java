@@ -1,4 +1,0 @@
-package org.apache.tools.ant;
-
-public interface DynamicConfiguratorNS extends DynamicAttributeNS, DynamicElementNS {
-}

@@ -25,6 +25,7 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
 /**
  * Test cases for {@link ADValidator}.
  * 
@@ -35,6 +36,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of boolean is only done minimally.
      */
+    @Test
     public void testValidateBoolean()
     {
         AD ad = new AD();
@@ -76,6 +78,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of bytes works and uses the correct minimum and maximum values.
      */
+    @Test
     public void testValidateByte()
     {
         AD ad = new AD();
@@ -117,6 +120,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of characters with only limited set of options.
      */
+    @Test
     public void testValidateCharacter()
     {
         AD ad = new AD();
@@ -183,6 +187,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of double value works as expected.
      */
+    @Test
     public void testValidateDouble()
     {
         AD ad = new AD();
@@ -238,6 +243,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of integers is based on the minimum and maximum values.
      */
+    @Test
     public void testValidateInteger()
     {
         AD ad = new AD();
@@ -286,6 +292,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of long values works as expected.
      */
+    @Test
     public void testValidateLong()
     {
         AD ad = new AD();
@@ -321,6 +328,7 @@ public class ADValidatorTest extends TestCase
     /**
      * Tests the validation of strings is based on the minimum and maximum lengths.
      */
+    @Test
     public void testValidateString()
     {
         AD ad = new AD();

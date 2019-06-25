@@ -1,0 +1,610 @@
+Found 71 issues
+
+src/main/java/org/apache/commons/math3/geometry/enclosing/WelzlEncloser.java:93: error: NULL_DEREFERENCE
+  object `farthest` last assigned on line 91 could be null and is dereferenced by call to `contains(...)` at line 93.
+  91.               final P farthest = selectFarthest(points, ball);
+  92.   
+  93. >             if (ball.contains(farthest, tolerance)) {
+  94.                   // we have found a ball containing all points
+  95.                   return ball;
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/SimplexOptimizer.java:161: error: NULL_DEREFERENCE
+  object `previous` last assigned on line 154 could be null and is dereferenced at line 161.
+  159.                   boolean converged = true;
+  160.                   for (int i = 0; i < simplex.getSize(); i++) {
+  161. >                     PointValuePair prev = previous[i];
+  162.                       converged = converged &&
+  163.                           checker.converged(iteration, prev, simplex.getPoint(i));
+
+src/main/java/org/apache/commons/math3/optimization/general/NonLinearConjugateGradientOptimizer.java:154: error: NULL_DEREFERENCE
+  object `NonLinearConjugateGradientOptimizer.point` last assigned on line 152 could be null and is dereferenced at line 154.
+  152.           point = getStartPoint();
+  153.           final GoalType goal = getGoalType();
+  154. >         final int n = point.length;
+  155.           double[] r = computeObjectiveGradient(point);
+  156.           if (goal == GoalType.MINIMIZE) {
+
+src/main/java/org/apache/commons/math3/optimization/direct/PowellOptimizer.java:167: error: NULL_DEREFERENCE
+  object `guess` last assigned on line 166 could be null and is dereferenced at line 167.
+  165.           final GoalType goal = getGoalType();
+  166.           final double[] guess = getStartPoint();
+  167. >         final int n = guess.length;
+  168.   
+  169.           final double[][] direc = new double[n][n];
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/PowellOptimizer.java:173: error: NULL_DEREFERENCE
+  object `guess` last assigned on line 172 could be null and is dereferenced at line 173.
+  171.           final GoalType goal = getGoalType();
+  172.           final double[] guess = getStartPoint();
+  173. >         final int n = guess.length;
+  174.   
+  175.           final double[][] direc = new double[n][n];
+
+src/main/java/org/apache/commons/math3/ml/neuralnet/sofm/KohonenUpdateAction.java:183: error: NULL_DEREFERENCE
+  object `best` last assigned on line 181 could be null and is dereferenced at line 183.
+  181.               final Neuron best = MapUtils.findBest(features, net, distance);
+  182.   
+  183. >             final double[] expect = best.getFeatures();
+  184.               final double[] update = computeFeatures(expect,
+  185.                                                       features,
+
+src/main/java/org/apache/commons/math3/stat/ranking/NaturalRanking.java:254: error: NULL_DEREFERENCE
+  object `nanPositions` last assigned on line 201 could be null and is dereferenced by call to `restoreNaNs(...)` at line 254.
+  252.           }
+  253.           if (nanStrategy == NaNStrategy.FIXED) {
+  254. >             restoreNaNs(out, nanPositions);
+  255.           }
+  256.           return out;
+
+src/main/java/org/apache/commons/math3/ml/neuralnet/MapUtils.java:206: error: NULL_DEREFERENCE
+  object returned by `findBest(f,neurons,distance)` could be null and is dereferenced at line 206.
+  204.           for (double[] f : data) {
+  205.               ++count;
+  206. >             d += distance.compute(f, findBest(f, neurons, distance).getFeatures());
+  207.           }
+  208.   
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/BOBYQAOptimizer.java:240: error: NULL_DEREFERENCE
+  object returned by `getStartPoint()` could be null and is dereferenced by call to `ArrayRealVector(...)` at line 240.
+  238.   
+  239.           isMinimize = (getGoalType() == GoalType.MINIMIZE);
+  240. >         currentBest = new ArrayRealVector(getStartPoint());
+  241.   
+  242.           final double value = bobyqa(lowerBound, upperBound);
+
+src/main/java/org/apache/commons/math3/optimization/direct/BOBYQAOptimizer.java:245: error: NULL_DEREFERENCE
+  object returned by `getStartPoint()` could be null and is dereferenced by call to `ArrayRealVector(...)` at line 245.
+  243.   
+  244.           isMinimize = (getGoalType() == GoalType.MINIMIZE);
+  245. >         currentBest = new ArrayRealVector(getStartPoint());
+  246.   
+  247.           final double value = bobyqa(lowerBound, upperBound);
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/gradient/NonLinearConjugateGradientOptimizer.java:254: error: NULL_DEREFERENCE
+  object `point` last assigned on line 252 could be null and is dereferenced at line 254.
+  252.           final double[] point = getStartPoint();
+  253.           final GoalType goal = getGoalType();
+  254. >         final int n = point.length;
+  255.           double[] r = computeObjectiveGradient(point);
+  256.           if (goal == GoalType.MINIMIZE) {
+
+src/main/java/org/apache/commons/math3/random/EmpiricalDistribution.java:266: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired to `in` by call to `new()` at line 258 is not released after line 266.
+  264.               }
+  265.               // new adapter for the second pass
+  266. >             in = new BufferedReader(new InputStreamReader(url.openStream(), charset));
+  267.               fillBinStats(new StreamDataAdapter(in));
+  268.               loaded = true;
+
+src/main/java/org/apache/commons/math3/analysis/differentiation/FiniteDifferencesDifferentiator.java:317: error: NULL_DEREFERENCE
+  object `y` last assigned on line 305 could be null and is dereferenced at line 317.
+  315.   
+  316.                   // evaluate derivatives
+  317. >                 final DerivativeStructure[] value = new DerivativeStructure[y.length];
+  318.                   for (int j = 0; j < value.length; ++j) {
+  319.                       value[j] = evaluate(t, t0, y[j]);
+
+src/main/java/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java:303: error: NULL_DEREFERENCE
+  object `projector.leaf` last assigned on line 301 could be null and is dereferenced by call to `getProjection()` at line 303.
+  301.           final BoundaryProjector<S, T> projector = new BoundaryProjector<S, T>(point);
+  302.           getTree(true).visit(projector);
+  303. >         return projector.getProjection();
+  304.       }
+  305.   
+
+src/main/java/org/apache/commons/math3/optim/linear/SimplexSolver.java:324: error: NULL_DEREFERENCE
+  object `pivotCol` last assigned on line 323 could be null and is dereferenced at line 324.
+  322.   
+  323.           Integer pivotCol = getPivotColumn(tableau);
+  324. >         Integer pivotRow = getPivotRow(tableau, pivotCol);
+  325.           if (pivotRow == null) {
+  326.               throw new UnboundedSolutionException();
+
+src/main/java/org/apache/commons/math3/analysis/differentiation/FiniteDifferencesDifferentiator.java:370: error: NULL_DEREFERENCE
+  object `y` last assigned on line 356 could be null and is dereferenced at line 370.
+  368.   
+  369.                   // evaluate derivatives
+  370. >                 final DerivativeStructure[][] value = new DerivativeStructure[y.length][y[0].length];
+  371.                   for (int j = 0; j < value.length; ++j) {
+  372.                       for (int k = 0; k < y[j].length; ++k) {
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/CMAESOptimizer.java:377: error: NULL_DEREFERENCE
+  object `guess` last assigned on line 375 could be null and is dereferenced at line 377.
+  375.           final double[] guess = getStartPoint();
+  376.           // number of objective variables/problem dimension
+  377. >         dimension = guess.length;
+  378.           initializeCMA(guess);
+  379.           iterations = 0;
+
+src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:505: error: NULL_DEREFERENCE
+  object `guess` last assigned on line 503 could be null and is dereferenced at line 505.
+  503.           final double[] guess = getStartPoint();
+  504.           // number of objective variables/problem dimension
+  505. >         dimension = guess.length;
+  506.           initializeCMA(guess);
+  507.           iterations = 0;
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/CMAESOptimizer.java:565: error: NULL_DEREFERENCE
+  object `init` last assigned on line 560 could be null and is dereferenced at line 565.
+  563.   
+  564.           if (inputSigma != null) {
+  565. >             if (inputSigma.length != init.length) {
+  566.                   throw new DimensionMismatchException(inputSigma.length, init.length);
+  567.               }
+
+src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:676: error: NULL_DEREFERENCE
+  object `init` last assigned on line 671 could be null and is dereferenced at line 676.
+  674.   
+  675.           if (inputSigma != null) {
+  676. >             if (inputSigma.length != init.length) {
+  677.                   throw new DimensionMismatchException(inputSigma.length, init.length);
+  678.               }
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/CMAESOptimizer.java:967: error: NULL_DEREFERENCE
+  object `lB` last assigned on line 963 could be null and is dereferenced at line 967.
+  965.   
+  966.               for (int i = 0; i < x.length; i++) {
+  967. >                 if (x[i] < lB[i]) {
+  968.                       return false;
+  969.                   }
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/CMAESOptimizer.java:987: error: NULL_DEREFERENCE
+  object `lB` last assigned on line 982 could be null and is dereferenced at line 987.
+  985.               final double[] repaired = new double[x.length];
+  986.               for (int i = 0; i < x.length; i++) {
+  987. >                 if (x[i] < lB[i]) {
+  988.                       repaired[i] = lB[i];
+  989.                   } else if (x[i] > uB[i]) {
+
+src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:1047: error: NULL_DEREFERENCE
+  object `lB` last assigned on line 1043 could be null and is dereferenced at line 1047.
+  1045.   
+  1046.               for (int i = 0; i < x.length; i++) {
+  1047. >                 if (x[i] < lB[i]) {
+  1048.                       return false;
+  1049.                   }
+
+src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java:1074: error: NULL_DEREFERENCE
+  object `lB` last assigned on line 1069 could be null and is dereferenced at line 1074.
+  1072.               final double[] repaired = new double[x.length];
+  1073.               for (int i = 0; i < x.length; i++) {
+  1074. >                 if (x[i] < lB[i]) {
+  1075.                       repaired[i] = lB[i];
+  1076.                   } else if (x[i] > uB[i]) {
+
+src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/BOBYQAOptimizer.java:2380: error: NULL_DEREFERENCE
+  object `init` last assigned on line 2379 could be null and is dereferenced at line 2380.
+  2378.   
+  2379.           double[] init = getStartPoint();
+  2380. >         final int dimension = init.length;
+  2381.   
+  2382.           // Check problem dimension.
+
+src/main/java/org/apache/commons/math3/optimization/direct/BOBYQAOptimizer.java:2385: error: NULL_DEREFERENCE
+  object `init` last assigned on line 2384 could be null and is dereferenced at line 2385.
+  2383.   
+  2384.           double[] init = getStartPoint();
+  2385. >         final int dimension = init.length;
+  2386.   
+  2387.           // Check problem dimension.
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:153: error: DEADLOCK
+  Potential deadlock. `DescriptiveStatistics.<init>(DescriptiveStatistics)` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  151.        */
+  152.       public DescriptiveStatistics(DescriptiveStatistics original) throws NullArgumentException {
+  153. >         copy(original, this);
+  154.       }
+  155.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedDescriptiveStatistics.java:67: error: DEADLOCK
+  Potential deadlock. `SynchronizedDescriptiveStatistics.<init>(SynchronizedDescriptiveStatistics)` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  65.       public SynchronizedDescriptiveStatistics(SynchronizedDescriptiveStatistics original)
+  66.       throws NullArgumentException {
+  67. >         copy(original, this);
+  68.       }
+  69.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:731: error: DEADLOCK
+  Potential deadlock. `DescriptiveStatistics DescriptiveStatistics.copy()` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  729.           DescriptiveStatistics result = new DescriptiveStatistics();
+  730.           // No try-catch or advertised exception because parms are guaranteed valid
+  731. >         copy(this, result);
+  732.           return result;
+  733.       }
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedDescriptiveStatistics.java:36: error: DEADLOCK
+  Potential deadlock. `DescriptiveStatistics SynchronizedDescriptiveStatistics.copy()` (Trace 1) and `void SynchronizedDescriptiveStatistics.copy(SynchronizedDescriptiveStatistics,SynchronizedDescriptiveStatistics)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics` and `dest` in `class org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics` in reverse orders. Additional report(s) on the same line were suppressed.
+  34.    * @version $Id: SynchronizedDescriptiveStatistics.java 1416643 2012-12-03 19:37:14Z tn $
+  35.    */
+  36. > public class SynchronizedDescriptiveStatistics extends DescriptiveStatistics {
+  37.   
+  38.       /** Serialization UID */
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedDescriptiveStatistics.java:157: error: DEADLOCK
+  Potential deadlock. `SynchronizedDescriptiveStatistics SynchronizedDescriptiveStatistics.copy()` (Trace 1) and `void SynchronizedDescriptiveStatistics.copy(SynchronizedDescriptiveStatistics,SynchronizedDescriptiveStatistics)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics` and `dest` in `class org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics` in reverse orders. Additional report(s) on the same line were suppressed.
+  155.        */
+  156.       @Override
+  157. >     public synchronized SynchronizedDescriptiveStatistics copy() {
+  158.           SynchronizedDescriptiveStatistics result =
+  159.               new SynchronizedDescriptiveStatistics();
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedDescriptiveStatistics.java:161: error: DEADLOCK
+  Potential deadlock. `SynchronizedDescriptiveStatistics SynchronizedDescriptiveStatistics.copy()` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  159.               new SynchronizedDescriptiveStatistics();
+  160.           // No try-catch or advertised exception because arguments are guaranteed non-null
+  161. >         copy(this, result);
+  162.           return result;
+  163.       }
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedSummaryStatistics.java:36: error: DEADLOCK
+  Potential deadlock. `SummaryStatistics SynchronizedSummaryStatistics.copy()` (Trace 1) and `void SynchronizedSummaryStatistics.copy(SynchronizedSummaryStatistics,SynchronizedSummaryStatistics)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatistics` and `dest` in `class org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatistics` in reverse orders. Additional report(s) on the same line were suppressed.
+  34.    * @version $Id: SynchronizedSummaryStatistics.java 1416643 2012-12-03 19:37:14Z tn $
+  35.    */
+  36. > public class SynchronizedSummaryStatistics extends SummaryStatistics {
+  37.   
+  38.       /** Serialization UID */
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedSummaryStatistics.java:330: error: DEADLOCK
+  Potential deadlock. `SynchronizedSummaryStatistics SynchronizedSummaryStatistics.copy()` (Trace 1) and `void SynchronizedSummaryStatistics.copy(SynchronizedSummaryStatistics,SynchronizedSummaryStatistics)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatistics` and `dest` in `class org.apache.commons.math3.stat.descriptive.SynchronizedSummaryStatistics` in reverse orders. Additional report(s) on the same line were suppressed.
+  328.        */
+  329.       @Override
+  330. >     public synchronized SynchronizedSummaryStatistics copy() {
+  331.           SynchronizedSummaryStatistics result =
+  332.               new SynchronizedSummaryStatistics();
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:1148: error: DEADLOCK
+  Potential deadlock. `ResizableDoubleArray ResizableDoubleArray.copy()` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  1146.        * @since 2.0
+  1147.        */
+  1148. >     public synchronized ResizableDoubleArray copy() {
+  1149.           final ResizableDoubleArray result = new ResizableDoubleArray();
+  1150.           copy(this, result);
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:748: error: DEADLOCK
+  Potential deadlock. `void DescriptiveStatistics.copy(DescriptiveStatistics,DescriptiveStatistics)` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  746.           MathUtils.checkNotNull(dest);
+  747.           // Copy data and window size
+  748. >         dest.eDA = source.eDA.copy();
+  749.           dest.windowSize = source.windowSize;
+  750.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/SynchronizedDescriptiveStatistics.java:181: error: DEADLOCK
+  Potential deadlock. `void SynchronizedDescriptiveStatistics.copy(SynchronizedDescriptiveStatistics,SynchronizedDescriptiveStatistics)` (Trace 1) and `void ResizableDoubleArray.copy(ResizableDoubleArray,ResizableDoubleArray)` (Trace 2) acquire locks `source` in `class org.apache.commons.math3.util.ResizableDoubleArray` and `dest` in `class org.apache.commons.math3.util.ResizableDoubleArray` in reverse orders. Additional report(s) on the same line were suppressed.
+  179.           synchronized (source) {
+  180.               synchronized (dest) {
+  181. >                 DescriptiveStatistics.copy(source, dest);
+  182.               }
+  183.           }
+
+src/main/java/org/apache/commons/math3/analysis/integration/gauss/BaseRuleFactory.java:117: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void BaseRuleFactory.addRule(Pair)` mutates container `this.pointsAndWeights` via call to `put` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  115.           }
+  116.   
+  117. >         pointsAndWeights.put(rule.getFirst().length, rule);
+  118.       }
+  119.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/AggregateSummaryStatistics.java:386: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AggregateSummaryStatistics$AggregatingSummaryStatistics.addValue(double)` indirectly writes to field `this.n` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  384.           @Override
+  385.           public void addValue(double value) {
+  386. >             super.addValue(value);
+  387.               synchronized (aggregateStatistics) {
+  388.                   aggregateStatistics.addValue(value);
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:731: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `DescriptiveStatistics DescriptiveStatistics.copy()` indirectly reads without synchronization from `this.geometricMeanImpl`. Potentially races with write in method `DescriptiveStatistics.setGeometricMeanImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  729.           DescriptiveStatistics result = new DescriptiveStatistics();
+  730.           // No try-catch or advertised exception because parms are guaranteed valid
+  731. >         copy(this, result);
+  732.           return result;
+  733.       }
+
+src/main/java/org/apache/commons/math3/stat/descriptive/AggregateSummaryStatistics.java:409: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean AggregateSummaryStatistics$AggregatingSummaryStatistics.equals(Object)` indirectly reads without synchronization from `this.aggregateStatistics.n`. Potentially races with write in method `AggregateSummaryStatistics$AggregatingSummaryStatistics.addValue(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  407.               AggregatingSummaryStatistics stat = (AggregatingSummaryStatistics)object;
+  408.               return super.equals(stat) &&
+  409. >                    aggregateStatistics.equals(stat.aggregateStatistics);
+  410.           }
+  411.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/AggregateSummaryStatistics.java:408: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean AggregateSummaryStatistics$AggregatingSummaryStatistics.equals(Object)` indirectly reads without synchronization from `this.n`. Potentially races with write in method `AggregateSummaryStatistics$AggregatingSummaryStatistics.addValue(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  406.               }
+  407.               AggregatingSummaryStatistics stat = (AggregatingSummaryStatistics)object;
+  408. >             return super.equals(stat) &&
+  409.                      aggregateStatistics.equals(stat.aggregateStatistics);
+  410.           }
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:897: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double[] ResizableDoubleArray.getArrayRef()` reads without synchronization from `this.internalArray`. Potentially races with write in method `ResizableDoubleArray.addElementRolling(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  895.        */
+  896.       protected double[] getArrayRef() {
+  897. >         return internalArray;
+  898.       }
+  899.   
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:846: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int ResizableDoubleArray.getCapacity()` reads without synchronization from `this.internalArray`. Potentially races with write in method `ResizableDoubleArray.addElementRolling(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  844.        */
+  845.       public int getCapacity() {
+  846. >         return internalArray.length;
+  847.       }
+  848.   
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:733: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `float ResizableDoubleArray.getContractionCriteria()` indirectly reads without synchronization from `this.contractionCriterion`. Potentially races with write in method `ResizableDoubleArray.setContractionCriteria(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  731.       @Deprecated
+  732.       public float getContractionCriteria() {
+  733. >         return (float) getContractionCriterion();
+  734.       }
+  735.   
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:750: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double ResizableDoubleArray.getContractionCriterion()` reads without synchronization from `this.contractionCriterion`. Potentially races with write in method `ResizableDoubleArray.setContractionCriteria(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  748.        */
+  749.       public double getContractionCriterion() {
+  750. >         return contractionCriterion;
+  751.       }
+  752.   
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:799: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `float ResizableDoubleArray.getExpansionFactor()` reads without synchronization from `this.expansionFactor`. Potentially races with write in method `ResizableDoubleArray.setExpansionFactor(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  797.       @Deprecated
+  798.       public float getExpansionFactor() {
+  799. >         return (float) expansionFactor;
+  800.       }
+  801.   
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:812: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int ResizableDoubleArray.getExpansionMode()` reads without synchronization from `this.expansionMode`. Potentially races with write in method `ResizableDoubleArray.setExpansionMode(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  810.       @Deprecated
+  811.       public int getExpansionMode() {
+  812. >         switch (expansionMode) {
+  813.           case MULTIPLICATIVE:
+  814.               return MULTIPLICATIVE_MODE;
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:217: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getGeometricMean()` reads without synchronization from `this.geometricMeanImpl`. Potentially races with write in method `DescriptiveStatistics.setGeometricMeanImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  215.        */
+  216.       public double getGeometricMean() {
+  217. >         return apply(geometricMeanImpl);
+  218.       }
+  219.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:279: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getKurtosis()` reads without synchronization from `this.kurtosisImpl`. Potentially races with write in method `DescriptiveStatistics.setKurtosisImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  277.        */
+  278.       public double getKurtosis() {
+  279. >         return apply(kurtosisImpl);
+  280.       }
+  281.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:287: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getMax()` reads without synchronization from `this.maxImpl`. Potentially races with write in method `DescriptiveStatistics.setMaxImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  285.        */
+  286.       public double getMax() {
+  287. >         return apply(maxImpl);
+  288.       }
+  289.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:207: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getMean()` reads without synchronization from `this.meanImpl`. Potentially races with write in method `DescriptiveStatistics.setMeanImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  205.        */
+  206.       public double getMean() {
+  207. >         return apply(meanImpl);
+  208.       }
+  209.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:295: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getMin()` reads without synchronization from `this.minImpl`. Potentially races with write in method `DescriptiveStatistics.setMinImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  293.       */
+  294.       public double getMin() {
+  295. >         return apply(minImpl);
+  296.       }
+  297.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:427: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getPercentile(double)` reads without synchronization from `this.percentileImpl`. Potentially races with write in method `DescriptiveStatistics.setPercentileImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  425.        */
+  426.       public double getPercentile(double p) throws MathIllegalStateException, MathIllegalArgumentException {
+  427. >         if (percentileImpl instanceof Percentile) {
+  428.               ((Percentile) percentileImpl).setQuantile(p);
+  429.           } else {
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:269: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getSkewness()` reads without synchronization from `this.skewnessImpl`. Potentially races with write in method `DescriptiveStatistics.setSkewnessImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  267.        */
+  268.       public double getSkewness() {
+  269. >         return apply(skewnessImpl);
+  270.       }
+  271.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:254: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getStandardDeviation()` indirectly reads without synchronization from `this.varianceImpl`. Potentially races with write in method `DescriptiveStatistics.setVarianceImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  252.           if (getN() > 0) {
+  253.               if (getN() > 1) {
+  254. >                 stdDev = FastMath.sqrt(getVariance());
+  255.               } else {
+  256.                   stdDev = 0.0;
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:912: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int ResizableDoubleArray.getStartIndex()` reads without synchronization from `this.startIndex`. Potentially races with write in method `ResizableDoubleArray.addElementRolling(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  910.        */
+  911.       protected int getStartIndex() {
+  912. >         return startIndex;
+  913.       }
+  914.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:311: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getSum()` reads without synchronization from `this.sumImpl`. Potentially races with write in method `DescriptiveStatistics.setSumImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  309.        */
+  310.       public double getSum() {
+  311. >         return apply(sumImpl);
+  312.       }
+  313.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:320: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getSumsq()` reads without synchronization from `this.sumsqImpl`. Potentially races with write in method `DescriptiveStatistics.setSumsqImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  318.        */
+  319.       public double getSumsq() {
+  320. >         return apply(sumsqImpl);
+  321.       }
+  322.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:231: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `double DescriptiveStatistics.getVariance()` reads without synchronization from `this.varianceImpl`. Potentially races with write in method `DescriptiveStatistics.setVarianceImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  229.        */
+  230.       public double getVariance() {
+  231. >         return apply(varianceImpl);
+  232.       }
+  233.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/AggregateSummaryStatistics.java:418: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int AggregateSummaryStatistics$AggregatingSummaryStatistics.hashCode()` indirectly reads without synchronization from `this.aggregateStatistics.n`. Potentially races with write in method `AggregateSummaryStatistics$AggregatingSummaryStatistics.addValue(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  416.           @Override
+  417.           public int hashCode() {
+  418. >             return 123 + super.hashCode() + aggregateStatistics.hashCode();
+  419.           }
+  420.       }
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:926: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void ResizableDoubleArray.setContractionCriteria(float)` indirectly reads without synchronization from `this.expansionFactor`. Potentially races with write in method `ResizableDoubleArray.setExpansionFactor(...)`.
+ Reporting because this access may occur on a background thread.
+  924.       public void setContractionCriteria(float contractionCriteria)
+  925.           throws MathIllegalArgumentException {
+  926. >         checkContractExpand(contractionCriteria, getExpansionFactor());
+  927.           synchronized(this) {
+  928.               this.contractionCriterion = contractionCriteria;
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:989: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void ResizableDoubleArray.setExpansionFactor(float)` indirectly reads without synchronization from `this.contractionCriterion`. Potentially races with write in method `ResizableDoubleArray.setContractionCriteria(...)`.
+ Reporting because this access may occur on a background thread.
+  987.       @Deprecated
+  988.       public void setExpansionFactor(float expansionFactor) throws MathIllegalArgumentException {
+  989. >         checkContractExpand(getContractionCriterion(), expansionFactor);
+  990.           // The check above verifies that the expansion factor is > 1.0;
+  991.           synchronized(this) {
+
+src/main/java/org/apache/commons/math3/util/ResizableDoubleArray.java:1030: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void ResizableDoubleArray.setExpansionMode(ResizableDoubleArray$ExpansionMode)` writes to field `this.expansionMode` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1028.       @Deprecated
+  1029.       public void setExpansionMode(ExpansionMode expansionMode) {
+  1030. >         this.expansionMode = expansionMode;
+  1031.       }
+  1032.   
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:469: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.percentileImpl`. Potentially races with write in method `DescriptiveStatistics.setPercentileImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  467.           try {
+  468.               // No catch for MIAE because actual parameter is valid below
+  469. >             outBuffer.append("median: ").append(getPercentile(50)).append(endl);
+  470.           } catch (MathIllegalStateException ex) {
+  471.               outBuffer.append("median: unavailable").append(endl);
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:462: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.minImpl`. Potentially races with write in method `DescriptiveStatistics.setMinImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  460.           outBuffer.append("DescriptiveStatistics:").append(endl);
+  461.           outBuffer.append("n: ").append(getN()).append(endl);
+  462. >         outBuffer.append("min: ").append(getMin()).append(endl);
+  463.           outBuffer.append("max: ").append(getMax()).append(endl);
+  464.           outBuffer.append("mean: ").append(getMean()).append(endl);
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:463: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.maxImpl`. Potentially races with write in method `DescriptiveStatistics.setMaxImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  461.           outBuffer.append("n: ").append(getN()).append(endl);
+  462.           outBuffer.append("min: ").append(getMin()).append(endl);
+  463. >         outBuffer.append("max: ").append(getMax()).append(endl);
+  464.           outBuffer.append("mean: ").append(getMean()).append(endl);
+  465.           outBuffer.append("std dev: ").append(getStandardDeviation())
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:464: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.meanImpl`. Potentially races with write in method `DescriptiveStatistics.setMeanImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  462.           outBuffer.append("min: ").append(getMin()).append(endl);
+  463.           outBuffer.append("max: ").append(getMax()).append(endl);
+  464. >         outBuffer.append("mean: ").append(getMean()).append(endl);
+  465.           outBuffer.append("std dev: ").append(getStandardDeviation())
+  466.               .append(endl);
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:465: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.varianceImpl`. Potentially races with write in method `DescriptiveStatistics.setVarianceImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  463.           outBuffer.append("max: ").append(getMax()).append(endl);
+  464.           outBuffer.append("mean: ").append(getMean()).append(endl);
+  465. >         outBuffer.append("std dev: ").append(getStandardDeviation())
+  466.               .append(endl);
+  467.           try {
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:474: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.kurtosisImpl`. Potentially races with write in method `DescriptiveStatistics.setKurtosisImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  472.           }
+  473.           outBuffer.append("skewness: ").append(getSkewness()).append(endl);
+  474. >         outBuffer.append("kurtosis: ").append(getKurtosis()).append(endl);
+  475.           return outBuffer.toString();
+  476.       }
+
+src/main/java/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.java:473: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DescriptiveStatistics.toString()` indirectly reads without synchronization from `this.skewnessImpl`. Potentially races with write in method `DescriptiveStatistics.setSkewnessImpl(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  471.               outBuffer.append("median: unavailable").append(endl);
+  472.           }
+  473. >         outBuffer.append("skewness: ").append(getSkewness()).append(endl);
+  474.           outBuffer.append("kurtosis: ").append(getKurtosis()).append(endl);
+  475.           return outBuffer.toString();
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 34
+         NULL_DEREFERENCE: 25
+                 DEADLOCK: 11
+            RESOURCE_LEAK: 1

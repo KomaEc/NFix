@@ -72,7 +72,7 @@ public class ShrinkWrapFileSystemsTestCase {
         Assert.assertTrue("Backing archive was not as expected", archive == fs.getArchive());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void noArchiveInEnvShouldResultInIAE() throws Exception {
         FileSystems.newFileSystem(
             ShrinkWrapFileSystems.getRootUri(

@@ -1,0 +1,1651 @@
+Found 188 issues
+
+src/main/java/org/drools/compiler/lang/api/impl/BehaviorDescrBuilderImpl.java:34: error: NULL_DEREFERENCE
+  object `BaseDescrBuilderImpl.parent` last assigned on line 33 could be null and is dereferenced at line 34.
+  32.       protected BehaviorDescrBuilderImpl(P parent) {
+  33.           super( parent, new BehaviorDescr() );
+  34. >         this.parent.getDescr().addBehavior( descr );
+  35.       }
+  36.   
+
+src/main/java/org/drools/compiler/rule/builder/RuleBuildContext.java:83: error: NULL_DEREFERENCE
+  object returned by `getDialect()` could be null and is dereferenced at line 83.
+  81.   
+  82.           if (this.rule.getDialect() == null) {
+  83. >             this.rule.setDialect(getDialect().getId());
+  84.           }
+  85.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieBuilderSetImpl.java:62: error: NULL_DEREFERENCE
+  object `kieModule` last assigned on line 61 could be null and is dereferenced at line 62.
+  60.           previousErrors = new ArrayList<KnowledgeBuilderError>();
+  61.           InternalKieModule kieModule = (InternalKieModule) kieBuilder.getKieModuleIgnoringErrors();
+  62. >         for (KieBaseModel kBaseModel : kieModule.getKieModuleModel().getKieBaseModels().values()) {
+  63.               KnowledgeBuilder kBuilder = kieModule.getKnowledgeBuilderForKieBase( kBaseModel.getName() );
+  64.               if (kBuilder != null) {
+
+src/main/java/org/drools/compiler/lang/descr/AndDescr.java:68: error: NULL_DEREFERENCE
+  object returned by `and.getAnnotationNames()` could be null and is dereferenced at line 68.
+  66.                   addDescr( descr );
+  67.               }
+  68. >             for ( String annKey : and.getAnnotationNames() ) {
+  69.                   addAnnotation(and.getAnnotation(annKey));
+  70.               }
+
+src/main/java/org/drools/compiler/lang/dsl/DSLTokenizedMappingFile.java:102: error: RESOURCE_LEAK
+  resource of type `java.io.LineNumberReader` acquired by call to `new()` at line 65 is not released after line 102.
+  100.           if( inEntry ) sb.append( '\n' );
+  101.   
+  102. >         lnr.close();
+  103.   //        logger.info( "====== DSL definition:" );
+  104.   //        logger.info( sb.toString() );
+
+src/main/java/org/drools/compiler/lang/descr/ConstraintConnectiveDescr.java:82: error: NULL_DEREFERENCE
+  object returned by `con.getAnnotationNames()` could be null and is dereferenced at line 82.
+  80.                   for( BaseDescr descr : con.getDescrs() ) {
+  81.                       addDescr( descr );
+  82. >                     for ( String annKey : con.getAnnotationNames() ) {
+  83.                           addAnnotation( con.getAnnotation( annKey ) );
+  84.                       }
+
+src/main/java/org/drools/compiler/commons/jci/readers/DiskResourceReader.java:105: error: NULL_DEREFERENCE
+  object `directoryFiles` last assigned on line 104 could be null and is dereferenced at line 105.
+  103.           if (pFile.isDirectory()) {
+  104.               final File[] directoryFiles = pFile.listFiles();
+  105. >             for (int i = 0; i < directoryFiles.length; i++) {
+  106.                   list(directoryFiles[i], pFiles);
+  107.               }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieBuilderSetImpl.java:113: error: NULL_DEREFERENCE
+  object `kieModule` last assigned on line 112 could be null and is dereferenced at line 113.
+  111.   
+  112.           InternalKieModule kieModule = (InternalKieModule) kieBuilder.getKieModuleIgnoringErrors();
+  113. >         for (KieBaseModel kBaseModel : kieModule.getKieModuleModel().getKieBaseModels().values()) {
+  114.               KnowledgeBuilder kBuilder = kieModule.getKnowledgeBuilderForKieBase( kBaseModel.getName() );
+  115.               if (kBuilder == null) {
+
+src/main/java/org/drools/compiler/rule/builder/RuleBuilder.java:126: error: NULL_DEREFERENCE
+  object returned by `context.getRuleDescr().getAnnotationNames()` could be null and is dereferenced at line 126.
+  124.       public void buildMetaAttributes(final RuleBuildContext context ) {
+  125.           RuleImpl rule = context.getRule();
+  126. >         for ( String metaAttr : context.getRuleDescr().getAnnotationNames() ) {
+  127.               AnnotationDescr ad = context.getRuleDescr().getAnnotation( metaAttr );
+  128.               try {
+
+src/main/java/org/drools/compiler/builder/impl/TypeDeclarationBuilder.java:148: error: NULL_DEREFERENCE
+  object `prev` last assigned on line 145 could be null and is dereferenced at line 148.
+  146.                   boolean res = mergeTypeDescriptors( prev, descr );
+  147.                   if ( ! res ) {
+  148. >                     unprocesseableDescrs.put( prev.getType().getFullName(), prev );
+  149.                       kbuilder.addBuilderResult( new TypeDeclarationError( prev,
+  150.                                                                            "Found duplicate declaration for type " + prev.getType().getFullName() + ", unable to reconcile " ) );
+
+src/main/java/org/drools/compiler/lang/dsl/DefaultExpander.java:157: error: RESOURCE_LEAK
+  resource of type `java.util.Formatter` acquired by call to `new()` at line 151 is not released after line 157.
+  155.                           entry.getKey() );
+  156.           }
+  157. >     }
+  158.   
+  159.       /**
+
+src/main/java/org/drools/compiler/kie/util/ChangeSetBuilder.java:175: error: NULL_DEREFERENCE
+  object `updatedRules` last assigned on line 155 could be null and is dereferenced at line 175.
+  173.                       // is brittle and heavier than iterating an array
+  174.                       if ( !segmentEquals(ob, ord.getStartCharacter(), ord.getEndCharacter(), cb, crd.getStartCharacter(), crd.getEndCharacter() ) ||
+  175. >                          (type == ResourceChange.Type.RULE && updatedRules.contains( ( (RuleDescr) crd ).getParentName() )) ) {
+  176.                           pkgcs.getChanges().add( new ResourceChange( ChangeType.UPDATED, type, cName ) );
+  177.                           if (type == ResourceChange.Type.RULE) {
+
+src/main/java/org/drools/compiler/kie/util/ChangeSetBuilder.java:178: error: NULL_DEREFERENCE
+  object `updatedRules` last assigned on line 155 could be null and is dereferenced at line 178.
+  176.                           pkgcs.getChanges().add( new ResourceChange( ChangeType.UPDATED, type, cName ) );
+  177.                           if (type == ResourceChange.Type.RULE) {
+  178. >                             updatedRules.add(cName);
+  179.                           }
+  180.                       }
+
+src/main/java/org/drools/compiler/lang/dsl/DefaultExpander.java:199: error: RESOURCE_LEAK
+  resource of type `java.util.Formatter` acquired by call to `new()` at line 187 is not released after line 199.
+  197.                   offset = nlPos + 1;
+  198.               }
+  199. >             logger.info( "=== DRL xpanded from DSLR ===" );
+  200.               logger.info( show.toString() );
+  201.               logger.info( "=============================" );
+
+src/main/java/org/drools/compiler/lang/descr/AnnotationDescr.java:198: error: NULL_DEREFERENCE
+  object returned by `getSingleValue()` could be null and is dereferenced at line 198.
+  196.                   return "";
+  197.               case 1:
+  198. >                 return getSingleValue().toString();
+  199.               default:
+  200.                   StringBuilder sb = new StringBuilder();
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:218: error: NULL_DEREFERENCE
+  object `null` is dereferenced by call to `KnowledgeBuilderImpl(...)` at line 218.
+  216.        */
+  217.       public KnowledgeBuilderImpl() {
+  218. >         this((InternalKnowledgeBase) null,
+  219.                null);
+  220.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:227: error: NULL_DEREFERENCE
+  object `null` is dereferenced by call to `KnowledgeBuilderImpl(...)` at line 227.
+  225.   
+  226.       public KnowledgeBuilderImpl(final InternalKnowledgePackage pkg) {
+  227. >         this(pkg,
+  228.                null);
+  229.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:232: error: NULL_DEREFERENCE
+  object `null` is dereferenced by call to `KnowledgeBuilderImpl(...)` at line 232.
+  230.   
+  231.       public KnowledgeBuilderImpl(final InternalKnowledgeBase kBase) {
+  232. >         this(kBase,
+  233.                null);
+  234.       }
+
+src/main/java/org/drools/compiler/rule/builder/MVELConstraintBuilder.java:238: error: NULL_DEREFERENCE
+  object `method` last assigned on line 237 could be null and is dereferenced at line 238.
+  236.       protected static String normalizeStringOperator( String leftValue, String rightValue, LiteralRestrictionDescr restrictionDescr ) {
+  237.           String method = restrictionDescr.getParameterText();
+  238. >         if (method.equals("length")) {
+  239.               return leftValue + ".length()" + (restrictionDescr.isNegated() ? " != " : " == ") + rightValue;
+  240.           }
+
+src/main/java/org/drools/compiler/rule/builder/MVELConstraintBuilder.java:256: error: NULL_DEREFERENCE
+  object `method` last assigned on line 255 could be null and is dereferenced at line 256.
+  254.           if (relDescr.getOperator().equals("str")) {
+  255.               String method = relDescr.getParametersText();
+  256. >             if (method.equals("length")) {
+  257.                   return leftValue + ".length()" + (relDescr.isNegated() ? " != " : " == ") + rightValue;
+  258.               }
+
+src/main/java/org/drools/compiler/rule/builder/MVELConstraintBuilder.java:254: error: NULL_DEREFERENCE
+  object returned by `relDescr.getOperator()` could be null and is dereferenced at line 254.
+  252.                                                               String rightValue,
+  253.                                                               RelationalExprDescr relDescr) {
+  254. >         if (relDescr.getOperator().equals("str")) {
+  255.               String method = relDescr.getParametersText();
+  256.               if (method.equals("length")) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:365: error: NULL_DEREFERENCE
+  object `pkg` last assigned on line 358 could be null and is dereferenced by call to `addPackage(...)` at line 365.
+  363.   
+  364.           if (!parser.hasErrors()) {
+  365. >             addPackage(pkg);
+  366.           }
+  367.           this.resource = null;
+
+src/main/java/org/drools/compiler/kie/builder/impl/ClasspathKieProject.java:423: error: RESOURCE_LEAK
+  resource of type `java.net.HttpURLConnection` acquired by call to `openConnection()` at line 423 is not released after line 423.
+  421.           String path = null;
+  422.           try {
+  423. >             Object content = url.openConnection().getContent();
+  424.               File f = (File)m.invoke(content);
+  425.               path = f.getPath();
+
+src/main/java/org/drools/compiler/kie/builder/impl/ClasspathKieProject.java:423: error: RESOURCE_LEAK
+  resource of type `javax.net.ssl.HttpsURLConnection` acquired by call to `openConnection()` at line 423 is not released after line 423.
+  421.           String path = null;
+  422.           try {
+  423. >             Object content = url.openConnection().getContent();
+  424.               File f = (File)m.invoke(content);
+  425.               path = f.getPath();
+
+src/main/java/org/drools/compiler/compiler/io/memory/MemoryFileSystem.java:410: error: RESOURCE_LEAK
+  resource of type `java.io.FileOutputStream` acquired by call to `FileOutputStream(...)` at line 410 is not released after line 410.
+  408.                                                        jarName + ".jar" );
+  409.               System.out.println( jarFile );
+  410. >             zip( new FileOutputStream( jarFile ) );
+  411.               return jarFile;
+  412.           } catch ( IOException e ) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:467: error: NULL_DEREFERENCE
+  object returned by `scoreCardToPackageDescr(resource,configuration)` could be null and is dereferenced by call to `addPackage(...)` at line 467.
+  465.                                                                                       IOException {
+  466.           this.resource = resource;
+  467. >         addPackage( scoreCardToPackageDescr( resource, configuration ) );
+  468.           this.resource = null;
+  469.       }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:497: error: NULL_DEREFERENCE
+  object `pkgs` last assigned on line 493 could be null and is dereferenced at line 497.
+  495.           if ( kBaseModel.getEventProcessingMode() == EventProcessingOption.CLOUD &&
+  496.               (conf == null || conf.getOption(EventProcessingOption.class) == EventProcessingOption.CLOUD ) ) {
+  497. >             for (KnowledgePackage kpkg : pkgs) {
+  498.                   if ( ((KnowledgePackageImpl) kpkg).needsStreamMode() ) {
+  499.                       throw new RuntimeException( "The requested KieBase \"" + kBaseModel.getName() + "\" has been set to run in CLOUD mode but requires features only available in STREAM mode" );
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:484: error: NULL_DEREFERENCE
+  object returned by `guidedScoreCardToPackageDescr(resource)` could be null and is dereferenced by call to `addPackage(...)` at line 484.
+  482.                                                                                             IOException {
+  483.           this.resource = resource;
+  484. >         addPackage( guidedScoreCardToPackageDescr(resource) );
+  485.           this.resource = null;
+  486.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:523: error: NULL_DEREFERENCE
+  object returned by `drlToPackageDescr(resource)` could be null and is dereferenced by call to `addPackage(...)` at line 523.
+  521.                                                               IOException {
+  522.           this.resource = resource;
+  523. >         addPackage(drlToPackageDescr(resource));
+  524.           this.resource = null;
+  525.       }
+
+src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java:527: error: NULL_DEREFERENCE
+  object `typeDeclaration` last assigned on line 526 could be null and is dereferenced at line 527.
+  525.           Class<?> patternClass = ((ClassObjectType)patternType).getClassType();
+  526.           TypeDeclaration typeDeclaration = getTypeDeclarationForPattern(context, pattern);
+  527. >         if (!typeDeclaration.isPropertyReactive()) {
+  528.               context.addError( new DescrBuildError( context.getParentDescr(),
+  529.                                                      patternDescr,
+
+src/main/java/org/drools/compiler/lang/DRL5Parser.java:570: error: NULL_DEREFERENCE
+  object `declare` last assigned on line 563 could be null and is dereferenced at line 570.
+  568.               String type = qualifiedIdentifier();
+  569.               if ( state.failed ) return null;
+  570. >             if ( state.backtracking == 0 ) declare.name( type );
+  571.   
+  572.               while ( input.LA( 1 ) == DRL5Lexer.AT ) {
+
+src/main/java/org/drools/compiler/lang/DRL5Parser.java:649: error: NULL_DEREFERENCE
+  object `declare` last assigned on line 645 could be null and is dereferenced at line 649.
+  647.                                       null );
+  648.   
+  649. >             declare.setTrait(isTrait);
+  650.               
+  651.               if( helper.validateIdentifierKey( DroolsSoftKeywords.TYPE ) ) {
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieBuilderImpl.java:649: error: NULL_DEREFERENCE
+  object returned by `file.listFiles()` could be null and is dereferenced at line 649.
+  647.       public static File recurseToPomProperties( File file ) {
+  648.           if ( file.isDirectory() ) {
+  649. >             for ( java.io.File child : file.listFiles() ) {
+  650.                   if ( child.isDirectory() ) {
+  651.                       File returnedFile = recurseToPomProperties( child );
+
+src/main/java/org/drools/compiler/lang/DRL6Parser.java:659: error: NULL_DEREFERENCE
+  object `declare` last assigned on line 650 could be null and is dereferenced at line 659.
+  657.                   return null;
+  658.               if (state.backtracking == 0)
+  659. >                 declare.name(type);
+  660.   
+  661.               while (input.LA(1) == DRL6Lexer.AT) {
+
+src/main/java/org/drools/compiler/lang/DRL6Parser.java:735: error: NULL_DEREFERENCE
+  object `declare` last assigned on line 731 could be null and is dereferenced at line 735.
+  733.                       null);
+  734.   
+  735. >             declare.setTrait(isTrait);
+  736.   
+  737.               if (helper.validateIdentifierKey(DroolsSoftKeywords.TYPE)) {
+
+src/main/java/org/drools/compiler/lang/DRL6StrictParser.java:797: error: NULL_DEREFERENCE
+  object `declare` last assigned on line 792 could be null and is dereferenced at line 797.
+  795.   
+  796.               setAnnotationsOn(declare);
+  797. >             declare.setTrait(isTrait);
+  798.   
+  799.               if (helper.validateIdentifierKey(DroolsSoftKeywords.TYPE)) {
+
+src/main/java/org/drools/compiler/lang/DRL5Parser.java:818: error: NULL_DEREFERENCE
+  object `field` last assigned on line 811 could be null and is dereferenced at line 818.
+  816.               String type = type();
+  817.               if ( state.failed ) return;
+  818. >             if ( state.backtracking == 0 ) field.type( type );
+  819.   
+  820.               if ( input.LA( 1 ) == DRL5Lexer.EQUALS_ASSIGN ) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:878: error: NULL_DEREFERENCE
+  object `changeSet` last assigned on line 874 could be null and is dereferenced at line 878.
+  876.                   // @TODO should log an error
+  877.               }
+  878. >             for (Resource nestedResource : changeSet.getResourcesAdded()) {
+  879.                   InternalResource iNestedResourceResource = (InternalResource) nestedResource;
+  880.                   if (iNestedResourceResource.isDirectory()) {
+
+src/main/java/org/drools/compiler/lang/DRL6Parser.java:914: error: NULL_DEREFERENCE
+  object `field` last assigned on line 905 could be null and is dereferenced at line 914.
+  912.                   return;
+  913.               if (state.backtracking == 0)
+  914. >                 field.type(type);
+  915.   
+  916.               if (input.LA(1) == DRL6Lexer.EQUALS_ASSIGN) {
+
+src/main/java/org/drools/compiler/lang/DRL6StrictParser.java:973: error: NULL_DEREFERENCE
+  object `field` last assigned on line 962 could be null and is dereferenced at line 973.
+  971.                   return;
+  972.               if (state.backtracking == 0)
+  973. >                 field.type(type);
+  974.   
+  975.               if (input.LA(1) == DRL6Lexer.EQUALS_ASSIGN) {
+
+src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java:967: error: NULL_DEREFERENCE
+  object `operator` last assigned on line 959 could be null and is dereferenced at line 967.
+  965.           }
+  966.   
+  967. >         if (operator.equals( "str" )) {
+  968.               String rightValue = findRightExpressionValue( subDescr );
+  969.               return normalizeStringOperator( leftValue, rightValue, new LiteralRestrictionDescr( operator,
+
+src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java:1071: error: NULL_DEREFERENCE
+  object returned by `relDescr.getOperator()` could be null and is dereferenced at line 1071.
+  1069.   
+  1070.           ValueType vtype = extractor.getValueType();
+  1071. >         String operator = relDescr.getOperator().trim();
+  1072.           LiteralRestrictionDescr restrictionDescr = buildLiteralRestrictionDescr(context, relDescr, value2, operator, isConstant);
+  1073.   
+
+src/main/java/org/drools/compiler/rule/builder/PatternBuilder.java:1402: error: NULL_DEREFERENCE
+  object `typeDeclaration` last assigned on line 1399 could be null and is dereferenced at line 1402.
+  1400.   
+  1401.                   String fieldName = (( ClassFieldReader) extractor ).getFieldName();
+  1402. >                 if ( typeDeclaration.getSettableProperties().contains(fieldName) ) {
+  1403.                       List<String> watchlist = pattern.getListenedProperties();
+  1404.                       if ( watchlist == null ) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1625: error: NULL_DEREFERENCE
+  object `current` last assigned on line 1622 could be null and is dereferenced at line 1625.
+  1623.           this.pkgRegistryMap.remove(packageDescr.getName());
+  1624.           this.pkgRegistryMap.put(packageDescr.getName(), pkgRegistry);
+  1625. >         if (current.getName().equals(packageDescr.getName())) {
+  1626.               currentRulePackage = pkgRegistryMap.size() - 1;
+  1627.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1746: error: NULL_DEREFERENCE
+  object returned by `context.getDialect()` could be null and is dereferenced at line 1746.
+  1744.                                                               pkg,
+  1745.                                                               ctr.getDialect(pkgRegistry.getDialect()));
+  1746. >             final RuleConditionBuilder builder = (RuleConditionBuilder) context.getDialect().getBuilder(wd.getPattern().getClass());
+  1747.               if (builder != null) {
+  1748.                   final Pattern pattern = (Pattern) builder.build(context,
+
+src/main/java/org/drools/compiler/lang/DRL5Parser.java:3930: error: NULL_DEREFERENCE
+  object `t` last assigned on line 3922 could be null and is dereferenced at line 3930.
+  3928.   
+  3929.               if ( state.backtracking == 0 ) {
+  3930. >                 rule.getDescr().setConsequenceLocation( t.getLine(),
+  3931.                                                           t.getCharPositionInLine() );
+  3932.                   helper.emit( Location.LOCATION_RHS );
+
+src/main/java/org/drools/compiler/lang/DRL6Parser.java:4281: error: NULL_DEREFERENCE
+  object `t` last assigned on line 4272 could be null and is dereferenced at line 4281.
+  4279.   
+  4280.               if (state.backtracking == 0) {
+  4281. >                 rule.getDescr().setConsequenceLocation(t.getLine(),
+  4282.                           t.getCharPositionInLine());
+  4283.                   helper.emit(Location.LOCATION_RHS);
+
+src/main/java/org/drools/compiler/lang/DRL6StrictParser.java:4300: error: NULL_DEREFERENCE
+  object `t` last assigned on line 4291 could be null and is dereferenced at line 4300.
+  4298.   
+  4299.               if (state.backtracking == 0) {
+  4300. >                 rule.getDescr().setConsequenceLocation(t.getLine(),
+  4301.                           t.getCharPositionInLine());
+  4302.                   helper.emit(Location.LOCATION_RHS);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:218: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>()` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  216.        */
+  217.       public KnowledgeBuilderImpl() {
+  218. >         this((InternalKnowledgeBase) null,
+  219.                null);
+  220.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:245: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>(KnowledgeBuilderConfigurationImpl)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  243.        */
+  244.       public KnowledgeBuilderImpl(final KnowledgeBuilderConfigurationImpl configuration) {
+  245. >         this((InternalKnowledgeBase) null,
+  246.                configuration);
+  247.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:227: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>(InternalKnowledgePackage)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  225.   
+  226.       public KnowledgeBuilderImpl(final InternalKnowledgePackage pkg) {
+  227. >         this(pkg,
+  228.                null);
+  229.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:275: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>(InternalKnowledgePackage,KnowledgeBuilderConfigurationImpl)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  273.   
+  274.           processBuilder = createProcessBuilder();
+  275. >         typeBuilder = new TypeDeclarationBuilder(this);
+  276.       }
+  277.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:232: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>(InternalKnowledgeBase)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  230.   
+  231.       public KnowledgeBuilderImpl(final InternalKnowledgeBase kBase) {
+  232. >         this(kBase,
+  233.                null);
+  234.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:302: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KnowledgeBuilderImpl.<init>(InternalKnowledgeBase,KnowledgeBuilderConfigurationImpl)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  300.   
+  301.           processBuilder = createProcessBuilder();
+  302. >         typeBuilder = new TypeDeclarationBuilder(this);
+  303.       }
+  304.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2245: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.add(Resource,ResourceType)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2243.       public void add(Resource resource, ResourceType type) {
+  2244.           ResourceConfiguration resourceConfiguration = resource instanceof BaseResource ? resource.getConfiguration() : null;
+  2245. >         add(resource, type, resourceConfiguration)  ;
+  2246.       }
+  2247.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2255: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.add(Resource,ResourceType,ResourceConfiguration)` indirectly mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2253.                               ResourceType type,
+  2254.                               ResourceConfiguration configuration) {
+  2255. >         registerBuildResource(resource, type);
+  2256.           addKnowledgeResource(resource, type, configuration);
+  2257.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2256: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.add(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2254.                               ResourceConfiguration configuration) {
+  2255.           registerBuildResource(resource, type);
+  2256. >         addKnowledgeResource(resource, type, configuration);
+  2257.       }
+  2258.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1011: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addBuilderResult(KnowledgeBuilderResult)` mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1009.   
+  1010.       void addBuilderResult(KnowledgeBuilderResult result) {
+  1011. >         this.results.add(result);
+  1012.       }
+  1013.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:678: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addDsl(Resource)` mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  676.               reader = resource.getReader();
+  677.               if (!file.parseAndLoad(reader)) {
+  678. >                 this.results.addAll(file.getErrors());
+  679.               }
+  680.               if (this.dslFiles == null) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:766: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `prev.fields` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  764.                   addProcessFromXml(resource);
+  765.               } else if (ResourceType.DTABLE.equals(type)) {
+  766. >                 addPackageFromDecisionTable(resource, configuration);
+  767.               } else if (ResourceType.PKG.equals(type)) {
+  768.                   addPackageFromInputStream(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:784: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `tdescr.superTypes` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  782.                   addPackageFromGuidedDecisionTable(resource);
+  783.               } else if (ResourceType.SCGD.equals(type)) {
+  784. >                 addPackageFromGuidedScoreCard(resource);
+  785.               } else {
+  786.                   addPackageForExternalType(resource, type, configuration);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:782: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from `declarationDescr.superTypes`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  780.                   addPackageFromTemplate(resource);
+  781.               } else if (ResourceType.GDST.equals(type)) {
+  782. >                 addPackageFromGuidedDecisionTable(resource);
+  783.               } else if (ResourceType.SCGD.equals(type)) {
+  784.                   addPackageFromGuidedScoreCard(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:780: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from `altDescr.typeDeclarations`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  778.                   addPackageFromDrl(resource);
+  779.               } else if (ResourceType.TEMPLATE.equals(type)) {
+  780. >                 addPackageFromTemplate(resource);
+  781.               } else if (ResourceType.GDST.equals(type)) {
+  782.                   addPackageFromGuidedDecisionTable(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:778: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  776.                   addPackageFromScoreCard(resource, configuration);
+  777.               } else if (ResourceType.TDRL.equals(type)) {
+  778. >                 addPackageFromDrl(resource);
+  779.               } else if (ResourceType.TEMPLATE.equals(type)) {
+  780.                   addPackageFromTemplate(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:776: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from container `this.typeBuilder.kbuilder.pkgRegistryMap` via call to `containsKey`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  774.                   addPackageFromPMML(resource, type, configuration);
+  775.               } else if (ResourceType.SCARD.equals(type)) {
+  776. >                 addPackageFromScoreCard(resource, configuration);
+  777.               } else if (ResourceType.TDRL.equals(type)) {
+  778.                   addPackageFromDrl(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:745: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from `typeFieldDescr.annotations`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  743.               ((InternalResource) resource).setResourceType(type);
+  744.               if (ResourceType.DRL.equals(type)) {
+  745. >                 addPackageFromDrl(resource);
+  746.               } else if (ResourceType.GDRL.equals(type)) {
+  747.                   addPackageFromDrl(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:774: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `descr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  772.                   addPackageFromXSD(resource, (JaxbConfigurationImpl) configuration);
+  773.               } else if (ResourceType.PMML.equals(type)) {
+  774. >                 addPackageFromPMML(resource, type, configuration);
+  775.               } else if (ResourceType.SCARD.equals(type)) {
+  776.                   addPackageFromScoreCard(resource, configuration);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:761: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  759.                   addPackageFromXml(resource);
+  760.               } else if (ResourceType.DRF.equals(type)) {
+  761. >                 addProcessFromXml(resource);
+  762.               } else if (ResourceType.BPMN2.equals(type)) {
+  763.                   BPMN2ProcessFactory.configurePackageBuilder(this);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:772: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly reads without synchronization from `typeDeclarationDescr.annotations`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  770.                   addPackageFromChangeSet(resource);
+  771.               } else if (ResourceType.XSD.equals(type)) {
+  772. >                 addPackageFromXSD(resource, (JaxbConfigurationImpl) configuration);
+  773.               } else if (ResourceType.PMML.equals(type)) {
+  774.                   addPackageFromPMML(resource, type, configuration);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:747: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `altDescr.namespace` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  745.                   addPackageFromDrl(resource);
+  746.               } else if (ResourceType.GDRL.equals(type)) {
+  747. >                 addPackageFromDrl(resource);
+  748.               } else if (ResourceType.RDRL.equals(type)) {
+  749.                   addPackageFromDrl(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:753: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addKnowledgeResource(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  751.                   addPackageFromDrl(resource);
+  752.               } else if (ResourceType.DSLR.equals(type)) {
+  753. >                 addPackageFromDslr(resource);
+  754.               } else if (ResourceType.RDSLR.equals(type)) {
+  755.                   addPackageFromDslr(resource);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:982: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackage(PackageDescr)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  980.           mergePackage(pkgRegistry, packageDescr);
+  981.   
+  982. >         compileAllRules(packageDescr, pkgRegistry);
+  983.       }
+  984.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:972: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackage(PackageDescr)` indirectly writes to field `pd.imports` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  970.        */
+  971.       public void addPackage(final PackageDescr packageDescr) {
+  972. >         PackageRegistry pkgRegistry = initPackageRegistry(packageDescr);
+  973.           if (pkgRegistry == null) {
+  974.               return;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:977: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackage(PackageDescr)` writes to field `this.currentRulePackage` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  975.           }
+  976.   
+  977. >         currentRulePackage = pkgRegistryMap.size() - 1;
+  978.   
+  979.           // merge into existing package
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:980: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackage(PackageDescr)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  978.   
+  979.           // merge into existing package
+  980. >         mergePackage(pkgRegistry, packageDescr);
+  981.   
+  982.           compileAllRules(packageDescr, pkgRegistry);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:374: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDecisionTable(Resource,ResourceConfiguration)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  372.                                                                                           IOException {
+  373.           this.resource = resource;
+  374. >         addPackage( decisionTableToPackageDescr( resource, configuration ) );
+  375.           this.resource = null;
+  376.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:341: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Reader)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  339.       public void addPackageFromDrl(final Reader reader) throws DroolsParserException,
+  340.                                                                 IOException {
+  341. >         addPackageFromDrl(reader, new ReaderResource(reader, ResourceType.DRL));
+  342.       }
+  343.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:618: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Reader,Reader)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  616.           this.results.addAll( parser.getErrors() );
+  617.           if (!parser.hasErrors()) {
+  618. >             addPackage(pkg);
+  619.           }
+  620.           this.resource = null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:616: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Reader,Reader)` mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  614.           final DrlParser parser = new DrlParser(configuration.getLanguageLevel());
+  615.           final PackageDescr pkg = parser.parse(source, dsl);
+  616. >         this.results.addAll( parser.getErrors() );
+  617.           if (!parser.hasErrors()) {
+  618.               addPackage(pkg);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:359: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Reader,Resource)` mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  357.           final DrlParser parser = new DrlParser(configuration.getLanguageLevel());
+  358.           final PackageDescr pkg = parser.parse(sourceResource, reader);
+  359. >         this.results.addAll(parser.getErrors());
+  360.           if (pkg == null) {
+  361.               addBuilderResult(new ParserError(sourceResource, "Parser returned a null Package", 0, 0));
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:365: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Reader,Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  363.   
+  364.           if (!parser.hasErrors()) {
+  365. >             addPackage(pkg);
+  366.           }
+  367.           this.resource = null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:523: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDrl(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  521.                                                               IOException {
+  522.           this.resource = resource;
+  523. >         addPackage(drlToPackageDescr(resource));
+  524.           this.resource = null;
+  525.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:626: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromDslr(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  624.                                                                      IOException {
+  625.           this.resource = resource;
+  626. >         addPackage(dslrToPackageDescr(resource));
+  627.           this.resource = null;
+  628.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:411: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromGuidedDecisionTable(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  409.                                                                               IOException {
+  410.           this.resource = resource;
+  411. >         addPackage( guidedDecisionTableToPackageDescr( resource ) );
+  412.           this.resource = null;
+  413.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:484: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromGuidedScoreCard(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  482.                                                                                             IOException {
+  483.           this.resource = resource;
+  484. >         addPackage( guidedScoreCardToPackageDescr(resource) );
+  485.           this.resource = null;
+  486.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:922: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromInputStream(Resource)` mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  920.               addPackage(kpkg);
+  921.           } else {
+  922. >             results.add(new DroolsError(resource) {
+  923.   
+  924.                   @Override
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:820: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromPMML(Resource,ResourceType,ResourceConfiguration)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  818.               if (compiler.getResults().isEmpty()) {
+  819.                   this.resource = resource;
+  820. >                 PackageDescr descr = pmmlModelToPackageDescr(compiler, resource);
+  821.                   if (descr != null) {
+  822.                       addPackage(descr);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:822: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromPMML(Resource,ResourceType,ResourceConfiguration)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  820.                   PackageDescr descr = pmmlModelToPackageDescr(compiler, resource);
+  821.                   if (descr != null) {
+  822. >                     addPackage(descr);
+  823.                   }
+  824.                   this.resource = null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:467: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromScoreCard(Resource,ResourceConfiguration)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  465.                                                                                       IOException {
+  466.           this.resource = resource;
+  467. >         addPackage( scoreCardToPackageDescr( resource, configuration ) );
+  468.           this.resource = null;
+  469.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:497: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromTemplate(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  495.                                                                    IOException {
+  496.           this.resource = resource;
+  497. >         addPackage(templateToPackageDescr(resource));
+  498.           this.resource = null;
+  499.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:851: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromXSD(Resource,JaxbConfigurationImpl)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  849.                              JaxbConfigurationImpl configuration) throws IOException {
+  850.           if (configuration != null) {
+  851. >             String[] classes = DroolsJaxbHelperProviderImpl.addXsdModel(resource,
+  852.                                                                           this,
+  853.                                                                           configuration.getXjcOpts(),
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:568: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromXml(Reader)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  566.           }
+  567.   
+  568. >         addPackage(xmlReader.getPackageDescr());
+  569.           this.resource = null;
+  570.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:575: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addPackageFromXml(Resource)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  573.                                                                     IOException {
+  574.           this.resource = resource;
+  575. >         addPackage(xmlToPackageDescr(resource));
+  576.           this.resource = null;
+  577.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:736: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addProcessFromXml(Reader)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  734.   
+  735.       public void addProcessFromXml(Reader processSource) {
+  736. >         addProcessFromXml(new ReaderResource(processSource, ResourceType.DRF));
+  737.       }
+  738.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:722: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.addProcessFromXml(Resource)` mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  720.                   }
+  721.               } else {
+  722. >                 this.results.addAll(errors);
+  723.                   errors.clear();
+  724.               }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:731: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addProcessFromXml(Resource)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  729.               addBuilderResult(new ProcessLoadError(resource, "Unable to load process.", e));
+  730.           }
+  731. >         this.results = getResults(this.results);
+  732.           this.resource = null;
+  733.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:696: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.addRuleFlow(Reader)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  694.        */
+  695.       public void addRuleFlow(Reader processSource) {
+  696. >         addProcessFromXml(processSource);
+  697.       }
+  698.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1356: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.compileAll()` reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1354.   
+  1355.       public void compileAll() {
+  1356. >         for (PackageRegistry pkgRegistry : this.pkgRegistryMap.values()) {
+  1357.               pkgRegistry.compileAll();
+  1358.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:988: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.compileAllRules(PackageDescr,PackageRegistry)` indirectly mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  986.           pkgRegistry.setDialect( getPackageDialect( packageDescr ) );
+  987.   
+  988. >         validateUniqueRuleNames( packageDescr );
+  989.           compileRules(packageDescr, pkgRegistry);
+  990.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:989: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.compileAllRules(PackageDescr,PackageRegistry)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  987.   
+  988.           validateUniqueRuleNames( packageDescr );
+  989. >         compileRules(packageDescr, pkgRegistry);
+  990.   
+  991.           compileAll();
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1000: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.compileAllRules(PackageDescr,PackageRegistry)` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  998.   
+  999.           // iterate and compile
+  1000. >         if (!hasErrors() && this.kBase != null) {
+  1001.               for (RuleDescr ruleDescr : packageDescr.getRules()) {
+  1002.                   if( filterAccepts( ResourceChange.Type.RULE, ruleDescr.getNamespace(), ruleDescr.getName() ) ) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1015: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageRegistry KnowledgeBuilderImpl.createPackageRegistry(PackageDescr)` indirectly writes to field `pd.imports` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1013.   
+  1014.       PackageRegistry createPackageRegistry(PackageDescr packageDescr) {
+  1015. >         PackageRegistry pkgRegistry = initPackageRegistry( packageDescr );
+  1016.           if (pkgRegistry == null) {
+  1017.               return null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:395: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.decisionTableToPackageDescr(Resource,ResourceConfiguration)` indirectly writes to field `field.resource` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  393.                   if ( packageDescr != null ) {
+  394.                       if ( compositePackageDescr == null ) {
+  395. >                         compositePackageDescr = new CompositePackageDescr( resource, packageDescr );
+  396.                       } else {
+  397.                           compositePackageDescr.addPackageDescr( resource, packageDescr );
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:388: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.decisionTableToPackageDescr(Resource,ResourceConfiguration)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  386.               List<String> generatedDrls = DecisionTableFactory.loadFromInputStreamWithTemplates( resource, dtableConfiguration );
+  387.               if ( generatedDrls.size() == 1 ) {
+  388. >                 return generatedDrlToPackageDescr( resource, generatedDrls.get(0) );
+  389.               }
+  390.               CompositePackageDescr compositePackageDescr = null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:536: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.drlToPackageDescr(Resource)` mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  534.               final DrlParser parser = new DrlParser(configuration.getLanguageLevel());
+  535.               pkg = parser.parse(resource);
+  536. >             this.results.addAll(parser.getErrors());
+  537.               if (pkg == null) {
+  538.                   addBuilderResult(new ParserError(resource, "Parser returned a null Package", 0, 0));
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:632: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.dslrToPackageDescr(Resource)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  630.       PackageDescr dslrToPackageDescr(Resource resource) throws DroolsParserException,
+  631.                                                                 IOException {
+  632. >         return dslrReaderToPackageDescr(resource, resource.getReader());
+  633.       }
+  634.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:440: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.generatedDslrToPackageDescr(Resource,String)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  438.   
+  439.       PackageDescr generatedDslrToPackageDescr(Resource resource, String dslr) throws DroolsParserException {
+  440. >         return dslrReaderToPackageDescr(resource, new StringReader(dslr));
+  441.       }
+  442.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1719: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `TypeDeclaration KnowledgeBuilderImpl.getAndRegisterTypeDeclaration(Class,String)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1717.   
+  1718.       public TypeDeclaration getAndRegisterTypeDeclaration(Class<?> cls, String packageName) {
+  1719. >         return typeBuilder.getAndRegisterTypeDeclaration(cls, packageName);
+  1720.       }
+  1721.   
+
+src/main/java/org/drools/compiler/rule/builder/dialect/java/JavaDialect.java:107: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `EngineElementBuilder JavaDialect.getBuilder(Class)` indirectly reads without synchronization from `java.JavaDialect.builders`. Potentially races with write in method `JavaDialect.initBuilder()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  105.   import java.util.Map;
+  106.   
+  107. > public class JavaDialect
+  108.       implements
+  109.       Dialect {
+
+src/main/java/org/drools/compiler/rule/builder/dialect/java/JavaDialect.java:343: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `RuleConditionBuilder JavaDialect.getBuilder(Class)` reads without synchronization from `java.JavaDialect.builders`. Potentially races with write in method `JavaDialect.initBuilder()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  341.   
+  342.       public RuleConditionBuilder getBuilder(final Class clazz) {
+  343. >         return (RuleConditionBuilder) builders.get( clazz );
+  344.       }
+  345.   
+
+src/main/java/org/drools/compiler/rule/builder/dialect/java/JavaDialect.java:260: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Map JavaDialect.getBuilders()` reads without synchronization from `java.JavaDialect.builders`. Potentially races with write in method `JavaDialect.initBuilder()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  258.   
+  259.       public Map<Class<?>, EngineElementBuilder> getBuilders() {
+  260. >         return builders;
+  261.       }
+  262.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:128: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ClassLoader KieModuleKieProject.getClonedClassLoader()` indirectly reads without synchronization from `this.kieModules`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  126.       public ClassLoader getClonedClassLoader() {
+  127.           ProjectClassLoader clonedCL = createProjectClassLoader( cl.getParent(), kieModule.createResourceProvider() );
+  128. >         initClassLoader( clonedCL );
+  129.           return clonedCL;
+  130.       }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:127: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ClassLoader KieModuleKieProject.getClonedClassLoader()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  125.   
+  126.       public ClassLoader getClonedClassLoader() {
+  127. >         ProjectClassLoader clonedCL = createProjectClassLoader( cl.getParent(), kieModule.createResourceProvider() );
+  128.           initClassLoader( clonedCL );
+  129.           return clonedCL;
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:111: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long KieModuleKieProject.getCreationTimestamp()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  109.   
+  110.       public long getCreationTimestamp() {
+  111. >         return kieModule.getCreationTimestamp();
+  112.       }
+  113.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2000: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `PackageBuilderErrors KnowledgeBuilderImpl.getErrors()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1998.        */
+  1999.       public PackageBuilderErrors getErrors() {
+  2000. >         List<DroolsError> errors = getErrorList();
+  2001.           return new PackageBuilderErrors(errors.toArray(new DroolsError[errors.size()]));
+  2002.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:161: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KnowledgeBuilderErrors KnowledgeBuilderImpl.getErrors()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  159.   import static org.drools.core.util.StringUtils.ucFirst;
+  160.   
+  161. > public class KnowledgeBuilderImpl implements KnowledgeBuilder {
+  162.   
+  163.       protected static final transient Logger logger = LoggerFactory.getLogger(KnowledgeBuilderImpl.class);
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:107: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ReleaseId KieModuleKieProject.getGAV()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  105.   
+  106.       public ReleaseId getGAV() {
+  107. >         return kieModule.getReleaseId();
+  108.       }
+  109.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:119: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InternalKieModule KieModuleKieProject.getInternalKieModule()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  117.   
+  118.       public InternalKieModule getInternalKieModule() {
+  119. >         return kieModule;
+  120.       }
+  121.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:441: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KieBase KieContainerImpl.getKieBase(String)` reads without synchronization from container `this.kBases` via call to `get`. Potentially races with write in method `KieContainerImpl.newStatelessKieSession(...)`.
+ Reporting because this access may occur on a background thread.
+  439.   
+  440.       public KieBase getKieBase(String kBaseName) {
+  441. >         KieBase kBase = kBases.get( kBaseName );
+  442.           if ( kBase == null ) {
+  443.               KieBaseModelImpl kBaseModel = getKieBaseModelImpl(kBaseName);
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:115: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InternalKieModule KieModuleKieProject.getKieModuleForKBase(String)` reads without synchronization from container `this.kJarFromKBaseName` via call to `get`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  113.   
+  114.       public InternalKieModule getKieModuleForKBase(String kBaseName) {
+  115. >         return this.kJarFromKBaseName.get( kBaseName );
+  116.       }
+  117.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2260: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Collection KnowledgeBuilderImpl.getKnowledgePackages()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2258.   
+  2259.       public Collection<KnowledgePackage> getKnowledgePackages() {
+  2260. >         if ( hasErrors() ) {
+  2261.               return new ArrayList<KnowledgePackage>( 0 );
+  2262.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2264: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Collection KnowledgeBuilderImpl.getKnowledgePackages()` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2262.           }
+  2263.   
+  2264. >         InternalKnowledgePackage[] pkgs = getPackages();
+  2265.           List<KnowledgePackage> list = new ArrayList<KnowledgePackage>( pkgs.length );
+  2266.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1858: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InternalKnowledgePackage KnowledgeBuilderImpl.getPackage()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1856.               pkg = pkgRegistry.getPackage();
+  1857.           }
+  1858. >         if (hasErrors() && pkg != null) {
+  1859.               pkg.setError(getErrors().toString());
+  1860.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1852: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InternalKnowledgePackage KnowledgeBuilderImpl.getPackage()` reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1850.           PackageRegistry pkgRegistry = null;
+  1851.           if (!this.pkgRegistryMap.isEmpty()) {
+  1852. >             pkgRegistry = (PackageRegistry) this.pkgRegistryMap.values().toArray()[currentRulePackage];
+  1853.           }
+  1854.           InternalKnowledgePackage pkg = null;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1901: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Collection KnowledgeBuilderImpl.getPackageNames()` reads without synchronization from container `this.pkgRegistryMap` via call to `keySet`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1899.   
+  1900.       public Collection<String> getPackageNames() {
+  1901. >         return pkgRegistryMap.keySet();
+  1902.       }
+  1903.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1893: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `PackageRegistry KnowledgeBuilderImpl.getPackageRegistry(String)` reads without synchronization from container `this.pkgRegistryMap` via call to `get`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1891.   
+  1892.       public PackageRegistry getPackageRegistry(String name) {
+  1893. >         return this.pkgRegistryMap.get(name);
+  1894.       }
+  1895.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1871: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `org.drools.core.definitions.InternalKnowledgePackage[] KnowledgeBuilderImpl.getPackages()` reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1869.           }
+  1870.           int i = 0;
+  1871. >         for (PackageRegistry pkgRegistry : this.pkgRegistryMap.values()) {
+  1872.               InternalKnowledgePackage pkg = pkgRegistry.getPackage();
+  1873.               pkg.getDialectRuntimeRegistry().onBeforeExecute();
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1867: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `org.drools.core.definitions.InternalKnowledgePackage[] KnowledgeBuilderImpl.getPackages()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1865.           InternalKnowledgePackage[] pkgs = new InternalKnowledgePackage[this.pkgRegistryMap.size()];
+  1866.           String errors = null;
+  1867. >         if (!getErrors().isEmpty()) {
+  1868.               errors = getErrors().toString();
+  1869.           }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:103: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InputStream KieModuleKieProject.getPomAsStream()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  101.   
+  102.       public InputStream getPomAsStream() {
+  103. >         return kieModule.getPomAsStream();
+  104.       }
+  105.   
+
+src/main/java/org/drools/compiler/compiler/ProcessBuilderFactory.java:68: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ProcessBuilderFactoryService ProcessBuilderFactory.getProcessBuilderFactoryService()` reads without synchronization from `compiler.ProcessBuilderFactory.provider`. Potentially races with write in method `ProcessBuilderFactory.reInitializeProvider()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  66.   
+  67.       public static ProcessBuilderFactoryService getProcessBuilderFactoryService() {
+  68. >         return provider;
+  69.       }
+  70.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1936: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KnowledgeBuilderResults KnowledgeBuilderImpl.getResults(org.kie.internal.builder.ResultSeverity[])` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1934.   
+  1935.       public KnowledgeBuilderResults getResults(ResultSeverity... problemTypes) {
+  1936. >         List<KnowledgeBuilderResult> problems = getResultList(problemTypes);
+  1937.           return new PackageBuilderResults(problems.toArray(new BaseKnowledgeBuilderResultImpl[problems.size()]));
+  1938.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2290: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `TypeDeclaration KnowledgeBuilderImpl.getTypeDeclaration(Class)` indirectly writes to field `field.index` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2288.   
+  2289.       public TypeDeclaration getTypeDeclaration(Class<?> cls) {
+  2290. >         return typeBuilder.getTypeDeclaration(cls);
+  2291.       }
+  2292.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1979: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `List KnowledgeBuilderImpl.getWarnings()` reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1977.       public List<DroolsWarning> getWarnings() {
+  1978.           List<DroolsWarning> warnings = new ArrayList<DroolsWarning>();
+  1979. >         for (KnowledgeBuilderResult problem : results) {
+  1980.               if (problem.getSeverity() == ResultSeverity.WARNING) {
+  1981.                   if (problem instanceof ConfigurableSeverityResult) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:419: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.guidedDecisionTableToPackageDescr(Resource)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  417.           GuidedDecisionTableProvider guidedDecisionTableProvider = GuidedDecisionTableFactory.getGuidedDecisionTableProvider();
+  418.           ResourceConversionResult conversionResult = guidedDecisionTableProvider.loadFromInputStream(resource.getInputStream());
+  419. >         return conversionResultToPackageDescr(resource, conversionResult);
+  420.       }
+  421.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:491: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.guidedScoreCardToPackageDescr(Resource)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  489.                                                                            IOException {
+  490.           String drl = GuidedScoreCardFactory.loadFromInputStream(resource.getInputStream());
+  491. >         return generatedDrlToPackageDescr(resource, drl);
+  492.       }
+  493.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1932: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.hasErrors()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1930.        */
+  1931.       public boolean hasErrors() {
+  1932. >         return !getErrorList().isEmpty();
+  1933.       }
+  1934.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1974: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.hasInfo()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1972.   
+  1973.       public boolean hasInfo() {
+  1974. >         return !getInfoList().isEmpty();
+  1975.       }
+  1976.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1952: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.hasResults(org.kie.internal.builder.ResultSeverity[])` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1950.   
+  1951.       public boolean hasResults(ResultSeverity... problemTypes) {
+  1952. >         return !getResultList(problemTypes).isEmpty();
+  1953.       }
+  1954.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1970: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.hasWarnings()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1968.   
+  1969.       public boolean hasWarnings() {
+  1970. >         return !getWarnings().isEmpty();
+  1971.       }
+  1972.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:76: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KieModuleKieProject.init()` reads without synchronization from `this.kieModule`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  74.           if ( kieModules == null ) {
+  75.               kieModules = new ArrayList<InternalKieModule>();
+  76. >             kieModules.addAll( kieModule.getKieDependencies().values() );
+  77.               kieModules.add( kieModule );
+  78.               indexParts( kieModules, kJarFromKBaseName );
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:78: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KieModuleKieProject.init()` indirectly writes to field `kieSessionModel.kBase` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  76.               kieModules.addAll( kieModule.getKieDependencies().values() );
+  77.               kieModules.add( kieModule );
+  78. >             indexParts( kieModules, kJarFromKBaseName );
+  79.               initClassLoader( cl );
+  80.           }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:74: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KieModuleKieProject.init()` reads without synchronization from `this.kieModules`. Potentially races with write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  72.   
+  73.       public void init() {
+  74. >         if ( kieModules == null ) {
+  75.               kieModules = new ArrayList<InternalKieModule>();
+  76.               kieModules.addAll( kieModule.getKieDependencies().values() );
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:75: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KieModuleKieProject.init()` writes to field `this.kieModules` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  73.       public void init() {
+  74.           if ( kieModules == null ) {
+  75. >             kieModules = new ArrayList<InternalKieModule>();
+  76.               kieModules.addAll( kieModule.getKieDependencies().values() );
+  77.               kieModules.add( kieModule );
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1591: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.mergePackage(PackageRegistry,PackageDescr)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1589.           }
+  1590.   
+  1591. >         normalizeTypeDeclarationAnnotations( packageDescr );
+  1592.           processAccumulateFunctions(pkgRegistry, packageDescr);
+  1593.           processEntryPointDeclarations( pkgRegistry, packageDescr );
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1610: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.mergePackage(PackageRegistry,PackageDescr)` indirectly writes to field `this.currentRulePackage` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1608.           }
+  1609.   
+  1610. >         processOtherDeclarations( pkgRegistry, packageDescr );
+  1611.           normalizeRuleAnnotations( packageDescr );
+  1612.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1611: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.mergePackage(PackageRegistry,PackageDescr)` indirectly writes to field `ruleDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1609.   
+  1610.           processOtherDeclarations( pkgRegistry, packageDescr );
+  1611. >         normalizeRuleAnnotations( packageDescr );
+  1612.       }
+  1613.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1605: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.mergePackage(PackageRegistry,PackageDescr)` indirectly writes to field `tdescr.superTypes` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1603.           }
+  1604.   
+  1605. >         typeBuilder.processTypeDeclarations( Collections.singletonList( packageDescr ), unsortedDescrs, unresolvedTypes, unprocesseableDescrs );
+  1606.           for ( AbstractClassTypeDeclarationDescr descr : unprocesseableDescrs.values() ) {
+  1607.               this.addBuilderResult( new TypeDeclarationError( descr, "Unable to process type " + descr.getTypeName() ) );
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:470: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KieBase KieContainerImpl.newKieBase(String,KieBaseConfiguration)` indirectly writes to field `_data.dialect_` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  468.       public KieBase newKieBase(String kBaseName, KieBaseConfiguration conf) {
+  469.           ResultsImpl msgs = new ResultsImpl();
+  470. >         KieBase kBase = createKieBase(getKieBaseModelImpl(kBaseName), kProject, msgs, conf);
+  471.           if ( kBase == null ) {
+  472.               // build error, throw runtime exception
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:465: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `KieBase KieContainerImpl.newKieBase(KieBaseConfiguration)` indirectly writes to field `_data.dialect_` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  463.               throw new RuntimeException("Cannot find a default KieBase");
+  464.           }
+  465. >         return newKieBase(defaultKieBaseModel.getName(), conf);
+  466.       }
+  467.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2273: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KnowledgeBase KnowledgeBuilderImpl.newKnowledgeBase()` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2271.   
+  2272.       public KnowledgeBase newKnowledgeBase() {
+  2273. >         return newKnowledgeBase(null);
+  2274.       }
+  2275.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2277: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KnowledgeBase KnowledgeBuilderImpl.newKnowledgeBase(KieBaseConfiguration)` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2275.   
+  2276.       public KnowledgeBase newKnowledgeBase(KieBaseConfiguration conf) {
+  2277. >         KnowledgeBuilderErrors errors = getErrors();
+  2278.           if (errors.size() > 0) {
+  2279.               for (KnowledgeBuilderError error: errors) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2285: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `KnowledgeBase KnowledgeBuilderImpl.newKnowledgeBase(KieBaseConfiguration)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2283.           }
+  2284.           KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase(conf);
+  2285. >         kbase.addKnowledgePackages(getKnowledgePackages());
+  2286.           return kbase;
+  2287.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1581: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageRegistry KnowledgeBuilderImpl.newPackage(PackageDescr)` mutates container `this.pkgRegistryMap` via call to `put` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1579.           pkgRegistry.addImport( new ImportDescr( packageDescr.getNamespace() + ".*" ) );
+  1580.   
+  1581. >         this.pkgRegistryMap.put( packageDescr.getName(), pkgRegistry );
+  1582.   
+  1583.           return pkgRegistry;
+
+src/main/java/org/drools/compiler/compiler/ProcessBuilderFactory.java:33: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ProcessBuilder ProcessBuilderFactory.newProcessBuilder(KnowledgeBuilder)` indirectly reads without synchronization from `compiler.ProcessBuilderFactory.provider`. Potentially races with write in method `ProcessBuilderFactory.reInitializeProvider()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  31.               // KnowledgeBuilderImpl expects an exception to report the origin of the failure
+  32.               throw initializationException;
+  33. >         } else if (getProcessBuilderFactoryService() == null) {
+  34.               return null;
+  35.           } else {
+
+src/main/java/org/drools/compiler/compiler/ProcessBuilderFactory.java:30: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `ProcessBuilder ProcessBuilderFactory.newProcessBuilder(KnowledgeBuilder)` reads without synchronization from `compiler.ProcessBuilderFactory.initializationException`. Potentially races with write in method `ProcessBuilderFactory.reInitializeProvider()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  28.   
+  29.       public static ProcessBuilder newProcessBuilder(KnowledgeBuilder kBuilder) {
+  30. >         if (initializationException != null) {
+  31.               // KnowledgeBuilderImpl expects an exception to report the origin of the failure
+  32.               throw initializationException;
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2315: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.normalizeRuleAnnotations(PackageDescr)` indirectly writes to field `ruleDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2313.           boolean isStrict = configuration.getLanguageLevel().useJavaAnnotations();
+  2314.           for ( RuleDescr ruleDescr : packageDescr.getRules() ) {
+  2315. >             normalizeAnnotations( ruleDescr, typeResolver, isStrict );
+  2316.               traverseAnnotations( ruleDescr.getLhs(), typeResolver, isStrict );
+  2317.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2312: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.normalizeRuleAnnotations(PackageDescr)` reads without synchronization from container `this.pkgRegistryMap` via call to `get`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2310.   
+  2311.       public void normalizeRuleAnnotations(PackageDescr packageDescr) {
+  2312. >         TypeResolver typeResolver = pkgRegistryMap.get(packageDescr.getName()).getTypeResolver();
+  2313.           boolean isStrict = configuration.getLanguageLevel().useJavaAnnotations();
+  2314.           for ( RuleDescr ruleDescr : packageDescr.getRules() ) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2304: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.normalizeTypeDeclarationAnnotations(PackageDescr)` indirectly writes to field `enumDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2302.   
+  2303.           for (EnumDeclarationDescr enumDeclarationDescr : packageDescr.getEnumDeclarations()) {
+  2304. >             normalizeAnnotations(enumDeclarationDescr, typeResolver, isStrict);
+  2305.               for (TypeFieldDescr typeFieldDescr : enumDeclarationDescr.getFields().values()) {
+  2306.                   normalizeAnnotations(typeFieldDescr, typeResolver, isStrict);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2297: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.normalizeTypeDeclarationAnnotations(PackageDescr)` indirectly writes to field `typeDeclarationDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2295.           boolean isStrict = configuration.getLanguageLevel().useJavaAnnotations();
+  2296.           for (TypeDeclarationDescr typeDeclarationDescr : packageDescr.getTypeDeclarations()) {
+  2297. >             normalizeAnnotations(typeDeclarationDescr, typeResolver, isStrict);
+  2298.               for (TypeFieldDescr typeFieldDescr : typeDeclarationDescr.getFields().values()) {
+  2299.                   normalizeAnnotations(typeFieldDescr, typeResolver, isStrict);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2299: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.normalizeTypeDeclarationAnnotations(PackageDescr)` indirectly writes to field `typeFieldDescr.annotations` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2297.               normalizeAnnotations(typeDeclarationDescr, typeResolver, isStrict);
+  2298.               for (TypeFieldDescr typeFieldDescr : typeDeclarationDescr.getFields().values()) {
+  2299. >                 normalizeAnnotations(typeFieldDescr, typeResolver, isStrict);
+  2300.               }
+  2301.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2294: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.normalizeTypeDeclarationAnnotations(PackageDescr)` reads without synchronization from container `this.pkgRegistryMap` via call to `get`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2292.   
+  2293.       public void normalizeTypeDeclarationAnnotations(PackageDescr packageDescr) {
+  2294. >         TypeResolver typeResolver = pkgRegistryMap.get(packageDescr.getName()).getTypeResolver();
+  2295.           boolean isStrict = configuration.getLanguageLevel().useJavaAnnotations();
+  2296.           for (TypeDeclarationDescr typeDeclarationDescr : packageDescr.getTypeDeclarations()) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:845: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.pmmlModelToPackageDescr(PMMLCompiler,Resource)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  843.           }
+  844.   
+  845. >         return generatedDrlToPackageDescr( resource, theory );
+  846.       }
+  847.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1622: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.processOtherDeclarations(PackageRegistry,PackageDescr)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1620.           // need to reinsert this to ensure that the package is the first/last one in the ordered map
+  1621.           // this feature is exploited by the knowledgeAgent
+  1622. >         InternalKnowledgePackage current = getPackage();
+  1623.           this.pkgRegistryMap.remove(packageDescr.getName());
+  1624.           this.pkgRegistryMap.put(packageDescr.getName(), pkgRegistry);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1626: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.processOtherDeclarations(PackageRegistry,PackageDescr)` writes to field `this.currentRulePackage` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1624.           this.pkgRegistryMap.put(packageDescr.getName(), pkgRegistry);
+  1625.           if (current.getName().equals(packageDescr.getName())) {
+  1626. >             currentRulePackage = pkgRegistryMap.size() - 1;
+  1627.           }
+  1628.       }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1616: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.processOtherDeclarations(PackageRegistry,PackageDescr)` indirectly mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1614.       void processOtherDeclarations(PackageRegistry pkgRegistry, PackageDescr packageDescr) {
+  1615.           processAccumulateFunctions( pkgRegistry, packageDescr);
+  1616. >         processWindowDeclarations(pkgRegistry, packageDescr);
+  1617.           processFunctions(pkgRegistry, packageDescr);
+  1618.           processGlobals(pkgRegistry, packageDescr);
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1623: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.processOtherDeclarations(PackageRegistry,PackageDescr)` mutates container `this.pkgRegistryMap` via call to `remove` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1621.           // this feature is exploited by the knowledgeAgent
+  1622.           InternalKnowledgePackage current = getPackage();
+  1623. >         this.pkgRegistryMap.remove(packageDescr.getName());
+  1624.           this.pkgRegistryMap.put(packageDescr.getName(), pkgRegistry);
+  1625.           if (current.getName().equals(packageDescr.getName())) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1618: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.processOtherDeclarations(PackageRegistry,PackageDescr)` indirectly mutates container `this.globals` via call to `put` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1616.           processWindowDeclarations(pkgRegistry, packageDescr);
+  1617.           processFunctions(pkgRegistry, packageDescr);
+  1618. >         processGlobals(pkgRegistry, packageDescr);
+  1619.   
+  1620.           // need to reinsert this to ensure that the package is the first/last one in the ordered map
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2106: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.registerBuildResource(Resource,ResourceType)` indirectly mutates container `this.results` via call to `add` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2104.               ires.setResourceType(type);
+  2105.           } else if (ires.getResourceType() != type) {
+  2106. >             addBuilderResult(new ResourceTypeDeclarationWarning(resource, ires.getResourceType(), type));
+  2107.           }
+  2108.           if (ResourceType.CHANGE_SET == type) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1362: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.reloadAll()` reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1360.   
+  1361.       public void reloadAll() {
+  1362. >         for (PackageRegistry pkgRegistry : this.pkgRegistryMap.values()) {
+  1363.               pkgRegistry.getDialectRuntimeRegistry().onBeforeExecute();
+  1364.           }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2156: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.removeObjectsGeneratedFromResource(Resource)` reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2154.           boolean modified = false;
+  2155.           if (pkgRegistryMap != null) {
+  2156. >             for (PackageRegistry packageRegistry : pkgRegistryMap.values()) {
+  2157.                   modified = packageRegistry.removeObjectsGeneratedFromResource(resource) || modified;
+  2158.               }
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2179: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean KnowledgeBuilderImpl.removeObjectsGeneratedFromResource(Resource)` reads without synchronization from container `this.results` via call to `size`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2177.           }
+  2178.   
+  2179. >         if (results.size() == 0) {
+  2180.               // TODO Error attribution might be bugged
+  2181.               for (PackageRegistry packageRegistry : pkgRegistryMap.values()) {
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2011: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.resetErrors()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2009.        */
+  2010.       protected void resetErrors() {
+  2011. >         resetProblemType(ResultSeverity.ERROR);
+  2012.       }
+  2013.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2030: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KnowledgeBuilderImpl.resetProblems()` mutates container `this.results` via call to `clear` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2028.   
+  2029.       protected void resetProblems() {
+  2030. >         this.results.clear();
+  2031.           if (this.processBuilder != null) {
+  2032.               this.processBuilder.getErrors().clear();
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2015: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.resetWarnings()` indirectly reads without synchronization from container `this.results` via call to `iterator`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2013.   
+  2014.       protected void resetWarnings() {
+  2015. >         resetProblemType(ResultSeverity.WARNING);
+  2016.       }
+  2017.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:478: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.scoreCardToPackageDescr(Resource,ResourceConfiguration)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  476.                                                       null;
+  477.           String string = ScoreCardFactory.loadFromInputStream(resource.getInputStream(), scardConfiguration);
+  478. >         return generatedDrlToPackageDescr( resource, string );
+  479.       }
+  480.   
+
+src/main/java/org/drools/compiler/compiler/ProcessBuilderFactory.java:41: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void ProcessBuilderFactory.setProcessBuilderFactoryService(ProcessBuilderFactoryService)` writes to field `compiler.ProcessBuilderFactory.provider` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  39.   
+  40.       public static void setProcessBuilderFactoryService(ProcessBuilderFactoryService provider) {
+  41. >         ProcessBuilderFactory.provider = provider;
+  42.       }
+  43.   
+
+src/main/java/org/drools/compiler/compiler/PMMLCompilerFactory.java:35: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void PMMLCompilerFactory.setProvider(PMMLCompiler)` writes to field `compiler.PMMLCompilerFactory.provider` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  33.   
+  34.       public static void setProvider(PMMLCompiler provider) {
+  35. >         PMMLCompilerFactory.provider = provider;
+  36.       }
+  37.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:505: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PackageDescr KnowledgeBuilderImpl.templateToPackageDescr(Resource)` indirectly mutates container `this.results` via call to `addAll` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  503.           GuidedRuleTemplateProvider guidedRuleTemplateProvider = GuidedRuleTemplateFactory.getGuidedRuleTemplateProvider();
+  504.           ResourceConversionResult conversionResult = guidedRuleTemplateProvider.loadFromInputStream(resource.getInputStream());
+  505. >         return conversionResultToPackageDescr(resource, conversionResult);
+  506.       }
+  507.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:2149: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.undo()` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2147.           }
+  2148.           for (Resource resource : buildResources.pop()) {
+  2149. >             removeObjectsGeneratedFromResource(resource);
+  2150.           }
+  2151.       }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:153: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `Results KieContainerImpl.updateDependencyToVersion(ReleaseId,ReleaseId)` indirectly mutates container `this.kBases` via call to `remove` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  151.           }
+  152.   
+  153. >         return update(currentKM, newReleaseId);
+  154.       }
+  155.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1348: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.updateResults()` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1346.       public void updateResults() {
+  1347.           // some of the rules and functions may have been redefined
+  1348. >         updateResults(this.results);
+  1349.       }
+  1350.   
+
+src/main/java/org/drools/compiler/builder/impl/KnowledgeBuilderImpl.java:1352: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KnowledgeBuilderImpl.updateResults(List)` indirectly reads without synchronization from container `this.pkgRegistryMap` via call to `values`. Potentially races with write in method `KnowledgeBuilderImpl.addPackage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1350.   
+  1351.       public void updateResults(List<KnowledgeBuilderResult> results) {
+  1352. >         this.results = getResults(results);
+  1353.       }
+  1354.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:141: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KieModuleKieProject.updateToModule(InternalKieModule)` writes to field `this.kieModule` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  139.           if (currentReleaseId.getGroupId().equals(updatingReleaseId.getGroupId()) &&
+  140.               currentReleaseId.getArtifactId().equals(updatingReleaseId.getArtifactId())) {
+  141. >             this.kieModule = updatedKieModule;
+  142.           } else if (this.kieModule.getKieDependencies().keySet().contains(updatingReleaseId)) {
+  143.               this.kieModule.addKieDependency(updatedKieModule);
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:148: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void KieModuleKieProject.updateToModule(InternalKieModule)` indirectly reads with synchronization from `this.kieModule`. Potentially races with unsynchronized write in method `KieModuleKieProject.updateToModule(...)`.
+ Reporting because this access may occur on a background thread.
+  146.           synchronized (this) {
+  147.               cleanIndex();
+  148. >             init(); // this might override class definitions, not sure we can do it any other way though
+  149.           }
+  150.       }
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:133: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KieModuleKieProject.updateToModule(InternalKieModule)` writes to field `this.kieModules` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  131.   
+  132.       public void updateToModule(InternalKieModule updatedKieModule) {
+  133. >         this.kieModules = null;
+  134.           this.kJarFromKBaseName.clear();
+  135.   
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieModuleKieProject.java:134: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void KieModuleKieProject.updateToModule(InternalKieModule)` mutates container `this.kJarFromKBaseName` via call to `clear` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  132.       public void updateToModule(InternalKieModule updatedKieModule) {
+  133.           this.kieModules = null;
+  134. >         this.kJarFromKBaseName.clear();
+  135.   
+  136.           ReleaseId currentReleaseId = this.kieModule.getReleaseId();
+
+src/main/java/org/drools/compiler/kie/builder/impl/KieContainerImpl.java:131: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `Results KieContainerImpl.updateToVersion(ReleaseId)` indirectly mutates container `this.kBases` via call to `remove` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  129.       public Results updateToVersion(ReleaseId newReleaseId) {
+  130.           checkNotClasspathKieProject();
+  131. >         Results results = update(((KieModuleKieProject) kProject).getInternalKieModule(), newReleaseId);
+  132.           containerReleaseId = newReleaseId;
+  133.           return results;
+
+src/main/java/org/drools/compiler/compiler/xml/XmlDumper.java:232: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void XmlDumper.visitPackageDescr(PackageDescr)` indirectly reads without synchronization from `this.xmlDump`. Potentially races with write in method `XmlDumper.dump(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  230.           final String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> " + XmlDumper.eol + " <package name=\"" + packageName + "\"  " + XmlDumper.eol + "\txmlns=\"http://drools.org/drools-5.2\" " + XmlDumper.eol
+  231.                                    + "\txmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" " + XmlDumper.eol + "\txs:schemaLocation=\"http://drools.org/drools-5.2 drools.org/drools-5.2.xsd\"> " + XmlDumper.eol;
+  232. >         appendXmlDump( xmlString );
+  233.           appendXmlDump( processImportsList( packageDescr.getImports() ) );
+  234.           appendXmlDump( processGlobalsList( packageDescr.getGlobals() ) );
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 140
+         NULL_DEREFERENCE: 42
+            RESOURCE_LEAK: 6

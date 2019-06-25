@@ -1,0 +1,86 @@
+[4842][environment] CWD = /home/coma/GSoC/npebugs/tika-1378
+[4842][environment] No .inferconfig file found
+[4842][environment] Project root = /home/coma/GSoC/npebugs/tika-1378
+[4842][environment] INFER_ARGS =   @/tmp/args.tmp.6f090a  ++Contents of '/tmp/args.tmp.6f090a':
+[4842][environment]                                         run
+[4842][environment]                                       
+[4842][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[4842][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[4842][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[4842][environment] 
+[4842][   progress] Capturing in maven mode...
+[4842][      debug] Running maven capture:
+[4842][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[4897][environment] CWD = /home/coma/GSoC/npebugs/tika-1378
+[4897][environment] No .inferconfig file found
+[4897][environment] Project root = /home/coma/GSoC/npebugs/tika-1378
+[4897][environment] INFER_ARGS =   @/tmp/args.tmp.96e2dc  ++Contents of '/tmp/args.tmp.96e2dc':
+[4897][environment]                                         @/tmp/args.tmp.6f090a
+[4897][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4109803680697087775arguments
+[4897][environment]                                         ++Contents of '/tmp/args.tmp.6f090a':
+[4897][environment]                                           run
+[4897][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4109803680697087775arguments':
+[4897][environment]                                           "-d"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/target/classes"
+[4897][environment]                                           "-classpath"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/target/classes:/home/coma/.m2/repository/org/apache/tika/tika-core/1.7/tika-core-1.7.jar:/home/coma/.m2/repository/com/memetix/microsoft-translator-java-api/0.6.2/microsoft-translator-java-api-0.6.2.jar:/home/coma/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/2.7.8/cxf-rt-frontend-jaxrs-2.7.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-api/2.7.8/cxf-api-2.7.8.jar:/home/coma/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.jar:/home/coma/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.0.3/xmlschema-core-2.0.3.jar:/home/coma/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/home/coma/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-core/2.7.8/cxf-rt-core-2.7.8.jar:/home/coma/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar:/home/coma/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0-m10/javax.ws.rs-api-2.0-m10.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/2.7.8/cxf-rt-bindings-xml-2.7.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/2.7.8/cxf-rt-transports-http-2.7.8.jar:/home/coma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.4.0/jackson-jaxrs-json-provider-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.4.0/jackson-jaxrs-base-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.4.0/jackson-module-jaxb-annotations-2.4.0.jar:"
+[4897][environment]                                           "-sourcepath"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/src/main/java:/home/coma/GSoC/npebugs/tika-1378/target/generated-sources/annotations:"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/GoogleTranslator.java"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/MicrosoftTranslator.java"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/CachedTranslator.java"
+[4897][environment]                                           "-s"
+[4897][environment]                                           "/home/coma/GSoC/npebugs/tika-1378/target/generated-sources/annotations"
+[4897][environment]                                           "-g" "-nowarn" "-target" "1.6"
+[4897][environment]                                           "-source" "1.6" "-encoding" "UTF-8"
+[4897][environment]                                         
+[4897][environment]                                       
+[4897][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[4897][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4109803680697087775arguments
+[4897][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4109803680697087775arguments':
+[4897][environment]     "-d" "/home/coma/GSoC/npebugs/tika-1378/target/classes" "-classpath"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/target/classes:/home/coma/.m2/repository/org/apache/tika/tika-core/1.7/tika-core-1.7.jar:/home/coma/.m2/repository/com/memetix/microsoft-translator-java-api/0.6.2/microsoft-translator-java-api-0.6.2.jar:/home/coma/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/2.7.8/cxf-rt-frontend-jaxrs-2.7.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-api/2.7.8/cxf-api-2.7.8.jar:/home/coma/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.jar:/home/coma/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.0.3/xmlschema-core-2.0.3.jar:/home/coma/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/home/coma/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-core/2.7.8/cxf-rt-core-2.7.8.jar:/home/coma/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar:/home/coma/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0-m10/javax.ws.rs-api-2.0-m10.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/2.7.8/cxf-rt-bindings-xml-2.7.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/2.7.8/cxf-rt-transports-http-2.7.8.jar:/home/coma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.4.0/jackson-jaxrs-json-provider-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.4.0/jackson-jaxrs-base-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar:/home/coma/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.4.0/jackson-module-jaxb-annotations-2.4.0.jar:"
+[4897][environment]     "-sourcepath"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/src/main/java:/home/coma/GSoC/npebugs/tika-1378/target/generated-sources/annotations:"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/GoogleTranslator.java"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/MicrosoftTranslator.java"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/src/main/java/org/apache/tika/language/translate/CachedTranslator.java"
+[4897][environment]     "-s"
+[4897][environment]     "/home/coma/GSoC/npebugs/tika-1378/target/generated-sources/annotations"
+[4897][environment]     "-g" "-nowarn" "-target" "1.6" "-source" "1.6" "-encoding" "UTF-8"
+[4897][environment]   
+[4897][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[4897][      debug] Current working directory: '/home/coma/GSoC/npebugs/tika-1378'
+[4897][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler4109803680697087775arguments' '@/tmp/args_.tmp.1efa2d' 2>'/tmp/javac.tmp.fabc22.out'
+[4897][      debug] *** Success. Logs:
+[4897][      debug] Translating 3 source files (3 classes)
+[4897][      debug] done capturing all files
+[4897][environment] Infer log identifier is 
+[4842][   progress] Found 3 source files to analyze in /home/coma/GSoC/npebugs/tika-1378/infer-out
+[4842][environment] Parallel jobs: 8
+[4928][   progress] src/main/java/org/apache/tika/language/translate/GoogleTranslator.java starting
+[4929][   progress] src/main/java/org/apache/tika/language/translate/CachedTranslator.java starting
+[4930][   progress] src/main/java/org/apache/tika/language/translate/MicrosoftTranslator.java starting
+[4929][   progress] src/main/java/org/apache/tika/language/translate/CachedTranslator.java DONE
+[4930][   progress] src/main/java/org/apache/tika/language/translate/MicrosoftTranslator.java DONE
+[4928][   progress] src/main/java/org/apache/tika/language/translate/GoogleTranslator.java DONE
+
+[30438][      phase] ============================================================
+[30438][      phase] = New infer execution begins
+[30438][      phase] ============================================================
+[30438][environment] CWD = /home/coma/GSoC/npebugs/tika-1378
+[30438][environment] No .inferconfig file found
+[30438][environment] Project root = /home/coma/GSoC/npebugs/tika-1378
+[30438][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[30438][environment] Infer log identifier is 
+
+[30544][      phase] ============================================================
+[30544][      phase] = New infer execution begins
+[30544][      phase] ============================================================
+[30544][environment] CWD = /home/coma/GSoC/npebugs/tika-1378
+[30544][environment] No .inferconfig file found
+[30544][environment] Project root = /home/coma/GSoC/npebugs/tika-1378
+[30544][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[30544][environment] Infer log identifier is 

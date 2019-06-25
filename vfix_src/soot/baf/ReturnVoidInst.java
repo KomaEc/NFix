@@ -1,4 +1,0 @@
-package soot.baf;
-
-public interface ReturnVoidInst extends NoArgInst {
-}

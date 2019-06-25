@@ -1,0 +1,75 @@
+Found 8 issues
+
+src/main/java/org/apache/felix/resolver/ResolverImpl.java:1321: error: NULL_DEREFERENCE
+  object `pkgs` last assigned on line 1311 could be null and is dereferenced at line 1321.
+  1319.           //       I think this is only a special case for fragment imports because they can overlap
+  1320.           //       host imports, which is not allowed in normal metadata.
+  1321. >         for (Entry<String, List<Blame>> entry : pkgs.m_importedPkgs.fast())
+  1322.           {
+  1323.               String pkgName = entry.getKey();
+
+src/main/java/org/apache/felix/resolver/ResolverImpl.java:1895: error: NULL_DEREFERENCE
+  object `fragments` last assigned on line 1894 could be null and is dereferenced at line 1895.
+  1893.               {
+  1894.                   List<Resource> fragments = ((WrappedResource) resource).getFragments();
+  1895. >                 for (Resource fragment : fragments)
+  1896.                   {
+  1897.                       // Get wire list for the fragment from the wire map.
+
+src/main/java/org/apache/felix/resolver/ResolverImpl.java:1991: error: NULL_DEREFERENCE
+  object `dynCand` last assigned on line 1989 could be null and is dereferenced at line 1991.
+  1989.           Capability dynCand = allCandidates.getFirstCandidate(dynReq);
+  1990.   
+  1991. >         if (!rc.getWirings().containsKey(dynCand.getResource()))
+  1992.           {
+  1993.               populateWireMap(rc, dynCand.getResource(),
+
+src/main/java/org/apache/felix/resolver/Logger.java:85: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void Logger.debug(String)` indirectly reads without synchronization from `this.m_logLevel`. Potentially races with write in method `Logger.setLogLevel(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  83.       public final void debug(String msg)
+  84.       {
+  85. >         _log(LOG_DEBUG, msg, null);
+  86.       }
+  87.   
+
+src/main/java/org/apache/felix/resolver/Logger.java:90: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void Logger.doLog(int,String,Throwable)` reads without synchronization from `this.m_logLevel`. Potentially races with write in method `Logger.setLogLevel(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  88.       protected void doLog(int level, String msg, Throwable throwable)
+  89.       {
+  90. >         if (level > m_logLevel)
+  91.           {
+  92.               return;
+
+src/main/java/org/apache/felix/resolver/Logger.java:80: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean Logger.isDebugEnabled()` reads without synchronization from `this.m_logLevel`. Potentially races with write in method `Logger.setLogLevel(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  78.       public boolean isDebugEnabled()
+  79.       {
+  80. >         return m_logLevel >= LOG_DEBUG;
+  81.       }
+  82.   
+
+src/main/java/org/apache/felix/resolver/Logger.java:70: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void Logger.log(int,String)` indirectly reads without synchronization from `this.m_logLevel`. Potentially races with write in method `Logger.setLogLevel(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  68.       public final void log(int level, String msg)
+  69.       {
+  70. >         _log(level, msg, null);
+  71.       }
+  72.   
+
+src/main/java/org/apache/felix/resolver/Logger.java:75: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void Logger.log(int,String,Throwable)` indirectly reads without synchronization from `this.m_logLevel`. Potentially races with write in method `Logger.setLogLevel(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  73.       public final void log(int level, String msg, Throwable throwable)
+  74.       {
+  75. >         _log(level, msg, throwable);
+  76.       }
+  77.   
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 5
+         NULL_DEREFERENCE: 3

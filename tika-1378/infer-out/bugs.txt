@@ -1,0 +1,14 @@
+Found 1 issue
+
+src/main/java/org/apache/tika/language/translate/GoogleTranslator.java:97: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 88 is not released after line 97.
+**Note**: potential exception at line 91
+  95.   		ObjectMapper mapper = new ObjectMapper();
+  96.   		JsonNode jsonResp = mapper.readTree(responseText.toString());
+  97. > 		return jsonResp.findValuesAsText("translatedText").get(0);
+  98.   	}
+  99.   
+
+Summary of the reports
+
+  RESOURCE_LEAK: 1

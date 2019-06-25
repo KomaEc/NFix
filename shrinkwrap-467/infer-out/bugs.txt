@@ -1,0 +1,57 @@
+Found 6 issues
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java:120: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 115 is not released after line 120.
+  118.               int read = 0;
+  119.               try {
+  120. >                 while ((read = in.read(buffer)) != -1) {
+  121.                       // Just count
+  122.                       count += read;
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileStore.java:124: error: RESOURCE_LEAK
+  resource of type `java.io.BufferedInputStream` acquired by call to `new()` at line 115 is not released after line 124.
+**Note**: potential exception at line 120
+  122.                       count += read;
+  123.                   }
+  124. >             } catch (final IOException ioe) {
+  125.                   throw new RuntimeException("Could not count size of archive " + this.archive.getName() + " at "
+  126.                       + asset.toString(), ioe);
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java:154: error: NULL_DEREFERENCE
+  object `archive` last assigned on line 130 could be null and is dereferenced at line 154.
+  152.   
+  153.           // Exists?
+  154. >         final ShrinkWrapFileSystem existsFs = this.createdFileSystems.get(archive.getId());
+  155.           if (existsFs != null && existsFs.isOpen()) {
+  156.               throw new FileSystemAlreadyExistsException("File System for URI " + uri.toString() + " already exists: "
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java:305: error: RESOURCE_LEAK
+  resource of type `org.jboss.shrinkwrap.api.nio.file.MemoryNamedAsset` acquired by call to `new()` at line 271 is not released after line 305.
+  303.   
+  304.           // Get the Node
+  305. >         final Node node = archive.get(archivePath);
+  306.           if (node == null) {
+  307.               throw new IllegalArgumentException(
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java:323: error: RESOURCE_LEAK
+  resource of type `org.jboss.shrinkwrap.api.nio.file.MemoryNamedAsset` acquired to `channel` by call to `new()` at line 271 is not released after line 323.
+**Note**: potential exception at line 285
+  321.           // Set the position to 0 so it can be read from the beginning
+  322.           outChannel.position(0);
+  323. >         return outChannel;
+  324.   
+  325.       }
+
+src/main/java/org/jboss/shrinkwrap/impl/nio/file/ShrinkWrapFileSystemProvider.java:323: error: RESOURCE_LEAK
+  resource of type `org.jboss.shrinkwrap.api.nio.file.SeekableInMemoryByteChannel` acquired by call to `new()` at line 319 is not released after line 323.
+**Note**: potential exception at line 320
+  321.           // Set the position to 0 so it can be read from the beginning
+  322.           outChannel.position(0);
+  323. >         return outChannel;
+  324.   
+  325.       }
+
+Summary of the reports
+
+     RESOURCE_LEAK: 5
+  NULL_DEREFERENCE: 1

@@ -12,3 +12,10 @@ To compile, type `make`. To clean all files, type `make clean`# NPE Bugs
 * APR tool that use static analysis result only, but not rely on test cases
 * Using SPF to remove false positives? And compare ability to localization between static tools and dynamic tools
 
+## Useful Command
+```bash
+echo $(echo ./*.jar | tr ' ' ':') >> dependency.txt
+sed 's/.\//\//g' dependency.txt 
+```
+
+

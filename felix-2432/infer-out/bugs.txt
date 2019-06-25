@@ -1,0 +1,21 @@
+Found 2 issues
+
+src/main/java/org/apache/felix/gogo/runtime/CommandSessionImpl.java:330: error: RESOURCE_LEAK
+  resource of type `java.util.Formatter` acquired by call to `new()` at line 301 is not released after line 330.
+  328.           if (found)
+  329.           {
+  330. >             return (StringBuilder) f.out();
+  331.           }
+  332.           else
+
+src/main/java/org/apache/felix/gogo/runtime/CommandSessionImpl.java:334: error: RESOURCE_LEAK
+  resource of type `java.util.Formatter` acquired by call to `new()` at line 301 is not released after line 334.
+  332.           else
+  333.           {
+  334. >             return b.toString();
+  335.           }
+  336.       }
+
+Summary of the reports
+
+  RESOURCE_LEAK: 2

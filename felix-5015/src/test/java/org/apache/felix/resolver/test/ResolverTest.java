@@ -19,45 +19,25 @@
 package org.apache.felix.resolver.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.felix.resolver.Logger;
+
 import org.apache.felix.resolver.ResolverImpl;
-import org.apache.felix.resolver.test.util.BundleCapability;
-import org.apache.felix.resolver.test.util.BundleRequirement;
-import org.apache.felix.resolver.test.util.GenericCapability;
-import org.apache.felix.resolver.test.util.GenericRequirement;
-import org.apache.felix.resolver.test.util.PackageCapability;
-import org.apache.felix.resolver.test.util.PackageRequirement;
-import org.apache.felix.resolver.test.util.ResolveContextImpl;
-import org.apache.felix.resolver.test.util.ResourceImpl;
+
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.osgi.framework.Constants;
-import org.osgi.framework.namespace.BundleNamespace;
-import org.osgi.framework.namespace.HostNamespace;
-import org.osgi.framework.namespace.IdentityNamespace;
-import org.osgi.framework.namespace.PackageNamespace;
+
 import org.osgi.resource.Capability;
-import org.osgi.resource.Namespace;
-import org.osgi.resource.Requirement;
+
 import org.osgi.resource.Resource;
-import org.osgi.resource.Wire;
-import org.osgi.resource.Wiring;
-import org.osgi.service.resolver.ResolutionException;
-import org.osgi.service.resolver.Resolver;
+
 
 public class ResolverTest
 {

@@ -1,0 +1,95 @@
+Found 10 issues
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:205: error: NULL_DEREFERENCE
+  object returned by `md.getObjectClassDefinitions()` could be null and is dereferenced at line 205.
+  203.   
+  204.                   // get ocd for the reference, ignore designate if none
+  205. >                 OCD ocd = ( OCD ) md.getObjectClassDefinitions().get( ocdRef );
+  206.                   if ( ocd == null )
+  207.                   {
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:264: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void MetaTypeInformationImpl.addFactoryMetaTypeProvider(java.lang.String[],MetaTypeProvider)` indirectly writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  262.           for ( int i = 0; i < factoryPids.length; i++ )
+  263.           {
+  264. >             addMetaTypeProvider( factoryPids[i], mtp );
+  265.           }
+  266.       }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:215: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void MetaTypeInformationImpl.addMetaData(MetaData)` indirectly writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  213.                   {
+  214.                       this.factoryPids.add( designate.getFactoryPid() );
+  215. >                     this.addMetaTypeProvider( designate.getFactoryPid(), dmtp );
+  216.                   }
+  217.                   else
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:232: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void MetaTypeInformationImpl.addMetaTypeProvider(String,MetaTypeProvider)` writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  230.           {
+  231.               this.metaTypeProviders.put( key, mtp );
+  232. >             this.locales = null;
+  233.           }
+  234.       }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:254: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void MetaTypeInformationImpl.addSingletonMetaTypeProvider(java.lang.String[],MetaTypeProvider)` indirectly writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  252.           for ( int i = 0; i < pids.length; i++ )
+  253.           {
+  254. >             addMetaTypeProvider( pids[i], mtp );
+  255.           }
+  256.       }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:75: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void MetaTypeInformationImpl.dispose()` writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  73.           this.pids.clear();
+  74.           this.factoryPids.clear();
+  75. >         this.locales = null;
+  76.           this.metaTypeProviders.clear();
+  77.       }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:134: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `java.lang.String[] MetaTypeInformationImpl.getLocales()` reads without synchronization from `this.locales`. Potentially races with write in method `MetaTypeInformationImpl.addMetaTypeProvider(...)`.
+ Reporting because this access may occur on a background thread.
+  132.           }
+  133.   
+  134. >         return ( String[] ) this.locales.toArray( new String[this.locales.size()] );
+  135.       }
+  136.   
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:286: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean MetaTypeInformationImpl.removeFactoryMetaTypeProvider(java.lang.String[])` indirectly writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  284.           for ( int i = 0; i < factoryPids.length; i++ )
+  285.           {
+  286. >             wasRegistered |= ( removeMetaTypeProvider( factoryPids[i] ) != null );
+  287.               this.factoryPids.remove( factoryPids[i] );
+  288.           }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:241: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `MetaTypeProvider MetaTypeInformationImpl.removeMetaTypeProvider(String)` writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  239.           if ( key != null )
+  240.           {
+  241. >             this.locales = null;
+  242.               return ( MetaTypeProvider ) this.metaTypeProviders.remove( key );
+  243.           }
+
+src/main/java/org/apache/felix/metatype/internal/MetaTypeInformationImpl.java:274: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean MetaTypeInformationImpl.removeSingletonMetaTypeProvider(java.lang.String[])` indirectly writes to field `this.locales` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  272.           for ( int i = 0; i < pids.length; i++ )
+  273.           {
+  274. >             wasRegistered |= ( removeMetaTypeProvider( pids[i] ) != null );
+  275.               this.pids.remove( pids[i] );
+  276.           }
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 9
+         NULL_DEREFERENCE: 1

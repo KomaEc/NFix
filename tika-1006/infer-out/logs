@@ -874,3 +874,15 @@ Infer version v0.16.0-7904ca31c
 [4282][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
 [4282][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
 [4282][environment] Infer log identifier is 
+
+[5040][      phase] ============================================================
+[5040][      phase] = New infer execution begins
+[5040][      phase] ============================================================
+[5040][environment] CWD = /home/coma/GSoC/npebugs/tika-1006
+[5040][environment] No .inferconfig file found
+[5040][environment] Project root = /home/coma/GSoC/npebugs/tika-1006
+[5040][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5040][ extern err] ** Error running the reporting script:
+[5040][ extern err] **   /usr/local/lib/infer/infer/bin/../lib/python/inferTraceBugs -o /home/coma/GSoC/npebugs/tika-1006/infer-out
+[5040][ extern err] ** See error above
+[5040][environment] Infer log identifier is 
