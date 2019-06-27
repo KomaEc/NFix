@@ -4,6 +4,7 @@
 c5fb58831192e5381af0ba02ef8bb5cec6235c8f
 
 ## Patch
+```diff
 --- src/main/java/org/modeshape/jcr/cache/document/WritableSessionCache.java	2019-06-25 16:30:31.876793698 +0800
 +++ patch.txt	2019-06-25 16:31:52.937635601 +0800
 @@ -1024,18 +1024,23 @@
@@ -27,3 +28,4 @@ c5fb58831192e5381af0ba02ef8bb5cec6235c8f
                      // Create an event ...
                      changes.nodeCreated(key, newParent, newPath, primaryType, mixinTypes, node.changedProperties());
                  } else {
+```
