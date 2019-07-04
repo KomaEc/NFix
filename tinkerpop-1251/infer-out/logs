@@ -267,3 +267,21 @@ Infer version v0.16.0-7904ca31c
 [11918][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopRemoteAcceptor.java DONE
 [11924][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorage.java DONE
 [11920][   progress] src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/util/MapReduceHelper.java DONE
+
+[21553][      phase] ============================================================
+[21553][      phase] = New infer execution begins
+[21553][      phase] ============================================================
+[21553][environment] CWD = /home/coma/GSoC/npebugs/tinkerpop-1251
+[21553][environment] No .inferconfig file found
+[21553][environment] Project root = /home/coma/GSoC/npebugs/tinkerpop-1251
+[21553][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[21553][environment] Infer log identifier is 
+
+[24060][      phase] ============================================================
+[24060][      phase] = New infer execution begins
+[24060][      phase] ============================================================
+[24060][environment] CWD = /home/coma/GSoC/npebugs/tinkerpop-1251
+[24060][environment] No .inferconfig file found
+[24060][environment] Project root = /home/coma/GSoC/npebugs/tinkerpop-1251
+[24060][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[24060][environment] Infer log identifier is 

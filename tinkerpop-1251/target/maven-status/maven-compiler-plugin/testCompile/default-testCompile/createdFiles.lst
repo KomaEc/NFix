@@ -1,0 +1,17 @@
+org/apache/tinkerpop/gremlin/hadoop/structure/io/RecordReaderWriterTest.class
+org/apache/tinkerpop/gremlin/hadoop/HadoopGraphProvider.class
+org/apache/tinkerpop/gremlin/hadoop/HadoopGraphProvider$1.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/gryo/GryoRecordReaderWriterTest.class
+org/apache/tinkerpop/gremlin/hadoop/process/groovy/HadoopGraphGroovyProcessStandardTest.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/VertexWritableTest.class
+org/apache/tinkerpop/gremlin/hadoop/HadoopGremlinSuite.class
+org/apache/tinkerpop/gremlin/hadoop/process/HadoopGraphProcessStandardIntegrateTest.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/AbstractStorageCheck.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorageCheck.class
+org/apache/tinkerpop/gremlin/hadoop/process/computer/AbstractHadoopGraphComputerTest.class
+org/apache/tinkerpop/gremlin/hadoop/structure/HadoopGraphStructureStandardTest.class
+org/apache/tinkerpop/gremlin/hadoop/HadoopGraphProvider$2.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/script/ScriptRecordReaderWriterTest.class
+org/apache/tinkerpop/gremlin/hadoop/groovy/plugin/HadoopGremlinPluginCheck.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/graphson/GraphSONRecordReaderWriterTest.class
+org/apache/tinkerpop/gremlin/hadoop/structure/io/ObjectWritableTest.class
