@@ -98,3 +98,12 @@ Infer version v0.16.0-7904ca31c
 [25072][environment] Project root = /home/coma/GSoC/npebugs/shrinkwrap-467
 [25072][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
 [25072][environment] Infer log identifier is 
+
+[6178][      phase] ============================================================
+[6178][      phase] = New infer execution begins
+[6178][      phase] ============================================================
+[6178][environment] CWD = /home/coma/GSoC/npebugs/shrinkwrap-467
+[6178][environment] No .inferconfig file found
+[6178][environment] Project root = /home/coma/GSoC/npebugs/shrinkwrap-467
+[6178][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[6178][environment] Infer log identifier is 
