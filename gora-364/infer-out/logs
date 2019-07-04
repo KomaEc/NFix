@@ -1,0 +1,377 @@
+[10967][environment] CWD = /home/coma/GSoC/npebugs/gora-364
+[10967][environment] No .inferconfig file found
+[10967][environment] Project root = /home/coma/GSoC/npebugs/gora-364
+[10967][environment] INFER_ARGS =   @/tmp/args.tmp.d1067f  ++Contents of '/tmp/args.tmp.d1067f':
+[10967][environment]                                         run
+[10967][environment]                                       
+[10967][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[10967][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[10967][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[10967][environment] 
+[10967][   progress] Capturing in maven mode...
+[10967][      debug] Running maven capture:
+[10967][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[11020][environment] CWD = /home/coma/GSoC/npebugs/gora-364
+[11020][environment] No .inferconfig file found
+[11020][environment] Project root = /home/coma/GSoC/npebugs/gora-364
+[11020][environment] INFER_ARGS =   @/tmp/args.tmp.4cbb82  ++Contents of '/tmp/args.tmp.4cbb82':
+[11020][environment]                                         @/tmp/args.tmp.d1067f
+[11020][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler5347709040165804520arguments
+[11020][environment]                                         ++Contents of '/tmp/args.tmp.d1067f':
+[11020][environment]                                           run
+[11020][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler5347709040165804520arguments':
+[11020][environment]                                           "-d"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/target/classes"
+[11020][environment]                                           "-classpath"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/target/classes:/home/coma/.m2/repository/org/apache/hadoop/hadoop-core/1.0.1/hadoop-core-1.0.1.jar:/home/coma/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/coma/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/home/coma/.m2/repository/org/apache/commons/commons-math/2.1/commons-math-2.1.jar:/home/coma/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/coma/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/coma/.m2/repository/commons-digester/commons-digester/1.7/commons-digester-1.7.jar:/home/coma/.m2/repository/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.jar:/home/coma/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/coma/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/home/coma/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/coma/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/coma/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/coma/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/coma/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/coma/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/coma/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/coma/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/coma/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/coma/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/2.5.2/cxf-rt-frontend-jaxrs-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-common-utilities/2.5.2/cxf-common-utilities-2.5.2.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.0.1/xmlschema-core-2.0.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-api/2.5.2/cxf-api-2.5.2.jar:/home/coma/.m2/repository/org/apache/neethi/neethi/3.0.1/neethi-3.0.1.jar:/home/coma/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-core/2.5.2/cxf-rt-core-2.5.2.jar:/home/coma/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar:/home/coma/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/home/coma/.m2/repository/org/springframework/spring-core/3.0.6.RELEASE/spring-core-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-asm/3.0.6.RELEASE/spring-asm-3.0.6.RELEASE.jar:/home/coma/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/2.5.2/cxf-rt-bindings-xml-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/2.5.2/cxf-rt-transports-http-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-common/2.5.2/cxf-rt-transports-common-2.5.2.jar:/home/coma/.m2/repository/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar:/home/coma/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/coma/.m2/repository/org/springframework/spring-beans/3.0.6.RELEASE/spring-beans-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-context/3.0.6.RELEASE/spring-context-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-aop/3.0.6.RELEASE/spring-aop-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-expression/3.0.6.RELEASE/spring-expression-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/codehaus/jettison/jettison/1.3.1/jettison-1.3.1.jar:/home/coma/.m2/repository/org/apache/avro/avro/1.7.6/avro-1.7.6.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.6.9/jackson-core-asl-1.6.9.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.6.9/jackson-mapper-asl-1.6.9.jar:/home/coma/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/coma/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/home/coma/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar:/home/coma/.m2/repository/org/apache/avro/avro-mapred/1.7.6/avro-mapred-1.7.6.jar:/home/coma/.m2/repository/org/apache/avro/avro-ipc/1.7.6/avro-ipc-1.7.6.jar:/home/coma/.m2/repository/io/netty/netty/3.4.0.Final/netty-3.4.0.Final.jar:/home/coma/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/home/coma/.m2/repository/org/apache/avro/avro-ipc/1.7.6/avro-ipc-1.7.6-tests.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/com/google/guava/guava/13.0/guava-13.0.jar:/home/coma/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/coma/.m2/repository/org/slf4j/slf4j-simple/1.6.6/slf4j-simple-1.6.6.jar:"
+[11020][environment]                                           "-sourcepath"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java:/home/coma/GSoC/npebugs/gora-364/target/generated-sources/annotations:"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/QueryBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Tombstones.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/AvroQuery.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSBackedDataStoreBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/GoraException.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/DataStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentNonReusingSerialization.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyListIterator.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/store/AvroStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentSerialization.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/StringComparator.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/IOUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/StringSerialization.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/FileBackedDataStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/FilterOp.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/Filter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/AvroResult.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyCollectionWrapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/impl/FileBackedDataStoreBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Tombstone.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraMapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/ResultBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/PartitionQueryImpl.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/WebServiceBackedDataStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/NullOutputCommitter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/PartitionWSQueryImpl.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/TimingUtil.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyMapWrapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordWriter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/ResultWSBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/WritableUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ByteUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentSerializer.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/BeanFactoryImpl.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordCounter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/memory/store/MemStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/VersionInfo.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/SingleFieldValueFilter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/OperationNotSupportedException.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Persistent.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSDataStoreBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/FakeResolvingDecoder.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/PartitionQuery.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraOutputFormat.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/mapreduce/FsInput.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordReader.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyListWrapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/store/DataFileAvroStore.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraReducer.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ReflectionUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ClassLoadingUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/AvroUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyIteratorWrapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/GoraVersionAnnotation.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/ws/impl/BeanFactoryWSImpl.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/Null.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtySetWrapper.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/DataStoreFactory.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/StringUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Dirtyable.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/NodeWalker.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraInputFormat.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/FilterList.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/DataFileAvroResult.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraMapReduceUtils.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyFlag.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/FileSplitPartitionQuery.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/Result.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/Query.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/impl/DataStoreBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/QueryWSBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/BeanFactory.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/ws/impl/PersistentWSBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraInputSplit.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/MapFieldValueFilter.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/PersistentBase.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentDeserializer.java"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSDataStoreFactory.java"
+[11020][environment]                                           "-s"
+[11020][environment]                                           "/home/coma/GSoC/npebugs/gora-364/target/generated-sources/annotations"
+[11020][environment]                                           "-g" "-deprecation" "-target" "1.7"
+[11020][environment]                                           "-source" "1.7" "-encoding" "UTF-8"
+[11020][environment]                                         
+[11020][environment]                                       
+[11020][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[11020][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler5347709040165804520arguments
+[11020][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler5347709040165804520arguments':
+[11020][environment]     "-d" "/home/coma/GSoC/npebugs/gora-364/target/classes" "-classpath"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/target/classes:/home/coma/.m2/repository/org/apache/hadoop/hadoop-core/1.0.1/hadoop-core-1.0.1.jar:/home/coma/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/coma/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/coma/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/home/coma/.m2/repository/org/apache/commons/commons-math/2.1/commons-math-2.1.jar:/home/coma/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/coma/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/coma/.m2/repository/commons-digester/commons-digester/1.7/commons-digester-1.7.jar:/home/coma/.m2/repository/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.jar:/home/coma/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/coma/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/home/coma/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/home/coma/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/coma/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/coma/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/coma/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/coma/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/coma/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/coma/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/coma/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/coma/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/coma/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/2.5.2/cxf-rt-frontend-jaxrs-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-common-utilities/2.5.2/cxf-common-utilities-2.5.2.jar:/home/coma/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.0.1/xmlschema-core-2.0.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-api/2.5.2/cxf-api-2.5.2.jar:/home/coma/.m2/repository/org/apache/neethi/neethi/3.0.1/neethi-3.0.1.jar:/home/coma/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-core/2.5.2/cxf-rt-core-2.5.2.jar:/home/coma/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar:/home/coma/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/home/coma/.m2/repository/org/springframework/spring-core/3.0.6.RELEASE/spring-core-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-asm/3.0.6.RELEASE/spring-asm-3.0.6.RELEASE.jar:/home/coma/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/2.5.2/cxf-rt-bindings-xml-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-http/2.5.2/cxf-rt-transports-http-2.5.2.jar:/home/coma/.m2/repository/org/apache/cxf/cxf-rt-transports-common/2.5.2/cxf-rt-transports-common-2.5.2.jar:/home/coma/.m2/repository/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar:/home/coma/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/coma/.m2/repository/org/springframework/spring-beans/3.0.6.RELEASE/spring-beans-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-context/3.0.6.RELEASE/spring-context-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-aop/3.0.6.RELEASE/spring-aop-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/springframework/spring-expression/3.0.6.RELEASE/spring-expression-3.0.6.RELEASE.jar:/home/coma/.m2/repository/org/codehaus/jettison/jettison/1.3.1/jettison-1.3.1.jar:/home/coma/.m2/repository/org/apache/avro/avro/1.7.6/avro-1.7.6.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.6.9/jackson-core-asl-1.6.9.jar:/home/coma/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.6.9/jackson-mapper-asl-1.6.9.jar:/home/coma/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/coma/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/home/coma/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/home/coma/.m2/repository/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar:/home/coma/.m2/repository/org/apache/avro/avro-mapred/1.7.6/avro-mapred-1.7.6.jar:/home/coma/.m2/repository/org/apache/avro/avro-ipc/1.7.6/avro-ipc-1.7.6.jar:/home/coma/.m2/repository/io/netty/netty/3.4.0.Final/netty-3.4.0.Final.jar:/home/coma/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/home/coma/.m2/repository/org/apache/avro/avro-ipc/1.7.6/avro-ipc-1.7.6-tests.jar:/home/coma/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/coma/.m2/repository/com/google/guava/guava/13.0/guava-13.0.jar:/home/coma/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/coma/.m2/repository/org/slf4j/slf4j-simple/1.6.6/slf4j-simple-1.6.6.jar:"
+[11020][environment]     "-sourcepath"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java:/home/coma/GSoC/npebugs/gora-364/target/generated-sources/annotations:"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/QueryBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Tombstones.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/AvroQuery.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSBackedDataStoreBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/GoraException.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/DataStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentNonReusingSerialization.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyListIterator.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/store/AvroStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentSerialization.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/StringComparator.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/IOUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/StringSerialization.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/FileBackedDataStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/FilterOp.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/Filter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/AvroResult.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyCollectionWrapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/impl/FileBackedDataStoreBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Tombstone.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraMapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/ResultBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/PartitionQueryImpl.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/WebServiceBackedDataStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/NullOutputCommitter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/PartitionWSQueryImpl.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/TimingUtil.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyMapWrapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordWriter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/ResultWSBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/WritableUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ByteUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentSerializer.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/BeanFactoryImpl.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordCounter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/memory/store/MemStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/VersionInfo.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/SingleFieldValueFilter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/OperationNotSupportedException.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Persistent.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSDataStoreBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/FakeResolvingDecoder.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/PartitionQuery.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraOutputFormat.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/mapreduce/FsInput.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraRecordReader.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyListWrapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/store/DataFileAvroStore.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraReducer.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ReflectionUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/ClassLoadingUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/AvroUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyIteratorWrapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/GoraVersionAnnotation.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/ws/impl/BeanFactoryWSImpl.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/Null.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtySetWrapper.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/DataStoreFactory.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/StringUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/Dirtyable.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/util/NodeWalker.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraInputFormat.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/FilterList.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/avro/query/DataFileAvroResult.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraMapReduceUtils.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/DirtyFlag.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/impl/FileSplitPartitionQuery.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/Result.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/Query.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/impl/DataStoreBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/query/ws/impl/QueryWSBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/BeanFactory.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/ws/impl/PersistentWSBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/GoraInputSplit.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/filter/MapFieldValueFilter.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/persistency/impl/PersistentBase.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/mapreduce/PersistentDeserializer.java"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/src/main/java/org/apache/gora/store/ws/impl/WSDataStoreFactory.java"
+[11020][environment]     "-s"
+[11020][environment]     "/home/coma/GSoC/npebugs/gora-364/target/generated-sources/annotations"
+[11020][environment]     "-g" "-deprecation" "-target" "1.7" "-source" "1.7" "-encoding" "UTF-8"
+[11020][environment]   
+[11020][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[11020][      debug] Current working directory: '/home/coma/GSoC/npebugs/gora-364'
+[11020][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler5347709040165804520arguments' '@/tmp/args_.tmp.13b5ea' 2>'/tmp/javac.tmp.a75ca3.out'
+[11020][      debug] *** Success. Logs:
+[11020][      debug] Translating 78 source files (92 classes)
+[11020][      debug] done capturing all files
+[11020][environment] Infer log identifier is 
+[10967][   progress] Found 78 source files to analyze in /home/coma/GSoC/npebugs/gora-364/infer-out
+[10967][environment] Parallel jobs: 8
+[11056][   progress] src/main/java/org/apache/gora/store/DataStoreFactory.java starting
+[11055][   progress] src/main/java/org/apache/gora/store/DataStore.java starting
+[11051][   progress] src/main/java/org/apache/gora/persistency/impl/PersistentBase.java starting
+[11058][   progress] src/main/java/org/apache/gora/mapreduce/GoraOutputFormat.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/StringComparator.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/ws/impl/BeanFactoryWSImpl.java starting
+[11057][   progress] src/main/java/org/apache/gora/filter/FilterList.java starting
+[11055][   progress] src/main/java/org/apache/gora/store/DataStore.java DONE
+[11055][   progress] src/main/java/org/apache/gora/query/ws/impl/ResultWSBase.java starting
+[11052][   progress] src/main/java/org/apache/gora/persistency/ws/impl/PersistentWSBase.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/StringComparator.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/NullOutputCommitter.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/NullOutputCommitter.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/PersistentSerialization.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/PersistentSerialization.java DONE
+[11054][   progress] src/main/java/org/apache/gora/util/StringUtils.java starting
+[11057][   progress] src/main/java/org/apache/gora/filter/FilterList.java DONE
+[11057][   progress] src/main/java/org/apache/gora/util/AvroUtils.java starting
+[11055][   progress] src/main/java/org/apache/gora/query/ws/impl/ResultWSBase.java DONE
+[11055][   progress] src/main/java/org/apache/gora/store/ws/impl/WSBackedDataStoreBase.java starting
+[11057][   progress] src/main/java/org/apache/gora/util/AvroUtils.java DONE
+[11057][   progress] src/main/java/org/apache/gora/util/WritableUtils.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/ws/impl/BeanFactoryWSImpl.java DONE
+[11053][   progress] src/main/java/org/apache/gora/memory/store/MemStore.java starting
+[11055][   progress] src/main/java/org/apache/gora/store/ws/impl/WSBackedDataStoreBase.java DONE
+[11055][   progress] src/main/java/org/apache/gora/avro/store/AvroStore.java starting
+[11052][   progress] src/main/java/org/apache/gora/persistency/ws/impl/PersistentWSBase.java DONE
+[11052][   progress] src/main/java/org/apache/gora/filter/SingleFieldValueFilter.java starting
+[11057][   progress] src/main/java/org/apache/gora/util/WritableUtils.java DONE
+[11057][   progress] src/main/java/org/apache/gora/store/ws/impl/WSDataStoreFactory.java starting
+[11058][   progress] src/main/java/org/apache/gora/mapreduce/GoraOutputFormat.java DONE
+[11058][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordCounter.java starting
+[11058][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordCounter.java DONE
+[11058][   progress] src/main/java/org/apache/gora/query/impl/FileSplitPartitionQuery.java starting
+[11054][   progress] src/main/java/org/apache/gora/util/StringUtils.java DONE
+[11054][   progress] src/main/java/org/apache/gora/util/GoraException.java starting
+[11054][   progress] src/main/java/org/apache/gora/util/GoraException.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/PersistentSerializer.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/PersistentSerializer.java DONE
+[11054][   progress] src/main/java/org/apache/gora/util/Null.java starting
+[11054][   progress] src/main/java/org/apache/gora/util/Null.java DONE
+[11054][   progress] src/main/java/org/apache/gora/query/ws/impl/PartitionWSQueryImpl.java starting
+[11052][   progress] src/main/java/org/apache/gora/filter/SingleFieldValueFilter.java DONE
+[11052][   progress] src/main/java/org/apache/gora/query/impl/ResultBase.java starting
+[11054][   progress] src/main/java/org/apache/gora/query/ws/impl/PartitionWSQueryImpl.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraMapReduceUtils.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraMapReduceUtils.java DONE
+[11054][   progress] src/main/java/org/apache/gora/avro/query/DataFileAvroResult.java starting
+[11051][   progress] src/main/java/org/apache/gora/persistency/impl/PersistentBase.java DONE
+[11051][   progress] src/main/java/org/apache/gora/persistency/Tombstone.java starting
+[11051][   progress] src/main/java/org/apache/gora/persistency/Tombstone.java DONE
+[11051][   progress] src/main/java/org/apache/gora/util/TimingUtil.java starting
+[11052][   progress] src/main/java/org/apache/gora/query/impl/ResultBase.java DONE
+[11052][   progress] src/main/java/org/apache/gora/persistency/impl/BeanFactoryImpl.java starting
+[11054][   progress] src/main/java/org/apache/gora/avro/query/DataFileAvroResult.java DONE
+[11054][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyListWrapper.java starting
+[11056][   progress] src/main/java/org/apache/gora/store/DataStoreFactory.java DONE
+[11056][   progress] src/main/java/org/apache/gora/mapreduce/GoraInputSplit.java starting
+[11052][   progress] src/main/java/org/apache/gora/persistency/impl/BeanFactoryImpl.java DONE
+[11052][   progress] src/main/java/org/apache/gora/persistency/Persistent.java starting
+[11052][   progress] src/main/java/org/apache/gora/persistency/Persistent.java DONE
+[11052][   progress] src/main/java/org/apache/gora/avro/store/DataFileAvroStore.java starting
+[11054][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyListWrapper.java DONE
+[11054][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyFlag.java starting
+[11054][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyFlag.java DONE
+[11054][   progress] src/main/java/org/apache/gora/filter/MapFieldValueFilter.java starting
+[11051][   progress] src/main/java/org/apache/gora/util/TimingUtil.java DONE
+[11051][   progress] src/main/java/org/apache/gora/util/ReflectionUtils.java starting
+[11051][   progress] src/main/java/org/apache/gora/util/ReflectionUtils.java DONE
+[11051][   progress] src/main/java/org/apache/gora/query/impl/QueryBase.java starting
+[11052][   progress] src/main/java/org/apache/gora/avro/store/DataFileAvroStore.java DONE
+[11052][   progress] src/main/java/org/apache/gora/store/FileBackedDataStore.java starting
+[11052][   progress] src/main/java/org/apache/gora/store/FileBackedDataStore.java DONE
+[11052][   progress] src/main/java/org/apache/gora/mapreduce/PersistentNonReusingSerialization.java starting
+[11052][   progress] src/main/java/org/apache/gora/mapreduce/PersistentNonReusingSerialization.java DONE
+[11052][   progress] src/main/java/org/apache/gora/util/VersionInfo.java starting
+[11056][   progress] src/main/java/org/apache/gora/mapreduce/GoraInputSplit.java DONE
+[11056][   progress] src/main/java/org/apache/gora/query/Query.java starting
+[11056][   progress] src/main/java/org/apache/gora/query/Query.java DONE
+[11056][   progress] src/main/java/org/apache/gora/store/WebServiceBackedDataStore.java starting
+[11056][   progress] src/main/java/org/apache/gora/store/WebServiceBackedDataStore.java DONE
+[11056][   progress] src/main/java/org/apache/gora/store/ws/impl/WSDataStoreBase.java starting
+[11056][   progress] src/main/java/org/apache/gora/store/ws/impl/WSDataStoreBase.java DONE
+[11056][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordReader.java starting
+[11053][   progress] src/main/java/org/apache/gora/memory/store/MemStore.java DONE
+[11053][   progress] src/main/java/org/apache/gora/avro/query/AvroQuery.java starting
+[11053][   progress] src/main/java/org/apache/gora/avro/query/AvroQuery.java DONE
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyIteratorWrapper.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyIteratorWrapper.java DONE
+[11053][   progress] src/main/java/org/apache/gora/persistency/Dirtyable.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/Dirtyable.java DONE
+[11053][   progress] src/main/java/org/apache/gora/query/ws/impl/QueryWSBase.java starting
+[11057][   progress] src/main/java/org/apache/gora/store/ws/impl/WSDataStoreFactory.java DONE
+[11057][   progress] src/main/java/org/apache/gora/filter/Filter.java starting
+[11057][   progress] src/main/java/org/apache/gora/filter/Filter.java DONE
+[11057][   progress] src/main/java/org/apache/gora/persistency/BeanFactory.java starting
+[11057][   progress] src/main/java/org/apache/gora/persistency/BeanFactory.java DONE
+[11057][   progress] src/main/java/org/apache/gora/mapreduce/StringSerialization.java starting
+[11057][   progress] src/main/java/org/apache/gora/mapreduce/StringSerialization.java DONE
+[11057][   progress] src/main/java/org/apache/gora/util/IOUtils.java starting
+[11053][   progress] src/main/java/org/apache/gora/query/ws/impl/QueryWSBase.java DONE
+[11053][   progress] src/main/java/org/apache/gora/avro/mapreduce/FsInput.java starting
+[11053][   progress] src/main/java/org/apache/gora/avro/mapreduce/FsInput.java DONE
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtySetWrapper.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtySetWrapper.java DONE
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyListIterator.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyListIterator.java DONE
+[11053][   progress] src/main/java/org/apache/gora/avro/query/AvroResult.java starting
+[11053][   progress] src/main/java/org/apache/gora/avro/query/AvroResult.java DONE
+[11053][   progress] src/main/java/org/apache/gora/mapreduce/FakeResolvingDecoder.java starting
+[11053][   progress] src/main/java/org/apache/gora/mapreduce/FakeResolvingDecoder.java DONE
+[11053][   progress] src/main/java/org/apache/gora/mapreduce/GoraMapper.java starting
+[11056][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordReader.java DONE
+[11056][   progress] src/main/java/org/apache/gora/util/ClassLoadingUtils.java starting
+[11056][   progress] src/main/java/org/apache/gora/util/ClassLoadingUtils.java DONE
+[11056][   progress] src/main/java/org/apache/gora/query/PartitionQuery.java starting
+[11056][   progress] src/main/java/org/apache/gora/query/PartitionQuery.java DONE
+[11056][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyMapWrapper.java starting
+[11052][   progress] src/main/java/org/apache/gora/util/VersionInfo.java DONE
+[11052][   progress] src/main/java/org/apache/gora/mapreduce/PersistentDeserializer.java starting
+[11052][   progress] src/main/java/org/apache/gora/mapreduce/PersistentDeserializer.java DONE
+[11052][   progress] src/main/java/org/apache/gora/GoraVersionAnnotation.java starting
+[11052][   progress] src/main/java/org/apache/gora/GoraVersionAnnotation.java DONE
+[11052][   progress] src/main/java/org/apache/gora/query/impl/PartitionQueryImpl.java starting
+[11051][   progress] src/main/java/org/apache/gora/query/impl/QueryBase.java DONE
+[11051][   progress] src/main/java/org/apache/gora/util/NodeWalker.java starting
+[11058][   progress] src/main/java/org/apache/gora/query/impl/FileSplitPartitionQuery.java DONE
+[11058][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyCollectionWrapper.java starting
+[11054][   progress] src/main/java/org/apache/gora/filter/MapFieldValueFilter.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraReducer.java starting
+[11053][   progress] src/main/java/org/apache/gora/mapreduce/GoraMapper.java DONE
+[11053][   progress] src/main/java/org/apache/gora/persistency/Tombstones.java starting
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraReducer.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraInputFormat.java starting
+[11052][   progress] src/main/java/org/apache/gora/query/impl/PartitionQueryImpl.java DONE
+[11052][   progress] src/main/java/org/apache/gora/store/impl/DataStoreBase.java starting
+[11053][   progress] src/main/java/org/apache/gora/persistency/Tombstones.java DONE
+[11053][   progress] src/main/java/org/apache/gora/filter/FilterOp.java starting
+[11053][   progress] src/main/java/org/apache/gora/filter/FilterOp.java DONE
+[11053][   progress] src/main/java/org/apache/gora/util/OperationNotSupportedException.java starting
+[11053][   progress] src/main/java/org/apache/gora/util/OperationNotSupportedException.java DONE
+[11053][   progress] src/main/java/org/apache/gora/store/impl/FileBackedDataStoreBase.java starting
+[11057][   progress] src/main/java/org/apache/gora/util/IOUtils.java DONE
+[11057][   progress] src/main/java/org/apache/gora/util/ByteUtils.java starting
+[11051][   progress] src/main/java/org/apache/gora/util/NodeWalker.java DONE
+[11051][   progress] src/main/java/org/apache/gora/query/Result.java starting
+[11051][   progress] src/main/java/org/apache/gora/query/Result.java DONE
+[11051][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordWriter.java starting
+[11052][   progress] src/main/java/org/apache/gora/store/impl/DataStoreBase.java DONE
+[11056][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyMapWrapper.java DONE
+[11051][   progress] src/main/java/org/apache/gora/mapreduce/GoraRecordWriter.java DONE
+[11058][   progress] src/main/java/org/apache/gora/persistency/impl/DirtyCollectionWrapper.java DONE
+[11053][   progress] src/main/java/org/apache/gora/store/impl/FileBackedDataStoreBase.java DONE
+[11054][   progress] src/main/java/org/apache/gora/mapreduce/GoraInputFormat.java DONE
+[11055][   progress] src/main/java/org/apache/gora/avro/store/AvroStore.java DONE
+[11057][   progress] src/main/java/org/apache/gora/util/ByteUtils.java DONE
+
+[9333][      phase] ============================================================
+[9333][      phase] = New infer execution begins
+[9333][      phase] ============================================================
+[9333][environment] CWD = /home/coma/GSoC/npebugs/gora-364
+[9333][environment] No .inferconfig file found
+[9333][environment] Project root = /home/coma/GSoC/npebugs/gora-364
+[9333][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[9333][environment] Infer log identifier is 

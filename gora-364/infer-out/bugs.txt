@@ -1,0 +1,30 @@
+Found 3 issues
+
+src/main/java/org/apache/gora/avro/store/DataFileAvroStore.java:79: error: RESOURCE_LEAK
+  resource of type `org.apache.gora.avro.mapreduce.FsInput` acquired by call to `createFsInput()` at line 79 is not released after line 79.
+  77.       try{
+  78.         return new DataFileAvroResult<K, T>(this, query
+  79. >           , createReader(createFsInput()));
+  80.       } catch(IOException ex){
+  81.         LOG.error(ex.getMessage());
+
+src/main/java/org/apache/gora/util/IOUtils.java:149: error: RESOURCE_LEAK
+  resource of type `org.apache.hadoop.io.DataOutputBuffer` acquired by call to `new()` at line 147 is not released after line 149.
+  147.       DataOutputBuffer buffer = new DataOutputBuffer();
+  148.       serialize(conf, buffer, obj);
+  149. >     return buffer.getData();
+  150.     }
+  151.   
+
+src/main/java/org/apache/gora/util/IOUtils.java:259: error: RESOURCE_LEAK
+  resource of type `org.apache.hadoop.io.DataInputBuffer` acquired by call to `new()` at line 257 is not released after line 259.
+**Note**: potential exception at line 259
+  257.       DataInputBuffer buffer = new DataInputBuffer();
+  258.       buffer.reset(in, in.length);
+  259. >     return deserialize(conf, buffer, obj);
+  260.     }
+  261.   
+
+Summary of the reports
+
+  RESOURCE_LEAK: 3
