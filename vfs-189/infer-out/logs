@@ -1,0 +1,1150 @@
+[10118][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[10118][environment] No .inferconfig file found
+[10118][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[10118][environment] INFER_ARGS =   @/tmp/args.tmp.9ff625  ++Contents of '/tmp/args.tmp.9ff625':
+[10118][environment]                                         run
+[10118][environment]                                       
+[10118][environment] command line arguments:   infer run -- mvn compileActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[10118][environment] Infer log identifier is 
+Infer version v0.16.0-7904ca31c
+[10118][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[10118][environment] 
+[10118][   progress] Capturing in maven mode...
+[10118][      debug] Running maven capture:
+[10118][      debug] mvn 'compile' '-P' 'infer-capture'
+
+[10175][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[10175][environment] No .inferconfig file found
+[10175][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[10175][environment] INFER_ARGS =   @/tmp/args.tmp.d6f02e  ++Contents of '/tmp/args.tmp.d6f02e':
+[10175][environment]                                         @/tmp/args.tmp.9ff625
+[10175][environment]                                         @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler986031358825712099arguments
+[10175][environment]                                         ++Contents of '/tmp/args.tmp.9ff625':
+[10175][environment]                                           run
+[10175][environment]                                         ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler986031358825712099arguments':
+[10175][environment]                                           "-d"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/target/classes"
+[10175][environment]                                           "-classpath"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/target/classes:/home/coma/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/coma/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/coma/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.14/commons-compress-1.14.jar:/home/coma/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-common/2.6.0/hadoop-common-2.6.0.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.6.0/hadoop-hdfs-2.6.0.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/home/coma/.m2/repository/org/apache/jackrabbit/jackrabbit-webdav/1.6.5/jackrabbit-webdav-1.6.5.jar:/home/coma/.m2/repository/org/apache/jackrabbit/jackrabbit-jcr-commons/1.6.5/jackrabbit-jcr-commons-1.6.5.jar:/home/coma/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar:"
+[10175][environment]                                           "-sourcepath"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java:/home/coma/GSoC/npebugs/vfs-189/target/generated-sources/annotations:"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileType.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/DeleteEvent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileContentThreadData.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileExtensionSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/RandomAccessMode.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/ProviderConfiguration.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FTPClientWrapper.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdate.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultVfsComponentContext.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/CombinedResources.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/VfsComponentContext.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/AllFileSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/UriParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperation.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultURLConnection.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/GenericFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractLayeredFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessStreamContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileAttributes.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpClientFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileFilter.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileNotFoundException.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdateListener.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommitListener.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/MkdirTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCheckout.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorOutputStream.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/WeakRefFileListener.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileContentInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractOriginatingFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpClientFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityRepositoryFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/OnCallRefreshFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileContentInfoFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/UserAuthenticatorUtils.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/StandardFileSystemManager.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/DefaultFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/URLFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContentInfoFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLog.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/VfsTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommit.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/Resource.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultURLStreamHandler.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/NullFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperationProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractVfsContainer.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/FileTypeMap.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsModifyListener.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileNotFolderException.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsStatus.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsMode.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/SyncTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/DefaultLocalFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorInputStream.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LayeredFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpStreamProxy.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemManager.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileType.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultFileSelectorInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperations.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/DefaultCryptor.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/VFS.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/DefaultFileOperations.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractVfsComponent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/URLFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/ExceptionConverter.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClient.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/PatternFileSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/Tbz2FileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileListener.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/OsFamily.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/FileObjectUtils.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/ShowFileTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/Selectors.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/InvertIncludeFileSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/temp/TemporaryFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsDelete.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntryHandler.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/FileSystemAndNameKey.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/UserAuthenticator.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavMethodRetryHandler.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Cryptor.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/UserAuthenticationData.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientWrapper.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/VfsComponent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/TemporaryFileStore.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Os.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClientFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/DelegatingFileSystemOptionsBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemManager.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/FileContentInfoFilenameFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/CompositeFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/auth/StaticUserAuthenticator.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/RandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFile.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileMonitor.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/Capability.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemOptions.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/CryptorFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/AbstractFileChangeEvent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperationProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/DeleteTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/AbstractFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/WeakRefFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileChangeEvent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/MoveTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/VfsLog.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/CreateEvent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileTypeHasNoContentException.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileFilterSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarURLConnectionImpl.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsDataChannelProtectionLevel.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemException.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileUtil.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/CopyTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/EncryptUtil.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsAdd.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/TrustEveryoneUserInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsRevert.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/SoftRefFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DecoratedFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSelectInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileTypeSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/LRUFilesCache.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileContentInfoFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultProviderConfiguration.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperation.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LayeredFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/NameScope.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileOutputStream.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/ChangedEvent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Messages.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/CacheStrategy.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/GenericFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/AbstractSyncTask.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TgzFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntry.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileProvider.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/SynchronizedFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileDepthSelector.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileContentInfoFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContentInfo.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/PosixPermissions.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DelegateFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileSystemKey.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VFSClassLoader.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileRandomAccessContent.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientFactory.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileSystem.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileReplicator.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/PrivilegedFileReplicator.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileName.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/URLStreamHandlerProxy.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/HostFileNameParser.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileData.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystemConfigBuilder.java"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LocalFileProvider.java"
+[10175][environment]                                           "-s"
+[10175][environment]                                           "/home/coma/GSoC/npebugs/vfs-189/target/generated-sources/annotations"
+[10175][environment]                                           "-g" "-nowarn" "-target" "1.7"
+[10175][environment]                                           "-source" "1.7" "-encoding" "UTF-8"
+[10175][environment]                                         
+[10175][environment]                                       
+[10175][environment] command line arguments:   /usr/local/lib/infer/infer/bin/infer
+[10175][environment]                           @/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler986031358825712099arguments
+[10175][environment]   ++Contents of '/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler986031358825712099arguments':
+[10175][environment]     "-d" "/home/coma/GSoC/npebugs/vfs-189/target/classes" "-classpath"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/target/classes:/home/coma/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/coma/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/coma/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/coma/.m2/repository/org/apache/commons/commons-compress/1.14/commons-compress-1.14.jar:/home/coma/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-common/2.6.0/hadoop-common-2.6.0.jar:/home/coma/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.6.0/hadoop-hdfs-2.6.0.jar:/home/coma/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/home/coma/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/home/coma/.m2/repository/org/apache/jackrabbit/jackrabbit-webdav/1.6.5/jackrabbit-webdav-1.6.5.jar:/home/coma/.m2/repository/org/apache/jackrabbit/jackrabbit-jcr-commons/1.6.5/jackrabbit-jcr-commons-1.6.5.jar:/home/coma/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar:"
+[10175][environment]     "-sourcepath"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java:/home/coma/GSoC/npebugs/vfs-189/target/generated-sources/annotations:"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileType.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/DeleteEvent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileContentThreadData.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileExtensionSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/RandomAccessMode.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/ProviderConfiguration.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FTPClientWrapper.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdate.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultVfsComponentContext.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/CombinedResources.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/VfsComponentContext.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/AllFileSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/UriParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperation.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultURLConnection.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/GenericFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractLayeredFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessStreamContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileAttributes.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpClientFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileFilter.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileNotFoundException.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdateListener.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommitListener.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/MkdirTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCheckout.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorOutputStream.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/WeakRefFileListener.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileContentInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractOriginatingFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpClientFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityRepositoryFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/OnCallRefreshFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileContentInfoFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/UserAuthenticatorUtils.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/StandardFileSystemManager.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/DefaultFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/URLFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContentInfoFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLog.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/VfsTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommit.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/Resource.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultURLStreamHandler.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/NullFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperationProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractVfsContainer.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/FileTypeMap.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsModifyListener.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileNotFolderException.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsStatus.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsMode.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/SyncTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/DefaultLocalFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorInputStream.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LayeredFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpStreamProxy.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemManager.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileType.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultFileSelectorInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperations.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/DefaultCryptor.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/VFS.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/DefaultFileOperations.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractVfsComponent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/URLFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/ExceptionConverter.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClient.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/PatternFileSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/Tbz2FileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileListener.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/OsFamily.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/FileObjectUtils.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/ShowFileTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/Selectors.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/InvertIncludeFileSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/temp/TemporaryFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsDelete.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntryHandler.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/FileSystemAndNameKey.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/UserAuthenticator.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavMethodRetryHandler.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Cryptor.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/UserAuthenticationData.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientWrapper.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/VfsComponent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/TemporaryFileStore.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Os.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClientFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/DelegatingFileSystemOptionsBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemManager.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/FileContentInfoFilenameFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/CompositeFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/auth/StaticUserAuthenticator.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/RandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFile.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileMonitor.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/Capability.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemOptions.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/CryptorFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/AbstractFileChangeEvent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperationProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/DeleteTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/AbstractFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/WeakRefFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileChangeEvent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/MoveTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/VfsLog.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/MonitorRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/CreateEvent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileTypeHasNoContentException.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileFilterSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/jar/JarURLConnectionImpl.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsDataChannelProtectionLevel.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSystemException.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileUtil.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/CopyTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/EncryptUtil.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsAdd.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/TrustEveryoneUserInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsRevert.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/SoftRefFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DecoratedFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileSelectInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileTypeSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/cache/LRUFilesCache.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileContentInfoFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/DefaultProviderConfiguration.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/FileOperation.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LayeredFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/NameScope.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileOutputStream.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/events/ChangedEvent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/Messages.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/CacheStrategy.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/GenericFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/tasks/AbstractSyncTask.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TgzFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntry.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/tar/TarFileProvider.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/SynchronizedFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileDepthSelector.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileContentInfoFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/FileContentInfo.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/util/PosixPermissions.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/DelegateFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileSystemKey.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VFSClassLoader.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/local/LocalFileRandomAccessContent.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientFactory.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileSystem.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/FileReplicator.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/PrivilegedFileReplicator.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/VirtualFileName.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/impl/URLStreamHandlerProxy.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/HostFileNameParser.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/ram/RamFileData.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystemConfigBuilder.java"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/src/main/java/org/apache/commons/vfs2/provider/LocalFileProvider.java"
+[10175][environment]     "-s"
+[10175][environment]     "/home/coma/GSoC/npebugs/vfs-189/target/generated-sources/annotations"
+[10175][environment]     "-g" "-nowarn" "-target" "1.7" "-source" "1.7" "-encoding" "UTF-8"
+[10175][environment]   
+[10175][environment] Active checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[10175][      debug] Current working directory: '/home/coma/GSoC/npebugs/vfs-189'
+[10175][      debug] Trying to execute: javac '-J-Duser.language=en' '@/tmp/org.codehaus.plexus.compiler.javac.JavacCompiler986031358825712099arguments' '@/tmp/args_.tmp.b46280' 2>'/tmp/javac.tmp.23c070.out'
+[10175][      debug] *** Success. Logs:
+[10175][      debug] Translating 246 source files (294 classes)
+[10175][      debug] done capturing all files
+[10175][environment] Infer log identifier is 
+[10118][   progress] Found 246 source files to analyze in /home/coma/GSoC/npebugs/vfs-189/infer-out
+[10118][environment] Parallel jobs: 8
+[10207][   progress] src/main/java/org/apache/commons/vfs2/util/OsFamily.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileNameParser.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileNameParser.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileProvider.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpRandomAccessContent.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileProvider.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/VfsComponent.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/VfsComponent.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileNameParser.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystem.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileNameParser.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/util/OsFamily.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/util/CryptorFactory.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/util/CryptorFactory.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileSystem.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileSystem.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityRepositoryFactory.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityRepositoryFactory.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFile.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileProvider.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/FileContentInfoFilenameFactory.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/FileContentInfoFilenameFactory.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLog.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLog.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/cache/WeakRefFilesCache.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/cache/WeakRefFilesCache.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/cache/OnCallRefreshFileObject.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/cache/OnCallRefreshFileObject.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSystemManager.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSystemManager.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/FileNameParser.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/FileNameParser.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorRandomAccessContent.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorRandomAccessContent.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/events/AbstractFileChangeEvent.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/events/AbstractFileChangeEvent.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/TemporaryFileStore.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/TemporaryFileStore.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFile.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystem.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystem.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/Selectors.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileObject.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/Selectors.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/impl/VFSClassLoader.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpRandomAccessContent.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileObject.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileObject.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/FilesCache.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/FilesCache.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileName.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileName.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/FileProvider.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/FileProvider.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperation.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperation.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultFileSelectorInfo.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultFileSelectorInfo.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileSystem.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileSystem.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/util/Cryptor.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/util/Cryptor.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileObject.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystem.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystem.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystem.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/UriParser.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileObject.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileNameParser.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileObject.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/NameScope.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/NameScope.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/UriParser.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileData.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileData.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/FileExtensionSelector.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/FileExtensionSelector.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/events/ChangedEvent.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/events/ChangedEvent.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/FileFilterSelector.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/impl/VFSClassLoader.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileNameParser.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileNameParser.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/VFS.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/FileFilterSelector.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpRandomAccessContent.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/VFS.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileSystem.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileSystem.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/events/DeleteEvent.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/events/DeleteEvent.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileSystem.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileListener.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileListener.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemManager.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/Capability.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileSystem.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileProvider.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpRandomAccessContent.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileName.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystemConfigBuilder.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperationProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperationProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileSystemConfigBuilder.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultVfsComponentContext.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/Capability.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/CacheStrategy.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/CacheStrategy.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileProvider.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileProvider.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/DefaultCryptor.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileSystem.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultVfsComponentContext.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/SynchronizedFileObject.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/SynchronizedFileObject.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileProvider.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperationProvider.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperationProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsRandomAccessContent.java starting
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsRandomAccessContent.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileProvider.java starting
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10211][      debug] 
+[10211][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.lang.StringIndexOutOfBoundsException
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsDataChannelProtectionLevel.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsDataChannelProtectionLevel.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/FileContentInfo.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/FileContentInfo.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractLayeredFileProvider.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessStreamContent.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessStreamContent.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/impl/StandardFileSystemManager.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/DefaultCryptor.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystemConfigBuilder.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystemConfigBuilder.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsRevert.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsRevert.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/PrivilegedFileReplicator.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractLayeredFileProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/PrivilegedFileReplicator.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/AllFileSelector.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/AllFileSelector.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileProvider.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileNameParser.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/cache/AbstractFilesCache.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/cache/AbstractFilesCache.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileProvider.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsFileProvider.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/RandomAccessContent.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/RandomAccessContent.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileObject.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileObject.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileMonitor.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileMonitor.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSystemOptions.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileProvider.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCheckout.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCheckout.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/InvertIncludeFileSelector.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/InvertIncludeFileSelector.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileNameParser.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileNameParser.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileNameParser.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileSystem.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/UserAuthenticator.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/UserAuthenticator.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultProviderConfiguration.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultProviderConfiguration.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileContentInfo.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileContentInfo.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommit.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommit.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/FileTypeMap.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/FileTypeMap.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdateListener.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdateListener.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/WeakRefFileListener.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/WeakRefFileListener.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DecoratedFileObject.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileName.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpClientFactory.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/DecoratedFileObject.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorInputStream.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorInputStream.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystemConfigBuilder.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemManager.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/Resource.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/impl/Resource.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/HostFileNameParser.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/local/WindowsFileNameParser.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileProvider.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileProvider.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsDelete.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsDelete.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileContentInfoFactory.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSystemOptions.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientWrapper.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpClientFactory.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileObject.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/gzip/GzipFileObject.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultURLConnection.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystemConfigBuilder.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/Messages.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/Messages.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/URLStreamHandlerProxy.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultURLConnection.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/FileSystemKey.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/impl/URLStreamHandlerProxy.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileName.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileName.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileNotFolderException.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileNotFolderException.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileProvider.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/FileSystemKey.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/bzip2/Bzip2FileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileContentInfoFactory.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileContentInfoFactory.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileNameParser.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileNameParser.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileType.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileType.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/Os.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/HostFileNameParser.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/FileObjectUtils.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/FileObjectUtils.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientWrapper.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperation.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/AbstractFileOperation.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileName.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/util/Os.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileProvider.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/url/UrlFileName.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileSystemConfigBuilder.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/res/ResourceFileSystemConfigBuilder.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileType.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileType.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClient.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClient.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntry.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntry.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/VfsLog.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/VfsLog.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpRandomAccessContent.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/impl/StandardFileSystemManager.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileSystem.java starting
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10205][      debug] 
+[10205][      debug] typ_get_recursive_flds: unexpected sizeof(t=) unknown struct type: class java.util.zip.ZipFile$1
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileContentInfoFactory.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystemConfigBuilder.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileSystemConfigBuilder.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/events/CreateEvent.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/events/CreateEvent.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileChangeEvent.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileChangeEvent.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/Tbz2FileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/Tbz2FileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/FileContentThreadData.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileNameParser.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/https/HttpsFileNameParser.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSelectInfo.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSelectInfo.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemConfigBuilder.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/impl/DefaultFileSystemConfigBuilder.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/LayeredFileNameParser.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/FileContentThreadData.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/UserAuthenticationData.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileSystem.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystem.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarFileProvider.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/ExceptionConverter.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/UserAuthenticationData.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/DefaultLocalFileProvider.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystem.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientFactory.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/DefaultLocalFileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractVfsContainer.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractVfsContainer.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileDepthSelector.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpRandomAccessContent.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/FileDepthSelector.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/ExceptionConverter.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/LayeredFileName.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/LayeredFileName.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileOutputStream.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileProvider.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/URLFileNameParser.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/URLFileNameParser.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/GenericFileName.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/GenericFileName.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/temp/TemporaryFileProvider.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/temp/TemporaryFileProvider.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileRandomAccessContent.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsClientFactory.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/cache/LRUFilesCache.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileOutputStream.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/cache/SoftRefFilesCache.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/LayeredFileNameParser.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperations.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/FileOperations.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/util/EncryptUtil.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/util/EncryptUtil.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/TrustEveryoneUserInfo.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/TrustEveryoneUserInfo.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarURLConnectionImpl.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileProvider.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpClientFactory.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/jar/JarURLConnectionImpl.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsMode.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/cache/LRUFilesCache.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TgzFileProvider.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftps/FtpsMode.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TgzFileProvider.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileTypeSelector.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/MoveTask.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileTypeSelector.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultURLStreamHandler.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpClientFactory.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/RandomAccessMode.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/RandomAccessMode.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSelector.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileSelector.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/DelegatingFileSystemOptionsBuilder.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/GenericFileNameParser.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultURLStreamHandler.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/tasks/AbstractSyncTask.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/MoveTask.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/PatternFileSelector.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/GenericFileNameParser.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileName.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/PatternFileSelector.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/CopyTask.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/CopyTask.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsAdd.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsAdd.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/cache/DefaultFilesCache.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/cache/DefaultFilesCache.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileNameParser.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileNameParser.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsModifyListener.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsModifyListener.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileRandomAccessContent.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileRandomAccessContent.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/DelegateFileObject.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/DelegateFileObject.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/DeleteTask.java starting
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileRandomAccessContent.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileObject.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileName.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileSystem.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/local/LocalFileSystem.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractOriginatingFileProvider.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/DelegatingFileSystemOptionsBuilder.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/tasks/SyncTask.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/tasks/SyncTask.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileTypeHasNoContentException.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/FileTypeHasNoContentException.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/DefaultFileOperations.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractOriginatingFileProvider.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystemConfigBuilder.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/DeleteTask.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/tasks/AbstractSyncTask.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileProvider.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ram/RamFileProvider.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommitListener.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsCommitListener.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityInfo.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/IdentityInfo.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileFilter.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileFilter.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSystemConfigBuilder.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSystemConfigBuilder.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileUtil.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileUtil.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileContentInfoFactory.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileContentInfoFactory.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntryHandler.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsLogEntryHandler.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/cache/NullFilesCache.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/cache/NullFilesCache.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileContentInfoFactory.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/MkdirTask.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/DefaultFileOperations.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileName.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/impl/VirtualFileName.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClientFactory.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/MkdirTask.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpStreamProxy.java starting
+[10205][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpStreamProxy.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/ShowFileTask.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpClientFactory.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/FileReplicator.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/provider/FileReplicator.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsStatus.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileContentInfoFactory.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/CompositeFileProvider.java starting
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileSystemConfigBuilder.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileObject.java starting
+[10211][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsStatus.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/CombinedResources.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/CompositeFileProvider.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractVfsComponent.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/UserAuthenticatorUtils.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractVfsComponent.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSystem.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/FileSystem.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystemConfigBuilder.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/UserAuthenticatorUtils.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileNotFoundException.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileNotFoundException.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessContent.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractRandomAccessContent.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileSystemException.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileSystemException.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/PosixPermissions.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/util/PosixPermissions.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileAttributes.java starting
+[10212][   progress] src/main/java/org/apache/commons/vfs2/cache/SoftRefFilesCache.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/URLFileName.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileAttributes.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/cache/FileSystemAndNameKey.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystemConfigBuilder.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystem.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/cache/FileSystemAndNameKey.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavMethodRetryHandler.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileSystem.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/VfsComponentContext.java starting
+[10206][   progress] src/main/java/org/apache/commons/vfs2/provider/VfsComponentContext.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/auth/StaticUserAuthenticator.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavMethodRetryHandler.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileContent.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/FileContent.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FTPClientWrapper.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/ProviderConfiguration.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/impl/ProviderConfiguration.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/LocalFileProvider.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/LocalFileProvider.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/tasks/VfsTask.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/ftp/FTPClientWrapper.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystemConfigBuilder.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/tasks/VfsTask.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/FileObject.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/FileObject.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdate.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/operations/vcs/VcsUpdate.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorOutputStream.java starting
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileSystemConfigBuilder.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileProvider.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/util/MonitorOutputStream.java DONE
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileSystem.java starting
+[10209][   progress] src/main/java/org/apache/commons/vfs2/provider/compressed/CompressedFileFileSystem.java DONE
+[10205][   progress] src/main/java/org/apache/commons/vfs2/tasks/ShowFileTask.java DONE
+[10211][   progress] src/main/java/org/apache/commons/vfs2/util/CombinedResources.java DONE
+[10212][   progress] src/main/java/org/apache/commons/vfs2/provider/URLFileName.java DONE
+[10210][   progress] src/main/java/org/apache/commons/vfs2/provider/http/HttpFileProvider.java DONE
+[10206][   progress] src/main/java/org/apache/commons/vfs2/auth/StaticUserAuthenticator.java DONE
+[10208][   progress] src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileObject.java DONE
+[10207][   progress] src/main/java/org/apache/commons/vfs2/provider/webdav/WebdavFileObject.java DONE
+
+[10441][      phase] ============================================================
+[10441][      phase] = New infer execution begins
+[10441][      phase] ============================================================
+[10441][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[10441][environment] No .inferconfig file found
+[10441][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[10441][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[10441][ extern err] ** Error running the reporting script:
+[10441][ extern err] **   /usr/local/lib/infer/infer/bin/../lib/python/inferTraceBugs -o /home/coma/GSoC/npebugs/vfs-189/infer-out
+[10441][ extern err] ** See error above
+[10441][environment] Infer log identifier is 
+
+[5651][      phase] ============================================================
+[5651][      phase] = New infer execution begins
+[5651][      phase] ============================================================
+[5651][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[5651][environment] No .inferconfig file found
+[5651][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[5651][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[5651][environment] Infer log identifier is 
+
+[8093][      phase] ============================================================
+[8093][      phase] = New infer execution begins
+[8093][      phase] ============================================================
+[8093][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[8093][environment] No .inferconfig file found
+[8093][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[8093][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+
+[8568][      phase] ============================================================
+[8568][      phase] = New infer execution begins
+[8568][      phase] ============================================================
+[8568][environment] CWD = /home/coma/GSoC/npebugs/vfs-189
+[8568][environment] No .inferconfig file found
+[8568][environment] Project root = /home/coma/GSoC/npebugs/vfs-189
+[8568][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[8568][environment] Infer log identifier is 

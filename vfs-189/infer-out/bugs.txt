@@ -1,0 +1,1252 @@
+Found 142 issues
+
+src/main/java/org/apache/commons/vfs2/util/Os.java:84: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.arch")` could be null and is dereferenced at line 84.
+  82.           System.getProperty("os.name").toLowerCase(Locale.US);
+  83.       private static final String OS_ARCH =
+  84. >         System.getProperty("os.arch").toLowerCase(Locale.US);
+  85.       private static final String OS_VERSION =
+  86.           System.getProperty("os.version").toLowerCase(Locale.US);
+
+src/main/java/org/apache/commons/vfs2/util/Os.java:82: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.name")` could be null and is dereferenced at line 82.
+  80.   
+  81.       private static final String OS_NAME =
+  82. >         System.getProperty("os.name").toLowerCase(Locale.US);
+  83.       private static final String OS_ARCH =
+  84.           System.getProperty("os.arch").toLowerCase(Locale.US);
+
+src/main/java/org/apache/commons/vfs2/util/Os.java:86: error: NULL_DEREFERENCE
+  object returned by `getProperty("os.version")` could be null and is dereferenced at line 86.
+  84.           System.getProperty("os.arch").toLowerCase(Locale.US);
+  85.       private static final String OS_VERSION =
+  86. >         System.getProperty("os.version").toLowerCase(Locale.US);
+  87.       private static final String PATH_SEP = File.pathSeparator;
+  88.       private static final OsFamily OS_FAMILY;
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java:80: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.vfs2.provider.ram.RamFileObject` acquired by call to `RamFileObject(...)` at line 80 is not released after line 80.
+**Note**: potential exception at line 80
+  78.       protected FileObject createFile(final AbstractFileName name) throws Exception
+  79.       {
+  80. >         return new RamFileObject(name, this);
+  81.       }
+  82.   
+
+src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java:86: error: NULL_DEREFERENCE
+  object returned by `getTarFile()` could be null and is dereferenced at line 86.
+  84.               final List<TarFileObject> strongRef = new ArrayList<>(DEFAULT_INDEX_SIZE);
+  85.               TarArchiveEntry entry;
+  86. >             while ((entry = getTarFile().getNextTarEntry()) != null)
+  87.               {
+  88.                   final AbstractFileName name = (AbstractFileName) getFileSystemManager().resolveName(getRootName(),
+
+src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java:127: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.vfs2.provider.tar.TarFileObject` acquired to `fileObj` by call to `createTarFileObject(...)` at line 100 is not released after line 127.
+**Note**: potential exception at line 101
+  125.               }
+  126.           }
+  127. >         catch (final IOException e)
+  128.           {
+  129.               throw new FileSystemException(e);
+
+src/main/java/org/apache/commons/vfs2/util/CombinedResources.java:97: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired by call to `getInputStream()` at line 97 is not released after line 97.
+  95.                   try
+  96.                   {
+  97. >                     properties.load(resource.openConnection().getInputStream());
+  98.                   }
+  99.                   catch (final IOException ignored)
+
+src/main/java/org/apache/commons/vfs2/util/CombinedResources.java:97: error: RESOURCE_LEAK
+  resource of type `java.net.HttpURLConnection` acquired by call to `openConnection()` at line 97 is not released after line 97.
+  95.                   try
+  96.                   {
+  97. >                     properties.load(resource.openConnection().getInputStream());
+  98.                   }
+  99.                   catch (final IOException ignored)
+
+src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileSystem.java:87: error: NULL_DEREFERENCE
+  object returned by `getZipFile()` could be null and is dereferenced at line 87.
+  85.           {
+  86.               // Build the index
+  87. >             final List<ZipFileObject> strongRef = new ArrayList<>(getZipFile().size());
+  88.               final Enumeration<? extends ZipEntry> entries = getZipFile().entries();
+  89.               while (entries.hasMoreElements())
+
+src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java:94: error: RESOURCE_LEAK
+  resource of type `java.net.HttpURLConnection` acquired by call to `openConnection()` at line 88 is not released after line 94.
+  92.                   if (conn instanceof HttpURLConnection)
+  93.                   {
+  94. >                     final int status = ((HttpURLConnection) conn).getResponseCode();
+  95.                       // 200 is good, maybe add more later...
+  96.                       if (HttpURLConnection.HTTP_OK != status)
+
+src/main/java/org/apache/commons/vfs2/provider/jar/JarFileSystem.java:91: error: NULL_DEREFERENCE
+  object returned by `getZipFile()` could be null and is dereferenced at line 91.
+  89.           if (attributes == null)
+  90.           {
+  91. >             final Manifest man = ((JarFile) getZipFile()).getManifest();
+  92.               if (man == null)
+  93.               {
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:104: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 104.
+  102.       {
+  103.           // VFS-210: ram allows to gather an input stream even from a directory. So we need to check the type anyway.
+  104. >         if (!getType().hasContent())
+  105.           {
+  106.               throw new FileSystemException("vfs.provider/read-not-file.error", getName());
+
+src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java:114: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 114.
+  112.           try
+  113.           {
+  114. >             if (!getType().hasChildren())
+  115.               {
+  116.                   return null;
+
+src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java:119: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 119.
+  117.           try
+  118.           {
+  119. >             if (!getType().hasChildren())
+  120.               {
+  121.                   return null;
+
+src/main/java/org/apache/commons/vfs2/provider/local/DefaultLocalFileProvider.java:119: error: NULL_DEREFERENCE
+  object returned by `encode(file.getAbsolutePath())` could be null and is dereferenced by call to `findLocalFile(...)` at line 119.
+  117.           throws FileSystemException
+  118.       {
+  119. >         return findLocalFile(UriParser.encode(file.getAbsolutePath()));
+  120.           // return findLocalFile(file.getAbsolutePath());
+  121.       }
+
+src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java:125: error: RESOURCE_LEAK
+  resource of type `java.net.HttpURLConnection` acquired by call to `openConnection()` at line 121 is not released after line 125.
+  123.           try
+  124.           {
+  125. >             return conn.getContentLength();
+  126.           }
+  127.           finally
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:133: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 133.
+  131.       {
+  132.           // Do some checking
+  133. >         if (!fileObject.getType().hasContent())
+  134.           {
+  135.               throw new FileSystemException("vfs.provider/get-size-not-file.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/impl/StandardFileSystemManager.java:143: error: NULL_DEREFERENCE
+  object `enumResources` last assigned on line 136 could be null and is dereferenced at line 143.
+  141.           }
+  142.   
+  143. >         while (enumResources.hasMoreElements())
+  144.           {
+  145.               final URL url = enumResources.nextElement();
+
+src/main/java/org/apache/commons/vfs2/provider/url/UrlFileObject.java:144: error: RESOURCE_LEAK
+  resource of type `java.net.HttpURLConnection` acquired by call to `openConnection()` at line 140 is not released after line 144.
+  142.           try
+  143.           {
+  144. >             return conn.getLastModified();
+  145.           }
+  146.           finally
+
+src/main/java/org/apache/commons/vfs2/tasks/ShowFileTask.java:161: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `new()` at line 148 is not released after line 161.
+**Note**: potential exception at line 151
+  159.           finally
+  160.           {
+  161. >             instr.close();
+  162.           }
+  163.       }
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:159: error: NULL_DEREFERENCE
+  object returned by `encode(baseName,org.apache.commons.vfs2.impl.DefaultFileReplicator.TMP_RESERVED_CHARS)` could be null and is dereferenced at line 159.
+  157.           // imario@apache.org: BUG34976 get rid of maybe reserved and dangerous characters
+  158.           // e.g. to allow replication of http://hostname.org/fileservlet?file=abc.txt
+  159. >         final String safeBasename = UriParser.encode(baseName, TMP_RESERVED_CHARS).replace('%', '_');
+  160.           return "tmp_" + getFilecount() + "_" + safeBasename;
+  161.       }
+
+src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java:169: error: NULL_DEREFERENCE
+  object returned by `getAbstractFileSystem().getZipFile()` could be null and is dereferenced at line 169.
+  167.           }
+  168.   
+  169. >         return getAbstractFileSystem().getZipFile().getInputStream(entry);
+  170.       }
+  171.   
+
+src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileObject.java:164: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 164.
+  162.           // return -1 on the first read. getType should not be expensive and keeps the tests
+  163.           // running
+  164. >         if (!getType().hasContent())
+  165.           {
+  166.               throw new FileSystemException("vfs.provider/read-not-file.error", getName());
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:169: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 169.
+  167.           }
+  168.           */
+  169. >         if (!fileObject.getType().hasAttributes())
+  170.           {
+  171.               throw new FileSystemException("vfs.provider/get-last-modified-no-exist.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/tar/TarFileObject.java:169: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 169.
+  167.           // return -1 on the first read. getType should not be expensive and keeps the tests
+  168.           // running
+  169. >         if (!getType().hasContent())
+  170.           {
+  171.               throw new FileSystemException("vfs.provider/read-not-file.error", getName());
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:197: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 197.
+  195.           }
+  196.           */
+  197. >         if (!fileObject.getType().hasAttributes())
+  198.           {
+  199.               throw new FileSystemException("vfs.provider/set-last-modified-no-exist.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/tar/TarFileSystem.java:204: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired by call to `FileInputStream(...)` at line 204 is not released after line 204.
+  202.               if ("tgz".equalsIgnoreCase(getRootName().getScheme()))
+  203.               {
+  204. >                 return new TarArchiveInputStream(new GZIPInputStream(new FileInputStream(file)));
+  205.               }
+  206.               else if ("tbz2".equalsIgnoreCase(getRootName().getScheme()))
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:224: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 224.
+  222.       public boolean hasAttribute(final String attrName) throws FileSystemException
+  223.       {
+  224. >         if (!fileObject.getType().hasAttributes())
+  225.           {
+  226.               throw new FileSystemException("vfs.provider/exists-attributes-no-exist.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:240: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 240.
+  238.       public Map<String, Object> getAttributes() throws FileSystemException
+  239.       {
+  240. >         if (!fileObject.getType().hasAttributes())
+  241.           {
+  242.               throw new FileSystemException("vfs.provider/get-attributes-no-exist.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:294: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 294.
+  292.           children = null;
+  293.   
+  294. >         if (getType().equals(FileType.IMAGINARY))
+  295.           {
+  296.               // file is deleted, avoid server lookup
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:310: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 310.
+  308.           throws FileSystemException
+  309.       {
+  310. >         if (!fileObject.getType().hasAttributes())
+  311.           {
+  312.               throw new FileSystemException("vfs.provider/set-attribute-no-exist.error", attrName, fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java:366: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.vfs2.cache.OnCallRefreshFileObject` acquired by call to `decorateFileObject(...)` at line 350 is not released after line 366.
+**Note**: potential exception at line 355
+  364.               file.refresh();
+  365.           }
+  366. >         return file;
+  367.       }
+  368.   
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:338: error: NULL_DEREFERENCE
+  object returned by `DefaultFileContent.fileObject.getType()` could be null and is dereferenced at line 338.
+  336.       public void removeAttribute(final String attrName) throws FileSystemException
+  337.       {
+  338. >         if (!fileObject.getType().hasAttributes())
+  339.           {
+  340.               throw new FileSystemException("vfs.provider/remove-attribute-no-exist.error", fileObject);
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileSystem.java:381: error: RESOURCE_LEAK
+  resource of type `org.apache.commons.vfs2.cache.OnCallRefreshFileObject` acquired by call to `OnCallRefreshFileObject(...)` at line 373 is not released after line 381.
+  379.               {
+  380.                   file = (FileObject) getFileSystemManager().getFileObjectDecoratorConst().
+  381. >                         newInstance(new Object[]{file});
+  382.               }
+  383.               catch (final InstantiationException e)
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:398: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 398.
+  396.           {
+  397.               // VFS-210: we create a folder only if it does not already exist. So this check should be safe.
+  398. >             if (getType().hasChildren())
+  399.               {
+  400.                   // Already exists as correct type
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:590: error: NULL_DEREFERENCE
+  object returned by `getType()` could be null and is dereferenced at line 590.
+  588.                       // VFS-210: sftp allows to gather an input stream even from a directory and will
+  589.                       // fail on first read. So we need to check the type anyway
+  590. >                     if (!getType().hasContent())
+  591.                       {
+  592.                           throw new FileSystemException("vfs.provider/read-not-file.error", getName());
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1819: error: NULL_DEREFERENCE
+  object returned by `listFiles(org.apache.commons.vfs2.Selectors.SELECT_ALL)` could be null and is dereferenced at line 1819.
+  1817.           try
+  1818.           {
+  1819. >             return listFiles(Selectors.SELECT_ALL).iterator();
+  1820.           }
+  1821.           catch (final FileSystemException e)
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java:111: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileProvider.addFileSystem(Comparable,FileSystem)` indirectly writes to field `fs.cacheKey` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  109.   
+  110.           final FileSystemKey treeKey = new FileSystemKey(key, fs.getFileSystemOptions());
+  111. >         ((AbstractFileSystem) fs).setCacheKey(treeKey);
+  112.   
+  113.           synchronized (fileSystems)
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:90: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `File DefaultFileReplicator.allocateFile(String)` indirectly reads without synchronization from `this.filecount`. Potentially races with write in method `DefaultFileReplicator.replicateFile(...)`.
+ Reporting because this access may occur on a background thread.
+  88.       {
+  89.           // Create a unique-ish file name
+  90. >         final String basename = createFilename(baseName);
+  91.           synchronized (this)
+  92.           {
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:96: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `File DefaultFileReplicator.allocateFile(String)` reads without synchronization from `this.tempDir`. Potentially races with write in method `DefaultFileReplicator.init()`.
+ Reporting because this access may occur on a background thread.
+  94.           }
+  95.   
+  96. >         return createAndAddFile(tempDir, basename);
+  97.       }
+  98.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:220: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.childrenChanged(FileName,FileType)` reads without synchronization from `this.children`. Potentially races with write in method `AbstractFileObject.getChildren()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  218.           // TODO - this may be called when not attached
+  219.   
+  220. >         if (children != null && childName != null && newType != null)
+  221.           {
+  222.               // TODO - figure out if children[] can be replaced by list
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:232: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileObject.childrenChanged(FileName,FileType)` writes to field `this.children` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  230.                   list.add(childName);
+  231.               }
+  232. >             children = new FileName[list.size()];
+  233.               list.toArray(children);
+  234.           }
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:116: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileReplicator.close()` reads without synchronization from `this.tempDir`. Potentially races with write in method `DefaultFileReplicator.init()`.
+ Reporting because this access may occur on a background thread.
+  114.   
+  115.           // Clean up the temp directory, if it is empty
+  116. >         if (tempDir != null && tempDir.exists() && tempDir.list().length == 0)
+  117.           {
+  118.               tempDir.delete();
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:119: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void DefaultFileReplicator.close()` writes to field `this.tempDir` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  117.           {
+  118.               tempDir.delete();
+  119. >             tempDir = null;
+  120.           }
+  121.       }
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:255: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileObject.close()` writes to field `this.content` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  253.               {
+  254.                   content.close();
+  255. >                 content = null;
+  256.               }
+  257.               catch (final FileSystemException e)
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:250: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.close()` reads without synchronization from `this.content`. Potentially races with write in method `AbstractFileObject.getContent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  248.   
+  249.           // Close the content
+  250. >         if (content != null)
+  251.           {
+  252.               try
+
+src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java:79: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void HdfsFileSystem.close()` reads without synchronization from `this.fs`. Potentially races with write in method `HdfsFileSystem.resolveFile(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  77.           try
+  78.           {
+  79. >             if (null != fs)
+  80.               {
+  81.                   fs.close();
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileProvider.java:186: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileProvider.closeFileSystem(FileSystem)` indirectly writes to field `fs.parentLayer` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  184.   
+  185.           removeComponent(fs);
+  186. >         fs.close();
+  187.       }
+  188.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:61: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `int AbstractFileObject.compareTo(Object)` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  59.    * @param <AFS> An AbstractFileSystem subclass
+  60.    */
+  61. > public abstract class AbstractFileObject<AFS extends AbstractFileSystem> implements FileObject
+  62.   {
+  63.       /*
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:294: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `int AbstractFileObject.compareTo(FileObject)` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  292.               return 1;
+  293.           }
+  294. >         return this.toString().compareToIgnoreCase(file.toString());
+  295.       }
+  296.   
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:125: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `File DefaultFileReplicator.createAndAddFile(File,String)` reads without synchronization from `this.tempDir`. Potentially races with write in method `DefaultFileReplicator.close()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  123.       protected File createAndAddFile(final File parent, final String basename) throws FileSystemException
+  124.       {
+  125. >         final File file = createFile(tempDir, basename);
+  126.   
+  127.           // Keep track to delete later
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:372: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.createFile()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because this access may occur on a background thread.
+  370.                   if (!exists())
+  371.                   {
+  372. >                     getOutputStream().close();
+  373.                       endOutput();
+  374.                   }
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:160: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `String DefaultFileReplicator.createFilename(String)` indirectly reads without synchronization from `this.filecount`. Potentially races with write in method `DefaultFileReplicator.allocateFile(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  158.           // e.g. to allow replication of http://hostname.org/fileservlet?file=abc.txt
+  159.           final String safeBasename = UriParser.encode(baseName, TMP_RESERVED_CHARS).replace('%', '_');
+  160. >         return "tmp_" + getFilecount() + "_" + safeBasename;
+  161.       }
+  162.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:416: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.createFolder()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because this access may occur on a background thread.
+  414.   
+  415.               // Traverse up the hierarchy and make sure everything is a folder
+  416. >             final FileObject parent = getParent();
+  417.               if (parent != null)
+  418.               {
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:452: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean AbstractFileObject.delete()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  450.       public boolean delete() throws FileSystemException
+  451.       {
+  452. >         return delete(Selectors.SELECT_SELF) > 0;
+  453.       }
+  454.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:496: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int AbstractFileObject.delete(FileSelector)` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  494.   
+  495.               // Delete the file
+  496. >             if (file.deleteSelf())
+  497.               {
+  498.                   nuofDeleted++;
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:516: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int AbstractFileObject.deleteAll()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  514.       public int deleteAll() throws FileSystemException
+  515.       {
+  516. >         return this.delete(Selectors.SELECT_ALL);
+  517.       }
+  518.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:539: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void FtpFileObject.doCreateFolder()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  537.       {
+  538.           final boolean ok;
+  539. >         final FtpClient client = getAbstractFileSystem().getClient();
+  540.           try
+  541.           {
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:204: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void SftpFileObject.doCreateFolder()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  202.       protected void doCreateFolder() throws Exception
+  203.       {
+  204. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  205.           try
+  206.           {
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:474: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FtpFileObject.doDelete()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  472.           {
+  473.               final boolean ok;
+  474. >             final FtpClient ftpClient = getAbstractFileSystem().getClient();
+  475.               try
+  476.               {
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:477: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FtpFileObject.doDelete()` reads with synchronization from `this.fileInfo`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  475.               try
+  476.               {
+  477. >                 if (this.fileInfo.isDirectory())
+  478.                   {
+  479.                       ok = ftpClient.removeDirectory(relPath);
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:264: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void SftpFileObject.doDelete()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  262.       protected void doDelete() throws Exception
+  263.       {
+  264. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  265.           try
+  266.           {
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:563: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long FtpFileObject.doGetContentSize()` reads with synchronization from `this.fileInfo`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  561.           synchronized (getFileSystem())
+  562.           {
+  563. >             if (this.fileInfo.isSymbolicLink())
+  564.               {
+  565.                   final FileObject linkDest = getLinkDestination();
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:92: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long RamFileObject.doGetContentSize()` indirectly reads without synchronization from `this.data.content`. Potentially races with write in method `RamFileObject.resize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  90.       protected long doGetContentSize() throws Exception
+  91.       {
+  92. >         return this.size();
+  93.       }
+  94.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:613: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `InputStream FtpFileObject.doGetInputStream()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  611.       protected InputStream doGetInputStream() throws Exception
+  612.       {
+  613. >         final FtpClient client = getAbstractFileSystem().getClient();
+  614.           try
+  615.           {
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:109: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `InputStream RamFileObject.doGetInputStream()` indirectly reads without synchronization from `this.data.content`. Potentially races with write in method `RamFileObject.resize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  107.           }
+  108.   
+  109. >         return new ByteArrayInputStream(this.data.getContent());
+  110.       }
+  111.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:590: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long FtpFileObject.doGetLastModifiedTime()` reads with synchronization from `this.fileInfo`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  588.           synchronized (getFileSystem())
+  589.           {
+  590. >             if (this.fileInfo.isSymbolicLink())
+  591.               {
+  592.                   final FileObject linkDest = getLinkDestination();
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:151: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long RamFileObject.doGetLastModifiedTime()` indirectly reads without synchronization from `this.data.lastModified`. Potentially races with write in method `RamFileObject.resize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  149.       protected long doGetLastModifiedTime() throws Exception
+  150.       {
+  151. >         return data.getLastModified();
+  152.       }
+  153.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:644: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `OutputStream FtpFileObject.doGetOutputStream(boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  642.           throws Exception
+  643.       {
+  644. >         final FtpClient client = getAbstractFileSystem().getClient();
+  645.           try
+  646.           {
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:122: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `OutputStream RamFileObject.doGetOutputStream(boolean)` indirectly writes to field `this.data.content` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  120.           if (!bAppend)
+  121.           {
+  122. >             this.data.setContent(RamFileData.EMPTY);
+  123.           }
+  124.           return new RamFileOutputStream(this);
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:630: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `OutputStream SftpFileObject.doGetOutputStream(boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  628.           */
+  629.   
+  630. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  631.           return new SftpOutputStream(channel, channel.put(relPath));
+  632.       }
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:320: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FileType FtpFileObject.doGetType()` indirectly reads with synchronization from `parent.fileName.uri`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  318.               if (this.fileInfo == null)
+  319.               {
+  320. >                 getInfo(false);
+  321.               }
+  322.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:318: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FileType FtpFileObject.doGetType()` reads with synchronization from `this.fileInfo`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  316.           synchronized (getFileSystem())
+  317.           {
+  318. >             if (this.fileInfo == null)
+  319.               {
+  320.                   getInfo(false);
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:113: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `FileType SftpFileObject.doGetType()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  111.           if (attrs == null)
+  112.           {
+  113. >             statSelf();
+  114.           }
+  115.   
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:374: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doIsExecutable()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  372.       protected boolean doIsExecutable() throws Exception
+  373.       {
+  374. >         return getPermissions(true).isExecutable();
+  375.       }
+  376.   
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:330: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doIsReadable()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  328.       protected boolean doIsReadable() throws Exception
+  329.       {
+  330. >         return getPermissions(true).isReadable();
+  331.       }
+  332.   
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:352: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doIsWriteable()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  350.       protected boolean doIsWriteable() throws Exception
+  351.       {
+  352. >         return getPermissions(true).isWritable();
+  353.       }
+  354.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:443: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `java.lang.String[] FtpFileObject.doListChildren()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  441.       {
+  442.           // List the children of this file
+  443. >         doGetChildren();
+  444.   
+  445.           // VFS-210
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:380: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `org.apache.commons.vfs2.FileObject[] FtpFileObject.doListChildrenResolved()` reads with synchronization from `this.fileInfo`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  378.           synchronized (getFileSystem())
+  379.           {
+  380. >             if (this.fileInfo != null && this.fileInfo.isSymbolicLink())
+  381.               {
+  382.                   final FileObject linkDest = getLinkDestination();
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:407: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `org.apache.commons.vfs2.FileObject[] SftpFileObject.doListChildrenResolved()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  405.           // List the contents of the folder
+  406.           Vector<?> vector = null;
+  407. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  408.   
+  409.           try
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:509: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FtpFileObject.doRename(FileObject)` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because this access may occur on a background thread.
+  507.           {
+  508.               final boolean ok;
+  509. >             final FtpClient ftpClient = getAbstractFileSystem().getClient();
+  510.               try
+  511.               {
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:288: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void SftpFileObject.doRename(FileObject)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  286.       protected void doRename(final FileObject newFile) throws Exception
+  287.       {
+  288. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  289.           try
+  290.           {
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:381: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doSetExecutable(boolean,boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  379.       protected boolean doSetExecutable(final boolean executable, final boolean ownerOnly) throws Exception
+  380.       {
+  381. >         final PosixPermissions permissions = getPermissions(false);
+  382.           final int newPermissions = permissions.makeExecutable(executable, ownerOnly);
+  383.           if (newPermissions == permissions.getPermissions())
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:163: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean RamFileObject.doSetLastModifiedTime(long)` indirectly writes to field `this.data.lastModified` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  161.       protected boolean doSetLastModifiedTime(final long modtime) throws Exception
+  162.       {
+  163. >         data.setLastModified(modtime);
+  164.           return true;
+  165.       }
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:241: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doSetLastModifiedTime(long)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  239.           final int newMTime = (int) (modtime / MOD_TIME_FACTOR);
+  240.           attrs.setACMODTIME(attrs.getATime(), newMTime);
+  241. >         flushStat();
+  242.           return true;
+  243.       }
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:336: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doSetReadable(boolean,boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  334.       protected boolean doSetReadable(final boolean readable, final boolean ownerOnly) throws Exception
+  335.       {
+  336. >         final PosixPermissions permissions = getPermissions(false);
+  337.           final int newPermissions = permissions.makeReadable(readable, ownerOnly);
+  338.           if (newPermissions == permissions.getPermissions())
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:358: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean SftpFileObject.doSetWritable(boolean,boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  356.       protected boolean doSetWritable(final boolean writable, final boolean ownerOnly) throws Exception
+  357.       {
+  358. >         final PosixPermissions permissions = getPermissions(false);
+  359.           final int newPermissions = permissions.makeWritable(writable, ownerOnly);
+  360.           if (newPermissions == permissions.getPermissions())
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1005: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.endOutput()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1003.           {
+  1004.               // File was created
+  1005. >             handleCreate(FileType.FILE);
+  1006.           }
+  1007.           else
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:297: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Object DefaultFileContent.getAttribute(String)` reads without synchronization from `this.attrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  295.       {
+  296.           getAttributes();
+  297. >         return attrs.get(attrName);
+  298.       }
+  299.   
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:296: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Object DefaultFileContent.getAttribute(String)` indirectly reads without synchronization from `this.resetAttributes`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  294.           throws FileSystemException
+  295.       {
+  296. >         getAttributes();
+  297.           return attrs.get(attrName);
+  298.       }
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:281: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `java.lang.String[] DefaultFileContent.getAttributeNames()` indirectly reads without synchronization from `this.resetAttributes`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  279.       public String[] getAttributeNames() throws FileSystemException
+  280.       {
+  281. >         getAttributes();
+  282.           final Set<String> names = attrs.keySet();
+  283.           return names.toArray(new String[names.size()]);
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:282: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `java.lang.String[] DefaultFileContent.getAttributeNames()` reads without synchronization from `this.attrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  280.       {
+  281.           getAttributes();
+  282. >         final Set<String> names = attrs.keySet();
+  283.           return names.toArray(new String[names.size()]);
+  284.       }
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:260: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Map DefaultFileContent.getAttributes()` reads without synchronization from `this.roAttrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because this access may occur on a background thread.
+  258.               }
+  259.           }
+  260. >         return roAttrs;
+  261.       }
+  262.   
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:244: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Map DefaultFileContent.getAttributes()` reads without synchronization from `this.resetAttributes`. Potentially races with write in method `DefaultFileContent.resetAttributes()`.
+ Reporting because this access may occur on a background thread.
+  242.               throw new FileSystemException("vfs.provider/get-attributes-no-exist.error", fileObject);
+  243.           }
+  244. >         if (resetAttributes || roAttrs == null)
+  245.           {
+  246.               try
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:426: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `org.apache.commons.vfs2.FileObject[] FtpFileObject.getChildren()` writes to field `this.inRefresh` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  424.                * really only be 1 listing and C refreshes. */
+  425.   
+  426. >             this.inRefresh = true;
+  427.               return super.getChildren();
+  428.           }
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:407: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `org.apache.commons.vfs2.FileObject[] FtpFileObject.getChildren()` indirectly reads with synchronization from `parent.fileName.uri`. Potentially races with unsynchronized write in method `FtpFileObject.onChange()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  405.           try
+  406.           {
+  407. >             if (doGetType() != FileType.FOLDER)
+  408.               {
+  409.                   throw new FileNotFolderException(getName());
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:184: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `long DefaultFileReplicator.getFilecount()` reads without synchronization from `this.filecount`. Potentially races with write in method `DefaultFileReplicator.allocateFile(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  182.       protected long getFilecount()
+  183.       {
+  184. >         return filecount;
+  185.       }
+  186.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:694: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `FtpFileObject$FtpInputStream FtpFileObject.getInputStream(long)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  692.       FtpInputStream getInputStream(final long filePointer) throws IOException
+  693.       {
+  694. >         final FtpClient client = getAbstractFileSystem().getClient();
+  695.           try
+  696.           {
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:545: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `InputStream SftpFileObject.getInputStream(long)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  543.       InputStream getInputStream(final long filePointer) throws IOException
+  544.       {
+  545. >         final ChannelSftp channel = getAbstractFileSystem().getChannel();
+  546.           // Using InputStream directly from the channel
+  547.           // is much faster than the memory method.
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1353: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `OutputStream AbstractFileObject.getOutputStream()` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1351.       public OutputStream getOutputStream() throws FileSystemException
+  1352.       {
+  1353. >         return getOutputStream(false);
+  1354.       }
+  1355.   
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:457: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `OutputStream DefaultFileContent.getOutputStream()` indirectly reads without synchronization from `this.fileObject.fileName.type`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  455.       public OutputStream getOutputStream() throws FileSystemException
+  456.       {
+  457. >         return getOutputStream(false);
+  458.       }
+  459.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1389: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `OutputStream AbstractFileObject.getOutputStream(boolean)` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1387.           {
+  1388.   // Does not exist - make sure parent does
+  1389. >             final FileObject parent = getParent();
+  1390.               if (parent != null)
+  1391.               {
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:479: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `OutputStream DefaultFileContent.getOutputStream(boolean)` indirectly reads without synchronization from `this.fileObject.fileName.type`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  477.   
+  478.           // Get the raw output stream
+  479. >         final OutputStream outstr = fileObject.getOutputStream(bAppend);
+  480.   
+  481.           // Create and set wrapper
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1419: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `FileObject AbstractFileObject.getParent()` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  1417.       public FileObject getParent() throws FileSystemException
+  1418.       {
+  1419. >         if (this.compareTo(fs.getRoot()) == 0) // equals is not implemented :-/
+  1420.           {
+  1421.               if (fs.getParentLayer() == null)
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1438: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FileObject AbstractFileObject.getParent()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because this access may occur on a background thread.
+  1436.               if (parent == null)
+  1437.               {
+  1438. >                 final FileName name = fileName.getParent();
+  1439.                   if (name == null)
+  1440.                   {
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:310: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PosixPermissions SftpFileObject.getPermissions(boolean)` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  308.       protected PosixPermissions getPermissions(final boolean checkIds) throws Exception
+  309.       {
+  310. >         statSelf();
+  311.           boolean isInGroup = false;
+  312.           if (checkIds)
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1341: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `String AbstractFileObject.getPublicURIString()` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1339.       public String getPublicURIString()
+  1340.       {
+  1341. >         return fileName.getFriendlyURI();
+  1342.       }
+  1343.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1483: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `RandomAccessContent AbstractFileObject.getRandomAccessContent(RandomAccessMode)` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1481.                   throw new FileSystemException("vfs.provider/random-access-write-not-supported.error");
+  1482.               }
+  1483. >             if (!isWriteable())
+  1484.               {
+  1485.                   throw new FileSystemException("vfs.provider/write-read-only.error", fileName);
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:439: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `RandomAccessContent DefaultFileContent.getRandomAccessContent(RandomAccessMode)` indirectly reads without synchronization from `this.fileObject.fileName.type`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  437.   
+  438.           // Get the content
+  439. >         final RandomAccessContent rastr = fileObject.getRandomAccessContent(mode);
+  440.   
+  441.           final FileRandomAccessContent rac = new FileRandomAccessContent(fileObject, rastr);
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1597: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.handleCreate(FileType)` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because this access may occur on a background thread.
+  1595.   
+  1596.               // Notify parent that its child list may no longer be valid
+  1597. >             notifyParent(this.getName(), newType);
+  1598.   
+  1599.               // Notify the file system
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1624: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.handleDelete()` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because this access may occur on a background thread.
+  1622.   
+  1623.               // Notify parent that its child list may no longer be valid
+  1624. >             notifyParent(this.getName(), FileType.IMAGINARY);
+  1625.   
+  1626.               // Notify the file system
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:228: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean DefaultFileContent.hasAttribute(String)` indirectly reads without synchronization from `this.resetAttributes`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  226.               throw new FileSystemException("vfs.provider/exists-attributes-no-exist.error", fileObject);
+  227.           }
+  228. >         getAttributes();
+  229.           return attrs.containsKey(attrName);
+  230.       }
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:229: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean DefaultFileContent.hasAttribute(String)` reads without synchronization from `this.attrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  227.           }
+  228.           getAttributes();
+  229. >         return attrs.containsKey(attrName);
+  230.       }
+  231.   
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:202: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void DefaultFileReplicator.init()` writes to field `this.filecount` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  200.           }
+  201.   
+  202. >         filecount = random.nextInt() & MASK;
+  203.   
+  204.           if (!tempDirMessageLogged)
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:195: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileReplicator.init()` reads without synchronization from `this.tempDir`. Potentially races with write in method `DefaultFileReplicator.close()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  193.       public void init() throws FileSystemException
+  194.       {
+  195. >         if (tempDir == null)
+  196.           {
+  197.               final String baseTmpDir = System.getProperty("java.io.tmpdir");
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:199: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void DefaultFileReplicator.init()` writes to field `this.tempDir` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  197.               final String baseTmpDir = System.getProperty("java.io.tmpdir");
+  198.   
+  199. >             tempDir = new File(baseTmpDir, "vfs_cache").getAbsoluteFile();
+  200.           }
+  201.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1650: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileObject.injectType(FileType)` indirectly writes to field `this.fileName.type` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1648.       protected void injectType(final FileType fileType)
+  1649.       {
+  1650. >         setFileType(fileType);
+  1651.       }
+  1652.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1661: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean AbstractFileObject.isAttached()` reads without synchronization from `this.attached`. Potentially races with write in method `AbstractFileObject.getChildren()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1659.       public boolean isAttached()
+  1660.       {
+  1661. >         return attached;
+  1662.       }
+  1663.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1672: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean AbstractFileObject.isContentOpen()` reads without synchronization from `this.content`. Potentially races with write in method `AbstractFileObject.getContent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1670.       public boolean isContentOpen()
+  1671.       {
+  1672. >         if (content == null)
+  1673.           {
+  1674.               return false;
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1795: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `boolean AbstractFileObject.isWriteable()` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1793.               else
+  1794.               {
+  1795. >                 final FileObject parent = getParent();
+  1796.                   if (parent != null)
+  1797.                   {
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileSystem.java:100: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `java.lang.String[] RamFileSystem.listChildren(FileName)` reads without synchronization from container `this.cache` via call to `get`. Potentially races with write in method `RamFileSystem.save(...)`.
+ Reporting because this access may occur on a background thread.
+  98.       String[] listChildren(final FileName name)
+  99.       {
+  100. >         final RamFileData data = this.cache.get(name);
+  101.           if (data == null || !data.getType().hasChildren())
+  102.           {
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1857: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void AbstractFileObject.moveTo(FileObject)` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1855.           if (canRenameTo(destFile))
+  1856.           {
+  1857. >             if (!getParent().isWriteable())
+  1858.               {
+  1859.                   throw new FileSystemException("vfs.provider/rename-parent-read-only.error",
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:1866: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractFileObject.moveTo(FileObject)` indirectly reads with synchronization from `vfs2.VFS.uriStyle`. Potentially races with unsynchronized write in method `AbstractFileObject.getParent()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  1864.           else
+  1865.           {
+  1866. >             if (!isWriteable())
+  1867.               {
+  1868.                   throw new FileSystemException("vfs.provider/rename-read-only.error", getName());
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:292: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void FtpFileObject.onChange()` writes to field `this.children` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  290.       protected void onChange() throws IOException
+  291.       {
+  292. >         children = null;
+  293.   
+  294.           if (getType().equals(FileType.IMAGINARY))
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:304: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void FtpFileObject.onChange()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  302.           }
+  303.   
+  304. >         getInfo(true);
+  305.       }
+  306.   
+
+src/main/java/org/apache/commons/vfs2/provider/sftp/SftpFileObject.java:139: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void SftpFileObject.onChange()` indirectly writes to field `data.[_]` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  137.       protected void onChange() throws Exception
+  138.       {
+  139. >         statSelf();
+  140.       }
+  141.   
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:267: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FtpFileObject.onChildrenChanged(FileName,FileType)` reads without synchronization from `this.children`. Potentially races with write in method `FtpFileObject.doDetach()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  265.       protected void onChildrenChanged(final FileName child, final FileType newType)
+  266.       {
+  267. >         if (children != null && newType.equals(FileType.IMAGINARY))
+  268.           {
+  269.               try
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:282: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void FtpFileObject.onChildrenChanged(FileName,FileType)` writes to field `this.children` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  280.               // if child was added we have to rescan the children
+  281.               // TODO - get rid of this
+  282. >             children = null;
+  283.           }
+  284.       }
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:217: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FtpFileObject.refresh()` reads without synchronization from `this.inRefresh`. Potentially races with write in method `FtpFileObject.refresh()`.
+ Reporting because this access may occur on a background thread.
+  215.       public void refresh() throws FileSystemException
+  216.       {
+  217. >         if (!inRefresh)
+  218.           {
+  219.               try
+
+src/main/java/org/apache/commons/vfs2/provider/ftp/FtpFileObject.java:243: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void FtpFileObject.refresh()` writes to field `this.inRefresh` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  241.               finally
+  242.               {
+  243. >                 inRefresh = false;
+  244.               }
+  245.           }
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:352: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileContent.removeAttribute(String)` reads without synchronization from `this.attrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  350.           }
+  351.   
+  352. >         if (attrs != null)
+  353.           {
+  354.               attrs.remove(attrName);
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileReplicator.java:255: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `File DefaultFileReplicator.replicateFile(FileObject,FileSelector)` indirectly reads without synchronization from `this.filecount`. Potentially races with write in method `DefaultFileReplicator.allocateFile(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  253.       {
+  254.           final String basename = srcFile.getName().getBaseName();
+  255. >         final File file = allocateFile(basename);
+  256.   
+  257.           // Copy from the source file
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:270: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void DefaultFileContent.resetAttributes()` writes to field `this.resetAttributes` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  268.       public void resetAttributes()
+  269.       {
+  270. >         resetAttributes = true;
+  271.       }
+  272.   
+
+src/main/java/org/apache/commons/vfs2/provider/hdfs/HdfsFileSystem.java:196: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FileObject HdfsFileSystem.resolveFile(FileName)` reads without synchronization from `this.fs`. Potentially races with write in method `HdfsFileSystem.resolveFile(...)`.
+ Reporting because this access may occur on a background thread.
+  194.               }
+  195.               final Path filePath = new Path(path);
+  196. >             file = new HdfsFileObject((AbstractFileName) name, this, fs, filePath);
+  197.               if (useCache)
+  198.               {
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java:383: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileMonitor.run()` indirectly reads without synchronization from `this.delay`. Potentially races with write in method `DefaultFileMonitor.setDelay(...)`.
+ Reporting because this access may occur on a background thread.
+  381.                       try
+  382.                       {
+  383. >                         Thread.sleep(getDelay());
+  384.                       }
+  385.                       catch (final InterruptedException e)
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java:376: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void DefaultFileMonitor.run()` indirectly writes to field `agent.children` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  374.                   if (agent != null)
+  375.                   {
+  376. >                     agent.check();
+  377.                   }
+  378.   
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java:391: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileMonitor.run()` reads without synchronization from `this.monitorThread`. Potentially races with write in method `DefaultFileMonitor.start()`.
+ Reporting because this access may occur on a background thread.
+  389.                   }
+  390.   
+  391. >                 if (monitorThread.isInterrupted() || !this.shouldRun)
+  392.                   {
+  393.                       continue mainloop;
+
+src/main/java/org/apache/commons/vfs2/impl/DefaultFileMonitor.java:379: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileMonitor.run()` indirectly reads without synchronization from `this.checksPerRun`. Potentially races with write in method `DefaultFileMonitor.setChecksPerRun(...)`.
+ Reporting because this access may occur on a background thread.
+  377.                   }
+  378.   
+  379. >                 if (getChecksPerRun() > 0 && (iterFileNames + 1) % getChecksPerRun() == 0)
+  380.                   {
+  381.                       try
+
+src/main/java/org/apache/commons/vfs2/provider/DefaultFileContent.java:323: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void DefaultFileContent.setAttribute(String,Object)` reads without synchronization from `this.attrs`. Potentially races with write in method `DefaultFileContent.getAttributes()`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  321.           }
+  322.   
+  323. >         if (attrs != null)
+  324.           {
+  325.               attrs.put(attrName, value);
+
+src/main/java/org/apache/commons/vfs2/VFS.java:124: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `void VFS.setManager(FileSystemManager)` writes to field `vfs2.VFS.instance` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  122.        */
+  123.       public static void setManager(final FileSystemManager manager) {
+  124. >         VFS.instance = manager;
+  125.       }
+  126.   }
+
+src/main/java/org/apache/commons/vfs2/provider/ram/RamFileObject.java:260: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int RamFileObject.size()` indirectly reads without synchronization from `this.data.content`. Potentially races with write in method `RamFileObject.resize(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  258.       int size()
+  259.       {
+  260. >         return data == null ? 0 : data.size();
+  261.       }
+  262.   
+
+src/main/java/org/apache/commons/vfs2/provider/AbstractFileObject.java:2123: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `String AbstractFileObject.toString()` indirectly writes to field `vfs2.VFS.uriStyle` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  2121.       public String toString()
+  2122.       {
+  2123. >         return fileName.getURI();
+  2124.       }
+  2125.   }
+
+Summary of the reports
+
+  THREAD_SAFETY_VIOLATION: 105
+         NULL_DEREFERENCE: 26
+            RESOURCE_LEAK: 11
