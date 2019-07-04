@@ -214,3 +214,39 @@ Infer version v0.16.0-7904ca31c
 [22841][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
 [22841][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
 [22841][environment] Infer log identifier is 
+
+[12876][      phase] ============================================================
+[12876][      phase] = New infer execution begins
+[12876][      phase] ============================================================
+[12876][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[12876][environment] No .inferconfig file found
+[12876][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[12876][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[12876][environment] Infer log identifier is 
+
+[13582][      phase] ============================================================
+[13582][      phase] = New infer execution begins
+[13582][      phase] ============================================================
+[13582][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[13582][environment] No .inferconfig file found
+[13582][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[13582][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[13582][environment] Infer log identifier is 
+
+[13630][      phase] ============================================================
+[13630][      phase] = New infer execution begins
+[13630][      phase] ============================================================
+[13630][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[13630][environment] No .inferconfig file found
+[13630][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[13630][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[13630][environment] Infer log identifier is 
+
+[13677][      phase] ============================================================
+[13677][      phase] = New infer execution begins
+[13677][      phase] ============================================================
+[13677][environment] CWD = /home/coma/GSoC/npebugs/felix-5015
+[13677][environment] No .inferconfig file found
+[13677][environment] Project root = /home/coma/GSoC/npebugs/felix-5015
+[13677][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[13677][environment] Infer log identifier is 
