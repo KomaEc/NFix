@@ -154,3 +154,12 @@ Infer version v0.16.0-7904ca31c
 [13045][   progress] src/main/java/org/apache/felix/metatype/AD.java DONE
 [13043][   progress] src/main/java/org/apache/felix/metatype/MetaDataReader.java DONE
 [13044][   progress] src/main/java/org/apache/felix/metatype/internal/MetaTypeServiceImpl.java DONE
+
+[11986][      phase] ============================================================
+[11986][      phase] = New infer execution begins
+[11986][      phase] ============================================================
+[11986][environment] CWD = /home/coma/GSoC/npebugs/felix-4771
+[11986][environment] No .inferconfig file found
+[11986][environment] Project root = /home/coma/GSoC/npebugs/felix-4771
+[11986][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[11986][environment] Infer log identifier is 
