@@ -37,6 +37,24 @@ public class RequestLoggerLiveSessionsTest
 	private final ArrayList<String> sessionIds = new ArrayList<>();
 
 	@Test
+	public void mytest() throws Exception {
+		SessionCreateThread sct = new SessionCreateThread();
+		SessionDestroyThread sdt = new SessionDestroyThread();
+		sct.start();
+		sdt.start();
+		AtomicBoolean nullPointerExceptionThrown = new AtomicBoolean(false);
+
+		int count = 10000000;
+
+		while (count-- > 0) {
+			requestLogger.getLiveSessions();
+		}
+
+		sct.interrupt();
+		sdt.interrupt();
+	}
+
+	@Test
 	public void concurrentModification() {
 		SessionCreateThread sct = new SessionCreateThread();
 		SessionDestroyThread sdt = new SessionDestroyThread();

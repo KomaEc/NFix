@@ -1,0 +1,861 @@
+Found 101 issues
+
+src/main/java/org/apache/wicket/request/handler/resource/WebExternalResourceRequestHandler.java:50: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.resource.WebExternalResourceStream` acquired by call to `WebExternalResourceStream(...)` at line 50 is not released after line 50.
+**Note**: potential exception at line 50
+  48.   	public WebExternalResourceRequestHandler(String uri)
+  49.   	{
+  50. > 		super(new WebExternalResourceStream(uri));
+  51.   		this.uri = uri;
+  52.   		setContentDisposition(ContentDisposition.INLINE);
+
+src/main/java/org/apache/wicket/markup/DefaultMarkupCacheKeyProvider.java:75: error: NULL_DEREFERENCE
+  object returned by `container.getMarkupType()` could be null and is dereferenced at line 75.
+  73.   		}
+  74.   
+  75. > 		buffer.append('.').append(container.getMarkupType().getExtension());
+  76.   		return buffer.toString();
+  77.   	}
+
+src/main/java/org/apache/wicket/markup/html/list/ListItemModel.java:55: error: NULL_DEREFERENCE
+  object returned by `ListItemModel.listView.getModelObject()` could be null and is dereferenced at line 55.
+  53.   	public T getObject()
+  54.   	{
+  55. > 		return listView.getModelObject().get(index);
+  56.   	}
+  57.   
+
+src/main/java/org/apache/wicket/serialize/java/DeflatedJavaSerializer.java:60: error: RESOURCE_LEAK
+  resource of type `java.util.zip.Deflater` acquired by call to `createDeflater()` at line 60 is not released after line 60.
+  58.   	protected ObjectOutputStream newObjectOutputStream(OutputStream out) throws IOException
+  59.   	{
+  60. > 		return super.newObjectOutputStream(new DeflaterOutputStream(out, createDeflater(),
+  61.   			COMPRESS_BUF_SIZE));
+  62.   	}
+
+src/main/java/org/apache/wicket/resource/UtfPropertiesFilePropertiesLoader.java:68: error: RESOURCE_LEAK
+  resource of type `java.io.InputStreamReader` acquired by call to `InputStreamReader(...)` at line 66 is not released after line 68.
+  66.   		Reader reader = new InputStreamReader(in, encoding);
+  67.   
+  68. > 		properties.load(reader);
+  69.   
+  70.   		return properties;
+
+src/main/java/org/apache/wicket/markup/html/panel/AbstractMarkupSourcingStrategy.java:86: error: NULL_DEREFERENCE
+  object `childrenIterator.internalIterator` last assigned on line 73 could be null and is dereferenced by call to `hasNext()` at line 86.
+  84.   		});
+  85.   				
+  86. > 		while (childrenIterator.hasNext() && childMarkupFound == null)
+  87.   		{
+  88.   			Component sibling = childrenIterator.next();
+
+src/main/java/org/apache/wicket/markup/html/list/Loop.java:75: error: NULL_DEREFERENCE
+  object returned by `getDefaultModelObject()` could be null and is dereferenced at line 75.
+  73.   	public final int getIterations()
+  74.   	{
+  75. > 		return (Integer)getDefaultModelObject();
+  76.   	}
+  77.   
+
+src/main/java/org/apache/wicket/serialize/java/DeflatedJavaSerializer.java:78: error: RESOURCE_LEAK
+  resource of type `java.util.zip.InflaterInputStream` acquired by call to `new()` at line 78 is not released after line 78.
+**Note**: potential exception at line 78
+  76.   	protected ObjectInputStream newObjectInputStream(InputStream in) throws IOException
+  77.   	{
+  78. > 		return super.newObjectInputStream(new InflaterInputStream(in, new Inflater(),
+  79.   			COMPRESS_BUF_SIZE));
+  80.   	}
+
+src/main/java/org/apache/wicket/markup/html/form/CheckGroupSelector.java:86: error: NULL_DEREFERENCE
+  object `group` last assigned on line 83 could be null and is dereferenced at line 86.
+  84.   
+  85.   		// make sure the form we need outputs its markup id.
+  86. > 		group.getForm().setOutputMarkupId(true);
+  87.   	}
+  88.   
+
+src/main/java/org/apache/wicket/request/resource/ContextRelativeResource.java:87: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.resource.WebExternalResourceStream` acquired by call to `WebExternalResourceStream(...)` at line 87 is not released after line 87.
+**Note**: potential exception at line 87
+  85.   	public IResourceStream getResourceStream()
+  86.   	{
+  87. > 		return new WebExternalResourceStream(path);
+  88.   	}
+  89.   	
+
+src/main/java/org/apache/wicket/request/resource/ContextRelativeResource.java:95: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.resource.WebExternalResourceStream` acquired by call to `WebExternalResourceStream(...)` at line 95 is not released after line 95.
+**Note**: potential exception at line 95
+  93.   		final ResourceResponse resourceResponse = new ResourceResponse();
+  94.   
+  95. > 		final WebExternalResourceStream webExternalResourceStream =
+  96.   			new WebExternalResourceStream(path);
+  97.   		resourceResponse.setContentType(webExternalResourceStream.getContentType());
+
+src/main/java/org/apache/wicket/request/resource/ContextRelativeResource.java:123: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.resource.WebExternalResourceStream` acquired to `webExternalResourceStream` by call to `WebExternalResourceStream(...)` at line 95 is not released after line 123.
+**Note**: potential exception at line 98
+  121.   		});
+  122.   
+  123. > 		return resourceResponse;
+  124.   	}
+  125.   
+
+src/main/java/org/apache/wicket/markup/AbstractMarkupParser.java:96: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.markup.MarkupResourceStream` acquired by call to `new()` at line 96 is not released after line 96.
+**Note**: potential exception at line 96
+  94.   	public AbstractMarkupParser(final String markup)
+  95.   	{
+  96. > 		this(new XmlPullParser(), new MarkupResourceStream(new StringResourceStream(markup)));
+  97.   	}
+  98.   
+
+src/main/java/org/apache/wicket/page/PageAccessSynchronizer.java:147: error: NULL_DEREFERENCE
+  object `previous` last assigned on line 104 could be null and is dereferenced at line 147.
+  145.   					"Thread '{}' failed to acquire lock to page with id '{}', attempted for {} out of allowed {}. The thread that holds the lock has name '{}'.",
+  146.   					new Object[] { thread.getName(), pageId, start.elapsedSince(), timeout,
+  147. > 							previous.thread.getName() });
+  148.   				if (Application.exists())
+  149.   				{
+
+src/main/java/org/apache/wicket/model/ComponentPropertyModel.java:104: error: NULL_DEREFERENCE
+  object returned by `ComponentPropertyModel$AssignmentWrapper.component.getParent().getInnermostModel()` could be null and is dereferenced at line 104.
+  102.   			return (P)PropertyResolver.getValue(propertyName, component.getParent()
+  103.   				.getInnermostModel()
+  104. > 				.getObject());
+  105.   		}
+  106.   
+
+src/main/java/org/apache/wicket/protocol/http/RequestLoggerRequestCycleListener.java:112: error: NULL_DEREFERENCE
+  object `requestLogger` last assigned on line 102 could be null and is dereferenced at line 112.
+  110.   				url.append("?").append(containerRequest.getQueryString());
+  111.   
+  112. > 			requestLogger.logRequestedUrl(url.toString());
+  113.   		}
+  114.   	}
+
+src/main/java/org/apache/wicket/markup/repeater/AbstractRepeater.java:130: error: NULL_DEREFERENCE
+  object `i.internalIterator` last assigned on line 129 could be null and is dereferenced by call to `hasNext()` at line 130.
+  128.   			Set<String> usedComponentIds = new HashSet<>();
+  129.   			Iterator<? extends Component> i = iterator();
+  130. > 			while (i.hasNext())
+  131.   			{
+  132.   				Component c = i.next();
+
+src/main/java/org/apache/wicket/protocol/http/RequestLoggerRequestCycleListener.java:129: error: NULL_DEREFERENCE
+  object `requestLogger` last assigned on line 124 could be null and is dereferenced at line 129.
+  127.   		{
+  128.   			first.set(handler);
+  129. > 			requestLogger.logEventTarget(handler);
+  130.   		}
+  131.   		requestLogger.logResponseTarget(handler);
+
+src/main/java/org/apache/wicket/protocol/http/RequestLoggerRequestCycleListener.java:131: error: NULL_DEREFERENCE
+  object `requestLogger` last assigned on line 124 could be null and is dereferenced at line 131.
+  129.   			requestLogger.logEventTarget(handler);
+  130.   		}
+  131. > 		requestLogger.logResponseTarget(handler);
+  132.   	}
+  133.   }
+
+src/main/java/org/apache/wicket/markup/MergedMarkup.java:318: error: NULL_DEREFERENCE
+  object `childTag` last assigned on line 136 could be null and is dereferenced at line 318.
+  316.   			// And now all remaining elements from the derived markup.
+  317.   			// But first add </wicket:child>
+  318. > 			WicketTag childCloseTag = (WicketTag)childTag.mutable();
+  319.   			childCloseTag.getXmlTag().setType(TagType.CLOSE);
+  320.   			childCloseTag.setMarkupClass(markupClass);
+
+src/main/java/org/apache/wicket/markup/html/panel/AssociatedMarkupSourcingStrategy.java:147: error: NULL_DEREFERENCE
+  object `markup` last assigned on line 143 could be null and is dereferenced by call to `MarkupStream(...)` at line 147.
+  145.   
+  146.   		// MarkupStream is good at searching markup
+  147. > 		MarkupStream stream = new MarkupStream(markup);
+  148.   		while (stream.skipUntil(ComponentTag.class) && (childMarkup == null))
+  149.   		{
+
+src/main/java/org/apache/wicket/markup/html/internal/Enclosure.java:155: error: NULL_DEREFERENCE
+  object `children.internalIterator` last assigned on line 153 could be null and is dereferenced by call to `hasNext()` at line 155.
+  153.   		Iterator<Component> children = container.iterator();
+  154.   		
+  155. > 		while (children.hasNext() && childController == null)
+  156.   		{
+  157.   			Component transparentChild = children.next();
+
+src/main/java/org/apache/wicket/markup/html/link/DownloadLink.java:169: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.util.resource.FileResourceStream` acquired by call to `new()` at line 167 is not released after line 169.
+  167.   		IResourceStream resourceStream = new FileResourceStream(
+  168.   			new org.apache.wicket.util.file.File(file));
+  169. > 		getRequestCycle().scheduleRequestHandlerAfterCurrent(
+  170.   			new ResourceStreamRequestHandler(resourceStream)
+  171.   			{
+
+src/main/java/org/apache/wicket/serialize/java/JavaSerializer.java:172: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.serialize.java.JavaSerializer$SerializationCheckerObjectOutputStream` acquired by call to `JavaSerializer$SerializationCheckerObjectOutputStream(...)` at line 172 is not released after line 172.
+**Note**: potential exception at line 172
+  170.   	protected ObjectOutputStream newObjectOutputStream(OutputStream out) throws IOException
+  171.   	{
+  172. > 		return new SerializationCheckerObjectOutputStream(out);
+  173.   	}
+  174.   
+
+src/main/java/org/apache/wicket/resource/bundles/ConcatBundleResource.java:179: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.util.io.ByteArrayOutputStream` acquired by call to `new()` at line 175 is not released after line 179.
+  177.   			IOUtils.copy(curStream.getInputStream(), output);
+  178.   
+  179. > 		byte[] bytes = output.toByteArray();
+  180.   
+  181.   		if (getCompressor() != null)
+
+src/main/java/org/apache/wicket/markup/html/include/Include.java:215: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.resource.UrlResourceStream` acquired by call to `UrlResourceStream(...)` at line 215 is not released after line 215.
+**Note**: potential exception at line 215
+  213.   	private String importUrl(URL url)
+  214.   	{
+  215. > 		return ResourceUtil.readString(new UrlResourceStream(url), getCharset());
+  216.   	}
+  217.   }
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:241: error: RESOURCE_LEAK
+  resource of type `java.io.FileInputStream` acquired by call to `FileInputStream(...)` at line 222 is not released after line 241.
+**Note**: potential exception at line 223
+  239.   				}
+  240.   			}
+  241. > 			catch (Exception e)
+  242.   			{
+  243.   				log.error("Couldn't load DiskDataStore index from file " + index + ".", e);
+
+src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java:221: error: NULL_DEREFERENCE
+  object returned by `getFeedbackMessagesModel()` could be null and is dereferenced at line 221.
+  219.   	public final IFeedbackMessageFilter getFilter()
+  220.   	{
+  221. > 		return getFeedbackMessagesModel().getFilter();
+  222.   	}
+  223.   
+
+src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java:229: error: NULL_DEREFERENCE
+  object returned by `getFeedbackMessagesModel()` could be null and is dereferenced at line 229.
+  227.   	public final Comparator<FeedbackMessage> getSortingComparator()
+  228.   	{
+  229. > 		return getFeedbackMessagesModel().getSortingComparator();
+  230.   	}
+  231.   
+
+src/main/java/org/apache/wicket/markup/head/filter/FilteringHeaderResponse.java:269: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.markup.head.ResourceAggregator` acquired to `resourceAggregator` by call to `ResourceAggregator(...)` at line 260 is not released after line 269.
+**Note**: potential exception at line 264
+  267.   		resourceAggregator.close();
+  268.   
+  269. > 		return strResponse.getBuffer();
+  270.   	}
+  271.   
+
+src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java:251: error: NULL_DEREFERENCE
+  object returned by `getFeedbackMessagesModel()` could be null and is dereferenced at line 251.
+  249.   	public final FeedbackPanel setFilter(IFeedbackMessageFilter filter)
+  250.   	{
+  251. > 		getFeedbackMessagesModel().setFilter(filter);
+  252.   		return this;
+  253.   	}
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:280: error: RESOURCE_LEAK
+  resource of type `java.io.FileOutputStream` acquired by call to `FileOutputStream(...)` at line 261 is not released after line 280.
+**Note**: potential exception at line 262
+  278.   				}
+  279.   			}
+  280. > 			catch (Exception e)
+  281.   			{
+  282.   				log.error("Couldn't write DiskDataStore index to file " + index + ".", e);
+
+src/main/java/org/apache/wicket/core/util/lang/WicketObjects.java:269: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.lang.WicketObjects$ReplaceObjectInputStream` acquired by call to `new()` at line 268 is not released after line 269.
+  267.   				ObjectInputStream ois = new ReplaceObjectInputStream(new ByteArrayInputStream(
+  268.   					out.toByteArray()), replacedObjects, object.getClass().getClassLoader());
+  269. > 				return (T) ois.readObject();
+  270.   			}
+  271.   			catch (ClassNotFoundException | IOException e)
+
+src/main/java/org/apache/wicket/core/util/lang/WicketObjects.java:266: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.lang.WicketObjects$ReplaceObjectOutputStream` acquired by call to `new()` at line 265 is not released after line 266.
+  264.   				final HashMap<String, Component> replacedObjects = Generics.newHashMap();
+  265.   				ObjectOutputStream oos = new ReplaceObjectOutputStream(out, replacedObjects);
+  266. > 				oos.writeObject(object);
+  267.   				ObjectInputStream ois = new ReplaceObjectInputStream(new ByteArrayInputStream(
+  268.   					out.toByteArray()), replacedObjects, object.getClass().getClassLoader());
+
+src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java:278: error: NULL_DEREFERENCE
+  object returned by `getFeedbackMessagesModel()` could be null and is dereferenced at line 278.
+  276.   	public final FeedbackPanel setSortingComparator(Comparator<FeedbackMessage> sortingComparator)
+  277.   	{
+  278. > 		getFeedbackMessagesModel().setSortingComparator(sortingComparator);
+  279.   		return this;
+  280.   	}
+
+src/main/java/org/apache/wicket/core/request/mapper/AbstractBookmarkableMapper.java:306: error: NULL_DEREFERENCE
+  object `componentInfo` last assigned on line 297 could be null and is dereferenced at line 306.
+  304.   
+  305.   		PageAndComponentProvider provider = new PageAndComponentProvider(pageInfo.getPageId(),
+  306. > 			pageClass, pageParameters, renderCount, componentInfo.getComponentPath());
+  307.   
+  308.   		provider.setPageSource(getContext());
+
+src/main/java/org/apache/wicket/core/request/mapper/AbstractBookmarkableMapper.java:338: error: NULL_DEREFERENCE
+  object `null` is dereferenced by call to `processHybrid(...)` at line 338.
+  336.   				// interface then this is a hybrid URL - we need to try to reuse existing page
+  337.   				// instance
+  338. > 				return processHybrid(info.getPageInfo(), pageClass, pageParameters, null);
+  339.   			}
+  340.   			else if (info.getComponentInfo() != null)
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:364: error: RESOURCE_LEAK
+  resource of type `java.io.RandomAccessFile` acquired by call to `getFileChannel(...)` at line 350 is not released after line 364.
+  362.   					finally
+  363.   					{
+  364. > 						IOUtils.closeQuietly(channel);
+  365.   					}
+  366.   				}
+
+src/main/java/org/apache/wicket/core/util/objects/checker/CheckingObjectOutputStream.java:506: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.core.util.objects.checker.CheckingObjectOutputStream$1InterceptingObjectOutputStream` acquired by call to `new()` at line 505 is not released after line 506.
+  504.   				{
+  505.   					InterceptingObjectOutputStream ioos = new InterceptingObjectOutputStream();
+  506. > 					ioos.writeObject(obj);
+  507.   				}
+  508.   				catch (Exception e)
+
+src/main/java/org/apache/wicket/markup/html/internal/HtmlHeaderContainer.java:350: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.markup.html.internal.HtmlHeaderContainer$1` acquired by call to `newHeaderResponse()` at line 350 is not released after line 350.
+  348.   		if (headerResponse == null)
+  349.   		{
+  350. > 			headerResponse = getApplication().decorateHeaderResponse(newHeaderResponse());
+  351.   		}
+  352.   		return headerResponse;
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:417: error: RESOURCE_LEAK
+  resource of type `java.io.RandomAccessFile` acquired by call to `getFileChannel(...)` at line 399 is not released after line 417.
+  415.   				finally
+  416.   				{
+  417. > 					IOUtils.closeQuietly(channel);
+  418.   				}
+  419.   			}
+
+src/main/java/org/apache/wicket/MarkupContainer.java:431: error: NULL_DEREFERENCE
+  object returned by `getMarkupType()` could be null and is dereferenced at line 431.
+  429.   			throw new MarkupNotFoundException(
+  430.   				"Markup of type '" +
+  431. > 					getMarkupType().getExtension() +
+  432.   					"' for component '" +
+  433.   					getClass().getName() +
+
+src/main/java/org/apache/wicket/util/tester/FormTester.java:441: error: NULL_DEREFERENCE
+  object `value` last assigned on line 438 could be null and is dereferenced at line 441.
+  439.   				if (!Strings.isEmpty(value))
+  440.   				{
+  441. > 					return value.split(FormComponent.VALUE_SEPARATOR);
+  442.   				}
+  443.   			}
+
+src/main/java/org/apache/wicket/protocol/http/BufferedHttpServletResponse.java:502: error: RESOURCE_LEAK
+  resource of type `java.io.OutputStreamWriter` acquired to `osw` by call to `OutputStreamWriter(...)` at line 496 is not released after line 502.
+**Note**: potential exception at line 497
+  500.   			bytes = baos.toByteArray();
+  501.   		}
+  502. > 		catch (Exception ex)
+  503.   		{
+  504.   			throw new WicketRuntimeException("Can't convert response to charset: " + encoding, ex);
+
+src/main/java/org/apache/wicket/Component.java:554: error: NULL_DEREFERENCE
+  object `array` last assigned on line 553 could be null and is dereferenced at line 554.
+  552.   		{
+  553.   			Object[] array = (Object[])data;
+  554. > 			array[index] = object;
+  555.   		}
+  556.   	}
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:550: error: NULL_DEREFERENCE
+  object `fbp` last assigned on line 549 could be null and is dereferenced at line 550.
+  548.   	{
+  549.   		final FeedbackPanel fbp = (FeedbackPanel)getComponentFromLastRenderedPage(path);
+  550. > 		final IModel<List<FeedbackMessage>> model = fbp.getFeedbackMessagesModel();
+  551.   		final List<FeedbackMessage> renderedMessages = model.getObject();
+  552.   		if (renderedMessages == null)
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:551: error: NULL_DEREFERENCE
+  object `model` last assigned on line 550 could be null and is dereferenced at line 551.
+  549.   		final FeedbackPanel fbp = (FeedbackPanel)getComponentFromLastRenderedPage(path);
+  550.   		final IModel<List<FeedbackMessage>> model = fbp.getFeedbackMessagesModel();
+  551. > 		final List<FeedbackMessage> renderedMessages = model.getObject();
+  552.   		if (renderedMessages == null)
+  553.   		{
+
+src/main/java/org/apache/wicket/ajax/json/JSONArray.java:585: error: NULL_DEREFERENCE
+  object `object` last assigned on line 583 could be null and is dereferenced at line 585.
+  583.           Object object = this.opt(index);
+  584.           return JSONObject.NULL.equals(object) ? defaultValue : object
+  585. >                 .toString();
+  586.       }
+  587.   
+
+src/main/java/org/apache/wicket/markup/html/border/Border.java:592: error: NULL_DEREFERENCE
+  object `border` last assigned on line 591 could be null and is dereferenced at line 592.
+  590.   		{
+  591.   			Border border = findParent(Border.class);
+  592. > 			IMarkupFragment fragment = border.getMarkup();
+  593.   
+  594.   			if (fragment == null)
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:602: error: NULL_DEREFERENCE
+  object `label` last assigned on line 601 could be null and is dereferenced at line 602.
+  600.   	{
+  601.   		Label label = (Label)getComponentFromLastRenderedPage(path);
+  602. > 		assertEquals(expectedLabelText, label.getDefaultModelObjectAsString());
+  603.   	}
+  604.   
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:616: error: NULL_DEREFERENCE
+  object `component` last assigned on line 615 could be null and is dereferenced at line 616.
+  614.   	{
+  615.   		Component component = getComponentFromLastRenderedPage(path);
+  616. > 		assertEquals(expectedValue, component.getDefaultModelObject());
+  617.   	}
+  618.   
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:631: error: NULL_DEREFERENCE
+  object `listView` last assigned on line 630 could be null and is dereferenced at line 631.
+  629.   	{
+  630.   		ListView<?> listView = (ListView<?>)getComponentFromLastRenderedPage(path);
+  631. > 		WicketTesterHelper.assertEquals(expectedList, listView.getList());
+  632.   	}
+  633.   
+
+src/main/java/org/apache/wicket/util/tester/WicketTester.java:817: error: NULL_DEREFERENCE
+  object `pageLink` last assigned on line 808 could be null and is dereferenced at line 817.
+  815.   
+  816.   		assertEquals("BookmarkablePageLink: " + id + " is pointing to the wrong page", pageClass,
+  817. > 			pageLink.getPageClass());
+  818.   
+  819.   		assertEquals("One or more of the parameters associated with the BookmarkablePageLink: " +
+
+src/main/java/org/apache/wicket/ajax/json/JSONObject.java:979: error: NULL_DEREFERENCE
+  object `object` last assigned on line 978 could be null and is dereferenced at line 979.
+  977.       public String optString(String key, String defaultValue) {
+  978.           Object object = this.opt(key);
+  979. >         return NULL.equals(object) ? defaultValue : object.toString();
+  980.       }
+  981.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1172: error: NULL_DEREFERENCE
+  object `behavior` last assigned on line 1171 could be null and is dereferenced at line 1172.
+  1170.   	{
+  1171.   		AbstractAjaxBehavior behavior = WicketTesterHelper.findAjaxEventBehavior(link, "click");
+  1172. > 		Url url = Url.parse(behavior.getCallbackUrl().toString(),
+  1173.   			Charset.forName(request.getCharacterEncoding()));
+  1174.   		return transform(url);
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1263: error: NULL_DEREFERENCE
+  object returned by `getComponentFromLastRenderedPage(path)` could be null and is dereferenced by call to `FormTester(...)` at line 1263.
+  1261.   	public FormTester newFormTester(final String path, final boolean fillBlankString)
+  1262.   	{
+  1263. > 		return new FormTester(path, (Form<?>)getComponentFromLastRenderedPage(path), this,
+  1264.   			fillBlankString);
+  1265.   	}
+
+src/main/java/org/apache/wicket/MarkupContainer.java:1378: error: NULL_DEREFERENCE
+  object returned by `getMetaData(org.apache.wicket.MarkupContainer.REMOVALS_KEY)` could be null and is dereferenced at line 1378.
+  1376.   	private RemovedChild removals_get(int i)
+  1377.   	{
+  1378. > 		return getMetaData(REMOVALS_KEY).get(i);
+  1379.   	}
+  1380.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1407: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.markup.MarkupResourceStream` acquired by call to `new()` at line 1403 is not released after line 1407.
+**Note**: potential exception at line 1407
+  1405.   				MarkupParser markupParser = getApplication().getMarkupSettings()
+  1406.   					.getMarkupFactory()
+  1407. > 					.newMarkupParser(markupResourceStream);
+  1408.   				pageMarkup = markupParser.parse();
+  1409.   			}
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1410: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.markup.MarkupResourceStream` acquired to `markupResourceStream` by call to `new()` at line 1403 is not released after line 1410.
+**Note**: potential exception at line 1405
+  1408.   				pageMarkup = markupParser.parse();
+  1409.   			}
+  1410. > 			catch (Exception e)
+  1411.   			{
+  1412.   				String errorMessage = "Error while parsing the markup for the autogenerated page: " + e.getMessage();
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1403: error: RESOURCE_LEAK
+  resource of type `org.apache.wicket.util.resource.StringResourceStream` acquired by call to `new()` at line 1402 is not released after line 1403.
+  1401.   				ContainerInfo containerInfo = new ContainerInfo(page);
+  1402.   				MarkupResourceStream markupResourceStream = new MarkupResourceStream(
+  1403. > 					new StringResourceStream(markup), containerInfo, page.getClass());
+  1404.   
+  1405.   				MarkupParser markupParser = getApplication().getMarkupSettings()
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1592: error: NULL_DEREFERENCE
+  object `label` last assigned on line 1591 could be null and is dereferenced at line 1592.
+  1590.   	{
+  1591.   		Label label = (Label)getComponentFromLastRenderedPage(path);
+  1592. > 		return isEqual(expectedLabelText, label.getDefaultModelObjectAsString());
+  1593.   	}
+  1594.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1610: error: NULL_DEREFERENCE
+  object `component` last assigned on line 1608 could be null and is dereferenced at line 1610.
+  1608.   		Component component = assertExists(path);
+  1609.   
+  1610. > 		return isTrue("component '" + Classes.simpleName(component.getClass()) + "' is not type:" +
+  1611.   			Classes.simpleName(expectedComponentClass),
+  1612.   			expectedComponentClass.isAssignableFrom(component.getClass()));
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1678: error: NULL_DEREFERENCE
+  object `component` last assigned on line 1676 could be null and is dereferenced at line 1678.
+  1676.   		Component component = assertExists(path);
+  1677.   
+  1678. > 		return isTrue("component '" + path + "' is disabled", component.isEnabledInHierarchy());
+  1679.   	}
+  1680.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1692: error: NULL_DEREFERENCE
+  object `component` last assigned on line 1690 could be null and is dereferenced at line 1692.
+  1690.   		Component component = assertExists(path);
+  1691.   
+  1692. > 		return isFalse("component '" + path + "' is enabled", component.isEnabledInHierarchy());
+  1693.   	}
+  1694.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1726: error: NULL_DEREFERENCE
+  object `formComponent` last assigned on line 1724 could be null and is dereferenced by call to `isRequired(...)` at line 1726.
+  1724.   		FormComponent formComponent = assertFormComponent(path);
+  1725.   
+  1726. > 		return isRequired(formComponent);
+  1727.   	}
+  1728.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1752: error: NULL_DEREFERENCE
+  object `formComponent` last assigned on line 1750 could be null and is dereferenced by call to `isNotRequired(...)` at line 1752.
+  1750.   		FormComponent formComponent = assertFormComponent(path);
+  1751.   
+  1752. > 		return isNotRequired(formComponent);
+  1753.   	}
+  1754.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1804: error: NULL_DEREFERENCE
+  object `listView` last assigned on line 1803 could be null and is dereferenced at line 1804.
+  1802.   	{
+  1803.   		ListView<?> listView = (ListView<?>)getComponentFromLastRenderedPage(path);
+  1804. > 		WicketTesterHelper.assertEquals(expectedList, listView.getList());
+  1805.   	}
+  1806.   
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:1910: error: NULL_DEREFERENCE
+  object returned by `submitLink.getForm()` could be null and is dereferenced by call to `serializeFormToRequest(...)` at line 1910.
+  1908.   			request.getPostParameters().setParameterValue(pageRelativePath, "x");
+  1909.   
+  1910. > 			serializeFormToRequest(submitLink.getForm());
+  1911.   			submitForm(submitLink.getForm().getPageRelativePath());
+  1912.   		}
+
+src/main/java/org/apache/wicket/util/tester/BaseWicketTester.java:2014: error: NULL_DEREFERENCE
+  object `form` last assigned on line 2012 could be null and is dereferenced at line 2014.
+  2012.   		Form<?> form = (Form<?>)getComponentFromLastRenderedPage(path);
+  2013.   		Url url = Url.parse(
+  2014. > 			form.getRootForm()
+  2015.   				.urlForListener(new PageParameters())
+  2016.   				.toString(), Charset.forName(request.getCharacterEncoding()));
+
+src/main/java/org/apache/wicket/protocol/http/AbstractRequestLogger.java:343: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractRequestLogger.addRequest(IRequestLogger$RequestData)` indirectly reads without synchronization from `this.requestWindow`. Potentially races with write in method `AbstractRequestLogger.addRequest(...)`.
+ Reporting because this access may occur on a background thread.
+  341.   	{
+  342.   		// ensure the buffer has the proper installed length
+  343. > 		resizeBuffer();
+  344.   
+  345.   		synchronized (requestWindowLock)
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:174: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int FeedbackMessages.clear()` indirectly reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  172.   	public final int clear()
+  173.   	{
+  174. > 		return clear(null);
+  175.   	}
+  176.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:191: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int FeedbackMessages.clear(IFeedbackMessageFilter)` indirectly reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.warn(...)`.
+ Reporting because this access may occur on a background thread.
+  189.   		}
+  190.   
+  191. > 		List<FeedbackMessage> toDelete = messages(filter);
+  192.   
+  193.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:376: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void FeedbackMessages.detach()` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  374.   	public void detach()
+  375.   	{
+  376. > 		for (FeedbackMessage message : messages)
+  377.   		{
+  378.   			message.detach();
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:253: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FeedbackMessage FeedbackMessages.first()` reads without synchronization from container `this.messages` via call to `size`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  251.   	public final FeedbackMessage first()
+  252.   	{
+  253. > 		return messages.size() > 0 ? messages.get(0) : null;
+  254.   	}
+  255.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:265: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `FeedbackMessage FeedbackMessages.first(int)` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  263.   	public final FeedbackMessage first(final int level)
+  264.   	{
+  265. > 		for (FeedbackMessage message : messages)
+  266.   		{
+  267.   			if (message.isLevel(level))
+
+src/main/java/org/apache/wicket/protocol/http/StoredResponsesMap.java:29: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Object StoredResponsesMap.get(Object)` reads without synchronization from container `this` via call to `get`. Potentially races with write in method `StoredResponsesMap.put(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  27.    * can contain, and a constraint on the duration of time an entry is considered valid/non-expired
+  28.    */
+  29. > class StoredResponsesMap extends MostRecentlyUsedMap<String, Object>
+  30.   {
+  31.   	private static final long serialVersionUID = 1L;
+
+src/main/java/org/apache/wicket/protocol/http/StoredResponsesMap.java:115: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `BufferedWebResponse StoredResponsesMap.get(Object)` reads with synchronization from container `this` via call to `get`. Potentially races with unsynchronized write in method `StoredResponsesMap.get(...)`.
+ Reporting because this access may occur on a background thread.
+  113.   		synchronized (this)
+  114.   		{
+  115. > 			value = (Value)super.get(key);
+  116.   		}
+  117.   		if (value != null)
+
+src/main/java/org/apache/wicket/protocol/http/StoredResponsesMap.java:127: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `BufferedWebResponse StoredResponsesMap.get(Object)` mutates container `this` via call to `remove` outside of synchronization.
+ Reporting because this access may occur on a background thread.
+  125.   			{
+  126.   				// expired, remove it
+  127. > 				remove(key);
+  128.   			}
+  129.   		}
+
+src/main/java/org/apache/wicket/markup/html/image/resource/BufferedDynamicImageResource.java:73: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `byte[] BufferedDynamicImageResource.getImageData(IResource$Attributes)` reads without synchronization from `this.imageData`. Potentially races with write in method `BufferedDynamicImageResource.setImage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  71.   	protected byte[] getImageData(Attributes attributes)
+  72.   	{
+  73. > 		return imageData;
+  74.   	}
+  75.   }
+
+src/main/java/org/apache/wicket/markup/html/image/resource/RenderedDynamicImageResource.java:165: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `byte[] RenderedDynamicImageResource.getImageData(IResource$Attributes)` writes to field `this.imageData` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  163.   		{
+  164.   			data = render(attributes);
+  165. > 			imageData = new SoftReference<byte[]>(data);
+  166.   			setLastModifiedTime(Time.now());
+  167.   		}
+
+src/main/java/org/apache/wicket/markup/html/image/resource/RenderedDynamicImageResource.java:158: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `byte[] RenderedDynamicImageResource.getImageData(IResource$Attributes)` reads without synchronization from `this.imageData`. Potentially races with write in method `RenderedDynamicImageResource.setWidth(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  156.   		// get image data is always called in sync block
+  157.   		byte[] data = null;
+  158. > 		if (imageData != null)
+  159.   		{
+  160.   			data = imageData.get();
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:310: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `PageWindowManager DiskDataStore$SessionEntry.getManager()` writes to field `this.manager` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  308.   			if (manager == null)
+  309.   			{
+  310. > 				manager = new PageWindowManager(diskDataStore.maxSizePerPageSession.bytes());
+  311.   			}
+  312.   			return manager;
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:308: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `PageWindowManager DiskDataStore$SessionEntry.getManager()` reads without synchronization from `this.manager`. Potentially races with write in method `DiskDataStore$SessionEntry.savePage(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  306.   		public PageWindowManager getManager()
+  307.   		{
+  308. > 			if (manager == null)
+  309.   			{
+  310.   				manager = new PageWindowManager(diskDataStore.maxSizePerPageSession.bytes());
+
+src/main/java/org/apache/wicket/settings/ResourceSettings.java:335: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `IModificationWatcher ResourceSettings.getResourceWatcher(boolean)` reads without synchronization from `this.resourceWatcher`. Potentially races with write in method `ResourceSettings.setResourceWatcher(...)`.
+ Reporting because this access may occur on a background thread.
+  333.   			}
+  334.   		}
+  335. > 		return resourceWatcher;
+  336.   	}
+  337.   
+
+src/main/java/org/apache/wicket/Session.java:440: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `long Session.getSizeInBytes()` indirectly writes to field `m.object` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  438.   	public final long getSizeInBytes()
+  439.   	{
+  440. > 		return WicketObjects.sizeof(this);
+  441.   	}
+  442.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:236: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean FeedbackMessages.hasMessage(int)` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  234.   	public final boolean hasMessage(final int level)
+  235.   	{
+  236. > 		for (FeedbackMessage message : messages)
+  237.   		{
+  238.   			if (message.isLevel(level))
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:215: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean FeedbackMessages.hasMessage(IFeedbackMessageFilter)` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  213.   	public final boolean hasMessage(final IFeedbackMessageFilter filter)
+  214.   	{
+  215. > 		for (final FeedbackMessage message : messages)
+  216.   		{
+  217.   			if (filter == null || filter.accept(message))
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:318: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean FeedbackMessages.isEmpty()` reads without synchronization from container `this.messages` via call to `isEmpty`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  316.   	public final boolean isEmpty()
+  317.   	{
+  318. > 		return messages.isEmpty();
+  319.   	}
+  320.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:283: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `Iterator FeedbackMessages.iterator()` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  281.   	public final Iterator<FeedbackMessage> iterator()
+  282.   	{
+  283. > 		return messages.iterator();
+  284.   	}
+  285.   
+
+src/main/java/org/apache/wicket/pageStore/DiskDataStore.java:399: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `byte[] DiskDataStore$SessionEntry.loadPage(PageWindowManager$PageWindow)` indirectly writes to field `this.fileName` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  397.   		{
+  398.   			byte[] result = null;
+  399. > 			FileChannel channel = getFileChannel(false);
+  400.   			if (channel != null)
+  401.   			{
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:301: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `List FeedbackMessages.messages(IFeedbackMessageFilter)` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  299.   
+  300.   		final List<FeedbackMessage> list = new ArrayList<FeedbackMessage>();
+  301. > 		for (final FeedbackMessage message : messages)
+  302.   		{
+  303.   			if (filter == null || filter.accept(message))
+
+src/main/java/org/apache/wicket/request/resource/DynamicImageResource.java:140: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `AbstractResource$ResourceResponse DynamicImageResource.newResourceResponse(IResource$Attributes)` reads without synchronization from `this.lastModifiedTime`. Potentially races with write in method `DynamicImageResource.setLastModifiedTime(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  138.   		final ResourceResponse response = new ResourceResponse();
+  139.   
+  140. > 		if (lastModifiedTime != null)
+  141.   		{
+  142.   			response.setLastModified(lastModifiedTime);
+
+src/main/java/org/apache/wicket/protocol/http/StoredResponsesMap.java:29: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `Object StoredResponsesMap.put(Object,Object)` mutates container `this` via call to `put` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  27.    * can contain, and a constraint on the duration of time an entry is considered valid/non-expired
+  28.    */
+  29. > class StoredResponsesMap extends MostRecentlyUsedMap<String, Object>
+  30.   {
+  31.   	private static final long serialVersionUID = 1L;
+
+src/main/java/org/apache/wicket/protocol/http/StoredResponsesMap.java:29: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `Object StoredResponsesMap.remove(Object)` mutates container `this` via call to `remove` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  27.    * can contain, and a constraint on the duration of time an entry is considered valid/non-expired
+  28.    */
+  29. > class StoredResponsesMap extends MostRecentlyUsedMap<String, Object>
+  30.   {
+  31.   	private static final long serialVersionUID = 1L;
+
+src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java:268: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `boolean DefaultButtonImageResource.render(Graphics2D,IResource$Attributes)` reads without synchronization from `this.arcHeight`. Potentially races with write in method `DefaultButtonImageResource.setArcHeight(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  266.   			graphics.setColor(getColor());
+  267.   			graphics.setBackground(bgColor);
+  268. > 			graphics.fillRoundRect(0, 0, width, height, arcWidth, arcHeight);
+  269.   
+  270.   			// Draw text
+
+src/main/java/org/apache/wicket/protocol/http/AbstractRequestLogger.java:250: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `void AbstractRequestLogger.requestTime(long)` indirectly reads without synchronization from `this.requestWindow`. Potentially races with write in method `AbstractRequestLogger.addRequest(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  248.   			requestdata.setTimeTaken(timeTaken);
+  249.   
+  250. > 			addRequest(requestdata);
+  251.   
+  252.   			SessionData sessiondata;
+
+src/main/java/org/apache/wicket/settings/SecuritySettings.java:160: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `SecuritySettings SecuritySettings.setCryptFactory(ICryptFactory)` writes to field `this.cryptFactory` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  158.   	{
+  159.   		Args.notNull(cryptFactory, "cryptFactory");
+  160. > 		this.cryptFactory = cryptFactory;
+  161.   		return this;
+  162.   	}
+
+src/main/java/org/apache/wicket/settings/ResourceSettings.java:346: warning: THREAD_SAFETY_VIOLATION
+  Unprotected write. Non-private method `ResourceSettings ResourceSettings.setResourceWatcher(IModificationWatcher)` writes to field `this.resourceWatcher` outside of synchronization.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  344.   	public ResourceSettings setResourceWatcher(IModificationWatcher watcher)
+  345.   	{
+  346. > 		resourceWatcher = watcher;
+  347.   		return this;
+  348.   	}
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:328: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int FeedbackMessages.size()` reads without synchronization from container `this.messages` via call to `size`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  326.   	public final int size()
+  327.   	{
+  328. > 		return messages.size();
+  329.   	}
+  330.   
+
+src/main/java/org/apache/wicket/feedback/FeedbackMessages.java:342: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `int FeedbackMessages.size(IFeedbackMessageFilter)` reads without synchronization from container `this.messages` via call to `iterator`. Potentially races with write in method `FeedbackMessages.add(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  340.   	{
+  341.   		int count = 0;
+  342. > 		for (final FeedbackMessage message : messages)
+  343.   		{
+  344.   			if (filter == null || filter.accept(message))
+
+src/main/java/org/apache/wicket/request/resource/DynamicImageResource.java:105: warning: THREAD_SAFETY_VIOLATION
+  Read/Write race. Non-private method `byte[] DynamicImageResource.toImageData(BufferedImage)` reads without synchronization from `this.format`. Potentially races with write in method `DynamicImageResource.setFormat(...)`.
+ Reporting because another access to the same memory occurs on a background thread, although this access may not.
+  103.   
+  104.   			// Write image using any matching ImageWriter
+  105. > 			ImageIO.write(image, format, out);
+  106.   
+  107.   			// Return the image data
+
+Summary of the reports
+
+         NULL_DEREFERENCE: 44
+  THREAD_SAFETY_VIOLATION: 32
+            RESOURCE_LEAK: 25
