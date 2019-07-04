@@ -146,3 +146,12 @@ Infer version v0.16.0-7904ca31c
 [2747][   progress] src/main/java/org/apache/felix/gogo/runtime/Pipe.java DONE
 [2750][   progress] src/main/java/org/apache/felix/gogo/runtime/CommandSessionImpl.java DONE
 [2745][   progress] src/main/java/org/apache/felix/gogo/runtime/Closure.java DONE
+
+[6908][      phase] ============================================================
+[6908][      phase] = New infer execution begins
+[6908][      phase] ============================================================
+[6908][environment] CWD = /home/coma/GSoC/npebugs/felix-2432
+[6908][environment] No .inferconfig file found
+[6908][environment] Project root = /home/coma/GSoC/npebugs/felix-2432
+[6908][environment] INFER_ARGS =   command line arguments:   infer-exploreActive checkers: biabduction (C/C++/ObjC, Java), fragment retains view (Java), liveness (C/C++/ObjC), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC), Starvation analysis (C/C++/ObjC, Java)
+[6908][environment] Infer log identifier is 
