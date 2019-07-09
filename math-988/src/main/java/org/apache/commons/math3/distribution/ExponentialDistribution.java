@@ -19,8 +19,8 @@ package org.apache.commons.math3.distribution;
 import org.apache.commons.math3.exception.NotStrictlyPositiveException;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.util.CombinatoricsUtils;
 import org.apache.commons.math3.util.FastMath;
+import org.apache.commons.math3.util.ArithmeticUtils;
 import org.apache.commons.math3.util.ResizableDoubleArray;
 import org.apache.commons.math3.random.RandomGenerator;
 import org.apache.commons.math3.random.Well19937c;
@@ -56,8 +56,6 @@ public class ExponentialDistribution extends AbstractRealDistribution {
     private static final double[] EXPONENTIAL_SA_QI;
     /** The mean of this distribution. */
     private final double mean;
-    /** The logarithm of the mean, stored to reduce computing time. **/
-    private final double logMean;
     /** Inverse cumulative probability accuracy. */
     private final double solverAbsoluteAccuracy;
 
@@ -82,7 +80,7 @@ public class ExponentialDistribution extends AbstractRealDistribution {
         final ResizableDoubleArray ra = new ResizableDoubleArray(20);
 
         while (qi < 1) {
-            qi += FastMath.pow(LN2, i) / CombinatoricsUtils.factorial(i);
+            qi += FastMath.pow(LN2, i) / ArithmeticUtils.factorial(i);
             ra.addElement(qi);
             ++i;
         }
@@ -117,19 +115,6 @@ public class ExponentialDistribution extends AbstractRealDistribution {
      *
      * @param rng Random number generator.
      * @param mean Mean of this distribution.
-     * @throws NotStrictlyPositiveException if {@code mean <= 0}.
-     * @since 3.3
-     */
-    public ExponentialDistribution(RandomGenerator rng, double mean)
-        throws NotStrictlyPositiveException {
-        this(rng, mean, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);
-    }
-
-    /**
-     * Creates an exponential distribution.
-     *
-     * @param rng Random number generator.
-     * @param mean Mean of this distribution.
      * @param inverseCumAccuracy Maximum absolute error in inverse
      * cumulative probability estimates (defaults to
      * {@link #DEFAULT_INVERSE_ABSOLUTE_ACCURACY}).
@@ -146,7 +131,6 @@ public class ExponentialDistribution extends AbstractRealDistribution {
             throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, mean);
         }
         this.mean = mean;
-        logMean = FastMath.log(mean);
         solverAbsoluteAccuracy = inverseCumAccuracy;
     }
 
@@ -161,17 +145,10 @@ public class ExponentialDistribution extends AbstractRealDistribution {
 
     /** {@inheritDoc} */
     public double density(double x) {
-        final double logDensity = logDensity(x);
-        return logDensity == Double.NEGATIVE_INFINITY ? 0 : FastMath.exp(logDensity);
-    }
-
-    /** {@inheritDoc} **/
-    @Override
-    public double logDensity(double x) {
         if (x < 0) {
-            return Double.NEGATIVE_INFINITY;
+            return 0;
         }
-        return -x / mean - logMean;
+        return FastMath.exp(-x / mean) / mean;
     }
 
     /**

@@ -20,6 +20,8 @@ import org.apache.commons.math3.exception.DimensionMismatchException;
 import org.apache.commons.math3.exception.NullArgumentException;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.ArrayRealVector;
+import org.apache.commons.math3.linear.CholeskyDecomposition;
+import org.apache.commons.math3.linear.DecompositionSolver;
 import org.apache.commons.math3.linear.MatrixDimensionMismatchException;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.NonSquareMatrixException;
@@ -180,15 +182,14 @@ public class KalmanFilter {
         }
 
         // row dimension of B must be equal to A
-        // if no control matrix is available, the row and column dimension will be 0
         if (controlMatrix != null &&
             controlMatrix.getRowDimension() > 0 &&
             controlMatrix.getColumnDimension() > 0 &&
-            controlMatrix.getRowDimension() != transitionMatrix.getRowDimension()) {
+            (controlMatrix.getRowDimension() != transitionMatrix.getRowDimension() ||
+             controlMatrix.getColumnDimension() != 1)) {
             throw new MatrixDimensionMismatchException(controlMatrix.getRowDimension(),
                                                        controlMatrix.getColumnDimension(),
-                                                       transitionMatrix.getRowDimension(),
-                                                       controlMatrix.getColumnDimension());
+                                                       transitionMatrix.getRowDimension(), 1);
         }
 
         // Q must be equal to A
@@ -203,11 +204,11 @@ public class KalmanFilter {
         }
 
         // row dimension of R must be equal to row dimension of H
-        if (measNoise.getRowDimension() != measurementMatrix.getRowDimension()) {
+        if (measNoise.getRowDimension() != measurementMatrix.getRowDimension() ||
+            measNoise.getColumnDimension() != 1) {
             throw new MatrixDimensionMismatchException(measNoise.getRowDimension(),
                                                        measNoise.getColumnDimension(),
-                                                       measurementMatrix.getRowDimension(),
-                                                       measNoise.getColumnDimension());
+                                                       measurementMatrix.getRowDimension(), 1);
         }
     }
 
@@ -281,7 +282,7 @@ public class KalmanFilter {
      *             if the dimension of the control vector does not fit
      */
     public void predict(final double[] u) throws DimensionMismatchException {
-        predict(new ArrayRealVector(u, false));
+        predict(new ArrayRealVector(u));
     }
 
     /**
@@ -330,7 +331,7 @@ public class KalmanFilter {
      */
     public void correct(final double[] z)
             throws NullArgumentException, DimensionMismatchException, SingularMatrixException {
-        correct(new ArrayRealVector(z, false));
+        correct(new ArrayRealVector(z));
     }
 
     /**
@@ -355,13 +356,16 @@ public class KalmanFilter {
                                                  measurementMatrix.getRowDimension());
         }
 
-        // S = H * P(k) * H' + R
+        // S = H * P(k) - * H' + R
         RealMatrix s = measurementMatrix.multiply(errorCovariance)
             .multiply(measurementMatrixT)
             .add(measurementModel.getMeasurementNoise());
 
         // invert S
-        RealMatrix invertedS = MatrixUtils.inverse(s);
+        // as the error covariance matrix is a symmetric positive
+        // semi-definite matrix, we can use the cholesky decomposition
+        DecompositionSolver solver = new CholeskyDecomposition(s).getSolver();
+        RealMatrix invertedS = solver.getInverse();
 
         // Inn = z(k) - H * xHat(k)-
         RealVector innovation = z.subtract(measurementMatrix.operate(stateEstimation));

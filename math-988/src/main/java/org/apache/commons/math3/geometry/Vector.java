@@ -16,6 +16,7 @@
  */
 package org.apache.commons.math3.geometry;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 
 import org.apache.commons.math3.exception.MathArithmeticException;
@@ -24,10 +25,15 @@ import org.apache.commons.math3.exception.MathArithmeticException;
  * @param <S> Type of the space.
  * @version $Id$
  * @see Space
- * @see Point
+ * @see Vector
  * @since 3.0
  */
-public interface Vector<S extends Space> extends Point<S> {
+public interface Vector<S extends Space> extends Serializable {
+
+    /** Get the space to which the vector belongs.
+     * @return containing space
+     */
+    Space getSpace();
 
     /** Get the null vector of the vectorial space or origin point of the affine space.
      * @return null vector of the vectorial space or origin point of the affine space
@@ -96,6 +102,12 @@ public interface Vector<S extends Space> extends Point<S> {
      * @return a new vector
      */
     Vector<S> scalarMultiply(double a);
+
+    /**
+     * Returns true if any coordinate of this vector is NaN; false otherwise
+     * @return  true if any coordinate of this vector is NaN; false otherwise
+     */
+    boolean isNaN();
 
     /**
      * Returns true if any coordinate of this vector is infinite and none are NaN;

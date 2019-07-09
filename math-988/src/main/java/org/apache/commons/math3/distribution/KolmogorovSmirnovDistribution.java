@@ -31,7 +31,6 @@ import org.apache.commons.math3.linear.Array2DRowFieldMatrix;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.FieldMatrix;
 import org.apache.commons.math3.linear.RealMatrix;
-import org.apache.commons.math3.util.FastMath;
 
 /**
  * Implementation of the Kolmogorov-Smirnov distribution.
@@ -69,8 +68,6 @@ import org.apache.commons.math3.util.FastMath;
  * @see <a href="http://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test">
  * Kolmogorov-Smirnov test (Wikipedia)</a>
  * @version $Id$
- * @deprecated to be removed in version 4.0 -
- *  use {@link org.apache.commmons.math3.stat.inference.KolmogorovSmirnovTest}
  */
 public class KolmogorovSmirnovDistribution implements Serializable {
 
@@ -172,7 +169,7 @@ public class KolmogorovSmirnovDistribution implements Serializable {
 
         } else if (1 - ninv <= d && d < 1) {
 
-            return 1 - 2 * FastMath.pow(1 - d, n);
+            return 1 - 2 * Math.pow(1 - d, n);
 
         } else if (1 <= d) {
 
@@ -196,7 +193,7 @@ public class KolmogorovSmirnovDistribution implements Serializable {
      */
     private double exactK(double d) throws MathArithmeticException {
 
-        final int k = (int) FastMath.ceil(n * d);
+        final int k = (int) Math.ceil(n * d);
 
         final FieldMatrix<BigFraction> H = this.createH(d);
         final FieldMatrix<BigFraction> Hpower = H.power(n);
@@ -228,7 +225,7 @@ public class KolmogorovSmirnovDistribution implements Serializable {
      */
     private double roundedK(double d) throws MathArithmeticException {
 
-        final int k = (int) FastMath.ceil(n * d);
+        final int k = (int) Math.ceil(n * d);
         final FieldMatrix<BigFraction> HBigFraction = this.createH(d);
         final int m = HBigFraction.getRowDimension();
 
@@ -269,7 +266,7 @@ public class KolmogorovSmirnovDistribution implements Serializable {
     private FieldMatrix<BigFraction> createH(double d)
             throws NumberIsTooLargeException, FractionConversionException {
 
-        int k = (int) FastMath.ceil(n * d);
+        int k = (int) Math.ceil(n * d);
 
         int m = 2 * k - 1;
         double hDouble = k - n * d;

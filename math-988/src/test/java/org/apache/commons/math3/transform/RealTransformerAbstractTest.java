@@ -99,7 +99,9 @@ public abstract class RealTransformerAbstractTest {
 
     /**
      * Returns a function for the accuracy check of
-     * {@link RealTransformer#transform(UnivariateFunction, double, double, int, TransformType)}.
+     * {@link RealTransformer#transform(UnivariateFunction, double, double, int)}
+     * and
+     * {@link RealTransformer#inverseTransform(UnivariateFunction, double, double, int)}.
      * This function should be valid. In other words, none of the above methods
      * should throw an exception when passed this function.
      *
@@ -109,7 +111,9 @@ public abstract class RealTransformerAbstractTest {
 
     /**
      * Returns a sampling lower bound for the accuracy check of
-     * {@link RealTransformer#transform(UnivariateFunction, double, double, int, TransformType)}.
+     * {@link RealTransformer#transform(UnivariateFunction, double, double, int)}
+     * and
+     * {@link RealTransformer#inverseTransform(UnivariateFunction, double, double, int)}.
      * This lower bound should be valid. In other words, none of the above
      * methods should throw an exception when passed this bound.
      *
@@ -119,7 +123,9 @@ public abstract class RealTransformerAbstractTest {
 
     /**
      * Returns a sampling upper bound for the accuracy check of
-     * {@link RealTransformer#transform(UnivariateFunction, double, double, int, TransformType)}.
+     * {@link RealTransformer#transform(UnivariateFunction, double, double, int)}
+     * and
+     * {@link RealTransformer#inverseTransform(UnivariateFunction, double, double, int)}.
      * This upper bound should be valid. In other words, none of the above
      * methods should throw an exception when passed this bound.
      *

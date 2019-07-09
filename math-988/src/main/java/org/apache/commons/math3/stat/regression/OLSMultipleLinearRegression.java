@@ -100,8 +100,6 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * a {@code NullPointerException} will be thrown.</p>
      *
      * @return the hat matrix
-     * @throws NullPointerException unless method {@code newSampleData} has been
-     * called beforehand.
      */
     public RealMatrix calculateHat() {
         // Create augmented identity matrix

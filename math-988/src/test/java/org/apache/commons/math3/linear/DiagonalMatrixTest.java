@@ -258,20 +258,6 @@ public class DiagonalMatrixTest {
         TestUtils.assertEquals(diagResult, denseResult, 0d);
     }
 
-    @Test
-    public void testPreMultiplyVector() {
-        final double[] data = { -1.2, 3.4, 5 };
-        final DiagonalMatrix diag = new DiagonalMatrix(data);
-        final RealMatrix dense = new Array2DRowRealMatrix(diag.getData());
-
-        final double[] v = { 6.7, 890.1, 23.4 };
-        final RealVector vector = MatrixUtils.createRealVector(v);
-        final RealVector diagResult = diag.preMultiply(vector);
-        final RealVector denseResult = dense.preMultiply(vector);
-
-        TestUtils.assertEquals("preMultiply(Vector) returns wrong result", diagResult, denseResult, 0d);
-    }
-
     @Test(expected=NumberIsTooLargeException.class)
     public void testSetNonDiagonalEntry() {
         final DiagonalMatrix diag = new DiagonalMatrix(3);
@@ -338,31 +324,6 @@ public class DiagonalMatrixTest {
         Assert.assertEquals(-1.2, diag.getEntry(0, 0), 1.0e-20);
         Assert.assertEquals( 5.0, diag.getEntry(1, 1), 1.0e-20);
         Assert.assertEquals( 6.0, diag.getEntry(2, 2), 1.0e-20);
-    }
-
-    @Test(expected=SingularMatrixException.class)
-    public void testInverseError() {
-        final double[] data = { 1, 2, 0 };
-        final DiagonalMatrix diag = new DiagonalMatrix(data);
-        diag.inverse();
-    }
-
-    @Test(expected=SingularMatrixException.class)
-    public void testInverseError2() {
-        final double[] data = { 1, 2, 1e-6 };
-        final DiagonalMatrix diag = new DiagonalMatrix(data);
-        diag.inverse(1e-5);
-    }
-
-    @Test
-    public void testInverse() {
-        final double[] data = { 1, 2, 3 };
-        final DiagonalMatrix m = new DiagonalMatrix(data);
-        final DiagonalMatrix inverse = m.inverse();
-
-        final DiagonalMatrix result = m.multiply(inverse);
-        TestUtils.assertEquals("DiagonalMatrix.inverse() returns wrong result",
-                MatrixUtils.createRealIdentityMatrix(data.length), result, Math.ulp(1d));
     }
 
 }

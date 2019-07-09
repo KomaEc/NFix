@@ -18,13 +18,11 @@ package org.apache.commons.math3.linear;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
-import java.util.Arrays;
 
 import org.apache.commons.math3.Field;
 import org.apache.commons.math3.FieldElement;
 import org.apache.commons.math3.TestUtils;
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
-import org.apache.commons.math3.exception.NumberIsTooSmallException;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.fraction.Fraction;
 import org.apache.commons.math3.fraction.FractionField;
@@ -50,7 +48,7 @@ public class ArrayFieldVectorTest {
     protected Fraction[] vec4 = { new Fraction(1), new Fraction(2), new Fraction(3),
                                   new Fraction(4), new Fraction(5), new Fraction(6),
                                   new Fraction(7), new Fraction(8), new Fraction(9)};
-    protected Fraction[] vec_null = {Fraction.ZERO, Fraction.ZERO, Fraction.ZERO};
+    protected Fraction[] vec_null = {new Fraction(0), new Fraction(0), new Fraction(0)};
     protected Fraction[] dvec1 = {new Fraction(1), new Fraction(2), new Fraction(3),
                                   new Fraction(4), new Fraction(5), new Fraction(6),
                                   new Fraction(7), new Fraction(8), new Fraction(9)};
@@ -251,7 +249,7 @@ public class ArrayFieldVectorTest {
         }
 
         public T[] toArray() {
-            return data.clone();
+            throw unsupported();
         }
 
     }
@@ -264,7 +262,7 @@ public class ArrayFieldVectorTest {
 
         ArrayFieldVector<Fraction> v1 = new ArrayFieldVector<Fraction>(FractionField.getInstance(), 7);
         Assert.assertEquals(7, v1.getDimension());
-        Assert.assertEquals(Fraction.ZERO, v1.getEntry(6));
+        Assert.assertEquals(new Fraction(0), v1.getEntry(6));
 
         ArrayFieldVector<Fraction> v2 = new ArrayFieldVector<Fraction>(5, new Fraction(123, 100));
         Assert.assertEquals(5, v2.getDimension());
@@ -304,7 +302,7 @@ public class ArrayFieldVectorTest {
 
         ArrayFieldVector<Fraction> v7 = new ArrayFieldVector<Fraction>(v1);
         Assert.assertEquals(7, v7.getDimension());
-        Assert.assertEquals(Fraction.ZERO, v7.getEntry(6));
+        Assert.assertEquals(new Fraction(0), v7.getEntry(6));
 
         FieldVectorTestImpl<Fraction> v7_i = new FieldVectorTestImpl<Fraction>(vec1);
 
@@ -314,15 +312,15 @@ public class ArrayFieldVectorTest {
 
         ArrayFieldVector<Fraction> v8 = new ArrayFieldVector<Fraction>(v1, true);
         Assert.assertEquals(7, v8.getDimension());
-        Assert.assertEquals(Fraction.ZERO, v8.getEntry(6));
+        Assert.assertEquals(new Fraction(0), v8.getEntry(6));
         Assert.assertNotSame("testData not same object ", v1.getDataRef(), v8.getDataRef());
 
         ArrayFieldVector<Fraction> v8_2 = new ArrayFieldVector<Fraction>(v1, false);
         Assert.assertEquals(7, v8_2.getDimension());
-        Assert.assertEquals(Fraction.ZERO, v8_2.getEntry(6));
+        Assert.assertEquals(new Fraction(0), v8_2.getEntry(6));
         Assert.assertArrayEquals(v1.getDataRef(), v8_2.getDataRef());
 
-        ArrayFieldVector<Fraction> v9 = new ArrayFieldVector<Fraction>((FieldVector<Fraction>) v1, (FieldVector<Fraction>) v3);
+        ArrayFieldVector<Fraction> v9 = new ArrayFieldVector<Fraction>(v1, v3);
         Assert.assertEquals(10, v9.getDimension());
         Assert.assertEquals(new Fraction(1), v9.getEntry(7));
 
@@ -350,7 +348,7 @@ public class ArrayFieldVectorTest {
 
         FieldVector<Fraction> v_copy = v1.copy();
         Assert.assertEquals(3, v_copy.getDimension());
-        Assert.assertNotSame("testData not same object ", v1.getDataRef(), v_copy.toArray());
+        Assert.assertNotSame("testData not same object ", v1.getDataRef(), v_copy.getData());
 
         Fraction[] a_frac = v1.toArray();
         Assert.assertEquals(3, a_frac.length);
@@ -431,57 +429,57 @@ public class ArrayFieldVectorTest {
         //octave =  v1 .+ 2.0
         FieldVector<Fraction> v_mapAdd = v1.mapAdd(new Fraction(2));
         Fraction[] result_mapAdd = {new Fraction(3), new Fraction(4), new Fraction(5)};
-        checkArray("compare vectors" ,result_mapAdd,v_mapAdd.toArray());
+        checkArray("compare vectors" ,result_mapAdd,v_mapAdd.getData());
 
         //octave =  v1 .+ 2.0
         FieldVector<Fraction> v_mapAddToSelf = v1.copy();
         v_mapAddToSelf.mapAddToSelf(new Fraction(2));
         Fraction[] result_mapAddToSelf = {new Fraction(3), new Fraction(4), new Fraction(5)};
-        checkArray("compare vectors" ,result_mapAddToSelf,v_mapAddToSelf.toArray());
+        checkArray("compare vectors" ,result_mapAddToSelf,v_mapAddToSelf.getData());
 
         //octave =  v1 .- 2.0
         FieldVector<Fraction> v_mapSubtract = v1.mapSubtract(new Fraction(2));
-        Fraction[] result_mapSubtract = {new Fraction(-1), Fraction.ZERO, new Fraction(1)};
-        checkArray("compare vectors" ,result_mapSubtract,v_mapSubtract.toArray());
+        Fraction[] result_mapSubtract = {new Fraction(-1), new Fraction(0), new Fraction(1)};
+        checkArray("compare vectors" ,result_mapSubtract,v_mapSubtract.getData());
 
         //octave =  v1 .- 2.0
         FieldVector<Fraction> v_mapSubtractToSelf = v1.copy();
         v_mapSubtractToSelf.mapSubtractToSelf(new Fraction(2));
-        Fraction[] result_mapSubtractToSelf = {new Fraction(-1), Fraction.ZERO, new Fraction(1)};
-        checkArray("compare vectors" ,result_mapSubtractToSelf,v_mapSubtractToSelf.toArray());
+        Fraction[] result_mapSubtractToSelf = {new Fraction(-1), new Fraction(0), new Fraction(1)};
+        checkArray("compare vectors" ,result_mapSubtractToSelf,v_mapSubtractToSelf.getData());
 
         //octave =  v1 .* 2.0
         FieldVector<Fraction> v_mapMultiply = v1.mapMultiply(new Fraction(2));
         Fraction[] result_mapMultiply = {new Fraction(2), new Fraction(4), new Fraction(6)};
-        checkArray("compare vectors" ,result_mapMultiply,v_mapMultiply.toArray());
+        checkArray("compare vectors" ,result_mapMultiply,v_mapMultiply.getData());
 
         //octave =  v1 .* 2.0
         FieldVector<Fraction> v_mapMultiplyToSelf = v1.copy();
         v_mapMultiplyToSelf.mapMultiplyToSelf(new Fraction(2));
         Fraction[] result_mapMultiplyToSelf = {new Fraction(2), new Fraction(4), new Fraction(6)};
-        checkArray("compare vectors" ,result_mapMultiplyToSelf,v_mapMultiplyToSelf.toArray());
+        checkArray("compare vectors" ,result_mapMultiplyToSelf,v_mapMultiplyToSelf.getData());
 
         //octave =  v1 ./ 2.0
         FieldVector<Fraction> v_mapDivide = v1.mapDivide(new Fraction(2));
         Fraction[] result_mapDivide = {new Fraction(1, 2), new Fraction(1), new Fraction(3, 2)};
-        checkArray("compare vectors" ,result_mapDivide,v_mapDivide.toArray());
+        checkArray("compare vectors" ,result_mapDivide,v_mapDivide.getData());
 
         //octave =  v1 ./ 2.0
         FieldVector<Fraction> v_mapDivideToSelf = v1.copy();
         v_mapDivideToSelf.mapDivideToSelf(new Fraction(2));
         Fraction[] result_mapDivideToSelf = {new Fraction(1, 2), new Fraction(1), new Fraction(3, 2)};
-        checkArray("compare vectors" ,result_mapDivideToSelf,v_mapDivideToSelf.toArray());
+        checkArray("compare vectors" ,result_mapDivideToSelf,v_mapDivideToSelf.getData());
 
         //octave =  v1 .^-1
         FieldVector<Fraction> v_mapInv = v1.mapInv();
         Fraction[] result_mapInv = {new Fraction(1),new Fraction(1, 2),new Fraction(1, 3)};
-        checkArray("compare vectors" ,result_mapInv,v_mapInv.toArray());
+        checkArray("compare vectors" ,result_mapInv,v_mapInv.getData());
 
         //octave =  v1 .^-1
         FieldVector<Fraction> v_mapInvToSelf = v1.copy();
         v_mapInvToSelf.mapInvToSelf();
         Fraction[] result_mapInvToSelf = {new Fraction(1),new Fraction(1, 2),new Fraction(1, 3)};
-        checkArray("compare vectors" ,result_mapInvToSelf,v_mapInvToSelf.toArray());
+        checkArray("compare vectors" ,result_mapInvToSelf,v_mapInvToSelf.getData());
 
     }
 
@@ -501,7 +499,7 @@ public class ArrayFieldVectorTest {
         FieldVectorTestImpl<Fraction> vt2 = new FieldVectorTestImpl<Fraction>(vec2);
         FieldVector<Fraction> v_add_i = v1.add(vt2);
         Fraction[] result_add_i = {new Fraction(5), new Fraction(7), new Fraction(9)};
-        checkArray("compare vect" ,v_add_i.toArray(),result_add_i);
+        checkArray("compare vect" ,v_add_i.getData(),result_add_i);
 
         //octave =  v1 - v2
         ArrayFieldVector<Fraction> v_subtract = v1.subtract(v2);
@@ -510,7 +508,7 @@ public class ArrayFieldVectorTest {
 
         FieldVector<Fraction> v_subtract_i = v1.subtract(vt2);
         Fraction[] result_subtract_i = {new Fraction(-3), new Fraction(-3), new Fraction(-3)};
-        checkArray("compare vect" ,v_subtract_i.toArray(),result_subtract_i);
+        checkArray("compare vect" ,v_subtract_i.getData(),result_subtract_i);
 
         // octave v1 .* v2
         ArrayFieldVector<Fraction>  v_ebeMultiply = v1.ebeMultiply(v2);
@@ -519,7 +517,7 @@ public class ArrayFieldVectorTest {
 
         FieldVector<Fraction>  v_ebeMultiply_2 = v1.ebeMultiply(v2_t);
         Fraction[] result_ebeMultiply_2 = {new Fraction(4), new Fraction(10), new Fraction(18)};
-        checkArray("compare vect" ,v_ebeMultiply_2.toArray(),result_ebeMultiply_2);
+        checkArray("compare vect" ,v_ebeMultiply_2.getData(),result_ebeMultiply_2);
 
         // octave v1 ./ v2
         ArrayFieldVector<Fraction>  v_ebeDivide = v1.ebeDivide(v2);
@@ -528,7 +526,7 @@ public class ArrayFieldVectorTest {
 
         FieldVector<Fraction>  v_ebeDivide_2 = v1.ebeDivide(v2_t);
         Fraction[] result_ebeDivide_2 = {new Fraction(1, 4), new Fraction(2, 5), new Fraction(1, 2)};
-        checkArray("compare vect" ,v_ebeDivide_2.toArray(),result_ebeDivide_2);
+        checkArray("compare vect" ,v_ebeDivide_2.getData(),result_ebeDivide_2);
 
         // octave  dot(v1,v2)
         Fraction dot =  v1.dotProduct(v2);
@@ -550,7 +548,7 @@ public class ArrayFieldVectorTest {
 
         FieldVector<Fraction> v_projection_2 = v1.projection(v2_t);
         Fraction[] result_projection_2 = {new Fraction(128, 77), new Fraction(160, 77), new Fraction(192, 77)};
-        checkArray("compare vect", v_projection_2.toArray(), result_projection_2);
+        checkArray("compare vect", v_projection_2.getData(), result_projection_2);
 
     }
 
@@ -659,539 +657,4 @@ public class ArrayFieldVectorTest {
         }
     }
 
-    /*
-     * TESTS OF THE VISITOR PATTERN
-     */
-
-    /** The whole vector is visited. */
-    @Test
-    public void testWalkInDefaultOrderPreservingVisitor1() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-
-            private int expectedIndex;
-
-            public void visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(expectedIndex, actualIndex);
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                ++expectedIndex;
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(0, actualStart);
-                Assert.assertEquals(data.length - 1, actualEnd);
-                expectedIndex = 0;
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInDefaultOrder(visitor);
-    }
-
-    /** Visiting an invalid subvector. */
-    @Test
-    public void testWalkInDefaultOrderPreservingVisitor2() {
-        final ArrayFieldVector<Fraction> v = create(5);
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-
-            public void visit(int index, Fraction value) {
-                // Do nothing
-            }
-
-            public void start(int dimension, int start, int end) {
-                // Do nothing
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        try {
-            v.walkInDefaultOrder(visitor, -1, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 5, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 0, -1);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 0, 5);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 4, 0);
-            Assert.fail();
-        } catch (NumberIsTooSmallException e) {
-            // Expected behavior
-        }
-    }
-
-    /** Visiting a valid subvector. */
-    @Test
-    public void testWalkInDefaultOrderPreservingVisitor3() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final int expectedStart = 2;
-        final int expectedEnd = 7;
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-
-            private int expectedIndex;
-
-            public void visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(expectedIndex, actualIndex);
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                ++expectedIndex;
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(expectedStart, actualStart);
-                Assert.assertEquals(expectedEnd, actualEnd);
-                expectedIndex = expectedStart;
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInDefaultOrder(visitor, expectedStart, expectedEnd);
-    }
-
-    /** The whole vector is visited. */
-    @Test
-    public void testWalkInOptimizedOrderPreservingVisitor1() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-            private final boolean[] visited = new boolean[data.length];
-
-            public void visit(final int actualIndex, final Fraction actualValue) {
-                visited[actualIndex] = true;
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(0, actualStart);
-                Assert.assertEquals(data.length - 1, actualEnd);
-                Arrays.fill(visited, false);
-            }
-
-            public Fraction end() {
-                for (int i = 0; i < data.length; i++) {
-                    Assert.assertTrue("entry " + i + "has not been visited",
-                                      visited[i]);
-                }
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInOptimizedOrder(visitor);
-    }
-
-    /** Visiting an invalid subvector. */
-    @Test
-    public void testWalkInOptimizedOrderPreservingVisitor2() {
-        final ArrayFieldVector<Fraction> v = create(5);
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-
-            public void visit(int index, Fraction value) {
-                // Do nothing
-            }
-
-            public void start(int dimension, int start, int end) {
-                // Do nothing
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        try {
-            v.walkInOptimizedOrder(visitor, -1, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 5, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 0, -1);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 0, 5);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 4, 0);
-            Assert.fail();
-        } catch (NumberIsTooSmallException e) {
-            // Expected behavior
-        }
-    }
-
-    /** Visiting a valid subvector. */
-    @Test
-    public void testWalkInOptimizedOrderPreservingVisitor3() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final int expectedStart = 2;
-        final int expectedEnd = 7;
-        final FieldVectorPreservingVisitor<Fraction> visitor;
-        visitor = new FieldVectorPreservingVisitor<Fraction>() {
-            private final boolean[] visited = new boolean[data.length];
-
-            public void visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                visited[actualIndex] = true;
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(expectedStart, actualStart);
-                Assert.assertEquals(expectedEnd, actualEnd);
-                Arrays.fill(visited, true);
-            }
-
-            public Fraction end() {
-                for (int i = expectedStart; i <= expectedEnd; i++) {
-                    Assert.assertTrue("entry " + i + "has not been visited",
-                                      visited[i]);
-                }
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInOptimizedOrder(visitor, expectedStart, expectedEnd);
-    }
-
-    /** The whole vector is visited. */
-    @Test
-    public void testWalkInDefaultOrderChangingVisitor1() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-
-            private int expectedIndex;
-
-            public Fraction visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(expectedIndex, actualIndex);
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                ++expectedIndex;
-                return actualValue.add(actualIndex);
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(0, actualStart);
-                Assert.assertEquals(data.length - 1, actualEnd);
-                expectedIndex = 0;
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInDefaultOrder(visitor);
-        for (int i = 0; i < data.length; i++) {
-            Assert.assertEquals("entry " + i, data[i].add(i), v.getEntry(i));
-        }
-    }
-
-    /** Visiting an invalid subvector. */
-    @Test
-    public void testWalkInDefaultOrderChangingVisitor2() {
-        final ArrayFieldVector<Fraction> v = create(5);
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-
-            public Fraction visit(int index, Fraction value) {
-                return Fraction.ZERO;
-            }
-
-            public void start(int dimension, int start, int end) {
-                // Do nothing
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        try {
-            v.walkInDefaultOrder(visitor, -1, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 5, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 0, -1);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 0, 5);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInDefaultOrder(visitor, 4, 0);
-            Assert.fail();
-        } catch (NumberIsTooSmallException e) {
-            // Expected behavior
-        }
-    }
-
-    /** Visiting a valid subvector. */
-    @Test
-    public void testWalkInDefaultOrderChangingVisitor3() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final int expectedStart = 2;
-        final int expectedEnd = 7;
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-
-            private int expectedIndex;
-
-            public Fraction visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(expectedIndex, actualIndex);
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                ++expectedIndex;
-                return actualValue.add(actualIndex);
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(expectedStart, actualStart);
-                Assert.assertEquals(expectedEnd, actualEnd);
-                expectedIndex = expectedStart;
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInDefaultOrder(visitor, expectedStart, expectedEnd);
-        for (int i = expectedStart; i <= expectedEnd; i++) {
-            Assert.assertEquals("entry " + i, data[i].add(i), v.getEntry(i));
-        }
-    }
-
-    /** The whole vector is visited. */
-    @Test
-    public void testWalkInOptimizedOrderChangingVisitor1() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-            private final boolean[] visited = new boolean[data.length];
-
-            public Fraction visit(final int actualIndex, final Fraction actualValue) {
-                visited[actualIndex] = true;
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                return actualValue.add(actualIndex);
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(0, actualStart);
-                Assert.assertEquals(data.length - 1, actualEnd);
-                Arrays.fill(visited, false);
-            }
-
-            public Fraction end() {
-                for (int i = 0; i < data.length; i++) {
-                    Assert.assertTrue("entry " + i + "has not been visited",
-                                      visited[i]);
-                }
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInOptimizedOrder(visitor);
-        for (int i = 0; i < data.length; i++) {
-            Assert.assertEquals("entry " + i, data[i].add(i), v.getEntry(i));
-        }
-    }
-
-    /** Visiting an invalid subvector. */
-    @Test
-    public void testWalkInOptimizedOrderChangingVisitor2() {
-        final ArrayFieldVector<Fraction> v = create(5);
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-
-            public Fraction visit(int index, Fraction value) {
-                return Fraction.ZERO;
-            }
-
-            public void start(int dimension, int start, int end) {
-                // Do nothing
-            }
-
-            public Fraction end() {
-                return Fraction.ZERO;
-            }
-        };
-        try {
-            v.walkInOptimizedOrder(visitor, -1, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 5, 4);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 0, -1);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 0, 5);
-            Assert.fail();
-        } catch (OutOfRangeException e) {
-            // Expected behavior
-        }
-        try {
-            v.walkInOptimizedOrder(visitor, 4, 0);
-            Assert.fail();
-        } catch (NumberIsTooSmallException e) {
-            // Expected behavior
-        }
-    }
-
-    /** Visiting a valid subvector. */
-    @Test
-    public void testWalkInOptimizedOrderChangingVisitor3() {
-        final Fraction[] data = new Fraction[] {
-            Fraction.ZERO, Fraction.ONE, Fraction.ZERO,
-            Fraction.ZERO, Fraction.TWO, Fraction.ZERO,
-            Fraction.ZERO, Fraction.ZERO, new Fraction(3)
-        };
-        final ArrayFieldVector<Fraction> v = new ArrayFieldVector<Fraction>(data);
-        final int expectedStart = 2;
-        final int expectedEnd = 7;
-        final FieldVectorChangingVisitor<Fraction> visitor;
-        visitor = new FieldVectorChangingVisitor<Fraction>() {
-            private final boolean[] visited = new boolean[data.length];
-
-            public Fraction visit(final int actualIndex, final Fraction actualValue) {
-                Assert.assertEquals(Integer.toString(actualIndex),
-                                    data[actualIndex], actualValue);
-                visited[actualIndex] = true;
-                return actualValue.add(actualIndex);
-            }
-
-            public void start(final int actualSize, final int actualStart,
-                              final int actualEnd) {
-                Assert.assertEquals(data.length, actualSize);
-                Assert.assertEquals(expectedStart, actualStart);
-                Assert.assertEquals(expectedEnd, actualEnd);
-                Arrays.fill(visited, true);
-            }
-
-            public Fraction end() {
-                for (int i = expectedStart; i <= expectedEnd; i++) {
-                    Assert.assertTrue("entry " + i + "has not been visited",
-                                      visited[i]);
-                }
-                return Fraction.ZERO;
-            }
-        };
-        v.walkInOptimizedOrder(visitor, expectedStart, expectedEnd);
-        for (int i = expectedStart; i <= expectedEnd; i++) {
-            Assert.assertEquals("entry " + i, data[i].add(i), v.getEntry(i));
-        }
-    }
-
-    private ArrayFieldVector<Fraction> create(int n) {
-        Fraction[] t = new Fraction[n];
-        for (int i = 0; i < n; ++i) {
-            t[i] = Fraction.ZERO;
-        }
-        return new ArrayFieldVector<Fraction>(t);
-    }
 }

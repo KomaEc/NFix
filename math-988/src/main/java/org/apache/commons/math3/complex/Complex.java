@@ -27,7 +27,6 @@ import org.apache.commons.math3.exception.NullArgumentException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
 import org.apache.commons.math3.util.FastMath;
 import org.apache.commons.math3.util.MathUtils;
-import org.apache.commons.math3.util.Precision;
 
 /**
  * Representation of a Complex number, i.e. a number which has both a
@@ -322,28 +321,19 @@ public class Complex implements FieldElement<Complex>, Serializable  {
     }
 
     /**
-     * Test for equality with another object.
+     * Test for the equality of two Complex objects.
      * If both the real and imaginary parts of two complex numbers
      * are exactly the same, and neither is {@code Double.NaN}, the two
      * Complex objects are considered to be equal.
-     * The behavior is the same as for JDK's {@link Double#equals(Object)
-     * Double}:
-     * <ul>
-     *  <li>All {@code NaN} values are considered to be equal,
-     *   i.e, if either (or both) real and imaginary parts of the complex
-     *   number are equal to {@code Double.NaN}, the complex number is equal
-     *   to {@code NaN}.
-     *  </li>
-     *  <li>
-     *   Instances constructed with different representations of zero (i.e.
-     *   either "0" or "-0") are <em>not</em> considered to be equal.
-     *  </li>
-     * </ul>
+     * All {@code NaN} values are considered to be equal - i.e, if either
+     * (or both) real and imaginary parts of the complex number are equal
+     * to {@code Double.NaN}, the complex number is equal to
+     * {@code NaN}.
      *
-     * @param other Object to test for equality with this instance.
-     * @return {@code true} if the objects are equal, {@code false} if object
-     * is {@code null}, not an instance of {@code Complex}, or not equal to
-     * this instance.
+     * @param other Object to test for equality to this
+     * @return true if two Complex objects are equal, false if object is
+     * {@code null}, not an instance of Complex, or not equal to this Complex
+     * instance.
      */
     @Override
     public boolean equals(Object other) {
@@ -351,92 +341,14 @@ public class Complex implements FieldElement<Complex>, Serializable  {
             return true;
         }
         if (other instanceof Complex){
-            Complex c = (Complex) other;
+            Complex c = (Complex)other;
             if (c.isNaN) {
                 return isNaN;
             } else {
-                return MathUtils.equals(real, c.real) &&
-                    MathUtils.equals(imaginary, c.imaginary);
+                return (real == c.real) && (imaginary == c.imaginary);
             }
         }
         return false;
-    }
-
-    /**
-     * Test for the floating-point equality between Complex objects.
-     * It returns {@code true} if both arguments are equal or within the
-     * range of allowed error (inclusive).
-     *
-     * @param x First value (cannot be {@code null}).
-     * @param y Second value (cannot be {@code null}).
-     * @param maxUlps {@code (maxUlps - 1)} is the number of floating point
-     * values between the real (resp. imaginary) parts of {@code x} and
-     * {@code y}.
-     * @return {@code true} if there are fewer than {@code maxUlps} floating
-     * point values between the real (resp. imaginary) parts of {@code x}
-     * and {@code y}.
-     *
-     * @see Precision#equals(double,double,int)
-     * @since 3.3
-     */
-    public static boolean equals(Complex x, Complex y, int maxUlps) {
-        return Precision.equals(x.real, y.real, maxUlps) &&
-            Precision.equals(x.imaginary, y.imaginary, maxUlps);
-    }
-
-    /**
-     * Returns {@code true} iff the values are equal as defined by
-     * {@link #equals(Complex,Complex,int) equals(x, y, 1)}.
-     *
-     * @param x First value (cannot be {@code null}).
-     * @param y Second value (cannot be {@code null}).
-     * @return {@code true} if the values are equal.
-     *
-     * @since 3.3
-     */
-    public static boolean equals(Complex x, Complex y) {
-        return equals(x, y, 1);
-    }
-
-    /**
-     * Returns {@code true} if, both for the real part and for the imaginary
-     * part, there is no double value strictly between the arguments or the
-     * difference between them is within the range of allowed error
-     * (inclusive).
-     *
-     * @param x First value (cannot be {@code null}).
-     * @param y Second value (cannot be {@code null}).
-     * @param eps Amount of allowed absolute error.
-     * @return {@code true} if the values are two adjacent floating point
-     * numbers or they are within range of each other.
-     *
-     * @see Precision#equals(double,double,double)
-     * @since 3.3
-     */
-    public static boolean equals(Complex x, Complex y, double eps) {
-        return Precision.equals(x.real, y.real, eps) &&
-            Precision.equals(x.imaginary, y.imaginary, eps);
-    }
-
-    /**
-     * Returns {@code true} if, both for the real part and for the imaginary
-     * part, there is no double value strictly between the arguments or the
-     * relative difference between them is smaller or equal to the given
-     * tolerance.
-     *
-     * @param x First value (cannot be {@code null}).
-     * @param y Second value (cannot be {@code null}).
-     * @param eps Amount of allowed relative error.
-     * @return {@code true} if the values are two adjacent floating point
-     * numbers or they are within range of each other.
-     *
-     * @see Precision#equalsWithRelativeTolerance(double,double,double)
-     * @since 3.3
-     */
-    public static boolean equalsWithRelativeTolerance(Complex x, Complex y,
-                                                      double eps) {
-        return Precision.equalsWithRelativeTolerance(x.real, y.real, eps) &&
-            Precision.equalsWithRelativeTolerance(x.imaginary, y.imaginary, eps);
     }
 
     /**
@@ -722,7 +634,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  </code>
      * </pre>
      * where the (real) functions on the right-hand side are
-     * {@link FastMath#sin}, {@link FastMath#cos},
+     * {@link java.lang.Math#sin}, {@link java.lang.Math#cos},
      * {@link FastMath#cosh} and {@link FastMath#sinh}.
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
@@ -762,7 +674,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  </code>
      * </pre>
      * where the (real) functions on the right-hand side are
-     * {@link FastMath#sin}, {@link FastMath#cos},
+     * {@link java.lang.Math#sin}, {@link java.lang.Math#cos},
      * {@link FastMath#cosh} and {@link FastMath#sinh}.
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
@@ -802,8 +714,8 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  </code>
      * </pre>
      * where the (real) functions on the right-hand side are
-     * {@link FastMath#exp}, {@link FastMath#cos}, and
-     * {@link FastMath#sin}.
+     * {@link java.lang.Math#exp}, {@link java.lang.Math#cos}, and
+     * {@link java.lang.Math#sin}.
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
      * input argument is {@code NaN}.
@@ -843,9 +755,9 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *   log(a + bi) = ln(|a + bi|) + arg(a + bi)i
      *  </code>
      * </pre>
-     * where ln on the right hand side is {@link FastMath#log},
+     * where ln on the right hand side is {@link java.lang.Math#log},
      * {@code |a + bi|} is the modulus, {@link Complex#abs},  and
-     * {@code arg(a + bi) = }{@link FastMath#atan2}(b, a).
+     * {@code arg(a + bi) = }{@link java.lang.Math#atan2}(b, a).
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
      * input argument is {@code NaN}.
@@ -926,7 +838,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  </code>
      * </pre>
      * where the (real) functions on the right-hand side are
-     * {@link FastMath#sin}, {@link FastMath#cos},
+     * {@link java.lang.Math#sin}, {@link java.lang.Math#cos},
      * {@link FastMath#cosh} and {@link FastMath#sinh}.
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
@@ -966,7 +878,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  </code>
      * </pre>
      * where the (real) functions on the right-hand side are
-     * {@link FastMath#sin}, {@link FastMath#cos},
+     * {@link java.lang.Math#sin}, {@link java.lang.Math#cos},
      * {@link FastMath#cosh} and {@link FastMath#sinh}.
      * <br/>
      * Returns {@link Complex#NaN} if either real or imaginary part of the
@@ -1005,7 +917,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      *  else return {@code |b|/2t + sign(b)t i }</pre></li>
      * </ol>
      * where <ul>
-     * <li>{@code |a| = }{@link FastMath#abs}(a)</li>
+     * <li>{@code |a| = }{@link Math#abs}(a)</li>
      * <li>{@code |a + bi| = }{@link Complex#abs}(a + bi)</li>
      * <li>{@code sign(b) =  }{@link FastMath#copySign(double,double) copySign(1d, b)}
      * </ul>

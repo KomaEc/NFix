@@ -20,19 +20,11 @@ package org.apache.commons.math3.linear;
 import java.util.Random;
 
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
-import org.apache.commons.math3.util.Precision;
 
 import org.junit.Test;
 import org.junit.Assert;
 
 public class EigenSolverTest {
-
-    private double[][] bigSingular = {
-        { 1.0, 2.0,   3.0,    4.0 },
-        { 2.0, 5.0,   3.0,    4.0 },
-        { 7.0, 3.0, 256.0, 1930.0 },
-        { 3.0, 7.0,   6.0,    8.0 }
-    }; // 4th row = 1st + 2nd
 
     /** test non invertible matrix */
     @Test
@@ -62,60 +54,6 @@ public class EigenSolverTest {
         RealMatrix error =
             m.multiply(inverse).subtract(MatrixUtils.createRealIdentityMatrix(m.getRowDimension()));
         Assert.assertEquals(0, error.getNorm(), 4.0e-15);
-    }
-
-    /**
-     * Verifies operation on very small values.
-     * Matrix with eigenvalues {8e-100, -1e-100, -1e-100}
-     */
-    @Test
-    public void testInvertibleTinyValues() {
-        final double tiny = 1e-100;
-        RealMatrix m = MatrixUtils.createRealMatrix(new double[][] {
-                {3,  2,  4},
-                {2,  0,  2},
-                {4,  2,  3}
-        });
-        m = m.scalarMultiply(tiny);
-
-        final EigenDecomposition ed = new EigenDecomposition(m);
-        RealMatrix inv = ed.getSolver().getInverse();
-
-        final RealMatrix id = m.multiply(inv);
-        for (int i = 0; i < m.getRowDimension(); i++) {
-            for (int j = 0; j < m.getColumnDimension(); j++) {
-                if (i == j) {
-                    Assert.assertTrue(Precision.equals(1, id.getEntry(i, j), 1e-15));
-                } else {
-                    Assert.assertTrue(Precision.equals(0, id.getEntry(i, j), 1e-15));
-                }
-            }
-        }
-    }
-
-    @Test(expected=SingularMatrixException.class)
-    public void testNonInvertibleMath1045() {
-        EigenDecomposition eigen =
-            new EigenDecomposition(MatrixUtils.createRealMatrix(bigSingular));
-        eigen.getSolver().getInverse();
-    }
-
-    @Test(expected=SingularMatrixException.class)
-    public void testZeroMatrix() {
-        EigenDecomposition eigen =
-            new EigenDecomposition(MatrixUtils.createRealMatrix(new double[][] {{0}}));
-        eigen.getSolver().getInverse();
-    }
-
-    @Test
-    public void testIsNonSingularTinyOutOfOrderEigenvalue() {
-        final EigenDecomposition eigen
-            = new EigenDecomposition(MatrixUtils.createRealMatrix(new double[][] {
-                        { 1e-13, 0 },
-                        { 1,     1 },
-                    }));
-        Assert.assertFalse("Singular matrix not detected",
-                           eigen.getSolver().isNonSingular());
     }
 
     /** test solve dimension errors */

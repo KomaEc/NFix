@@ -16,13 +16,9 @@
  */
 package org.apache.commons.math3.geometry.partitioning;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.math3.exception.MathInternalError;
-import org.apache.commons.math3.geometry.Point;
-import org.apache.commons.math3.geometry.Space;
 import org.apache.commons.math3.geometry.Vector;
+import org.apache.commons.math3.geometry.Space;
 import org.apache.commons.math3.util.FastMath;
 
 /** This class represent a Binary Space Partition tree.
@@ -106,7 +102,7 @@ public class BSPTree<S extends Space> {
      * <p>This method does <em>not</em> perform any verification on
      * consistency of its arguments, it should therefore be used only
      * when then caller knows what it is doing.</p>
-     * <p>This method is mainly useful to build trees
+     * <p>This method is mainly useful kto build trees
      * bottom-up. Building trees top-down is realized with the help of
      * method {@link #insertCut insertCut}.</p>
      * @param cut cut sub-hyperplane for the tree
@@ -174,7 +170,7 @@ public class BSPTree<S extends Space> {
     }
 
     /** Copy the instance.
-     * <p>The instance created is completely independent of the original
+     * <p>The instance created is completely independant of the original
      * one. A deep copy is used, none of the underlying objects are
      * shared (except for the nodes attributes and immutable
      * objects).</p>
@@ -309,24 +305,9 @@ public class BSPTree<S extends Space> {
      * interior of the node, if the cell is an internal node the points
      * belongs to the node cut sub-hyperplane.</p>
      * @param point point to check
-     * @return the tree cell to which the point belongs
-     * @deprecated as of 3.3, replaced with {@link #getCell(Point, double)}
+     * @return the tree cell to which the point belongs (can be
      */
-    @Deprecated
     public BSPTree<S> getCell(final Vector<S> point) {
-        return getCell((Point<S>) point, 1.0e-10);
-    }
-
-    /** Get the cell to which a point belongs.
-     * <p>If the returned cell is a leaf node the points belongs to the
-     * interior of the node, if the cell is an internal node the points
-     * belongs to the node cut sub-hyperplane.</p>
-     * @param point point to check
-     * @param tolerance tolerance below which points close to a cut hyperplane
-     * are considered to belong to the hyperplane itself
-     * @return the tree cell to which the point belongs
-     */
-    public BSPTree<S> getCell(final Point<S> point, final double tolerance) {
 
         if (cut == null) {
             return this;
@@ -335,63 +316,21 @@ public class BSPTree<S extends Space> {
         // position of the point with respect to the cut hyperplane
         final double offset = cut.getHyperplane().getOffset(point);
 
-        if (FastMath.abs(offset) < tolerance) {
+        if (FastMath.abs(offset) < 1.0e-10) {
             return this;
         } else if (offset <= 0) {
             // point is on the minus side of the cut hyperplane
-            return minus.getCell(point, tolerance);
+            return minus.getCell(point);
         } else {
             // point is on the plus side of the cut hyperplane
-            return plus.getCell(point, tolerance);
+            return plus.getCell(point);
         }
 
-    }
-
-    /** Get the cells whose cut sub-hyperplanes are close to the point.
-     * @param point point to check
-     * @param maxOffset offset below which a cut sub-hyperplane is considered
-     * close to the point (in absolute value)
-     * @return close cells (may be empty if all cut sub-hyperplanes are farther
-     * than maxOffset from the point)
-     */
-    public List<BSPTree<S>> getCloseCuts(final Point<S> point, final double maxOffset) {
-        final List<BSPTree<S>> close = new ArrayList<BSPTree<S>>();
-        recurseCloseCuts(point, maxOffset, close);
-        return close;
-    }
-
-    /** Get the cells whose cut sub-hyperplanes are close to the point.
-     * @param point point to check
-     * @param maxOffset offset below which a cut sub-hyperplane is considered
-     * close to the point (in absolute value)
-     * @param close list to fill
-     */
-    private void recurseCloseCuts(final Point<S> point, final double maxOffset,
-                                  final List<BSPTree<S>> close) {
-        if (cut != null) {
-
-            // position of the point with respect to the cut hyperplane
-            final double offset = cut.getHyperplane().getOffset(point);
-
-            if (offset < -maxOffset) {
-                // point is on the minus side of the cut hyperplane
-                minus.recurseCloseCuts(point, maxOffset, close);
-            } else if (offset > maxOffset) {
-                // point is on the plus side of the cut hyperplane
-                plus.recurseCloseCuts(point, maxOffset, close);
-            } else {
-                // point is close to the cut hyperplane
-                close.add(this);
-                minus.recurseCloseCuts(point, maxOffset, close);
-                plus.recurseCloseCuts(point, maxOffset, close);
-            }
-
-        }
     }
 
     /** Perform condensation on a tree.
      * <p>The condensation operation is not recursive, it must be called
-     * explicitly from leaves to root.</p>
+     * explicitely from leaves to root.</p>
      */
     private void condense() {
         if ((cut != null) && (plus.cut == null) && (minus.cut == null) &&
@@ -662,47 +601,6 @@ public class BSPTree<S extends Space> {
             condense();
 
         }
-
-    }
-
-    /** Prune a tree around a cell.
-     * <p>
-     * This method can be used to extract a convex cell from a tree.
-     * The original cell may either be a leaf node or an internal node.
-     * If it is an internal node, it's subtree will be ignored (i.e. the
-     * extracted cell will be a leaf node in all cases). The original
-     * tree to which the original cell belongs is not touched at all,
-     * a new independent tree will be built.
-     * </p>
-     * @param cellAttribute attribute to set for the leaf node
-     * corresponding to the initial instance cell
-     * @param otherLeafsAttributes attribute to set for the other leaf
-     * nodes
-     * @param internalAttributes attribute to set for the internal nodes
-     * @return a new tree (the original tree is left untouched) containing
-     * a single branch with the cell as a leaf node, and other leaf nodes
-     * as the remnants of the pruned branches
-     * @since 3.3
-     */
-    public BSPTree<S> pruneAroundConvexCell(final Object cellAttribute,
-                                            final Object otherLeafsAttributes,
-                                            final Object internalAttributes) {
-
-        // build the current cell leaf
-        BSPTree<S> tree = new BSPTree<S>(cellAttribute);
-
-        // build the pruned tree bottom-up
-        for (BSPTree<S> current = this; current.parent != null; current = current.parent) {
-            final SubHyperplane<S> parentCut = current.parent.cut.copySelf();
-            final BSPTree<S>       sibling   = new BSPTree<S>(otherLeafsAttributes);
-            if (current == current.parent.plus) {
-                tree = new BSPTree<S>(parentCut, tree, sibling, internalAttributes);
-            } else {
-                tree = new BSPTree<S>(parentCut, sibling, tree, internalAttributes);
-            }
-        }
-
-        return tree;
 
     }
 

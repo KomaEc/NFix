@@ -105,7 +105,7 @@
   <!-- The following equality test is intentional and needed for rounding purposes -->
   <Match>
     <Class name="org.apache.commons.math3.util.Precision" />
-    <Method name="roundUnscaled" params="double,double,int" returns="double" />
+	<Method name="roundUnscaled" params="double,double,int" returns="double" />
     <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
   </Match>
 
@@ -361,13 +361,6 @@
     <Class name="org.apache.commons.math3.stat.inference.MannWhitneyUTest" />
     <Method name="mannWhitneyU" params="double[],double[]" returns="double" />
     <Bug pattern="ICAST_IDIV_CAST_TO_DOUBLE" />
-  </Match>
-
-  <!-- The following switch fall-through is intended. -->
-  <Match>
-    <Class name="org.apache.commons.math3.ml.neuralnet.twod.NeuronSquareMesh2D" />
-    <Method name="createLinks" />
-    <Bug pattern="SF_SWITCH_FALLTHROUGH" />
   </Match>
 
 </FindBugsFilter>

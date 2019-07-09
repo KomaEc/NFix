@@ -191,7 +191,7 @@ public class BigFraction
         }
         int k = ((int) (exponent >> 52)) - 1075;
         while (((m & 0x001ffffffffffffeL) != 0) && ((m & 0x1) == 0)) {
-            m >>= 1;
+            m = m >> 1;
             ++k;
         }
 
@@ -272,8 +272,7 @@ public class BigFraction
         long overflow = Integer.MAX_VALUE;
         double r0 = value;
         long a0 = (long) FastMath.floor(r0);
-
-        if (FastMath.abs(a0) > overflow) {
+        if (a0 > overflow) {
             throw new FractionConversionException(value, a0, 1l);
         }
 
@@ -302,11 +301,6 @@ public class BigFraction
             p2 = (a1 * p1) + p0;
             q2 = (a1 * q1) + q0;
             if ((p2 > overflow) || (q2 > overflow)) {
-                // in maxDenominator mode, if the last fraction was very close to the actual value
-                // q2 may overflow in the next iteration; in this case return the last one.
-                if (epsilon == 0.0 && FastMath.abs(q1) < maxDenominator) {
-                    break;
-                }
                 throw new FractionConversionException(value, p2, q2);
             }
 
@@ -689,8 +683,8 @@ public class BigFraction
         if (Double.isNaN(result)) {
             // Numerator and/or denominator must be out of range:
             // Calculate how far to shift them to put them in range.
-            int shift = FastMath.max(numerator.bitLength(),
-                                     denominator.bitLength()) - FastMath.getExponent(Double.MAX_VALUE);
+            int shift = Math.max(numerator.bitLength(),
+                                 denominator.bitLength()) - FastMath.getExponent(Double.MAX_VALUE);
             result = numerator.shiftRight(shift).doubleValue() /
                 denominator.shiftRight(shift).doubleValue();
         }
@@ -742,8 +736,8 @@ public class BigFraction
         if (Double.isNaN(result)) {
             // Numerator and/or denominator must be out of range:
             // Calculate how far to shift them to put them in range.
-            int shift = FastMath.max(numerator.bitLength(),
-                                     denominator.bitLength()) - FastMath.getExponent(Float.MAX_VALUE);
+            int shift = Math.max(numerator.bitLength(),
+                                 denominator.bitLength()) - FastMath.getExponent(Float.MAX_VALUE);
             result = numerator.shiftRight(shift).floatValue() /
                 denominator.shiftRight(shift).floatValue();
         }

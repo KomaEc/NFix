@@ -64,7 +64,7 @@ import org.apache.commons.math3.util.MathUtils;
  *
  * @param <T> type of the points to cluster
  * @version $Id$
- * @since 3.3
+ * @since 4.0
  */
 public class FuzzyKMeansClusterer<T extends Clusterable> extends Clusterer<T> {
 
@@ -265,7 +265,6 @@ public class FuzzyKMeansClusterer<T extends Clusterable> extends Clusterer<T> {
      * @throws MathIllegalArgumentException if the data points are null or the number
      *     of clusters is larger than the number of data points
      */
-    @Override
     public List<CentroidCluster<T>> cluster(final Collection<T> dataPoints)
             throws MathIllegalArgumentException {
 

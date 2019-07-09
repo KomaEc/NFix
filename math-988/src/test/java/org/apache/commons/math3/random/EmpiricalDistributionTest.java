@@ -36,7 +36,6 @@ import org.apache.commons.math3.distribution.UniformRealDistribution;
 import org.apache.commons.math3.exception.NullArgumentException;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
-import org.apache.commons.math3.util.FastMath;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,7 +55,6 @@ public final class EmpiricalDistributionTest extends RealDistributionAbstractTes
     protected double[] dataArray = null;
     protected final int n = 10000;
 
-    @Override
     @Before
     public void setUp() {
         super.setUp();
@@ -321,10 +319,10 @@ public final class EmpiricalDistributionTest extends RealDistributionAbstractTes
     }
     
     /** Uniform bin mass = 10/10001 == mass of all but the first bin */
-    private final double binMass = 10d / (n + 1);
+    private final double binMass = 10d / (double) (n + 1);
     
     /** Mass of first bin = 11/10001 */
-    private final double firstBinMass = 11d / (n + 1);
+    private final double firstBinMass = 11d / (double) (n + 1);
 
     @Override
     public double[] makeCumulativeTestPoints() {
@@ -414,10 +412,10 @@ public final class EmpiricalDistributionTest extends RealDistributionAbstractTes
      */
     private int findBin(double x) {
         // Number of bins below x should be trunc(x/10)
-        final double nMinus = FastMath.floor(x / 10);
-        final int bin =  (int) FastMath.round(nMinus);
+        final double nMinus = Math.floor(x / 10);
+        final int bin =  (int) Math.round(nMinus);
         // If x falls on a bin boundary, it is in the lower bin
-        return FastMath.floor(x / 10) == x / 10 ? bin - 1 : bin;
+        return Math.floor(x / 10) == x / 10 ? bin - 1 : bin;
     }
     
     /**
@@ -501,7 +499,6 @@ public final class EmpiricalDistributionTest extends RealDistributionAbstractTes
             super(i);
         }
         // Use constant distribution equal to bin mean within bin
-        @Override
         protected RealDistribution getKernel(SummaryStatistics bStats) {
             return new ConstantDistribution(bStats.getMean());
         }
@@ -511,11 +508,9 @@ public final class EmpiricalDistributionTest extends RealDistributionAbstractTes
      * Empirical distribution using a uniform smoothing kernel.
      */
     private class UniformKernelEmpiricalDistribution extends EmpiricalDistribution {
-        private static final long serialVersionUID = 2963149194515159653L;
         public UniformKernelEmpiricalDistribution(int i) {
             super(i);
         }
-        @Override
         protected RealDistribution getKernel(SummaryStatistics bStats) {
             return new UniformRealDistribution(randomData.getRandomGenerator(), bStats.getMin(), bStats.getMax(),
                     UniformRealDistribution.DEFAULT_INVERSE_ABSOLUTE_ACCURACY);

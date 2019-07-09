@@ -18,8 +18,8 @@ package org.apache.commons.math3.optim.nonlinear.scalar;
 
 import org.apache.commons.math3.analysis.MultivariateFunction;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.apache.commons.math3.optim.InitialGuess;
 import org.apache.commons.math3.optim.MaxEval;
+import org.apache.commons.math3.optim.InitialGuess;
 import org.apache.commons.math3.optim.PointValuePair;
 import org.apache.commons.math3.optim.SimpleValueChecker;
 import org.apache.commons.math3.optim.nonlinear.scalar.gradient.CircleScalar;
@@ -54,32 +54,24 @@ public class MultiStartMultivariateOptimizerTest {
             = new UncorrelatedRandomVectorGenerator(new double[] { 50, 50 },
                                                     new double[] { 10, 10 },
                                                     new GaussianRandomGenerator(g));
-        int nbStarts = 10;
         MultiStartMultivariateOptimizer optimizer
-            = new MultiStartMultivariateOptimizer(underlying, nbStarts, generator);
+            = new MultiStartMultivariateOptimizer(underlying, 10, generator);
         PointValuePair optimum
-            = optimizer.optimize(new MaxEval(1000),
+            = optimizer.optimize(new MaxEval(200),
                                  circle.getObjectiveFunction(),
                                  circle.getObjectiveFunctionGradient(),
                                  GoalType.MINIMIZE,
                                  new InitialGuess(new double[] { 98.680, 47.345 }));
-        Assert.assertEquals(1000, optimizer.getMaxEvaluations());
+        Assert.assertEquals(200, optimizer.getMaxEvaluations());
         PointValuePair[] optima = optimizer.getOptima();
-        Assert.assertEquals(nbStarts, optima.length);
         for (PointValuePair o : optima) {
-            // we check the results of all intermediate restarts here (there are 10 such results)
             Vector2D center = new Vector2D(o.getPointRef()[0], o.getPointRef()[1]);
-            Assert.assertTrue(69.9592 < circle.getRadius(center));
-            Assert.assertTrue(69.9602 > circle.getRadius(center));
-            Assert.assertTrue(96.0745 < center.getX());
-            Assert.assertTrue(96.0762 > center.getX());
-            Assert.assertTrue(48.1344 < center.getY());
-            Assert.assertTrue(48.1354 > center.getY());
+            Assert.assertEquals(69.960161753, circle.getRadius(center), 1e-8);
+            Assert.assertEquals(96.075902096, center.getX(), 1e-8);
+            Assert.assertEquals(48.135167894, center.getY(), 1e-8);
         }
-
-        Assert.assertTrue(optimizer.getEvaluations() > 850);
-        Assert.assertTrue(optimizer.getEvaluations() < 900);
-
+        Assert.assertTrue(optimizer.getEvaluations() > 70);
+        Assert.assertTrue(optimizer.getEvaluations() < 90);
         Assert.assertEquals(3.1267527, optimum.getValue(), 1e-8);
     }
 
@@ -97,21 +89,19 @@ public class MultiStartMultivariateOptimizerTest {
         g.setSeed(16069223052l);
         RandomVectorGenerator generator
             = new UncorrelatedRandomVectorGenerator(2, new GaussianRandomGenerator(g));
-        int nbStarts = 10;
         MultiStartMultivariateOptimizer optimizer
-            = new MultiStartMultivariateOptimizer(underlying, nbStarts, generator);
+            = new MultiStartMultivariateOptimizer(underlying, 10, generator);
         PointValuePair optimum
             = optimizer.optimize(new MaxEval(1100),
                                  new ObjectiveFunction(rosenbrock),
                                  GoalType.MINIMIZE,
                                  simplex,
                                  new InitialGuess(new double[] { -1.2, 1.0 }));
-        Assert.assertEquals(nbStarts, optimizer.getOptima().length);
 
         Assert.assertEquals(rosenbrock.getCount(), optimizer.getEvaluations());
         Assert.assertTrue(optimizer.getEvaluations() > 900);
         Assert.assertTrue(optimizer.getEvaluations() < 1200);
-        Assert.assertTrue(optimum.getValue() < 5e-5);
+        Assert.assertTrue(optimum.getValue() < 8e-4);
     }
 
     private static class Rosenbrock implements MultivariateFunction {

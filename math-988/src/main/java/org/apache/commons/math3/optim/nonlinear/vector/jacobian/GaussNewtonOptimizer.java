@@ -47,12 +47,8 @@ import org.apache.commons.math3.optim.PointVectorValuePair;
  *
  * @version $Id$
  * @since 2.0
- * @deprecated All classes and interfaces in this package are deprecated.
- * The optimizers that were provided here were moved to the
- * {@link org.apache.commons.math3.fitting.leastsquares} package
- * (cf. MATH-1008).
+ *
  */
-@Deprecated
 public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
     /** Indicator for using LU decomposition. */
     private final boolean useLU;
@@ -143,15 +139,6 @@ public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
                 }
             }
 
-            // Check convergence.
-            if (previous != null) {
-                converged = checker.converged(getIterations(), previous, current);
-                if (converged) {
-                    setCost(computeCost(currentResiduals));
-                    return current;
-                }
-            }
-
             try {
                 // solve the linearized least squares problem
                 RealMatrix mA = new BlockRealMatrix(a);
@@ -165,6 +152,15 @@ public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
                 }
             } catch (SingularMatrixException e) {
                 throw new ConvergenceException(LocalizedFormats.UNABLE_TO_SOLVE_SINGULAR_PROBLEM);
+            }
+
+            // Check convergence.
+            if (previous != null) {
+                converged = checker.converged(getIterations(), previous, current);
+                if (converged) {
+                    setCost(computeCost(currentResiduals));
+                    return current;
+                }
             }
         }
         // Must never happen.

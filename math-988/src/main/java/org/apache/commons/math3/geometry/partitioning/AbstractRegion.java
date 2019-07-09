@@ -25,9 +25,7 @@ import java.util.TreeSet;
 
 import org.apache.commons.math3.exception.MathInternalError;
 import org.apache.commons.math3.geometry.Space;
-import org.apache.commons.math3.geometry.Point;
 import org.apache.commons.math3.geometry.Vector;
-import org.apache.commons.math3.geometry.partitioning.Region.Location;
 
 /** Abstract class for all regions, independently of geometry type or dimension.
 
@@ -42,21 +40,16 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
     /** Inside/Outside BSP tree. */
     private BSPTree<S> tree;
 
-    /** Tolerance below which points are considered to belong to hyperplanes. */
-    private final double tolerance;
-
     /** Size of the instance. */
     private double size;
 
     /** Barycenter. */
-    private Point<S> barycenter;
+    private Vector<S> barycenter;
 
     /** Build a region representing the whole space.
-     * @param tolerance tolerance below which points are considered identical.
      */
-    protected AbstractRegion(final double tolerance) {
-        this.tree      = new BSPTree<S>(Boolean.TRUE);
-        this.tolerance = tolerance;
+    protected AbstractRegion() {
+        tree = new BSPTree<S>(Boolean.TRUE);
     }
 
     /** Build a region from an inside/outside BSP tree.
@@ -70,11 +63,9 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
      * internal nodes representing the boundary as specified in the
      * {@link #getTree getTree} method).</p>
      * @param tree inside/outside BSP tree representing the region
-     * @param tolerance tolerance below which points are considered identical.
      */
-    protected AbstractRegion(final BSPTree<S> tree, final double tolerance) {
-        this.tree      = tree;
-        this.tolerance = tolerance;
+    protected AbstractRegion(final BSPTree<S> tree) {
+        this.tree = tree;
     }
 
     /** Build a Region from a Boundary REPresentation (B-rep).
@@ -89,17 +80,14 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
      * (their topological connections are not used here). However, if the
      * boundary does not really separate an inside open from an outside
      * open (open having here its topological meaning), then subsequent
-     * calls to the {@link #checkPoint(Point) checkPoint} method will not be
+     * calls to the {@link #checkPoint(Vector) checkPoint} method will not be
      * meaningful anymore.</p>
      * <p>If the boundary is empty, the region will represent the whole
      * space.</p>
      * @param boundary collection of boundary elements, as a
      * collection of {@link SubHyperplane SubHyperplane} objects
-     * @param tolerance tolerance below which points are considered identical.
      */
-    protected AbstractRegion(final Collection<SubHyperplane<S>> boundary, final double tolerance) {
-
-        this.tolerance = tolerance;
+    protected AbstractRegion(final Collection<SubHyperplane<S>> boundary) {
 
         if (boundary.size() == 0) {
 
@@ -138,11 +126,8 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
 
                 /** {@inheritDoc} */
                 public void visitLeafNode(final BSPTree<S> node) {
-                    if (node.getParent() == null || node == node.getParent().getMinus()) {
-                        node.setAttribute(Boolean.TRUE);
-                    } else {
-                        node.setAttribute(Boolean.FALSE);
-                    }
+                    node.setAttribute((node == node.getParent().getPlus()) ?
+                                                                            Boolean.FALSE : Boolean.TRUE);
                 }
             });
 
@@ -153,10 +138,8 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
     /** Build a convex region from an array of bounding hyperplanes.
      * @param hyperplanes array of bounding hyperplanes (if null, an
      * empty region will be built)
-     * @param tolerance tolerance below which points are considered identical.
      */
-    public AbstractRegion(final Hyperplane<S>[] hyperplanes, final double tolerance) {
-        this.tolerance = tolerance;
+    public AbstractRegion(final Hyperplane<S>[] hyperplanes) {
         if ((hyperplanes == null) || (hyperplanes.length == 0)) {
             tree = new BSPTree<S>(Boolean.FALSE);
         } else {
@@ -182,13 +165,6 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
 
     /** {@inheritDoc} */
     public abstract AbstractRegion<S, T> buildNew(BSPTree<S> newTree);
-
-    /** Get the tolerance below which points are considered to belong to hyperplanes.
-     * @return tolerance below which points are considered to belong to hyperplanes
-     */
-    public double getTolerance() {
-        return tolerance;
-    }
 
     /** Recursively build a tree by inserting cut sub-hyperplanes.
      * @param node current tree node (it is a leaf node at the beginning
@@ -269,52 +245,12 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
     }
 
     /** {@inheritDoc} */
-    public boolean isFull() {
-        return isFull(tree);
-    }
-
-    /** {@inheritDoc} */
-    public boolean isFull(final BSPTree<S> node) {
-
-        // we use a recursive function rather than the BSPTreeVisitor
-        // interface because we can stop visiting the tree as soon as we
-        // have found an outside cell
-
-        if (node.getCut() == null) {
-            // if we find an outside node, the region does not cover full space
-            return (Boolean) node.getAttribute();
-        }
-
-        // check both sides of the sub-tree
-        return isFull(node.getMinus()) && isFull(node.getPlus());
-
-    }
-
-    /** {@inheritDoc} */
     public boolean contains(final Region<S> region) {
         return new RegionFactory<S>().difference(region, this).isEmpty();
     }
 
-    /** {@inheritDoc}
-     * @since 3.3
-     */
-    public BoundaryProjection<S> projectToBoundary(final Point<S> point) {
-        final BoundaryProjector<S, T> projector = new BoundaryProjector<S, T>(point);
-        getTree(true).visit(projector);
-        return projector.getProjection();
-    }
-
-    /** Check a point with respect to the region.
-     * @param point point to check
-     * @return a code representing the point status: either {@link
-     * Location#INSIDE}, {@link Location#OUTSIDE} or {@link Location#BOUNDARY}
-     */
-    public Location checkPoint(final Vector<S> point) {
-        return checkPoint((Point<S>) point);
-    }
-
     /** {@inheritDoc} */
-    public Location checkPoint(final Point<S> point) {
+    public Location checkPoint(final Vector<S> point) {
         return checkPoint(tree, point);
     }
 
@@ -326,18 +262,7 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
      * OUTSIDE} or {@link Region.Location#BOUNDARY BOUNDARY}
      */
     protected Location checkPoint(final BSPTree<S> node, final Vector<S> point) {
-        return checkPoint(node, (Point<S>) point);
-    }
-
-    /** Check a point with respect to the region starting at a given node.
-     * @param node root node of the region
-     * @param point point to check
-     * @return a code representing the point status: either {@link
-     * Region.Location#INSIDE INSIDE}, {@link Region.Location#OUTSIDE
-     * OUTSIDE} or {@link Region.Location#BOUNDARY BOUNDARY}
-     */
-    protected Location checkPoint(final BSPTree<S> node, final Point<S> point) {
-        final BSPTree<S> cell = node.getCell(point, tolerance);
+        final BSPTree<S> cell = node.getCell(point);
         if (cell.getCut() == null) {
             // the point is in the interior of a cell, just check the attribute
             return ((Boolean) cell.getAttribute()) ? Location.INSIDE : Location.OUTSIDE;
@@ -425,7 +350,7 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
          * <p>The filtering consist in splitting the specified
          * sub-hyperplane into several parts lying in inside and outside
          * cells of the tree. The principle is to call this method twice for
-         * each cut sub-hyperplane in the tree, once on the plus node and
+         * each cut sub-hyperplane in the tree, once one the plus node and
          * once on the minus node. The parts that have the same flag
          * (inside/inside or outside/outside) do not belong to the boundary
          * while parts that have different flags (inside/outside or
@@ -498,7 +423,7 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
     }
 
     /** {@inheritDoc} */
-    public Point<S> getBarycenter() {
+    public Vector<S> getBarycenter() {
         if (barycenter == null) {
             computeGeometricalProperties();
         }
@@ -509,13 +434,6 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
      * @param barycenter barycenter of the instance
      */
     protected void setBarycenter(final Vector<S> barycenter) {
-        setBarycenter((Point<S>) barycenter);
-    }
-
-    /** Set the barycenter of the instance.
-     * @param barycenter barycenter of the instance
-     */
-    protected void setBarycenter(final Point<S> barycenter) {
         this.barycenter = barycenter;
     }
 

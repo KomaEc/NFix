@@ -369,7 +369,7 @@ public class EmpiricalDistribution extends AbstractRealDistribution {
             double val = 0.0;
             sampleStats = new SummaryStatistics();
             while ((str = inputStream.readLine()) != null) {
-                val = Double.parseDouble(str);
+                val = Double.valueOf(str).doubleValue();
                 sampleStats.addValue(val);
             }
             inputStream.close();
@@ -428,7 +428,7 @@ public class EmpiricalDistribution extends AbstractRealDistribution {
         // Set up grid
         min = sampleStats.getMin();
         max = sampleStats.getMax();
-        delta = (max - min)/((double) binCount);
+        delta = (max - min)/(Double.valueOf(binCount)).doubleValue();
 
         // Initialize binStats ArrayList
         if (!binStats.isEmpty()) {
@@ -556,16 +556,11 @@ public class EmpiricalDistribution extends AbstractRealDistribution {
      * of [0,1] used in generating data from the empirical distribution.
      * Subintervals correspond to bins with lengths proportional to bin counts.</p>
      *
-     * <strong>Preconditions:</strong><ul>
-     * <li>the distribution must be loaded before invoking this method</li></ul>
-     *
      * <p>In versions 1.0-2.0 of commons-math, this array was (incorrectly) returned
      * by {@link #getUpperBounds()}.</p>
      *
      * @since 2.1
      * @return array of upper bounds of subintervals used in data generation
-     * @throws NullPointerException unless a {@code load} method has been
-     * called beforehand.
      */
     public double[] getGeneratorUpperBounds() {
         int len = upperBounds.length;
@@ -599,7 +594,6 @@ public class EmpiricalDistribution extends AbstractRealDistribution {
      * {@inheritDoc}
      * @since 3.1
      */
-    @Override
     public double probability(double x) {
         return 0;
     }
@@ -678,7 +672,6 @@ public class EmpiricalDistribution extends AbstractRealDistribution {
      *
      * @since 3.1
      */
-    @Override
     public double inverseCumulativeProbability(final double p) throws OutOfRangeException {
         if (p < 0.0 || p > 1.0) {
             throw new OutOfRangeException(p, 0, 1);

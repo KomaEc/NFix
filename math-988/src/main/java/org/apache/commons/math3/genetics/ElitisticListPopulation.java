@@ -55,6 +55,7 @@ public class ElitisticListPopulation extends ListPopulation {
 
         super(chromosomes, populationLimit);
         setElitismRate(elitismRate);
+
     }
 
     /**
@@ -70,6 +71,7 @@ public class ElitisticListPopulation extends ListPopulation {
 
         super(populationLimit);
         setElitismRate(elitismRate);
+
     }
 
     /**

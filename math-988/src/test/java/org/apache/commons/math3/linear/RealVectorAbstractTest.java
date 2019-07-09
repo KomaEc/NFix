@@ -55,14 +55,15 @@ import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.util.FastMath;
 import org.apache.commons.math3.util.MathArrays;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
 public abstract class RealVectorAbstractTest {
 
-    protected enum BinaryOperation {
+    private enum BinaryOperation {
         ADD, SUB, MUL, DIV
-    }
+    };
 
     /**
      * <p>
@@ -263,6 +264,7 @@ public abstract class RealVectorAbstractTest {
     public void testAddToEntry() {
         final double x = getPreferredEntryValue();
         final double[] data1 = {x, 1d, 2d, x, x};
+        final double[] data2 = {x, x, 3d, x, 4d, x};
 
         final double[] expected = MathArrays.copyOf(data1);
         final RealVector actual = create(data1);
@@ -457,7 +459,7 @@ public abstract class RealVectorAbstractTest {
         Assert.assertFalse(v.isInfinite());
     }
 
-    protected void doTestEbeBinaryOperation(final BinaryOperation op, final boolean mixed, boolean ignoreSpecial) {
+    private void doTestEbeBinaryOperation(final BinaryOperation op, final boolean mixed) {
         final double[] data1 = new double[values.length * values.length];
         final double[] data2 = new double[values.length * values.length];
         int k = 0;
@@ -507,11 +509,8 @@ public abstract class RealVectorAbstractTest {
             }
         }
         for (int i = 0; i < expected.length; i++) {
-            boolean isSpecial = Double.isNaN(expected[i]) || Double.isInfinite(expected[i]);
-            if (!(isSpecial && ignoreSpecial)) {
-                final String msg = "entry #"+i+", left = "+data1[i]+", right = " + data2[i];
-                Assert.assertEquals(msg, expected[i], actual.getEntry(i), 0.0);
-            }
+            final String msg = "entry #"+i+", left = "+data1[i]+", right = " + data2[i];
+            Assert.assertEquals(msg, expected[i], actual.getEntry(i), 0.0);
         }
     }
 
@@ -537,12 +536,12 @@ public abstract class RealVectorAbstractTest {
 
     @Test
     public void testAddSameType() {
-        doTestEbeBinaryOperation(BinaryOperation.ADD, false, false);
+        doTestEbeBinaryOperation(BinaryOperation.ADD, false);
     }
 
     @Test
     public void testAddMixedTypes() {
-        doTestEbeBinaryOperation(BinaryOperation.ADD, true, false);
+        doTestEbeBinaryOperation(BinaryOperation.ADD, true);
     }
 
     @Test(expected = DimensionMismatchException.class)
@@ -552,12 +551,12 @@ public abstract class RealVectorAbstractTest {
 
     @Test
     public void testSubtractSameType() {
-        doTestEbeBinaryOperation(BinaryOperation.SUB, false, false);
+        doTestEbeBinaryOperation(BinaryOperation.SUB, false);
     }
 
     @Test
     public void testSubtractMixedTypes() {
-        doTestEbeBinaryOperation(BinaryOperation.SUB, true, false);
+        doTestEbeBinaryOperation(BinaryOperation.SUB, true);
     }
 
     @Test(expected = DimensionMismatchException.class)
@@ -565,31 +564,37 @@ public abstract class RealVectorAbstractTest {
         doTestEbeBinaryOperationDimensionMismatch(BinaryOperation.SUB);
     }
 
+    @Ignore("ebeMultiply(RealVector) is known to be faulty (MATH-803) and is deprecated.")
     @Test
     public void testEbeMultiplySameType() {
-        doTestEbeBinaryOperation(BinaryOperation.MUL, false, false);
+        doTestEbeBinaryOperation(BinaryOperation.MUL, false);
     }
 
+    @Ignore("ebeMultiply(RealVector) is known to be faulty (MATH-803) and is deprecated.")
     @Test
     public void testEbeMultiplyMixedTypes() {
-        doTestEbeBinaryOperation(BinaryOperation.MUL, true, false);
+        doTestEbeBinaryOperation(BinaryOperation.MUL, true);
     }
 
+    @Ignore("ebeMultiply(RealVector) is known to be faulty (MATH-803) and is deprecated.")
     @Test(expected = DimensionMismatchException.class)
     public void testEbeMultiplyDimensionMismatch() {
         doTestEbeBinaryOperationDimensionMismatch(BinaryOperation.MUL);
     }
 
+    @Ignore("ebeDivide(RealVector) is known to be faulty (MATH-803) and is deprecated.")
     @Test
     public void testEbeDivideSameType() {
-        doTestEbeBinaryOperation(BinaryOperation.DIV, false, false);
+        doTestEbeBinaryOperation(BinaryOperation.DIV, false);
     }
 
-   @Test
+    @Ignore("ebeDivide(RealVector) is known to be faulty (MATH-803) and is deprecated.")
+    @Test
     public void testEbeDivideMixedTypes() {
-        doTestEbeBinaryOperation(BinaryOperation.DIV, true, false);
+        doTestEbeBinaryOperation(BinaryOperation.DIV, true);
     }
 
+    @Ignore("ebeDivide(RealVector) is known to be faulty (MATH-803) and is deprecated.")
     @Test(expected = DimensionMismatchException.class)
     public void testEbeDivideDimensionMismatch() {
         doTestEbeBinaryOperationDimensionMismatch(BinaryOperation.DIV);
@@ -871,7 +876,7 @@ public abstract class RealVectorAbstractTest {
         TestUtils.assertEquals(f.getClass().getSimpleName(), expected, actual, 1E-16);
     }
 
-    protected UnivariateFunction[] createFunctions() {
+    private UnivariateFunction[] createFunctions() {
         return new UnivariateFunction[] {
             new Power(2.0), new Exp(), new Expm1(), new Log(), new Log10(),
             new Log1p(), new Cosh(), new Sinh(), new Tanh(), new Cos(),

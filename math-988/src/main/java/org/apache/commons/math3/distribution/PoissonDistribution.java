@@ -19,8 +19,8 @@ package org.apache.commons.math3.distribution;
 import org.apache.commons.math3.exception.NotStrictlyPositiveException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
 import org.apache.commons.math3.special.Gamma;
-import org.apache.commons.math3.util.CombinatoricsUtils;
 import org.apache.commons.math3.util.MathUtils;
+import org.apache.commons.math3.util.ArithmeticUtils;
 import org.apache.commons.math3.util.FastMath;
 import org.apache.commons.math3.random.RandomGenerator;
 import org.apache.commons.math3.random.Well19937c;
@@ -161,22 +161,15 @@ public class PoissonDistribution extends AbstractIntegerDistribution {
 
     /** {@inheritDoc} */
     public double probability(int x) {
-        final double logProbability = logProbability(x);
-        return logProbability == Double.NEGATIVE_INFINITY ? 0 : FastMath.exp(logProbability);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public double logProbability(int x) {
         double ret;
         if (x < 0 || x == Integer.MAX_VALUE) {
-            ret = Double.NEGATIVE_INFINITY;
+            ret = 0.0;
         } else if (x == 0) {
-            ret = -mean;
+            ret = FastMath.exp(-mean);
         } else {
-            ret = -SaddlePointExpansion.getStirlingError(x) -
-                  SaddlePointExpansion.getDeviancePart(x, mean) -
-                  0.5 * FastMath.log(MathUtils.TWO_PI) - 0.5 * FastMath.log(x);
+            ret = FastMath.exp(-SaddlePointExpansion.getStirlingError(x) -
+                  SaddlePointExpansion.getDeviancePart(x, mean)) /
+                  FastMath.sqrt(MathUtils.TWO_PI * x);
         }
         return ret;
     }
@@ -304,7 +297,7 @@ public class PoissonDistribution extends AbstractIntegerDistribution {
 
             while (n < 1000 * meanPoisson) {
                 rnd = random.nextDouble();
-                r *= rnd;
+                r = r * rnd;
                 if (r >= p) {
                     n++;
                 } else {
@@ -316,12 +309,12 @@ public class PoissonDistribution extends AbstractIntegerDistribution {
             final double lambda = FastMath.floor(meanPoisson);
             final double lambdaFractional = meanPoisson - lambda;
             final double logLambda = FastMath.log(lambda);
-            final double logLambdaFactorial = CombinatoricsUtils.factorialLog((int) lambda);
+            final double logLambdaFactorial = ArithmeticUtils.factorialLog((int) lambda);
             final long y2 = lambdaFractional < Double.MIN_VALUE ? 0 : nextPoisson(lambdaFractional);
             final double delta = FastMath.sqrt(lambda * FastMath.log(32 * lambda / FastMath.PI + 1));
             final double halfDelta = delta / 2;
             final double twolpd = 2 * lambda + delta;
-            final double a1 = FastMath.sqrt(FastMath.PI * twolpd) * FastMath.exp(1 / (8 * lambda));
+            final double a1 = FastMath.sqrt(FastMath.PI * twolpd) * FastMath.exp(1 / 8 * lambda);
             final double a2 = (twolpd / delta) * FastMath.exp(-delta * (1 + delta) / twolpd);
             final double aSum = a1 + a2 + 1;
             final double p1 = a1 / aSum;
@@ -371,7 +364,7 @@ public class PoissonDistribution extends AbstractIntegerDistribution {
                 if (v > qr) {
                     continue;
                 }
-                if (v < y * logLambda - CombinatoricsUtils.factorialLog((int) (y + lambda)) + logLambdaFactorial) {
+                if (v < y * logLambda - ArithmeticUtils.factorialLog((int) (y + lambda)) + logLambdaFactorial) {
                     y = lambda + y;
                     break;
                 }

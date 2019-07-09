@@ -32,7 +32,7 @@ import org.apache.commons.math3.util.MathUtils;
  * <p>This class is the workhorse of the differentiation package.</p>
  * <p>This class is an implementation of the extension to Rall's
  * numbers described in Dan Kalman's paper <a
- * href="http://www1.american.edu/cas/mathstat/People/kalman/pdffiles/mmgautodiff.pdf">Doubly
+ * href="http://www.math.american.edu/People/kalman/pdffiles/mmgautodiff.pdf">Doubly
  * Recursive Multivariate Automatic Differentiation</a>, Mathematics Magazine, vol. 75,
  * no. 3, June 2002.</p>. Rall's numbers are an extension to the real numbers used
  * throughout mathematical expressions; they hold the derivative together with the
@@ -230,20 +230,6 @@ public class DerivativeStructure implements RealFieldElement<DerivativeStructure
      */
     public int getOrder() {
         return compiler.getOrder();
-    }
-
-    /** Create a constant compatible with instance order and number of parameters.
-     * <p>
-     * This method is a convenience factory method, it simply calls
-     * {@code new DerivativeStructure(getFreeParameters(), getOrder(), c)}
-     * </p>
-     * @param c value of the constant
-     * @return a constant compatible with instance order and number of parameters
-     * @see #DerivativeStructure(int, int, double)
-     * @since 3.3
-     */
-    public DerivativeStructure createConstant(final double c) {
-        return new DerivativeStructure(getFreeParameters(), getOrder(), c);
     }
 
     /** {@inheritDoc}
@@ -643,18 +629,6 @@ public class DerivativeStructure implements RealFieldElement<DerivativeStructure
             }
 
         };
-    }
-
-    /** Compute a<sup>x</sup> where a is a double and x a {@link DerivativeStructure}
-     * @param a number to exponentiate
-     * @param x power to apply
-     * @return a<sup>x</sup>
-     * @since 3.3
-     */
-    public static DerivativeStructure pow(final double a, final DerivativeStructure x) {
-        final DerivativeStructure result = new DerivativeStructure(x.compiler);
-        x.compiler.pow(a, x.data, 0, result.data, 0);
-        return result;
     }
 
     /** {@inheritDoc}

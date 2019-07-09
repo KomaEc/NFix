@@ -135,26 +135,6 @@ public class BetaTest {
     }
 
     @Test
-    public void testRegularizedBetaTinyArgument() {
-        double actual = Beta.regularizedBeta(1e-17, 1.0, 1e12);
-        // This value is from R: pbeta(1e-17,1,1e12)
-        TestUtils.assertEquals(9.999950000166648e-6, actual, 1e-16);
-    }
-
-    @Test
-    public void testMath1067() {
-        final double x = 0.22580645161290325;
-        final double a = 64.33333333333334;
-        final double b = 223;
-
-        try {
-            final double r = Beta.regularizedBeta(x, a, b, 1e-14, 10000);
-        } catch (StackOverflowError error) {
-            Assert.fail("Infinite recursion");
-        }
-    }
-
-    @Test
     public void testLogBetaNanPositive() {
         testLogBeta(Double.NaN, Double.NaN, 2.0);
     }
@@ -190,7 +170,7 @@ public class BetaTest {
     }
 
     /**
-     * Reference data for the {@link #logGammaSum(double, double)}
+     * Reference data for the {@link Gamma#logGammaSum(double, double)}
      * function. This data was generated with the following
      * <a href="http://maxima.sourceforge.net/">Maxima</a> script.
      *

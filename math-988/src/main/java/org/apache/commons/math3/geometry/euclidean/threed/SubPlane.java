@@ -16,8 +16,6 @@
  */
 package org.apache.commons.math3.geometry.euclidean.threed;
 
-import org.apache.commons.math3.geometry.Point;
-import org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
 import org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
 import org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
@@ -58,7 +56,6 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
         final Plane otherPlane = (Plane) hyperplane;
         final Plane thisPlane  = (Plane) getHyperplane();
         final Line  inter      = otherPlane.intersection(thisPlane);
-        final double tolerance = thisPlane.getTolerance();
 
         if (inter == null) {
             // the hyperplanes are parallel,
@@ -74,8 +71,8 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
         //     (i.e. the 3D half space on the plus side (resp. minus side)
         //      of the instance contains the 2D half plane on the plus side
         //      (resp. minus side) of the 2D line
-        Vector2D p = thisPlane.toSubSpace((Point<Euclidean3D>) inter.toSpace((Point<Euclidean1D>) Vector1D.ZERO));
-        Vector2D q = thisPlane.toSubSpace((Point<Euclidean3D>) inter.toSpace((Point<Euclidean1D>) Vector1D.ONE));
+        Vector2D p = thisPlane.toSubSpace(inter.toSpace(Vector1D.ZERO));
+        Vector2D q = thisPlane.toSubSpace(inter.toSpace(Vector1D.ONE));
         Vector3D crossP = Vector3D.crossProduct(inter.getDirection(), thisPlane.getNormal());
         if (crossP.dotProduct(otherPlane.getNormal()) < 0) {
             final Vector2D tmp = p;
@@ -83,7 +80,7 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
             q           = tmp;
         }
         final org.apache.commons.math3.geometry.euclidean.twod.Line line2D =
-            new org.apache.commons.math3.geometry.euclidean.twod.Line(p, q, tolerance);
+            new org.apache.commons.math3.geometry.euclidean.twod.Line(p, q);
 
         // check the side on the 2D plane
         return getRemainingRegion().side(line2D);
@@ -102,7 +99,6 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
         final Plane otherPlane = (Plane) hyperplane;
         final Plane thisPlane  = (Plane) getHyperplane();
         final Line  inter      = otherPlane.intersection(thisPlane);
-        final double tolerance = thisPlane.getTolerance();
 
         if (inter == null) {
             // the hyperplanes are parallel
@@ -113,8 +109,8 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
         }
 
         // the hyperplanes do intersect
-        Vector2D p = thisPlane.toSubSpace((Point<Euclidean3D>) inter.toSpace((Point<Euclidean1D>) Vector1D.ZERO));
-        Vector2D q = thisPlane.toSubSpace((Point<Euclidean3D>) inter.toSpace((Point<Euclidean1D>) Vector1D.ONE));
+        Vector2D p = thisPlane.toSubSpace(inter.toSpace(Vector1D.ZERO));
+        Vector2D q = thisPlane.toSubSpace(inter.toSpace(Vector1D.ONE));
         Vector3D crossP = Vector3D.crossProduct(inter.getDirection(), thisPlane.getNormal());
         if (crossP.dotProduct(otherPlane.getNormal()) < 0) {
             final Vector2D tmp = p;
@@ -122,9 +118,9 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
             q           = tmp;
         }
         final SubHyperplane<Euclidean2D> l2DMinus =
-            new org.apache.commons.math3.geometry.euclidean.twod.Line(p, q, tolerance).wholeHyperplane();
+            new org.apache.commons.math3.geometry.euclidean.twod.Line(p, q).wholeHyperplane();
         final SubHyperplane<Euclidean2D> l2DPlus =
-            new org.apache.commons.math3.geometry.euclidean.twod.Line(q, p, tolerance).wholeHyperplane();
+            new org.apache.commons.math3.geometry.euclidean.twod.Line(q, p).wholeHyperplane();
 
         final BSPTree<Euclidean2D> splitTree = getRemainingRegion().getTree(false).split(l2DMinus);
         final BSPTree<Euclidean2D> plusTree  = getRemainingRegion().isEmpty(splitTree.getPlus()) ?
@@ -137,8 +133,8 @@ public class SubPlane extends AbstractSubHyperplane<Euclidean3D, Euclidean2D> {
                                                    new BSPTree<Euclidean2D>(l2DMinus, new BSPTree<Euclidean2D>(Boolean.FALSE),
                                                                             splitTree.getMinus(), null);
 
-        return new SplitSubHyperplane<Euclidean3D>(new SubPlane(thisPlane.copySelf(), new PolygonsSet(plusTree, tolerance)),
-                                                   new SubPlane(thisPlane.copySelf(), new PolygonsSet(minusTree, tolerance)));
+        return new SplitSubHyperplane<Euclidean3D>(new SubPlane(thisPlane.copySelf(), new PolygonsSet(plusTree)),
+                                                   new SubPlane(thisPlane.copySelf(), new PolygonsSet(minusTree)));
 
     }
 

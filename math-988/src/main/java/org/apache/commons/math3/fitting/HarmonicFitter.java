@@ -35,10 +35,7 @@ import org.apache.commons.math3.util.FastMath;
  *
  * @version $Id: HarmonicFitter.java 1416643 2012-12-03 19:37:14Z tn $
  * @since 2.0
- * @deprecated As of 3.3. Please use {@link HarmonicCurveFitter} and
- * {@link WeightedObservedPoints} instead.
  */
-@Deprecated
 public class HarmonicFitter extends CurveFitter<HarmonicOscillator.Parametric> {
     /**
      * Simple constructor.
@@ -260,7 +257,7 @@ public class HarmonicFitter extends CurveFitter<HarmonicOscillator.Parametric> {
 
         /**
          * Estimate a first guess of the amplitude and angular frequency.
-         * This method assumes that the {@link #sortObservations(WeightedObservedPoint[])} method
+         * This method assumes that the {@link #sortObservations()} method
          * has been called previously.
          *
          * @param observations Observations, sorted w.r.t. abscissa.

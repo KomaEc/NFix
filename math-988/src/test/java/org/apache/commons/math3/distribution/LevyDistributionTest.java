@@ -38,19 +38,16 @@ public class LevyDistributionTest extends RealDistributionAbstractTest {
         Assert.assertTrue(d.isSupportConnected());
     }
 
-    @Override
     public LevyDistribution makeDistribution() {
         return new LevyDistribution(new Well19937a(0xc5a5506bbb17e57al), 1.2, 0.4);
     }
 
-    @Override
     public double[] makeCumulativeTestPoints() {
         return new double[] {
             1.2001, 1.21, 1.225, 1.25, 1.3, 1.9, 3.4, 5.6
         };
     }
 
-    @Override
     public double[] makeCumulativeTestValues() {
         // values computed with R and function plevy from rmutil package
         return new double[] {
@@ -59,7 +56,6 @@ public class LevyDistributionTest extends RealDistributionAbstractTest {
         };
     }
 
-    @Override
     public double[] makeDensityTestValues() {
         // values computed with R and function dlevy from rmutil package
         return new double[] {
@@ -68,15 +64,4 @@ public class LevyDistributionTest extends RealDistributionAbstractTest {
         };
     }
 
-    /** 
-     * Creates the default logarithmic probability density test expected values.
-     * Reference values are from R, version 2.14.1.
-     */
-    @Override
-    public double[] makeLogDensityTestValues() {
-        return new double[] {
-            -1987.561573341398d, -14.469328620160d, -3.843764717971d,
-            -0.883485488811d, 0.076793740349d, -1.127785768948d,
-            -2.650679030597d, -3.644945255983d};
-    }
 }

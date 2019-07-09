@@ -248,21 +248,6 @@ public class QRDecompositionTest {
         qr.getSolver().getInverse();
     }
 
-    @Test
-    public void testInvertTallSkinny() {
-        RealMatrix a     = MatrixUtils.createRealMatrix(testData4x3);
-        RealMatrix pinv  = new QRDecomposition(a).getSolver().getInverse();
-        Assert.assertEquals(0, pinv.multiply(a).subtract(MatrixUtils.createRealIdentityMatrix(3)).getNorm(), 1.0e-6);
-    }
-
-    @Test
-    public void testInvertShortWide() {
-        RealMatrix a = MatrixUtils.createRealMatrix(testData3x4);
-        RealMatrix pinv  = new QRDecomposition(a).getSolver().getInverse();
-        Assert.assertEquals(0, a.multiply(pinv).subtract(MatrixUtils.createRealIdentityMatrix(3)).getNorm(), 1.0e-6);
-        Assert.assertEquals(0, pinv.multiply(a).getSubMatrix(0, 2, 0, 2).subtract(MatrixUtils.createRealIdentityMatrix(3)).getNorm(), 1.0e-6);
-    }
-
     private RealMatrix createTestMatrix(final Random r, final int rows, final int columns) {
         RealMatrix m = MatrixUtils.createRealMatrix(rows, columns);
         m.walkInOptimizedOrder(new DefaultRealMatrixChangingVisitor(){
@@ -272,15 +257,6 @@ public class QRDecompositionTest {
             }
         });
         return m;
-    }
-    
-    @Test(expected=SingularMatrixException.class)
-    public void testQRSingular() {
-        final RealMatrix a = MatrixUtils.createRealMatrix(new double[][] {
-            { 1, 6, 4 }, { 2, 4, -1 }, { -1, 2, 5 }
-        });
-        final RealVector b = new ArrayRealVector(new double[]{ 5, 6, 1 });
-        new QRDecomposition(a, 1.0e-15).getSolver().solve(b);
     }
 
 }

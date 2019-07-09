@@ -378,12 +378,7 @@ public class LUDecomposition {
             return new Array2DRowRealMatrix(bp, false);
         }
 
-        /**
-         * Get the inverse of the decomposed matrix.
-         *
-         * @return the inverse matrix.
-         * @throws SingularMatrixException if the decomposed matrix is singular.
-         */
+        /** {@inheritDoc} */
         public RealMatrix getInverse() {
             return solve(MatrixUtils.createRealIdentityMatrix(pivot.length));
         }

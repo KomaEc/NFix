@@ -25,6 +25,8 @@ import org.apache.commons.math3.analysis.MultivariateFunction;
 import org.apache.commons.math3.exception.NumberIsTooLargeException;
 import org.apache.commons.math3.exception.NumberIsTooSmallException;
 import org.apache.commons.math3.exception.DimensionMismatchException;
+import org.apache.commons.math3.exception.MathUnsupportedOperationException;
+import org.apache.commons.math3.exception.MathIllegalStateException;
 import org.apache.commons.math3.exception.NotPositiveException;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.optimization.GoalType;
@@ -35,6 +37,7 @@ import org.apache.commons.math3.random.MersenneTwister;
 import org.apache.commons.math3.util.FastMath;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 
 /**
@@ -44,7 +47,7 @@ import org.junit.runner.RunWith;
 public class CMAESOptimizerTest {
 
     static final int DIM = 13;
-    static final int LAMBDA = 4 + (int)(3.*FastMath.log(DIM));
+    static final int LAMBDA = 4 + (int)(3.*Math.log(DIM));
    
     @Test(expected = NumberIsTooLargeException.class)
     public void testInitOutofbounds1() {
@@ -327,10 +330,10 @@ public class CMAESOptimizerTest {
         PointValuePair expected =
             new PointValuePair(point(DIM,0.0),0.0);
         doTest(new Rastrigin(), startPoint, insigma, boundaries,
-                GoalType.MINIMIZE, (int)(200*FastMath.sqrt(DIM)), true, 0, 1e-13,
+                GoalType.MINIMIZE, (int)(200*Math.sqrt(DIM)), true, 0, 1e-13,
                 1e-13, 1e-6, 200000, expected);
         doTest(new Rastrigin(), startPoint, insigma, boundaries,
-                GoalType.MINIMIZE, (int)(200*FastMath.sqrt(DIM)), false, 0, 1e-13,
+                GoalType.MINIMIZE, (int)(200*Math.sqrt(DIM)), false, 0, 1e-13,
                 1e-13, 1e-6, 200000, expected);
     }
 
@@ -597,7 +600,7 @@ public class CMAESOptimizerTest {
             double f = 0;
             x = B.Rotate(x);
             for (int i = 0; i < x.length; ++i)
-                f += FastMath.pow(factor, i / (x.length - 1.)) * x[i] * x[i];
+                f += Math.pow(factor, i / (x.length - 1.)) * x[i] * x[i];
             return f;
         }
     }
@@ -617,7 +620,7 @@ public class CMAESOptimizerTest {
         public double value(double[] x) {
             double f = 0;
             for (int i = 0; i < x.length; ++i)
-                f += FastMath.pow(factor, i / (x.length - 1.)) * x[i] * x[i];
+                f += Math.pow(factor, i / (x.length - 1.)) * x[i] * x[i];
             return f;
         }
     }
@@ -634,7 +637,7 @@ public class CMAESOptimizerTest {
         public double value(double[] x) {
             double f = 0;
             for (int i = 0; i < x.length; ++i)
-                f += FastMath.pow(FastMath.abs(x[i]), 2. + 10 * (double) i
+                f += Math.pow(Math.abs(x[i]), 2. + 10 * (double) i
                         / (x.length - 1.));
             return f;
         }
@@ -643,7 +646,7 @@ public class CMAESOptimizerTest {
     private static class SsDiffPow implements MultivariateFunction {
 
         public double value(double[] x) {
-            double f = FastMath.pow(new DiffPow().value(x), 0.25);
+            double f = Math.pow(new DiffPow().value(x), 0.25);
             return f;
         }
     }
@@ -675,12 +678,12 @@ public class CMAESOptimizerTest {
             double res2 = 0;
             double fac = 0;
             for (int i = 0; i < x.length; ++i) {
-                fac = FastMath.pow(axisratio, (i - 1.) / (x.length - 1.));
+                fac = Math.pow(axisratio, (i - 1.) / (x.length - 1.));
                 f += fac * fac * x[i] * x[i];
-                res2 += FastMath.cos(2. * FastMath.PI * fac * x[i]);
+                res2 += Math.cos(2. * Math.PI * fac * x[i]);
             }
-            f = (20. - 20. * FastMath.exp(-0.2 * FastMath.sqrt(f / x.length))
-                    + FastMath.exp(1.) - FastMath.exp(res2 / x.length));
+            f = (20. - 20. * Math.exp(-0.2 * Math.sqrt(f / x.length))
+                    + Math.exp(1.) - Math.exp(res2 / x.length));
             return f;
         }
     }
@@ -703,11 +706,11 @@ public class CMAESOptimizerTest {
             double f = 0;
             double fac;
             for (int i = 0; i < x.length; ++i) {
-                fac = FastMath.pow(axisratio, (i - 1.) / (x.length - 1.));
+                fac = Math.pow(axisratio, (i - 1.) / (x.length - 1.));
                 if (i == 0 && x[i] < 0)
                     fac *= 1.;
                 f += fac * fac * x[i] * x[i] + amplitude
-                * (1. - FastMath.cos(2. * FastMath.PI * fac * x[i]));
+                * (1. - Math.cos(2. * Math.PI * fac * x[i]));
             }
             return f;
         }
@@ -752,7 +755,7 @@ public class CMAESOptimizerTest {
                 for (sp = 0., k = 0; k < DIM; ++k)
                     sp += basis[i][k] * basis[i][k]; /* squared norm */
                 for (k = 0; k < DIM; ++k)
-                    basis[i][k] /= FastMath.sqrt(sp);
+                    basis[i][k] /= Math.sqrt(sp);
             }
         }
     }

@@ -20,7 +20,6 @@ import java.awt.geom.AffineTransform;
 
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.geometry.Point;
 import org.apache.commons.math3.geometry.Vector;
 import org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
 import org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
@@ -62,9 +61,6 @@ import org.apache.commons.math3.util.MathUtils;
  */
 public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euclidean1D> {
 
-    /** Default value for tolerance. */
-    private static final double DEFAULT_TOLERANCE = 1.0e-10;
-
     /** Angle with respect to the abscissa axis. */
     private double angle;
 
@@ -77,30 +73,21 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
     /** Offset of the frame origin. */
     private double originOffset;
 
-    /** Tolerance below which points are considered identical. */
-    private final double tolerance;
-
     /** Build a line from two points.
      * <p>The line is oriented from p1 to p2</p>
      * @param p1 first point
      * @param p2 second point
-     * @param tolerance tolerance below which points are considered identical
-     * @since 3.3
      */
-    public Line(final Vector2D p1, final Vector2D p2, final double tolerance) {
+    public Line(final Vector2D p1, final Vector2D p2) {
         reset(p1, p2);
-        this.tolerance = tolerance;
     }
 
     /** Build a line from a point and an angle.
      * @param p point belonging to the line
      * @param angle angle of the line with respect to abscissa axis
-     * @param tolerance tolerance below which points are considered identical
-     * @since 3.3
      */
-    public Line(final Vector2D p, final double angle, final double tolerance) {
+    public Line(final Vector2D p, final double angle) {
         reset(p, angle);
-        this.tolerance = tolerance;
     }
 
     /** Build a line from its internal characteristics.
@@ -108,37 +95,12 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @param cos cosine of the angle
      * @param sin sine of the angle
      * @param originOffset offset of the origin
-     * @param tolerance tolerance below which points are considered identical
-     * @since 3.3
      */
-    private Line(final double angle, final double cos, final double sin,
-                 final double originOffset, final double tolerance) {
+    private Line(final double angle, final double cos, final double sin, final double originOffset) {
         this.angle        = angle;
         this.cos          = cos;
         this.sin          = sin;
         this.originOffset = originOffset;
-        this.tolerance    = tolerance;
-    }
-
-    /** Build a line from two points.
-     * <p>The line is oriented from p1 to p2</p>
-     * @param p1 first point
-     * @param p2 second point
-     * @deprecated as of 3.3, replaced with {@link #Line(Vector2D, Vector2D, double)}
-     */
-    @Deprecated
-    public Line(final Vector2D p1, final Vector2D p2) {
-        this(p1, p2, DEFAULT_TOLERANCE);
-    }
-
-    /** Build a line from a point and an angle.
-     * @param p point belonging to the line
-     * @param angle angle of the line with respect to abscissa axis
-     * @deprecated as of 3.3, replaced with {@link #Line(Vector2D, double, double)}
-     */
-    @Deprecated
-    public Line(final Vector2D p, final double angle) {
-        this(p, angle, DEFAULT_TOLERANCE);
     }
 
     /** Copy constructor.
@@ -151,7 +113,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
         cos          = FastMath.cos(angle);
         sin          = FastMath.sin(angle);
         originOffset = line.originOffset;
-        tolerance    = line.tolerance;
     }
 
     /** {@inheritDoc} */
@@ -212,35 +173,17 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      */
     public Line getReverse() {
         return new Line((angle < FastMath.PI) ? (angle + FastMath.PI) : (angle - FastMath.PI),
-                        -cos, -sin, -originOffset, tolerance);
-    }
-
-    /** Transform a space point into a sub-space point.
-     * @param vector n-dimension point of the space
-     * @return (n-1)-dimension point of the sub-space corresponding to
-     * the specified space point
-     */
-    public Vector1D toSubSpace(Vector<Euclidean2D> vector) {
-        return toSubSpace((Point<Euclidean2D>) vector);
-    }
-
-    /** Transform a sub-space point into a space point.
-     * @param vector (n-1)-dimension point of the sub-space
-     * @return n-dimension point of the space corresponding to the
-     * specified sub-space point
-     */
-    public Vector2D toSpace(Vector<Euclidean1D> vector) {
-        return toSpace((Point<Euclidean1D>) vector);
+                        -cos, -sin, -originOffset);
     }
 
     /** {@inheritDoc} */
-    public Vector1D toSubSpace(final Point<Euclidean2D> point) {
+    public Vector1D toSubSpace(final Vector<Euclidean2D> point) {
         Vector2D p2 = (Vector2D) point;
         return new Vector1D(cos * p2.getX() + sin * p2.getY());
     }
 
     /** {@inheritDoc} */
-    public Vector2D toSpace(final Point<Euclidean1D> point) {
+    public Vector2D toSpace(final Vector<Euclidean1D> point) {
         final double abscissa = ((Vector1D) point).getX();
         return new Vector2D(abscissa * cos - originOffset * sin,
                             abscissa * sin + originOffset * cos);
@@ -253,30 +196,16 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      */
     public Vector2D intersection(final Line other) {
         final double d = sin * other.cos - other.sin * cos;
-        if (FastMath.abs(d) < tolerance) {
+        if (FastMath.abs(d) < 1.0e-10) {
             return null;
         }
         return new Vector2D((cos * other.originOffset - other.cos * originOffset) / d,
                             (sin * other.originOffset - other.sin * originOffset) / d);
     }
 
-    /** {@inheritDoc}
-     * @since 3.3
-     */
-    public Point<Euclidean2D> project(Point<Euclidean2D> point) {
-        return toSpace(toSubSpace(point));
-    }
-
-    /** {@inheritDoc}
-     * @since 3.3
-     */
-    public double getTolerance() {
-        return tolerance;
-    }
-
     /** {@inheritDoc} */
     public SubLine wholeHyperplane() {
-        return new SubLine(this, new IntervalsSet(tolerance));
+        return new SubLine(this, new IntervalsSet());
     }
 
     /** Build a region covering the whole space.
@@ -284,7 +213,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * PolygonsSet PolygonsSet} instance)
      */
     public PolygonsSet wholeSpace() {
-        return new PolygonsSet(tolerance);
+        return new PolygonsSet();
     }
 
     /** Get the offset (oriented distance) of a parallel line.
@@ -302,16 +231,8 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
                ((cos * line.cos + sin * line.sin > 0) ? -line.originOffset : line.originOffset);
     }
 
-    /** Get the offset (oriented distance) of a vector.
-     * @param vector vector to check
-     * @return offset of the vector
-     */
-    public double getOffset(Vector<Euclidean2D> vector) {
-        return getOffset((Point<Euclidean2D>) vector);
-    }
-
     /** {@inheritDoc} */
-    public double getOffset(final Point<Euclidean2D> point) {
+    public double getOffset(final Vector<Euclidean2D> point) {
         Vector2D p2 = (Vector2D) point;
         return sin * p2.getX() - cos * p2.getY() + originOffset;
     }
@@ -339,7 +260,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @return true if p belongs to the line
      */
     public boolean contains(final Vector2D p) {
-        return FastMath.abs(getOffset(p)) < tolerance;
+        return FastMath.abs(getOffset(p)) < 1.0e-10;
     }
 
     /** Compute the distance between the instance and a point.
@@ -361,7 +282,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * (they can have either the same or opposite orientations)
      */
     public boolean isParallelTo(final Line line) {
-        return FastMath.abs(sin * line.cos - cos * line.sin) < tolerance;
+        return FastMath.abs(sin * line.cos - cos * line.sin) < 1.0e-10;
     }
 
     /** Translate the line to force it passing by a point.
@@ -469,7 +390,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
         }
 
         /** {@inheritDoc} */
-        public Vector2D apply(final Point<Euclidean2D> point) {
+        public Vector2D apply(final Vector<Euclidean2D> point) {
             final Vector2D p2D = (Vector2D) point;
             final double  x   = p2D.getX();
             final double  y   = p2D.getY();
@@ -486,7 +407,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
             final double inv     = 1.0 / FastMath.sqrt(rSin * rSin + rCos * rCos);
             return new Line(FastMath.PI + FastMath.atan2(-rSin, -rCos),
                             inv * rCos, inv * rSin,
-                            inv * rOffset, line.tolerance);
+                            inv * rOffset);
         }
 
         /** {@inheritDoc} */
@@ -498,7 +419,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
             final Line transformedLine = (Line) transformed;
             final Vector1D newLoc =
                 transformedLine.toSubSpace(apply(originalLine.toSpace(op.getLocation())));
-            return new OrientedPoint(newLoc, op.isDirect(), originalLine.tolerance).wholeHyperplane();
+            return new OrientedPoint(newLoc, op.isDirect()).wholeHyperplane();
         }
 
     }

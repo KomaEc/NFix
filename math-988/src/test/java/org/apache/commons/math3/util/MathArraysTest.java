@@ -35,12 +35,6 @@ import org.junit.Test;
  */
 public class MathArraysTest {
     
-    private double[] testArray = {0, 1, 2, 3, 4, 5};
-    private double[] testWeightsArray = {0.3, 0.2, 1.3, 1.1, 1.0, 1.8};
-    private double[] testNegativeWeightsArray = {-0.3, 0.2, -1.3, 1.1, 1.0, 1.8};
-    private double[] nullArray = null;
-    private double[] singletonArray = {0};
-
     @Test
     public void testScale() {
         final double[] test = new double[] { -2.5, -1, 0, 1, 2.5 };
@@ -392,56 +386,25 @@ public class MathArraysTest {
 
         MathArrays.sortInPlace(x1, x2, x3);
 
-        Assert.assertEquals(-3,  x1[0], FastMath.ulp(1d));
-        Assert.assertEquals(9,   x2[0], FastMath.ulp(1d));
-        Assert.assertEquals(-27, x3[0], FastMath.ulp(1d));
+        Assert.assertEquals(-3,  x1[0], Math.ulp(1d));
+        Assert.assertEquals(9,   x2[0], Math.ulp(1d));
+        Assert.assertEquals(-27, x3[0], Math.ulp(1d));
 
-        Assert.assertEquals(1, x1[1], FastMath.ulp(1d));
-        Assert.assertEquals(1, x2[1], FastMath.ulp(1d));
-        Assert.assertEquals(1, x3[1], FastMath.ulp(1d));
+        Assert.assertEquals(1, x1[1], Math.ulp(1d));
+        Assert.assertEquals(1, x2[1], Math.ulp(1d));
+        Assert.assertEquals(1, x3[1], Math.ulp(1d));
 
-        Assert.assertEquals(2, x1[2], FastMath.ulp(1d));
-        Assert.assertEquals(4, x2[2], FastMath.ulp(1d));
-        Assert.assertEquals(8, x3[2], FastMath.ulp(1d));
+        Assert.assertEquals(2, x1[2], Math.ulp(1d));
+        Assert.assertEquals(4, x2[2], Math.ulp(1d));
+        Assert.assertEquals(8, x3[2], Math.ulp(1d));
 
-        Assert.assertEquals(4,  x1[3], FastMath.ulp(1d));
-        Assert.assertEquals(16, x2[3], FastMath.ulp(1d));
-        Assert.assertEquals(64, x3[3], FastMath.ulp(1d));
+        Assert.assertEquals(4,  x1[3], Math.ulp(1d));
+        Assert.assertEquals(16, x2[3], Math.ulp(1d));
+        Assert.assertEquals(64, x3[3], Math.ulp(1d));
 
-        Assert.assertEquals(5,   x1[4], FastMath.ulp(1d));
-        Assert.assertEquals(25,  x2[4], FastMath.ulp(1d));
-        Assert.assertEquals(125, x3[4], FastMath.ulp(1d));
-    }
-
-    @Test
-    public void testSortInPlaceDecresasingOrder() {
-        final double[] x1 = {2,   5,  -3, 1,  4};
-        final double[] x2 = {4,  25,   9, 1, 16};
-        final double[] x3 = {8, 125, -27, 1, 64};
-
-        MathArrays.sortInPlace(x1,
-                               MathArrays.OrderDirection.DECREASING,
-                               x2, x3);
-
-        Assert.assertEquals(-3,  x1[4], FastMath.ulp(1d));
-        Assert.assertEquals(9,   x2[4], FastMath.ulp(1d));
-        Assert.assertEquals(-27, x3[4], FastMath.ulp(1d));
-
-        Assert.assertEquals(1, x1[3], FastMath.ulp(1d));
-        Assert.assertEquals(1, x2[3], FastMath.ulp(1d));
-        Assert.assertEquals(1, x3[3], FastMath.ulp(1d));
-
-        Assert.assertEquals(2, x1[2], FastMath.ulp(1d));
-        Assert.assertEquals(4, x2[2], FastMath.ulp(1d));
-        Assert.assertEquals(8, x3[2], FastMath.ulp(1d));
-
-        Assert.assertEquals(4,  x1[1], FastMath.ulp(1d));
-        Assert.assertEquals(16, x2[1], FastMath.ulp(1d));
-        Assert.assertEquals(64, x3[1], FastMath.ulp(1d));
-
-        Assert.assertEquals(5,   x1[0], FastMath.ulp(1d));
-        Assert.assertEquals(25,  x2[0], FastMath.ulp(1d));
-        Assert.assertEquals(125, x3[0], FastMath.ulp(1d));
+        Assert.assertEquals(5,   x1[4], Math.ulp(1d));
+        Assert.assertEquals(25,  x2[4], Math.ulp(1d));
+        Assert.assertEquals(125, x3[4], Math.ulp(1d));
     }
     
     @Test
@@ -535,7 +498,7 @@ public class MathArraysTest {
                                   -Double.MAX_VALUE,
                                   -1, 0,
                                   Double.MIN_VALUE,
-                                  FastMath.ulp(1d),
+                                  Math.ulp(1d),
                                   1, 3, 113, 4769,
                                   Double.MAX_VALUE,
                                   Double.POSITIVE_INFINITY };
@@ -553,7 +516,7 @@ public class MathArraysTest {
                                   -Double.MAX_VALUE,
                                   -1, 0,
                                   Double.MIN_VALUE,
-                                  FastMath.ulp(1d),
+                                  Math.ulp(1d),
                                   1, 3, 113, 4769,
                                   Double.MAX_VALUE,
                                   Double.POSITIVE_INFINITY };
@@ -572,7 +535,7 @@ public class MathArraysTest {
                                   -Double.MAX_VALUE,
                                   -1, 0,
                                   Double.MIN_VALUE,
-                                  FastMath.ulp(1d),
+                                  Math.ulp(1d),
                                   1, 3, 113, 4769,
                                   Double.MAX_VALUE,
                                   Double.POSITIVE_INFINITY };
@@ -586,15 +549,6 @@ public class MathArraysTest {
         for (int i = source.length; i < source.length + offset; i++) {
             Assert.assertEquals(0, dest[i], 0);
         }
-    }
-
-    // MATH-1005
-    @Test
-    public void testLinearCombinationWithSingleElementArray() {
-        final double[] a = { 1.23456789 };
-        final double[] b = { 98765432.1 };
-
-        Assert.assertEquals(a[0] * b[0], MathArrays.linearCombination(a, b), 0d);
     }
 
     @Test
@@ -936,134 +890,6 @@ public class MathArraysTest {
             Assert.fail("an exception should have been thrown");
         } catch (NoDataException e) {
             // expected behavior
-        }
-    }
-
-    @Test
-    public void testShuffleTail() {
-        final int[] orig = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        final int[] list = orig.clone();
-        final int start = 4;
-        MathArrays.shuffle(list, start, MathArrays.Position.TAIL, new Well1024a(7654321L));
-
-        // Ensure that all entries below index "start" did not move.
-        for (int i = 0; i < start; i++) {
-            Assert.assertEquals(orig[i], list[i]);
-        }
-
-        // Ensure that at least one entry has moved.
-        boolean ok = false;
-        for (int i = start; i < orig.length - 1; i++) {
-            if (orig[i] != list[i]) {
-                ok = true;
-                break;
-            }
-        }
-        Assert.assertTrue(ok);
-    }
-
-    @Test
-    public void testShuffleHead() {
-        final int[] orig = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        final int[] list = orig.clone();
-        final int start = 4;
-        MathArrays.shuffle(list, start, MathArrays.Position.HEAD, new Well1024a(1234567L));
-
-        // Ensure that all entries above index "start" did not move.
-        for (int i = start + 1; i < orig.length; i++) {
-            Assert.assertEquals(orig[i], list[i]);
-        }
-
-        // Ensure that at least one entry has moved.
-        boolean ok = false;
-        for (int i = 0; i <= start; i++) {
-            if (orig[i] != list[i]) {
-                ok = true;
-                break;
-            }
-        }
-        Assert.assertTrue(ok);
-    }
-
-    @Test
-    public void testNatural() {
-        final int n = 4;
-        final int[] expected = {0, 1, 2, 3};
-
-        final int[] natural = MathArrays.natural(n);
-        for (int i = 0; i < n; i++) {
-            Assert.assertEquals(expected[i], natural[i]);
-        }
-    }
-
-    @Test
-    public void testNaturalZero() {
-        final int[] natural = MathArrays.natural(0);
-        Assert.assertEquals(0, natural.length);
-    }
-    
-    @Test
-    public void testVerifyValuesPositive() {
-        for (int j = 0; j < 6; j++) {
-            for (int i = 1; i < (7 - j); i++) {
-                Assert.assertTrue(MathArrays.verifyValues(testArray, 0, i));
-            }
-        }
-        Assert.assertTrue(MathArrays.verifyValues(singletonArray, 0, 1));
-        Assert.assertTrue(MathArrays.verifyValues(singletonArray, 0, 0, true));
-    }
-
-    @Test
-    public void testVerifyValuesNegative() {
-        Assert.assertFalse(MathArrays.verifyValues(singletonArray, 0, 0));
-        Assert.assertFalse(MathArrays.verifyValues(testArray, 0, 0));
-        try {
-            MathArrays.verifyValues(singletonArray, 2, 1);  // start past end
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(testArray, 0, 7);  // end past end
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(testArray, -1, 1);  // start negative
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(testArray, 0, -1);  // length negative
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(nullArray, 0, 1);  // null array
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(testArray, nullArray, 0, 1);  // null weights array
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(singletonArray, testWeightsArray, 0, 1);  // weights.length != value.length
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
-        }
-        try {
-            MathArrays.verifyValues(testArray, testNegativeWeightsArray, 0, 6);  // can't have negative weights
-            Assert.fail("Expecting MathIllegalArgumentException");
-        } catch (MathIllegalArgumentException ex) {
-            // expected
         }
     }
 }

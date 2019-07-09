@@ -22,8 +22,7 @@ import java.util.List;
 
 import org.apache.commons.math3.exception.ConvergenceException;
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
-import org.apache.commons.math3.ml.clustering.evaluation.ClusterEvaluator;
-import org.apache.commons.math3.ml.clustering.evaluation.SumOfClusterVariances;
+import org.apache.commons.math3.stat.descriptive.moment.Variance;
 
 /**
  * A wrapper around a k-means++ clustering algorithm which performs multiple trials
@@ -40,31 +39,15 @@ public class MultiKMeansPlusPlusClusterer<T extends Clusterable> extends Cluster
     /** The number of trial runs. */
     private final int numTrials;
 
-    /** The cluster evaluator to use. */
-    private final ClusterEvaluator<T> evaluator;
-
     /** Build a clusterer.
      * @param clusterer the k-means clusterer to use
      * @param numTrials number of trial runs
      */
     public MultiKMeansPlusPlusClusterer(final KMeansPlusPlusClusterer<T> clusterer,
                                         final int numTrials) {
-        this(clusterer, numTrials, new SumOfClusterVariances<T>(clusterer.getDistanceMeasure()));
-    }
-
-    /** Build a clusterer.
-     * @param clusterer the k-means clusterer to use
-     * @param numTrials number of trial runs
-     * @param evaluator the cluster evaluator to use
-     * @since 3.3
-     */
-    public MultiKMeansPlusPlusClusterer(final KMeansPlusPlusClusterer<T> clusterer,
-                                        final int numTrials,
-                                        final ClusterEvaluator<T> evaluator) {
         super(clusterer.getDistanceMeasure());
         this.clusterer = clusterer;
         this.numTrials = numTrials;
-        this.evaluator = evaluator;
     }
 
     /**
@@ -84,15 +67,6 @@ public class MultiKMeansPlusPlusClusterer<T extends Clusterable> extends Cluster
     }
 
     /**
-     * Returns the {@link ClusterEvaluator} used to determine the "best" clustering.
-     * @return the used {@link ClusterEvaluator}
-     * @since 3.3
-     */
-    public ClusterEvaluator<T> getClusterEvaluator() {
-       return evaluator;
-    }
-
-    /**
      * Runs the K-means++ clustering algorithm.
      *
      * @param points the points to cluster
@@ -103,7 +77,6 @@ public class MultiKMeansPlusPlusClusterer<T extends Clusterable> extends Cluster
      *   underlying {@link KMeansPlusPlusClusterer} has its
      *   {@link KMeansPlusPlusClusterer.EmptyClusterStrategy} is set to {@code ERROR}.
      */
-    @Override
     public List<CentroidCluster<T>> cluster(final Collection<T> points)
         throws MathIllegalArgumentException, ConvergenceException {
 
@@ -118,9 +91,22 @@ public class MultiKMeansPlusPlusClusterer<T extends Clusterable> extends Cluster
             List<CentroidCluster<T>> clusters = clusterer.cluster(points);
 
             // compute the variance of the current list
-            final double varianceSum = evaluator.score(clusters);
+            double varianceSum = 0.0;
+            for (final CentroidCluster<T> cluster : clusters) {
+                if (!cluster.getPoints().isEmpty()) {
 
-            if (evaluator.isBetterScore(varianceSum, bestVarianceSum)) {
+                    // compute the distance variance of the current cluster
+                    final Clusterable center = cluster.getCenter();
+                    final Variance stat = new Variance();
+                    for (final T point : cluster.getPoints()) {
+                        stat.increment(distance(point, center));
+                    }
+                    varianceSum += stat.getResult();
+
+                }
+            }
+
+            if (varianceSum <= bestVarianceSum) {
                 // this one is the best we have found so far, remember it
                 best            = clusters;
                 bestVarianceSum = varianceSum;

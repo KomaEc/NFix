@@ -16,7 +16,7 @@
  */
 package org.apache.commons.math3.geometry.partitioning;
 
-import org.apache.commons.math3.geometry.Point;
+import org.apache.commons.math3.geometry.Vector;
 import org.apache.commons.math3.geometry.Space;
 
 /** This interface defines mappers between a space and one of its sub-spaces.
@@ -34,13 +34,6 @@ import org.apache.commons.math3.geometry.Space;
  * <p>In the 3D euclidean space, hyperplanes are 2D planes, and the 1D
  * sub-spaces are lines.</p>
 
- * <p>
- * Note that this interface is <em>not</em> intended to be implemented
- * by Apache Commons Math users, it is only intended to be implemented
- * within the library itself. New methods may be added even for minor
- * versions, which breaks compatibility for external implementations.
- * </p>
-
  * @param <S> Type of the embedding space.
  * @param <T> Type of the embedded sub-space.
 
@@ -56,7 +49,7 @@ public interface Embedding<S extends Space, T extends Space> {
      * the specified space point
      * @see #toSpace
      */
-    Point<T> toSubSpace(Point<S> point);
+    Vector<T> toSubSpace(Vector<S> point);
 
     /** Transform a sub-space point into a space point.
      * @param point (n-1)-dimension point of the sub-space
@@ -64,6 +57,6 @@ public interface Embedding<S extends Space, T extends Space> {
      * specified sub-space point
      * @see #toSubSpace
      */
-    Point<S> toSpace(Point<T> point);
+    Vector<S> toSpace(Vector<T> point);
 
 }

@@ -83,7 +83,6 @@ public class RRQRDecomposition extends QRDecomposition {
     /** Decompose matrix.
      * @param qrt transposed matrix
      */
-    @Override
     protected void decompose(double[][] qrt) {
         p = new int[qrt.length];
         for (int i = 0; i < p.length; i++) {
@@ -96,7 +95,6 @@ public class RRQRDecomposition extends QRDecomposition {
      * @param minor minor index
      * @param qrt transposed matrix
      */
-    @Override
     protected void performHouseholderReflection(int minor, double[][] qrt) {
 
         double l2NormSquaredMax = 0;
@@ -184,17 +182,8 @@ public class RRQRDecomposition extends QRDecomposition {
 
     /**
      * Get a solver for finding the A &times; X = B solution in least square sense.
-     * <p>
-     * Least Square sense means a solver can be computed for an overdetermined system,
-     * (i.e. a system with more equations than unknowns, which corresponds to a tall A
-     * matrix with more rows than columns). In any case, if the matrix is singular
-     * within the tolerance set at {@link RRQRDecomposition#RRQRDecomposition(RealMatrix,
-     * double) construction}, an error will be triggered when
-     * the {@link DecompositionSolver#solve(RealVector) solve} method will be called.
-     * </p>
      * @return a solver
      */
-    @Override
     public DecompositionSolver getSolver() {
         return new Solver(super.getSolver(), this.getP());
     }
@@ -234,10 +223,7 @@ public class RRQRDecomposition extends QRDecomposition {
             return p.multiply(upper.solve(b));
         }
 
-        /**
-         * {@inheritDoc}
-         * @throws SingularMatrixException if the decomposed matrix is singular.
-         */
+        /** {@inheritDoc} */
         public RealMatrix getInverse() {
             return solve(MatrixUtils.createRealIdentityMatrix(p.getRowDimension()));
         }

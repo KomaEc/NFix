@@ -19,16 +19,16 @@
   <parent>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-parent</artifactId>
-    <version>34</version>
+    <version>30</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.commons</groupId>
   <artifactId>commons-math3</artifactId>
-  <version>3.3</version>
-  <name>Apache Commons Math</name>
+  <version>3.3-SNAPSHOT</version>
+  <name>Commons Math</name>
 
   <inceptionYear>2003</inceptionYear>
-  <description>The Apache Commons Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</description>
+  <description>The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</description>
 
   <url>http://commons.apache.org/proper/commons-math/</url>
 
@@ -42,15 +42,15 @@
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/math/trunk</developerConnection>
     <url>http://svn.apache.org/viewvc/commons/proper/math/trunk</url>
   </scm>
-
+  
   <distributionManagement>
     <site>
-      <id>apache.website</id>
-      <name>Apache Commons Site</name>
-      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math/</url>
+      <id>people.apache.org</id>
+      <name>Commons Math</name>
+      <url>scp://people.apache.org/www/commons.apache.org/math</url>
     </site>
   </distributionManagement>
-  
+
   <developers>
     <developer>
       <name>Mikkel Meyer Andersen</name>
@@ -133,9 +133,6 @@
       <name>Eldar Agalarov</name>
     </contributor>
     <contributor>
-      <name>Tim Allison</name>
-    </contributor>
-    <contributor>
       <name>C. Scott Ananian</name>
     </contributor>
     <contributor>
@@ -148,16 +145,10 @@
       <name>R&#233;mi Arntzen</name>
     </contributor>
     <contributor>
-      <name>Matt Adereth</name>
-    </contributor>
-    <contributor>
       <name>Jared Becksfort</name>
     </contributor>
     <contributor>
       <name>Michael Bjorkegren</name>
-    </contributor>
-    <contributor>
-      <name>Brian Bloniarz</name>
     </contributor>
     <contributor>
       <name>John Bollinger</name>
@@ -182,9 +173,6 @@
     </contributor>
     <contributor>
       <name>Larry Diamond</name>
-    </contributor>
-    <contributor>
-      <name>Aleksei Dievskii</name>
     </contributor>
     <contributor>
       <name>Rodrigo di Lorenzo Lopes</name>
@@ -223,16 +211,10 @@
       <name>Curtis Jensen</name>
     </contributor>
     <contributor>
-      <name>Bruce A Johnson</name>
-    </contributor>
-    <contributor>
       <name>Ismael Juma</name>
     </contributor>
     <contributor>
       <name>Eugene Kirpichov</name>
-    </contributor>
-    <contributor>
-      <name>Oleksandr Kornieiev</name>
     </contributor>
     <contributor>
       <name>Piotr Kochanski</name>
@@ -257,9 +239,6 @@
     </contributor>
     <contributor>
       <name>Fredrik Norin</name>
-    </contributor>
-    <contributor>
-      <name>Sean Owen</name>
     </contributor>
     <contributor>
       <name>Sujit Pal</name>
@@ -287,9 +266,6 @@
     </contributor>
     <contributor>
       <name>Michael Saunders</name>
-    </contributor>
-    <contributor>
-      <name>Thorsten Schaefer</name>
     </contributor>
     <contributor>
       <name>Christopher Schuck</name>
@@ -333,7 +309,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.10</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -348,7 +324,7 @@
     <!-- do not use snapshot suffix here -->
     <commons.release.version>3.3</commons.release.version>
     <commons.release.desc>(requires Java 1.5+)</commons.release.desc>
-    <commons.rc.version>RC1</commons.rc.version>
+    <!-- <commons.rc.version>RC1</commons.rc.version> -->
     <commons.binary.suffix>-bin</commons.binary.suffix>
  
     <commons.release.2.version>2.2</commons.release.2.version>
@@ -360,16 +336,11 @@
     <commons.jira.id>MATH</commons.jira.id>
     <commons.jira.pid>12310485</commons.jira.pid>
     <commons.encoding>UTF-8</commons.encoding>
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
+    <maven.compile.source>1.5</maven.compile.source>
+    <maven.compile.target>1.5</maven.compile.target>
     <math.pmd.version>2.7.1</math.pmd.version>
     <math.findbugs.version>2.5.1</math.findbugs.version>
     <math.checkstyle.version>2.9.1</math.checkstyle.version>
-    <math.clirr.version>2.6.1</math.clirr.version>
-
-    <commons.site.path>math</commons.site.path>
-    <commons.scmPubUrl>https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math</commons.scmPubUrl>
-    <commons.scmPubCheckoutDirectory>site-content</commons.scmPubCheckoutDirectory>
   </properties> 
 
   <build>
@@ -395,18 +366,12 @@
               <descriptor>src/main/assembly/src.xml</descriptor>
               <descriptor>src/main/assembly/bin.xml</descriptor>
             </descriptors>
-            <!-- There are a lot of long file names. Suppress the warnings. -->
-            <tarLongFileMode>gnu</tarLongFileMode>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>clirr-maven-plugin</artifactId>
-          <version>${math.clirr.version}</version>
-          <configuration>
-            <minSeverity>${minSeverity}</minSeverity>
-            <ignoredDifferencesFile>${basedir}/clirr-ignored.xml</ignoredDifferencesFile>
-          </configuration>
+          <version>${commons.clirr.version}</version>
           <executions>
             <execution>
               <goals>
@@ -418,18 +383,18 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <version>${math.pmd.version}</version>
         <configuration>
-          <targetJdk>${maven.compiler.target}</targetJdk>  
+          <targetJdk>${maven.compile.target}</targetJdk>  
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-scm-publish-plugin</artifactId>
-        <configuration>
-          <ignorePathsToDelete>
-            <ignorePathToDelete>javadocs</ignorePathToDelete>
-          </ignorePathsToDelete>
-        </configuration>
-      </plugin>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-scm-publish-plugin</artifactId>
+          <configuration>
+            <ignorePathsToDelete>
+              <ignorePathToDelete>javadocs</ignorePathToDelete>
+            </ignorePathsToDelete>
+          </configuration>
+        </plugin>
 
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -438,19 +403,20 @@
             <phase>package</phase>
             <configuration>
               <target>
-                <jar destfile="${project.build.directory}/${project.artifactId}-${project.version}-tools.jar">
+                <jar destfile="target/commons-math3-tools-${project.version}.jar">
                   <metainf dir="${basedir}" includes="NOTICE.txt,LICENSE.txt" />
                   <manifest>
-                    <attribute name="Specification-Title" value="${project.name} Tools" />
-                    <attribute name="Implementation-Title" value="${project.name} Tools" />
+                    <attribute name="Extension-Name" value="org.apache.commons.net" />
+                    <attribute name="Specification-Title" value="${project.name}" />
+                    <attribute name="Implementation-Title" value="${project.name}" />
                     <attribute name="Implementation-Vendor" value="${project.organization.name}" />
                     <attribute name="Implementation-Version" value="${project.version}" />
                     <attribute name="Implementation-Vendor-Id" value="org.apache" />
                     <attribute name="Implementation-Build" value="${implementation.build}"/>
-                    <attribute name="X-Compile-Source-JDK" value="${maven.compiler.source}" />
-                    <attribute name="X-Compile-Target-JDK" value="${maven.compiler.target}" />
+                    <attribute name="X-Compile-Source-JDK" value="${maven.compile.source}" />
+                    <attribute name="X-Compile-Target-JDK" value="${maven.compile.target}" />
                   </manifest>
-                  <fileset dir="${project.build.directory}/test-classes"
+                  <fileset dir="target/test-classes"
                            includes="org/apache/commons/math3/PerfTestUtils*" />
                 </jar>
               </target>
@@ -461,7 +427,7 @@
           </execution>
         </executions>
       </plugin>
-      <!--  Attaches the commons-math3 tools JAR to the Maven lifecycle
+      <!--  Attaches the commons-math3-tools JAR to the Maven lifecycle
             to ensure they will be signed and deployed as normal -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -477,7 +443,7 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-${project.version}-tools.jar</file>
+                  <file>target/commons-math3-tools-${project.version}.jar</file>
                   <type>jar</type>
                   <classifier>tools</classifier>
                 </artifact>
@@ -486,14 +452,7 @@
           </execution>
         </executions>
       </plugin>
-      <!--  MathJax -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <additionalparam>-header &apos;&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;&apos;</additionalparam>
-        </configuration>
-      </plugin>
+
     </plugins>
   </build>
 
@@ -553,19 +512,11 @@
             <exclude>src/test/resources/org/apache/commons/math3/stat/data/Michelso.txt</exclude>
             <exclude>src/test/resources/org/apache/commons/math3/stat/data/Mavro.txt</exclude>
 
-            <!-- direction numbers for Sobol generation from Frances Y. Kuo and Stephen Joe,
-                 available under a BSD-style license (see NOTICE.txt and LICENSE.txt) -->
-            <exclude>src/main/resources/assets/org/apache/commons/math3/random/new-joe-kuo-6.1000</exclude>
-            
-            <!-- text file explaining reference to a public domain image -->
-            <exclude>src/userguide/resources/references.txt</exclude>
-            
             <!-- version 0.8 of apache-rat-plugin does not exclude properly
                  some default development tools files (see RAT-126) -->
             <exclude>bin/**</exclude>
             <exclude>.gitignore</exclude>
             <exclude>.git/**</exclude>
-            <exclude>.checkstyle</exclude>
 
           </excludes>
         </configuration>
@@ -600,17 +551,16 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
-        <version>${math.clirr.version}</version>
+        <version>${commons.clirr.version}</version>
         <configuration>
           <minSeverity>${minSeverity}</minSeverity>
-          <ignoredDifferencesFile>${basedir}/clirr-ignored.xml</ignoredDifferencesFile>
          </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>${math.pmd.version}</version>
         <configuration>
-          <targetJdk>${maven.compiler.target}</targetJdk>  
+          <targetJdk>${maven.compile.target}</targetJdk>  
         </configuration>
         <reportSets>
           <reportSet>
@@ -625,63 +575,7 @@
           </reportSet>
         </reportSets>
       </plugin>
-      <!--  MathJax -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <additionalparam>-header &apos;&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;&apos;</additionalparam>
-        </configuration>
-      </plugin>
     </plugins>
   </reporting>
-
-  <profiles>
-    <profile>
-      <id>setup-checkout</id>
-      <activation>
-        <file>
-          <missing>site-content</missing>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.7</version>
-            <executions>
-              <execution>
-                <id>prepare-checkout</id>
-                <phase>pre-site</phase>
-                <goals>
-                  <goal>run</goal>
-                </goals>
-                <configuration>
-                  <tasks>
-                    <exec executable="svn">
-                      <arg line="checkout --depth immediates ${commons.scmPubUrl} ${commons.scmPubCheckoutDirectory}" />
-                    </exec>
-    
-                    <exec executable="svn">
-                      <arg line="update --set-depth exclude ${commons.scmPubCheckoutDirectory}/javadocs" />
-                    </exec>
-  
-                    <pathconvert pathsep=" " property="dirs">
-                      <dirset dir="${commons.scmPubCheckoutDirectory}" includes="*" />
-                    </pathconvert>
-                    <exec executable="svn">
-                      <arg line="update --set-depth infinity ${dirs}" />
-                    </exec>
-                  </tasks>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
 </project>
 

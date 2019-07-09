@@ -34,14 +34,7 @@ import org.junit.Test;
  */
 public class HypergeometricDistributionTest extends IntegerDistributionAbstractTest {
 
-    /**
-     * Constructor to override default tolerance.
-     */
-    public HypergeometricDistributionTest() {
-        setTolerance(1e-12);
-    }
-    
-    //-------------- Implementations for abstract methods -----------------------
+//-------------- Implementations for abstract methods -----------------------
 
     /** Creates the default discrete distribution instance to use in tests. */
     @Override
@@ -55,25 +48,11 @@ public class HypergeometricDistributionTest extends IntegerDistributionAbstractT
         return new int[] {-1, 0, 1, 2, 3, 4, 5, 10};
     }
 
-    /** 
-     * Creates the default probability density test expected values
-     * Reference values are from R, version 2.15.3.
-     */
+    /** Creates the default probability density test expected values */
     @Override
     public double[] makeDensityTestValues() {
-        return new double[] {0d, 0.00396825396825, 0.0992063492063, 0.396825396825, 0.396825396825,
-            0.0992063492063, 0.00396825396825, 0d};
-    }
-
-    /** 
-     * Creates the default probability log density test expected values
-     * Reference values are from R, version 2.14.1.
-     */
-    @Override
-    public double[] makeLogDensityTestValues() {
-        //-Inf  -Inf
-        return new double[] {Double.NEGATIVE_INFINITY, -5.52942908751142, -2.31055326264322, -0.924258901523332,
-                -0.924258901523332, -2.31055326264322, -5.52942908751142, Double.NEGATIVE_INFINITY};
+        return new double[] {0d, 0.003968d, 0.099206d, 0.396825d, 0.396825d,
+                0.099206d, 0.003968d, 0d};
     }
 
     /** Creates the default cumulative probability density test input values */
@@ -82,14 +61,11 @@ public class HypergeometricDistributionTest extends IntegerDistributionAbstractT
         return makeDensityTestPoints();
     }
 
-    /** 
-     * Creates the default cumulative probability density test expected values
-     * Reference values are from R, version 2.15.3.
-     */
+    /** Creates the default cumulative probability density test expected values */
     @Override
     public double[] makeCumulativeTestValues() {
-        return new double[] {0d, 0.00396825396825, 0.103174603175, .5, 0.896825396825, 0.996031746032,
-                1, 1};
+        return new double[] {0d, .003968d, .103175d, .50000d, .896825d, .996032d,
+                1.00000d, 1d};
     }
 
     /** Creates the default inverse cumulative probability test input values */
@@ -307,19 +283,5 @@ public class HypergeometricDistributionTest extends IntegerDistributionAbstractT
         // another way to calculate the upper cumulative probability
         double upper = 1.0 - dist.cumulativeProbability(k) + dist.probability(k);
         Assert.assertTrue(Precision.compareTo(1.0, upper, 1) == 0);
-    }
-
-    @Test
-    public void testMath1021() {
-        final int N = 43130568;
-        final int m = 42976365;
-        final int n = 50;
-        final HypergeometricDistribution dist = new HypergeometricDistribution(N, m, n);
-
-        for (int i = 0; i < 100; i++) {
-            final int sample = dist.sample();
-            Assert.assertTrue("sample=" + sample, 0 <= sample);
-            Assert.assertTrue("sample=" + sample, sample <= n);
-        }
     }
 }

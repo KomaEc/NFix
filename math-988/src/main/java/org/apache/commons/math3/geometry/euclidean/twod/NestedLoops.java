@@ -21,7 +21,6 @@ import java.util.Iterator;
 
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.geometry.Point;
 import org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
 import org.apache.commons.math3.geometry.partitioning.Region;
 import org.apache.commons.math3.geometry.partitioning.RegionFactory;
@@ -59,39 +58,29 @@ class NestedLoops {
     /** Indicator for original loop orientation. */
     private boolean originalIsClockwise;
 
-    /** Tolerance below which points are considered identical. */
-    private final double tolerance;
-
     /** Simple Constructor.
      * <p>Build an empty tree of nested loops. This instance will become
      * the root node of a complete tree, it is not associated with any
      * loop by itself, the outermost loops are in the root tree child
      * nodes.</p>
-     * @param tolerance tolerance below which points are considered identical
-     * @since 3.3
      */
-    public NestedLoops(final double tolerance) {
-        this.surrounded = new ArrayList<NestedLoops>();
-        this.tolerance  = tolerance;
+    public NestedLoops() {
+        surrounded = new ArrayList<NestedLoops>();
     }
 
     /** Constructor.
      * <p>Build a tree node with neither parent nor children</p>
      * @param loop boundary loop (will be reversed in place if needed)
-     * @param tolerance tolerance below which points are considered identical
      * @exception MathIllegalArgumentException if an outline has an open boundary loop
-     * @since 3.3
      */
-    private NestedLoops(final Vector2D[] loop, final double tolerance)
-        throws MathIllegalArgumentException {
+    private NestedLoops(final Vector2D[] loop) throws MathIllegalArgumentException {
 
         if (loop[0] == null) {
             throw new MathIllegalArgumentException(LocalizedFormats.OUTLINE_BOUNDARY_LOOP_OPEN);
         }
 
-        this.loop       = loop;
-        this.surrounded = new ArrayList<NestedLoops>();
-        this.tolerance  = tolerance;
+        this.loop = loop;
+        surrounded = new ArrayList<NestedLoops>();
 
         // build the polygon defined by the loop
         final ArrayList<SubHyperplane<Euclidean2D>> edges = new ArrayList<SubHyperplane<Euclidean2D>>();
@@ -99,14 +88,12 @@ class NestedLoops {
         for (int i = 0; i < loop.length; ++i) {
             final Vector2D previous = current;
             current = loop[i];
-            final Line   line   = new Line(previous, current, tolerance);
+            final Line   line   = new Line(previous, current);
             final IntervalsSet region =
-                new IntervalsSet(line.toSubSpace((Point<Euclidean2D>) previous).getX(),
-                                 line.toSubSpace((Point<Euclidean2D>) current).getX(),
-                                 tolerance);
+                new IntervalsSet(line.toSubSpace(previous).getX(), line.toSubSpace(current).getX());
             edges.add(new SubLine(line, region));
         }
-        polygon = new PolygonsSet(edges, tolerance);
+        polygon = new PolygonsSet(edges);
 
         // ensure the polygon encloses a finite region of the plane
         if (Double.isInfinite(polygon.getSize())) {
@@ -124,7 +111,7 @@ class NestedLoops {
      * boundary loops or open boundary loops
      */
     public void add(final Vector2D[] bLoop) throws MathIllegalArgumentException {
-        add(new NestedLoops(bLoop, tolerance));
+        add(new NestedLoops(bLoop));
     }
 
     /** Add a loop in a tree.

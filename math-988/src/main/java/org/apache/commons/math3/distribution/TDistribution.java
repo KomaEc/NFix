@@ -76,19 +76,6 @@ public class TDistribution extends AbstractRealDistribution {
      *
      * @param rng Random number generator.
      * @param degreesOfFreedom Degrees of freedom.
-     * @throws NotStrictlyPositiveException if {@code degreesOfFreedom <= 0}
-     * @since 3.3
-     */
-    public TDistribution(RandomGenerator rng, double degreesOfFreedom)
-        throws NotStrictlyPositiveException {
-        this(rng, degreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);
-    }
-
-    /**
-     * Creates a t distribution.
-     *
-     * @param rng Random number generator.
-     * @param degreesOfFreedom Degrees of freedom.
      * @param inverseCumAccuracy the maximum absolute error in inverse
      * cumulative probability estimates
      * (defaults to {@link #DEFAULT_INVERSE_ABSOLUTE_ACCURACY}).
@@ -120,19 +107,13 @@ public class TDistribution extends AbstractRealDistribution {
 
     /** {@inheritDoc} */
     public double density(double x) {
-        return FastMath.exp(logDensity(x));
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public double logDensity(double x) {
         final double n = degreesOfFreedom;
         final double nPlus1Over2 = (n + 1) / 2;
-        return Gamma.logGamma(nPlus1Over2) -
-               0.5 * (FastMath.log(FastMath.PI) +
-                      FastMath.log(n)) -
-               Gamma.logGamma(n / 2) -
-               nPlus1Over2 * FastMath.log(1 + x * x / n);
+        return FastMath.exp(Gamma.logGamma(nPlus1Over2) -
+                            0.5 * (FastMath.log(FastMath.PI) +
+                                   FastMath.log(n)) -
+                            Gamma.logGamma(n / 2) -
+                            nPlus1Over2 * FastMath.log(1 + x * x / n));
     }
 
     /** {@inheritDoc} */

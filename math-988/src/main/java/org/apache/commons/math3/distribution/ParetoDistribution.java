@@ -45,7 +45,7 @@ import org.apache.commons.math3.random.Well19937c;
  * Pareto distribution (MathWorld)</a>
  *
  * @version $Id$
- * @since 3.3
+ * @since 4.0
  */
 public class ParetoDistribution extends AbstractRealDistribution {
 
@@ -95,19 +95,6 @@ public class ParetoDistribution extends AbstractRealDistribution {
     public ParetoDistribution(double scale, double shape, double inverseCumAccuracy)
         throws NotStrictlyPositiveException {
         this(new Well19937c(), scale, shape, inverseCumAccuracy);
-    }
-
-    /**
-     * Creates a log-normal distribution.
-     *
-     * @param rng Random number generator.
-     * @param scale Scale parameter of this distribution.
-     * @param shape Shape parameter of this distribution.
-     * @throws NotStrictlyPositiveException if {@code scale <= 0} or {@code shape <= 0}.
-     */
-    public ParetoDistribution(RandomGenerator rng, double scale, double shape)
-        throws NotStrictlyPositiveException {
-        this(rng, scale, shape, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);
     }
 
     /**
@@ -172,18 +159,6 @@ public class ParetoDistribution extends AbstractRealDistribution {
             return 0;
         }
         return FastMath.pow(scale, shape) / FastMath.pow(x, shape + 1) * shape;
-    }
-
-    /** {@inheritDoc}
-     *
-     * See documentation of {@link #density(double)} for computation details.
-     */
-    @Override
-    public double logDensity(double x) {
-        if (x < scale) {
-            return Double.NEGATIVE_INFINITY;
-        }
-        return FastMath.log(scale) * shape - FastMath.log(x) * (shape + 1) + FastMath.log(shape);
     }
 
     /**

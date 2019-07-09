@@ -32,13 +32,6 @@ import org.junit.Test;
  */
 public class ZipfDistributionTest extends IntegerDistributionAbstractTest {
 
-    /**
-     * Constructor to override default tolerance.
-     */
-    public ZipfDistributionTest() {
-        setTolerance(1e-12);
-    }
-    
     @Test(expected=NotStrictlyPositiveException.class)
     public void testPreconditions1() {
         new ZipfDistribution(0, 1);
@@ -63,26 +56,11 @@ public class ZipfDistributionTest extends IntegerDistributionAbstractTest {
         return new int[] {-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     }
 
-    /** 
-     * Creates the default probability density test expected values.
-     *  Reference values are from R, version 2.15.3 (VGAM package 0.9-0).
-     */
+    /** Creates the default probability density test expected values */
     @Override
     public double[] makeDensityTestValues() {
-        return new double[] {0d, 0d, 0.341417152147, 0.170708576074, 0.113805717382, 0.0853542880369, 0.0682834304295,
-            0.0569028586912, 0.0487738788782, 0.0426771440184, 0.0379352391275, 0.0341417152147, 0};
-    }
-
-    /** 
-     * Creates the default logarithmic probability density test expected values.
-     * Reference values are from R, version 2.14.1.
-     */
-    @Override
-    public double[] makeLogDensityTestValues() {
-        return new double[] {Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY,
-            -1.07465022926458, -1.76779740982453, -2.17326251793269, -2.46094459038447,
-            -2.68408814169868, -2.86640969849264, -3.0205603783199, -3.15409177094442,
-            -3.2718748066008, -3.37723532225863, Double.NEGATIVE_INFINITY};
+        return new double[] {0d, 0d, 0.3414d, 0.1707d, 0.1138d, 0.0854d, 0.0683d,
+                0.0569d, 0.0488d, 0.0427d, 0.0379d, 0.0341d, 0d};
     }
 
     /** Creates the default cumulative probability density test input values */
@@ -94,8 +72,8 @@ public class ZipfDistributionTest extends IntegerDistributionAbstractTest {
     /** Creates the default cumulative probability density test expected values */
     @Override
     public double[] makeCumulativeTestValues() {
-        return new double[] {0, 0, 0.341417152147, 0.512125728221, 0.625931445604, 0.71128573364,
-            0.77956916407, 0.836472022761, 0.885245901639, 0.927923045658, 0.965858284785, 1d, 1d};
+        return new double[] {0d, 0.0000d, 0.3414d, 0.5121d, 0.6259d, 0.7113d,
+                0.7796d, 0.8365d, 0.8852d, 0.9279d, 0.9659d, 1d, 1d};
         }
 
     /** Creates the default inverse cumulative probability test input values */

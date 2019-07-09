@@ -430,7 +430,7 @@ public class SingularValueDecomposition {
                         }
                     }
                     e[p - 2] = f;
-                    iter++;
+                    iter = iter + 1;
                 }
                 break;
                 // Convergence.

@@ -17,7 +17,7 @@
 package org.apache.commons.math3.geometry.partitioning;
 
 import org.apache.commons.math3.geometry.Space;
-import org.apache.commons.math3.geometry.Point;
+import org.apache.commons.math3.geometry.Vector;
 
 /** This interface represents a region of a space as a partition.
 
@@ -38,13 +38,6 @@ import org.apache.commons.math3.geometry.Point;
  * union, intersection, difference and symetric difference (exclusive
  * or) for the binary operations, complement for the unary
  * operation.</p>
-
- * <p>
- * Note that this interface is <em>not</em> intended to be implemented
- * by Apache Commons Math users, it is only intended to be implemented
- * within the library itself. New methods may be added even for minor
- * versions, which breaks compatibility for external implementations.
- * </p>
 
  * @param <S> Type of the space.
 
@@ -106,20 +99,6 @@ public interface Region<S extends Space> {
      */
     boolean isEmpty(final BSPTree<S> node);
 
-    /** Check if the instance covers the full space.
-     * @return true if the instance covers the full space
-     */
-    boolean isFull();
-
-    /** Check if the sub-tree starting at a given node covers the full space.
-     * @param node root node of the sub-tree (<em>must</em> have {@link
-     * Region Region} tree semantics, i.e. the leaf nodes must have
-     * {@code Boolean} attributes representing an inside/outside
-     * property)
-     * @return true if the sub-tree starting at the given node covers the full space
-     */
-    boolean isFull(final BSPTree<S> node);
-
     /** Check if the instance entirely contains another region.
      * @param region region to check against the instance
      * @return true if the instance contains the specified tree
@@ -131,14 +110,7 @@ public interface Region<S extends Space> {
      * @return a code representing the point status: either {@link
      * Location#INSIDE}, {@link Location#OUTSIDE} or {@link Location#BOUNDARY}
      */
-    Location checkPoint(final Point<S> point);
-
-    /** Project a point on the boundary of the region.
-     * @param point point to check
-     * @return projection of the point on the boundary
-     * @since 3.3
-     */
-    BoundaryProjection<S> projectToBoundary(final Point<S> point);
+    Location checkPoint(final Vector<S> point);
 
     /** Get the underlying BSP tree.
 
@@ -157,10 +129,10 @@ public interface Region<S extends Space> {
      * all internal nodes are guaranteed to have non-null
      * attributes, however some {@link BoundaryAttribute
      * BoundaryAttribute} instances may have their {@link
-     * BoundaryAttribute#getPlusInside() getPlusInside} and {@link
-     * BoundaryAttribute#getPlusOutside() getPlusOutside} methods both
-     * returning null if the corresponding cut sub-hyperplane does not
-     * have any parts belonging to the boundary.</p>
+     * BoundaryAttribute#plusInside plusInside} and {@link
+     * BoundaryAttribute#plusOutside plusOutside} fields both null if
+     * the corresponding cut sub-hyperplane does not have any parts
+     * belonging to the boundary.</p>
 
      * <p>Since computing the boundary is not always required and can be
      * time-consuming for large trees, these internal nodes attributes
@@ -196,7 +168,7 @@ public interface Region<S extends Space> {
     /** Get the barycenter of the instance.
      * @return an object representing the barycenter
      */
-    Point<S> getBarycenter();
+    Vector<S> getBarycenter();
 
     /** Compute the relative position of the instance with respect to an
      * hyperplane.

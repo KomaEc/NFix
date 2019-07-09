@@ -19,7 +19,6 @@ package org.apache.commons.math3.analysis.solvers;
 
 import org.apache.commons.math3.analysis.UnivariateFunction;
 import org.apache.commons.math3.exception.ConvergenceException;
-import org.apache.commons.math3.util.FastMath;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -49,7 +48,7 @@ public final class RegulaFalsiSolverTest extends BaseSecantSolverAbstractTest {
         final UnivariateFunction f = new UnivariateFunction() {
                 /** {@inheritDoc} */
                 public double value(double x) {
-                    return FastMath.exp(x) - FastMath.pow(Math.PI, 3.0);
+                    return Math.exp(x) - Math.pow(Math.PI, 3.0);
                 }
             };
 

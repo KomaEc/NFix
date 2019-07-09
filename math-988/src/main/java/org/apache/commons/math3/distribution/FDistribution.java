@@ -93,26 +93,10 @@ public class FDistribution extends AbstractRealDistribution {
      * @param rng Random number generator.
      * @param numeratorDegreesOfFreedom Numerator degrees of freedom.
      * @param denominatorDegreesOfFreedom Denominator degrees of freedom.
-     * @throws NotStrictlyPositiveException if {@code numeratorDegreesOfFreedom <= 0} or
-     * {@code denominatorDegreesOfFreedom <= 0}.
-     * @since 3.3
-     */
-    public FDistribution(RandomGenerator rng,
-                         double numeratorDegreesOfFreedom,
-                         double denominatorDegreesOfFreedom)
-        throws NotStrictlyPositiveException {
-        this(rng, numeratorDegreesOfFreedom, denominatorDegreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);
-    }
-
-    /**
-     * Creates an F distribution.
-     *
-     * @param rng Random number generator.
-     * @param numeratorDegreesOfFreedom Numerator degrees of freedom.
-     * @param denominatorDegreesOfFreedom Denominator degrees of freedom.
      * @param inverseCumAccuracy the maximum absolute error in inverse
      * cumulative probability estimates.
-     * @throws NotStrictlyPositiveException if {@code numeratorDegreesOfFreedom <= 0} or
+     * @throws NotStrictlyPositiveException if
+     * {@code numeratorDegreesOfFreedom <= 0} or
      * {@code denominatorDegreesOfFreedom <= 0}.
      * @since 3.1
      */
@@ -142,22 +126,16 @@ public class FDistribution extends AbstractRealDistribution {
      * @since 2.1
      */
     public double density(double x) {
-        return FastMath.exp(logDensity(x));
-    }
-
-    /** {@inheritDoc} **/
-    @Override
-    public double logDensity(double x) {
         final double nhalf = numeratorDegreesOfFreedom / 2;
         final double mhalf = denominatorDegreesOfFreedom / 2;
         final double logx = FastMath.log(x);
         final double logn = FastMath.log(numeratorDegreesOfFreedom);
         final double logm = FastMath.log(denominatorDegreesOfFreedom);
         final double lognxm = FastMath.log(numeratorDegreesOfFreedom * x +
-                denominatorDegreesOfFreedom);
-        return nhalf * logn + nhalf * logx - logx +
-               mhalf * logm - nhalf * lognxm - mhalf * lognxm -
-               Beta.logBeta(nhalf, mhalf);
+                                           denominatorDegreesOfFreedom);
+        return FastMath.exp(nhalf * logn + nhalf * logx - logx +
+                            mhalf * logm - nhalf * lognxm - mhalf * lognxm -
+                            Beta.logBeta(nhalf, mhalf));
     }
 
     /**

@@ -133,24 +133,4 @@ public class Pair<K, V> {
 
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "[" + getKey() + ", " + getValue() + "]";
-    }
-
-    /**
-     * Convenience factory method that calls the
-     * {@link #Pair(Object, Object) constructor}.
-     *
-     * @param <K> the key type
-     * @param <V> the value type
-     * @param k First element of the pair.
-     * @param v Second element of the pair.
-     * @return a new {@code Pair} containing {@code k} and {@code v}.
-     * @since 3.3
-     */
-    public static <K, V> Pair<K, V> create(K k, V v) {
-        return new Pair<K, V>(k, v);
-    }
 }

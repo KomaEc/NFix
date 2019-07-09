@@ -111,7 +111,7 @@ public abstract class MultivariateOptimizer
      * @throws TooManyEvaluationsException if the maximal number of
      * evaluations is exceeded.
      */
-    public double computeObjectiveValue(double[] params) {
+    protected double computeObjectiveValue(double[] params) {
         super.incrementEvaluationCount();
         return function.value(params);
     }

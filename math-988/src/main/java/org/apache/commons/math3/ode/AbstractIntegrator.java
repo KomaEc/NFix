@@ -141,7 +141,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
 
     /** {@inheritDoc} */
     public Collection<EventHandler> getEventHandlers() {
-        final List<EventHandler> list = new ArrayList<EventHandler>(eventsStates.size());
+        final List<EventHandler> list = new ArrayList<EventHandler>();
         for (EventState state : eventsStates) {
             list.add(state.getEventHandler());
         }
@@ -327,7 +327,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
 
             // search for next events that may occur during the step
             final int orderingSign = interpolator.isForward() ? +1 : -1;
-            SortedSet<EventState> occurringEvents = new TreeSet<EventState>(new Comparator<EventState>() {
+            SortedSet<EventState> occuringEvents = new TreeSet<EventState>(new Comparator<EventState>() {
 
                 /** {@inheritDoc} */
                 public int compare(EventState es0, EventState es1) {
@@ -339,14 +339,14 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
             for (final EventState state : eventsStates) {
                 if (state.evaluateStep(interpolator)) {
                     // the event occurs during the current step
-                    occurringEvents.add(state);
+                    occuringEvents.add(state);
                 }
             }
 
-            while (!occurringEvents.isEmpty()) {
+            while (!occuringEvents.isEmpty()) {
 
                 // handle the chronologically first event
-                final Iterator<EventState> iterator = occurringEvents.iterator();
+                final Iterator<EventState> iterator = occuringEvents.iterator();
                 final EventState currentEvent = iterator.next();
                 iterator.remove();
 
@@ -405,7 +405,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
                 // check if the same event occurs again in the remaining part of the step
                 if (currentEvent.evaluateStep(interpolator)) {
                     // the event occurs during the current step
-                    occurringEvents.add(currentEvent);
+                    occuringEvents.add(currentEvent);
                 }
 
             }

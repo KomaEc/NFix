@@ -372,7 +372,7 @@ public class FastMath {
             return d; // These are un-normalised - don't try to convert
         }
         long xl = Double.doubleToRawLongBits(d); // can take raw bits because just gonna convert it back
-        xl &= MASK_30BITS; // Drop low order bits
+        xl = xl & MASK_30BITS; // Drop low order bits
         return Double.longBitsToDouble(xl);
     }
 
@@ -1026,8 +1026,8 @@ public class FastMath {
         zb = zb * epsilon + 0.041666663879186654;
         zb = zb * epsilon + 0.16666666666745392;
         zb = zb * epsilon + 0.49999999999999994;
-        zb *= epsilon;
-        zb *= epsilon;
+        zb = zb * epsilon;
+        zb = zb * epsilon;
 
         double za = epsilon;
         double temp = za + zb;
@@ -1302,7 +1302,7 @@ public class FastMath {
             lnza = lnza * epsilon + 0.3333333333332802;
             lnza = lnza * epsilon + -0.5;
             lnza = lnza * epsilon + 1.0;
-            lnza *= epsilon;
+            lnza = lnza * epsilon;
         }
 
         /* Relative sizes:
@@ -1324,27 +1324,27 @@ public class FastMath {
         double c = a+lnm[0];
         double d = -(c-a-lnm[0]);
         a = c;
-        b += d;
+        b = b + d;
 
         c = a + lnza;
         d = -(c - a - lnza);
         a = c;
-        b += d;
+        b = b + d;
 
         c = a + LN_2_B*exp;
         d = -(c - a - LN_2_B*exp);
         a = c;
-        b += d;
+        b = b + d;
 
         c = a + lnm[1];
         d = -(c - a - lnm[1]);
         a = c;
-        b += d;
+        b = b + d;
 
         c = a + lnzb;
         d = -(c - a - lnzb);
         a = c;
-        b += d;
+        b = b + d;
 
         if (hiPrec != null) {
             hiPrec[0] = a;
@@ -1594,7 +1594,7 @@ public class FastMath {
         z = z * lnb + (1.0 / 6.0);
         z = z * lnb + 0.5;
         z = z * lnb + 1.0;
-        z *= lnb;
+        z = z * lnb;
 
         final double result = exp(lna, z, null);
         //result = result + result * z;
@@ -1661,7 +1661,7 @@ public class FastMath {
             d2pLow  = d2pLow * d2p + tmpLow + (tmpHigh - d2pHigh);
             d2p     = d2pHigh + d2pLow;
 
-            e >>= 1;
+            e = e >> 1;
 
         }
 
@@ -1768,13 +1768,13 @@ public class FastMath {
         double c = a + t;
         double d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
         t = costA * sinEpsA;
         c = a + t;
         d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
         b = b + sintA * cosEpsB + costA * sinEpsB;
         /*
@@ -1824,7 +1824,7 @@ public class FastMath {
             c = a + t;
             d = -(c - a - t);
             a = c;
-            b += d;
+            b = b + d;
         }
 
         result = a + b;
@@ -1912,16 +1912,16 @@ public class FastMath {
         double c = a + t;
         double d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
         t = costA*sinEpsA;
         c = a + t;
         d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
-        b += sintA*cosEpsB + costA*sinEpsB;
-        b += sintB + costB*sinEpsA + sintB*cosEpsB + costB*sinEpsB;
+        b = b + sintA*cosEpsB + costA*sinEpsB;
+        b = b + sintB + costB*sinEpsA + sintB*cosEpsB + costB*sinEpsB;
 
         double sina = a + b;
         double sinb = -(sina - a - b);
@@ -1934,16 +1934,16 @@ public class FastMath {
         c = a + t;
         d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
         t = -sintA*sinEpsA;
         c = a + t;
         d = -(c - a - t);
         a = c;
-        b += d;
+        b = b + d;
 
-        b += costB*cosEpsA + costA*cosEpsB + costB*cosEpsB;
-        b -= sintB*sinEpsA + sintA*sinEpsB + sintB*sinEpsB;
+        b = b + costB*cosEpsA + costA*cosEpsB + costB*cosEpsB;
+        b = b - (sintB*sinEpsA + sintA*sinEpsB + sintB*sinEpsB);
 
         double cosa = a + b;
         double cosb = -(cosa - a - b);
@@ -2066,8 +2066,8 @@ public class FastMath {
         bita = (prodB & 0x8000000000000000L) != 0;
         bitb = (bc & 0x80000000L ) != 0;
 
-        prodB += bc << 32;
-        prodA += bc >>> 32;
+        prodB = prodB + (bc << 32);
+        prodA = prodA + (bc >>> 32);
 
         bitsum = (prodB & 0x8000000000000000L) != 0;
 
@@ -2085,7 +2085,7 @@ public class FastMath {
         ad = a * d;
 
         /* Collect terms */
-        ac += (bc + ad) >>> 32;
+        ac = ac + ((bc + ad) >>> 32);
 
         bita = (prodB & 0x8000000000000000L) != 0;
         bitb = (ac & 0x8000000000000000L ) != 0;
@@ -2152,8 +2152,8 @@ public class FastMath {
         bita = (prod2B & 0x8000000000000000L) != 0;
         bitb = (bc & 0x80000000L ) != 0;
 
-        prod2B += bc << 32;
-        prod2A += bc >>> 32;
+        prod2B = prod2B + (bc << 32);
+        prod2A = prod2A + (bc >>> 32);
 
         bitsum = (prod2B & 0x8000000000000000L) != 0;
 
@@ -2171,7 +2171,7 @@ public class FastMath {
         ad = a * d;
 
         /* Collect terms */
-        ac += (bc + ad) >>> 32;
+        ac = ac + ((bc + ad) >>> 32);
 
         bita = (prod2B & 0x8000000000000000L) != 0;
         bitb = (ac & 0x8000000000000000L ) != 0;
@@ -2193,7 +2193,7 @@ public class FastMath {
         ad = a * d;
 
         /* Collect terms */
-        ac += (bc + ad) >>> 32;
+        ac = ac + ((bc + ad) >>> 32);
 
         bita = (prod2B & 0x8000000000000000L) != 0;
         bitb = (ac & 0x8000000000000000L ) != 0;
@@ -2432,18 +2432,18 @@ public class FastMath {
      * @return atan(xa + xb) (or angle shifted by {@code PI} if leftPlane is true)
      */
     private static double atan(double xa, double xb, boolean leftPlane) {
+        boolean negate = false;
+        int idx;
+
         if (xa == 0.0) { // Matches +/- 0.0; return correct sign
             return leftPlane ? copySign(Math.PI, xa) : xa;
         }
 
-        final boolean negate;
         if (xa < 0) {
             // negative
             xa = -xa;
             xb = -xb;
             negate = true;
-        } else {
-            negate = false;
         }
 
         if (xa > 1.633123935319537E16) { // Very large input
@@ -2451,20 +2451,15 @@ public class FastMath {
         }
 
         /* Estimate the closest tabulated arctan value, compute eps = xa-tangentTable */
-        final int idx;
         if (xa < 1) {
             idx = (int) (((-1.7168146928204136 * xa * xa + 8.0) * xa) + 0.5);
         } else {
             final double oneOverXa = 1 / xa;
             idx = (int) (-((-1.7168146928204136 * oneOverXa * oneOverXa + 8.0) * oneOverXa) + 13.07);
         }
-
-        final double ttA = TANGENT_TABLE_A[idx];
-        final double ttB = TANGENT_TABLE_B[idx];
-
-        double epsA = xa - ttA;
-        double epsB = -(epsA - xa + ttA);
-        epsB += xb - ttB;
+        double epsA = xa - TANGENT_TABLE_A[idx];
+        double epsB = -(epsA - xa + TANGENT_TABLE_A[idx]);
+        epsB += xb - TANGENT_TABLE_B[idx];
 
         double temp = epsA + epsB;
         epsB = -(temp - epsA - epsB);
@@ -2481,20 +2476,20 @@ public class FastMath {
         if (idx == 0) {
             /* If the slope of the arctan is gentle enough (< 0.45), this approximation will suffice */
             //double denom = 1.0 / (1.0 + xa*tangentTableA[idx] + xb*tangentTableA[idx] + xa*tangentTableB[idx] + xb*tangentTableB[idx]);
-            final double denom = 1d / (1d + (xa + xb) * (ttA + ttB));
+            final double denom = 1d / (1d + (xa + xb) * (TANGENT_TABLE_A[idx] + TANGENT_TABLE_B[idx]));
             //double denom = 1.0 / (1.0 + xa*tangentTableA[idx]);
             ya = epsA * denom;
             yb = epsB * denom;
         } else {
-            double temp2 = xa * ttA;
+            double temp2 = xa * TANGENT_TABLE_A[idx];
             double za = 1d + temp2;
             double zb = -(za - 1d - temp2);
-            temp2 = xb * ttA + xa * ttB;
+            temp2 = xb * TANGENT_TABLE_A[idx] + xa * TANGENT_TABLE_B[idx];
             temp = za + temp2;
             zb += -(temp - za - temp2);
             za = temp;
 
-            zb += xb * ttB;
+            zb += xb * TANGENT_TABLE_B[idx];
             ya = epsA / za;
 
             temp = ya * HEX_40000000;
@@ -2529,11 +2524,11 @@ public class FastMath {
          */
 
         yb = 0.07490822288864472;
-        yb = yb * epsA2 - 0.09088450866185192;
+        yb = yb * epsA2 + -0.09088450866185192;
         yb = yb * epsA2 + 0.11111095942313305;
-        yb = yb * epsA2 - 0.1428571423679182;
+        yb = yb * epsA2 + -0.1428571423679182;
         yb = yb * epsA2 + 0.19999999999923582;
-        yb = yb * epsA2 - 0.33333333333333287;
+        yb = yb * epsA2 + -0.33333333333333287;
         yb = yb * epsA2 * epsA;
 
 
@@ -2546,20 +2541,18 @@ public class FastMath {
         /* Add in effect of epsB.   atan'(x) = 1/(1+x^2) */
         yb += epsB / (1d + epsA * epsA);
 
-        final double eighths = EIGHTHS[idx];
-
         //result = yb + eighths[idx] + ya;
-        double za = eighths + ya;
-        double zb = -(za - eighths - ya);
+        double za = EIGHTHS[idx] + ya;
+        double zb = -(za - EIGHTHS[idx] - ya);
         temp = za + yb;
         zb += -(temp - za - yb);
         za = temp;
 
         double result = za + zb;
+        double resultb = -(result - za - zb);
 
         if (leftPlane) {
             // Result is in the left plane
-            final double resultb = -(result - za - zb);
             final double pia = 1.5707963267948966 * 2;
             final double pib = 6.123233995736766E-17 * 2;
 
@@ -2568,6 +2561,7 @@ public class FastMath {
             zb += pib - resultb;
 
             result = za + zb;
+            resultb = -(result - za - zb);
         }
 
 
@@ -2925,7 +2919,7 @@ public class FastMath {
       za = temp2;
 
       zb = za * yb + ya * zb + zb * yb;
-      za *= ya;
+      za = za * ya;
 
       double na = xs - za;
       double nb = -(na - xs + za);
@@ -2963,7 +2957,7 @@ public class FastMath {
 
         double result = xb * factb + xb * facta + xa * factb + xa * facta;
         if (result == 0) {
-            result *= x; // ensure correct sign if calculation underflows
+            result = result * x; // ensure correct sign if calculation underflows
         }
         return result;
     }
@@ -3097,11 +3091,11 @@ public class FastMath {
                 // the input is a normal number and the result is a subnormal number
 
                 // recover the hidden mantissa bit
-                mantissa |= 1L << 52;
+                mantissa = mantissa | (1L << 52);
 
                 // scales down complete mantissa, hence losing least significant bits
                 final long mostSignificantLostBit = mantissa & (1L << (-scaledExponent));
-                mantissa >>>= 1 - scaledExponent;
+                mantissa = mantissa >>> (1 - scaledExponent);
                 if (mostSignificantLostBit != 0) {
                     // we need to add 1 bit to round up the result
                     mantissa++;
@@ -3118,11 +3112,11 @@ public class FastMath {
 
                 // the input number is subnormal, normalize it
                 while ((mantissa >>> 52) != 1) {
-                    mantissa <<= 1;
+                    mantissa = mantissa << 1;
                     --scaledExponent;
                 }
                 ++scaledExponent;
-                mantissa &= 0x000fffffffffffffL;
+                mantissa = mantissa & 0x000fffffffffffffL;
 
                 if (scaledExponent < 2047) {
                     return Double.longBitsToDouble(sign | (((long) scaledExponent) << 52) | mantissa);
@@ -3181,11 +3175,11 @@ public class FastMath {
                 // the input is a normal number and the result is a subnormal number
 
                 // recover the hidden mantissa bit
-                mantissa |= 1 << 23;
+                mantissa = mantissa | (1 << 23);
 
                 // scales down complete mantissa, hence losing least significant bits
                 final int mostSignificantLostBit = mantissa & (1 << (-scaledExponent));
-                mantissa >>>= 1 - scaledExponent;
+                mantissa = mantissa >>> (1 - scaledExponent);
                 if (mostSignificantLostBit != 0) {
                     // we need to add 1 bit to round up the result
                     mantissa++;
@@ -3202,11 +3196,11 @@ public class FastMath {
 
                 // the input number is subnormal, normalize it
                 while ((mantissa >>> 23) != 1) {
-                    mantissa <<= 1;
+                    mantissa = mantissa << 1;
                     --scaledExponent;
                 }
                 ++scaledExponent;
-                mantissa &= 0x007fffff;
+                mantissa = mantissa & 0x007fffff;
 
                 if (scaledExponent < 255) {
                     return Float.intBitsToFloat(sign | (scaledExponent << 23) | mantissa);

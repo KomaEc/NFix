@@ -21,11 +21,9 @@ import java.text.NumberFormat;
 import org.apache.commons.math3.exception.DimensionMismatchException;
 import org.apache.commons.math3.exception.MathArithmeticException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.geometry.Point;
 import org.apache.commons.math3.geometry.Space;
 import org.apache.commons.math3.geometry.Vector;
 import org.apache.commons.math3.util.FastMath;
-import org.apache.commons.math3.util.MathArrays;
 import org.apache.commons.math3.util.MathUtils;
 
 /** This class represents a 2D vector.
@@ -230,41 +228,6 @@ public class Vector2D implements Vector<Euclidean2D> {
         }
         return scalarMultiply(1 / s);
     }
-
-    /** Compute the angular separation between two vectors.
-     * <p>This method computes the angular separation between two
-     * vectors using the dot product for well separated vectors and the
-     * cross product for almost aligned vectors. This allows to have a
-     * good accuracy in all cases, even for vectors very close to each
-     * other.</p>
-     * @param v1 first vector
-     * @param v2 second vector
-     * @return angular separation between v1 and v2
-     * @exception MathArithmeticException if either vector has a null norm
-     */
-    public static double angle(Vector2D v1, Vector2D v2) throws MathArithmeticException {
-
-        double normProduct = v1.getNorm() * v2.getNorm();
-        if (normProduct == 0) {
-            throw new MathArithmeticException(LocalizedFormats.ZERO_NORM);
-        }
-
-        double dot = v1.dotProduct(v2);
-        double threshold = normProduct * 0.9999;
-        if ((dot < -threshold) || (dot > threshold)) {
-            // the vectors are almost aligned, compute using the sine
-            final double n = FastMath.abs(MathArrays.linearCombination(v1.x, v2.y, -v1.y, v2.x));
-            if (dot >= 0) {
-                return FastMath.asin(n / normProduct);
-            }
-            return FastMath.PI - FastMath.asin(n / normProduct);
-        }
-
-        // the vectors are sufficiently separated to use the cosine
-        return FastMath.acos(dot / normProduct);
-
-    }
-
     /** {@inheritDoc} */
     public Vector2D negate() {
         return new Vector2D(-x, -y);
@@ -293,14 +256,8 @@ public class Vector2D implements Vector<Euclidean2D> {
         return dx + dy;
     }
 
-    /** {@inheritDoc}
-     */
-    public double distance(Vector<Euclidean2D> p) {
-        return distance((Point<Euclidean2D>) p);
-    }
-
     /** {@inheritDoc} */
-    public double distance(Point<Euclidean2D> p) {
+    public double distance(Vector<Euclidean2D> p) {
         Vector2D p3 = (Vector2D) p;
         final double dx = p3.x - x;
         final double dy = p3.y - y;
@@ -326,35 +283,7 @@ public class Vector2D implements Vector<Euclidean2D> {
     /** {@inheritDoc} */
     public double dotProduct(final Vector<Euclidean2D> v) {
         final Vector2D v2 = (Vector2D) v;
-        return MathArrays.linearCombination(x, v2.x, y, v2.y);
-    }
-
-    /**
-     * Compute the cross-product of the instance and the given points.
-     * <p>
-     * The cross product can be used to determine the location of a point
-     * with regard to the line formed by (p1, p2) and is calculated as:
-     * \[
-     *    P = (x_2 - x_1)(y_3 - y_1) - (y_2 - y_1)(x_3 - x_1)
-     * \]
-     * with \(p3 = (x_3, y_3)\) being this instance.
-     * <p>
-     * If the result is 0, the points are collinear, i.e. lie on a single straight line L;
-     * if it is positive, this point lies to the left, otherwise to the right of the line
-     * formed by (p1, p2).
-     *
-     * @param p1 first point of the line
-     * @param p2 second point of the line
-     * @return the cross-product
-     *
-     * @see <a href="http://en.wikipedia.org/wiki/Cross_product">Cross product (Wikipedia)</a>
-     */
-    public double crossProduct(final Vector2D p1, final Vector2D p2) {
-        final double x1 = p2.getX() - p1.getX();
-        final double y1 = getY() - p1.getY();
-        final double x2 = getX() - p1.getX();
-        final double y2 = p2.getY() - p1.getY();
-        return MathArrays.linearCombination(x1, y1, -x2, y2);
+        return x * v2.x + y * v2.y;
     }
 
     /** Compute the distance between two vectors according to the L<sub>2</sub> norm.

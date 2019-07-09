@@ -95,9 +95,6 @@ public abstract class RealDistributionAbstractTest {
     /** Values used to test density calculations */
     private double[] densityTestValues;
 
-    /** Values used to test logarithmic density calculations */
-    private double[] logDensityTestValues;
-
     //-------------------- Abstract methods -----------------------------------
 
     /** Creates the default continuous distribution instance to use in tests. */
@@ -111,18 +108,6 @@ public abstract class RealDistributionAbstractTest {
 
     /** Creates the default density test expected values */
     public abstract double[] makeDensityTestValues();
-
-    /** Creates the default logarithmic density test expected values.
-     * The default implementation simply computes the logarithm
-     * of each value returned by {@link #makeDensityTestValues()}.*/
-    public double[] makeLogDensityTestValues() {
-        final double[] densityTestValues = makeDensityTestValues();
-        final double[] logDensityTestValues = new double[densityTestValues.length];
-        for (int i = 0; i < densityTestValues.length; i++) {
-            logDensityTestValues[i] = FastMath.log(densityTestValues[i]);
-        }
-        return logDensityTestValues;
-    }
 
     //---- Default implementations of inverse test data generation methods ----
 
@@ -149,7 +134,6 @@ public abstract class RealDistributionAbstractTest {
         inverseCumulativeTestPoints = makeInverseCumulativeTestPoints();
         inverseCumulativeTestValues = makeInverseCumulativeTestValues();
         densityTestValues = makeDensityTestValues();
-        logDensityTestValues = makeLogDensityTestValues();
     }
 
     /**
@@ -163,7 +147,6 @@ public abstract class RealDistributionAbstractTest {
         inverseCumulativeTestPoints = null;
         inverseCumulativeTestValues = null;
         densityTestValues = null;
-        logDensityTestValues = null;
     }
 
     //-------------------- Verification methods -------------------------------
@@ -225,19 +208,6 @@ public abstract class RealDistributionAbstractTest {
         }
     }
 
-    /**
-     * Verifies that logarithmic density calculations match expected values
-     */
-    protected void verifyLogDensities() {
-        // FIXME: when logProbability methods are added to RealDistribution in 4.0, remove cast below
-        for (int i = 0; i < cumulativeTestPoints.length; i++) {
-            TestUtils.assertEquals("Incorrect probability density value returned for "
-                    + cumulativeTestPoints[i], logDensityTestValues[i],
-                    ((AbstractRealDistribution) distribution).logDensity(cumulativeTestPoints[i]),
-                    getTolerance());
-        }
-    }
-
     //------------------------ Default test cases -----------------------------
 
     /**
@@ -265,15 +235,6 @@ public abstract class RealDistributionAbstractTest {
     @Test
     public void testDensities() {
         verifyDensities();
-    }
-
-    /**
-     * Verifies that logarithmic density calculations return expected values
-     * for default test instance data
-     */
-    @Test
-    public void testLogDensities() {
-        verifyLogDensities();
     }
 
     /**

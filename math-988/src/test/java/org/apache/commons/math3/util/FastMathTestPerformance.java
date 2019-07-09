@@ -17,6 +17,7 @@
 package org.apache.commons.math3.util;
 
 import org.apache.commons.math3.PerfTestUtils;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Assert;
@@ -39,7 +40,6 @@ public class FastMathTestPerformance {
     // Detail format
     private static final String FMT_DTL = "%-5s %6d %6.1f %6d %6.4f %6d %6.4f";
 
-    @SuppressWarnings("boxing")
     @BeforeClass
     public static void header() {
         System.out.println(String.format(FMT_HDR,
@@ -51,7 +51,6 @@ public class FastMathTestPerformance {
                 ));
     }
 
-    @SuppressWarnings("boxing")
     private static void report(String name, long strictMathTime, long fastMathTime, long mathTime) {
         long unitTime = strictMathTime;
         System.out.println(String.format(FMT_DTL,
@@ -613,7 +612,6 @@ public class FastMathTestPerformance {
         Assert.assertTrue(!Double.isNaN(x));
     }
 
-    @SuppressWarnings("boxing")
     @Test
     public void testSimpleBenchmark() {
         final String SM = "StrictMath";

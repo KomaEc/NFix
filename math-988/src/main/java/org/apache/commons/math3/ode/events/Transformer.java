@@ -37,7 +37,6 @@ enum Transformer {
      */
     UNINITIALIZED {
         /**  {@inheritDoc} */
-        @Override
         protected double transformed(final double g) {
             return 0;
         }
@@ -51,7 +50,6 @@ enum Transformer {
      */
     PLUS {
         /**  {@inheritDoc} */
-        @Override
         protected double transformed(final double g) {
             return g;
         }
@@ -65,7 +63,6 @@ enum Transformer {
      */
     MINUS {
         /**  {@inheritDoc} */
-        @Override
         protected double transformed(final double g) {
             return -g;
         }
@@ -79,7 +76,6 @@ enum Transformer {
      */
     MIN {
         /**  {@inheritDoc} */
-        @Override
         protected double transformed(final double g) {
             return FastMath.min(-Precision.SAFE_MIN, FastMath.min(-g, +g));
         }
@@ -93,7 +89,6 @@ enum Transformer {
      */
     MAX {
         /**  {@inheritDoc} */
-        @Override
         protected double transformed(final double g) {
             return FastMath.max(+Precision.SAFE_MIN, FastMath.max(-g, +g));
         }

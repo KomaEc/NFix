@@ -28,7 +28,7 @@ import org.apache.commons.math3.random.Well19937c;
  * @see <a href="http://en.wikipedia.org/wiki/Geometric_distribution">Geometric distribution (Wikipedia)</a>
  * @see <a href="http://mathworld.wolfram.com/GeometricDistribution.html">Geometric Distribution (MathWorld)</a>
  * @version $Id$
- * @since 3.3
+ * @since 4.0
  */
 public class GeometricDistribution extends AbstractIntegerDistribution {
 
@@ -81,19 +81,6 @@ public class GeometricDistribution extends AbstractIntegerDistribution {
         } else {
             final double p = probabilityOfSuccess;
             ret = FastMath.pow(1 - p, x) * p;
-        }
-        return ret;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public double logProbability(int x) {
-        double ret;
-        if (x < 0) {
-            ret = Double.NEGATIVE_INFINITY;
-        } else {
-            final double p = probabilityOfSuccess;
-            ret = x * FastMath.log1p(-p) + FastMath.log(p);
         }
         return ret;
     }

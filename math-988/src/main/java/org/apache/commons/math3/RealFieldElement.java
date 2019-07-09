@@ -51,7 +51,7 @@ public interface RealFieldElement<T> extends FieldElement<T> {
      */
     T multiply(double a);
 
-    /** '&divide;' operator.
+    /** '&divides;' operator.
      * @param a right hand side parameter of the operator
      * @return this&divides;a
      */

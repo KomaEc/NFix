@@ -26,7 +26,7 @@ public class PairTest {
         final Pair<Integer, Double> p
             = new Pair<Integer, Double>(new Integer(1), new Double(2));
         Assert.assertEquals(new Integer(1), p.getKey());
-        Assert.assertEquals(2, p.getValue().doubleValue(), Math.ulp(1d));
+        Assert.assertEquals(new Double(2), p.getValue(), Math.ulp(1d));
     }
 
     @Test
@@ -71,20 +71,6 @@ public class PairTest {
         // Different contents, different hash codes.
         m2.set(2);
         Assert.assertFalse(p1.hashCode() == p2.hashCode());
-    }
-
-    @Test
-    public void testToString() {
-        Assert.assertEquals("[null, null]", new Pair<Object, Object>(null, null).toString());
-        Assert.assertEquals("[foo, 3]", new Pair<String, Integer>("foo", 3).toString());
-    }
-
-    @Test
-    public void testCreate() {
-        final Pair<String, Integer> p1 = Pair.create("foo", 3);
-        Assert.assertNotNull(p1);
-        final Pair<String, Integer> p2 = new Pair<String, Integer>("foo", 3);
-        Assert.assertEquals(p2, p1);
     }
 
     /**

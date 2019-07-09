@@ -96,15 +96,10 @@ public class Logistic implements UnivariateDifferentiableFunction, Differentiabl
 
     /**
      * Parametric function where the input array contains the parameters of
-     * the {@link Logistic#Logistic(double,double,double,double,double,double)
-     * logistic function}, ordered as follows:
+     * the logit function, ordered as follows:
      * <ul>
-     *  <li>k</li>
-     *  <li>m</li>
-     *  <li>b</li>
-     *  <li>q</li>
-     *  <li>a</li>
-     *  <li>n</li>
+     *  <li>Lower asymptote</li>
+     *  <li>Higher asymptote</li>
      * </ul>
      */
     public static class Parametric implements ParametricUnivariateFunction {
@@ -168,7 +163,7 @@ public class Logistic implements UnivariateDifferentiableFunction, Differentiabl
             final double gb = factor2 * mMinusX * qExp;
             final double gq = factor2 * exp;
             final double ga = Logistic.value(mMinusX, 0, b, q, 1, oneOverN);
-            final double gn = factor1 * FastMath.log(qExp1) * oneOverN;
+            final double gn = factor1 * Math.log(qExp1) * oneOverN;
 
             return new double[] { gk, gm, gb, gq, ga, gn };
         }

@@ -19,7 +19,7 @@ package org.apache.commons.math3.exception;
 import org.apache.commons.math3.exception.util.Localizable;
 
 /**
- * Exception to be thrown when the argument is not greater than 0.
+ * Exception to be thrown when the argument is negative.
  *
  * @since 2.2
  * @version $Id$
@@ -35,7 +35,7 @@ public class NotStrictlyPositiveException extends NumberIsTooSmallException {
      * @param value Argument.
      */
     public NotStrictlyPositiveException(Number value) {
-        super(value, INTEGER_ZERO, false);
+        super(value, 0, false);
     }
     /**
      * Construct the exception with a specific context.
@@ -45,6 +45,6 @@ public class NotStrictlyPositiveException extends NumberIsTooSmallException {
      */
     public NotStrictlyPositiveException(Localizable specific,
                                         Number value) {
-        super(specific, value, INTEGER_ZERO, false);
+        super(specific, value, 0, false);
     }
 }

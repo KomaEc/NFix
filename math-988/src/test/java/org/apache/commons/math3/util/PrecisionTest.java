@@ -297,7 +297,7 @@ public class PrecisionTest {
         Assert.assertEquals(39.25, Precision.round(39.245, 2), 0.0);
         Assert.assertEquals(39.24, Precision.round(39.245, 2, BigDecimal.ROUND_DOWN), 0.0);
         double xx = 39.0;
-        xx += 245d / 1000d;
+        xx = xx + 245d / 1000d;
         Assert.assertEquals(39.25, Precision.round(xx, 2), 0.0);
 
         // BZ 35904
@@ -393,9 +393,6 @@ public class PrecisionTest {
         Assert.assertEquals(0.0, Precision.round(0.0, 2), 0.0);
         Assert.assertEquals(Double.POSITIVE_INFINITY, Precision.round(Double.POSITIVE_INFINITY, 2), 0.0);
         Assert.assertEquals(Double.NEGATIVE_INFINITY, Precision.round(Double.NEGATIVE_INFINITY, 2), 0.0);
-        // comparison of positive and negative zero is not possible -> always equal thus do string comparison
-        Assert.assertEquals("-0.0", Double.toString(Precision.round(-0.0, 0)));
-        Assert.assertEquals("-0.0", Double.toString(Precision.round(-1e-10, 0)));
     }
 
     @Test
@@ -493,16 +490,6 @@ public class PrecisionTest {
         Assert.assertEquals(0.0f, Precision.round(0.0f, 2), 0.0f);
         Assert.assertEquals(Float.POSITIVE_INFINITY, Precision.round(Float.POSITIVE_INFINITY, 2), 0.0f);
         Assert.assertEquals(Float.NEGATIVE_INFINITY, Precision.round(Float.NEGATIVE_INFINITY, 2), 0.0f);
-        // comparison of positive and negative zero is not possible -> always equal thus do string comparison
-        Assert.assertEquals("-0.0", Float.toString(Precision.round(-0.0f, 0)));
-        Assert.assertEquals("-0.0", Float.toString(Precision.round(-1e-10f, 0)));
-
-        // MATH-1070
-        Assert.assertEquals(0.0f, Precision.round(0f, 2, BigDecimal.ROUND_UP), 0.0f);
-        Assert.assertEquals(0.05f, Precision.round(0.05f, 2, BigDecimal.ROUND_UP), 0.0f);
-        Assert.assertEquals(0.06f, Precision.round(0.051f, 2, BigDecimal.ROUND_UP), 0.0f);
-        Assert.assertEquals(0.06f, Precision.round(0.0505f, 2, BigDecimal.ROUND_UP), 0.0f);
-        Assert.assertEquals(0.06f, Precision.round(0.059f, 2, BigDecimal.ROUND_UP), 0.0f);
     }
 
 
@@ -519,7 +506,7 @@ public class PrecisionTest {
         final double x = 100;
         final int numTrials = 10000;
         for (int i = 0; i < numTrials; i++) {
-            final double originalDelta = FastMath.random();
+            final double originalDelta = Math.random();
             final double delta = Precision.representableDelta(x, originalDelta);
             if (delta != originalDelta) {
                 ++nonRepresentableCount;

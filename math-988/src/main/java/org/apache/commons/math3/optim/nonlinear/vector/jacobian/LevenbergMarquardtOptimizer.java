@@ -109,12 +109,7 @@ import org.apache.commons.math3.util.FastMath;
  *
  * @version $Id$
  * @since 2.0
- * @deprecated All classes and interfaces in this package are deprecated.
- * The optimizers that were provided here were moved to the
- * {@link org.apache.commons.math3.fitting.leastsquares} package
- * (cf. MATH-1008).
  */
-@Deprecated
 public class LevenbergMarquardtOptimizer
     extends AbstractLeastSquaresOptimizer {
     /** Twice the "epsilon machine". */
@@ -457,7 +452,7 @@ public class LevenbergMarquardtOptimizer
                     coeff1 += work1[j] * work1[j];
                 }
                 double pc2 = previousCost * previousCost;
-                coeff1 /= pc2;
+                coeff1 = coeff1 / pc2;
                 double coeff2 = lmPar * lmNorm * lmNorm / pc2;
                 double preRed = coeff1 + 2 * coeff2;
                 double dirDer = -(coeff1 + coeff2);

@@ -68,8 +68,8 @@
 
 <subsection name="2.2 Random numbers" href="deviates">
     <p>
-    The <a href="../apidocs/org/apache/commons/math3/random/RandomDataGenerator.html">
-    RandomDataGenerator</a> class implements methods for generating random sequences
+    The <a href="../apidocs/org/apache/commons/math3/random/RandomData.html">
+    RandomData</a> interface defines methods for generating random sequences
     of numbers. The API contracts of these methods use the following concepts:
     <dl>
     <dt>Random sequence of numbers from a probability distribution</dt>
@@ -90,8 +90,8 @@
     <a href="../apidocs/org/apache/commons/math3/distribution/package-summary.html">
     distributions</a> package.
     The javadoc for the <code>nextXxx</code> methods in 
-    <a href="../apidocs/org/apache/commons/math3/random/RandomDataGenerator.html">
-    RandomDataGenerator</a> describes the algorithms used to generate
+    <a href="../apidocs/org/apache/commons/math3/random/RandomDataImpl.html">
+    RandomDataImpl</a> describes the algorithms used to generate
     random deviates.   
     </dd>
     <dt>Cryptographically secure random sequences</dt>
@@ -101,32 +101,33 @@
     required, it is best to use a  
     <a href="http://www.wikipedia.org/wiki/Cryptographically_secure_pseudo-random_number_generator">
     secure random number generator</a> to generate values (or strings). The
-    nextSecureXxx methods implemented by <code>RandomDataGenerator</code>
-    use the JDK <code>SecureRandom</code> PRNG to generate cryptographically
-    secure sequences. The <code>setSecureAlgorithm</code> method allows you to
-    change the underlying PRNG. These methods are <strong>much slower</strong> than
-    the corresponding "non-secure" versions, so they should only be used when cryptographic
+    nextSecureXxx methods in the <code>RandomDataImpl</code> implementation of
+    the <code>RandomData</code> interface use the JDK <code>SecureRandom</code>
+    PRNG to generate cryptographically secure sequences.  The 
+    <code>setSecureAlgorithm</code> method allows you to change the underlying
+    PRNG. These methods are <strong>much slower</strong> than the corresponding
+    "non-secure" versions, so they should only be used when cryptographic
     security is required.  The <code>ISAACRandom</code> class implements a fast
-    cryptographically secure pseudorandom number generator.</dd>
+    cryptographically secure pseudorandom numbers generator.</dd>
     <dt>Seeding pseudo-random number generators</dt>
-    <dd>By default, the implementation provided in <code>RandomDataGenerator</code>
+    <dd>By default, the implementation provided in <code>RandomDataImpl</code>
     uses the JDK-provided PRNG.  Like most other PRNGs, the JDK generator
-    generates sequences of random numbers based on an initial "seed value."
+    generates sequences of random numbers based on an initial "seed value".
     For the non-secure methods, starting with the same seed always produces the
     same sequence of values.  Secure sequences started with the same seeds will
-    diverge. When a new <code>RandomDataGenerator</code> is created, the underlying
+    diverge. When a new <code>RandomDataImpl</code> is created, the underlying
     random number generators are <strong>not</strong> initialized.  The first
-    call to a data generation method, or to a <code>reSeed()</code> method
+    call to a data generation method, or to a  <code>reSeed()</code> method
     initializes the appropriate generator.  If you do not explicitly seed the
     generator, it is by default seeded with the current time in milliseconds.
     Therefore, to generate sequences of random data values, you should always
-    instantiate <strong>one</strong> <code> RandomDataGenerator</code> and use it
+    instantiate <strong>one</strong> <code> RandomDataImpl</code> and use it
     repeatedly instead of creating new instances for subsequent values in the
     sequence.  For example, the following will generate a random sequence of 50
     long integers between 1 and 1,000,000, using the current time in
     milliseconds as the seed for the JDK PRNG:
     <source>
-RandomDataGenerator randomData = new RandomDataGenerator(); 
+RandomData randomData = new RandomDataImpl(); 
 for (int i = 0; i &lt; 1000; i++) {
     value = randomData.nextLong(1, 1000000);
 }
@@ -136,14 +137,14 @@ for (int i = 0; i &lt; 1000; i++) {
     milliseconds:
     <source>
 for (int i = 0; i &lt; 1000; i++) {
-    RandomDataGenerator randomData = new RandomDataGenerator(); 
+    RandomDataImpl randomData = new RandomDataImpl(); 
     value = randomData.nextLong(1, 1000000);
 }
     </source>
     The following will produce the same random sequence each time it is
     executed:
     <source>
-RandomDataGenerator randomData = new RandomDataGenerator(); 
+RandomData randomData = new RandomDataImpl(); 
 randomData.reSeed(1000);
 for (int i = 0; i = 1000; i++) {
     value = randomData.nextLong(1, 1000000);
@@ -152,7 +153,7 @@ for (int i = 0; i = 1000; i++) {
     The following will produce a different random sequence each time it is
      executed. 
     <source>
-RandomDataGenerator randomData = new RandomDataGenerator(); 
+RandomData randomData = new RandomDataImpl(); 
 randomData.reSeedSecure(1000);
 for (int i = 0; i &lt; 1000; i++) {
     value = randomData.nextSecureLong(1, 1000000);
@@ -245,9 +246,10 @@ RandomVectorGenerator generator = new SobolSequence(2);
 // Use the generator to generate vectors
 double[] randomVector = generator.nextVector();
 ... </source>
-    The figure below illustrates the unique properties of low-discrepancy sequences when generating N samples
+    The figure below (created with <a href="../xref-test/org/apache/commons/math3/userguide/LowDiscrepancyGeneratorComparison.html">
+    LowDiscrepancyGeneratorComparison.java</a>) illustrates the unique properties of low-discrepancy sequences when generating N samples
     in the interval [0, 1]. Roughly speaking, such sequences "fill" the respective space more evenly which leads to faster convergence in
-    quasi-Monte Carlo simulations.<br/>
+    quasi-Monte Carlo simulations.
     <img src="../images/userguide/low_discrepancy_sequences.png" alt="Comparison of low-discrepancy sequences"/>
     </dd></dl>
     </p>
@@ -261,12 +263,12 @@ double[] randomVector = generator.nextVector();
     of these methods produce sequences of strings with good dispersion
     properties.  The difference between the two methods is that the second is
     cryptographically secure.  Specifically, the implementation of 
-    <code>nextHexString(n)</code> in <code>RandomDataGenerator</code> uses the
+    <code>nextHexString(n)</code> in <code>RandomDataImpl</code> uses the
     following simple algorithm to generate a string of <code>n</code> hex digits:
     <ol>
-    <li>n/2+1 binary bytes are generated using the underlying RandomGenerator</li>
+    <li>n/2+1 binary bytes are generated using the underlying Random</li>
     <li>Each binary byte is translated into 2 hex digits</li></ol>
-    The <code>RandomDataGenerator</code> implementation of the "secure" version, 
+    The <code>RandomDataImpl</code> implementation of the "secure" version, 
     <code>nextSecureHexString</code> generates hex characters in 40-byte
     "chunks" using a 3-step process:
     <ol>
@@ -288,10 +290,10 @@ double[] randomVector = generator.nextVector();
  href="combinatorics">
     <p>
     To select a random sample of objects in a collection, you can use the
-    <code>nextSample</code> method implemented by <code>RandomDataGenerator</code>.
+    <code>nextSample</code> method in the <code>RandomData</code> interface.
     Specifically,  if <code>c</code> is a collection containing at least 
     <code>k</code> objects, and <code>randomData</code> is a 
-    <code>RandomDataGenerator</code> instance <code>randomData.nextSample(c, k)</code>
+    <code>RandomData</code> instance <code>randomData.nextSample(c, k)</code>
     will return an <code>object[]</code> array of length <code>k</code>
     consisting of elements randomly selected from the collection.  If 
     <code>c</code> contains duplicate references, there may be duplicate
@@ -299,7 +301,7 @@ double[] randomVector = generator.nextVector();
     unique -- i.e., the sampling is without replacement among the object
     references in the collection. </p>
     <p>
-    If <code>randomData</code> is a <code>RandomDataGenerator</code> instance, and 
+    If <code>randomData</code> is a <code>RandomData</code> instance, and 
     <code>n</code> and <code>k</code> are integers with 
     <code> k &lt;= n</code>,  then 
     <code>randomData.nextPermutation(n, k)</code> returns an <code>int[]</code>

@@ -193,7 +193,6 @@ public class KMeansPlusPlusClusterer<T extends Clusterable> extends Clusterer<T>
      * @throws ConvergenceException if an empty cluster is encountered and the
      * {@link #emptyStrategy} is set to {@code ERROR}
      */
-    @Override
     public List<CentroidCluster<T>> cluster(final Collection<T> points)
         throws MathIllegalArgumentException, ConvergenceException {
 

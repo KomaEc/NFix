@@ -105,7 +105,6 @@ public class ValueServer {
      * @since 3.0
      * @deprecated use {@link #ValueServer(RandomGenerator)}
      */
-    @Deprecated
     public ValueServer(RandomDataImpl randomData) {
         this.randomData = randomData;
     }
@@ -287,7 +286,6 @@ public class ValueServer {
      * Resets REPLAY_MODE file pointer to the beginning of the <code>valuesFileURL</code>.
      *
      * @throws IOException if an error occurs opening the file
-     * @throws NullPointerException if the {@code valuesFileURL} has not been set.
      */
     public void resetReplayFile() throws IOException {
         if (filePointer != null) {
@@ -422,7 +420,7 @@ public class ValueServer {
                                                     valuesFileURL);
             }
         }
-        return Double.parseDouble(str);
+        return Double.valueOf(str).doubleValue();
     }
 
     /**

@@ -193,29 +193,22 @@ public class HypergeometricDistribution extends AbstractIntegerDistribution {
 
     /** {@inheritDoc} */
     public double probability(int x) {
-        final double logProbability = logProbability(x);
-        return logProbability == Double.NEGATIVE_INFINITY ? 0 : FastMath.exp(logProbability);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public double logProbability(int x) {
         double ret;
 
         int[] domain = getDomain(populationSize, numberOfSuccesses, sampleSize);
         if (x < domain[0] || x > domain[1]) {
-            ret = Double.NEGATIVE_INFINITY;
+            ret = 0.0;
         } else {
             double p = (double) sampleSize / (double) populationSize;
             double q = (double) (populationSize - sampleSize) / (double) populationSize;
             double p1 = SaddlePointExpansion.logBinomialProbability(x,
                     numberOfSuccesses, p, q);
             double p2 =
-                    SaddlePointExpansion.logBinomialProbability(sampleSize - x,
-                            populationSize - numberOfSuccesses, p, q);
+                SaddlePointExpansion.logBinomialProbability(sampleSize - x,
+                    populationSize - numberOfSuccesses, p, q);
             double p3 =
-                    SaddlePointExpansion.logBinomialProbability(sampleSize, populationSize, p, q);
-            ret = p1 + p2 - p3;
+                SaddlePointExpansion.logBinomialProbability(sampleSize, populationSize, p, q);
+            ret = FastMath.exp(p1 + p2 - p3);
         }
 
         return ret;
@@ -272,7 +265,7 @@ public class HypergeometricDistribution extends AbstractIntegerDistribution {
      * size {@code n}, the mean is {@code n * m / N}.
      */
     public double getNumericalMean() {
-        return getSampleSize() * (getNumberOfSuccesses() / (double) getPopulationSize());
+        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
     }
 
     /**

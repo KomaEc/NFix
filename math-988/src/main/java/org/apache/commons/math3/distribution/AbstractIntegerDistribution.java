@@ -130,12 +130,12 @@ public abstract class AbstractIntegerDistribution implements IntegerDistribution
             double k = FastMath.sqrt((1.0 - p) / p);
             double tmp = mu - k * sigma;
             if (tmp > lower) {
-                lower = ((int) FastMath.ceil(tmp)) - 1;
+                lower = ((int) Math.ceil(tmp)) - 1;
             }
             k = 1.0 / k;
             tmp = mu + k * sigma;
             if (tmp < upper) {
-                upper = ((int) FastMath.ceil(tmp)) - 1;
+                upper = ((int) Math.ceil(tmp)) - 1;
             }
         }
 
@@ -231,24 +231,5 @@ public abstract class AbstractIntegerDistribution implements IntegerDistribution
                     .DISCRETE_CUMULATIVE_PROBABILITY_RETURNED_NAN, argument);
         }
         return result;
-    }
-
-    /**
-     * For a random variable {@code X} whose values are distributed according to
-     * this distribution, this method returns {@code log(P(X = x))}, where
-     * {@code log} is the natural logarithm. In other words, this method
-     * represents the logarithm of the probability mass function (PMF) for the
-     * distribution. Note that due to the floating point precision and
-     * under/overflow issues, this method will for some distributions be more
-     * precise and faster than computing the logarithm of
-     * {@link #probability(int)}.
-     * <p>
-     * The default implementation simply computes the logarithm of {@code probability(x)}.</p>
-     *
-     * @param x the point at which the PMF is evaluated
-     * @return the logarithm of the value of the probability mass function at {@code x}
-     */
-    public double logProbability(int x) {
-        return FastMath.log(probability(x));
     }
 }

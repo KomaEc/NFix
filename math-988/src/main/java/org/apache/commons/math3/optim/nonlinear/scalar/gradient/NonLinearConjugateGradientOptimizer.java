@@ -17,8 +17,11 @@
 
 package org.apache.commons.math3.optim.nonlinear.scalar.gradient;
 
+import org.apache.commons.math3.analysis.UnivariateFunction;
+import org.apache.commons.math3.analysis.solvers.BrentSolver;
 import org.apache.commons.math3.analysis.solvers.UnivariateSolver;
 import org.apache.commons.math3.exception.MathInternalError;
+import org.apache.commons.math3.exception.MathIllegalStateException;
 import org.apache.commons.math3.exception.TooManyEvaluationsException;
 import org.apache.commons.math3.exception.MathUnsupportedOperationException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
@@ -27,8 +30,7 @@ import org.apache.commons.math3.optim.PointValuePair;
 import org.apache.commons.math3.optim.ConvergenceChecker;
 import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
 import org.apache.commons.math3.optim.nonlinear.scalar.GradientMultivariateOptimizer;
-import org.apache.commons.math3.optim.nonlinear.scalar.LineSearch;
-
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * Non-linear conjugate gradient optimizer.
@@ -50,8 +52,27 @@ public class NonLinearConjugateGradientOptimizer
     private final Formula updateFormula;
     /** Preconditioner (may be null). */
     private final Preconditioner preconditioner;
-    /** Line search algorithm. */
-    private final LineSearch line;
+    /** solver to use in the line search (may be null). */
+    private final UnivariateSolver solver;
+    /** Initial step used to bracket the optimum in line search. */
+    private double initialStep = 1;
+
+    /**
+     * Constructor with default {@link BrentSolver line search solver} and
+     * {@link IdentityPreconditioner preconditioner}.
+     *
+     * @param updateFormula formula to use for updating the &beta; parameter,
+     * must be one of {@link Formula#FLETCHER_REEVES} or
+     * {@link Formula#POLAK_RIBIERE}.
+     * @param checker Convergence checker.
+     */
+    public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
+                                               ConvergenceChecker<PointValuePair> checker) {
+        this(updateFormula,
+             checker,
+             new BrentSolver(),
+             new IdentityPreconditioner());
+    }
 
     /**
      * Available choices of update formulas for the updating the parameter
@@ -86,11 +107,7 @@ public class NonLinearConjugateGradientOptimizer
      * search.
      *
      * @since 3.1
-     * @deprecated As of v3.3, this class is not used anymore.
-     * This setting is replaced by the {@code initialBracketingRange}
-     * argument to the new constructors.
      */
-    @Deprecated
     public static class BracketingStep implements OptimizationData {
         /** Initial step. */
         private final double initialStep;
@@ -113,25 +130,6 @@ public class NonLinearConjugateGradientOptimizer
     }
 
     /**
-     * Constructor with default tolerances for the line search (1e-8) and
-     * {@link IdentityPreconditioner preconditioner}.
-     *
-     * @param updateFormula formula to use for updating the &beta; parameter,
-     * must be one of {@link Formula#FLETCHER_REEVES} or
-     * {@link Formula#POLAK_RIBIERE}.
-     * @param checker Convergence checker.
-     */
-    public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
-                                               ConvergenceChecker<PointValuePair> checker) {
-        this(updateFormula,
-             checker,
-             1e-8,
-             1e-8,
-             1e-8,
-             new IdentityPreconditioner());
-    }
-
-    /**
      * Constructor with default {@link IdentityPreconditioner preconditioner}.
      *
      * @param updateFormula formula to use for updating the &beta; parameter,
@@ -139,10 +137,7 @@ public class NonLinearConjugateGradientOptimizer
      * {@link Formula#POLAK_RIBIERE}.
      * @param checker Convergence checker.
      * @param lineSearchSolver Solver to use during line search.
-     * @deprecated as of 3.3. Please use
-     * {@link #NonLinearConjugateGradientOptimizer(Formula,ConvergenceChecker,double,double,double)} instead.
      */
-    @Deprecated
     public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
                                                ConvergenceChecker<PointValuePair> checker,
                                                final UnivariateSolver lineSearchSolver) {
@@ -153,90 +148,37 @@ public class NonLinearConjugateGradientOptimizer
     }
 
     /**
-     * Constructor with default {@link IdentityPreconditioner preconditioner}.
-     *
-     * @param updateFormula formula to use for updating the &beta; parameter,
-     * must be one of {@link Formula#FLETCHER_REEVES} or
-     * {@link Formula#POLAK_RIBIERE}.
-     * @param checker Convergence checker.
-     * @param relativeTolerance Relative threshold for line search.
-     * @param absoluteTolerance Absolute threshold for line search.
-     * @param initialBracketingRange Extent of the initial interval used to
-     * find an interval that brackets the optimum in order to perform the
-     * line search.
-     *
-     * @see LineSearch#LineSearch(MultivariateOptimizer,double,double,double)
-     * @since 3.3
-     */
-    public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
-                                               ConvergenceChecker<PointValuePair> checker,
-                                               double relativeTolerance,
-                                               double absoluteTolerance,
-                                               double initialBracketingRange) {
-        this(updateFormula,
-             checker,
-             relativeTolerance,
-             absoluteTolerance,
-             initialBracketingRange,
-             new IdentityPreconditioner());
-    }
-
-    /**
      * @param updateFormula formula to use for updating the &beta; parameter,
      * must be one of {@link Formula#FLETCHER_REEVES} or
      * {@link Formula#POLAK_RIBIERE}.
      * @param checker Convergence checker.
      * @param lineSearchSolver Solver to use during line search.
      * @param preconditioner Preconditioner.
-     * @deprecated as of 3.3. Please use
-     * {@link #NonLinearConjugateGradientOptimizer(Formula,ConvergenceChecker,double,double,double,Preconditioner)} instead.
      */
-    @Deprecated
     public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
                                                ConvergenceChecker<PointValuePair> checker,
                                                final UnivariateSolver lineSearchSolver,
                                                final Preconditioner preconditioner) {
-        this(updateFormula,
-             checker,
-             lineSearchSolver.getRelativeAccuracy(),
-             lineSearchSolver.getAbsoluteAccuracy(),
-             lineSearchSolver.getAbsoluteAccuracy(),
-             preconditioner);
-    }
-
-    /**
-     * @param updateFormula formula to use for updating the &beta; parameter,
-     * must be one of {@link Formula#FLETCHER_REEVES} or
-     * {@link Formula#POLAK_RIBIERE}.
-     * @param checker Convergence checker.
-     * @param preconditioner Preconditioner.
-     * @param relativeTolerance Relative threshold for line search.
-     * @param absoluteTolerance Absolute threshold for line search.
-     * @param initialBracketingRange Extent of the initial interval used to
-     * find an interval that brackets the optimum in order to perform the
-     * line search.
-     *
-     * @see LineSearch#LineSearch(MultivariateOptimizer,double,double,double)
-     * @since 3.3
-     */
-    public NonLinearConjugateGradientOptimizer(final Formula updateFormula,
-                                               ConvergenceChecker<PointValuePair> checker,
-                                               double relativeTolerance,
-                                               double absoluteTolerance,
-                                               double initialBracketingRange,
-                                               final Preconditioner preconditioner) {
         super(checker);
 
         this.updateFormula = updateFormula;
+        solver = lineSearchSolver;
         this.preconditioner = preconditioner;
-        line = new LineSearch(this,
-                              relativeTolerance,
-                              absoluteTolerance,
-                              initialBracketingRange);
+        initialStep = 1;
     }
 
     /**
      * {@inheritDoc}
+     *
+     * @param optData Optimization data. In addition to those documented in
+     * {@link GradientMultivariateOptimizer#parseOptimizationData(OptimizationData[])
+     * GradientMultivariateOptimizer}, this method will register the following data:
+     * <ul>
+     *  <li>{@link BracketingStep}</li>
+     * </ul>
+     * @return {@inheritDoc}
+     * @throws TooManyEvaluationsException if the maximal number of
+     * evaluations (of the objective function) is exceeded.
      */
     @Override
     public PointValuePair optimize(OptimizationData... optData)
@@ -269,6 +211,7 @@ public class NonLinearConjugateGradientOptimizer
         }
 
         PointValuePair current = null;
+        int maxEval = getMaxEvaluations();
         while (true) {
             incrementIterationCount();
 
@@ -280,7 +223,14 @@ public class NonLinearConjugateGradientOptimizer
                 return current;
             }
 
-            final double step = line.search(point, searchDirection).getPoint();
+            // Find the optimal step in the search direction.
+            final UnivariateFunction lsf = new LineSearchFunction(point, searchDirection);
+            final double uB = findUpperBound(lsf, 0, initialStep);
+            // XXX Last parameters is set to a value close to zero in order to
+            // work around the divergence problem in the "testCircleFitting"
+            // unit test (see MATH-439).
+            final double step = solver.solve(maxEval, lsf, 0, uB, 1e-15);
+            maxEval -= solver.getEvaluations(); // Subtract used up evaluations.
 
             // Validate new point.
             for (int i = 0; i < point.length; ++i) {
@@ -335,14 +285,55 @@ public class NonLinearConjugateGradientOptimizer
     }
 
     /**
-     * {@inheritDoc}
+     * Scans the list of (required and optional) optimization data that
+     * characterize the problem.
+     *
+     * @param optData Optimization data.
+     * The following data will be looked for:
+     * <ul>
+     *  <li>{@link BracketingStep}</li>
+     * </ul>
      */
     @Override
     protected void parseOptimizationData(OptimizationData... optData) {
         // Allow base class to register its own data.
         super.parseOptimizationData(optData);
 
+        // The existing values (as set by the previous call) are reused if
+        // not provided in the argument list.
+        for (OptimizationData data : optData) {
+            if  (data instanceof BracketingStep) {
+                initialStep = ((BracketingStep) data).getBracketingStep();
+                // If more data must be parsed, this statement _must_ be
+                // changed to "continue".
+                break;
+            }
+        }
+
         checkParameters();
+    }
+
+    /**
+     * Finds the upper bound b ensuring bracketing of a root between a and b.
+     *
+     * @param f function whose root must be bracketed.
+     * @param a lower bound of the interval.
+     * @param h initial step to try.
+     * @return b such that f(a) and f(b) have opposite signs.
+     * @throws MathIllegalStateException if no bracket can be found.
+     */
+    private double findUpperBound(final UnivariateFunction f,
+                                  final double a, final double h) {
+        final double yA = f.value(a);
+        double yB = yA;
+        for (double step = h; step < Double.MAX_VALUE; step *= FastMath.max(2, yA / yB)) {
+            final double b = a + step;
+            yB = f.value(b);
+            if (yA * yB <= 0) {
+                return b;
+            }
+        }
+        throw new MathIllegalStateException(LocalizedFormats.UNABLE_TO_BRACKET_OPTIMUM_IN_LINE_SEARCH);
     }
 
     /** Default identity preconditioner. */
@@ -353,55 +344,52 @@ public class NonLinearConjugateGradientOptimizer
         }
     }
 
-    // Class is not used anymore (cf. MATH-1092). However, it might
-    // be interesting to create a class similar to "LineSearch", but
-    // that will take advantage that the model's gradient is available.
-//     /**
-//      * Internal class for line search.
-//      * <p>
-//      * The function represented by this class is the dot product of
-//      * the objective function gradient and the search direction. Its
-//      * value is zero when the gradient is orthogonal to the search
-//      * direction, i.e. when the objective function value is a local
-//      * extremum along the search direction.
-//      * </p>
-//      */
-//     private class LineSearchFunction implements UnivariateFunction {
-//         /** Current point. */
-//         private final double[] currentPoint;
-//         /** Search direction. */
-//         private final double[] searchDirection;
+    /**
+     * Internal class for line search.
+     * <p>
+     * The function represented by this class is the dot product of
+     * the objective function gradient and the search direction. Its
+     * value is zero when the gradient is orthogonal to the search
+     * direction, i.e. when the objective function value is a local
+     * extremum along the search direction.
+     * </p>
+     */
+    private class LineSearchFunction implements UnivariateFunction {
+        /** Current point. */
+        private final double[] currentPoint;
+        /** Search direction. */
+        private final double[] searchDirection;
 
-//         /**
-//          * @param point Current point.
-//          * @param direction Search direction.
-//          */
-//         public LineSearchFunction(double[] point,
-//                                   double[] direction) {
-//             currentPoint = point.clone();
-//             searchDirection = direction.clone();
-//         }
+        /**
+         * @param point Current point.
+         * @param direction Search direction.
+         */
+        public LineSearchFunction(double[] point,
+                                  double[] direction) {
+            currentPoint = point.clone();
+            searchDirection = direction.clone();
+        }
 
-//         /** {@inheritDoc} */
-//         public double value(double x) {
-//             // current point in the search direction
-//             final double[] shiftedPoint = currentPoint.clone();
-//             for (int i = 0; i < shiftedPoint.length; ++i) {
-//                 shiftedPoint[i] += x * searchDirection[i];
-//             }
+        /** {@inheritDoc} */
+        public double value(double x) {
+            // current point in the search direction
+            final double[] shiftedPoint = currentPoint.clone();
+            for (int i = 0; i < shiftedPoint.length; ++i) {
+                shiftedPoint[i] += x * searchDirection[i];
+            }
 
-//             // gradient of the objective function
-//             final double[] gradient = computeObjectiveGradient(shiftedPoint);
+            // gradient of the objective function
+            final double[] gradient = computeObjectiveGradient(shiftedPoint);
 
-//             // dot product with the search direction
-//             double dotProduct = 0;
-//             for (int i = 0; i < gradient.length; ++i) {
-//                 dotProduct += gradient[i] * searchDirection[i];
-//             }
+            // dot product with the search direction
+            double dotProduct = 0;
+            for (int i = 0; i < gradient.length; ++i) {
+                dotProduct += gradient[i] * searchDirection[i];
+            }
 
-//             return dotProduct;
-//         }
-//     }
+            return dotProduct;
+        }
+    }
 
     /**
      * @throws MathUnsupportedOperationException if bounds were passed to the

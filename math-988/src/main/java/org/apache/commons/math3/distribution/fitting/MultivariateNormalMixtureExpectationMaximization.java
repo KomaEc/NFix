@@ -19,7 +19,6 @@ package org.apache.commons.math3.distribution.fitting;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.commons.math3.distribution.MultivariateNormalDistribution;
 import org.apache.commons.math3.distribution.MixtureMultivariateNormalDistribution;
 import org.apache.commons.math3.exception.ConvergenceException;
@@ -32,7 +31,6 @@ import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.SingularMatrixException;
 import org.apache.commons.math3.stat.correlation.Covariance;
-import org.apache.commons.math3.util.FastMath;
 import org.apache.commons.math3.util.MathArrays;
 import org.apache.commons.math3.util.Pair;
 
@@ -167,7 +165,7 @@ public class MultivariateNormalMixtureExpectationMaximization {
         fittedModel = new MixtureMultivariateNormalDistribution(initialMixture.getComponents());
 
         while (numIterations++ <= maxIterations &&
-               FastMath.abs(previousLogLikelihood - logLikelihood) > threshold) {
+               Math.abs(previousLogLikelihood - logLikelihood) > threshold) {
             previousLogLikelihood = logLikelihood;
             double sumLogLikelihood = 0d;
 
@@ -199,7 +197,7 @@ public class MultivariateNormalMixtureExpectationMaximization {
 
             for (int i = 0; i < n; i++) {
                 final double rowDensity = fittedModel.density(data[i]);
-                sumLogLikelihood += FastMath.log(rowDensity);
+                sumLogLikelihood += Math.log(rowDensity);
 
                 for (int j = 0; j < k; j++) {
                     gamma[i][j] = weights[j] * mvns[j].density(data[i]) / rowDensity;
@@ -253,7 +251,7 @@ public class MultivariateNormalMixtureExpectationMaximization {
                                                                     newCovMatArrays);
         }
 
-        if (FastMath.abs(previousLogLikelihood - logLikelihood) > threshold) {
+        if (Math.abs(previousLogLikelihood - logLikelihood) > threshold) {
             // Did not converge before the maximum number of iterations
             throw new ConvergenceException();
         }
@@ -329,7 +327,7 @@ public class MultivariateNormalMixtureExpectationMaximization {
 
         // components of mixture model to be created
         final List<Pair<Double, MultivariateNormalDistribution>> components =
-                new ArrayList<Pair<Double, MultivariateNormalDistribution>>(numComponents);
+                new ArrayList<Pair<Double, MultivariateNormalDistribution>>();
 
         // create a component based on data in each bin
         for (int binIndex = 0; binIndex < numComponents; binIndex++) {

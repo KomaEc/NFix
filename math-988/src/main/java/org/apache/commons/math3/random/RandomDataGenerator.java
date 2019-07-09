@@ -37,7 +37,6 @@ import org.apache.commons.math3.distribution.PoissonDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 import org.apache.commons.math3.distribution.WeibullDistribution;
 import org.apache.commons.math3.distribution.ZipfDistribution;
-import org.apache.commons.math3.distribution.UniformIntegerDistribution;
 import org.apache.commons.math3.exception.MathInternalError;
 import org.apache.commons.math3.exception.NotANumberException;
 import org.apache.commons.math3.exception.NotFiniteNumberException;
@@ -46,7 +45,6 @@ import org.apache.commons.math3.exception.NotStrictlyPositiveException;
 import org.apache.commons.math3.exception.NumberIsTooLargeException;
 import org.apache.commons.math3.exception.OutOfRangeException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.util.MathArrays;
 
 /**
  * Implements the {@link RandomData} interface using a {@link RandomGenerator}
@@ -119,7 +117,7 @@ public class RandomDataGenerator implements RandomData, Serializable {
     private RandomGenerator rand = null;
 
     /** underlying secure random number generator */
-    private RandomGenerator secRand = null;
+    private SecureRandom secRand = null;
 
     /**
      * Construct a RandomDataGenerator, using a default random generator as the source
@@ -196,7 +194,25 @@ public class RandomDataGenerator implements RandomData, Serializable {
 
     /** {@inheritDoc} */
     public int nextInt(final int lower, final int upper) throws NumberIsTooLargeException {
-        return new UniformIntegerDistribution(getRandomGenerator(), lower, upper).sample();
+        if (lower >= upper) {
+            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+                                                lower, upper, false);
+        }
+        final int max = (upper - lower) + 1;
+        if (max <= 0) {
+            // the range is too wide to fit in a positive int (larger than 2^31); as it covers
+            // more than half the integer range, we use directly a simple rejection method
+            final RandomGenerator rng = getRandomGenerator();
+            while (true) {
+                final int r = rng.nextInt();
+                if (r >= lower && r <= upper) {
+                    return r;
+                }
+            }
+        } else {
+            // we can shift the range and generate directly a positive int
+            return lower + getRandomGenerator().nextInt(max);
+        }
     }
 
     /** {@inheritDoc} */
@@ -248,7 +264,7 @@ public class RandomDataGenerator implements RandomData, Serializable {
                 for (final byte b : byteArray) {
                     bits = (bits << 8) | (((long) b) & 0xffL);
                 }
-                bits &= 0x7fffffffffffffffL;
+                bits = bits & 0x7fffffffffffffffL;
                 val  = bits % n;
             } while (bits - val + (n - 1) < 0);
             return val;
@@ -279,7 +295,7 @@ public class RandomDataGenerator implements RandomData, Serializable {
         }
 
         // Get SecureRandom and setup Digest provider
-        final RandomGenerator secRan = getSecRan();
+        SecureRandom secRan = getSecRan();
         MessageDigest alg = null;
         try {
             alg = MessageDigest.getInstance("SHA-1");
@@ -324,7 +340,25 @@ public class RandomDataGenerator implements RandomData, Serializable {
 
     /**  {@inheritDoc} */
     public int nextSecureInt(final int lower, final int upper) throws NumberIsTooLargeException {
-        return new UniformIntegerDistribution(getSecRan(), lower, upper).sample();
+        if (lower >= upper) {
+            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+                                                lower, upper, false);
+        }
+        final int max = (upper - lower) + 1;
+        if (max <= 0) {
+            // the range is too wide to fit in a positive int (larger than 2^31); as it covers
+            // more than half the integer range, we use directly a simple rejection method
+            final SecureRandom rng = getSecRan();
+            while (true) {
+                final int r = rng.nextInt();
+                if (r >= lower && r <= upper) {
+                    return r;
+                }
+            }
+        } else {
+            // we can shift the range and generate directly a positive int
+            return lower + getSecRan().nextInt(max);
+        }
     }
 
     /** {@inheritDoc} */
@@ -333,11 +367,11 @@ public class RandomDataGenerator implements RandomData, Serializable {
             throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
                                                 lower, upper, false);
         }
-        final RandomGenerator rng = getSecRan();
         final long max = (upper - lower) + 1;
         if (max <= 0) {
             // the range is too wide to fit in a positive long (larger than 2^63); as it covers
             // more than half the long range, we use directly a simple rejection method
+            final SecureRandom rng = getSecRan();
             while (true) {
                 final long r = rng.nextLong();
                 if (r >= lower && r <= upper) {
@@ -346,11 +380,42 @@ public class RandomDataGenerator implements RandomData, Serializable {
             }
         } else if (max < Integer.MAX_VALUE){
             // we can shift the range and generate directly a positive int
-            return lower + rng.nextInt((int) max);
+            return lower + getSecRan().nextInt((int) max);
         } else {
             // we can shift the range and generate directly a positive long
-            return lower + nextLong(rng, max);
+            return lower + nextLong(getSecRan(), max);
         }
+    }
+
+    /**
+     * Returns a pseudorandom, uniformly distributed <tt>long</tt> value
+     * between 0 (inclusive) and the specified value (exclusive), drawn from
+     * this random number generator's sequence.
+     *
+     * @param rng random generator to use
+     * @param n the bound on the random number to be returned.  Must be
+     * positive.
+     * @return  a pseudorandom, uniformly distributed <tt>long</tt>
+     * value between 0 (inclusive) and n (exclusive).
+     * @throws IllegalArgumentException  if n is not positive.
+     */
+    private static long nextLong(final SecureRandom rng, final long n) throws IllegalArgumentException {
+        if (n > 0) {
+            final byte[] byteArray = new byte[8];
+            long bits;
+            long val;
+            do {
+                rng.nextBytes(byteArray);
+                bits = 0;
+                for (final byte b : byteArray) {
+                    bits = (bits << 8) | (((long) b) & 0xffL);
+                }
+                bits = bits & 0x7fffffffffffffffL;
+                val  = bits % n;
+            } while (bits - val + (n - 1) < 0);
+            return val;
+        }
+        throw new NotStrictlyPositiveException(n);
     }
 
     /**
@@ -620,10 +685,11 @@ public class RandomDataGenerator implements RandomData, Serializable {
     /**
      * {@inheritDoc}
      *
-     * This method calls {@link MathArrays#shuffle(int[],RandomGenerator)
-     * MathArrays.shuffle} in order to create a random shuffle of the set
-     * of natural numbers {@code { 0, 1, ..., n - 1 }}.
-     *
+     * <p>
+     * Uses a 2-cycle permutation shuffle. The shuffling process is described <a
+     * href="http://www.maths.abdn.ac.uk/~igc/tch/mx4002/notes/node83.html">
+     * here</a>.
+     * </p>
      * @throws NumberIsTooLargeException if {@code k > n}.
      * @throws NotStrictlyPositiveException if {@code k <= 0}.
      */
@@ -638,18 +704,28 @@ public class RandomDataGenerator implements RandomData, Serializable {
                                                    k);
         }
 
-        int[] index = MathArrays.natural(n);
-        MathArrays.shuffle(index, getRandomGenerator());
+        int[] index = getNatural(n);
+        shuffle(index, n - k);
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = index[n - i - 1];
+        }
 
-        // Return a new array containing the first "k" entries of "index".
-        return MathArrays.copyOf(index, k);
+        return result;
     }
 
     /**
      * {@inheritDoc}
      *
-     * This method calls {@link #nextPermutation(int,int) nextPermutation(c.size(), k)}
-     * in order to sample the collection.
+     * <p>
+     * <strong>Algorithm Description</strong>: Uses a 2-cycle permutation
+     * shuffle to generate a random permutation of <code>c.size()</code> and
+     * then returns the elements whose indexes correspond to the elements of the
+     * generated permutation. This technique is described, and proven to
+     * generate random samples <a
+     * href="http://www.maths.abdn.ac.uk/~igc/tch/mx4002/notes/node83.html">
+     * here</a>
+     * </p>
      */
     public Object[] nextSample(Collection<?> c, int k) throws NumberIsTooLargeException, NotStrictlyPositiveException {
 
@@ -734,7 +810,7 @@ public class RandomDataGenerator implements RandomData, Serializable {
      */
     public void setSecureAlgorithm(String algorithm, String provider)
             throws NoSuchAlgorithmException, NoSuchProviderException {
-        secRand = RandomGeneratorFactory.createRandomGenerator(SecureRandom.getInstance(algorithm, provider));
+        secRand = SecureRandom.getInstance(algorithm, provider);
     }
 
     /**
@@ -770,14 +846,49 @@ public class RandomDataGenerator implements RandomData, Serializable {
      * {@code System.currentTimeMillis() + System.identityHashCode(this)} as the default seed.
      * </p>
      *
-     * @return the SecureRandom used to generate secure random data, wrapped in a
-     * {@link RandomGenerator}.
+     * @return the SecureRandom used to generate secure random data
      */
-    private RandomGenerator getSecRan() {
+    private SecureRandom getSecRan() {
         if (secRand == null) {
-            secRand = RandomGeneratorFactory.createRandomGenerator(new SecureRandom());
+            secRand = new SecureRandom();
             secRand.setSeed(System.currentTimeMillis() + System.identityHashCode(this));
         }
         return secRand;
+    }
+
+    /**
+     * Uses a 2-cycle permutation shuffle to randomly re-order the last elements
+     * of list.
+     *
+     * @param list list to be shuffled
+     * @param end element past which shuffling begins
+     */
+    private void shuffle(int[] list, int end) {
+        int target = 0;
+        for (int i = list.length - 1; i >= end; i--) {
+            if (i == 0) {
+                target = 0;
+            } else {
+                // NumberIsTooLargeException cannot occur
+                target = nextInt(0, i);
+            }
+            int temp = list[target];
+            list[target] = list[i];
+            list[i] = temp;
+        }
+    }
+
+    /**
+     * Returns an array representing n.
+     *
+     * @param n the natural number to represent
+     * @return array with entries = elements of n
+     */
+    private int[] getNatural(int n) {
+        int[] natural = new int[n];
+        for (int i = 0; i < n; i++) {
+            natural[i] = i;
+        }
+        return natural;
     }
 }

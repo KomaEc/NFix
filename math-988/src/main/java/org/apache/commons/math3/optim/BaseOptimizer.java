@@ -39,27 +39,16 @@ public abstract class BaseOptimizer<PAIR> {
     /** Iterations counter. */
     protected final Incrementor iterations;
     /** Convergence checker. */
-    private final ConvergenceChecker<PAIR> checker;
+    private ConvergenceChecker<PAIR> checker;
 
     /**
      * @param checker Convergence checker.
      */
     protected BaseOptimizer(ConvergenceChecker<PAIR> checker) {
-        this(checker, 0, Integer.MAX_VALUE);
-    }
-
-    /**
-     * @param checker Convergence checker.
-     * @param maxEval Maximum number of objective function evaluations.
-     * @param maxIter Maximum number of algorithm iterations.
-     */
-    protected BaseOptimizer(ConvergenceChecker<PAIR> checker,
-                            int maxEval,
-                            int maxIter) {
         this.checker = checker;
 
-        evaluations = new Incrementor(maxEval, new MaxEvalCallback());
-        iterations = new Incrementor(maxIter, new MaxIterCallback());
+        evaluations = new Incrementor(0, new MaxEvalCallback());
+        iterations = new Incrementor(Integer.MAX_VALUE, new MaxIterCallback());
     }
 
     /**
@@ -115,15 +104,15 @@ public abstract class BaseOptimizer<PAIR> {
 
     /**
      * Stores data and performs the optimization.
-     * <p>
+     * <br/>
      * The list of parameters is open-ended so that sub-classes can extend it
      * with arguments specific to their concrete implementations.
-     * <p>
+     * <br/>
      * When the method is called multiple times, instance data is overwritten
      * only when actually present in the list of arguments: when not specified,
      * data set in a previous call is retained (and thus is optional in
      * subsequent calls).
-     * <p>
+     * <br/>
      * Important note: Subclasses <em>must</em> override
      * {@link #parseOptimizationData(OptimizationData[])} if they need to register
      * their own options; but then, they <em>must</em> also call
@@ -135,7 +124,7 @@ public abstract class BaseOptimizer<PAIR> {
      *  <li>{@link MaxEval}</li>
      *  <li>{@link MaxIter}</li>
      * </ul>
-     * @return a point/value pair that satisfies the convergence criteria.
+     * @return a point/value pair that satifies the convergence criteria.
      * @throws TooManyEvaluationsException if the maximal number of
      * evaluations is exceeded.
      * @throws TooManyIterationsException if the maximal number of
@@ -147,25 +136,6 @@ public abstract class BaseOptimizer<PAIR> {
         // Parse options.
         parseOptimizationData(optData);
 
-        // Reset counters.
-        evaluations.resetCount();
-        iterations.resetCount();
-        // Perform optimization.
-        return doOptimize();
-    }
-
-    /**
-     * Performs the optimization.
-     *
-     * @return a point/value pair that satisfies the convergence criteria.
-     * @throws TooManyEvaluationsException if the maximal number of
-     * evaluations is exceeded.
-     * @throws TooManyIterationsException if the maximal number of
-     * iterations is exceeded.
-     */
-    public PAIR optimize()
-        throws TooManyEvaluationsException,
-               TooManyIterationsException {
         // Reset counters.
         evaluations.resetCount();
         iterations.resetCount();
@@ -237,7 +207,7 @@ public abstract class BaseOptimizer<PAIR> {
         implements  Incrementor.MaxCountExceededCallback {
         /**
          * {@inheritDoc}
-         * @throws TooManyEvaluationsException
+         * @throws TooManyEvaluationsException.
          */
         public void trigger(int max) {
             throw new TooManyEvaluationsException(max);
@@ -252,7 +222,7 @@ public abstract class BaseOptimizer<PAIR> {
         implements Incrementor.MaxCountExceededCallback {
         /**
          * {@inheritDoc}
-         * @throws TooManyIterationsException
+         * @throws TooManyIterationsException.
          */
         public void trigger(int max) {
             throw new TooManyIterationsException(max);
