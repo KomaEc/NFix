@@ -15,7 +15,9 @@ To compile, type `make`. To clean all files, type `make clean`# NPE Bugs
 ## Useful Command
 ```bash
 echo $(echo ./*.jar | tr ' ' ':') >> dependency.txt
-sed 's/.\//\//g' dependency.txt 
+sed 's/.\//\//g' dependency.txt
+insert-annotations-to-source target/classes/nullable-annotations.jaif $(find ./src/main/java/org -name '*.java' | tr '\n' ' ')
+
 ```
 
 
