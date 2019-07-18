@@ -16,6 +16,7 @@
  */
 package org.apache.commons.math3.geometry.partitioning;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.apache.commons.math3.geometry.Space;
 
 /** This class implements the dimension-independent parts of {@link SubHyperplane}.
@@ -40,6 +41,7 @@ public abstract class AbstractSubHyperplane<S extends Space, T extends Space>
     private final Hyperplane<S> hyperplane;
 
     /** Remaining region of the hyperplane. */
+    @Nullable
     private final Region<T> remainingRegion;
 
     /** Build a sub-hyperplane from an hyperplane and a region.

@@ -16,6 +16,7 @@
  */
 package org.apache.commons.math3.geometry.partitioning;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -44,6 +45,7 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
     private double size;
 
     /** Barycenter. */
+    @Nullable
     private Vector<S> barycenter;
 
     /** Build a region representing the whole space.

@@ -16,6 +16,7 @@
  */
 package org.apache.commons.math3.geometry.euclidean.threed;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
 import org.apache.commons.math3.geometry.Vector;
@@ -41,9 +42,11 @@ import org.apache.commons.math3.util.Precision;
 public class Line implements Embedding<Euclidean3D, Euclidean1D> {
 
     /** Line direction. */
+    @Nullable
     private Vector3D direction;
 
     /** Line point closest to the origin. */
+    @Nullable
     private Vector3D zero;
 
     /** Build a line from two points.
@@ -212,7 +215,7 @@ public class Line implements Embedding<Euclidean3D, Euclidean1D> {
      * @return intersection point of the instance and the other line
      * or null if there are no intersection points
      */
-    public Vector3D intersection(final Line line) {
+    public @Nullable Vector3D intersection(final Line line) {
         final Vector3D closest = closestPoint(line);
         return line.contains(closest) ? closest : null;
     }

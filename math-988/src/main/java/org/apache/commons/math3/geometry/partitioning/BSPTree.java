@@ -16,6 +16,7 @@
  */
 package org.apache.commons.math3.geometry.partitioning;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.apache.commons.math3.exception.MathInternalError;
 import org.apache.commons.math3.geometry.Vector;
 import org.apache.commons.math3.geometry.Space;
@@ -63,18 +64,23 @@ import org.apache.commons.math3.util.FastMath;
 public class BSPTree<S extends Space> {
 
     /** Cut sub-hyperplane. */
+    @Nullable
     private SubHyperplane<S> cut;
 
     /** Tree at the plus side of the cut hyperplane. */
+    @Nullable
     private BSPTree<S> plus;
 
     /** Tree at the minus side of the cut hyperplane. */
+    @Nullable
     private BSPTree<S> minus;
 
     /** Parent tree. */
+    @Nullable
     private BSPTree<S> parent;
 
     /** Application-defined attribute. */
+    @Nullable
     private Object attribute;
 
     /** Build a tree having only one root cell representing the whole space.
