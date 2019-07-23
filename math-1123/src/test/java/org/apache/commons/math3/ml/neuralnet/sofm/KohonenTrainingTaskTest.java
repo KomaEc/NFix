@@ -17,23 +17,26 @@
 
 package org.apache.commons.math3.ml.neuralnet.sofm;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
+import java.util.HashSet;
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-
-import org.apache.commons.math3.Retry;
-import org.apache.commons.math3.RetryRunner;
-import org.apache.commons.math3.util.FastMath;
-import org.junit.Assert;
+import java.util.concurrent.ExecutionException;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
+import org.apache.commons.math3.RetryRunner;
+import org.apache.commons.math3.Retry;
+import org.apache.commons.math3.util.FastMath;
+import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 /**
  * Tests for {@link KohonenTrainingTask}
@@ -186,7 +189,6 @@ public class KohonenTrainingTaskTest {
      * @param filename File.
      * @param solver Solver.
      */
-    @SuppressWarnings("unused")
     private void printSummary(String filename,
                               TravellingSalesmanSolver solver) {
         PrintWriter out = null;

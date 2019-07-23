@@ -18,6 +18,7 @@
   -->
   
 <?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Id$ -->
 <document url="stat.html">
   <properties>
     <title>The Commons Math User Guide - Complex Numbers</title>

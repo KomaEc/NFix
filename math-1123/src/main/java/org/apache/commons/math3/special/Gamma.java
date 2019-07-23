@@ -49,6 +49,7 @@ import org.apache.commons.math3.util.FastMath;
  * functions can safely be ported to Commons-Math.
  * </p>
  *
+ * @version $Id$
  */
 public class Gamma {
     /**

@@ -29,6 +29,7 @@ import org.apache.commons.math3.util.FastMath;
 /**
  * An implementation of the Mann-Whitney U test (also called Wilcoxon rank-sum test).
  *
+ * @version $Id$
  */
 public class MannWhitneyUTest {
 
@@ -144,12 +145,12 @@ public class MannWhitneyUTest {
          * U1 = R1 - (n1 * (n1 + 1)) / 2 where R1 is sum of ranks for sample 1,
          * e.g. x, n1 is the number of observations in sample 1.
          */
-        final double U1 = sumRankX - ((long) x.length * (x.length + 1)) / 2;
+        final double U1 = sumRankX - (x.length * (x.length + 1)) / 2;
 
         /*
          * It can be shown that U1 + U2 = n1 * n2
          */
-        final double U2 = (long) x.length * y.length - U1;
+        final double U2 = x.length * y.length - U1;
 
         return FastMath.max(U1, U2);
     }
@@ -181,8 +182,7 @@ public class MannWhitneyUTest {
         final double z = (Umin - EU) / FastMath.sqrt(VarU);
 
         // No try-catch or advertised exception because args are valid
-        // pass a null rng to avoid unneeded overhead as we will not sample from this distribution
-        final NormalDistribution standardNormal = new NormalDistribution(null, 0, 1);
+        final NormalDistribution standardNormal = new NormalDistribution(0, 1);
 
         return 2 * standardNormal.cumulativeProbability(z);
     }
@@ -230,7 +230,7 @@ public class MannWhitneyUTest {
         /*
          * It can be shown that U1 + U2 = n1 * n2
          */
-        final double Umin = (long) x.length * y.length - Umax;
+        final double Umin = x.length * y.length - Umax;
 
         return calculateAsymptoticPValue(Umin, x.length, y.length);
     }

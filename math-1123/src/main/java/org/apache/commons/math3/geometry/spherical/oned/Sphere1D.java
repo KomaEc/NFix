@@ -31,6 +31,7 @@ import org.apache.commons.math3.geometry.Space;
  * MathWorld), i.e. the 1-sphere is the one-dimensional closed curve
  * defined in 2D as x<sup>2</sup>+y<sup>2</sup>=1.
  * </p>
+ * @version $Id$
  * @since 3.3
  */
 public class Sphere1D implements Serializable, Space {

@@ -24,6 +24,7 @@ import org.junit.Test;
 /**
  * Tests {@link GaussianCurveFitter}.
  *
+ * @version $Id$
  */
 public class GaussianCurveFitterTest {
     /** Good data. */
@@ -210,9 +211,10 @@ public class GaussianCurveFitterTest {
         final double[] init = { 3.5e6, 4.2, 0.1 };
 
         GaussianCurveFitter fitter = GaussianCurveFitter.create();
-        fitter.withMaxIterations(maxIter)
-              .withStartPoint(init)
-              .fit(createDataset(DATASET1).toList());
+        double[] parameters = fitter
+            .withMaxIterations(maxIter)
+            .withStartPoint(init)
+            .fit(createDataset(DATASET1).toList());
     }
 
     @Test

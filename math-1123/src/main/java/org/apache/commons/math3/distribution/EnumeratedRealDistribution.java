@@ -37,6 +37,7 @@ import org.apache.commons.math3.util.Pair;
  * Duplicate values are allowed. Probabilities of duplicate values are combined
  * when computing cumulative probabilities and statistics.</p>
  *
+ * @version $Id$
  * @since 3.2
  */
 public class EnumeratedRealDistribution extends AbstractRealDistribution {
@@ -53,13 +54,6 @@ public class EnumeratedRealDistribution extends AbstractRealDistribution {
     /**
      * Create a discrete distribution using the given probability mass function
      * enumeration.
-     * <p>
-     * <b>Note:</b> this constructor will implicitly create an instance of
-     * {@link Well19937c} as random generator to be used for sampling only (see
-     * {@link #sample()} and {@link #sample(int)}). In case no sampling is
-     * needed for the created distribution, it is advised to pass {@code null}
-     * as random generator via the appropriate constructors to avoid the
-     * additional initialisation overhead.
      *
      * @param singletons array of random variable values.
      * @param probabilities array of probabilities.

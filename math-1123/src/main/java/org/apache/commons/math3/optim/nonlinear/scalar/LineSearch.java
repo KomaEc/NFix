@@ -31,6 +31,7 @@ import org.apache.commons.math3.optim.MaxEval;
  * direction.
  *
  * @since 3.3
+ * @version $Id$
  */
 public class LineSearch {
     /**

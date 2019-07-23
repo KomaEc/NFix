@@ -65,6 +65,7 @@ import org.apache.commons.math3.util.FastMath;
  * {@link #transform(UnivariateFunction, double, double, int, TransformType)},
  * after sampling.
  *
+ * @version $Id$
  * @since 1.2
  */
 public class FastSineTransformer implements RealTransformer, Serializable {

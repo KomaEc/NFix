@@ -50,6 +50,7 @@ import org.apache.commons.math3.util.FastMath;
  * @see GillIntegrator
  * @see MidpointIntegrator
  * @see ThreeEighthesIntegrator
+ * @version $Id$
  * @since 3.3
  */
 

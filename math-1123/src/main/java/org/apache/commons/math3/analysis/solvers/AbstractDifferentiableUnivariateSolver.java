@@ -26,6 +26,7 @@ import org.apache.commons.math3.exception.TooManyEvaluationsException;
  * solvers.
  *
  * @since 3.0
+ * @version $Id$
  * @deprecated as of 3.1, replaced by {@link AbstractUnivariateDifferentiableSolver}
  */
 @Deprecated

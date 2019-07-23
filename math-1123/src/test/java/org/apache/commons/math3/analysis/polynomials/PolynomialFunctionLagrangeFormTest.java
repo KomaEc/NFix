@@ -27,6 +27,7 @@ import org.junit.Test;
  * give us the exact same polynomial as result. Thus we can use a very
  * small tolerance to account only for round-off errors.
  *
+ * @version $Id$
  */
 public final class PolynomialFunctionLagrangeFormTest {
 

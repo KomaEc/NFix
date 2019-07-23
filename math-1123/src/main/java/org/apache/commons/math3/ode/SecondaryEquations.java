@@ -36,6 +36,7 @@ import org.apache.commons.math3.exception.MaxCountExceededException;
  * method.
  * </p>
  * @see ExpandableStatefulODE
+ * @version $Id$
  * @since 3.0
  */
 public interface SecondaryEquations {

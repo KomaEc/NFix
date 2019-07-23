@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.geom.Point2D;
-
 import org.apache.commons.math3.optim.PointVectorValuePair;
 import org.apache.commons.math3.optim.InitialGuess;
 import org.apache.commons.math3.optim.MaxEval;
@@ -46,7 +45,6 @@ import org.junit.Assert;
  *  mvn test -Dtest=AbstractLeastSquaresOptimizerTestValidation -DargLine="-DmcRuns=1234 -server"
  * </code></pre>
  */
-@Deprecated
 public class AbstractLeastSquaresOptimizerTestValidation {
     private static final int MONTE_CARLO_RUNS = Integer.parseInt(System.getProperty("mcRuns",
                                                                                     "100"));
@@ -210,6 +208,8 @@ public class AbstractLeastSquaresOptimizerTestValidation {
 
         // Number of observations.
         final int numObs = 10;
+        // number of parameters.
+        final int numParams = 2;
 
         // Create a single set of observations.
         final Point2D.Double[] obs = lineGenerator.generate(numObs);
@@ -225,6 +225,7 @@ public class AbstractLeastSquaresOptimizerTestValidation {
 
         // Dummy optimizer (to compute the chi-square).
         final AbstractLeastSquaresOptimizer optim = new DummyOptimizer();
+        final double[] init = { slope, offset };
         // Get chi-square of the best parameters set for the given set of
         // observations.
         final double bestChi2N = getChi2N(optim, problem, regress);
@@ -315,7 +316,6 @@ public class AbstractLeastSquaresOptimizerTestValidation {
  * A dummy optimizer.
  * Used for computing the covariance matrix.
  */
-@Deprecated
 class DummyOptimizer extends AbstractLeastSquaresOptimizer {
     public DummyOptimizer() {
         super(null);

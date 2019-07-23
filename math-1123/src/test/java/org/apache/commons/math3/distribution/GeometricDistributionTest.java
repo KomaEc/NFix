@@ -21,6 +21,7 @@ import org.junit.Test;
  * <p>
  * See class javadoc for IntegerDistributionAbstractTest for details.
  *
+ * @version $Id$
  * @since 3.3
  */
 public class GeometricDistributionTest extends IntegerDistributionAbstractTest {

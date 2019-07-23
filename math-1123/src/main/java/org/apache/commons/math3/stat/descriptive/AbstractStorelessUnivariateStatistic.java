@@ -31,6 +31,7 @@ import org.apache.commons.math3.util.Precision;
  * <p>
  * <strong>Note that these implementations are not synchronized.</strong></p>
  *
+ * @version $Id$
  */
 public abstract class AbstractStorelessUnivariateStatistic
     extends AbstractUnivariateStatistic

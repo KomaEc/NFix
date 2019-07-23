@@ -35,6 +35,7 @@ import org.apache.commons.math3.util.OpenIntToDoubleHashMap;
  *  Some operations (that involve {@code NaN} and/or infinities) may
  *  thus give incorrect results.
  * </p>
+ * @version $Id$
  * @since 2.0
  */
 public class OpenMapRealMatrix extends AbstractRealMatrix

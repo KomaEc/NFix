@@ -24,6 +24,7 @@ import org.junit.Test;
 /**
  * Test for {@link NonMonotonicSequenceException}.
  * 
+ * @version $Id$
  */
 public class NonMonotonicSequenceExceptionTest {
     @Test

@@ -37,6 +37,7 @@ import org.apache.commons.math3.util.Precision;
 import org.junit.Assert;
 
 /**
+ * @version $Id$
  */
 public class TestUtils {
     /**

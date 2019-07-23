@@ -16,6 +16,7 @@
    limitations under the License.
   -->
   
+<!-- $Revision$ $Date$ -->
 <document>
  <properties>
   <title>Developers Guide</title>
@@ -47,14 +48,14 @@
             founded.
         </li>
         <li>Download the Commons Math source code.  Follow the instructions
-        under the heading "Repository Checkout" on the
-        <a href="https://git-wip-us.apache.org/">Git at the ASF page</a>.
-        The git url for the current development sources of Commons Math
-        is <source>http://git-wip-us.apache.org/repos/asf/commons-math.git</source>
-        for anonymous read-only access and
-        <source>https://apacheid@git-wip-us.apache.org/repos/asf/commons-math.git</source>
-        (where apacheid should be replaced by each committer Apache ID) for committers
-        read-write access.
+        under the heading "Anonymous Subversion" on the
+        <a href="http://www.apache.org/dev/version-control.html">Apache version
+         control page</a>  (Also have a look at the 
+        <a href="http://wiki.apache.org/commons/UsingSVN">Commons wiki
+        svn page </a>) to check out the Commons Math code base from Subversion.
+        The svn url for the current development sources of Commons Math
+        is 
+<source>https://svn.apache.org/repos/asf/commons/proper/math/trunk</source>
         </li>
         <li>Like most commons components, Commons Math uses Apache Maven as our
             build tool. The sources can also be built using Ant (a working 
@@ -92,9 +93,9 @@
             </p>     
         <li>
           Generating patches: The requested format for generating patches is
-          the Unified Diff format, which can be easily generated using the git
+          the Unified Diff format, which can be easily generated using the svn
           client or various IDEs.
-<source>git diff -p > patch </source>
+<source>svn diff  > patch </source>
           Run this command from the top-level project directory (where pom.xml
           resides).
         </li>
@@ -132,7 +133,7 @@
        </li>
        <li>Submit code as attachments to the JIRA ticket.  Please use one
        ticket for each feature, adding multiple patches to the ticket
-       as necessary.  Use the git diff command to generate your patches as
+       as necessary.  Use the svn diff command to generate your patches as
        diffs.  Please do not submit modified copies of existing java files. Be
        patient (but not <strong>too</strong> patient) with  committers reviewing
        patches. Post a *nudge* message to commons-dev with a reference to the
@@ -152,20 +153,10 @@
      Please make sure to set your IDE or editor to use spaces instead of tabs.
     </p>
     <p>
-     Committers should configure the <source>user.name</source>,
-     <source>user.email</source> and <source>core.autocrlf</source>
-     git repository or global settings with <source>git config</source>.
-     The first two settings define the identity and mail of the committer.
-     The third setting deals with line endings to achieve consistency
-     in line endings. Windows users should configure this setting to
-     <source>true</source> (thus forcing git to convert CR/LF line endings
-     in the workspace while maintaining LF only line endings in the repository)
-     while OS X and Linux users should configure it to <source>input</source>
-     (thus forcing git to only strip accidental CR/LF when committing into
-     the repository, but never when cheking out files from the repository). See <a
-     href="http://www.git-scm.com/book/en/Customizing-Git-Git-Configuration">Customizing
-     Git - Git Configuration</a> in the git book for explanation about how to
-     configure these settings and more.
+      Committers should make sure that svn properties are correctly set on
+      files added to the repository.  See the section on Committer Subversion
+      Access on the <a href="http://www.apache.org/dev/version-control.html">
+      Apache Source Code Repositories</a> page.
     </p>
    </subsection>
    <subsection name='Documentation'>
@@ -186,7 +177,7 @@
       the expression to be formatted with either &#92;( and &#92;) for inline
       formulas, or &#92;[ and &#92;] to have the formula appear on a separate line.
       For example, &#92;(a^2 + b^2 = c^2&#92;) will render an in-line formula
-      saying that (a, b, c) is Pythagorean triplet.  Using &#92;[ and &#92;] on
+      saying thqt (a, b, c) is Pythagorean triplet.  Using &#92;[ and &#92;] on
       the ends will render the same formula on a separate line.  See the MathJax
       and LaTex documentation for details on how to represent formulas and
       escape special characters.</li>

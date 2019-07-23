@@ -16,12 +16,11 @@
  */
 package org.apache.commons.math3.distribution;
 
-import java.util.ArrayList;
 import java.util.List;
-
+import java.util.ArrayList;
 import org.apache.commons.math3.exception.DimensionMismatchException;
-import org.apache.commons.math3.exception.MathArithmeticException;
 import org.apache.commons.math3.exception.NotPositiveException;
+import org.apache.commons.math3.exception.MathArithmeticException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
 import org.apache.commons.math3.random.RandomGenerator;
 import org.apache.commons.math3.random.Well19937c;
@@ -33,6 +32,7 @@ import org.apache.commons.math3.util.Pair;
  *
  * @param <T> Type of the mixture components.
  *
+ * @version $Id$
  * @since 3.1
  */
 public class MixtureMultivariateRealDistribution<T extends MultivariateRealDistribution>
@@ -45,13 +45,6 @@ public class MixtureMultivariateRealDistribution<T extends MultivariateRealDistr
     /**
      * Creates a mixture model from a list of distributions and their
      * associated weights.
-     * <p>
-     * <b>Note:</b> this constructor will implicitly create an instance of
-     * {@link Well19937c} as random generator to be used for sampling only (see
-     * {@link #sample()} and {@link #sample(int)}). In case no sampling is
-     * needed for the created distribution, it is advised to pass {@code null}
-     * as random generator via the appropriate constructors to avoid the
-     * additional initialisation overhead.
      *
      * @param components List of (weight, distribution) pairs from which to sample.
      */

@@ -28,6 +28,7 @@ import org.junit.Test;
 /**
  * Test class for {@link EnumeratedIntegerDistribution}.
  *
+ * @version $Id$
  */
 public class EnumeratedIntegerDistributionTest {
 

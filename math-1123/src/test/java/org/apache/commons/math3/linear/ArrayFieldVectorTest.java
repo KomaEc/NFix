@@ -34,6 +34,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link ArrayFieldVector} class.
  *
+ * @version $Id$
  */
 public class ArrayFieldVectorTest {
 

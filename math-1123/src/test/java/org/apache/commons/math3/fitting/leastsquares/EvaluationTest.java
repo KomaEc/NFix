@@ -13,10 +13,7 @@
  */
 package org.apache.commons.math3.fitting.leastsquares;
 
-import org.apache.commons.math3.exception.MathIllegalStateException;
 import org.apache.commons.math3.TestUtils;
-import org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-import org.apache.commons.math3.analysis.MultivariateVectorFunction;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem.Evaluation;
 import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.DiagonalMatrix;
@@ -220,107 +217,4 @@ public class EvaluationTest {
         Assert.assertEquals(evaluation.getPoint().getEntry(0), 0, 0);
     }
 
-    @Test
-    public void testLazyEvaluation() {
-        final RealVector dummy = new ArrayRealVector(new double[] { 0 });
-
-        final LeastSquaresProblem p
-            = LeastSquaresFactory.create(LeastSquaresFactory.model(dummyModel(), dummyJacobian()),
-                                         dummy, dummy, null, null, 0, 0, true, null);
-
-        // Should not throw because actual evaluation is deferred.
-        final Evaluation eval = p.evaluate(dummy);
-
-        try {
-            eval.getResiduals();
-            Assert.fail("Exception expected");
-        } catch (RuntimeException e) {
-            // Expecting exception.
-            Assert.assertEquals("dummyModel", e.getMessage());
-        }
-
-        try {
-            eval.getJacobian();
-            Assert.fail("Exception expected");
-        } catch (RuntimeException e) {
-            // Expecting exception.
-            Assert.assertEquals("dummyJacobian", e.getMessage());
-        }
-    }
-
-    // MATH-1151
-    @Test
-    public void testLazyEvaluationPrecondition() {
-        final RealVector dummy = new ArrayRealVector(new double[] { 0 });
-
-        // "ValueAndJacobianFunction" is required but we implement only
-        // "MultivariateJacobianFunction".
-        final MultivariateJacobianFunction m1 = new MultivariateJacobianFunction() {
-                public Pair<RealVector, RealMatrix> value(RealVector notUsed) {
-                    return new Pair<RealVector, RealMatrix>(null, null);
-                }
-            };
-
-        try {
-            // Should throw.
-            LeastSquaresFactory.create(m1, dummy, dummy, null, null, 0, 0, true, null);
-            Assert.fail("Expecting MathIllegalStateException");
-        } catch (MathIllegalStateException e) {
-            // Expected.
-        }
-
-        final MultivariateJacobianFunction m2 = new ValueAndJacobianFunction() {
-                public Pair<RealVector, RealMatrix> value(RealVector notUsed) {
-                    return new Pair<RealVector, RealMatrix>(null, null);
-                }
-                public RealVector computeValue(final double[] params) {
-                    return null;
-                }
-                public RealMatrix computeJacobian(final double[] params) {
-                    return null;
-                }
-            };
-
-        // Should pass.
-        LeastSquaresFactory.create(m2, dummy, dummy, null, null, 0, 0, true, null);
-    }
-
-    @Test
-    public void testDirectEvaluation() {
-        final RealVector dummy = new ArrayRealVector(new double[] { 0 });
-
-        final LeastSquaresProblem p
-            = LeastSquaresFactory.create(LeastSquaresFactory.model(dummyModel(), dummyJacobian()),
-                                         dummy, dummy, null, null, 0, 0, false, null);
-
-        try {
-            // Should throw.
-            p.evaluate(dummy);
-            Assert.fail("Exception expected");
-        } catch (RuntimeException e) {
-            // Expecting exception.
-            // Whether it is model or Jacobian that caused it is not significant.
-            final String msg = e.getMessage();
-            Assert.assertTrue(msg.equals("dummyModel") ||
-                              msg.equals("dummyJacobian"));
-        }
-    }
-
-    /** Used for testing direct vs lazy evaluation. */
-    private MultivariateVectorFunction dummyModel() {
-        return new MultivariateVectorFunction() {
-            public double[] value(double[] p) {
-                throw new RuntimeException("dummyModel");
-            }
-        };
-    }
-
-    /** Used for testing direct vs lazy evaluation. */
-    private MultivariateMatrixFunction dummyJacobian() {
-        return new MultivariateMatrixFunction() {
-            public double[][] value(double[] p) {
-                throw new RuntimeException("dummyJacobian");
-            }
-        };
-    }
 }

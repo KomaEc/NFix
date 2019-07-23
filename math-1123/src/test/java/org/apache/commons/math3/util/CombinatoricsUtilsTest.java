@@ -31,6 +31,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link CombinatoricsUtils} class.
  *
+ * @version $Id$
  */
 public class CombinatoricsUtilsTest {
 

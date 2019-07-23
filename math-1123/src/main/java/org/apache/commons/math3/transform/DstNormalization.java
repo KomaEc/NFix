@@ -22,6 +22,7 @@ package org.apache.commons.math3.transform;
  * normalizations is detailed below.
  *
  * @see FastSineTransformer
+ * @version $Id$
  * @since 3.0
  */
 public enum DstNormalization {

@@ -21,6 +21,7 @@ import org.apache.commons.math3.exception.MathUnsupportedOperationException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
 
 /**
+ * @version $Id$
  */
 public class TestBean {
     private Double x = Double.valueOf(1.0);

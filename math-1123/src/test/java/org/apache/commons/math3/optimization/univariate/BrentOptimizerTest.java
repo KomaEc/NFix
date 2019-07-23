@@ -33,8 +33,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * @version $Id$
  */
-@Deprecated
 public final class BrentOptimizerTest {
 
     @Test
@@ -208,6 +208,7 @@ public final class BrentOptimizerTest {
                                  minSin - 6.789 * delta,
                                  minSin + 9.876 * delta,
                                  init);
+        final int numEval = optimizer.getEvaluations();
 
         final double sol = result.getPoint();
         final double expected = init;
@@ -239,6 +240,7 @@ public final class BrentOptimizerTest {
             = optimizer.optimize(200, f, GoalType.MINIMIZE,
                                  minSin - 6.789 * delta,
                                  minSin + 9.876 * delta);
+        final int numEval = optimizer.getEvaluations();
 
         final double sol = result.getPoint();
         final double expected = 4.712389027602411;

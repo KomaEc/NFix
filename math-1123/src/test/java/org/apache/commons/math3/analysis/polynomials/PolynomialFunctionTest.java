@@ -25,6 +25,7 @@ import org.junit.Assert;
 /**
  * Tests the PolynomialFunction implementation of a UnivariateFunction.
  *
+ * @version $Id$
  */
 public final class PolynomialFunctionTest {
     /** Error tolerance for tests */
@@ -59,7 +60,7 @@ public final class PolynomialFunctionTest {
      * <p>This will test the function f(x) = 3*x - 1.5</p>
      * <p>This will have the values
      *  <tt>f(0) = -1.5, f(-1) = -4.5, f(-2.5) = -9,
-     *      f(0.5) = 0, f(1.5) = 3</tt> and {@code f(3) = 7.5}
+     *      f(0.5) = 0, f(1.5) = 3</tt> and <tt>f(3) = 7.5</tt>
      * </p>
      */
     @Test
@@ -128,8 +129,8 @@ public final class PolynomialFunctionTest {
      * tests the firstDerivative function by comparison
      *
      * <p>This will test the functions
-     * {@code f(x) = x^3 - 2x^2 + 6x + 3, g(x) = 3x^2 - 4x + 6}
-     * and {@code h(x) = 6x - 4}
+     * <tt>f(x) = x^3 - 2x^2 + 6x + 3, g(x) = 3x^2 - 4x + 6</tt>
+     * and <tt>h(x) = 6x - 4</tt>
      */
     @Test
     public void testfirstDerivativeComparison() {
@@ -227,8 +228,8 @@ public final class PolynomialFunctionTest {
      * tests the firstDerivative function by comparison
      *
      * <p>This will test the functions
-     * {@code f(x) = x^3 - 2x^2 + 6x + 3, g(x) = 3x^2 - 4x + 6}
-     * and {@code h(x) = 6x - 4}
+     * <tt>f(x) = x^3 - 2x^2 + 6x + 3, g(x) = 3x^2 - 4x + 6</tt>
+     * and <tt>h(x) = 6x - 4</tt>
      */
     @Test
     public void testMath341() {

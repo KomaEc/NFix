@@ -41,6 +41,7 @@ import org.apache.commons.math3.util.FastMath;
  * @see MidpointIntegrator
  * @see ThreeEighthesIntegrator
  * @see LutherIntegrator
+ * @version $Id$
  * @since 1.2
  */
 

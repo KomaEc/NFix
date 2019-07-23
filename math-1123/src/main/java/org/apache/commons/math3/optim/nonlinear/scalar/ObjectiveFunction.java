@@ -22,6 +22,7 @@ import org.apache.commons.math3.optim.OptimizationData;
 /**
  * Scalar function to be optimized.
  *
+ * @version $Id$
  * @since 3.1
  */
 public class ObjectiveFunction implements OptimizationData {

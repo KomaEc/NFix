@@ -46,6 +46,7 @@ import static org.hamcrest.CoreMatchers.is;
  * The redistribution policy for MINPACK is available <a
  * href="http://www.netlib.org/minpack/disclaimer">here</a>.
  *
+ * @version $Id$
  */
 public class LevenbergMarquardtOptimizerTest
     extends AbstractLeastSquaresOptimizerAbstractTest{
@@ -268,49 +269,6 @@ public class LevenbergMarquardtOptimizerTest
     }
 
     @Test
-    public void testParameterValidator() {
-        // Setup.
-        final double xCenter = 123.456;
-        final double yCenter = 654.321;
-        final double xSigma = 10;
-        final double ySigma = 15;
-        final double radius = 111.111;
-        final long seed = 3456789L;
-        final RandomCirclePointGenerator factory
-            = new RandomCirclePointGenerator(xCenter, yCenter, radius,
-                                             xSigma, ySigma,
-                                             seed);
-        final CircleProblem circle = new CircleProblem(xSigma, ySigma);
-
-        final int numPoints = 10;
-        for (Vector2D p : factory.generate(numPoints)) {
-            circle.addPoint(p.getX(), p.getY());
-        }
-
-        // First guess for the center's coordinates and radius.
-        final double[] init = { 90, 659, 115 };
-        final Optimum optimum
-            = optimizer.optimize(builder(circle).maxIterations(50).start(init).build());
-        final int numEval = optimum.getEvaluations();
-        Assert.assertTrue(numEval > 1);
-
-        // Build a new problem with a validator that amounts to cheating.
-        final ParameterValidator cheatValidator
-            = new ParameterValidator() {
-                    public RealVector validate(RealVector params) {
-                        // Cheat: return the optimum found previously.
-                        return optimum.getPoint();
-                    }
-                };
-
-        final Optimum cheatOptimum
-            = optimizer.optimize(builder(circle).maxIterations(50).start(init).parameterValidator(cheatValidator).build());
-        final int cheatNumEval = cheatOptimum.getEvaluations();
-        Assert.assertTrue(cheatNumEval < numEval);
-        // System.out.println("n=" + numEval + " nc=" + cheatNumEval);
-    }
-
-    @Test
     public void testEvaluationCount() {
         //setup
         LeastSquaresProblem lsp = new LinearProblem(new double[][] {{1}}, new double[] {1})
@@ -329,6 +287,48 @@ public class LevenbergMarquardtOptimizerTest
         //check iterations and evaluations are not switched.
         Assert.assertThat(optimum.getIterations(), is(1));
         Assert.assertThat(optimum.getEvaluations(), is(2));
+    }
+
+    //TODO delete or use
+    private static class QuadraticProblem {
+        private List<Double> x;
+        private List<Double> y;
+
+        public QuadraticProblem() {
+            x = new ArrayList<Double>();
+            y = new ArrayList<Double>();
+        }
+
+        public void addPoint(double x, double y) {
+            this.x.add(x);
+            this.y.add(y);
+        }
+
+        public MultivariateVectorFunction getModelFunction() {
+            return new MultivariateVectorFunction() {
+                public double[] value(double[] variables) {
+                    double[] values = new double[x.size()];
+                    for (int i = 0; i < values.length; ++i) {
+                        values[i] = (variables[0] * x.get(i) + variables[1]) * x.get(i) + variables[2];
+                    }
+                    return values;
+                }
+            };
+        }
+
+        public MultivariateMatrixFunction getModelFunctionJacobian() {
+            return new MultivariateMatrixFunction() {
+                public double[][] value(double[] params) {                    
+                    double[][] jacobian = new double[x.size()][3];
+                    for (int i = 0; i < jacobian.length; ++i) {
+                        jacobian[i][0] = x.get(i) * x.get(i);
+                        jacobian[i][1] = x.get(i);
+                        jacobian[i][2] = 1.0;
+                    }
+                    return jacobian;
+                }
+            };
+        }
     }
 
     private static class BevingtonProblem {

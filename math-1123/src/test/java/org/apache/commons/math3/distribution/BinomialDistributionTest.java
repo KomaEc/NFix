@@ -20,6 +20,7 @@ import org.junit.Test;
  * Test cases for BinomialDistribution. Extends IntegerDistributionAbstractTest.
  * See class javadoc for IntegerDistributionAbstractTest for details.
  *
+ * @version $Id$
  */
 public class BinomialDistributionTest extends IntegerDistributionAbstractTest {
 
@@ -124,24 +125,6 @@ public class BinomialDistributionTest extends IntegerDistributionAbstractTest {
         verifyInverseCumulativeProbabilities();
         Assert.assertEquals(dist.getSupportLowerBound(), 5);
         Assert.assertEquals(dist.getSupportUpperBound(), 5);
-    }
-
-    /** Test degenerate case n = 0 */
-    @Test
-    public void testDegenerate2() {
-        BinomialDistribution dist = new BinomialDistribution(0, 0.01d);
-        setDistribution(dist);
-        setCumulativeTestPoints(new int[] { -1, 0, 1, 2, 5, 10 });
-        setCumulativeTestValues(new double[] { 0d, 1d, 1d, 1d, 1d, 1d });
-        setDensityTestPoints(new int[] { -1, 0, 1, 2, 5, 10 });
-        setDensityTestValues(new double[] { 0d, 1d, 0d, 0d, 0d, 0d });
-        setInverseCumulativeTestPoints(new double[] { 0.1d, 0.5d });
-        setInverseCumulativeTestValues(new int[] { 0, 0 });
-        verifyDensities();
-        verifyCumulativeProbabilities();
-        verifyInverseCumulativeProbabilities();
-        Assert.assertEquals(dist.getSupportLowerBound(), 0);
-        Assert.assertEquals(dist.getSupportUpperBound(), 0);
     }
 
     @Test

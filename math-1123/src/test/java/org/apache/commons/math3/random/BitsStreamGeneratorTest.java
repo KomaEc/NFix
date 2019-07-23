@@ -21,6 +21,7 @@ import java.util.Random;
 /**
  * Test cases for the BitStreamGenerator class
  *
+ * @version $Id$
  */
 
 public class BitsStreamGeneratorTest extends RandomGeneratorAbstractTest {

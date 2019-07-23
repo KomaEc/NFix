@@ -38,15 +38,14 @@ import org.apache.commons.math3.util.MathUtils;
  * new value = old value - 3 * (dev/n) * m2 + (n-1) * (n -2) * (dev^3/n^2)</p>
  * <p>
  * Returns <code>Double.NaN</code> if no data values have been added and
- * returns <code>0</code> if there is just one value in the data set.
- * Note that Double.NaN may also be returned if the input includes NaN
- * and / or infinite values.</p>
+ * returns <code>0</code> if there is just one value in the data set.</p>
  * <p>
  * <strong>Note that this implementation is not synchronized.</strong> If
  * multiple threads access an instance of this class concurrently, and at least
  * one of the threads invokes the <code>increment()</code> or
  * <code>clear()</code> method, it must be synchronized externally.</p>
  *
+ * @version $Id$
  */
 class ThirdMoment extends SecondMoment implements Serializable {
 

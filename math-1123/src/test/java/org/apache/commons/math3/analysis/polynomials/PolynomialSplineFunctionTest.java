@@ -28,6 +28,7 @@ import org.junit.Test;
 /**
  * Tests the PolynomialSplineFunction implementation.
  *
+ * @version $Id$
  */
 public class PolynomialSplineFunctionTest {
 

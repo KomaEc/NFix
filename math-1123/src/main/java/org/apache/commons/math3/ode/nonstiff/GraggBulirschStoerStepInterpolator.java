@@ -71,6 +71,7 @@ import org.apache.commons.math3.util.FastMath;
  * </table>
  *
  * @see GraggBulirschStoerIntegrator
+ * @version $Id$
  * @since 1.2
  */
 

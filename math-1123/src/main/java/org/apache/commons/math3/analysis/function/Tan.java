@@ -28,6 +28,7 @@ import org.apache.commons.math3.util.FastMath;
  * Tangent function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Tan implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /** {@inheritDoc} */

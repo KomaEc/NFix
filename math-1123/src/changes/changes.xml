@@ -50,19 +50,13 @@ If the output is not quite correct, check for invisible trailing spaces!
     <title>Commons Math Release Notes</title>
   </properties>
   <body>
-    <release version="3.4" date="2014-12-22" description="
+    <release version="3.4" date="TBD" description="
 This is a minor release: It combines bug fixes and new features.
  Changes to existing features were made in a backwards-compatible
- way such as to allow drop-in replacement of the v3.3 JAR file.
+ way such as to allow drop-in replacement of the v3.x JAR file.
   
 Most notable among the new features are:
- new distributions (Gumbel, Laplace, Logistic, Nakagami), and
- improvements on percentiles algorithms (better handling for NaNs
- in the regular algorithm, plus a new storeless implementation).
- Bicubic and tricubic interpolators have been fixed and new
- implementations added. There have been numerous bug fixes and
- several improvements on performances or robustness. See below
- for a full list.
+ XXX
   
 The minimum version of the Java platform required to compile and use
  Apache Commons Math is Java 5.
@@ -79,156 +73,6 @@ Users are encouraged to upgrade to this version as this release not
   2. A few methods in the FastMath class are in fact slower that their
   counterpart in either Math or StrictMath (cf. MATH-740 and MATH-901).
 ">
-      <action dev="psteitz" type="add" issue="MATH-1066" due-to="Brian Wignall">
-        Added Bessel functions of the first kind, based on NetLib implementation.
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1142" due-to="Arne Schwarz">
-        Improve performance of kalman gain calculation in "KalmanFilter" by
-        directly solving a linear system rather than computing the matrix
-        inverse.
-      </action>
-      <action dev="psteitz" type="fix" issue="MATH-1181">
-        Fixed integer overflow in KolmogorovSmirnovTest causing 2-sample test
-        to use exact method when the product of the sample sizes exceeds 
-        Integer.MAX_VALUE, resulting in effectively hung execution.
-      </action>
-      <action dev="erans" type="add" issue="MATH-1180">
-        Method to create a sequence of integers (in "o.a.c.m.util.MathArrays").
-      </action>
-      <action dev="erans" type="add" issue="MATH-1172">
-        New class "SimpleCurveFitter": Boiler-plate code to allow fitting of
-        a user-defined parametric function.
-      </action>
-      <action dev="erans" type="add" issue="MATH-1173">
-        New classes "TricubicInterpolatingFunction" and "TricubicInterpolator" to
-        replace "TricubicSplineInterpolatingFunction" and "TricubicSplineInterpolator".
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1178" due-to="Dmitriy">
-        Fixed example in userguide ("stat" section).
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1175" due-to="Karsten Loesing">
-        Fixed inverse cumulative probability of 0 in "LaplaceDistribution".
-      </action>
-      <action dev="erans" type="add" issue="MATH-1166">
-        New classes "BicubicInterpolatingFunction" and "BicubicInterpolator" to
-        replace "BicubicSplineInterpolatingFunction" and "BicubicSplineInterpolator".
-      </action>
-      <action dev="luc" type="update" >
-        Spurious vertices in the middle of otherwise straight edges are now
-        filtered out when rebuilding polygons boundaries from BSP trees. 
-      </action>
-      <action dev="luc" type="fix" issue="MATH-1174" >
-        Fixed a problem with too thin polygons considered to have infinite size.
-      </action>
-      <action dev="luc" type="add" >
-        Boundary attributes in regions now provides the BSP tree nodes that
-        were used to split the sub-hyperplane forming the boundary part of the facet. 
-      </action>
-      <action dev="luc" type="fix" issue="MATH-1162" >
-        Fixed a problem with vanishing cut sub-hyperplanes during BSP tree merging.
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1167" due-to="Neil Ireson">
-        "o.a.c.m.stat.regression.OLSMultipleLinearRegression": Use threshold
-        when performing "QRDecomposition".
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1165" due-to="Pashutan Modaresi">
-        "FuzzyKMeansClusterer" has thrown an exception in case one of the data
-        points was equal to a cluster center.
-      </action>
-      <action dev="erans" type="add" issue="MATH-1144">
-        Interface to allow parameter validation in "o.a.c.m.fitting.leastsquares":
-        the point computed by by the optimizer can be modified before evaluation.
-      </action>
-      <action dev="luc" type="fix" issue="MATH-1160" >
-        Provide access to state derivatives in ContinuousOutputModel.
-      </action>
-      <action dev="luc" type="fix" issue="MATH-1138" due-to="Hank Grabowski">
-        Fixed bicubic spline interpolator, using Akima splines.
-      </action>
-      <action dev="psteitz" type="add" issue="MATH-1154" >
-        Changed classes in the inference package that instantiate distributions to
-        pass null RandomGenerators to avoid initialization overhead for the default
-        generator.
-      </action>
-      <action dev="luc" type="add" issue="MATH-1156" >
-        Added all Java 8 StrictMath methods to FastMath, so FastMath remains compatible
-        with newer Java versions.
-      </action>
-      <action dev="tn" type="add" issue="MATH-1139" due-to="Alexey Volkov">
-        Added Gumbel, Laplace, Logistic and Nakagami distributions.
-      </action>
-      <action dev="psteitz" type="fix" issue="MATH-1147">
-        Added statistics missing from toString method in SummaryStatistics.
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1152" due-to="Andras Sereny">
-        Improved performance of "EnumeratedDistribution#sample()" by caching
-        the cumulative probabilities and using binary rather than a linear search.
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1148" due-to="Guillaume Marceau">
-        "MonotoneChain" did not take the tolerance factor into account when
-        sorting the input points. In case of collinear points this could result
-        in a "ConvergenceException" when computing the hull.
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1151">
-        Interface "ValueAndJacobianFunction" is a precondition for lazy
-        evaluation (in "o.a.c.m.fitting.leastsquares").
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1145" due-to="Anders Conbere">
-        Fix potential integer overflows in "MannWhitneyUTest" when providing
-        large sample arrays.
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1149" due-to="M Kim">
-        Fixed potential null pointer dereferencing in constructor of
-        "DummyStepInterpolator(DummyStepInterpolator)".
-      </action>
-      <action dev="psteitz" type="fix" issue="MATH-1136" due-to="Aleksei Dievskii">
-        Fixed BinomialDistribution to deal with degenerate cases correctly.
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1135" due-to="Guillaume Marceau">
-        "MonotoneChain" failed to generate a convex hull if only a minimal hull
-        shall be created (includeCollinearPoints=false) and collinear hull points
-        were present in the input.
-      </action>
-      <action dev="psteitz" type="fix" issue="MATH-1131" due-to="Schalk W. Cronjé">
-        Improve performance of "KolmogorovSmirnovTest#kolmogorovSmirnovTest(...)" for
-        large samples. Also changed implementation for large n to use Pelz-Good
-        approximation.
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1134">
-        "BicubicSplineInterpolatingFunction": all fields made final and initialized in
-        the constructor. Added flag to request initialization, or not, of the internal
-        data needed for partial derivatives.
-      </action>
-      <action dev="psteitz" type="fix" issue="MATH-984">
-        Constrained EmpiricalDistribution sample/getNextValue methods to return
-        values within the range of the data; correctly linked RandomGenerator to
-        superclass so that RealDistribution reseedRandomGenerator method works.
-      </action>
-      <action dev="luc" type="add" issue="MATH-1120" due-to="Venkatesha Murthy">
-        Added several different estimation types and NaN handling strategies for Percentile.
-      </action>
-      <action dev="psteitz" type="add" issue="MATH-418" due-to="Venkatesha Murthy">
-        Added implementation of PSquare algorithm to estimate percentiles without
-        storing data in memory (i.e. as StorelessUnivariateStatistic).
-      </action>
-      <action dev="erans" type="fix" issue="MATH-1129">
-        "Percentile": wrong sorting in the presence of NaN.
-      </action>
-      <action dev="erans" type="update" issue="MATH-1128">
-        Added lazy evaluation to "LeastSquaresFactory" (in "o.a.c.m.fitting.leastsquares")
-        to avoid evaluating the model when the optimization algorithm does not actually
-        require it.
-      </action> 
-     <action dev="luc" type="fix" issue="MATH-1127">
-        Fixed overflow in Precision.equals with ulps (both double and float versions).
-      </action>
-      <action dev="tn" type="fix" issue="MATH-1125" due-to="Ajo Fod">
-        Performance improvements for Student's t-distribution.
-      </action>
-      <action dev="luc" type="fix" issue="MATH-1123" due-to="Aurélien Labrosse">
-        Fixed NullPointerException when chopping-off a sub-hyperplane
-        that is exactly at a region boundary.
-      </action>
       <action dev="erans" type="fix" issue="MATH-1121" due-to="Ajo Fod">
         "BrentOptimizer": increment base class iteration counter.
       </action>

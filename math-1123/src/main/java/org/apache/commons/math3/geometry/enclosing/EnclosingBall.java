@@ -24,6 +24,7 @@ import org.apache.commons.math3.geometry.Space;
 /** This class represents a ball enclosing some points.
  * @param <S> Space type.
  * @param <P> Point type.
+ * @version $Id$
  * @see Space
  * @see Point
  * @see Encloser

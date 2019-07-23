@@ -21,6 +21,7 @@ import org.apache.commons.math3.stat.descriptive.UnivariateStatistic;
 
 /**
  * Test cases for the {@link FourthMoment} class.
+ * @version $Id$
  */
 public class FourthMomentTest extends StorelessUnivariateStatisticAbstractTest{
 

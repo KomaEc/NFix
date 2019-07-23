@@ -28,6 +28,7 @@ import org.apache.commons.math3.util.FastMath;
  * Arc-sine function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Asin implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /** {@inheritDoc} */

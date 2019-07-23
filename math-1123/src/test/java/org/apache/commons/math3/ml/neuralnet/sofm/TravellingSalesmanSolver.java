@@ -79,6 +79,9 @@ public class TravellingSalesmanSolver {
                                     long seed) {
         random = new Well44497b(seed);
 
+        final double[] xRange = {Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY};
+        final double[] yRange = {Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY};
+
         // Make sure that each city will appear only once in the list.
         for (City city : cityList) {
             cities.add(city);

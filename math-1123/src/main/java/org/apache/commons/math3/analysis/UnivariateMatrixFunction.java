@@ -19,6 +19,7 @@ package org.apache.commons.math3.analysis;
 /**
  * An interface representing a univariate matrix function.
  *
+ * @version $Id$
  * @since 2.0
  */
 public interface UnivariateMatrixFunction {

@@ -37,6 +37,7 @@ import org.junit.Test;
  * Tests for the exponential function illustrate the situations where
  * Muller solver performs poorly.
  *
+ * @version $Id$
  */
 public final class MullerSolverTest {
     /**

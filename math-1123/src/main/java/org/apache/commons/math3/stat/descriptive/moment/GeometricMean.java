@@ -50,6 +50,7 @@ import org.apache.commons.math3.util.MathUtils;
  * <code>clear()</code> method, it must be synchronized externally.</p>
  *
  *
+ * @version $Id$
  */
 public class GeometricMean extends AbstractStorelessUnivariateStatistic implements Serializable {
 

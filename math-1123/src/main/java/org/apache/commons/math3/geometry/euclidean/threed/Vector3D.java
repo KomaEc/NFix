@@ -33,6 +33,7 @@ import org.apache.commons.math3.util.MathUtils;
 /**
  * This class implements vectors in a three-dimensional space.
  * <p>Instance of this class are guaranteed to be immutable.</p>
+ * @version $Id$
  * @since 1.2
  */
 public class Vector3D implements Serializable, Vector<Euclidean3D> {

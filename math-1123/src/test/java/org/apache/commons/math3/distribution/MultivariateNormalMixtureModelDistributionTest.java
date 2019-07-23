@@ -58,7 +58,8 @@ public class MultivariateNormalMixtureModelDistributionTest {
                                              { -1.1, 2.0 } },
                                            { { 3.5, 1.5 },
                                              { 1.5, 3.5 } } };
-        create(weights, means, covariances);
+        final MultivariateNormalMixtureModelDistribution d
+            = create(weights, means, covariances);
     }
 
     @Test(expected=NotPositiveException.class)
@@ -70,7 +71,8 @@ public class MultivariateNormalMixtureModelDistributionTest {
                                              { -1.1, 2.0 } },
                                            { { 3.5, 1.5 },
                                              { 1.5, 3.5 } } };
-        create(negativeWeights, means, covariances);
+        final MultivariateNormalMixtureModelDistribution d
+            = create(negativeWeights, means, covariances);
     }
 
     /**

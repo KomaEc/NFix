@@ -28,6 +28,7 @@ import org.apache.commons.math3.geometry.partitioning.Region;
  *
  * @param <S> Space type.
  * @param <P> Point type.
+ * @version $Id$
  * @since 3.3
  */
 public interface ConvexHull<S extends Space, P extends Point<S>> extends Serializable {

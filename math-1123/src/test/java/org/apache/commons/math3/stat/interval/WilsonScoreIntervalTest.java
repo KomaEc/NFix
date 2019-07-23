@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Test cases for the WilsonScoreInterval class.
  *
+ * @version $Id$
  */
 public class WilsonScoreIntervalTest extends BinomialConfidenceIntervalAbstractTest {
 

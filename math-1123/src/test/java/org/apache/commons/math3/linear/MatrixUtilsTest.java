@@ -32,6 +32,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link MatrixUtils} class.
  *
+ * @version $Id$
  */
 
 public final class MatrixUtilsTest {

@@ -21,6 +21,7 @@ import org.apache.commons.math3.geometry.partitioning.Region.Location;
 
 /** This class represents a 1D interval.
  * @see IntervalsSet
+ * @version $Id$
  * @since 3.0
  */
 public class Interval {

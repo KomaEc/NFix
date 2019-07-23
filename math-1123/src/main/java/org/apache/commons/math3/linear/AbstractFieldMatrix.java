@@ -38,6 +38,7 @@ import org.apache.commons.math3.util.MathArrays;
  *
  * @param <T> Type of the field elements.
  *
+ * @version $Id$
  * @since 2.0
  */
 public abstract class AbstractFieldMatrix<T extends FieldElement<T>>

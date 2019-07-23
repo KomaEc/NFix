@@ -18,7 +18,6 @@ package org.apache.commons.math3.optim.nonlinear.vector.jacobian;
 
 import java.io.IOException;
 import java.util.Arrays;
-
 import org.apache.commons.math3.analysis.MultivariateVectorFunction;
 import org.apache.commons.math3.analysis.MultivariateMatrixFunction;
 import org.apache.commons.math3.exception.ConvergenceException;
@@ -98,8 +97,8 @@ import org.junit.Test;
  * @author Kenneth E. Hillstrom (original fortran minpack tests)
  * @author Jorge J. More (original fortran minpack tests)
  * @author Luc Maisonobe (non-minpack tests and minpack tests Java translation)
+ * @version $Id: AbstractLeastSquaresOptimizerAbstractTest.java 1407467 2012-11-09 14:30:49Z erans $
  */
-@Deprecated
 public abstract class AbstractLeastSquaresOptimizerAbstractTest {
 
     public abstract AbstractLeastSquaresOptimizer createOptimizer();

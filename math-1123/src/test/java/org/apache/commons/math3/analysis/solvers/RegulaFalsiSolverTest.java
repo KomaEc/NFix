@@ -26,6 +26,7 @@ import org.junit.Assert;
 /**
  * Test case for {@link RegulaFalsiSolver Regula Falsi} solver.
  *
+ * @version $Id$
  */
 public final class RegulaFalsiSolverTest extends BaseSecantSolverAbstractTest {
     /** {@inheritDoc} */

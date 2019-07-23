@@ -47,6 +47,7 @@ import org.apache.commons.math3.exception.DimensionMismatchException;
  *  </dd>
  * </dl>
  *
+ * @version $Id$
  * @since 3.0
  */
 public abstract class RealLinearOperator {

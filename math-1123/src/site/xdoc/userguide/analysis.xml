@@ -18,6 +18,7 @@
   -->
   
 <?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Id$ -->
 <document url="analysis.html">
   <properties>
     <title>The Commons Math User Guide - Numerical Analysis</title>
@@ -391,11 +392,11 @@ double c = UnivariateSolverUtils.forceSide(100, function,
         </p>
         <p>Typical usage:</p>
         <source>double x[] = { 0.0, 1.0, 2.0 };
-double y[] = { 1.0, -1.0, 2.0};
+double y[] = { 1.0, -1.0, 2.0);
 UnivariateInterpolator interpolator = new SplineInterpolator();
 UnivariateFunction function = interpolator.interpolate(x, y);
 double interpolationX = 0.5;
-double interpolatedY = function.value(x);
+double interpolatedY = function.evaluate(x);
 System.out println("f(" + interpolationX + ") = " + interpolatedY);</source>
         <p>
           A natural cubic spline is a function consisting of a polynomial of

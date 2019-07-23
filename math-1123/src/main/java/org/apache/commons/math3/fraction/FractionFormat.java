@@ -32,6 +32,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
  * configured.
  *
  * @since 1.1
+ * @version $Id$
  */
 public class FractionFormat extends AbstractFormat {
 

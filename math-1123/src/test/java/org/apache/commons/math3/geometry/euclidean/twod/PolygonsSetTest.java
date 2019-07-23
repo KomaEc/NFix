@@ -23,9 +23,7 @@ import org.apache.commons.math3.geometry.euclidean.oned.Interval;
 import org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
 import org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
 import org.apache.commons.math3.geometry.partitioning.BSPTree;
-import org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor;
 import org.apache.commons.math3.geometry.partitioning.BoundaryProjection;
-import org.apache.commons.math3.geometry.partitioning.Hyperplane;
 import org.apache.commons.math3.geometry.partitioning.Region;
 import org.apache.commons.math3.geometry.partitioning.Region.Location;
 import org.apache.commons.math3.geometry.partitioning.RegionFactory;
@@ -851,42 +849,34 @@ public class PolygonsSetTest {
         Line[] l = {
             new Line(new Vector2D(0.0, 0.625000007541172),
                      new Vector2D(1.0, 0.625000007541172), 1.0e-10),
-            new Line(new Vector2D(-0.19204433621902645, 0.0),
-                     new Vector2D(-0.19204433621902645, 1.0), 1.0e-10),
-            new Line(new Vector2D(-0.40303524786887,  0.4248364535319128),
-                     new Vector2D(-1.12851149797877, -0.2634107480798909), 1.0e-10),
-            new Line(new Vector2D(0.0, 2.0),
-                     new Vector2D(1.0, 2.0), 1.0e-10)
+                     new Line(new Vector2D(-0.19204433621902645, 0.0),
+                              new Vector2D(-0.19204433621902645, 1.0), 1.0e-10),
+                              new Line(new Vector2D(-0.40303524786887,  0.4248364535319128),
+                                       new Vector2D(-1.12851149797877, -0.2634107480798909), 1.0e-10),
+                                       new Line(new Vector2D(0.0, 2.0),
+                                                new Vector2D(1.0, 2.0), 1.0e-10)
         };
 
         BSPTree<Euclidean2D> node1 =
             new BSPTree<Euclidean2D>(new SubLine(l[0],
-                                                 new IntervalsSet(intersectionAbscissa(l[0], l[1]),
-                                                                  intersectionAbscissa(l[0], l[2]),
-                                                                  1.0e-10)),
-                                     new BSPTree<Euclidean2D>(Boolean.TRUE),
-                                     new BSPTree<Euclidean2D>(Boolean.FALSE),
-                                     null);
+                                          new IntervalsSet(intersectionAbscissa(l[0], l[1]),
+                                                           intersectionAbscissa(l[0], l[2]),
+                                                           1.0e-10)),
+                                                           new BSPTree<Euclidean2D>(Boolean.TRUE), new BSPTree<Euclidean2D>(Boolean.FALSE),
+                                                           null);
         BSPTree<Euclidean2D> node2 =
             new BSPTree<Euclidean2D>(new SubLine(l[1],
-                                                 new IntervalsSet(intersectionAbscissa(l[1], l[2]),
-                                                                  intersectionAbscissa(l[1], l[3]),
-                                                                  1.0e-10)),
-                                     node1,
-                                     new BSPTree<Euclidean2D>(Boolean.FALSE),
-                                     null);
+                                          new IntervalsSet(intersectionAbscissa(l[1], l[2]),
+                                                           intersectionAbscissa(l[1], l[3]),
+                                                           1.0e-10)),
+                                                           node1, new BSPTree<Euclidean2D>(Boolean.FALSE), null);
         BSPTree<Euclidean2D> node3 =
             new BSPTree<Euclidean2D>(new SubLine(l[2],
-                                                 new IntervalsSet(intersectionAbscissa(l[2], l[3]),
-                                                 Double.POSITIVE_INFINITY, 1.0e-10)),
-                                     node2,
-                                     new BSPTree<Euclidean2D>(Boolean.FALSE),
-                                     null);
+                                          new IntervalsSet(intersectionAbscissa(l[2], l[3]),
+                                                           Double.POSITIVE_INFINITY, 1.0e-10)),
+                                                           node2, new BSPTree<Euclidean2D>(Boolean.FALSE), null);
         BSPTree<Euclidean2D> node4 =
-            new BSPTree<Euclidean2D>(l[3].wholeHyperplane(),
-                                     node3,
-                                     new BSPTree<Euclidean2D>(Boolean.FALSE),
-                                     null);
+            new BSPTree<Euclidean2D>(l[3].wholeHyperplane(), node3, new BSPTree<Euclidean2D>(Boolean.FALSE), null);
 
         PolygonsSet set = new PolygonsSet(node4, 1.0e-10);
         Assert.assertEquals(0, set.getVertices().length);
@@ -1071,9 +1061,9 @@ public class PolygonsSetTest {
                 RegionFactory<Euclidean2D>().difference(set1.copySelf(),
                                                         set2.copySelf());
 
-        Vector2D[][] vertices = set.getVertices();
-        Assert.assertTrue(vertices[0][0] != null);
-        Assert.assertEquals(1, vertices.length);
+        Vector2D[][] verticies = set.getVertices();
+        Assert.assertTrue(verticies[0][0] != null);
+        Assert.assertEquals(1, verticies.length);
     }
 
     @Test
@@ -1096,130 +1086,6 @@ public class PolygonsSetTest {
         } catch (NullPointerException npe) {
             // this is expected
         }
-    }
-
-    @Test
-    public void testIssue1162() {
-        PolygonsSet p = new PolygonsSet(1.0e-10,
-                                                new Vector2D(4.267199999996532, -11.928637756014894),
-                                                new Vector2D(4.267200000026445, -14.12360595809307), 
-                                                new Vector2D(9.144000000273694, -14.12360595809307), 
-                                                new Vector2D(9.144000000233383, -11.928637756020067));
-
-        PolygonsSet w = new PolygonsSet(1.0e-10,
-                                                new Vector2D(2.56735636510452512E-9, -11.933116461089332),
-                                                new Vector2D(2.56735636510452512E-9, -12.393225665247766), 
-                                                new Vector2D(2.56735636510452512E-9, -27.785625665247778), 
-                                                new Vector2D(4.267200000030211,      -27.785625665247778), 
-                                                new Vector2D(4.267200000030211,      -11.933116461089332));
-
-        Assert.assertFalse(p.contains(w));
-
-    }
-
-    @Test
-    public void testThinRectangle() {
-
-        RegionFactory<Euclidean2D> factory = new RegionFactory<Euclidean2D>();
-        Vector2D pA = new Vector2D(0.0,        1.0);
-        Vector2D pB = new Vector2D(0.0,        0.0);
-        Vector2D pC = new Vector2D(1.0 / 64.0, 0.0);
-        Vector2D pD = new Vector2D(1.0 / 64.0, 1.0);
-
-        // if tolerance is smaller than rectangle width, the rectangle is computed accurately
-        Hyperplane<Euclidean2D>[] h1 = new Line[] {
-            new Line(pA, pB, 1.0 / 256),
-            new Line(pB, pC, 1.0 / 256),
-            new Line(pC, pD, 1.0 / 256),
-            new Line(pD, pA, 1.0 / 256)
-        };
-        Region<Euclidean2D> accuratePolygon = factory.buildConvex(h1);
-        Assert.assertEquals(1.0 / 64.0, accuratePolygon.getSize(), 1.0e-10);
-        Assert.assertTrue(Double.isInfinite(new RegionFactory<Euclidean2D>().getComplement(accuratePolygon).getSize()));
-        Assert.assertEquals(2 * (1.0 + 1.0 / 64.0), accuratePolygon.getBoundarySize(), 1.0e-10);
-
-        // if tolerance is larger than rectangle width, the rectangle degenerates
-        // as of 3.3, its two long edges cannot be distinguished anymore and this part of the test did fail
-        // this has been fixed in 3.4 (issue MATH-1174)
-        Hyperplane<Euclidean2D>[] h2 = new Line[] {
-            new Line(pA, pB, 1.0 / 16),
-            new Line(pB, pC, 1.0 / 16),
-            new Line(pC, pD, 1.0 / 16),
-            new Line(pD, pA, 1.0 / 16)
-        };
-        Region<Euclidean2D> degeneratedPolygon = factory.buildConvex(h2);
-        Assert.assertEquals(1.0 / 64.0, degeneratedPolygon.getSize(), 1.0e-10);
-        Assert.assertTrue(Double.isInfinite(new RegionFactory<Euclidean2D>().getComplement(degeneratedPolygon).getSize()));
-        Assert.assertEquals(2 * (1.0 + 1.0 / 64.0), degeneratedPolygon.getBoundarySize(), 1.0e-10);
-
-    }
-
-    @Test
-    public void testBoundarySimplification() {
-
-        // a simple square will result in a 4 cuts and 5 leafs tree
-        PolygonsSet square = new PolygonsSet(1.0e-10,
-                                             new Vector2D(0, 0),
-                                             new Vector2D(1, 0),
-                                             new Vector2D(1, 1),
-                                             new Vector2D(0, 1));
-        Vector2D[][] squareBoundary = square.getVertices();
-        Assert.assertEquals(1, squareBoundary.length);
-        Assert.assertEquals(4, squareBoundary[0].length);
-        Counter squareCount = new Counter();
-        squareCount.count(square);
-        Assert.assertEquals(4, squareCount.getInternalNodes());
-        Assert.assertEquals(5, squareCount.getLeafNodes());
-
-        // splitting the square in two halves increases the BSP tree
-        // with 3 more cuts and 3 more leaf nodes
-        SubLine cut = new Line(new Vector2D(0.5, 0.5), 0.0, square.getTolerance()).wholeHyperplane();
-        PolygonsSet splitSquare = new PolygonsSet(square.getTree(false).split(cut),
-                                                  square.getTolerance());
-        Counter splitSquareCount = new Counter();
-        splitSquareCount.count(splitSquare);
-        Assert.assertEquals(squareCount.getInternalNodes() + 3, splitSquareCount.getInternalNodes());
-        Assert.assertEquals(squareCount.getLeafNodes()     + 3, splitSquareCount.getLeafNodes());
-
-        // the number of vertices should not change, as the intermediate vertices
-        // at (0.0, 0.5) and (1.0, 0.5) induced by the top level horizontal split
-        // should be removed during the boundary extraction process
-        Vector2D[][] splitBoundary = splitSquare.getVertices();
-        Assert.assertEquals(1, splitBoundary.length);
-        Assert.assertEquals(4, splitBoundary[0].length);
-
-    }
-
-    private static class Counter {
-
-        private int internalNodes;
-        private int leafNodes;
-
-        public void count(PolygonsSet polygonsSet) {
-            leafNodes     = 0;
-            internalNodes = 0;
-            polygonsSet.getTree(false).visit(new BSPTreeVisitor<Euclidean2D>() {
-                public Order visitOrder(BSPTree<Euclidean2D> node) {
-                    return Order.SUB_PLUS_MINUS;
-                }
-                public void visitInternalNode(BSPTree<Euclidean2D> node) {
-                    ++internalNodes;
-                }
-                public void visitLeafNode(BSPTree<Euclidean2D> node) {
-                    ++leafNodes;
-                }
-
-            });
-        }
-
-        public int getInternalNodes() {
-            return internalNodes;
-        }
-
-        public int getLeafNodes() {
-            return leafNodes;
-        }
-
     }
 
     private PolygonsSet buildSet(Vector2D[][] vertices) {
@@ -1245,8 +1111,12 @@ public class PolygonsSetTest {
     private SubHyperplane<Euclidean2D> buildHalfLine(Vector2D start, Vector2D end,
                                                      boolean startIsVirtual) {
         Line   line  = new Line(start, end, 1.0e-10);
-        double lower = startIsVirtual ? Double.NEGATIVE_INFINITY : (line.toSubSpace(start)).getX();
-        double upper = startIsVirtual ? (line.toSubSpace(end)).getX() : Double.POSITIVE_INFINITY;
+        double lower = startIsVirtual
+        ? Double.NEGATIVE_INFINITY
+        : (line.toSubSpace(start)).getX();
+        double upper = startIsVirtual
+        ? (line.toSubSpace(end)).getX()
+        : Double.POSITIVE_INFINITY;
         return new SubLine(line, new IntervalsSet(lower, upper, 1.0e-10));
     }
 

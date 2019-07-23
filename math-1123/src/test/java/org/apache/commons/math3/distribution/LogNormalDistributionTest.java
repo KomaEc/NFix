@@ -26,6 +26,7 @@ import org.junit.Test;
  * {@link RealDistributionAbstractTest}. See class javadoc of that class
  * for details.
  *
+ * @version $Id$
  * @since 3.0
  */
 public class LogNormalDistributionTest extends RealDistributionAbstractTest {

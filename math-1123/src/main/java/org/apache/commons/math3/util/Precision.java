@@ -27,6 +27,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
  * Utilities for comparing numbers.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Precision {
     /**
@@ -61,14 +62,6 @@ public class Precision {
     private static final int SGN_MASK_FLOAT = 0x80000000;
     /** Positive zero. */
     private static final double POSITIVE_ZERO = 0d;
-    /** Positive zero bits. */
-    private static final long POSITIVE_ZERO_DOUBLE_BITS = Double.doubleToRawLongBits(+0.0);
-    /** Negative zero bits. */
-    private static final long NEGATIVE_ZERO_DOUBLE_BITS = Double.doubleToRawLongBits(-0.0);
-    /** Positive zero bits. */
-    private static final int POSITIVE_ZERO_FLOAT_BITS   = Float.floatToRawIntBits(+0.0f);
-    /** Negative zero bits. */
-    private static final int NEGATIVE_ZERO_FLOAT_BITS   = Float.floatToRawIntBits(-0.0f);
 
     static {
         /*
@@ -116,7 +109,7 @@ public class Precision {
      * (or fewer) floating point numbers between them, i.e. two adjacent floating
      * point numbers are considered equal.
      * Adapted from <a
-     * href="http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">
+     * href="http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm">
      * Bruce Dawson</a>
      *
      * @param x first value
@@ -158,7 +151,7 @@ public class Precision {
      * @since 2.2
      */
     public static boolean equalsIncludingNaN(float x, float y) {
-        return (x != x || y != y) ? !(x != x ^ y != y) : equals(x, y, 1);
+        return (Float.isNaN(x) && Float.isNaN(y)) || equals(x, y, 1);
     }
 
     /**
@@ -197,7 +190,7 @@ public class Precision {
      * (or fewer) floating point numbers between them, i.e. two adjacent floating
      * point numbers are considered equal.
      * Adapted from <a
-     * href="http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">
+     * href="http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm">
      * Bruce Dawson</a>
      *
      * @param x first value
@@ -208,37 +201,21 @@ public class Precision {
      * point values between {@code x} and {@code y}.
      * @since 2.2
      */
-    public static boolean equals(final float x, final float y, final int maxUlps) {
+    public static boolean equals(float x, float y, int maxUlps) {
+        int xInt = Float.floatToIntBits(x);
+        int yInt = Float.floatToIntBits(y);
 
-        final int xInt = Float.floatToRawIntBits(x);
-        final int yInt = Float.floatToRawIntBits(y);
-
-        final boolean isEqual;
-        if (((xInt ^ yInt) & SGN_MASK_FLOAT) == 0) {
-            // number have same sign, there is no risk of overflow
-            isEqual = FastMath.abs(xInt - yInt) <= maxUlps;
-        } else {
-            // number have opposite signs, take care of overflow
-            final int deltaPlus;
-            final int deltaMinus;
-            if (xInt < yInt) {
-                deltaPlus  = yInt - POSITIVE_ZERO_FLOAT_BITS;
-                deltaMinus = xInt - NEGATIVE_ZERO_FLOAT_BITS;
-            } else {
-                deltaPlus  = xInt - POSITIVE_ZERO_FLOAT_BITS;
-                deltaMinus = yInt - NEGATIVE_ZERO_FLOAT_BITS;
-            }
-
-            if (deltaPlus > maxUlps) {
-                isEqual = false;
-            } else {
-                isEqual = deltaMinus <= (maxUlps - deltaPlus);
-            }
-
+        // Make lexicographically ordered as a two's-complement integer.
+        if (xInt < 0) {
+            xInt = SGN_MASK_FLOAT - xInt;
+        }
+        if (yInt < 0) {
+            yInt = SGN_MASK_FLOAT - yInt;
         }
 
-        return isEqual && !Float.isNaN(x) && !Float.isNaN(y);
+        final boolean isEqual = FastMath.abs(xInt - yInt) <= maxUlps;
 
+        return isEqual && !Float.isNaN(x) && !Float.isNaN(y);
     }
 
     /**
@@ -254,7 +231,7 @@ public class Precision {
      * @since 2.2
      */
     public static boolean equalsIncludingNaN(float x, float y, int maxUlps) {
-        return (x != x || y != y) ? !(x != x ^ y != y) : equals(x, y, maxUlps);
+        return (Float.isNaN(x) && Float.isNaN(y)) || equals(x, y, maxUlps);
     }
 
     /**
@@ -279,7 +256,7 @@ public class Precision {
      * @since 2.2
      */
     public static boolean equalsIncludingNaN(double x, double y) {
-        return (x != x || y != y) ? !(x != x ^ y != y) : equals(x, y, 1);
+        return (Double.isNaN(x) && Double.isNaN(y)) || equals(x, y, 1);
     }
 
     /**
@@ -338,16 +315,12 @@ public class Precision {
     /**
      * Returns true if both arguments are equal or within the range of allowed
      * error (inclusive).
-     * <p>
      * Two float numbers are considered equal if there are {@code (maxUlps - 1)}
-     * (or fewer) floating point numbers between them, i.e. two adjacent
-     * floating point numbers are considered equal.
-     * </p>
-     * <p>
+     * (or fewer) floating point numbers between them, i.e. two adjacent floating
+     * point numbers are considered equal.
      * Adapted from <a
-     * href="http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">
+     * href="http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm">
      * Bruce Dawson</a>
-     * </p>
      *
      * @param x first value
      * @param y second value
@@ -356,37 +329,21 @@ public class Precision {
      * @return {@code true} if there are fewer than {@code maxUlps} floating
      * point values between {@code x} and {@code y}.
      */
-    public static boolean equals(final double x, final double y, final int maxUlps) {
+    public static boolean equals(double x, double y, int maxUlps) {
+        long xInt = Double.doubleToLongBits(x);
+        long yInt = Double.doubleToLongBits(y);
 
-        final long xInt = Double.doubleToRawLongBits(x);
-        final long yInt = Double.doubleToRawLongBits(y);
-
-        final boolean isEqual;
-        if (((xInt ^ yInt) & SGN_MASK) == 0l) {
-            // number have same sign, there is no risk of overflow
-            isEqual = FastMath.abs(xInt - yInt) <= maxUlps;
-        } else {
-            // number have opposite signs, take care of overflow
-            final long deltaPlus;
-            final long deltaMinus;
-            if (xInt < yInt) {
-                deltaPlus  = yInt - POSITIVE_ZERO_DOUBLE_BITS;
-                deltaMinus = xInt - NEGATIVE_ZERO_DOUBLE_BITS;
-            } else {
-                deltaPlus  = xInt - POSITIVE_ZERO_DOUBLE_BITS;
-                deltaMinus = yInt - NEGATIVE_ZERO_DOUBLE_BITS;
-            }
-
-            if (deltaPlus > maxUlps) {
-                isEqual = false;
-            } else {
-                isEqual = deltaMinus <= (maxUlps - deltaPlus);
-            }
-
+        // Make lexicographically ordered as a two's-complement integer.
+        if (xInt < 0) {
+            xInt = SGN_MASK - xInt;
+        }
+        if (yInt < 0) {
+            yInt = SGN_MASK - yInt;
         }
 
-        return isEqual && !Double.isNaN(x) && !Double.isNaN(y);
+        final boolean isEqual = FastMath.abs(xInt - yInt) <= maxUlps;
 
+        return isEqual && !Double.isNaN(x) && !Double.isNaN(y);
     }
 
     /**
@@ -402,7 +359,7 @@ public class Precision {
      * @since 2.2
      */
     public static boolean equalsIncludingNaN(double x, double y, int maxUlps) {
-        return (x != x || y != y) ? !(x != x ^ y != y) : equals(x, y, maxUlps);
+        return (Double.isNaN(x) && Double.isNaN(y)) || equals(x, y, maxUlps);
     }
 
     /**

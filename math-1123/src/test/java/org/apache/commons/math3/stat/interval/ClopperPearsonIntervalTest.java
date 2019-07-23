@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Test cases for the ClopperPearsonInterval class.
  *
+ * @version $Id$
  */
 public class ClopperPearsonIntervalTest extends BinomialConfidenceIntervalAbstractTest {
 

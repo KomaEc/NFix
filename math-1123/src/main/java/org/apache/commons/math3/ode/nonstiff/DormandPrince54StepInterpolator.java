@@ -27,6 +27,7 @@ import org.apache.commons.math3.ode.sampling.StepInterpolator;
  *
  * @see DormandPrince54Integrator
  *
+ * @version $Id$
  * @since 1.2
  */
 

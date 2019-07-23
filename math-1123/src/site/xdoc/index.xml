@@ -17,6 +17,7 @@
    limitations under the License.
   -->
   
+<!-- $Revision$ $Date$ -->
 <document>
 
  <properties>
@@ -71,9 +72,12 @@
     </p>
    </subsection>
    <!--
-   <subsection name="No Nightly Builds">
+   <subsection name="Nightly Builds">
     <p>
-     There are no nightly builds for Apache Commons Math anymore.
+     <a href="http://people.apache.org/builds/commons/nightly/commons-math/">
+     Nightly builds</a> are built once a day from the current SVN HEAD.
+     This is (nearly) the latest code and so should be treated with
+     caution!
     </p>
    </subsection>
    -->

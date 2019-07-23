@@ -22,6 +22,7 @@ import org.junit.Test;
 /**
  * Test for {@link MatrixDimensionMismatchException}.
  * 
+ * @version $Id$
  */
 public class MatrixDimensionMismatchExceptionTest {
     @Test

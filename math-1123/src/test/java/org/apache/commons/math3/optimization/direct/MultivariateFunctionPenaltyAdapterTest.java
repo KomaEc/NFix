@@ -25,7 +25,6 @@ import org.apache.commons.math3.optimization.SimplePointChecker;
 import org.junit.Assert;
 import org.junit.Test;
 
-@Deprecated
 public class MultivariateFunctionPenaltyAdapterTest {
 
     @Test

@@ -15,7 +15,6 @@ package org.apache.commons.math3.optim.nonlinear.vector.jacobian;
 
 import java.io.IOException;
 import java.util.Arrays;
-
 import org.apache.commons.math3.optim.PointVectorValuePair;
 import org.apache.commons.math3.optim.InitialGuess;
 import org.apache.commons.math3.optim.MaxEval;
@@ -25,7 +24,6 @@ import org.apache.commons.math3.util.FastMath;
 import org.junit.Test;
 import org.junit.Assert;
 
-@Deprecated
 public class AbstractLeastSquaresOptimizerTest {
 
     public static AbstractLeastSquaresOptimizer createOptimizer() {

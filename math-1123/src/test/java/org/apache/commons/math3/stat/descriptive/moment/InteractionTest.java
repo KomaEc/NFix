@@ -21,6 +21,7 @@ import org.junit.Test;
 
 
 /**
+ * @version $Id$
  */
 public class InteractionTest {
 

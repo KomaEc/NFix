@@ -49,6 +49,7 @@ import org.apache.commons.math3.stat.descriptive.moment.SecondMoment;
  *
  * <p>Given <code>Q</code> and <code>R</code>, the last equation is solved by back-substitution.</p>
  *
+ * @version $Id$
  * @since 2.0
  */
 public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegression {
@@ -233,7 +234,7 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
     @Override
     protected void newXSampleData(double[][] x) {
         super.newXSampleData(x);
-        qr = new QRDecomposition(getX(), threshold);
+        qr = new QRDecomposition(getX());
     }
 
     /**

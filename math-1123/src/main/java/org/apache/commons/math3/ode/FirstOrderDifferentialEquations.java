@@ -45,6 +45,7 @@ import org.apache.commons.math3.exception.MaxCountExceededException;
  * @see FirstOrderConverter
  * @see SecondOrderDifferentialEquations
  *
+ * @version $Id$
  * @since 1.2
  */
 

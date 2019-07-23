@@ -21,6 +21,7 @@ import org.apache.commons.math3.exception.MathInternalError;
 
 /** Enumerate for {@link EventFilter filtering events}.
  *
+ * @version $Id$
  * @since 3.2
  */
 

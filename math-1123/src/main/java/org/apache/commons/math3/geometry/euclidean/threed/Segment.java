@@ -18,6 +18,7 @@ package org.apache.commons.math3.geometry.euclidean.threed;
 
 
 /** Simple container for a two-points segment.
+ * @version $Id$
  * @since 3.0
  */
 public class Segment {

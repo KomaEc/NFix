@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Test cases for the MannWhitneyUTestImpl class.
  *
+ * @version $Id$
  */
 
 public class MannWhitneyUTestTest {
@@ -110,18 +111,5 @@ public class MannWhitneyUTestTest {
         }
         double result = testStatistic.mannWhitneyUTest(d1, d2);
         Assert.assertTrue(result > 0.1);
-    }
-    
-    @Test
-    public void testBigDataSetOverflow() {
-        // MATH-1145
-        double[] d1 = new double[110000];
-        double[] d2 = new double[110000];
-        for (int i = 0; i < 110000; i++) {
-            d1[i] = i;
-            d2[i] = i;
-        }
-        double result = testStatistic.mannWhitneyUTest(d1, d2);
-        Assert.assertTrue(result == 1.0);
     }
 }

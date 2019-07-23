@@ -28,6 +28,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * @version $Id$
  */
 public class BetaTest {
 
@@ -147,7 +148,7 @@ public class BetaTest {
         final double b = 223;
 
         try {
-            Beta.regularizedBeta(x, a, b, 1e-14, 10000);
+            final double r = Beta.regularizedBeta(x, a, b, 1e-14, 10000);
         } catch (StackOverflowError error) {
             Assert.fail("Infinite recursion");
         }

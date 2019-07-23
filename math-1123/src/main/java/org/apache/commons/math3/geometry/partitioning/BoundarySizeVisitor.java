@@ -20,6 +20,7 @@ import org.apache.commons.math3.geometry.Space;
 
 /** Visitor computing the boundary size.
  * @param <S> Type of the space.
+ * @version $Id$
  * @since 3.0
  */
 class BoundarySizeVisitor<S extends Space> implements BSPTreeVisitor<S> {

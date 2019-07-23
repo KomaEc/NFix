@@ -33,17 +33,14 @@ import org.apache.commons.math3.fraction.BigFraction;
 import org.apache.commons.math3.fraction.BigFractionField;
 import org.apache.commons.math3.fraction.FractionConversionException;
 import org.apache.commons.math3.linear.Array2DRowFieldMatrix;
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.FieldMatrix;
-import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.random.RandomGenerator;
 import org.apache.commons.math3.random.Well19937c;
 import org.apache.commons.math3.util.CombinatoricsUtils;
 import org.apache.commons.math3.util.FastMath;
 import org.apache.commons.math3.util.MathArrays;
-
-import static org.apache.commons.math3.util.MathUtils.PI_SQUARED;
-import static org.apache.commons.math3.util.FastMath.PI;
 
 /**
  * Implementation of the <a href="http://en.wikipedia.org/wiki/Kolmogorov-Smirnov_test">
@@ -111,6 +108,7 @@ import static org.apache.commons.math3.util.FastMath.PI;
  * </p>
  *
  * @since 3.3
+ * @version $Id$
  */
 public class KolmogorovSmirnovTest {
 
@@ -121,9 +119,6 @@ public class KolmogorovSmirnovTest {
 
     /** Convergence criterion for {@link #ksSum(double, double, int)} */
     protected static final double KS_SUM_CAUCHY_CRITERION = 1E-20;
-
-    /** Convergence criterion for the sums in #pelzGood(double, double, int)} */
-    protected static final double PG_SUM_RELATIVE_ERROR = 1.0e-10;
 
     /** When product of sample sizes is less than this value, 2-sample K-S test is exact */
     protected static final int SMALL_SAMPLE_PRODUCT = 200;
@@ -240,11 +235,10 @@ public class KolmogorovSmirnovTest {
      * @throws NullArgumentException if either {@code x} or {@code y} is null
      */
     public double kolmogorovSmirnovTest(double[] x, double[] y, boolean strict) {
-        final long lengthProduct = (long) x.length * y.length;
-        if (lengthProduct < SMALL_SAMPLE_PRODUCT) {
+        if (x.length * y.length < SMALL_SAMPLE_PRODUCT) {
             return exactP(kolmogorovSmirnovStatistic(x, y), x.length, y.length, strict);
         }
-        if (lengthProduct < LARGE_SAMPLE_PRODUCT) {
+        if (x.length * y.length < LARGE_SAMPLE_PRODUCT) {
             return monteCarloP(kolmogorovSmirnovStatistic(x, y), x.length, y.length, strict, MONTE_CARLO_ITERATIONS);
         }
         return approximateP(kolmogorovSmirnovStatistic(x, y), x.length, y.length);
@@ -428,13 +422,7 @@ public class KolmogorovSmirnovTest {
         } else if (1 <= d) {
             return 1;
         }
-        if (exact) {
-            return exactK(d,n);
-        }
-        if (n <= 140) {
-            return roundedK(d, n);
-        }
-        return pelzGood(d, n);
+        return exact ? exactK(d, n) : roundedK(d, n);
     }
 
     /**
@@ -454,7 +442,7 @@ public class KolmogorovSmirnovTest {
 
         final int k = (int) Math.ceil(n * d);
 
-        final FieldMatrix<BigFraction> H = this.createExactH(d, n);
+        final FieldMatrix<BigFraction> H = this.createH(d, n);
         final FieldMatrix<BigFraction> Hpower = H.power(n);
 
         BigFraction pFrac = Hpower.getEntry(k - 1, k - 1);
@@ -476,162 +464,34 @@ public class KolmogorovSmirnovTest {
      *
      * @param d statistic
      * @param n sample size
-     * @return \(P(D_n < d)\)
+     * @return the two-sided probability of \(P(D_n < d)\)
+     * @throws MathArithmeticException if algorithm fails to convert {@code h} to a
+     *         {@link org.apache.commons.math3.fraction.BigFraction} in expressing {@code d} as \((k
+     *         - h) / m\ for integer {@code k, m} and \(0 <= h < 1\).
      */
-    private double roundedK(double d, int n) {
+    private double roundedK(double d, int n)
+        throws MathArithmeticException {
 
         final int k = (int) Math.ceil(n * d);
-        final RealMatrix H = this.createRoundedH(d, n);
-        final RealMatrix Hpower = H.power(n);
+        final FieldMatrix<BigFraction> HBigFraction = this.createH(d, n);
+        final int m = HBigFraction.getRowDimension();
 
+        /*
+         * Here the rounding part comes into play: use RealMatrix instead of
+         * FieldMatrix<BigFraction>
+         */
+        final RealMatrix H = new Array2DRowRealMatrix(m, m);
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < m; ++j) {
+                H.setEntry(i, j, HBigFraction.getEntry(i, j).doubleValue());
+            }
+        }
+        final RealMatrix Hpower = H.power(n);
         double pFrac = Hpower.getEntry(k - 1, k - 1);
         for (int i = 1; i <= n; ++i) {
             pFrac *= (double) i / (double) n;
         }
-
         return pFrac;
-    }
-
-    /**
-     * Computes the Pelz-Good approximation for \(P(D_n < d)\) as described in [2] in the class javadoc.
-     *
-     * @param d value of d-statistic (x in [2])
-     * @param n sample size
-     * @return \(P(D_n < d)\)
-     * @since 3.4
-     */
-    public double pelzGood(double d, int n) {
-
-        // Change the variable since approximation is for the distribution evaluated at d / sqrt(n)
-        final double sqrtN = FastMath.sqrt(n);
-        final double z = d * sqrtN;
-        final double z2 = d * d * n;
-        final double z4 = z2 * z2;
-        final double z6 = z4 * z2;
-        final double z8 = z4 * z4;
-
-        // Eventual return value
-        double ret = 0;
-
-        // Compute K_0(z)
-        double sum = 0;
-        double increment = 0;
-        double kTerm = 0;
-        double z2Term = PI_SQUARED / (8 * z2);
-        int k = 1;
-        for (; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm = 2 * k - 1;
-            increment = FastMath.exp(-z2Term * kTerm * kTerm);
-            sum += increment;
-            if (increment <= PG_SUM_RELATIVE_ERROR * sum) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        ret = sum * FastMath.sqrt(2 * FastMath.PI) / z;
-
-        // K_1(z)
-        // Sum is -inf to inf, but k term is always (k + 1/2) ^ 2, so really have
-        // twice the sum from k = 0 to inf (k = -1 is same as 0, -2 same as 1, ...)
-        final double twoZ2 = 2 * z2;
-        sum = 0;
-        kTerm = 0;
-        double kTerm2 = 0;
-        for (k = 0; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm = k + 0.5;
-            kTerm2 = kTerm * kTerm;
-            increment = (PI_SQUARED * kTerm2 - z2) * FastMath.exp(-PI_SQUARED * kTerm2 / twoZ2);
-            sum += increment;
-            if (FastMath.abs(increment) < PG_SUM_RELATIVE_ERROR * FastMath.abs(sum)) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        final double sqrtHalfPi = FastMath.sqrt(PI / 2);
-        // Instead of doubling sum, divide by 3 instead of 6
-        ret += sum * sqrtHalfPi / (3 * z4 * sqrtN);
-
-        // K_2(z)
-        // Same drill as K_1, but with two doubly infinite sums, all k terms are even powers.
-        final double z4Term = 2 * z4;
-        final double z6Term = 6 * z6;
-        z2Term = 5 * z2;
-        final double pi4 = PI_SQUARED * PI_SQUARED;
-        sum = 0;
-        kTerm = 0;
-        kTerm2 = 0;
-        for (k = 0; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm = k + 0.5;
-            kTerm2 = kTerm * kTerm;
-            increment =  (z6Term + z4Term + PI_SQUARED * (z4Term - z2Term) * kTerm2 +
-                    pi4 * (1 - twoZ2) * kTerm2 * kTerm2) * FastMath.exp(-PI_SQUARED * kTerm2 / twoZ2);
-            sum += increment;
-            if (FastMath.abs(increment) < PG_SUM_RELATIVE_ERROR * FastMath.abs(sum)) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        double sum2 = 0;
-        kTerm2 = 0;
-        for (k = 1; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm2 = k * k;
-            increment = PI_SQUARED * kTerm2 * FastMath.exp(-PI_SQUARED * kTerm2 / twoZ2);
-            sum2 += increment;
-            if (FastMath.abs(increment) < PG_SUM_RELATIVE_ERROR * FastMath.abs(sum2)) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        // Again, adjust coefficients instead of doubling sum, sum2
-        ret += (sqrtHalfPi / n) * (sum / (36 * z2 * z2 * z2 * z) - sum2 / (18 * z2 * z));
-
-        // K_3(z) One more time with feeling - two doubly infinite sums, all k powers even.
-        // Multiply coefficient denominators by 2, so omit doubling sums.
-        final double pi6 = pi4 * PI_SQUARED;
-        sum = 0;
-        double kTerm4 = 0;
-        double kTerm6 = 0;
-        for (k = 0; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm = k + 0.5;
-            kTerm2 = kTerm * kTerm;
-            kTerm4 = kTerm2 * kTerm2;
-            kTerm6 = kTerm4 * kTerm2;
-            increment = (pi6 * kTerm6 * (5 - 30 * z2) + pi4 * kTerm4 * (-60 * z2 + 212 * z4) +
-                    PI_SQUARED * kTerm2 * (135 * z4 - 96 * z6) - 30 * z6 - 90 * z8) *
-                    FastMath.exp(-PI_SQUARED * kTerm2 / twoZ2);
-            sum += increment;
-            if (FastMath.abs(increment) < PG_SUM_RELATIVE_ERROR * FastMath.abs(sum)) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        sum2 = 0;
-        for (k = 1; k < MAXIMUM_PARTIAL_SUM_COUNT; k++) {
-            kTerm2 = k * k;
-            kTerm4 = kTerm2 * kTerm2;
-            increment = (-pi4 * kTerm4 + 3 * PI_SQUARED * kTerm2 * z2) *
-                    FastMath.exp(-PI_SQUARED * kTerm2 / twoZ2);
-            sum2 += increment;
-            if (FastMath.abs(increment) < PG_SUM_RELATIVE_ERROR * FastMath.abs(sum2)) {
-                break;
-            }
-        }
-        if (k == MAXIMUM_PARTIAL_SUM_COUNT) {
-            throw new TooManyIterationsException(MAXIMUM_PARTIAL_SUM_COUNT);
-        }
-        return ret + (sqrtHalfPi / (sqrtN * n)) * (sum / (3240 * z6 * z4) +
-                + sum2 / (108 * z6));
-
     }
 
     /***
@@ -645,7 +505,7 @@ public class KolmogorovSmirnovTest {
      *         {@link org.apache.commons.math3.fraction.BigFraction} in expressing {@code d} as \((k
      *         - h) / m\) for integer {@code k, m} and \(0 <= h < 1\).
      */
-    private FieldMatrix<BigFraction> createExactH(double d, int n)
+    private FieldMatrix<BigFraction> createH(double d, int n)
         throws NumberIsTooLargeException, FractionConversionException {
 
         final int k = (int) Math.ceil(n * d);
@@ -723,85 +583,6 @@ public class KolmogorovSmirnovTest {
             }
         }
         return new Array2DRowFieldMatrix<BigFraction>(BigFractionField.getInstance(), Hdata);
-    }
-
-    /***
-     * Creates {@code H} of size {@code m x m} as described in [1] (see above)
-     * using double-precision.
-     *
-     * @param d statistic
-     * @param n sample size
-     * @return H matrix
-     * @throws NumberIsTooLargeException if fractional part is greater than 1
-     */
-    private RealMatrix createRoundedH(double d, int n)
-        throws NumberIsTooLargeException {
-
-        final int k = (int) Math.ceil(n * d);
-        final int m = 2 * k - 1;
-        final double h = k - n * d;
-        if (h >= 1) {
-            throw new NumberIsTooLargeException(h, 1.0, false);
-        }
-        final double[][] Hdata = new double[m][m];
-
-        /*
-         * Start by filling everything with either 0 or 1.
-         */
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < m; ++j) {
-                if (i - j + 1 < 0) {
-                    Hdata[i][j] = 0;
-                } else {
-                    Hdata[i][j] = 1;
-                }
-            }
-        }
-
-        /*
-         * Setting up power-array to avoid calculating the same value twice: hPowers[0] = h^1 ...
-         * hPowers[m-1] = h^m
-         */
-        final double[] hPowers = new double[m];
-        hPowers[0] = h;
-        for (int i = 1; i < m; ++i) {
-            hPowers[i] = h * hPowers[i - 1];
-        }
-
-        /*
-         * First column and last row has special values (each other reversed).
-         */
-        for (int i = 0; i < m; ++i) {
-            Hdata[i][0] = Hdata[i][0] - hPowers[i];
-            Hdata[m - 1][i] -= hPowers[m - i - 1];
-        }
-
-        /*
-         * [1] states: "For 1/2 < h < 1 the bottom left element of the matrix should be (1 - 2*h^m +
-         * (2h - 1)^m )/m!" Since 0 <= h < 1, then if h > 1/2 is sufficient to check:
-         */
-        if (Double.compare(h, 0.5) > 0) {
-            Hdata[m - 1][0] += FastMath.pow(2 * h - 1, m);
-        }
-
-        /*
-         * Aside from the first column and last row, the (i, j)-th element is 1/(i - j + 1)! if i -
-         * j + 1 >= 0, else 0. 1's and 0's are already put, so only division with (i - j + 1)! is
-         * needed in the elements that have 1's. There is no need to calculate (i - j + 1)! and then
-         * divide - small steps avoid overflows. Note that i - j + 1 > 0 <=> i + 1 > j instead of
-         * j'ing all the way to m. Also note that it is started at g = 2 because dividing by 1 isn't
-         * really necessary.
-         */
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < i + 1; ++j) {
-                if (i - j + 1 > 0) {
-                    for (int g = 2; g <= i - j + 1; ++g) {
-                        Hdata[i][j] /= g;
-                    }
-                }
-            }
-        }
-        return MatrixUtils.createRealMatrix(Hdata);
     }
 
     /**

@@ -24,6 +24,7 @@ import org.junit.Test;
 /**
  * Test case for the "microsphere projection" interpolator.
  *
+ * @version $Id$
  */
 public final class MicrosphereInterpolatorTest {
     /**

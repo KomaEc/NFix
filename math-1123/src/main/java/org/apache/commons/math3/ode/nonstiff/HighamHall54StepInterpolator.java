@@ -25,6 +25,7 @@ import org.apache.commons.math3.ode.sampling.StepInterpolator;
  *
  * @see HighamHall54Integrator
  *
+ * @version $Id$
  * @since 1.2
  */
 

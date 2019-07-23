@@ -25,6 +25,7 @@ import org.junit.Test;
 
 
 /**
+ * @version $Id$
  */
 public final class NewtonRaphsonSolverTest {
     /**

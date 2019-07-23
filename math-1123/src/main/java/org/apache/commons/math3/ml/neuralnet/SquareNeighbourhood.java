@@ -20,6 +20,7 @@ package org.apache.commons.math3.ml.neuralnet;
 /**
  * Defines neighbourhood types.
  *
+ * @version $Id$
  * @since 3.3
  */
 public enum SquareNeighbourhood {

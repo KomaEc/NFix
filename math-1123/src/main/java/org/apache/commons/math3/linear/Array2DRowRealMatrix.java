@@ -33,6 +33,7 @@ import org.apache.commons.math3.util.MathUtils;
  * Implementation of {@link RealMatrix} using a {@code double[][]} array to
  * store entries.
  *
+ * @version $Id$
  */
 public class Array2DRowRealMatrix extends AbstractRealMatrix implements Serializable {
     /** Serializable version identifier. */

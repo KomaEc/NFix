@@ -30,6 +30,7 @@ import org.junit.Test;
  * Base class for root-finding algorithms tests derived from
  * {@link BaseSecantSolver}.
  *
+ * @version $Id$
  */
 public abstract class BaseSecantSolverAbstractTest {
     /** Returns the solver to use to perform the tests.

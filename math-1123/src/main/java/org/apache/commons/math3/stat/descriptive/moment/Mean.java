@@ -50,15 +50,14 @@ import org.apache.commons.math3.util.MathUtils;
  * Sample Means and Variances," Robert F. Ling, Journal of the American
  * Statistical Association, Vol. 69, No. 348 (Dec., 1974), pp. 859-866. </p>
  * <p>
- *  Returns <code>Double.NaN</code> if the dataset is empty. Note that
- *  Double.NaN may also be returned if the input includes NaN and / or infinite
- *  values.
+ *  Returns <code>Double.NaN</code> if the dataset is empty.
  * </p>
  * <strong>Note that this implementation is not synchronized.</strong> If
  * multiple threads access an instance of this class concurrently, and at least
  * one of the threads invokes the <code>increment()</code> or
  * <code>clear()</code> method, it must be synchronized externally.
  *
+ * @version $Id$
  */
 public class Mean extends AbstractStorelessUnivariateStatistic
     implements Serializable, WeightedEvaluation {

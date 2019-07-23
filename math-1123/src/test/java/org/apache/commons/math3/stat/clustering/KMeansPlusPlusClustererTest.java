@@ -28,7 +28,6 @@ import org.apache.commons.math3.exception.NumberIsTooSmallException;
 import org.junit.Assert;
 import org.junit.Test;
 
-@Deprecated
 public class KMeansPlusPlusClustererTest {
 
     @Test

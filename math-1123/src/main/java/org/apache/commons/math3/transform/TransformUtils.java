@@ -26,6 +26,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
 /**
  * Useful functions for the implementation of various transforms.
  *
+ * @version $Id$
  * @since 3.0
  */
 public class TransformUtils {

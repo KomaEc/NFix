@@ -24,6 +24,7 @@ import java.io.Serializable;
  * Simple container for weighted observed points used
  * in {@link AbstractCurveFitter curve fitting} algorithms.
  *
+ * @version $Id$
  * @since 3.3
  */
 public class WeightedObservedPoints implements Serializable {

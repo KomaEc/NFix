@@ -25,40 +25,13 @@ import org.apache.commons.math3.exception.NumberIsTooSmallException;
 import org.apache.commons.math3.util.MathArrays;
 
 /**
- * Generates a bicubic interpolating function. Due to numerical accuracy issues this should not
- * be used.
+ * Generates a bicubic interpolating function.
  *
+ * @version $Id$
  * @since 2.2
- * @deprecated as of 3.4 replaced by {@link org.apache.commons.math3.analysis.interpolation.PiecewiseBicubicSplineInterpolator}
  */
-@Deprecated
 public class BicubicSplineInterpolator
     implements BivariateGridInterpolator {
-    /** Whether to initialize internal data used to compute the analytical
-        derivatives of the splines. */
-    private final boolean initializeDerivatives;
-
-    /**
-     * Default constructor.
-     * The argument {@link #BicubicSplineInterpolator(boolean) initializeDerivatives}
-     * is set to {@code false}.
-     */
-    public BicubicSplineInterpolator() {
-        this(false);
-    }
-
-    /**
-     * Creates an interpolator.
-     *
-     * @param initializeDerivatives Whether to initialize the internal data
-     * needed for calling any of the methods that compute the partial derivatives
-     * of the {@link BicubicSplineInterpolatingFunction function} returned from
-     * the call to {@link #interpolate(double[],double[],double[][]) interpolate}.
-     */
-    public BicubicSplineInterpolator(boolean initializeDerivatives) {
-        this.initializeDerivatives = initializeDerivatives;
-    }
-
     /**
      * {@inheritDoc}
      */
@@ -145,8 +118,7 @@ public class BicubicSplineInterpolator
 
         // Create the interpolating splines
         return new BicubicSplineInterpolatingFunction(xval, yval, fval,
-                                                      dFdX, dFdY, d2FdXdY,
-                                                      initializeDerivatives);
+                                                      dFdX, dFdY, d2FdXdY);
     }
 
     /**

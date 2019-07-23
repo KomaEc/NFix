@@ -39,6 +39,7 @@ import org.junit.Test;
  * test should be considered for each implementation of
  * {@link RealVector}.
  *
+ * @version $Id$
  *
  */
 public abstract class UnmodifiableRealVectorAbstractTest {

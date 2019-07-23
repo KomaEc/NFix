@@ -36,6 +36,7 @@ import org.apache.commons.math3.optim.OptimizationProblem;
  * @see LeastSquaresFactory
  * @see LeastSquaresAdapter
  *
+ * @version $Id$
  * @since 3.3
  */
 public interface LeastSquaresProblem extends OptimizationProblem<LeastSquaresProblem.Evaluation> {

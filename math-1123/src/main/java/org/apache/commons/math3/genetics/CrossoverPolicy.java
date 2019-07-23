@@ -23,6 +23,7 @@ import org.apache.commons.math3.exception.MathIllegalArgumentException;
  * operation on a source pair of chromosomes.
  *
  * @since 2.0
+ * @version $Id$
  */
 public interface CrossoverPolicy {
 

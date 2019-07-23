@@ -31,7 +31,6 @@ import org.apache.commons.math3.geometry.partitioning.Hyperplane;
 import org.apache.commons.math3.geometry.partitioning.SubHyperplane;
 import org.apache.commons.math3.geometry.partitioning.Transform;
 import org.apache.commons.math3.util.FastMath;
-import org.apache.commons.math3.util.MathArrays;
 import org.apache.commons.math3.util.MathUtils;
 
 /** This class represents an oriented line in the 2D plane.
@@ -58,6 +57,7 @@ import org.apache.commons.math3.util.MathUtils;
  * left half plane is the set of points with negative offsets and the
  * right half plane is the set of points with positive offsets.</p>
 
+ * @version $Id$
  * @since 3.0
  */
 public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euclidean1D> {
@@ -79,9 +79,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
 
     /** Tolerance below which points are considered identical. */
     private final double tolerance;
-
-    /** Reverse line. */
-    private Line reverse;
 
     /** Build a line from two points.
      * <p>The line is oriented from p1 to p2</p>
@@ -121,7 +118,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
         this.sin          = sin;
         this.originOffset = originOffset;
         this.tolerance    = tolerance;
-        this.reverse      = null;
     }
 
     /** Build a line from two points.
@@ -152,11 +148,10 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      */
     public Line(final Line line) {
         angle        = MathUtils.normalizeAngle(line.angle, FastMath.PI);
-        cos          = line.cos;
-        sin          = line.sin;
+        cos          = FastMath.cos(angle);
+        sin          = FastMath.sin(angle);
         originOffset = line.originOffset;
         tolerance    = line.tolerance;
-        reverse      = null;
     }
 
     /** {@inheritDoc} */
@@ -170,7 +165,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @param p2 second point
      */
     public void reset(final Vector2D p1, final Vector2D p2) {
-        unlinkReverse();
         final double dx = p2.getX() - p1.getX();
         final double dy = p2.getY() - p1.getY();
         final double d = FastMath.hypot(dx, dy);
@@ -181,9 +175,9 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
             originOffset = p1.getY();
         } else {
             angle        = FastMath.PI + FastMath.atan2(-dy, -dx);
-            cos          = dx / d;
-            sin          = dy / d;
-            originOffset = MathArrays.linearCombination(p2.getX(), p1.getY(), -p1.getX(), p2.getY()) / d;
+            cos          = FastMath.cos(angle);
+            sin          = FastMath.sin(angle);
+            originOffset = (p2.getX() * p1.getY() - p1.getX() * p2.getY()) / d;
         }
     }
 
@@ -192,17 +186,15 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @param alpha angle of the line with respect to abscissa axis
      */
     public void reset(final Vector2D p, final double alpha) {
-        unlinkReverse();
         this.angle   = MathUtils.normalizeAngle(alpha, FastMath.PI);
         cos          = FastMath.cos(this.angle);
         sin          = FastMath.sin(this.angle);
-        originOffset = MathArrays.linearCombination(cos, p.getY(), -sin, p.getX());
+        originOffset = cos * p.getY() - sin * p.getX();
     }
 
     /** Revert the instance.
      */
     public void revertSelf() {
-        unlinkReverse();
         if (angle < FastMath.PI) {
             angle += FastMath.PI;
         } else {
@@ -213,37 +205,14 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
         originOffset = -originOffset;
     }
 
-    /** Unset the link between an instance and its reverse.
-     */
-    private void unlinkReverse() {
-        if (reverse != null) {
-            reverse.reverse = null;
-        }
-        reverse = null;
-    }
-
     /** Get the reverse of the instance.
      * <p>Get a line with reversed orientation with respect to the
-     * instance.</p>
-     * <p>
-     * As long as neither the instance nor its reverse are modified
-     * (i.e. as long as none of the {@link #reset(Vector2D, Vector2D)},
-     * {@link #reset(Vector2D, double)}, {@link #revertSelf()},
-     * {@link #setAngle(double)} or {@link #setOriginOffset(double)}
-     * methods are called), then the line and its reverse remain linked
-     * together so that {@code line.getReverse().getReverse() == line}.
-     * When one of the line is modified, the link is deleted as both
-     * instance becomes independent.
-     * </p>
+     * instance. A new object is built, the instance is untouched.</p>
      * @return a new line, with orientation opposite to the instance orientation
      */
     public Line getReverse() {
-        if (reverse == null) {
-            reverse = new Line((angle < FastMath.PI) ? (angle + FastMath.PI) : (angle - FastMath.PI),
-                               -cos, -sin, -originOffset, tolerance);
-            reverse.reverse = this;
-        }
-        return reverse;
+        return new Line((angle < FastMath.PI) ? (angle + FastMath.PI) : (angle - FastMath.PI),
+                        -cos, -sin, -originOffset, tolerance);
     }
 
     /** Transform a space point into a sub-space point.
@@ -267,14 +236,14 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
     /** {@inheritDoc} */
     public Vector1D toSubSpace(final Point<Euclidean2D> point) {
         Vector2D p2 = (Vector2D) point;
-        return new Vector1D(MathArrays.linearCombination(cos, p2.getX(), sin, p2.getY()));
+        return new Vector1D(cos * p2.getX() + sin * p2.getY());
     }
 
     /** {@inheritDoc} */
     public Vector2D toSpace(final Point<Euclidean1D> point) {
         final double abscissa = ((Vector1D) point).getX();
-        return new Vector2D(MathArrays.linearCombination(abscissa, cos, -originOffset, sin),
-                            MathArrays.linearCombination(abscissa, sin,  originOffset, cos));
+        return new Vector2D(abscissa * cos - originOffset * sin,
+                            abscissa * sin + originOffset * cos);
     }
 
     /** Get the intersection point of the instance and another line.
@@ -283,12 +252,12 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * or null if there are no intersection points
      */
     public Vector2D intersection(final Line other) {
-        final double d = MathArrays.linearCombination(sin, other.cos, -other.sin, cos);
+        final double d = sin * other.cos - other.sin * cos;
         if (FastMath.abs(d) < tolerance) {
             return null;
         }
-        return new Vector2D(MathArrays.linearCombination(cos, other.originOffset, -other.cos, originOffset) / d,
-                            MathArrays.linearCombination(sin, other.originOffset, -other.sin, originOffset) / d);
+        return new Vector2D((cos * other.originOffset - other.cos * originOffset) / d,
+                            (sin * other.originOffset - other.sin * originOffset) / d);
     }
 
     /** {@inheritDoc}
@@ -330,7 +299,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      */
     public double getOffset(final Line line) {
         return originOffset +
-               (MathArrays.linearCombination(cos, line.cos, sin, line.sin) > 0 ? -line.originOffset : line.originOffset);
+               ((cos * line.cos + sin * line.sin > 0) ? -line.originOffset : line.originOffset);
     }
 
     /** Get the offset (oriented distance) of a vector.
@@ -344,13 +313,13 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
     /** {@inheritDoc} */
     public double getOffset(final Point<Euclidean2D> point) {
         Vector2D p2 = (Vector2D) point;
-        return MathArrays.linearCombination(sin, p2.getX(), -cos, p2.getY(), 1.0, originOffset);
+        return sin * p2.getX() - cos * p2.getY() + originOffset;
     }
 
     /** {@inheritDoc} */
     public boolean sameOrientationAs(final Hyperplane<Euclidean2D> other) {
         final Line otherL = (Line) other;
-        return MathArrays.linearCombination(sin, otherL.sin, cos, otherL.cos) >= 0.0;
+        return (sin * otherL.sin + cos * otherL.cos) >= 0.0;
     }
 
     /** Get one point from the plane.
@@ -362,8 +331,7 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
     public Vector2D getPointAt(final Vector1D abscissa, final double offset) {
         final double x       = abscissa.getX();
         final double dOffset = offset - originOffset;
-        return new Vector2D(MathArrays.linearCombination(x, cos,  dOffset, sin),
-                            MathArrays.linearCombination(x, sin, -dOffset, cos));
+        return new Vector2D(x * cos + dOffset * sin, x * sin - dOffset * cos);
     }
 
     /** Check if the line contains a point.
@@ -393,14 +361,14 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * (they can have either the same or opposite orientations)
      */
     public boolean isParallelTo(final Line line) {
-        return FastMath.abs(MathArrays.linearCombination(sin, line.cos, -cos, line.sin)) < tolerance;
+        return FastMath.abs(sin * line.cos - cos * line.sin) < tolerance;
     }
 
     /** Translate the line to force it passing by a point.
      * @param p point by which the line should pass
      */
     public void translateToPoint(final Vector2D p) {
-        originOffset = MathArrays.linearCombination(cos, p.getY(), -sin, p.getX());
+        originOffset = cos * p.getY() - sin * p.getX();
     }
 
     /** Get the angle of the line.
@@ -414,7 +382,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @param angle new angle of the line with respect to the abscissa axis
      */
     public void setAngle(final double angle) {
-        unlinkReverse();
         this.angle = MathUtils.normalizeAngle(angle, FastMath.PI);
         cos        = FastMath.cos(this.angle);
         sin        = FastMath.sin(this.angle);
@@ -431,7 +398,6 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
      * @param offset offset of the origin
      */
     public void setOriginOffset(final double offset) {
-        unlinkReverse();
         originOffset = offset;
     }
 
@@ -492,9 +458,9 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
             cYY = m[3];
             cY1 = m[5];
 
-            c1Y = MathArrays.linearCombination(cXY, cY1, -cYY, cX1);
-            c1X = MathArrays.linearCombination(cXX, cY1, -cYX, cX1);
-            c11 = MathArrays.linearCombination(cXX, cYY, -cYX, cXY);
+            c1Y = cXY * cY1 - cYY * cX1;
+            c1X = cXX * cY1 - cYX * cX1;
+            c11 = cXX * cYY - cYX * cXY;
 
             if (FastMath.abs(c11) < 1.0e-20) {
                 throw new MathIllegalArgumentException(LocalizedFormats.NON_INVERTIBLE_TRANSFORM);
@@ -507,16 +473,16 @@ public class Line implements Hyperplane<Euclidean2D>, Embedding<Euclidean2D, Euc
             final Vector2D p2D = (Vector2D) point;
             final double  x   = p2D.getX();
             final double  y   = p2D.getY();
-            return new Vector2D(MathArrays.linearCombination(cXX, x, cXY, y, cX1, 1),
-                                MathArrays.linearCombination(cYX, x, cYY, y, cY1, 1));
+            return new Vector2D(cXX * x + cXY * y + cX1,
+                               cYX * x + cYY * y + cY1);
         }
 
         /** {@inheritDoc} */
         public Line apply(final Hyperplane<Euclidean2D> hyperplane) {
             final Line   line    = (Line) hyperplane;
-            final double rOffset = MathArrays.linearCombination(c1X, line.cos, c1Y, line.sin, c11, line.originOffset);
-            final double rCos    = MathArrays.linearCombination(cXX, line.cos, cXY, line.sin);
-            final double rSin    = MathArrays.linearCombination(cYX, line.cos, cYY, line.sin);
+            final double rOffset = c1X * line.cos + c1Y * line.sin + c11 * line.originOffset;
+            final double rCos    = cXX * line.cos + cXY * line.sin;
+            final double rSin    = cYX * line.cos + cYY * line.sin;
             final double inv     = 1.0 / FastMath.sqrt(rSin * rSin + rCos * rCos);
             return new Line(FastMath.PI + FastMath.atan2(-rSin, -rCos),
                             inv * rCos, inv * rSin,

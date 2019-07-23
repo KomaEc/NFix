@@ -26,6 +26,7 @@ import org.junit.Test;
 /**
  * Unit tests for the {@link RootsOfUnity} class.
  *
+ * @version $Id$
  */
 public class RootsOfUnityTest {
 

@@ -25,6 +25,7 @@ import org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiabl
  * Constant function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Constant implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /** Constant. */

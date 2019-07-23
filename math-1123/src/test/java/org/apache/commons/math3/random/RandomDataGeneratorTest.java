@@ -53,6 +53,7 @@ import org.junit.runner.RunWith;
 /**
  * Test cases for the RandomDataGenerator class.
  *
+ * @version $Id$
  */
 @RunWith(RetryRunner.class)
 public class RandomDataGeneratorTest {

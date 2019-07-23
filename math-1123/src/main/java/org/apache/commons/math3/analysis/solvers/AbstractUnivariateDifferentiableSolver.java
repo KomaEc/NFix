@@ -26,6 +26,7 @@ import org.apache.commons.math3.exception.TooManyEvaluationsException;
  * solvers.
  *
  * @since 3.1
+ * @version $Id$
  */
 public abstract class AbstractUnivariateDifferentiableSolver
     extends BaseAbstractUnivariateSolver<UnivariateDifferentiableFunction>

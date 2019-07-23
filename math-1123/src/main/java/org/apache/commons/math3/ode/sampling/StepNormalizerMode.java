@@ -22,6 +22,7 @@ package org.apache.commons.math3.ode.sampling;
  * is interpreted.
  * @see StepNormalizer
  * @see StepNormalizerBounds
+ * @version $Id$
  * @since 3.0
  */
 public enum StepNormalizerMode {

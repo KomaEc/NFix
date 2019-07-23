@@ -37,6 +37,7 @@ import org.junit.runners.Parameterized.Parameters;
  * FST algorithm is exact, the small tolerance number is used only
  * to account for round-off errors.
  *
+ * @version $Id$
  */
 @RunWith(value = Parameterized.class)
 public final class FastSineTransformerTest extends RealTransformerAbstractTest {

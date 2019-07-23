@@ -21,6 +21,7 @@ package org.apache.commons.math3.ml.neuralnet.sofm;
  * Provides the learning rate as a function of the number of calls
  * already performed during the learning task.
  *
+ * @version $Id$
  * @since 3.3
  */
 public interface LearningFactorFunction {

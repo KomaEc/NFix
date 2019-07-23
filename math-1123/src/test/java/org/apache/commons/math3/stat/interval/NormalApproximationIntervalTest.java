@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Test cases for the NormalApproximationInterval class.
  *
+ * @version $Id$
  */
 public class NormalApproximationIntervalTest extends BinomialConfidenceIntervalAbstractTest {
 

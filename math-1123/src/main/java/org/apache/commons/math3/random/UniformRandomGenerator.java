@@ -28,6 +28,7 @@ import org.apache.commons.math3.util.FastMath;
  *
  * @since 1.2
  *
+ * @version $Id$
  */
 
 public class UniformRandomGenerator implements NormalizedRandomGenerator {

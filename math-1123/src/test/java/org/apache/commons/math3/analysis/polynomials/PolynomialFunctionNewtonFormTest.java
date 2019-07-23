@@ -27,6 +27,7 @@ import org.junit.Test;
  * <p>
  * The small tolerance number is used only to account for round-off errors.
  *
+ * @version $Id$
  */
 public final class PolynomialFunctionNewtonFormTest {
 

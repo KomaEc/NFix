@@ -48,6 +48,7 @@ import org.apache.commons.math3.util.Precision;
  * </ul>
  * @see <a href="http://mathworld.wolfram.com/SingularValueDecomposition.html">MathWorld</a>
  * @see <a href="http://en.wikipedia.org/wiki/Singular_value_decomposition">Wikipedia</a>
+ * @version $Id$
  * @since 2.0 (changed to concrete class in 3.0)
  */
 public class SingularValueDecomposition {
@@ -267,6 +268,7 @@ public class SingularValueDecomposition {
 
         // Main iteration loop for the singular values.
         final int pp = p - 1;
+        int iter = 0;
         while (p > 0) {
             int k;
             int kase;
@@ -428,6 +430,7 @@ public class SingularValueDecomposition {
                         }
                     }
                     e[p - 2] = f;
+                    iter++;
                 }
                 break;
                 // Convergence.
@@ -464,6 +467,7 @@ public class SingularValueDecomposition {
                         }
                         k++;
                     }
+                    iter = 0;
                     p--;
                 }
                 break;

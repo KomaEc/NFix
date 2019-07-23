@@ -29,6 +29,7 @@ import org.junit.Test;
  * Test cases for Spearman's rank correlation
  *
  * @since 2.0
+ * @version $Id$
  */
 public class SpearmansRankCorrelationTest extends PearsonsCorrelationTest {
 

@@ -26,6 +26,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link StatisticalSummaryValues} class.
  *
+ * @version $Id$
  */
 
 public final class StatisticalSummaryValuesTest {

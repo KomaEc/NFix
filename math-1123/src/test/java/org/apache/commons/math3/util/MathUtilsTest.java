@@ -19,13 +19,14 @@ import org.apache.commons.math3.exception.MathArithmeticException;
 import org.apache.commons.math3.exception.NotFiniteNumberException;
 import org.apache.commons.math3.exception.NullArgumentException;
 import org.apache.commons.math3.exception.util.LocalizedFormats;
-import org.apache.commons.math3.random.RandomDataGenerator;
+import org.apache.commons.math3.random.RandomDataImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Test cases for the MathUtils class.
  *
+ * @version $Id$
  */
 public final class MathUtilsTest {
     @Test
@@ -94,7 +95,7 @@ public final class MathUtilsTest {
     public void testPermutedArrayHash() {
         double[] original = new double[10];
         double[] permuted = new double[10];
-        RandomDataGenerator random = new RandomDataGenerator();
+        RandomDataImpl random = new RandomDataImpl();
 
         // Generate 10 distinct random values
         for (int i = 0; i < 10; i++) {

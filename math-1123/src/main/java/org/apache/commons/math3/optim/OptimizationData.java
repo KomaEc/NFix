@@ -23,6 +23,7 @@ package org.apache.commons.math3.optim;
  * arguments and perform the appropriate cast in order to access the data
  * they need.
  *
+ * @version $Id$
  * @since 3.1
  */
 public interface OptimizationData {}

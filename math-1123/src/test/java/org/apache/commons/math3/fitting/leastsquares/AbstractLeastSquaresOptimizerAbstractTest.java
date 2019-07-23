@@ -51,6 +51,7 @@ import static org.hamcrest.CoreMatchers.sameInstance;
  * <p/>
  * <T> Concrete implementation of an optimizer.
  *
+ * @version $Id$
  */
 public abstract class AbstractLeastSquaresOptimizerAbstractTest {
 
@@ -556,7 +557,7 @@ public abstract class AbstractLeastSquaresOptimizerAbstractTest {
                         return true;
                     }
                 });
-        optimizer.optimize(builder.build());
+        Optimum optimum = optimizer.optimize(builder.build());
 
         Assert.assertThat(checked[0], is(true));
     }

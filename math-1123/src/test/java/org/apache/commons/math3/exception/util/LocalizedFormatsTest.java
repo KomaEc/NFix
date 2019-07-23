@@ -23,13 +23,14 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import org.junit.Assert;
+
 import org.junit.Test;
 
 public class LocalizedFormatsTest {
 
     @Test
     public void testMessageNumber() {
-        Assert.assertEquals(322, LocalizedFormats.values().length);
+        Assert.assertEquals(318, LocalizedFormats.values().length);
     }
 
     @Test

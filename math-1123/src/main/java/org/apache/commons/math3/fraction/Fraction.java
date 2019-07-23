@@ -32,6 +32,7 @@ import org.apache.commons.math3.util.FastMath;
  * implements Serializable since 2.0
  *
  * @since 1.1
+ * @version $Id$
  */
 public class Fraction
     extends Number
@@ -307,8 +308,8 @@ public class Fraction
     /**
      * Compares this object to another based on size.
      * @param object the object to compare to
-     * @return -1 if this is less than {@code object}, +1 if this is greater
-     *         than {@code object}, 0 if they are equal.
+     * @return -1 if this is less than <tt>object</tt>, +1 if this is greater
+     *         than <tt>object</tt>, 0 if they are equal.
      */
     public int compareTo(Fraction object) {
         long nOd = ((long) numerator) * object.denominator;
@@ -317,9 +318,9 @@ public class Fraction
     }
 
     /**
-     * Gets the fraction as a {@code double}. This calculates the fraction as
+     * Gets the fraction as a <tt>double</tt>. This calculates the fraction as
      * the numerator divided by denominator.
-     * @return the fraction as a {@code double}
+     * @return the fraction as a <tt>double</tt>
      */
     @Override
     public double doubleValue() {
@@ -332,7 +333,7 @@ public class Fraction
      * fractions are considered to be equal.
      * @param other fraction to test for equality to this fraction
      * @return true if two fractions are equal, false if object is
-     *         {@code null}, not an instance of {@link Fraction}, or not equal
+     *         <tt>null</tt>, not an instance of {@link Fraction}, or not equal
      *         to this fraction instance.
      */
     @Override
@@ -351,9 +352,9 @@ public class Fraction
     }
 
     /**
-     * Gets the fraction as a {@code float}. This calculates the fraction as
+     * Gets the fraction as a <tt>float</tt>. This calculates the fraction as
      * the numerator divided by denominator.
-     * @return the fraction as a {@code float}
+     * @return the fraction as a <tt>float</tt>
      */
     @Override
     public float floatValue() {
@@ -386,7 +387,7 @@ public class Fraction
     }
 
     /**
-     * Gets the fraction as an {@code int}. This returns the whole number part
+     * Gets the fraction as an <tt>int</tt>. This returns the whole number part
      * of the fraction.
      * @return the whole number fraction part
      */
@@ -396,7 +397,7 @@ public class Fraction
     }
 
     /**
-     * Gets the fraction as a {@code long}. This returns the whole number part
+     * Gets the fraction as a <tt>long</tt>. This returns the whole number part
      * of the fraction.
      * @return the whole number fraction part
      */
@@ -440,7 +441,7 @@ public class Fraction
 
     /**
      * Add an integer to the fraction.
-     * @param i the {@code integer} to add.
+     * @param i the <tt>integer</tt> to add.
      * @return this + i
      */
     public Fraction add(final int i) {
@@ -463,7 +464,7 @@ public class Fraction
 
     /**
      * Subtract an integer from the fraction.
-     * @param i the {@code integer} to subtract.
+     * @param i the <tt>integer</tt> to subtract.
      * @return this - i
      */
     public Fraction subtract(final int i) {
@@ -555,7 +556,7 @@ public class Fraction
 
     /**
      * Multiply the fraction by an integer.
-     * @param i the {@code integer} to multiply by.
+     * @param i the <tt>integer</tt> to multiply by.
      * @return this * i
      */
     public Fraction multiply(final int i) {
@@ -585,7 +586,7 @@ public class Fraction
 
     /**
      * Divide the fraction by an integer.
-     * @param i the {@code integer} to divide by.
+     * @param i the <tt>integer</tt> to divide by.
      * @return this * i
      */
     public Fraction divide(final int i) {
@@ -594,11 +595,11 @@ public class Fraction
 
     /**
      * <p>
-     * Gets the fraction percentage as a {@code double}. This calculates the
+     * Gets the fraction percentage as a <tt>double</tt>. This calculates the
      * fraction as the numerator divided by denominator multiplied by 100.
      * </p>
      *
-     * @return the fraction percentage as a {@code double}.
+     * @return the fraction percentage as a <tt>double</tt>.
      */
     public double percentageValue() {
         return 100 * doubleValue();

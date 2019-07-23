@@ -53,6 +53,7 @@ import org.apache.commons.math3.util.Precision;
  * <br/>
  * Implements Serializable since 2.0
  *
+ * @version $Id$
  */
 public class Complex implements FieldElement<Complex>, Serializable  {
     /** The square root of -1. A number representing "0.0 + 1.0i" */

@@ -108,6 +108,7 @@ import org.apache.commons.math3.util.MathArrays;
  * </ul>
  * </p>
  * @since 3.1
+ * @version $Id$
  */
 public class RandomDataGenerator implements RandomData, Serializable {
 
@@ -225,14 +226,14 @@ public class RandomDataGenerator implements RandomData, Serializable {
     }
 
     /**
-     * Returns a pseudorandom, uniformly distributed {@code long} value
+     * Returns a pseudorandom, uniformly distributed <tt>long</tt> value
      * between 0 (inclusive) and the specified value (exclusive), drawn from
      * this random number generator's sequence.
      *
      * @param rng random generator to use
      * @param n the bound on the random number to be returned.  Must be
      * positive.
-     * @return  a pseudorandom, uniformly distributed {@code long}
+     * @return  a pseudorandom, uniformly distributed <tt>long</tt>
      * value between 0 (inclusive) and n (exclusive).
      * @throws IllegalArgumentException  if n is not positive.
      */

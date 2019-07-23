@@ -107,6 +107,7 @@ import org.apache.commons.math3.util.FastMath;
  * <ol></td></tr>
  * </table>
  *
+ * @version $Id$
  * @since 2.0
  * @deprecated All classes and interfaces in this package are deprecated.
  * The optimizers that were provided here were moved to the

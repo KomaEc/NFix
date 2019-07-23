@@ -24,6 +24,7 @@ import org.apache.commons.math3.util.Precision;
 /**
  * Tests {@link WeightedObservedPoints}.
  *
+ * @version $Id$
  */
 public class WeightedObservedPointsTest {
     @Test

@@ -38,6 +38,7 @@ import org.junit.Test;
  * makeGenerator() to provide a concrete generator to test. The generator
  * returned by makeGenerator should be seeded with a fixed seed.
  *
+ * @version $Id$
  */
 
 public abstract class RandomGeneratorAbstractTest extends RandomDataGeneratorTest {

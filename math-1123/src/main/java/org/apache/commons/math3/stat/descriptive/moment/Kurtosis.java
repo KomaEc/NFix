@@ -36,15 +36,14 @@ import org.apache.commons.math3.util.MathUtils;
  * {@link StandardDeviation}</p>
  * <p>
  *  Note that this statistic is undefined for n < 4.  <code>Double.Nan</code>
- *  is returned when there is not sufficient data to compute the statistic.
- *  Note that Double.NaN may also be returned if the input includes NaN
- *  and / or infinite values.</p>
+ *  is returned when there is not sufficient data to compute the statistic.</p>
  * <p>
  * <strong>Note that this implementation is not synchronized.</strong> If
  * multiple threads access an instance of this class concurrently, and at least
  * one of the threads invokes the <code>increment()</code> or
  * <code>clear()</code> method, it must be synchronized externally.</p>
  *
+ * @version $Id$
  */
 public class Kurtosis extends AbstractStorelessUnivariateStatistic  implements Serializable {
 

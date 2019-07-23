@@ -24,6 +24,7 @@ import org.junit.Test;
  * Test cases for {@link ChiSquaredDistribution}.
  *
  * @see RealDistributionAbstractTest
+ * @version $Id$
  */
 public class ChiSquaredDistributionTest extends RealDistributionAbstractTest {
 

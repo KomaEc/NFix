@@ -46,6 +46,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
  *                       standard deviation = <code>sigma</code></li>
  * <li> CONSTANT_MODE -- returns <code>mu</code> every time.</li></ul></p>
  *
+ * @version $Id$
  *
  */
 public class ValueServer {
@@ -87,13 +88,13 @@ public class ValueServer {
     private BufferedReader filePointer = null;
 
     /** RandomDataImpl to use for random data generation. */
-    private final RandomDataGenerator randomData;
+    private final RandomDataImpl randomData;
 
     // Data generation modes ======================================
 
     /** Creates new ValueServer */
     public ValueServer() {
-        randomData = new RandomDataGenerator();
+        randomData = new RandomDataImpl();
     }
 
     /**
@@ -106,7 +107,7 @@ public class ValueServer {
      */
     @Deprecated
     public ValueServer(RandomDataImpl randomData) {
-        this.randomData = randomData.getDelegate();
+        this.randomData = randomData;
     }
 
     /**
@@ -117,7 +118,7 @@ public class ValueServer {
      * @param generator source of random data
      */
     public ValueServer(RandomGenerator generator) {
-        this.randomData = new RandomDataGenerator(generator);
+        this.randomData = new RandomDataImpl(generator);
     }
 
     /**
@@ -215,7 +216,7 @@ public class ValueServer {
      * @throws ZeroException if URL contains no data
      */
     public void computeDistribution(int binCount) throws NullArgumentException, IOException, ZeroException {
-        empiricalDistribution = new EmpiricalDistribution(binCount, randomData.getRandomGenerator());
+        empiricalDistribution = new EmpiricalDistribution(binCount, randomData);
         empiricalDistribution.load(valuesFileURL);
         mu = empiricalDistribution.getSampleStats().getMean();
         sigma = empiricalDistribution.getSampleStats().getStandardDeviation();

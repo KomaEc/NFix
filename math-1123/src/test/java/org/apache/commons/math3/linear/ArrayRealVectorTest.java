@@ -23,6 +23,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link ArrayRealVector} class.
  *
+ * @version $Id$
  */
 public class ArrayRealVectorTest extends RealVectorAbstractTest {
 

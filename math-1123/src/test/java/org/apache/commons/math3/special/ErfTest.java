@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.junit.Assert;
 
 /**
+ * @version $Id$
  */
 public class ErfTest {
     @Test

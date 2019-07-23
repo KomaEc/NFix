@@ -56,6 +56,7 @@ import org.apache.commons.math3.util.FastMath;
  * {@link SynchronizedSummaryStatistics} if concurrent access from multiple
  * threads is required.
  * </p>
+ * @version $Id$
  */
 public class SummaryStatistics implements StatisticalSummary, Serializable {
 
@@ -327,13 +328,10 @@ public class SummaryStatistics implements StatisticalSummary, Serializable {
         outBuffer.append("n: ").append(getN()).append(endl);
         outBuffer.append("min: ").append(getMin()).append(endl);
         outBuffer.append("max: ").append(getMax()).append(endl);
-        outBuffer.append("sum: ").append(getSum()).append(endl);
         outBuffer.append("mean: ").append(getMean()).append(endl);
         outBuffer.append("geometric mean: ").append(getGeometricMean())
             .append(endl);
         outBuffer.append("variance: ").append(getVariance()).append(endl);
-        outBuffer.append("population variance: ").append(getPopulationVariance()).append(endl);
-        outBuffer.append("second moment: ").append(getSecondMoment()).append(endl);
         outBuffer.append("sum of squares: ").append(getSumsq()).append(endl);
         outBuffer.append("standard deviation: ").append(getStandardDeviation())
             .append(endl);

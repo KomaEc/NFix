@@ -24,6 +24,7 @@ import org.apache.commons.math3.util.FastMath;
  * Absolute value function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Abs implements UnivariateFunction {
     /** {@inheritDoc} */

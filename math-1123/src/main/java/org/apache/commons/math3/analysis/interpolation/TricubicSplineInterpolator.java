@@ -26,9 +26,8 @@ import org.apache.commons.math3.util.MathArrays;
  * Generates a tricubic interpolating function.
  *
  * @since 2.2
- * @deprecated To be removed in 4.0 (see MATH-1166).
+ * @version $Id$
  */
-@Deprecated
 public class TricubicSplineInterpolator
     implements TrivariateGridInterpolator {
     /**
@@ -78,7 +77,7 @@ public class TricubicSplineInterpolator
             }
         }
 
-        final BicubicSplineInterpolator bsi = new BicubicSplineInterpolator(true);
+        final BicubicSplineInterpolator bsi = new BicubicSplineInterpolator();
 
         // For each line x[i] (0 <= i < xLen), construct a 2D spline in y and z
         final BicubicSplineInterpolatingFunction[] xSplineYZ

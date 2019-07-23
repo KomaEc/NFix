@@ -31,6 +31,7 @@ import org.apache.commons.math3.util.FastMath;
  * supplies them.</p>
  *
  * @since 1.1
+ * @version $Id$
  */
 public abstract class AbstractRandomGenerator implements RandomGenerator {
 

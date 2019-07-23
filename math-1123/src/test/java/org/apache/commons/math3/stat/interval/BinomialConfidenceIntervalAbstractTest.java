@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Test cases for the BinomialConfidenceInterval implementations.
  *
+ * @version $Id$
  */
 public abstract class BinomialConfidenceIntervalAbstractTest {
 

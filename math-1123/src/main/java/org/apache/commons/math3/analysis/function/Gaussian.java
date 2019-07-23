@@ -36,6 +36,7 @@ import org.apache.commons.math3.util.Precision;
  *  Gaussian</a> function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Gaussian implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /** Mean. */

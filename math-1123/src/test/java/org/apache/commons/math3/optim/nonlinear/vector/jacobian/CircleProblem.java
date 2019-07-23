@@ -17,7 +17,6 @@
 package org.apache.commons.math3.optim.nonlinear.vector.jacobian;
 
 import java.util.ArrayList;
-
 import org.apache.commons.math3.analysis.MultivariateVectorFunction;
 import org.apache.commons.math3.analysis.MultivariateMatrixFunction;
 import org.apache.commons.math3.util.MathUtils;
@@ -39,7 +38,6 @@ import org.apache.commons.math3.optim.nonlinear.vector.ModelFunctionJacobian;
  *   corresponding circle.</li>
  * </ul>
  */
-@Deprecated
 class CircleProblem {
     /** Cloud of points assumed to be fitted by a circle. */
     private final ArrayList<double[]> points;

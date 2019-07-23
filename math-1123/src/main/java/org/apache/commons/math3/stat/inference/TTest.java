@@ -54,6 +54,7 @@ import org.apache.commons.math3.util.FastMath;
  * Uses commons-math {@link org.apache.commons.math3.distribution.TDistribution}
  * implementation to estimate exact p-values.</p>
  *
+ * @version $Id$
  */
 public class TTest {
     /**
@@ -1056,9 +1057,8 @@ public class TTest {
                            final double v, final double n)
         throws MaxCountExceededException, MathIllegalArgumentException {
 
-        final double t = FastMath.abs(t(m, mu, v, n));
-        // pass a null rng to avoid unneeded overhead as we will not sample from this distribution
-        final TDistribution distribution = new TDistribution(null, n - 1);
+        double t = FastMath.abs(t(m, mu, v, n));
+        TDistribution distribution = new TDistribution(n - 1);
         return 2.0 * distribution.cumulativeProbability(-t);
 
     }
@@ -1087,8 +1087,7 @@ public class TTest {
 
         final double t = FastMath.abs(t(m1, m2, v1, v2, n1, n2));
         final double degreesOfFreedom = df(v1, v2, n1, n2);
-        // pass a null rng to avoid unneeded overhead as we will not sample from this distribution
-        final TDistribution distribution = new TDistribution(null, degreesOfFreedom);
+        TDistribution distribution = new TDistribution(degreesOfFreedom);
         return 2.0 * distribution.cumulativeProbability(-t);
 
     }
@@ -1117,8 +1116,7 @@ public class TTest {
 
         final double t = FastMath.abs(homoscedasticT(m1, m2, v1, v2, n1, n2));
         final double degreesOfFreedom = n1 + n2 - 2;
-        // pass a null rng to avoid unneeded overhead as we will not sample from this distribution
-        final TDistribution distribution = new TDistribution(null, degreesOfFreedom);
+        TDistribution distribution = new TDistribution(degreesOfFreedom);
         return 2.0 * distribution.cumulativeProbability(-t);
 
     }

@@ -20,6 +20,7 @@ package org.apache.commons.math3.transform;
  * This enumeration defines the type of transform which is to be computed.
  *
  * @since 3.0
+ * @version $Id$
  */
 public enum TransformType {
     /** The type to be specified for forward transforms. */

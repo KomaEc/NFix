@@ -22,6 +22,7 @@ import java.util.Random;
  * java.util.Random instance.  Used by AbstractRandomGeneratorTest to test
  * default implementations in AbstractRandomGenerator.
  *
+ * @version $Id$
  */
 public class TestRandomGenerator extends AbstractRandomGenerator {
 

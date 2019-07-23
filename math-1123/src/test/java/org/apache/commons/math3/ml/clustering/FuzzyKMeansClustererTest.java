@@ -16,6 +16,9 @@
  */
 package org.apache.commons.math3.ml.clustering;
 
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,13 +29,12 @@ import org.apache.commons.math3.ml.distance.CanberraDistance;
 import org.apache.commons.math3.ml.distance.DistanceMeasure;
 import org.apache.commons.math3.random.JDKRandomGenerator;
 import org.apache.commons.math3.random.RandomGenerator;
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Test cases for FuzzyKMeansClusterer.
  *
+ * @version $Id$
  * @since 3.3
  */
 public class FuzzyKMeansClustererTest {
@@ -103,33 +105,6 @@ public class FuzzyKMeansClustererTest {
         Assert.assertEquals(1e-6, clusterer.getEpsilon(), 1e-12);
         Assert.assertThat(clusterer.getDistanceMeasure(), CoreMatchers.is(measure));
         Assert.assertThat(clusterer.getRandomGenerator(), CoreMatchers.is(random));
-    }
-
-    @Test
-    public void testSingleCluster() {
-        final List<DoublePoint> points = new ArrayList<DoublePoint>();
-        points.add(new DoublePoint(new double[] { 1, 1 }));
-
-        final FuzzyKMeansClusterer<DoublePoint> transformer =
-                new FuzzyKMeansClusterer<DoublePoint>(1, 2.0);
-        final List<CentroidCluster<DoublePoint>> clusters = transformer.cluster(points);
-
-        Assert.assertEquals(1, clusters.size());
-    }
-
-    @Test
-    public void testClusterCenterEqualsPoints() {
-        final List<DoublePoint> points = new ArrayList<DoublePoint>();
-        points.add(new DoublePoint(new double[] { 1, 1 }));
-        points.add(new DoublePoint(new double[] { 1.00001, 1.00001 }));
-        points.add(new DoublePoint(new double[] { 2, 2 }));
-        points.add(new DoublePoint(new double[] { 3, 3 }));
-
-        final FuzzyKMeansClusterer<DoublePoint> transformer =
-                new FuzzyKMeansClusterer<DoublePoint>(3, 2.0);
-        final List<CentroidCluster<DoublePoint>> clusters = transformer.cluster(points);
-
-        Assert.assertEquals(3, clusters.size());
     }
 
 }

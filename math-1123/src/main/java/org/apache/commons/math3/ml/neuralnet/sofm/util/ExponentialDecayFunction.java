@@ -27,6 +27,7 @@ import org.apache.commons.math3.util.FastMath;
  * <br/>
  * Class is immutable.
  *
+ * @version $Id$
  * @since 3.3
  */
 public class ExponentialDecayFunction {

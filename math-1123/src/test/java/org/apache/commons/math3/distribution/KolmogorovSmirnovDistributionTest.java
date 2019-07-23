@@ -23,8 +23,8 @@ import org.junit.Test;
 /**
  * Test cases for {@link KolmogorovSmirnovDistribution}.
  *
+ * @version $Id$
  */
-@Deprecated
 public class KolmogorovSmirnovDistributionTest {
     
     private static final double TOLERANCE = 10e-10;

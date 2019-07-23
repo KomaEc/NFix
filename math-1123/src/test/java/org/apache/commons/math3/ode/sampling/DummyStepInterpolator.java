@@ -33,6 +33,7 @@ import org.apache.commons.math3.ode.EquationsMapper;
  *
  * @see StepHandler
  *
+ * @version $Id$
  * @since 1.2
  */
 
@@ -79,9 +80,7 @@ public class DummyStepInterpolator
    */
   public DummyStepInterpolator(final DummyStepInterpolator interpolator) {
     super(interpolator);
-    if (interpolator.currentDerivative != null) {
-        currentDerivative = interpolator.currentDerivative.clone();
-    }
+    currentDerivative = interpolator.currentDerivative.clone();
   }
 
   /** Really copy the finalized instance.

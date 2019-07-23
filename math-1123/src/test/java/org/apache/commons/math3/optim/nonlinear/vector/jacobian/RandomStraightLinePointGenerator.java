@@ -18,7 +18,6 @@
 package org.apache.commons.math3.optim.nonlinear.vector.jacobian;
 
 import java.awt.geom.Point2D;
-
 import org.apache.commons.math3.random.RandomGenerator;
 import org.apache.commons.math3.random.Well44497b;
 import org.apache.commons.math3.distribution.RealDistribution;
@@ -28,7 +27,6 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 /**
  * Factory for generating a cloud of points that approximate a straight line.
  */
-@Deprecated
 public class RandomStraightLinePointGenerator {
     /** Slope. */
     private final double slope;

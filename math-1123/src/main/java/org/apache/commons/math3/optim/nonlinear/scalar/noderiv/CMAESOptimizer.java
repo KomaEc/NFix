@@ -76,6 +76,7 @@ import org.apache.commons.math3.util.MathArrays;
  *  <li><a href="http://en.wikipedia.org/wiki/CMA-ES">Wikipedia</a></li>
  * </ul>
  *
+ * @version $Id$
  * @since 3.0
  */
 public class CMAESOptimizer

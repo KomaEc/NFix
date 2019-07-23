@@ -19,6 +19,7 @@ package org.apache.commons.math3.analysis;
 /**
  * Wrapper class for counting functions calls.
  *
+ * @version $Id$
  */
 public class MonitoredFunction implements UnivariateFunction {
 

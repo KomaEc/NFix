@@ -25,6 +25,7 @@ import org.apache.commons.math3.exception.OutOfRangeException;
 /**
  * Results of a Multiple Linear Regression model fit.
  *
+ * @version $Id$
  * @since 3.0
  */
 public class RegressionResults implements Serializable {

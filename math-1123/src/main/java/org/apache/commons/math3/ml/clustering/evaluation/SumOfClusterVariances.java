@@ -33,6 +33,7 @@ import org.apache.commons.math3.stat.descriptive.moment.Variance;
  * intra-cluster distances of cluster \( c_i \).
  *
  * @param <T> the type of the clustered points
+ * @version $Id$
  * @since 3.3
  */
 public class SumOfClusterVariances<T extends Clusterable> extends ClusterEvaluator<T> {

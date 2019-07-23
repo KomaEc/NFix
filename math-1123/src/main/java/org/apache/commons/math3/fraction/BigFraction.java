@@ -34,6 +34,7 @@ import org.apache.commons.math3.util.MathUtils;
  * Representation of a rational number without any overflow. This class is
  * immutable.
  *
+ * @version $Id$
  * @since 2.0
  */
 public class BigFraction
@@ -96,7 +97,7 @@ public class BigFraction
 
     /**
      * <p>
-     * Create a {@link BigFraction} equivalent to the passed {@code BigInteger}, ie
+     * Create a {@link BigFraction} equivalent to the passed <tt>BigInteger</tt>, ie
      * "num / 1".
      * </p>
      *
@@ -361,7 +362,7 @@ public class BigFraction
 
     /**
      * <p>
-     * Create a {@link BigFraction} equivalent to the passed {@code int}, ie
+     * Create a {@link BigFraction} equivalent to the passed <tt>int</tt>, ie
      * "num / 1".
      * </p>
      *
@@ -375,7 +376,7 @@ public class BigFraction
     /**
      * <p>
      * Create a {@link BigFraction} given the numerator and denominator as simple
-     * {@code int}. The {@link BigFraction} is reduced to lowest terms.
+     * <tt>int</tt>. The {@link BigFraction} is reduced to lowest terms.
      * </p>
      *
      * @param num
@@ -402,7 +403,7 @@ public class BigFraction
     /**
      * <p>
      * Create a {@link BigFraction} given the numerator and denominator as simple
-     * {@code long}. The {@link BigFraction} is reduced to lowest terms.
+     * <tt>long</tt>. The {@link BigFraction} is reduced to lowest terms.
      * </p>
      *
      * @param num
@@ -472,12 +473,12 @@ public class BigFraction
 
     /**
      * <p>
-     * Adds the value of this fraction to the passed {@code integer}, returning
+     * Adds the value of this fraction to the passed <tt>integer</tt>, returning
      * the result in reduced form.
      * </p>
      *
      * @param i
-     *            the {@code integer} to add.
+     *            the <tt>integer</tt> to add.
      * @return a <code>BigFraction</code> instance with the resulting values.
      */
     public BigFraction add(final int i) {
@@ -486,12 +487,12 @@ public class BigFraction
 
     /**
      * <p>
-     * Adds the value of this fraction to the passed {@code long}, returning
+     * Adds the value of this fraction to the passed <tt>long</tt>, returning
      * the result in reduced form.
      * </p>
      *
      * @param l
-     *            the {@code long} to add.
+     *            the <tt>long</tt> to add.
      * @return a <code>BigFraction</code> instance with the resulting values.
      */
     public BigFraction add(final long l) {
@@ -558,7 +559,7 @@ public class BigFraction
      *            rounding mode to apply. see {@link BigDecimal} constants.
      * @return the fraction as a <code>BigDecimal</code>.
      * @throws IllegalArgumentException
-     *             if {@code roundingMode} does not represent a valid rounding
+     *             if <tt>roundingMode</tt> does not represent a valid rounding
      *             mode.
      * @see BigDecimal
      */
@@ -592,8 +593,8 @@ public class BigFraction
      *
      * @param object
      *            the object to compare to, must not be <code>null</code>.
-     * @return -1 if this is less than {@code object}, +1 if this is greater
-     *         than {@code object}, 0 if they are equal.
+     * @return -1 if this is less than <tt>object</tt>, +1 if this is greater
+     *         than <tt>object</tt>, 0 if they are equal.
      * @see java.lang.Comparable#compareTo(java.lang.Object)
      */
     public int compareTo(final BigFraction object) {
@@ -675,11 +676,11 @@ public class BigFraction
 
     /**
      * <p>
-     * Gets the fraction as a {@code double}. This calculates the fraction as
+     * Gets the fraction as a <tt>double</tt>. This calculates the fraction as
      * the numerator divided by denominator.
      * </p>
      *
-     * @return the fraction as a {@code double}
+     * @return the fraction as a <tt>double</tt>
      * @see java.lang.Number#doubleValue()
      */
     @Override
@@ -728,11 +729,11 @@ public class BigFraction
 
     /**
      * <p>
-     * Gets the fraction as a {@code float}. This calculates the fraction as
+     * Gets the fraction as a <tt>float</tt>. This calculates the fraction as
      * the numerator divided by denominator.
      * </p>
      *
-     * @return the fraction as a {@code float}.
+     * @return the fraction as a <tt>float</tt>.
      * @see java.lang.Number#floatValue()
      */
     @Override
@@ -762,10 +763,10 @@ public class BigFraction
 
     /**
      * <p>
-     * Access the denominator as a {@code int}.
+     * Access the denominator as a <tt>int</tt>.
      * </p>
      *
-     * @return the denominator as a {@code int}.
+     * @return the denominator as a <tt>int</tt>.
      */
     public int getDenominatorAsInt() {
         return denominator.intValue();
@@ -773,10 +774,10 @@ public class BigFraction
 
     /**
      * <p>
-     * Access the denominator as a {@code long}.
+     * Access the denominator as a <tt>long</tt>.
      * </p>
      *
-     * @return the denominator as a {@code long}.
+     * @return the denominator as a <tt>long</tt>.
      */
     public long getDenominatorAsLong() {
         return denominator.longValue();
@@ -795,10 +796,10 @@ public class BigFraction
 
     /**
      * <p>
-     * Access the numerator as a {@code int}.
+     * Access the numerator as a <tt>int</tt>.
      * </p>
      *
-     * @return the numerator as a {@code int}.
+     * @return the numerator as a <tt>int</tt>.
      */
     public int getNumeratorAsInt() {
         return numerator.intValue();
@@ -806,10 +807,10 @@ public class BigFraction
 
     /**
      * <p>
-     * Access the numerator as a {@code long}.
+     * Access the numerator as a <tt>long</tt>.
      * </p>
      *
-     * @return the numerator as a {@code long}.
+     * @return the numerator as a <tt>long</tt>.
      */
     public long getNumeratorAsLong() {
         return numerator.longValue();
@@ -830,7 +831,7 @@ public class BigFraction
 
     /**
      * <p>
-     * Gets the fraction as an {@code int}. This returns the whole number part
+     * Gets the fraction as an <tt>int</tt>. This returns the whole number part
      * of the fraction.
      * </p>
      *
@@ -844,7 +845,7 @@ public class BigFraction
 
     /**
      * <p>
-     * Gets the fraction as a {@code long}. This returns the whole number part
+     * Gets the fraction as a <tt>long</tt>. This returns the whole number part
      * of the fraction.
      * </p>
      *
@@ -875,12 +876,12 @@ public class BigFraction
 
     /**
      * <p>
-     * Multiply the value of this fraction by the passed {@code int}, returning
+     * Multiply the value of this fraction by the passed <tt>int</tt>, returning
      * the result in reduced form.
      * </p>
      *
      * @param i
-     *            the {@code int} to multiply by.
+     *            the <tt>int</tt> to multiply by.
      * @return a {@link BigFraction} instance with the resulting values.
      */
     public BigFraction multiply(final int i) {
@@ -889,12 +890,12 @@ public class BigFraction
 
     /**
      * <p>
-     * Multiply the value of this fraction by the passed {@code long},
+     * Multiply the value of this fraction by the passed <tt>long</tt>,
      * returning the result in reduced form.
      * </p>
      *
      * @param l
-     *            the {@code long} to multiply by.
+     *            the <tt>long</tt> to multiply by.
      * @return a {@link BigFraction} instance with the resulting values.
      */
     public BigFraction multiply(final long l) {
@@ -937,11 +938,11 @@ public class BigFraction
 
     /**
      * <p>
-     * Gets the fraction percentage as a {@code double}. This calculates the
+     * Gets the fraction percentage as a <tt>double</tt>. This calculates the
      * fraction as the numerator divided by denominator multiplied by 100.
      * </p>
      *
-     * @return the fraction percentage as a {@code double}.
+     * @return the fraction percentage as a <tt>double</tt>.
      */
     public double percentageValue() {
         return multiply(ONE_HUNDRED).doubleValue();

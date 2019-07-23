@@ -21,6 +21,7 @@ import org.apache.commons.math3.util.FastMath;
 /**
  * Calculates the Canberra distance between two points.
  *
+ * @version $Id$
  * @since 3.2
  */
 public class CanberraDistance implements DistanceMeasure {

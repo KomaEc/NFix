@@ -34,6 +34,7 @@ import org.apache.commons.math3.exception.MathIllegalArgumentException;
 /**
  * Test cases for the {@link Array2DRowFieldMatrix} class.
  *
+ * @version $Id$
  */
 
 public final class FieldMatrixImplTest {
@@ -269,7 +270,7 @@ public final class FieldMatrixImplTest {
     public void testOperate() {
         FieldMatrix<Fraction> m = new Array2DRowFieldMatrix<Fraction>(id);
         TestUtils.assertEquals(testVector, m.operate(testVector));
-        TestUtils.assertEquals(testVector, m.operate(new ArrayFieldVector<Fraction>(testVector)).toArray());
+        TestUtils.assertEquals(testVector, m.operate(new ArrayFieldVector<Fraction>(testVector)).getData());
         m = new Array2DRowFieldMatrix<Fraction>(bigSingular);
         try {
             m.operate(testVector);

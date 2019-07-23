@@ -30,6 +30,7 @@ import org.apache.commons.math3.util.Precision;
 /**
  * Implementation of a diagonal matrix.
  *
+ * @version $Id$
  * @since 3.1.1
  */
 public class DiagonalMatrix extends AbstractRealMatrix

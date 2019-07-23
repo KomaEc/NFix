@@ -62,6 +62,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
  * than or equal to <code>x</code>.  The value returned is <br>
  * <code>polynomials[j](x - knot[j])</code></li></ol></p>
  *
+ * @version $Id$
  */
 public class PolynomialSplineFunction implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /**

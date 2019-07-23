@@ -26,6 +26,7 @@ import org.apache.commons.math3.exception.NumberIsTooSmallException;
  * Interface representing a bivariate real interpolating function where the
  * sample points must be specified on a regular grid.
  *
+ * @version $Id$
  */
 public interface BivariateGridInterpolator {
     /**

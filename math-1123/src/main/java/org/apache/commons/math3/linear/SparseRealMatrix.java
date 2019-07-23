@@ -27,6 +27,7 @@ package org.apache.commons.math3.linear;
  *  Some operations (that involve {@code NaN} and/or infinities) may
  *  thus give incorrect results.
  * </p>
+ * @version $Id$
  * @since 2.0
  */
 public interface SparseRealMatrix extends RealMatrix {

@@ -22,6 +22,7 @@ import org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiabl
 /**
  * Auxiliary class for testing solvers.
  *
+ * @version $Id$
  */
 public class QuinticFunction implements UnivariateDifferentiableFunction {
 

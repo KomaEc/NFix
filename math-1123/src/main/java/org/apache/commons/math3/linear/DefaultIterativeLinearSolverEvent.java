@@ -22,6 +22,7 @@ import org.apache.commons.math3.exception.MathUnsupportedOperationException;
  * A default concrete implementation of the abstract class
  * {@link IterativeLinearSolverEvent}.
  *
+ * @version $Id$
  */
 public class DefaultIterativeLinearSolverEvent extends IterativeLinearSolverEvent {
 

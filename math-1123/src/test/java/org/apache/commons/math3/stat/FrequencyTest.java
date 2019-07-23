@@ -32,6 +32,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link Frequency} class.
  *
+ * @version $Id$
  */
 public final class FrequencyTest {
     private static final long ONE_LONG = 1L;

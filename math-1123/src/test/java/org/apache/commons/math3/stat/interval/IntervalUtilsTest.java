@@ -22,6 +22,7 @@ import org.junit.Test;
 /**
  * Test cases for the IntervalUtils class.
  * 
+ * @version $Id$
  */
 public class IntervalUtilsTest {
 

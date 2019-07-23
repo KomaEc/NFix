@@ -27,6 +27,7 @@ package org.apache.commons.math3.util;
  * @param <V> Value type.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Pair<K, V> {
     /** Key. */

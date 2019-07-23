@@ -23,6 +23,7 @@ import org.apache.commons.math3.util.FastMath;
 
 /** Base class for random number generators that generates bits streams.
  *
+ * @version $Id$
  * @since 2.0
  */
 public abstract class BitsStreamGenerator
@@ -162,13 +163,13 @@ public abstract class BitsStreamGenerator
     }
 
     /**
-     * Returns a pseudorandom, uniformly distributed {@code long} value
+     * Returns a pseudorandom, uniformly distributed <tt>long</tt> value
      * between 0 (inclusive) and the specified value (exclusive), drawn from
      * this random number generator's sequence.
      *
      * @param n the bound on the random number to be returned.  Must be
      * positive.
-     * @return  a pseudorandom, uniformly distributed {@code long}
+     * @return  a pseudorandom, uniformly distributed <tt>long</tt>
      * value between 0 (inclusive) and n (exclusive).
      * @throws IllegalArgumentException  if n is not positive.
      */

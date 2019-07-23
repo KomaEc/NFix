@@ -24,6 +24,7 @@ import org.junit.Test;
 /**
  * Test cases for the RandomAdaptor class
  *
+ * @version $Id$
  */
 
 public class RandomAdaptorTest {

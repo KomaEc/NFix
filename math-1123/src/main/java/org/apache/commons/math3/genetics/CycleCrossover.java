@@ -61,6 +61,7 @@ import org.apache.commons.math3.exception.util.LocalizedFormats;
  *
  * @param <T> generic type of the {@link AbstractListChromosome}s for crossover
  * @since 3.1
+ * @version $Id$
  */
 public class CycleCrossover<T> implements CrossoverPolicy {
 

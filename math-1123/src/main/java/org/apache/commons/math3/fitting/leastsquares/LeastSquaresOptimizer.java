@@ -19,6 +19,7 @@ package org.apache.commons.math3.fitting.leastsquares;
 /**
  * An algorithm that can be applied to a non-linear least squares problem.
  *
+ * @version $Id$
  * @since 3.3
  */
 public interface LeastSquaresOptimizer {

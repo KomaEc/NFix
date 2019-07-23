@@ -94,8 +94,8 @@ import org.junit.Test;
  * @author Kenneth E. Hillstrom (original fortran minpack tests)
  * @author Jorge J. More (original fortran minpack tests)
  * @author Luc Maisonobe (non-minpack tests and minpack tests Java translation)
+ * @version $Id$
  */
-@Deprecated
 public abstract class AbstractLeastSquaresOptimizerAbstractTest {
 
     public abstract AbstractLeastSquaresOptimizer createOptimizer();

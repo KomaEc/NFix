@@ -29,6 +29,7 @@ import org.apache.commons.math3.util.FastMath;
  * integration scheme.</p>
  *
  * @see LutherIntegrator
+ * @version $Id$
  * @since 3.3
  */
 

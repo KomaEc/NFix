@@ -24,6 +24,7 @@ import org.apache.commons.math3.FieldElement;
  * visited.
  *
  * @param <T> the type of the field elements
+ * @version $Id$
  * @since 3.3
  */
 public interface FieldVectorPreservingVisitor<T extends FieldElement<?>> {

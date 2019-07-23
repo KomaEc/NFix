@@ -21,6 +21,7 @@ import java.io.Serializable;
 /**
  * Interface for distance measures of n-dimensional vectors.
  *
+ * @version $Id$
  * @since 3.2
  */
 public interface DistanceMeasure extends Serializable {

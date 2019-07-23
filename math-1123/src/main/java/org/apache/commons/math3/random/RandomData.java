@@ -26,6 +26,7 @@ import org.apache.commons.math3.exception.NumberIsTooLargeException;
 /**
  * Random data generation utilities.
  * @deprecated to be removed in 4.0.  Use {@link RandomDataGenerator} directly
+ * @version $Id$
  */
 @Deprecated
 public interface RandomData {

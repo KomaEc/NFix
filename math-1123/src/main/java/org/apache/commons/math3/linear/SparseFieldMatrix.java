@@ -31,6 +31,7 @@ import org.apache.commons.math3.util.OpenIntToFieldHashMap;
  *  thus give incorrect results.
  * </p>
  * @param <T> the type of the field elements
+ * @version $Id$
  * @since 2.0
  */
 public class SparseFieldMatrix<T extends FieldElement<T>> extends AbstractFieldMatrix<T> {

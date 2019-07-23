@@ -22,6 +22,7 @@ package org.apache.commons.math3.random;
  * implemented by {@link AbstractRandomGenerator}.
  *
  * @since 1.1
+ * @version $Id$
  */
 public interface RandomGenerator {
 
@@ -68,7 +69,7 @@ public interface RandomGenerator {
     /**
      * Returns the next pseudorandom, uniformly distributed <code>int</code>
      * value from this random number generator's sequence.
-     * All 2<font size="-1"><sup>32</sup></font> possible {@code int} values
+     * All 2<font size="-1"><sup>32</sup></font> possible <tt>int</tt> values
      * should be produced with  (approximately) equal probability.
      *
      * @return the next pseudorandom, uniformly distributed <code>int</code>
@@ -77,13 +78,13 @@ public interface RandomGenerator {
     int nextInt();
 
     /**
-     * Returns a pseudorandom, uniformly distributed {@code int} value
+     * Returns a pseudorandom, uniformly distributed <tt>int</tt> value
      * between 0 (inclusive) and the specified value (exclusive), drawn from
      * this random number generator's sequence.
      *
      * @param n the bound on the random number to be returned.  Must be
      * positive.
-     * @return  a pseudorandom, uniformly distributed {@code int}
+     * @return  a pseudorandom, uniformly distributed <tt>int</tt>
      * value between 0 (inclusive) and n (exclusive).
      * @throws IllegalArgumentException  if n is not positive.
      */
@@ -92,7 +93,7 @@ public interface RandomGenerator {
     /**
      * Returns the next pseudorandom, uniformly distributed <code>long</code>
      * value from this random number generator's sequence.  All
-     * 2<font size="-1"><sup>64</sup></font> possible {@code long} values
+     * 2<font size="-1"><sup>64</sup></font> possible <tt>long</tt> values
      * should be produced with (approximately) equal probability.
      *
      * @return  the next pseudorandom, uniformly distributed <code>long</code>

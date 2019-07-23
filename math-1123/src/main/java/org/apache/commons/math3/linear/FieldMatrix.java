@@ -35,6 +35,7 @@ import org.apache.commons.math3.exception.OutOfRangeException;
  * returns the element in the first row, first column of the matrix.</p>
  *
  * @param <T> the type of the field elements
+ * @version $Id$
  */
 public interface FieldMatrix<T extends FieldElement<T>> extends AnyMatrix {
     /**

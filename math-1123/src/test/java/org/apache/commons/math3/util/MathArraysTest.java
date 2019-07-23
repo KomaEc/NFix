@@ -24,7 +24,6 @@ import org.apache.commons.math3.exception.NonMonotonicSequenceException;
 import org.apache.commons.math3.exception.NotPositiveException;
 import org.apache.commons.math3.exception.NotStrictlyPositiveException;
 import org.apache.commons.math3.exception.NullArgumentException;
-import org.apache.commons.math3.exception.NotANumberException;
 import org.apache.commons.math3.random.Well1024a;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,6 +31,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link MathArrays} class.
  *
+ * @version $Id$
  */
 public class MathArraysTest {
     
@@ -385,46 +385,6 @@ public class MathArraysTest {
     }
 
     @Test
-    public void testCheckNotNaN() {
-        final double[] withoutNaN = { Double.NEGATIVE_INFINITY,
-                                      -Double.MAX_VALUE,
-                                      -1, 0,
-                                      Double.MIN_VALUE,
-                                      FastMath.ulp(1d),
-                                      1, 3, 113, 4769,
-                                      Double.MAX_VALUE,
-                                      Double.POSITIVE_INFINITY };
-
-        final double[] withNaN = { Double.NEGATIVE_INFINITY,
-                                   -Double.MAX_VALUE,
-                                   -1, 0,
-                                   Double.MIN_VALUE,
-                                   FastMath.ulp(1d),
-                                   1, 3, 113, 4769,
-                                   Double.MAX_VALUE,
-                                   Double.POSITIVE_INFINITY,
-                                   Double.NaN };
-
-
-        final double[] nullArray = null;
-        final double[] empty = new double[] {};
-        MathArrays.checkNotNaN(withoutNaN);
-        MathArrays.checkNotNaN(empty);
-        try {
-            MathArrays.checkNotNaN(nullArray);
-            Assert.fail("Expecting NullPointerException");
-        } catch (NullPointerException ex) {
-            // Expected
-        }
-        try {
-            MathArrays.checkNotNaN(withNaN);
-            Assert.fail("Expecting NotANumberException");
-        } catch (NotANumberException ex) {
-            // Expected
-        }
-    }
-
-    @Test
     public void testSortInPlace() {
         final double[] x1 = {2,   5,  -3, 1,  4};
         final double[] x2 = {4,  25,   9, 1, 16};
@@ -625,29 +585,6 @@ public class MathArraysTest {
         }
         for (int i = source.length; i < source.length + offset; i++) {
             Assert.assertEquals(0, dest[i], 0);
-        }
-    }
-
-    @Test
-    public void testCopyOfRange() {
-        final double[] source = { Double.NEGATIVE_INFINITY,
-                                  -Double.MAX_VALUE,
-                                  -1, 0,
-                                  Double.MIN_VALUE,
-                                  FastMath.ulp(1d),
-                                  1, 3, 113, 4769,
-                                  Double.MAX_VALUE,
-                                  Double.POSITIVE_INFINITY };
-        final int from = 3;
-        final int to = source.length + 14;
-        final double[] dest = MathArrays.copyOfRange(source, from, to);
-
-        Assert.assertEquals(dest.length, to - from);
-        for (int i = from; i < source.length; i++) {
-            Assert.assertEquals(source[i], dest[i - from], 0);
-        }
-        for (int i = source.length; i < dest.length; i++) {
-            Assert.assertEquals(0, dest[i - from], 0);
         }
     }
 
@@ -1063,25 +1000,6 @@ public class MathArraysTest {
     public void testNaturalZero() {
         final int[] natural = MathArrays.natural(0);
         Assert.assertEquals(0, natural.length);
-    }
-
-    @Test
-    public void testSequence() {
-        final int size = 4;
-        final int start = 5;
-        final int stride = 2;
-        final int[] expected = {5, 7, 9, 11};
-
-        final int[] seq = MathArrays.sequence(size, start, stride);
-        for (int i = 0; i < size; i++) {
-            Assert.assertEquals(expected[i], seq[i]);
-        }
-    }
-
-    @Test
-    public void testSequenceZero() {
-        final int[] seq = MathArrays.sequence(0, 12345, 6789);
-        Assert.assertEquals(0, seq.length);
     }
     
     @Test

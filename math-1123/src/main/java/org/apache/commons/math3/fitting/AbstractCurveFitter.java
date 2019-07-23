@@ -47,6 +47,7 @@ import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer
  * The problem setup, such as the choice of optimization algorithm
  * for fitting a specific function is delegated to subclasses.
  *
+ * @version $Id$
  * @since 3.3
  */
 public abstract class AbstractCurveFitter {

@@ -28,6 +28,7 @@ import org.apache.commons.math3.util.FastMath;
  * Square-root function.
  *
  * @since 3.0
+ * @version $Id$
  */
 public class Sqrt implements UnivariateDifferentiableFunction, DifferentiableUnivariateFunction {
     /** {@inheritDoc} */

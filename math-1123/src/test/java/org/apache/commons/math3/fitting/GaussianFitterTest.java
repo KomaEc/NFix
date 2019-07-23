@@ -25,8 +25,8 @@ import org.junit.Test;
  * Tests {@link GaussianFitter}.
  *
  * @since 2.2
+ * @version $Id: GaussianFitterTest.java 1349707 2012-06-13 09:30:56Z erans $
  */
-@Deprecated
 public class GaussianFitterTest {
     /** Good data. */
     protected static final double[][] DATASET1 = new double[][] {

@@ -25,6 +25,7 @@ import org.junit.Test;
 /**
  * Tests for AbstractUnivariateStatistic
  *
+ * @version $Id$
  */
 public class AbstractUnivariateStatisticTest {
 
