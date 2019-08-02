@@ -1,10 +1,18 @@
 # tika-1115
 
+## Commit
+https://github.com/apache/tika/commit/5ffe387253086d52017d32f7d5b20cbd912d56a5
+
 ## Patch
 ```diff
---- src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java	2019-07-24 14:29:23.066864756 +0800
-+++ npe.patch	2019-07-24 14:39:36.946400855 +0800
-@@ -388,11 +388,13 @@
+--- src/main/java/org/apache/tika/parser/image/ImageMetadataExtractor.java	2019-08-02 17:16:05.815635308 +0800
++++ npe.patch	2019-08-02 17:19:48.991757060 +0800
+@@ -1,3 +1,4 @@
++
+ /*
+  * Licensed to the Apache Software Foundation (ASF) under one or more
+  * contributor license agreements.  See the NOTICE file distributed with
+@@ -388,11 +389,13 @@
              }
              if (directory.containsTag(ExifIFD0Directory.TAG_DATETIME)) {
                  Date datetime = directory.getDate(ExifIFD0Directory.TAG_DATETIME);
@@ -23,7 +31,7 @@
                  }
              }
          }
-@@ -450,4 +452,4 @@
+@@ -450,4 +453,4 @@
          }
      }
  
