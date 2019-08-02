@@ -1,0 +1,21 @@
+--- src/main/java/org/apache/tika/parser/crypto/Pkcs7Parser.java	2019-08-02 10:40:51.426013044 +0800
++++ npe.patch	2019-08-02 10:52:26.958822332 +0800
+@@ -60,7 +60,10 @@
+             CMSSignedDataParser parser =
+                     new CMSSignedDataParser(new CloseShieldInputStream(stream));
+             try {
+-                CMSTypedStream content = parser.getSignedContent();
++                CMSTypedStream content = parser.getSignedContent();     
++                if (content == null) {
++                  throw new TikaException("cannot parse detached pkcs7 signature (no signed data to parse)");
++                }
+                 InputStream input = content.getContentStream();
+                 try {
+                     Parser delegate =
+@@ -77,4 +80,4 @@
+         }
+     }
+ 
+-}
++}
+\ No newline at end of file
