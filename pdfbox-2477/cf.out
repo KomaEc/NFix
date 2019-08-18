@@ -1,0 +1,1284 @@
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[54,32] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[56,35] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[58,35] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[60,38] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[93,28] [assignment.type.incompatible] incompatible types in assignment.
+  found   : @UnderInitialization(org.apache.xmpbox.type.TypeMapping.class) @NonNull TypeMapping
+  required: @Initialized @NonNull TypeMapping
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[93,44] [argument.type.incompatible] incompatible types in argument.
+  found   : @UnderInitialization(java.lang.Object.class) @NonNull XMPMetadata
+  required: @Initialized @NonNull XMPMetadata
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[214,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[250,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractComplexProperty
+  required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,47] [method.invocation.invalid] call to getPrefix() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,30] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,36] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[79,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[79,38] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[84,46] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[106,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[199,70] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[306,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[318,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[344,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull DateType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[384,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[446,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull BooleanType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[487,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Boolean
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[548,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull IntegerType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[585,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[724,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[876,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[942,59] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[974,16] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable List<@Initialized @NonNull Calendar>
+  method return type: @Initialized @NonNull List<@Initialized @NonNull Calendar>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1011,27] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable AbstractField
+  required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1137,24] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1144,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1188,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1320,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1326,54] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,30] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,36] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[46,38] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[46,44] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[47,42] [method.invocation.invalid] call to getClass() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.AbstractStructuredType.class) @NonNull Object
+  required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[64,42] [method.invocation.invalid] call to getClass() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.AbstractComplexProperty.class) @NonNull Object
+  required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[123,76] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[132,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[149,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractComplexProperty.java:[103,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractComplexProperty.java:[115,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull ArrayProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[68,12] [initialization.fields.uninitialized] the constructor does not initialize fields: structuredMappings, structuredNamespaces, definedStructuredNamespaces, definedStructuredMappings, schemaMap
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[71,19] [method.invocation.invalid] call to initialize() not allowed on the given receiver.
+  found   : @UnderInitialization(java.lang.Object.class) @NonNull TypeMapping
+  required: @Initialized @NonNull TypeMapping
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[170,63] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[298,36] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable XMPSchema
+  method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[375,51] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[482,24] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable null
+  method return type: @Initialized @NonNull Class<?[ extends @Initialized @NonNull Annotation super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[162,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Boolean
+  method return type: @Initialized @NonNull Boolean
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[186,23] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[228,30] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[249,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[293,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[211,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[227,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull IntegerType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[242,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[257,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[277,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[297,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[317,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[207,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[373,18] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[437,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[519,31] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[540,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[561,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[663,26] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[684,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[746,25] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[48,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: bagJobs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[58,31] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[113,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull JobType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[46,12] [initialization.fields.uninitialized] the constructor does not initialize fields: seqLayer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: seqLayer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[126,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[148,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[170,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[192,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[214,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[236,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Integer
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[258,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[280,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[302,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[339,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[361,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[383,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[405,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[428,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[450,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[533,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull LayerType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[545,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[567,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Integer
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[97,12] [initialization.fields.uninitialized] the constructor does not initialize fields: altThumbs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[111,12] [initialization.fields.uninitialized] the constructor does not initialize fields: altThumbs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[413,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[438,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[459,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[500,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[521,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Calendar
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[551,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[562,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[584,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[605,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Integer
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[635,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull ThumbnailType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[161,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[207,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[253,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Integer
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[303,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[353,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[403,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[453,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[503,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[602,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[652,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[702,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[752,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[160,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[175,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[190,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[205,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[220,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[235,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,23] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,29] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable null
+  required: @Initialized @NonNull Class<?[ extends @Initialized @NonNull AbstractField super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,55] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,61] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable null
+  required: @Initialized @NonNull Class<?[ extends @Initialized @NonNull AbstractField super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,16] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,50] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,87] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[31,19] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[31,56] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractSimpleProperty.java:[57,17] [method.invocation.invalid] call to setValue(java.lang.Object) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.AbstractField.class) @NonNull AbstractSimpleProperty
+  required: @Initialized @NonNull AbstractSimpleProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TextType.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: textValue
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/DateType.java:[55,12] [initialization.fields.uninitialized] the constructor does not initialize fields: dateValue
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[136,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[186,24] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[193,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchemaFactory.java:[57,12] [initialization.fields.uninitialized] the constructor does not initialize fields: nsName
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[41,24] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractComplexProperty
+  required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,47] [method.invocation.invalid] call to getPrefix() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[40,21] [method.invocation.invalid] call to setAttribute(org.apache.xmpbox.type.Attribute) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.LayerType.class) @NonNull AbstractField
+  required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[55,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[81,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[56,21] [method.invocation.invalid] call to setAttribute(org.apache.xmpbox.type.Attribute) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ThumbnailType.class) @NonNull AbstractField
+  required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[71,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[98,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[124,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[150,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractComplexProperty
+  required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[101,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[119,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[137,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[155,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[173,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[191,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[209,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[227,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[245,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[263,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[281,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[299,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[317,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[335,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[353,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[367,70] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[372,63] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[400,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractComplexProperty
+  required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractComplexProperty
+  required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+  found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractStructuredType
+  required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/DefinedStructuredType.java:[32,59] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull Map<@Initialized @NonNull String, @Initialized @NonNull PropertyType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/XmpSerializer.java:[56,47] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull DocumentBuilder
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[50,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[56,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[62,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[68,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomHelper.java:[81,16] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull Element
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/ExifSchema.java:[328,31] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[47,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[53,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[59,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[122,38] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull ErrorHandler
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[535,20] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[592,93] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,46] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,53] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,57] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,64] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[53,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[59,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[65,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[71,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[135,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[183,36] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[231,29] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XmpConstants.java:[34,56] [assignment.type.incompatible] incompatible types in assignment.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFASchemaType.java:[53,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFASchemaType.java:[59,27] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable String
+  method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/DateConverter.java:[216,16] [return.type.incompatible] incompatible types in return.
+  type of expression: @Initialized @Nullable Calendar
+  method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[152,54] [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[276,24] [return.type.incompatible] incompatible types in return.
+  type of expression: null
+  method return type: @Initialized @NonNull PropertyType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[292,47] [argument.type.incompatible] incompatible types in argument.
+  found   : @Initialized @Nullable Types
+  required: @Initialized @NonNull Types
+[INFO] 217 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.535 s
+[INFO] Finished at: 2019-08-18T15:46:14+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.6.1:compile (default-compile) on project xmpbox: Compilation failure: Compilation failure: 
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[54,32] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[56,35] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[58,35] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[60,38] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[93,28] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.TypeMapping.class) @NonNull TypeMapping
+[ERROR]   required: @Initialized @NonNull TypeMapping
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[93,44] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @UnderInitialization(java.lang.Object.class) @NonNull XMPMetadata
+[ERROR]   required: @Initialized @NonNull XMPMetadata
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[214,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XMPMetadata.java:[250,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractComplexProperty
+[ERROR]   required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[69,47] [method.invocation.invalid] call to getPrefix() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.schema.XMPSchema.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,30] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[74,36] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[79,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[79,38] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[84,46] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[106,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[199,70] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[306,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[318,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[344,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull DateType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[384,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[446,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull BooleanType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[487,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Boolean
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[548,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull IntegerType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[585,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[724,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[876,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[942,59] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[974,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable List<@Initialized @NonNull Calendar>
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull Calendar>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1011,27] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable AbstractField
+[ERROR]   required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1137,24] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1144,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1188,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1320,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchema.java:[1326,54] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,30] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[41,36] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[46,38] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[46,44] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[47,42] [method.invocation.invalid] call to getClass() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.AbstractStructuredType.class) @NonNull Object
+[ERROR]   required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[64,42] [method.invocation.invalid] call to getClass() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.AbstractComplexProperty.class) @NonNull Object
+[ERROR]   required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[123,76] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[132,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractStructuredType.java:[149,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractComplexProperty.java:[103,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractComplexProperty.java:[115,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull ArrayProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[68,12] [initialization.fields.uninitialized] the constructor does not initialize fields: structuredMappings, structuredNamespaces, definedStructuredNamespaces, definedStructuredMappings, schemaMap
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[71,19] [method.invocation.invalid] call to initialize() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(java.lang.Object.class) @NonNull TypeMapping
+[ERROR]   required: @Initialized @NonNull TypeMapping
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[170,63] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[298,36] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable XMPSchema
+[ERROR]   method return type: @Initialized @NonNull XMPSchema
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[375,51] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable String
+[ERROR]   required: @Initialized @NonNull Object
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TypeMapping.java:[482,24] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable null
+[ERROR]   method return type: @Initialized @NonNull Class<?[ extends @Initialized @NonNull Annotation super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[162,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Boolean
+[ERROR]   method return type: @Initialized @NonNull Boolean
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[186,23] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[228,30] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[249,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPRightsManagementSchema.java:[293,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[211,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[227,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull IntegerType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[242,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[257,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[277,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[297,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PDFAIdentificationSchema.java:[317,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[207,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[373,18] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[437,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[519,31] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[540,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[561,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[663,26] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[684,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/DublinCoreSchema.java:[746,25] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[48,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: bagJobs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[58,31] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicJobTicketSchema.java:[113,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull JobType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[46,12] [initialization.fields.uninitialized] the constructor does not initialize fields: seqLayer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: seqLayer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[126,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[148,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[170,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[192,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[214,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[236,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Integer
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[258,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[280,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[302,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[339,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[361,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[383,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[405,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[428,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[450,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[533,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull LayerType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[545,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/PhotoshopSchema.java:[567,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Integer
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[97,12] [initialization.fields.uninitialized] the constructor does not initialize fields: altThumbs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[111,12] [initialization.fields.uninitialized] the constructor does not initialize fields: altThumbs
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[413,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[438,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[459,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[500,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[521,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Calendar
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[551,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[562,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[584,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[605,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Integer
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPBasicSchema.java:[635,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull ThumbnailType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[161,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[207,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[253,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Integer
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[303,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[353,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[403,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[453,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[503,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[602,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[652,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[702,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPMediaManagementSchema.java:[752,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[160,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[175,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[190,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[205,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[220,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull TextType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/AdobePDFSchema.java:[235,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,23] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,29] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable null
+[ERROR]   required: @Initialized @NonNull Class<?[ extends @Initialized @NonNull AbstractField super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,55] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[27,61] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable null
+[ERROR]   required: @Initialized @NonNull Class<?[ extends @Initialized @NonNull AbstractField super @Initialized @NonNull Void]>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,16] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,50] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[30,87] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[31,19] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/Types.java:[31,56] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/AbstractSimpleProperty.java:[57,17] [method.invocation.invalid] call to setValue(java.lang.Object) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.AbstractField.class) @NonNull AbstractSimpleProperty
+[ERROR]   required: @Initialized @NonNull AbstractSimpleProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/TextType.java:[51,12] [initialization.fields.uninitialized] the constructor does not initialize fields: textValue
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/DateType.java:[55,12] [initialization.fields.uninitialized] the constructor does not initialize fields: dateValue
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[136,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[186,24] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ComplexPropertyContainer.java:[193,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull AbstractField>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/XMPSchemaFactory.java:[57,12] [initialization.fields.uninitialized] the constructor does not initialize fields: nsName
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[41,24] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractComplexProperty
+[ERROR]   required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/JobType.java:[47,47] [method.invocation.invalid] call to getPrefix() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.JobType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[40,21] [method.invocation.invalid] call to setAttribute(org.apache.xmpbox.type.Attribute) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.LayerType.class) @NonNull AbstractField
+[ERROR]   required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[55,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/LayerType.java:[81,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[56,21] [method.invocation.invalid] call to setAttribute(org.apache.xmpbox.type.Attribute) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ThumbnailType.class) @NonNull AbstractField
+[ERROR]   required: @Initialized @NonNull AbstractField
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[71,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[98,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Integer
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[124,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ThumbnailType.java:[150,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractComplexProperty
+[ERROR]   required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[88,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceRefType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[101,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[119,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[137,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[155,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[173,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[191,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[209,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[227,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[245,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[263,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[281,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[299,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[317,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[335,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[353,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[367,70] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[372,63] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceRefType.java:[400,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull List<@Initialized @NonNull String>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractComplexProperty
+[ERROR]   required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/VersionType.java:[55,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.VersionType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,21] [method.invocation.invalid] call to addNamespace(java.lang.String,java.lang.String) not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractComplexProperty
+[ERROR]   required: @Initialized @NonNull AbstractComplexProperty
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,34] [method.invocation.invalid] call to getNamespace() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/ResourceEventType.java:[58,55] [method.invocation.invalid] call to getPreferedPrefix() not allowed on the given receiver.
+[ERROR]   found   : @UnderInitialization(org.apache.xmpbox.type.ResourceEventType.class) @NonNull AbstractStructuredType
+[ERROR]   required: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/DefinedStructuredType.java:[32,59] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull Map<@Initialized @NonNull String, @Initialized @NonNull PropertyType>
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/XmpSerializer.java:[56,47] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull DocumentBuilder
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[50,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[56,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[62,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAPropertyType.java:[68,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomHelper.java:[81,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull Element
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/ExifSchema.java:[328,31] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[47,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[53,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFAFieldType.java:[59,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[122,38] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull ErrorHandler
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[535,20] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull AbstractStructuredType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[592,93] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,46] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable String
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,53] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable String
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,57] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable String
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/DomXmpParser.java:[672,64] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable String
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[53,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[59,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[65,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFATypeType.java:[71,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[135,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[183,36] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/schema/TiffSchema.java:[231,29] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/XmpConstants.java:[34,56] [assignment.type.incompatible] incompatible types in assignment.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFASchemaType.java:[53,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/type/PDFASchemaType.java:[59,27] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable String
+[ERROR]   method return type: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/DateConverter.java:[216,16] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: @Initialized @Nullable Calendar
+[ERROR]   method return type: @Initialized @NonNull Calendar
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[152,54] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : null
+[ERROR]   required: @Initialized @NonNull String
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[276,24] [return.type.incompatible] incompatible types in return.
+[ERROR]   type of expression: null
+[ERROR]   method return type: @Initialized @NonNull PropertyType
+[ERROR] /home/coma/GSoC/pdfbox-2477/src/main/java/org/apache/xmpbox/xml/PdfaExtensionHelper.java:[292,47] [argument.type.incompatible] incompatible types in argument.
+[ERROR]   found   : @Initialized @Nullable Types
+[ERROR]   required: @Initialized @NonNull Types
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Makefile:2: recipe for target 'all' failed
+make: *** [all] Error 1

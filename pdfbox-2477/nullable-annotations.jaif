@@ -1,0 +1,2652 @@
+package org.checkerframework.checker.nullness.qual:
+annotation @Nullable:
+annotation @NonNull:
+
+package :
+class Main : // 0/- obj/class samples
+  method main([Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // args
+  method <init>()V : // 0 samples
+    return:
+
+
+package org.apache.commons.logging:
+class LogConfigurationException : // 4/4 obj/class samples
+  method <init>()V : // 0 samples
+    return:
+  method <init>(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // message
+  method <init>(Ljava/lang/String;Ljava/lang/Throwable;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // message
+    parameter #1 : @Nullable // cause
+  method <init>(Ljava/lang/Throwable;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // cause
+  method getCause()Ljava/lang/Throwable; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory$1 : // 3/- obj/class samples
+  method <init>()V : // 1 samples
+    return:
+  method run()Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory$2 : // 3/- obj/class samples
+  method <init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // $hidden$1
+    parameter #1 : @Nullable // $hidden$2
+  method run()Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory$3 : // 3/- obj/class samples
+  method <init>(Ljava/lang/ClassLoader;Ljava/lang/String;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // $hidden$1
+    parameter #1 : @Nullable // $hidden$2
+  method run()Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory$4 : // 3/- obj/class samples
+  method <init>(Ljava/lang/ClassLoader;Ljava/lang/String;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // $hidden$1
+    parameter #1 : @Nullable // $hidden$2
+  method run()Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory$6 : // 9/- obj/class samples
+  method <init>(Ljava/lang/String;Ljava/lang/String;)V : // 3 samples
+    return:
+    parameter #0 : @Nullable // $hidden$1
+    parameter #1 : @Nullable // $hidden$2
+  method run()Ljava/lang/Object; : // 3 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging:
+class LogFactory : // 1/119 obj/class samples
+  method access$000(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // x0
+  method cacheFactory(Ljava/lang/ClassLoader;Lorg/apache/commons/logging/LogFactory;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // classLoader
+    parameter #1 : @Nullable // factory
+  method class$(Ljava/lang/String;)Ljava/lang/Class; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // x0
+  method createFactory(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // factoryClass
+    parameter #1 : @Nullable // classLoader
+  method createFactoryStore()Ljava/util/Hashtable; : // 1 samples
+    return: @Nullable
+  method directGetContextClassLoader()Ljava/lang/ClassLoader; : // 2 samples
+    return: @Nullable
+  method getCachedFactory(Ljava/lang/ClassLoader;)Lorg/apache/commons/logging/LogFactory; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // contextClassLoader
+  method getClassLoader(Ljava/lang/Class;)Ljava/lang/ClassLoader; : // 3 samples
+    return: @Nullable
+    parameter #0 : @Nullable // clazz
+  method getConfigurationFile(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/util/Properties; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // classLoader
+    parameter #1 : @Nullable // fileName
+  method getContextClassLoader()Ljava/lang/ClassLoader; : // 0 samples
+    return: 
+  method getContextClassLoaderInternal()Ljava/lang/ClassLoader; : // 1 samples
+    return: @Nullable
+  method getFactory()Lorg/apache/commons/logging/LogFactory; : // 1 samples
+    return: @Nullable
+  method getLog(Ljava/lang/Class;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // clazz
+  method getLog(Ljava/lang/String;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getProperties(Ljava/net/URL;)Ljava/util/Properties; : // 0 samples
+    return: 
+    parameter #0 :  // url
+  method getResourceAsStream(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/io/InputStream; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // loader
+    parameter #1 : @Nullable // name
+  method getResources(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/util/Enumeration; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // loader
+    parameter #1 : @Nullable // name
+  method getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; : // 3 samples
+    return: @Nullable
+    parameter #0 : @Nullable // key
+    parameter #1 : @Nullable // def
+  method handleThrowable(Ljava/lang/Throwable;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // t
+  method implementsLogFactory(Ljava/lang/Class;)Z : // 0 samples
+    return: 
+    parameter #0 :  // logFactoryClass
+  method initDiagnostics()Ljava/io/PrintStream; : // 1 samples
+    return: @Nullable
+  method isDiagnosticsEnabled()Z : // 34 samples
+    return: 
+  method logClassLoaderEnvironment(Ljava/lang/Class;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // clazz
+  method logDiagnostic(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // msg
+  method logHierarchy(Ljava/lang/String;Ljava/lang/ClassLoader;)V : // 0 samples
+    return:
+    parameter #0 :  // prefix
+    parameter #1 :  // classLoader
+  method logRawDiagnostic(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // msg
+  method newFactory(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/apache/commons/logging/LogFactory; : // 0 samples
+    return: 
+    parameter #0 :  // factoryClass
+    parameter #1 :  // classLoader
+  method newFactory(Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;)Lorg/apache/commons/logging/LogFactory; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // factoryClass
+    parameter #1 : @Nullable // classLoader
+    parameter #2 : @Nullable // contextClassLoader
+  method objectId(Ljava/lang/Object;)Ljava/lang/String; : // 3 samples
+    return: @Nullable
+    parameter #0 : @Nullable // o
+  method release(Ljava/lang/ClassLoader;)V : // 0 samples
+    return:
+    parameter #0 :  // classLoader
+  method releaseAll()V : // 0 samples
+    return:
+  method trim(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // src
+  method <init>()V : // 1 samples
+    return:
+
+
+package org.apache.commons.logging.impl:
+class LogFactoryImpl$1 : // 3/- obj/class samples
+  method <init>()V : // 1 samples
+    return:
+  method run()Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging.impl:
+class LogFactoryImpl$2 : // 15/- obj/class samples
+  method <init>(Ljava/lang/String;Ljava/lang/String;)V : // 5 samples
+    return:
+    parameter #0 : @Nullable // $hidden$1
+    parameter #1 : @Nullable // $hidden$2
+  method run()Ljava/lang/Object; : // 5 samples
+    return: @Nullable
+
+
+package org.apache.commons.logging.impl:
+class LogFactoryImpl : // 35/103 obj/class samples
+  method access$000()Ljava/lang/ClassLoader; : // 1 samples
+    return: @Nullable
+  method class$(Ljava/lang/String;)Ljava/lang/Class; : // 3 samples
+    return: @Nullable
+    parameter #0 : @Nullable // x0
+  method getClassLoader(Ljava/lang/Class;)Ljava/lang/ClassLoader; : // 2 samples
+    return: @Nullable
+    parameter #0 : @Nullable // clazz
+  method getContextClassLoader()Ljava/lang/ClassLoader; : // 0 samples
+    return: 
+  method getContextClassLoaderInternal()Ljava/lang/ClassLoader; : // 1 samples
+    return: @Nullable
+  method getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; : // 5 samples
+    return: @Nullable
+    parameter #0 : @Nullable // key
+    parameter #1 : @Nullable // def
+  method isDiagnosticsEnabled()Z : // 22 samples
+    return: 
+  method <init>()V : // 1 samples
+    return:
+  method createLogFromClass(Ljava/lang/String;Ljava/lang/String;Z)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // logAdapterClassName
+    parameter #1 :  // logCategory
+    parameter #2 :  // affectState
+  method discoverLogImplementation(Ljava/lang/String;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // logCategory
+  method findUserSpecifiedLogClassName()Ljava/lang/String; : // 1 samples
+    return: @Nullable
+  method getAttribute(Ljava/lang/String;)Ljava/lang/Object; : // 5 samples
+    return: @Nullable
+    parameter #0 : @Nullable // name
+  method getAttributeNames()[Ljava/lang/String; : // 0 samples
+    return: 
+  method getBaseClassLoader()Ljava/lang/ClassLoader; : // 1 samples
+    return: @Nullable
+  method getBooleanConfiguration(Ljava/lang/String;Z)Z : // 3 samples
+    return: 
+    parameter #0 : @Nullable // key
+    parameter #1 :  // dflt
+  method getConfigurationValue(Ljava/lang/String;)Ljava/lang/String; : // 3 samples
+    return: @Nullable
+    parameter #0 : @Nullable // property
+  method getInstance(Ljava/lang/Class;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // clazz
+  method getInstance(Ljava/lang/String;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getLogClassName()Ljava/lang/String; : // 0 samples
+    return: 
+  method getLogConstructor()Ljava/lang/reflect/Constructor; : // 0 samples
+    return: 
+  method getLowestClassLoader(Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // c1
+    parameter #1 : @Nullable // c2
+  method getParentClassLoader(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader; : // 0 samples
+    return: 
+    parameter #0 :  // cl
+  method handleFlawedDiscovery(Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/Throwable;)V : // 0 samples
+    return:
+    parameter #0 :  // logAdapterClassName
+    parameter #1 :  // classLoader
+    parameter #2 :  // discoveryFlaw
+  method handleFlawedHierarchy(Ljava/lang/ClassLoader;Ljava/lang/Class;)V : // 0 samples
+    return:
+    parameter #0 :  // badClassLoader
+    parameter #1 :  // badClass
+  method informUponSimilarName(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // messageBuffer
+    parameter #1 :  // name
+    parameter #2 :  // candidate
+  method initConfiguration()V : // 1 samples
+    return:
+  method initDiagnostics()V : // 1 samples
+    return:
+  method isJdk13LumberjackAvailable()Z : // 0 samples
+    return: 
+  method isJdk14Available()Z : // 0 samples
+    return: 
+  method isLog4JAvailable()Z : // 0 samples
+    return: 
+  method isLogLibraryAvailable(Ljava/lang/String;Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // name
+    parameter #1 :  // classname
+  method logDiagnostic(Ljava/lang/String;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // msg
+  method newInstance(Ljava/lang/String;)Lorg/apache/commons/logging/Log; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method release()V : // 0 samples
+    return:
+  method removeAttribute(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+  method setAttribute(Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+    parameter #1 :  // value
+
+
+package org.apache.commons.logging.impl:
+class WeakHashtable$1 : // 0/- obj/class samples
+  method <init>(Lorg/apache/commons/logging/impl/WeakHashtable;Ljava/util/Enumeration;)V : // 0 samples
+    return:
+    parameter #0 :  // $hidden$2
+  method hasMoreElements()Z : // 0 samples
+    return: 
+  method nextElement()Ljava/lang/Object; : // 0 samples
+    return: 
+
+
+package org.apache.commons.logging.impl:
+class WeakHashtable$Referenced : // 8/- obj/class samples
+  method access$100(Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;)Ljava/lang/Object; : // 0 samples
+    return: 
+    parameter #0 :  // x0
+  method Referenced(Ljava/lang/Object;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // referant
+  method Referenced(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // key
+    parameter #1 : @Nullable // queue
+  method Referenced(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;Lorg/apache/commons/logging/impl/WeakHashtable$1;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // x0
+    parameter #1 : @Nullable // x1
+    parameter #2 : @Nullable // x2
+  method Referenced(Ljava/lang/Object;Lorg/apache/commons/logging/impl/WeakHashtable$1;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // x0
+    parameter #1 : @Nullable // x1
+  method equals(Ljava/lang/Object;)Z : // 0 samples
+    return: 
+    parameter #0 :  // o
+  method getValue()Ljava/lang/Object; : // 0 samples
+    return: 
+  method hashCode()I : // 2 samples
+    return: 
+
+
+package org.apache.commons.logging.impl:
+class WeakHashtable$WeakKey : // 2/- obj/class samples
+  method access$400(Lorg/apache/commons/logging/impl/WeakHashtable$WeakKey;)Lorg/apache/commons/logging/impl/WeakHashtable$Referenced; : // 0 samples
+    return: 
+    parameter #0 :  // x0
+  method WeakKey(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // key
+    parameter #1 : @Nullable // queue
+    parameter #2 : @Nullable // referenced
+  method WeakKey(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;Lorg/apache/commons/logging/impl/WeakHashtable$1;)V : // 1 samples
+    return:
+    parameter #0 : @Nullable // x0
+    parameter #1 : @Nullable // x1
+    parameter #2 : @Nullable // x2
+    parameter #3 : @Nullable // x3
+  method getReferenced()Lorg/apache/commons/logging/impl/WeakHashtable$Referenced; : // 0 samples
+    return: 
+
+
+package org.apache.commons.logging.impl:
+class WeakHashtable : // 5/5 obj/class samples
+  method <init>()V : // 1 samples
+    return:
+  method containsKey(Ljava/lang/Object;)Z : // 0 samples
+    return: 
+    parameter #0 :  // key
+  method elements()Ljava/util/Enumeration; : // 0 samples
+    return: 
+  method entrySet()Ljava/util/Set; : // 0 samples
+    return: 
+  method get(Ljava/lang/Object;)Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // key
+  method isEmpty()Z : // 0 samples
+    return: 
+  method keySet()Ljava/util/Set; : // 0 samples
+    return: 
+  method keys()Ljava/util/Enumeration; : // 0 samples
+    return: 
+  method purge()V : // 0 samples
+    return:
+  method purgeOne()V : // 0 samples
+    return:
+  method put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; : // 1 samples
+    return: @Nullable
+    parameter #0 : @Nullable // key
+    parameter #1 : @Nullable // value
+  method putAll(Ljava/util/Map;)V : // 0 samples
+    return:
+    parameter #0 :  // t
+  method rehash()V : // 0 samples
+    return:
+  method remove(Ljava/lang/Object;)Ljava/lang/Object; : // 0 samples
+    return: 
+    parameter #0 :  // key
+  method size()I : // 0 samples
+    return: 
+  method toString()Ljava/lang/String; : // 0 samples
+    return: 
+  method values()Ljava/util/Collection; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox:
+class XMPMetadata : // 0/- obj/class samples
+  method createXMPMetadata()Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+  method createXMPMetadata(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+    parameter #0 :  // xpacketBegin
+    parameter #1 :  // xpacketId
+    parameter #2 :  // xpacketBytes
+    parameter #3 :  // xpacketEncoding
+  method <init>()V : // 0 samples
+    return:
+  method <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // xpacketBegin
+    parameter #1 :  // xpacketId
+    parameter #2 :  // xpacketBytes
+    parameter #3 :  // xpacketEncoding
+  method addSchema(Lorg/apache/xmpbox/schema/XMPSchema;)V : // 0 samples
+    return:
+    parameter #0 :  // obj
+  method clearSchemas()V : // 0 samples
+    return:
+  method createAndAddAdobePDFSchema()Lorg/apache/xmpbox/schema/AdobePDFSchema; : // 0 samples
+    return: 
+  method createAndAddBasicJobTicketSchema()Lorg/apache/xmpbox/schema/XMPBasicJobTicketSchema; : // 0 samples
+    return: 
+  method createAndAddDefaultSchema(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // nsPrefix
+    parameter #1 :  // nsURI
+  method createAndAddDublinCoreSchema()Lorg/apache/xmpbox/schema/DublinCoreSchema; : // 0 samples
+    return: 
+  method createAndAddPDFAExtensionSchemaWithDefaultNS()Lorg/apache/xmpbox/schema/PDFAExtensionSchema; : // 0 samples
+    return: 
+  method createAndAddPDFAExtensionSchemaWithNS(Ljava/util/Map;)Lorg/apache/xmpbox/schema/PDFAExtensionSchema; : // 0 samples
+    return: 
+    parameter #0 :  // namespaces
+  method createAndAddPFAIdentificationSchema()Lorg/apache/xmpbox/schema/PDFAIdentificationSchema; : // 0 samples
+    return: 
+  method createAndAddPhotoshopSchema()Lorg/apache/xmpbox/schema/PhotoshopSchema; : // 0 samples
+    return: 
+  method createAndAddXMPBasicSchema()Lorg/apache/xmpbox/schema/XMPBasicSchema; : // 0 samples
+    return: 
+  method createAndAddXMPMediaManagementSchema()Lorg/apache/xmpbox/schema/XMPMediaManagementSchema; : // 0 samples
+    return: 
+  method createAndAddXMPRightsManagementSchema()Lorg/apache/xmpbox/schema/XMPRightsManagementSchema; : // 0 samples
+    return: 
+  method getAdobePDFSchema()Lorg/apache/xmpbox/schema/AdobePDFSchema; : // 0 samples
+    return: 
+  method getAllSchemas()Ljava/util/List; : // 0 samples
+    return: 
+  method getBasicJobTicketSchema()Lorg/apache/xmpbox/schema/XMPBasicJobTicketSchema; : // 0 samples
+    return: 
+  method getDublinCoreSchema()Lorg/apache/xmpbox/schema/DublinCoreSchema; : // 0 samples
+    return: 
+  method getEndXPacket()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPDFExtensionSchema()Lorg/apache/xmpbox/schema/PDFAExtensionSchema; : // 0 samples
+    return: 
+  method getPDFIdentificationSchema()Lorg/apache/xmpbox/schema/PDFAIdentificationSchema; : // 0 samples
+    return: 
+  method getPhotoshopSchema()Lorg/apache/xmpbox/schema/PhotoshopSchema; : // 0 samples
+    return: 
+  method getSchema(Ljava/lang/Class;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // clz
+  method getSchema(Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // nsURI
+  method getSchema(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // prefix
+    parameter #1 :  // nsURI
+  method getTypeMapping()Lorg/apache/xmpbox/type/TypeMapping; : // 0 samples
+    return: 
+  method getXMPBasicSchema()Lorg/apache/xmpbox/schema/XMPBasicSchema; : // 0 samples
+    return: 
+  method getXMPMediaManagementSchema()Lorg/apache/xmpbox/schema/XMPMediaManagementSchema; : // 0 samples
+    return: 
+  method getXMPRightsManagementSchema()Lorg/apache/xmpbox/schema/XMPRightsManagementSchema; : // 0 samples
+    return: 
+  method getXpacketBegin()Ljava/lang/String; : // 0 samples
+    return: 
+  method getXpacketBytes()Ljava/lang/String; : // 0 samples
+    return: 
+  method getXpacketEncoding()Ljava/lang/String; : // 0 samples
+    return: 
+  method getXpacketId()Ljava/lang/String; : // 0 samples
+    return: 
+  method removeSchema(Lorg/apache/xmpbox/schema/XMPSchema;)V : // 0 samples
+    return:
+    parameter #0 :  // schema
+  method setEndXPacket(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // data
+
+
+package org.apache.xmpbox.schema:
+class AdobePDFSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method getKeywords()Ljava/lang/String; : // 0 samples
+    return: 
+  method getKeywordsProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getPDFVersion()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPDFVersionProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getProducer()Ljava/lang/String; : // 0 samples
+    return: 
+  method getProducerProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method setKeywords(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setKeywordsProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // keywords
+  method setPDFVersion(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setPDFVersionProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // version
+  method setProducer(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setProducerProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // producer
+
+
+package org.apache.xmpbox.schema:
+class DublinCoreSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addContributor(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // properName
+  method addCreator(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // properName
+  method addDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method addDescription(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lang
+    parameter #1 :  // value
+  method addLanguage(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // locale
+  method addPublisher(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // properName
+  method addRelation(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method addRights(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lang
+    parameter #1 :  // value
+  method addSubject(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method addTitle(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lang
+    parameter #1 :  // value
+  method addType(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // type
+  method getContributors()Ljava/util/List; : // 0 samples
+    return: 
+  method getContributorsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getCoverage()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCoverageProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCreators()Ljava/util/List; : // 0 samples
+    return: 
+  method getCreatorsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getDates()Ljava/util/List; : // 0 samples
+    return: 
+  method getDatesProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getDescription()Ljava/lang/String; : // 0 samples
+    return: 
+  method getDescription(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // lang
+  method getDescriptionLanguages()Ljava/util/List; : // 0 samples
+    return: 
+  method getDescriptionProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getFormat()Ljava/lang/String; : // 0 samples
+    return: 
+  method getFormatProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getIdentifier()Ljava/lang/String; : // 0 samples
+    return: 
+  method getIdentifierProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getLanguages()Ljava/util/List; : // 0 samples
+    return: 
+  method getLanguagesProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getPublishers()Ljava/util/List; : // 0 samples
+    return: 
+  method getPublishersProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getRelations()Ljava/util/List; : // 0 samples
+    return: 
+  method getRelationsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getRights()Ljava/lang/String; : // 0 samples
+    return: 
+  method getRights(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // lang
+  method getRightsLanguages()Ljava/util/List; : // 0 samples
+    return: 
+  method getRightsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getSource()Ljava/lang/String; : // 0 samples
+    return: 
+  method getSourceProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getSubjects()Ljava/util/List; : // 0 samples
+    return: 
+  method getSubjectsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getTitle()Ljava/lang/String; : // 0 samples
+    return: 
+  method getTitle(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // lang
+  method getTitleLanguages()Ljava/util/List; : // 0 samples
+    return: 
+  method getTitleProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getTypes()Ljava/util/List; : // 0 samples
+    return: 
+  method getTypesProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method removeContributor(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // properName
+  method removeCreator(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+  method removeDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method removeLanguage(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // locale
+  method removePublisher(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+  method removeRelation(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method removeSubject(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method removeType(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // type
+  method setCoverage(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCoverageProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setDescription(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setFormat(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // mimeType
+  method setFormatProperty(Lorg/apache/xmpbox/type/MIMEType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setIdentifier(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setIdentifierProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setSource(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setSourceProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setTitle(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setTitle(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lang
+    parameter #1 :  // value
+
+
+package org.apache.xmpbox.schema:
+class PDFAExtensionSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // prefix
+  method getSchemasProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.schema:
+class PDFAIdentificationSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // prefix
+  method getAmd()Ljava/lang/String; : // 0 samples
+    return: 
+  method getAmdProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getAmendment()Ljava/lang/String; : // 0 samples
+    return: 
+  method getConformance()Ljava/lang/String; : // 0 samples
+    return: 
+  method getConformanceProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getPart()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getPartProperty()Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+  method setAmd(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setAmdProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // amd
+  method setConformance(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setConformanceProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // conf
+  method setPart(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setPartProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // part
+  method setPartValueWithInt(I)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setPartValueWithString(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.schema:
+class PhotoshopSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addDocumentAncestors(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method addSupplementalCategories(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method addSupplementalCategory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // s
+  method addTextLayers(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // layerName
+    parameter #1 :  // layerText
+  method getAncestorID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getAncestorIDProperty()Lorg/apache/xmpbox/type/URIType; : // 0 samples
+    return: 
+  method getAuthorsPosition()Ljava/lang/String; : // 0 samples
+    return: 
+  method getAuthorsPositionProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCaptionWriter()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCaptionWriterProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCategory()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCategoryProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCity()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCityProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getColorMode()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getColorModeProperty()Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+  method getCountry()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCountryProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCredit()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCreditProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getDateCreated()Ljava/lang/String; : // 0 samples
+    return: 
+  method getDateCreatedProperty()Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+  method getDocumentAncestors()Ljava/util/List; : // 0 samples
+    return: 
+  method getDocumentAncestorsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getHeadline()Ljava/lang/String; : // 0 samples
+    return: 
+  method getHeadlineProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getHistory()Ljava/lang/String; : // 0 samples
+    return: 
+  method getHistoryProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getICCProfile()Ljava/lang/String; : // 0 samples
+    return: 
+  method getICCProfileProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getInstructions()Ljava/lang/String; : // 0 samples
+    return: 
+  method getInstructionsProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getSource()Ljava/lang/String; : // 0 samples
+    return: 
+  method getSourceProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getState()Ljava/lang/String; : // 0 samples
+    return: 
+  method getStateProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getSupplementalCategories()Ljava/util/List; : // 0 samples
+    return: 
+  method getSupplementalCategoriesProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getTextLayers()Ljava/util/List; : // 0 samples
+    return: 
+  method getTransmissionReference()Ljava/lang/String; : // 0 samples
+    return: 
+  method getTransmissionReferenceProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getUrgency()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getUrgencyProperty()Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+  method removeSupplementalCategories(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method removeSupplementalCategory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setAncestorID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setAncestorIDProperty(Lorg/apache/xmpbox/type/URIType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setAuthorsPosition(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setAuthorsPositionProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCaptionWriter(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCaptionWriterProperty(Lorg/apache/xmpbox/type/ProperNameType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCategory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCategoryProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCity(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCityProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setColorMode(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setColorModeProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCountry(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCountryProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCredit(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setCreditProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setDateCreated(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setDateCreatedProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setHeadline(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setHeadlineProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setHistory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setHistoryProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setICCProfile(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setICCProfileProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setInstructions(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setInstructionsProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setSource(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setSourceProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setState(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setStateProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setTransmissionReference(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setTransmissionReferenceProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setUrgency(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // s
+  method setUrgency(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // s
+  method setUrgencyProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+
+
+package org.apache.xmpbox.schema:
+class XMPBasicJobTicketSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addJob(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // id
+    parameter #1 :  // name
+    parameter #2 :  // url
+  method addJob(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // id
+    parameter #1 :  // name
+    parameter #2 :  // url
+    parameter #3 :  // fieldPrefix
+  method addJob(Lorg/apache/xmpbox/type/JobType;)V : // 0 samples
+    return:
+    parameter #0 :  // job
+  method getJobs()Ljava/util/List; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.schema:
+class XMPBasicSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addAdvisory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // xpath
+  method addIdentifier(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method addThumbnails(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // height
+    parameter #1 :  // width
+    parameter #2 :  // format
+    parameter #3 :  // img
+  method getAdvisory()Ljava/util/List; : // 0 samples
+    return: 
+  method getAdvisoryProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getBaseURL()Ljava/lang/String; : // 0 samples
+    return: 
+  method getBaseURLProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getCreateDate()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method getCreateDateProperty()Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+  method getCreatorTool()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCreatorToolProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getIdentifiers()Ljava/util/List; : // 0 samples
+    return: 
+  method getIdentifiersProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getLabel()Ljava/lang/String; : // 0 samples
+    return: 
+  method getLabelProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getMetadataDate()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method getMetadataDateProperty()Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+  method getModifierDate()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method getModifierDateProperty()Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+  method getModifyDate()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method getModifyDateProperty()Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+  method getNickname()Ljava/lang/String; : // 0 samples
+    return: 
+  method getNicknameProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getRating()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getRatingProperty()Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+  method getThumbnailsProperty()Ljava/util/List; : // 0 samples
+    return: 
+  method removeAdvisory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // xpath
+  method removeIdentifier(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setBaseURL(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setBaseURLProperty(Lorg/apache/xmpbox/type/URLType;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setCreateDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setCreateDateProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setCreatorTool(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // creatorTool
+  method setCreatorToolProperty(Lorg/apache/xmpbox/type/AgentNameType;)V : // 0 samples
+    return:
+    parameter #0 :  // creatorTool
+  method setLabel(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setLabelProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setMetadataDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setMetadataDateProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setModifierDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setModifierDateProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setModifyDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setModifyDateProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setNickname(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setNicknameProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // text
+  method setRating(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // rate
+  method setRatingProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // rate
+
+
+package org.apache.xmpbox.schema:
+class XMPMediaManagementSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addHistory(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // history
+  method addIngredients(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // ingredients
+  method addVersions(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method getDocumentID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getDocumentIDProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getHistory()Ljava/util/List; : // 0 samples
+    return: 
+  method getHistoryProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getIngredients()Ljava/util/List; : // 0 samples
+    return: 
+  method getIngredientsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getInstanceID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getInstanceIDProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getLastURL()Ljava/lang/String; : // 0 samples
+    return: 
+  method getLastURLProperty()Lorg/apache/xmpbox/type/URLType; : // 0 samples
+    return: 
+  method getManageTo()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManageToProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getManageUI()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManageUIProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getManagedFromProperty()Lorg/apache/xmpbox/type/ResourceRefType; : // 0 samples
+    return: 
+  method getManager()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManagerProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getManagerVariant()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManagerVariantProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getOriginalDocumentID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getOriginalDocumentIDProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getRenditionClass()Ljava/lang/String; : // 0 samples
+    return: 
+  method getRenditionClassProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getRenditionParams()Ljava/lang/String; : // 0 samples
+    return: 
+  method getRenditionParamsProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getResourceRefProperty()Lorg/apache/xmpbox/type/ResourceRefType; : // 0 samples
+    return: 
+  method getSaveID()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getSaveIDProperty()Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+  method getVersionID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getVersionIDProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getVersions()Ljava/util/List; : // 0 samples
+    return: 
+  method getVersionsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method setDerivedFromProperty(Lorg/apache/xmpbox/type/ResourceRefType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setDocumentID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setDocumentIDProperty(Lorg/apache/xmpbox/type/URIType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setInstanceID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setInstanceIDProperty(Lorg/apache/xmpbox/type/URIType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setLastURL(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setLastURLProperty(Lorg/apache/xmpbox/type/URLType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setManageTo(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManageToProperty(Lorg/apache/xmpbox/type/URIType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setManageUI(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManageUIProperty(Lorg/apache/xmpbox/type/URIType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setManagedFromProperty(Lorg/apache/xmpbox/type/ResourceRefType;)V : // 0 samples
+    return:
+    parameter #0 :  // resourceRef
+  method setManager(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManagerProperty(Lorg/apache/xmpbox/type/AgentNameType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setManagerVariant(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManagerVariantProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setOriginalDocumentID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setOriginalDocumentIDProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setRenditionClass(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setRenditionClassProperty(Lorg/apache/xmpbox/type/RenditionClassType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setRenditionParams(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setRenditionParamsProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setSaveIDProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+  method setSaveId(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setVersionID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setVersionIDProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // tt
+
+
+package org.apache.xmpbox.schema:
+class XMPRightsManagementSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // ownPrefix
+  method addOwner(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method addUsageTerms(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lang
+    parameter #1 :  // value
+  method getCertificate()Ljava/lang/String; : // 0 samples
+    return: 
+  method getCertificateProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method getMarked()Ljava/lang/Boolean; : // 0 samples
+    return: 
+  method getMarkedProperty()Lorg/apache/xmpbox/type/BooleanType; : // 0 samples
+    return: 
+  method getOwners()Ljava/util/List; : // 0 samples
+    return: 
+  method getOwnersProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getUsageTerms()Ljava/lang/String; : // 0 samples
+    return: 
+  method getUsageTerms(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // lang
+  method getUsageTermsLanguages()Ljava/util/List; : // 0 samples
+    return: 
+  method getUsageTermsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getWebStatement()Ljava/lang/String; : // 0 samples
+    return: 
+  method getWebStatementProperty()Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+  method removeOwner(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setCertificate(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setCertificateProperty(Lorg/apache/xmpbox/type/URLType;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setMarked(Ljava/lang/Boolean;)V : // 0 samples
+    return:
+    parameter #0 :  // marked
+  method setMarkedProperty(Lorg/apache/xmpbox/type/BooleanType;)V : // 0 samples
+    return:
+    parameter #0 :  // marked
+  method setUsageTerms(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // terms
+  method setWebStatement(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+  method setWebStatementProperty(Lorg/apache/xmpbox/type/URLType;)V : // 0 samples
+    return:
+    parameter #0 :  // url
+
+
+package org.apache.xmpbox.schema:
+class XMPSchema : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // prefix
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // name
+  method addBagValue(Ljava/lang/String;Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedSeqName
+    parameter #1 :  // seqValue
+  method addBagValueAsSimple(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // bagValue
+  method addQualifiedBagValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // bagValue
+  method addSequenceDateValueAsSimple(Ljava/lang/String;Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // date
+  method addUnqualifiedSequenceDateValue(Ljava/lang/String;Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // seqName
+    parameter #1 :  // date
+  method addUnqualifiedSequenceValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleSeqName
+    parameter #1 :  // seqValue
+  method addUnqualifiedSequenceValue(Ljava/lang/String;Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // seqName
+    parameter #1 :  // seqValue
+  method getAboutAttribute()Lorg/apache/xmpbox/type/Attribute; : // 0 samples
+    return: 
+  method getAboutValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getAbstractProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/AbstractField; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getBooleanProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/BooleanType; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getBooleanPropertyValue(Ljava/lang/String;)Ljava/lang/Boolean; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getBooleanPropertyValueAsSimple(Ljava/lang/String;)Ljava/lang/Boolean; : // 0 samples
+    return: 
+    parameter #0 :  // simpleName
+  method getDateProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getDatePropertyValue(Ljava/lang/String;)Ljava/util/Calendar; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getDatePropertyValueAsSimple(Ljava/lang/String;)Ljava/util/Calendar; : // 0 samples
+    return: 
+    parameter #0 :  // simpleName
+  method getIntegerProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getIntegerPropertyValue(Ljava/lang/String;)Ljava/lang/Integer; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getIntegerPropertyValueAsSimple(Ljava/lang/String;)Ljava/lang/Integer; : // 0 samples
+    return: 
+    parameter #0 :  // simpleName
+  method getUnqualifiedArrayList(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getUnqualifiedBagValueList(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // bagName
+  method getUnqualifiedLanguagePropertyLanguagesValue(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getUnqualifiedLanguagePropertyValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // name
+    parameter #1 :  // expectedLanguage
+  method getUnqualifiedSequenceDateValueList(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // seqName
+  method getUnqualifiedSequenceValueList(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // seqName
+  method getUnqualifiedTextProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getUnqualifiedTextPropertyValue(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method instanciateSimple(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/xmpbox/type/AbstractSimpleProperty; : // 0 samples
+    return: 
+    parameter #0 :  // param
+    parameter #1 :  // value
+  method internalAddBagValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedBagName
+    parameter #1 :  // bagValue
+  method merge(Lorg/apache/xmpbox/schema/XMPSchema;)V : // 0 samples
+    return:
+    parameter #0 :  // xmpSchema
+  method removeUnqualifiedArrayValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // arrayName
+    parameter #1 :  // fieldValue
+  method removeUnqualifiedArrayValue(Ljava/lang/String;Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // arrayName
+    parameter #1 :  // fieldValue
+  method removeUnqualifiedBagValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // bagName
+    parameter #1 :  // bagValue
+  method removeUnqualifiedSequenceDateValue(Ljava/lang/String;Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // seqName
+    parameter #1 :  // date
+  method removeUnqualifiedSequenceValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedSeqName
+    parameter #1 :  // seqValue
+  method removeUnqualifiedSequenceValue(Ljava/lang/String;Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedSeqName
+    parameter #1 :  // seqValue
+  method reorganizeAltOrder(Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // alt
+  method setAbout(Lorg/apache/xmpbox/type/Attribute;)V : // 0 samples
+    return:
+    parameter #0 :  // about
+  method setAboutAsSimple(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // about
+  method setBooleanProperty(Lorg/apache/xmpbox/type/BooleanType;)V : // 0 samples
+    return:
+    parameter #0 :  // bool
+  method setBooleanPropertyValue(Ljava/lang/String;Ljava/lang/Boolean;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedName
+    parameter #1 :  // bool
+  method setBooleanPropertyValueAsSimple(Ljava/lang/String;Ljava/lang/Boolean;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // bool
+  method setDateProperty(Lorg/apache/xmpbox/type/DateType;)V : // 0 samples
+    return:
+    parameter #0 :  // date
+  method setDatePropertyValue(Ljava/lang/String;Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedName
+    parameter #1 :  // date
+  method setDatePropertyValueAsSimple(Ljava/lang/String;Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // date
+  method setIntegerProperty(Lorg/apache/xmpbox/type/IntegerType;)V : // 0 samples
+    return:
+    parameter #0 :  // prop
+  method setIntegerPropertyValue(Ljava/lang/String;Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedName
+    parameter #1 :  // intValue
+  method setIntegerPropertyValueAsSimple(Ljava/lang/String;Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // intValue
+  method setSpecifiedSimpleTypeProperty(Lorg/apache/xmpbox/type/AbstractSimpleProperty;)V : // 0 samples
+    return:
+    parameter #0 :  // prop
+  method setSpecifiedSimpleTypeProperty(Lorg/apache/xmpbox/type/Types;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // type
+    parameter #1 :  // qualifiedName
+    parameter #2 :  // propertyValue
+  method setTextProperty(Lorg/apache/xmpbox/type/TextType;)V : // 0 samples
+    return:
+    parameter #0 :  // prop
+  method setTextPropertyValue(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedName
+    parameter #1 :  // propertyValue
+  method setTextPropertyValueAsSimple(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // simpleName
+    parameter #1 :  // propertyValue
+  method setUnqualifiedLanguagePropertyValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+    parameter #1 :  // language
+    parameter #2 :  // value
+
+
+package org.apache.xmpbox.schema:
+class XMPSchemaFactory : // 0/- obj/class samples
+  method <init>(Ljava/lang/String;Ljava/lang/Class;Lorg/apache/xmpbox/type/PropertiesDescription;)V : // 0 samples
+    return:
+    parameter #0 :  // namespace
+    parameter #1 :  // schemaClass
+    parameter #2 :  // propDef
+  method createXMPSchema(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // metadata
+    parameter #1 :  // prefix
+  method getNamespace()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPropertyDefinition()Lorg/apache/xmpbox/type/PropertiesDescription; : // 0 samples
+    return: 
+  method getPropertyType(Ljava/lang/String;)Lorg/apache/xmpbox/type/PropertyType; : // 0 samples
+    return: 
+    parameter #0 :  // name
+
+
+package org.apache.xmpbox.schema:
+class XmpSchemaException : // 0/0 obj/class samples
+  method <init>(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // message
+  method <init>(Ljava/lang/String;Ljava/lang/Throwable;)V : // 0 samples
+    return:
+    parameter #0 :  // message
+    parameter #1 :  // cause
+
+
+package org.apache.xmpbox.type:
+class AbstractComplexProperty : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // propertyName
+  method addNamespace(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // namespace
+    parameter #1 :  // prefix
+  method addProperty(Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // obj
+  method getAllNamespacesWithPrefix()Ljava/util/Map; : // 0 samples
+    return: 
+  method getAllProperties()Ljava/util/List; : // 0 samples
+    return: 
+  method getArrayProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+    parameter #0 :  // fieldName
+  method getContainer()Lorg/apache/xmpbox/type/ComplexPropertyContainer; : // 0 samples
+    return: 
+  method getFirstEquivalentProperty(Ljava/lang/String;Ljava/lang/Class;)Lorg/apache/xmpbox/type/AbstractField; : // 0 samples
+    return: 
+    parameter #0 :  // localName
+    parameter #1 :  // type
+  method getNamespacePrefix(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method getProperty(Ljava/lang/String;)Lorg/apache/xmpbox/type/AbstractField; : // 0 samples
+    return: 
+    parameter #0 :  // fieldName
+  method removeProperty(Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // property
+
+
+package org.apache.xmpbox.type:
+class AbstractField : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // propertyName
+  method containsAttribute(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getAllAttributes()Ljava/util/List; : // 0 samples
+    return: 
+  method getAttribute(Ljava/lang/String;)Lorg/apache/xmpbox/type/Attribute; : // 0 samples
+    return: 
+    parameter #0 :  // qualifiedName
+  method getMetadata()Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+  method getPropertyName()Ljava/lang/String; : // 0 samples
+    return: 
+  method removeAttribute(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // qualifiedName
+  method setAttribute(Lorg/apache/xmpbox/type/Attribute;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setPropertyName(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class AbstractSimpleProperty : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getNamespace()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPrefix()Ljava/lang/String; : // 0 samples
+    return: 
+  method toString()Ljava/lang/String; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class AbstractStructuredType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // fieldPrefix
+    parameter #3 :  // propertyName
+  method addSimpleProperty(Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // propertyName
+    parameter #1 :  // value
+  method createArrayProperty(Ljava/lang/String;Lorg/apache/xmpbox/type/Cardinality;)Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+    parameter #0 :  // propertyName
+    parameter #1 :  // type
+  method createTextType(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+    parameter #0 :  // propertyName
+    parameter #1 :  // value
+  method getDatePropertyAsCalendar(Ljava/lang/String;)Ljava/util/Calendar; : // 0 samples
+    return: 
+    parameter #0 :  // fieldName
+  method getNamespace()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPreferedPrefix()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPrefix()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPropertyValueAsString(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // fieldName
+  method setNamespace(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // ns
+  method setPrefix(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // pf
+
+
+package org.apache.xmpbox.type:
+class AgentNameType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class ArrayProperty : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/apache/xmpbox/type/Cardinality;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespace
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // type
+  method getArrayType()Lorg/apache/xmpbox/type/Cardinality; : // 0 samples
+    return: 
+  method getElementsAsString()Ljava/util/List; : // 0 samples
+    return: 
+  method getNamespace()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPrefix()Ljava/lang/String; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class Attribute : // 0/- obj/class samples
+  method <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // nsURI
+    parameter #1 :  // localName
+    parameter #2 :  // value
+  method getName()Ljava/lang/String; : // 0 samples
+    return: 
+  method getNamespace()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method setName(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // lname
+  method setNsURI(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // nsURI
+  method setValue(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method toString()Ljava/lang/String; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class BadFieldValueException : // 0/0 obj/class samples
+  method <init>(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // message
+  method <init>(Ljava/lang/String;Ljava/lang/Throwable;)V : // 0 samples
+    return:
+    parameter #0 :  // message
+    parameter #1 :  // cause
+
+
+package org.apache.xmpbox.type:
+class BooleanType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getStringValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/lang/Boolean; : // 0 samples
+    return: 
+  method setValue(Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class Cardinality : // 0/0 obj/class samples
+  method valueOf(Ljava/lang/String;)Lorg/apache/xmpbox/type/Cardinality; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method values()[Lorg/apache/xmpbox/type/Cardinality; : // 0 samples
+    return: 
+  method <init>(Ljava/lang/String;IZ)V : // 0 samples
+    return:
+    parameter #0 :  // $hidden$1
+    parameter #1 :  // $hidden$2
+    parameter #2 :  // a
+  method isArray()Z : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class ChoiceType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class ComplexPropertyContainer : // 0/- obj/class samples
+  method <init>()V : // 0 samples
+    return:
+  method addProperty(Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // obj
+  method containsProperty(Lorg/apache/xmpbox/type/AbstractField;)Z : // 0 samples
+    return: 
+    parameter #0 :  // property
+  method getAllProperties()Ljava/util/List; : // 0 samples
+    return: 
+  method getFirstEquivalentProperty(Ljava/lang/String;Ljava/lang/Class;)Lorg/apache/xmpbox/type/AbstractField; : // 0 samples
+    return: 
+    parameter #0 :  // localName
+    parameter #1 :  // type
+  method getPropertiesByLocalName(Ljava/lang/String;)Ljava/util/List; : // 0 samples
+    return: 
+    parameter #0 :  // localName
+  method isSameProperty(Lorg/apache/xmpbox/type/AbstractField;Lorg/apache/xmpbox/type/AbstractField;)Z : // 0 samples
+    return: 
+    parameter #0 :  // prop1
+    parameter #1 :  // prop2
+  method removeProperty(Lorg/apache/xmpbox/type/AbstractField;)V : // 0 samples
+    return:
+    parameter #0 :  // property
+
+
+package org.apache.xmpbox.type:
+class DateType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getStringValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method isGoodType(Ljava/lang/Object;)Z : // 0 samples
+    return: 
+    parameter #0 :  // value
+  method setValue(Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setValueFromCalendar(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setValueFromString(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class DefinedStructuredType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // fieldPrefix
+    parameter #3 :  // propertyName
+  method addProperty(Ljava/lang/String;Lorg/apache/xmpbox/type/PropertyType;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+    parameter #1 :  // type
+  method getDefinedProperties()Ljava/util/Map; : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class GUIDType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class IntegerType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getStringValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method setValue(Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class JobType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // fieldPrefix
+  method getId()Ljava/lang/String; : // 0 samples
+    return: 
+  method getName()Ljava/lang/String; : // 0 samples
+    return: 
+  method getUrl()Ljava/lang/String; : // 0 samples
+    return: 
+  method setId(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // id
+  method setName(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+  method setUrl(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+
+
+package org.apache.xmpbox.type:
+class LayerType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method getLayerName()Ljava/lang/String; : // 0 samples
+    return: 
+  method getLayerText()Ljava/lang/String; : // 0 samples
+    return: 
+  method setLayerName(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // image
+  method setLayerText(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // image
+
+
+package org.apache.xmpbox.type:
+class LocaleType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class MIMEType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class PartType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class ProperNameType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class PropertiesDescription : // 0/- obj/class samples
+  method <init>()V : // 0 samples
+    return:
+  method addNewProperty(Ljava/lang/String;Lorg/apache/xmpbox/type/PropertyType;)V : // 0 samples
+    return:
+    parameter #0 :  // name
+    parameter #1 :  // type
+  method getPropertiesName()Ljava/util/List; : // 0 samples
+    return: 
+  method getPropertyType(Ljava/lang/String;)Lorg/apache/xmpbox/type/PropertyType; : // 0 samples
+    return: 
+    parameter #0 :  // name
+
+
+package org.apache.xmpbox.type:
+class RealType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getStringValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/lang/Float; : // 0 samples
+    return: 
+  method setValue(Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class RenditionClassType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class ResourceRefType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method addAlternatePath(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method getAlternatePaths()Ljava/util/List; : // 0 samples
+    return: 
+  method getAlternatePathsProperty()Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+  method getDocumentID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getFilePath()Ljava/lang/String; : // 0 samples
+    return: 
+  method getFromPart()Ljava/lang/String; : // 0 samples
+    return: 
+  method getInstanceID()Ljava/lang/String; : // 0 samples
+    return: 
+  method getLastModifyDate()Ljava/util/Calendar; : // 0 samples
+    return: 
+  method getManageTo()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManageUI()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManager()Ljava/lang/String; : // 0 samples
+    return: 
+  method getManagerVariant()Ljava/lang/String; : // 0 samples
+    return: 
+  method getMaskMarkers()Ljava/lang/String; : // 0 samples
+    return: 
+  method getPartMapping()Ljava/lang/String; : // 0 samples
+    return: 
+  method getRenditionClass()Ljava/lang/String; : // 0 samples
+    return: 
+  method getRenditionParams()Ljava/lang/String; : // 0 samples
+    return: 
+  method getToPart()Ljava/lang/String; : // 0 samples
+    return: 
+  method getVersionID()Ljava/lang/String; : // 0 samples
+    return: 
+  method setDocumentID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setFilePath(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setFromPart(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setInstanceID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setLastModifyDate(Ljava/util/Calendar;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManageTo(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManageUI(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManager(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setManagerVariant(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setMaskMarkers(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setPartMapping(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setRenditionClass(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setRenditionParams(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setToPart(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+  method setVersionID(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class TextType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method getStringValue()Ljava/lang/String; : // 0 samples
+    return: 
+  method getValue()Ljava/lang/Object; : // 0 samples
+    return: 
+  method setValue(Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // value
+
+
+package org.apache.xmpbox.type:
+class ThumbnailType : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method getFormat()Ljava/lang/String; : // 0 samples
+    return: 
+  method getHeight()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method getImage()Ljava/lang/String; : // 0 samples
+    return: 
+  method getWidth()Ljava/lang/Integer; : // 0 samples
+    return: 
+  method setFormat(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // format
+  method setHeight(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // height
+  method setImage(Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // image
+  method setWidth(Ljava/lang/Integer;)V : // 0 samples
+    return:
+    parameter #0 :  // width
+
+
+package org.apache.xmpbox.type:
+class TypeMapping : // 0/0 obj/class samples
+  method createPropertyType(Lorg/apache/xmpbox/type/Types;Lorg/apache/xmpbox/type/Cardinality;)Lorg/apache/xmpbox/type/PropertyType; : // 0 samples
+    return: 
+    parameter #0 :  // type
+    parameter #1 :  // card
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+  method addNameSpace(Ljava/lang/Class;)V : // 0 samples
+    return:
+    parameter #0 :  // classSchem
+  method addNewNameSpace(Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // ns
+    parameter #1 :  // prefered
+  method addToDefinedStructuredTypes(Ljava/lang/String;Ljava/lang/String;Lorg/apache/xmpbox/type/PropertiesDescription;)V : // 0 samples
+    return:
+    parameter #0 :  // typeName
+    parameter #1 :  // ns
+    parameter #2 :  // pm
+  method createAgentName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/AgentNameType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createArrayProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/apache/xmpbox/type/Cardinality;)Lorg/apache/xmpbox/type/ArrayProperty; : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // type
+  method createBoolean(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lorg/apache/xmpbox/type/BooleanType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createChoice(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/ChoiceType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createDate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Calendar;)Lorg/apache/xmpbox/type/DateType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createGUID(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/GUIDType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createInteger(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lorg/apache/xmpbox/type/IntegerType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createLocale(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/LocaleType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createMIMEType(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/MIMEType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createPart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/PartType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createProperName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/ProperNameType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createReal(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;F)Lorg/apache/xmpbox/type/RealType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createRenditionClass(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/RenditionClassType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/TextType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createURI(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/URIType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/URLType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method createXPath(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/XPathType; : // 0 samples
+    return: 
+    parameter #0 :  // namespaceURI
+    parameter #1 :  // prefix
+    parameter #2 :  // propertyName
+    parameter #3 :  // value
+  method getAssociatedSchemaObject(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchema; : // 0 samples
+    return: 
+    parameter #0 :  // metadata
+    parameter #1 :  // namespace
+    parameter #2 :  // prefix
+  method getDefinedDescriptionByNamespace(Ljava/lang/String;)Lorg/apache/xmpbox/type/PropertiesDescription; : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method getSchemaFactory(Ljava/lang/String;)Lorg/apache/xmpbox/schema/XMPSchemaFactory; : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method getSpecifiedPropertyType(Ljavax/xml/namespace/QName;)Lorg/apache/xmpbox/type/PropertyType; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method getStructuredPropMapping(Lorg/apache/xmpbox/type/Types;)Lorg/apache/xmpbox/type/PropertiesDescription; : // 0 samples
+    return: 
+    parameter #0 :  // type
+  method initialize()V : // 0 samples
+    return:
+  method initializePropMapping(Ljava/lang/Class;)Lorg/apache/xmpbox/type/PropertiesDescription; : // 0 samples
+    return: 
+    parameter #0 :  // classSchem
+  method instanciateDefinedType(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/AbstractStructuredType; : // 0 samples
+    return: 
+    parameter #0 :  // propertyName
+    parameter #1 :  // namespace
+  method instanciateSimpleField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/xmpbox/type/AbstractSimpleProperty; : // 0 samples
+    return: 
+    parameter #0 :  // clz
+    parameter #1 :  // nsuri
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+  method instanciateSimpleProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lorg/apache/xmpbox/type/Types;)Lorg/apache/xmpbox/type/AbstractSimpleProperty; : // 0 samples
+    return: 
+    parameter #0 :  // nsuri
+    parameter #1 :  // prefix
+    parameter #2 :  // name
+    parameter #3 :  // value
+    parameter #4 :  // type
+  method instanciateStructuredType(Lorg/apache/xmpbox/type/Types;Ljava/lang/String;)Lorg/apache/xmpbox/type/AbstractStructuredType; : // 0 samples
+    return: 
+    parameter #0 :  // type
+    parameter #1 :  // propertyName
+  method isDefinedNamespace(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method isDefinedSchema(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method isDefinedType(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method isDefinedTypeNamespace(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method isStructuredTypeNamespace(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+
+
+package org.apache.xmpbox.type:
+class Types : // 0/0 obj/class samples
+  method valueOf(Ljava/lang/String;)Lorg/apache/xmpbox/type/Types; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method values()[Lorg/apache/xmpbox/type/Types; : // 0 samples
+    return: 
+  method <init>(Ljava/lang/String;IZLorg/apache/xmpbox/type/;Ljava/lang/Class;)V : // 0 samples
+    return:
+    parameter #0 :  // $hidden$1
+    parameter #1 :  // $hidden$2
+    parameter #2 :  // s
+    parameter #3 :  // b
+    parameter #4 :  // c
+  method getBasic()Lorg/apache/xmpbox/type/Types; : // 0 samples
+    return: 
+  method getImplementingClass()Ljava/lang/Class; : // 0 samples
+    return: 
+  method isBasic()Z : // 0 samples
+    return: 
+  method isDefined()Z : // 0 samples
+    return: 
+  method isSimple()Z : // 0 samples
+    return: 
+  method isStructured()Z : // 0 samples
+    return: 
+
+
+package org.apache.xmpbox.type:
+class URIType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class URLType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.type:
+class XPathType : // 0/- obj/class samples
+  method <init>(Lorg/apache/xmpbox/XMPMetadata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // namespaceURI
+    parameter #2 :  // prefix
+    parameter #3 :  // propertyName
+    parameter #4 :  // value
+
+
+package org.apache.xmpbox.xml:
+class DomXmpParser$NamespaceFinder : // 0/- obj/class samples
+  method NamespaceFinder(Lorg/apache/xmpbox/xml/DomXmpParser;)V : // 0 samples
+    return:
+  method containsNamespace(Ljava/lang/String;)Z : // 0 samples
+    return: 
+    parameter #0 :  // namespace
+  method pop()Ljava/util/Map; : // 0 samples
+    return: 
+  method push(Lorg/w3c/dom/Element;)V : // 0 samples
+    return:
+    parameter #0 :  // description
+
+
+package org.apache.xmpbox.xml:
+class DomXmpParser : // 0/0 obj/class samples
+  method <init>()V : // 0 samples
+    return:
+  method checkPropertyDefinition(Lorg/apache/xmpbox/XMPMetadata;Ljavax/xml/namespace/QName;)Lorg/apache/xmpbox/type/PropertyType; : // 0 samples
+    return: 
+    parameter #0 :  // xmp
+    parameter #1 :  // prop
+  method createProperty(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;Lorg/apache/xmpbox/type/PropertyType;Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // property
+    parameter #2 :  // type
+    parameter #3 :  // container
+  method expectNaming(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // element
+    parameter #1 :  // ns
+    parameter #2 :  // prefix
+    parameter #3 :  // ln
+  method findDescriptionsParent(Lorg/w3c/dom/Element;)Lorg/w3c/dom/Element; : // 0 samples
+    return: 
+    parameter #0 :  // root
+  method instanciateStructured(Lorg/apache/xmpbox/type/TypeMapping;Lorg/apache/xmpbox/type/Types;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/xmpbox/type/AbstractStructuredType; : // 0 samples
+    return: 
+    parameter #0 :  // tm
+    parameter #1 :  // type
+    parameter #2 :  // name
+    parameter #3 :  // structuredNamespace
+  method isStrictParsing()Z : // 0 samples
+    return: 
+  method loadAttributes(Lorg/apache/xmpbox/type/AbstractField;Lorg/w3c/dom/Element;)V : // 0 samples
+    return:
+    parameter #0 :  // sp
+    parameter #1 :  // element
+  method manageArray(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;Lorg/apache/xmpbox/type/PropertyType;Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // property
+    parameter #2 :  // type
+    parameter #3 :  // container
+  method manageLangAlt(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // property
+    parameter #2 :  // container
+  method manageSimpleType(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;Lorg/apache/xmpbox/type/Types;Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // property
+    parameter #2 :  // type
+    parameter #3 :  // container
+  method parse([B)Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+    parameter #0 :  // xmp
+  method parse(Ljava/io/InputStream;)Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+    parameter #0 :  // input
+  method parseDescriptionInner(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;Lorg/apache/xmpbox/type/ComplexPropertyContainer;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // description
+    parameter #2 :  // parentContainer
+  method parseDescriptionRoot(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/Element;)V : // 0 samples
+    return:
+    parameter #0 :  // xmp
+    parameter #1 :  // description
+  method parseEndPacket(Lorg/apache/xmpbox/XMPMetadata;Lorg/w3c/dom/ProcessingInstruction;)V : // 0 samples
+    return:
+    parameter #0 :  // metadata
+    parameter #1 :  // pi
+  method parseInitialXpacket(Lorg/w3c/dom/ProcessingInstruction;)Lorg/apache/xmpbox/XMPMetadata; : // 0 samples
+    return: 
+    parameter #0 :  // pi
+  method parseLiDescription(Lorg/apache/xmpbox/XMPMetadata;Ljavax/xml/namespace/QName;Lorg/w3c/dom/Element;)Lorg/apache/xmpbox/type/AbstractStructuredType; : // 0 samples
+    return: 
+    parameter #0 :  // xmp
+    parameter #1 :  // descriptor
+    parameter #2 :  // liElement
+  method parseLiElement(Lorg/apache/xmpbox/XMPMetadata;Ljavax/xml/namespace/QName;Lorg/w3c/dom/Element;)Lorg/apache/xmpbox/type/AbstractField; : // 0 samples
+    return: 
+    parameter #0 :  // xmp
+    parameter #1 :  // descriptor
+    parameter #2 :  // liElement
+  method removeComments(Lorg/w3c/dom/Node;)V : // 0 samples
+    return:
+    parameter #0 :  // root
+  method setStrictParsing(Z)V : // 0 samples
+    return:
+    parameter #0 :  // strictParsing
+
+
+package org.apache.xmpbox.xml:
+class XmpParsingException$ErrorType : // 0/0 obj/class samples
+  method valueOf(Ljava/lang/String;)Lorg/apache/xmpbox/xml/XmpParsingException$ErrorType; : // 0 samples
+    return: 
+    parameter #0 :  // name
+  method values()[Lorg/apache/xmpbox/xml/XmpParsingException$ErrorType; : // 0 samples
+    return: 
+  method ErrorType(Ljava/lang/String;I)V : // 0 samples
+    return:
+    parameter #0 :  // $hidden$1
+    parameter #1 :  // $hidden$2
+
+
+package org.apache.xmpbox.xml:
+class XmpParsingException : // 0/0 obj/class samples
+  method <init>(Lorg/apache/xmpbox/xml/$ErrorType;Ljava/lang/String;)V : // 0 samples
+    return:
+    parameter #0 :  // error
+    parameter #1 :  // message
+  method <init>(Lorg/apache/xmpbox/xml/$ErrorType;Ljava/lang/String;Ljava/lang/Throwable;)V : // 0 samples
+    return:
+    parameter #0 :  // error
+    parameter #1 :  // message
+    parameter #2 :  // cause
+  method getErrorType()Lorg/apache/xmpbox/xml/XmpParsingException$ErrorType; : // 0 samples
+    return: 
+
+
+package org.plumelib.signature:
+class Signatures : // 0/0 obj/class samples
+  field primitiveToFieldDescriptor :  // java.util.HashMap
+  field fieldDescriptorToPrimitive :  // java.util.HashMap
+  method arglistFromJvm(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // arglist
+  method arglistToJvm(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // arglist
+  method binaryNameToClassGetName(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // bn
+  method binaryNameToFieldDescriptor(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // classname
+  method fieldDescriptorToBinaryName(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // classname
+  method fieldDescriptorToClassGetName(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // fd
+  method primitiveTypeNameToFieldDescriptor(Ljava/lang/String;)Ljava/lang/String; : // 0 samples
+    return: 
+    parameter #0 :  // primitiveName
+  method <init>()V : // 0 samples
+    return:
+
+
