@@ -1,16 +1,22 @@
-# NPE Bugs Dataset
+# Project Name
+NFix : Assessment of various tools on dicovering/repairing Java Null Pointer Exception
 
-## To Use
-To compile, type `make`. To clean all files, type `make clean`# NPE Bugs
+# Mentors
+* Quoc-Sang Phan
+* Xuan-Bach D. Le
 
-## 4 Sections
-* How do we collect bugs and how do we categorize them. Show that our method in finding bugs is good enough, and the bugs are diverse enough.
-* How do static analysis tools perform on localization? If the performance is bad, why? Understand the high-level idea of papers for each static analysis tool
-* If possible, how to improve them
+# Project Summary
+This project is supported by Google Summer of Code 2019. NFix aims to collect real world java NPE buggy programs, investigate its behaviour and assess the accuracy of various tools that target at discovering or repairing NPE bugs. NFix contains totally 40 real world java benchmarks, together with the analysis result of four different tools :
++ Facebook Infer
++ Coveriy Scan
++ Spotbugs
++ Daikon Invariant Detector and Checker Framework
 
-## Ideas
-* APR tool that use static analysis result only, but not rely on test cases
-* Using SPF to remove false positives? And compare ability to localization between static tools and dynamic tools
+
+
+# Future Work
+* Currently NFix contain assessment of the ability to locale fault of various tools. The next step is to do further assessment on the ability to repair automatically.
+* The drawbacks of some tools are clear, the next step is to extend or modify current tools.
 
 ## Useful Command
 ```bash
