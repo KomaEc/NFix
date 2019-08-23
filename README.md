@@ -14,7 +14,7 @@ This project is supported by Google Summer of Code 2019. NFix aims to collect re
     + Coveriy Scan
     + Spotbugs
     + Daikon Invariant Detector and Checker Framework
-+ Observation of the weaknesses of those tools.4
++ Observation of the weaknesses of those tools.
 + Overcoming those weaknesses by using invariant inference and static analysis.
 
 # Future Work
