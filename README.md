@@ -8,7 +8,7 @@ NFix : Assessment of various tools on dicovering/repairing Java Null Pointer Exc
 # Project Summary
 This project is supported by Google Summer of Code 2019. NFix aims to collect real world java NPE buggy programs, investigate its behaviour and assess the accuracy of various tools that target at discovering or repairing NPE bugs. NFix contains:
 + Totally 40 real world java benchmarks.
-+ Source code (SQL code, linux command) to manipulate the data set. (in the `src` directory)
++ Source code (SQL code, linux command) to manipulate the data set and tools. (in the `src` directory)
 + Experiments with five different analysis tools:
     + VFix
     + Facebook Infer
