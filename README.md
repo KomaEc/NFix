@@ -22,12 +22,4 @@ This project is supported by Google Summer of Code 2019. NFix aims to collect re
 * Adding assessment to the ability to automatically repair bugs of different tools
 * Finishing building a novel tool that overcome the drawbacks of existing tools.
 
-## Useful Command
-```bash
-echo $(echo ./*.jar | tr ' ' ':') >> dependency.txt
-sed 's/.\//\//g' dependency.txt
-insert-annotations-to-source target/classes/nullable-annotations.jaif $(find ./src/main/java/org -name '*.java' | tr '\n' ' ')
-
-```
-
 
