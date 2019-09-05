@@ -20,8 +20,8 @@ limitations under the License.
     <parent>
         <groupId>org.apache.tinkerpop</groupId>
         <artifactId>tinkerpop</artifactId>
-        <version>3.2.1</version>
-        <!-- <relativePath>./parent_pom.xml</relativePath> -->
+        <version>3.2.1-SNAPSHOT</version>
+        <relativePath>./parent_pom.xml</relativePath>
     </parent>
     <artifactId>gremlin-core</artifactId>
     <name>Apache TinkerPop :: Gremlin Core</name>
