@@ -50,7 +50,7 @@
         <selenium.version>2.35.0</selenium.version>
         <javax.mail.version>1.4.5</javax.mail.version>
         <infinispan.version>6.0.2.Final</infinispan.version>
-        <liquibase.version>3.2.2</liquibase.version>
+        <liquibase.version>4.8.0</liquibase.version>
 
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.6</maven.compiler.target>
